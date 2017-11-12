@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
+import { createStore,applyMiddleware } from 'redux';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import Thunk from 'redux-thunk';
+import ReduxPromise from 'redux-promise';
 // Styles
 // Import Font Awesome Icons Set
 import 'font-awesome/css/font-awesome.min.css';
@@ -22,7 +24,7 @@ import Register from './views/Pages/Register/';
 import Page404 from './views/Pages/Page404/';
 import Page500 from './views/Pages/Page500/';
 
-const store = createStore(reducers, {});
+const store = createStore(reducers, applyMiddleware(ReduxPromise));
 
 ReactDOM.render(
 	<Provider store={store}>

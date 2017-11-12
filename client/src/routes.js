@@ -16,5 +16,6 @@ const routes = {
 	'/icons/simple-line-icons' : 'Simple Line Icons',
 	'/widgets' : 'Widgets',
 	'/projects' : 'Projects',
+	'/city' : 'City',
 };
 export default routes;
