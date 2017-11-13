@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Bar, Doughnut, Line, Pie, Polar, Radar } from 'react-chartjs-2';
 import { Card, CardBody, CardColumns, CardHeader } from 'reactstrap';
 
-import { SearchBar,WeatherList } from './components';
+import { CityList, SearchBar } from './components';
 
 const line = {
 	labels : ['January', 'February', 'March', 'April', 'May', 'June', 'July'], datasets : [{
@@ -110,8 +110,8 @@ class City extends Component {
 					<h2>quote for you: { ` "${this.state.quote}" ` }</h2>
 				</Card>
 
-					<SearchBar/>
-					<WeatherList/>
+				<SearchBar/>
+				<CityList/>
 
 
 				<CardColumns className="cols-2">

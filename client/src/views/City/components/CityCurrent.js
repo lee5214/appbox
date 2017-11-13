@@ -1,33 +1,36 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Bar, Doughnut, Line } from 'react-chartjs-2';
+import PropTypes from 'prop-types';
 import { Card, CardBody, CardColumns, CardHeader } from 'reactstrap';
+import 'weather-icons/css/weather-icons.css';
 
-
-
-class WeatherList extends Component {
-
-	renderCity = (data) => {
-		const label = data.city.name;
-		// get temperature
-		const temp = data.list.map ((temp) => temp.main.temp);
-		return (
-			<CardColumns className="cols-2" key={ data.city.id }>
-				{ this.renderCurrentTemp () }
-				{ this.renderLineChart ({temp : temp, label : label}) }
-				{ this.renderBarChart () }
-				{ this.renderDoughnutChart () }
-			</CardColumns>
-		);
-	};
-
-	renderCurrentTemp () {
+class CityCurrent extends Component {
+	renderCurrentTemp (data) {
 		// set up a initial state for rendering 'null' when data
 		// from async call is not ready
-		if (!this.props.cityCurrentTemp) {
+		if (!this.props.info) {
 			return <h1>Loading!!!!</h1>;
 		}
-		return <h1 key={ this.props.cityCurrentTemp.sys.id }>{ this.props.cityCurrentTemp.main.temp }</h1>;
+		return <h1 key={ data.sys.id }>Temp: { data.main.temp }</h1>;
+
+	}
+
+	renderCurrentWeatherIcon (data) {
+		if (!data) {
+			return <h1>Loading Icon</h1>;
+		}
+		switch (data.weather[0].main) {
+			case 'Fog':
+				return (<i className='wi wi-day-fog'/>);
+			case 'Clouds':
+				return (<i className='wi wi-day-cloudy'/>);
+			case 'Clear':
+				return (<i className='wi wi-day-sunny'/>);
+			default:
+				return <h1>Loading</h1>;
+		}
+
 	}
 
 	renderLineChart (data) {
@@ -56,6 +59,7 @@ class WeatherList extends Component {
 
 	renderBarChart () {
 		return (
+
 			<Card>
 				<CardHeader>
 					Bar Chart
@@ -80,6 +84,7 @@ class WeatherList extends Component {
 
 	renderDoughnutChart () {
 		return (
+
 			<Card>
 				<CardHeader>
 					Doughnut Chart
@@ -95,16 +100,26 @@ class WeatherList extends Component {
 					</div>
 				</CardBody>
 			</Card>
-		);
+		)
+			;
 	}
 
 	render () {
+		const label = this.props.info.city.name;
+		// get forecast temperature in array
+		const temp = this.props.info.list.map ((temp) => temp.main.temp);
+
+		// TODO extends style rework
 		return (
-			<div>
-				{ this.props.cityInfo.map (data => this.renderCity (data)) }
-			</div>
+			<CardColumns className="cols-2" key={ this.props.info.city.id }>
+				{ this.renderCurrentTemp (this.props.info) }
+				{ this.renderCurrentWeatherIcon (this.props.info) }
+				{ this.renderLineChart ({temp : temp, label : label}) }
+				{ this.renderBarChart () }
+				{ this.renderDoughnutChart () }
+			</CardColumns>
 		);
-	}
+	};
 }
 
 const returnLineData = (data) => {
@@ -154,12 +169,4 @@ const doughnut = {
 	}],
 };
 
-function mapStateToProps (state) {
-	console.log ('WeatherList state=>', state);
-	return {
-		cityInfo : state.cityInfo,
-		cityCurrentTemp : state.cityCurrentTemp,
-	};
-}
-
-export default connect (mapStateToProps) (WeatherList);
+export default CityCurrent;

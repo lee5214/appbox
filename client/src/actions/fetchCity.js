@@ -8,9 +8,14 @@ export const FETCH_CITY_CURRENT_TEMP = 'FETCH_CITY_CURRENT_TEMP';
 
 export async function fetchCity (cityName, unit = 'metric') {
 
-	const url = `${ROOT_URL}/forecast?APPID=${OpenWeatherMap_Key}&q=${cityName}&units=${unit}`;
-	const request = await axios.get (url);
-	console.log ('actions/fetchCity =>', request);
+	const url1 = `${ROOT_URL}/forecast?APPID=${OpenWeatherMap_Key}&q=${cityName}&units=${unit}`;
+	const url2 = `${ROOT_URL}/weather?APPID=${OpenWeatherMap_Key}&q=${cityName}&units=${unit}`;
+	const cityInfo = await axios.get (url1);
+	const cityCurrentTemp = await axios.get (url2);
+	console.log ('actions/fetchCity1 =>', cityInfo);
+	console.log ('actions/fetchCity2 =>', cityCurrentTemp);
+	const request = await {...cityInfo.data,...cityCurrentTemp.data}
+	console.log ('res =>', request);
 	return {
 		type : FETCH_CITYINFO,
 		payload : request,

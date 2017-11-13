@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { Button } from 'reactstrap';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchCity, fetchCurrentCityTemp } from '../../../actions';
+import PropTypes from 'prop-types';
+import { fetchCity } from '../../../actions';
 
 class SearchBar extends Component {
 	constructor (props) {
 		super (props);
-
-		this.state = {term : ''};
+		this.state = {term : '', searchedTerm : []};
 	}
 
 	onInputChange = (e) => {
@@ -17,15 +17,17 @@ class SearchBar extends Component {
 
 	onSearchSubmit = (e) => {
 		e.preventDefault ();
-		this.props.fetchCity (this.state.term);
-		this.props.fetchCurrentCityTemp (this.state.term);
-		this.setState ({term : ''});
+		console.log(this.state)
+		if (!this.state.searchedTerm.includes(this.state.term)) {
+			console.log('you already searched this term')
+			this.props.fetchCity (this.state.term);
+			this.setState ({term : '', searchedTerm : [...this.state.searchedTerm, this.state.term]});
+		}
 	};
 
 	componentDidMount () {
 		// test purpose
 		this.props.fetchCity ('Hayward');
-		this.props.fetchCurrentCityTemp ('Hayward');
 	}
 
 	render () {
@@ -52,7 +54,11 @@ class SearchBar extends Component {
 }
 
 function mapDispatchToProps (dispatch) {
-	return bindActionCreators ({fetchCity, fetchCurrentCityTemp}, dispatch);
+	return bindActionCreators ({fetchCity}, dispatch);
 }
+
+SearchBar.propType = {
+	fetchCity : PropTypes.object.isRequired,
+};
 
 export default connect (null, mapDispatchToProps) (SearchBar);

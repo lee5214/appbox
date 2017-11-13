@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
 import redu1 from './fetchData';
-import { fetchCity, fetchCurrentCityTemp } from './fetchCity';
+import { fetchCityInfo, fetchCurrentCityTemp } from './fetchCity';
 
 
 /*
@@ -9,6 +9,6 @@ import { fetchCity, fetchCurrentCityTemp } from './fetchCity';
  */
 export default combineReducers ({
 	test : redu1,
-	cityInfo : fetchCity,
-	cityCurrentTemp : fetchCurrentCityTemp,
+	cityInfo : fetchCityInfo,
+	//cityCurrentTemp : fetchCurrentCityTemp,
 });
