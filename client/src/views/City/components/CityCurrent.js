@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import Moment from 'react-moment';
 import { Bar, Doughnut, Line } from 'react-chartjs-2';
-import PropTypes from 'prop-types';
-import { Card, CardBody, CardColumns, CardHeader } from 'reactstrap';
+import { Badge, Card, CardBody, CardColumns, CardHeader, Col, Jumbotron, Row } from 'reactstrap';
 import 'weather-icons/css/weather-icons.css';
+import ForecastEmbed from './ForecastEmbed';
+import { fetchUserLocation } from '../../../utils';
 
 class CityCurrent extends Component {
 	renderCurrentTemp (data) {
@@ -12,8 +13,9 @@ class CityCurrent extends Component {
 		if (!this.props.info) {
 			return <h1>Loading!!!!</h1>;
 		}
-		return <h1 key={ data.sys.id }>Temp: { data.main.temp }</h1>;
-
+		return (
+			<span>Temp: { data.main.temp }</span>
+		);
 	}
 
 	renderCurrentWeatherIcon (data) {
@@ -34,6 +36,7 @@ class CityCurrent extends Component {
 	}
 
 	renderLineChart (data) {
+		const time = data.dt;
 		return (
 			<Card>
 				<CardHeader className={ 'alert alert-primary' }>
@@ -46,7 +49,7 @@ class CityCurrent extends Component {
 				</CardHeader>
 				<CardBody>
 					<div className="chart-wrapper">
-						<Line data={ returnLineData (data) }
+						<Line data={ returnLineData (data.obj) }
 						      options={ {
 							      maintainAspectRatio : false,
 						      } }
@@ -104,27 +107,74 @@ class CityCurrent extends Component {
 			;
 	}
 
+	componentWillMount () {
+		fetchUserLocation ();
+	}
+
+
 	render () {
+		const {dt, city, list, main, name, sys, weather, coord} = this.props.info;
+
 		const label = this.props.info.city.name;
 		// get forecast temperature in array
-		const temp = this.props.info.list.map ((temp) => temp.main.temp);
+		const tempList = this.props.info.list.map ((item) => item.main.temp);
+		const obj = this.props.info.list.map ((item) => {
+			return {dt : item.dt, temp : item.main.temp};
+		});
+		console.log ('obj=>', obj);
 
 		// TODO extends style rework
 		return (
-			<CardColumns className="cols-2" key={ this.props.info.city.id }>
-				{ this.renderCurrentTemp (this.props.info) }
-				{ this.renderCurrentWeatherIcon (this.props.info) }
-				{ this.renderLineChart ({temp : temp, label : label}) }
-				{ this.renderBarChart () }
-				{ this.renderDoughnutChart () }
-			</CardColumns>
+			<div>
+				<Jumbotron>
+					<Row maxWidth={ '1000px' }>
+						<ForecastEmbed lat={ coord.lat } lon={ coord.lon } name={ name }/>
+						<Col>
+							<h1 className={ 'text-center' }>{ city.name }</h1>
+							<hr />
+							<Row>
+								<Col>
+									<h4 className={ 'text-right' }>lat </h4>
+								</Col>
+								<Col>
+									<p className={ 'text-left' }>
+										<Badge
+											color="primary">{ coord.lat }
+										</Badge>
+									</p>
+								</Col>
+							</Row>
+							<Row>
+								<Col>
+									<h4 className={ 'text-right' }>lon </h4>
+								</Col>
+								<Col>
+									<p className={ 'text-left' }>
+										<Badge className={ 'text-left' }
+										       color="primary">{ coord.lon }
+										</Badge>
+									</p>
+								</Col>
+							</Row>
+
+							<Moment unix>{ dt }</Moment>
+							<Badge>{ this.renderCurrentWeatherIcon (this.props.info) }</Badge>
+						</Col>
+					</Row>
+				</Jumbotron>
+				<CardColumns className="cols-2">
+					{ this.renderLineChart ({obj : obj, tempList : tempList, label : label}) }
+					{ this.renderBarChart () }
+					{ this.renderDoughnutChart () }
+				</CardColumns>
+			</div>
 		);
 	};
 }
 
 const returnLineData = (data) => {
 	return {
-		labels : [, , , , 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8,],
+		labels : data.map (i => i.dt),
 		datasets : [{
 			label : data.label || 'My First dataset',
 			fill : false,
@@ -144,7 +194,7 @@ const returnLineData = (data) => {
 			pointHoverBorderWidth : 2,
 			pointRadius : 1,
 			pointHitRadius : 10,
-			data : data.temp || [65, 59, 80, 81, 56, 55, 40],
+			data : data.map (i => i.temp) || [65, 59, 80, 81, 56, 55, 40],
 		},],
 	};
 };

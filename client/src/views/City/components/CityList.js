@@ -23,7 +23,7 @@ function mapStateToProps (state) {
 }
 
 CityList.propTypes = {
-	cityInfo : PropTypes.object.isRequired,
+	cityInfo : PropTypes.array.isRequired,
 };
 
 export default connect (mapStateToProps) (CityList);

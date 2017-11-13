@@ -106,6 +106,7 @@ class City extends Component {
 	render () {
 		return (
 			<div className="animated fadeIn">
+
 				<Card>
 					<h2>quote for you: { ` "${this.state.quote}" ` }</h2>
 				</Card>

@@ -9037,6 +9037,9 @@ base-chart.chart {
         margin: 2px 0 0;
         font-size: 18px; }
 
+.jumbotron {
+  background-color: transparent; }
+
 @media all and (-ms-high-contrast: none) {
   html {
     display: flex;
@@ -9449,5 +9452,8 @@ hr.transparent {
       float: left; }
   *[dir="rtl"] .callout-default {
     border-right-color: #536c79; }
+
+.fe_forecast_link {
+  visibility: hidden; }
 
 /*# sourceMappingURL=style.css.map */
