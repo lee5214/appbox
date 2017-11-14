@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button } from 'reactstrap';
+import { Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
@@ -34,14 +34,11 @@ class SearchBar extends Component {
 		return (
 			<form className={ 'input-group' } onSubmit={ (e) => {this.onSearchSubmit (e);} }>
 				<input
-					placeholder={ 'input your target city' }
+					placeholder={ '  city name' }
 					onChange={ (e) => this.onInputChange (e) }
 					value={ this.state.term }/>
 				<span className={ 'input-group-btn' }>
-					<Button
-						outline
-						color={ 'primary' }
-						type={ 'submit' }>
+					<Button bsStyle={'primary'} type={ 'submit' }>
 						Search
 					</Button>
 				</span>

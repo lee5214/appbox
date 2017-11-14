@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import Moment from 'react-moment';
 import { Bar, Doughnut, Line } from 'react-chartjs-2';
-import { Badge, Card, CardBody, CardColumns, CardHeader, Col, Jumbotron, Row } from 'reactstrap';
+import { Badge, Card, CardBody, CardColumns, CardHeader, Col, Row } from 'reactstrap';
 import 'weather-icons/css/weather-icons.css';
 import ForecastEmbed from './ForecastEmbed';
 import { fetchUserLocation } from '../../../utils';
+import { DataList, SearchBar } from '../components';
+import  PricingTables  from "../../Components/PricingTables/PricingTables";
 
 class CityCurrent extends Component {
 	renderCurrentTemp (data) {
@@ -113,57 +114,62 @@ class CityCurrent extends Component {
 
 
 	render () {
-		const {dt, city, list, main, name, sys, weather, coord} = this.props.info;
+		const {dt, city, list, main : {humidity, pressure}, name, sys, visibility, weather, coord, wind} = this.props.info;
 
-		const label = this.props.info.city.name;
+		const label = city.name;
 		// get forecast temperature in array
-		const tempList = this.props.info.list.map ((item) => item.main.temp);
-		const obj = this.props.info.list.map ((item) => {
-			return {dt : item.dt, temp : item.main.temp};
+		const tempList = list.map ((item) => item.main.temp);
+		const obj = list.map ((item) => {
+			return {dt_txt : item.dt_txt, temp : item.main.temp};
 		});
 		console.log ('obj=>', obj);
 
 		// TODO extends style rework
 		return (
 			<div>
-				<Jumbotron>
-					<Row maxWidth={ '1000px' }>
-						<ForecastEmbed lat={ coord.lat } lon={ coord.lon } name={ name }/>
-						<Col>
-							<h1 className={ 'text-center' }>{ city.name }</h1>
-							<hr />
-							<Row>
-								<Col>
-									<h4 className={ 'text-right' }>lat </h4>
-								</Col>
-								<Col>
-									<p className={ 'text-left' }>
-										<Badge
-											color="primary">{ coord.lat }
-										</Badge>
-									</p>
-								</Col>
-							</Row>
-							<Row>
-								<Col>
-									<h4 className={ 'text-right' }>lon </h4>
-								</Col>
-								<Col>
-									<p className={ 'text-left' }>
-										<Badge className={ 'text-left' }
-										       color="primary">{ coord.lon }
-										</Badge>
-									</p>
-								</Col>
-							</Row>
+				<Row>
+					<ForecastEmbed lat={ coord.lat } lon={ coord.lon } name={ name }/>
+					<Col>
+						<h1 className={ 'text-center font-weight-bold' }>{ city.name }</h1>
+						<Row>
+							<Col className={ 'text-right' }>
+								<div>
+									<span className={ 'font-weight-normal' }>Latitude </span>
+								</div>
+								<div>
+									<span className={ 'font-weight-normal' }>Longitude </span>
+								</div>
+							</Col>
+							<Col className={ 'text-left' }>
+								<div>
+									<Badge
+										color="primary">{ coord.lat }
+									</Badge>
+								</div>
+								<div>
+									<Badge className={ 'text-left' }
+									       color="primary">{ coord.lon }
+									</Badge>
+								</div>
+							</Col>
+						</Row>
+						<hr/>
+					</Col>
+				</Row>
+				<Row>
+					<PricingTables/>
+				</Row>
 
-							<Moment unix>{ dt }</Moment>
-							<Badge>{ this.renderCurrentWeatherIcon (this.props.info) }</Badge>
-						</Col>
-					</Row>
-				</Jumbotron>
+				<Row>
+
+					<Col xs={ '12' } lg={ '3' }>
+						<DataList hum={ humidity } pres={ pressure } vis={ visibility }/>
+					</Col>
+					<Col>
+						{ this.renderLineChart ({obj : obj, tempList : tempList, label : label}) }
+					</Col>
+				</Row>
 				<CardColumns className="cols-2">
-					{ this.renderLineChart ({obj : obj, tempList : tempList, label : label}) }
 					{ this.renderBarChart () }
 					{ this.renderDoughnutChart () }
 				</CardColumns>
@@ -174,11 +180,11 @@ class CityCurrent extends Component {
 
 const returnLineData = (data) => {
 	return {
-		labels : data.map (i => i.dt),
+		labels : data.map (i => i.dt_txt),
 		datasets : [{
 			label : data.label || 'My First dataset',
 			fill : false,
-			lineTension : 0.1,
+			lineTension : 0.4,
 			backgroundColor : 'rgba(75,192,192,0.4)',
 			borderColor : 'rgba(75,192,192,1)',
 			borderCapStyle : 'butt',

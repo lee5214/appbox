@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import { Bar, Doughnut, Line, Pie, Polar, Radar } from 'react-chartjs-2';
-import { Card, CardBody, CardColumns, CardHeader } from 'reactstrap';
+import { Row,Col,Card, CardBody, CardColumns, CardHeader } from 'reactstrap';
 
 import { CityList, SearchBar } from './components';
 
@@ -110,8 +110,13 @@ class City extends Component {
 				<Card>
 					<h2>quote for you: { ` "${this.state.quote}" ` }</h2>
 				</Card>
-
-				<SearchBar/>
+				<Row>
+					<Col />
+					<Col xs={'auto'}>
+						<SearchBar/>
+					</Col>
+					<Col />
+				</Row>
 				<CityList/>
 
 
