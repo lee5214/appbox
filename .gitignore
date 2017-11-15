@@ -21,3 +21,6 @@ yarn-debug.log*
 yarn-error.log*
 .gitignore
 etc/
+
+.idea/workspace.xml
+
