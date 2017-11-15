@@ -6,10 +6,9 @@ import numeral from 'numeral';
 
 import { Button, Col, Divider, Label, Panel, Row, Table } from '../../../components/_General';
 
-
 import classes from './PricingTables.scss';
-import PricingTable from './index'
-
+import {PricingTableClean} from './index'
+import { Colors } from './colors';
 
 // PricingTable.propTypes = PricingTableClean.propTypes = {
 // 	description : PropTypes.string.isRequired,
@@ -20,7 +19,7 @@ import PricingTable from './index'
 // 	active : PropTypes.bool,
 // };
 
-class PricingTables extends Component {
+class PricingTablesDisplay extends Component {
 
 	render () {
 
@@ -84,9 +83,6 @@ class PricingTables extends Component {
 			},
 		];
 
-		function add (data) {
-			console.log(data.type)
-		}
 		return (
 			<Row>
 				<Col lg={ 12 }>
@@ -94,7 +90,7 @@ class PricingTables extends Component {
 						{
 							_.map(tablesData, data => (
 								<Col md={ 3 } key={ data.id }>
-									<PricingTable {...data} />
+									<PricingTableClean {...data} />
 								</Col>
 							))
 						}
@@ -105,7 +101,4 @@ class PricingTables extends Component {
 	}
 }
 
-export default PricingTables;
-export {
-	PricingTable,
-};
+export default PricingTablesDisplay;

@@ -1,5 +1,9 @@
 import PricingTable from './PricingTable';
+import PricingTableClean from './PricingTableClean';
+import PricingTablesDisplay from './PricingTablesDisplay';
 
-export default
-    PricingTable
-;
+export {
+	PricingTable,
+	PricingTableClean,
+	PricingTablesDisplay,
+};

@@ -34,6 +34,7 @@ class SearchBar extends Component {
 		return (
 			<form className={ 'input-group' } onSubmit={ (e) => {this.onSearchSubmit (e);} }>
 				<input
+					style={{backgroundColor:'#353535',border:0,color:'white'}}
 					placeholder={ '  city name' }
 					onChange={ (e) => this.onInputChange (e) }
 					value={ this.state.term }/>
@@ -43,7 +44,6 @@ class SearchBar extends Component {
 					</Button>
 				</span>
 				<div>
-					{ this.state.term }
 				</div>
 			</form>
 		);

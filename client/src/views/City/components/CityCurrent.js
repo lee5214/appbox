@@ -4,8 +4,24 @@ import { Badge, Card, CardBody, CardColumns, CardHeader, Col, Row } from 'reacts
 import 'weather-icons/css/weather-icons.css';
 import ForecastEmbed from './ForecastEmbed';
 import { fetchUserLocation } from '../../../utils';
-import { DataList, SearchBar } from '../components';
-import  PricingTables  from "../../Components/PricingTables/PricingTables";
+import { DataList } from '../components';
+import PricingTables from "../../Components/PricingTables/PricingTablesDisplay";
+
+import uid from 'uuid';
+const priceData = {
+	id : uid.v4 (),
+	type : 'Basic',
+	bsStyle : 'info',
+	description : 'Very good to start your business',
+	price : 23.00,
+	capabilities : [
+		{key : 'Android / iOS', value : 'Yes'},
+		{key : 'Admin Web Access', value : '85421'},
+		{key : 'Appointments', value : 'Yes'},
+		{key : 'Import / Export Data', value : 'Yes'},
+		{key : 'Data Storage', value : '1GB'},
+	],
+};
 
 class CityCurrent extends Component {
 	renderCurrentTemp (data) {
@@ -157,7 +173,7 @@ class CityCurrent extends Component {
 					</Col>
 				</Row>
 				<Row>
-					<PricingTables/>
+					<PricingTables { ...priceData }/>
 				</Row>
 
 				<Row>

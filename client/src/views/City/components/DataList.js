@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardBody, CardColumns, CardHeader, Col, ListGroup, ListGroupItem, Panel } from 'react-bootstrap';
 import { Row } from '../../../components/_General';
 import 'weather-icons/css/weather-icons.css';
-import { PricingTable } from "../../Components/PricingTables/PricingTables";
+import { PricingTable } from "../../Components/PricingTables/PricingTablesDisplay";
 
 export default function DataList ({pres, sea, hum, vis}) {
 	return (
