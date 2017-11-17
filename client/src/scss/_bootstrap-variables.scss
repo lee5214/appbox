@@ -88,7 +88,7 @@ $breadcrumb-bg: $gray-600;
 //$breadcrumb-padding-y:              .75rem !default;
 //$breadcrumb-padding-x:              1rem !default;
 //$breadcrumb-item-padding:           .5rem !default;
-//$breadcrumb-margin-bottom:          1rem !default;
+$breadcrumb-margin-bottom:          1.5rem !default;
 $breadcrumb-divider-color:          $gray-300 !default;
 $breadcrumb-active-color:           $gray-100 !default;
 $breadcrumb-divider:                "/" !default;
@@ -98,11 +98,6 @@ $breadcrumb-divider:                "/" !default;
 // Font, line-height, and color for body text, headings, and more.
 
 $font-size-base:                  0.875rem;
-
-// Breadcrumbs
-
-$breadcrumb-bg:                   $gray-800;
-$breadcrumb-margin-bottom:        1.5rem;
 
 // Cards
 
