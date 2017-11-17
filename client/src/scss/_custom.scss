@@ -1,7 +1,22 @@
 // Here you can add other styles
 
 // hide dark sky name
-.fe_forecast_link{
-  visibility: hidden;
+.progress-bar-success{
+  background-color: #84b547;
 }
+.progress-bar-info {
+  background-color: #2dbda8;
+}
+.progress-bar-warning {
+  background-color: #e76d3b;
+}
+.progress-bar-danger {
+  background-color: #cc3e4a;
+}
+.progress-bar.active, .progress.active .progress-bar {
+  -webkit-animation: progress-bar-stripes 2s linear infinite;
+  animation: progress-bar-stripes 2s linear infinite;
+}
+
+//TODO fixed progress bsstyle problem, try combin as one stylesheet/method
 

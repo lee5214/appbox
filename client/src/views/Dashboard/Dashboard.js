@@ -455,11 +455,6 @@ class Dashboard extends Component {
 								</ButtonGroup>
 								<h4 className="mb-0">9.823</h4>
 
-
-								<button onClick={() => this.props.selectBook('aaaa')}>try this</button>
-								<h2>title: { this.props.book }</h2>
-
-
 								<p>Members online</p>
 							</CardBody>
 							<div className="chart-wrapper px-3" style={ {height : '70px'} }>
@@ -1274,15 +1269,15 @@ class Dashboard extends Component {
 	}
 }
 
-function mapStateToProps (state) {
-	// whatever is returned here whill show up as props inside
-	return {
-		book : state.test,
-	};
-}
+// function mapStateToProps (state) {
+// 	// whatever is returned here whill show up as props inside
+// 	return {
+// 		book : state.test,
+// 	};
+// }
+//
+// function mapDispatchToProps (dispatch) {
+// 	return bindActionCreators ({selectBook : selectBook }, dispatch);
+// }
 
-function mapDispatchToProps (dispatch) {
-	return bindActionCreators ({selectBook : selectBook }, dispatch);
-}
-
-export default connect (mapStateToProps, mapDispatchToProps) (Dashboard);
+export default connect () (Dashboard);

@@ -112,6 +112,11 @@ export default {
 			icon : 'icon-social-dropbox',
 		},
 		{
+			name : 'Test',
+			url : '/test',
+			icon : 'icon-social-dropbox',
+		},
+		{
 			divider : true,
 		},
 		{

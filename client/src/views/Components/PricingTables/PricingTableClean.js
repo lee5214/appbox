@@ -3,13 +3,12 @@ import hash from 'object-hash';
 import _ from 'lodash';
 import numeral from 'numeral';
 
-import { Button, Divider, Label, Table } from '../../../components/_General';
-import { Colors } from './colors';
-import classes from './PricingTables.css';
+import { Button, Divider, Label, Table } from '../../../components/_Common';
+import { Colors } from 'consts';
 
 const PricingTableClean = props => (
 	<div className={ 'tableClean' }>
-		<Label outline bsStyle={ props.bsStyle }>
+		<Label bsStyle={ props.bsStyle }>
 			{ props.type }
 		</Label>
 		<div>

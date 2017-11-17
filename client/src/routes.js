@@ -17,5 +17,6 @@ const routes = {
 	'/widgets' : 'Widgets',
 	'/projects' : 'Projects',
 	'/city' : 'City',
+	'/test' : 'Test',
 };
 export default routes;

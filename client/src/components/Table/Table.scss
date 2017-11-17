@@ -1,10 +1,10 @@
-@import '~@owczar/spin-template/src/scss/bootstrap/variables';
+/*@import '~@owczar/spin-template/src/scss/bootstrap/variables';*/
 
 .table {
     th {
         font-size: 10px;
         font-weight: bold;
-        color: $text-muted;
+        color: black;
         text-transform: uppercase;
 
         &:last-child {

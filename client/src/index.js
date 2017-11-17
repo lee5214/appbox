@@ -14,6 +14,7 @@ import 'simple-line-icons/css/simple-line-icons.css';
 import './scss/style.css';
 // Temp fix for reactstrap
 // import './scss/core/_dropdown-menu-right.scss'
+
 // Containers
 import Full from './containers/Full';
 // reducers
@@ -27,6 +28,7 @@ import Page500 from './views/Pages/Page500/';
 const store = createStore(reducers, applyMiddleware(ReduxPromise));
 
 ReactDOM.render(
+
 	<Provider store={store}>
 		<HashRouter>
 			<Switch>

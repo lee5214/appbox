@@ -10,8 +10,8 @@ import Dashboard from '../../views/Dashboard/';
 import Charts from '../../views/Charts/';
 import Widgets from '../../views/Widgets/';
 import Projects from '../../views/Projects/Projects';
-import City from '../../views/City/City';
-
+import City from '../../views/City/';
+import Test from '../../views/Test/'
 // Components
 import Buttons from '../../views/Components/Buttons/';
 import Cards from '../../views/Components/Cards/';
@@ -72,6 +72,8 @@ class Full extends Component {
 								       component={Projects}/>
 								<Route path="/city" name="City"
 								       component={City}/>
+								<Route path="/test" name="Test"
+								       component={Test}/>
 
 								<Redirect from="/" to="/dashboard"/>
 							</Switch>

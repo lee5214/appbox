@@ -1034,7 +1034,7 @@ class Forms extends Component {
                         <InputGroupAddon>@</InputGroupAddon>
                         <Input id="prependedInput" size="16" type="text"/>
                       </InputGroup>
-                      <p className="help-block">Here's some help text</p>
+                      <p className="help-block">{"Here's some help text"}</p>
                     </div>
                   </FormGroup>
                   <FormGroup>
@@ -1043,7 +1043,7 @@ class Forms extends Component {
                       <InputGroup>
                         <Input id="appendedInput" size="16" type="text"/><InputGroupAddon>.00</InputGroupAddon>
                       </InputGroup>
-                      <span className="help-block">Here's more help text</span>
+                      <span className="help-block">{"Here's more help text"}</span>
                     </div>
                   </FormGroup>
                   <FormGroup>

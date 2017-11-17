@@ -25,3 +25,4 @@ to render the data from async call directly in render for test
 			{key : 'Data Storage', value : '1GB'},
 		],
 	},
+

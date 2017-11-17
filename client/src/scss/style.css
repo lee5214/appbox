@@ -1,10 +1,7 @@
-@charset "UTF-8";
 /*!
- * CoreUI - Open Source Bootstrap Admin Template
- * @version v1.0.4
- * @link http://coreui.io
- * Copyright (c) 2017 creativeLabs Łukasz Holeczek
- * @license MIT
+ * Main stylesheet, based on bootstrap core-ui
+ * sass's variable priority is top-highest, unlike es6
+ *
  */
 /*!
  * Bootstrap v4.0.0-beta.2 (https://getbootstrap.com)
@@ -9453,7 +9450,26 @@ hr.transparent {
   *[dir="rtl"] .callout-default {
     border-right-color: #536c79; }
 
-.fe_forecast_link {
-  visibility: hidden; }
+body {
+  background: #262626; }
+  body * {
+    color: white;
+    background: transparent; }
+
+.progress-bar-success {
+  background-color: #84b547; }
+
+.progress-bar-info {
+  background-color: #2dbda8; }
+
+.progress-bar-warning {
+  background-color: #e76d3b; }
+
+.progress-bar-danger {
+  background-color: #cc3e4a; }
+
+.progress-bar.active, .progress.active .progress-bar {
+  -webkit-animation: progress-bar-stripes 2s linear infinite;
+  animation: progress-bar-stripes 2s linear infinite; }
 
 /*# sourceMappingURL=style.css.map */

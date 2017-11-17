@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
-import { fetchCity } from '../../../actions';
+import { fetchCity } from 'actions';
 
 class SearchBar extends Component {
 	constructor (props) {
@@ -46,6 +46,7 @@ class SearchBar extends Component {
 				<div>
 				</div>
 			</form>
+
 		);
 	}
 }

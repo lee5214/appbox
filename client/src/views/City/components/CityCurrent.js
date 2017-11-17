@@ -6,8 +6,9 @@ import ForecastEmbed from './ForecastEmbed';
 import { fetchUserLocation } from '../../../utils';
 import { DataList } from '../components';
 import PricingTables from "../../Components/PricingTables/PricingTablesDisplay";
-
+import moment from 'moment';
 import uid from 'uuid';
+
 const priceData = {
 	id : uid.v4 (),
 	type : 'Basic',
@@ -52,21 +53,44 @@ class CityCurrent extends Component {
 
 	}
 
-	renderLineChart (data) {
-		const time = data.dt;
+	renderLineChart ({tempList, dateList, label}) {
 		return (
 			<Card>
-				<CardHeader className={ 'alert alert-primary' }>
-					Line Chart
+				<CardHeader className={ 'alert' }>
+					Forecast - Range <kbd>5 days</kbd> Frequency <kbd>3 hours</kbd>
 					<div className="card-actions">
-						<a href="http://www.chartjs.org">
-							<small className="text-muted">docs</small>
+						<a href="">
+							<small className="text-muted">X</small>
 						</a>
 					</div>
 				</CardHeader>
 				<CardBody>
 					<div className="chart-wrapper">
-						<Line data={ returnLineData (data.obj) }
+						<Line data={ {
+							labels : dateList || [1, 2, 1, 1, 1, 1, 1, 1, 1],
+							datasets : [{
+								label : label || 'My First dataset',
+								fill : false,
+								lineTension : 0.1,
+								backgroundColor : 'rgba(75,192,192,0.4)',
+								borderColor : 'rgba(75,192,192,1)',
+								borderCapStyle : 'butt',
+								borderDash : [],
+								borderDashOffset : 0.0,
+								borderJoinStyle : 'miter',
+								pointBorderColor : 'rgba(75,192,192,1)',
+								pointBackgroundColor : '#fff',
+								pointBorderWidth : 1,
+								pointHoverRadius : 5,
+								pointHoverBackgroundColor : 'rgba(75,192,192,1)',
+								pointHoverBorderColor : 'rgba(220,220,220,1)',
+								pointHoverBorderWidth : 2,
+								pointRadius : 1,
+								pointHitRadius : 10,
+								data : tempList || [65, 59, 80, 81, 56, 55, 40],
+							},],
+						}
+						}
 						      options={ {
 							      maintainAspectRatio : false,
 						      } }
@@ -126,19 +150,32 @@ class CityCurrent extends Component {
 
 	componentWillMount () {
 		fetchUserLocation ();
+		if (!this.props.info) {
+			return <h1>Loading!!!!</h1>;
+		}
+
 	}
 
 
 	render () {
-		const {dt, city, list, main : {humidity, pressure}, name, sys, visibility, weather, coord, wind} = this.props.info;
 
+		const {dt, city, list, main : {humidity, pressure}, name, sys, visibility, weather, coord, wind} = this.props.info;
 		const label = city.name;
 		// get forecast temperature in array
 		const tempList = list.map ((item) => item.main.temp);
-		const obj = list.map ((item) => {
-			return {dt_txt : item.dt_txt, temp : item.main.temp};
-		});
-		console.log ('obj=>', obj);
+		//split data I need, pass to charts props
+		const dateList = list.map ((item) => moment(item.dt_txt).local().format ('MM/DD HH:MM'));
+
+		// const obj = list.map ((item) => {
+		// 	//console.log('date==>', moment(item.dt).format('MM/DD HH'));
+		// 	var tempDate = moment(item.dt).format('MM/DD HH')
+		// 	return {
+		//
+		// 		date : tempDate,
+		// 		temp : item.main.temp
+		// 	};
+		// });
+		//console.log ('obj=>', obj);
 
 		// TODO extends style rework
 		return (
@@ -182,7 +219,7 @@ class CityCurrent extends Component {
 						<DataList hum={ humidity } pres={ pressure } vis={ visibility }/>
 					</Col>
 					<Col>
-						{ this.renderLineChart ({obj : obj, tempList : tempList, label : label}) }
+						{ this.renderLineChart ({tempList : tempList, dateList : dateList, label : label}) }
 					</Col>
 				</Row>
 				<CardColumns className="cols-2">
@@ -196,7 +233,7 @@ class CityCurrent extends Component {
 
 const returnLineData = (data) => {
 	return {
-		labels : data.map (i => i.dt_txt),
+		labels : data.map (i => i.date),
 		datasets : [{
 			label : data.label || 'My First dataset',
 			fill : false,
