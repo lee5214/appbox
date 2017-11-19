@@ -1,0 +1,9 @@
+.navbar_column{
+  display: flex;
+  align-items: baseline;
+
+  .sub_navbar_header{
+    align-self: center;
+    list-style: none;
+  }
+}

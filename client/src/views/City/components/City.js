@@ -107,7 +107,7 @@ class City extends Component {
 				</Row>
 				<CityList/>
 
-				<CardColumns className="cols-2">
+				{/*<CardColumns className="cols-2">
 					<Card>
 						<CardHeader className={ 'alert alert-primary' }>
 							Line Chart
@@ -206,7 +206,7 @@ class City extends Component {
 							</div>
 						</CardBody>
 					</Card>
-				</CardColumns>
+				</CardColumns>*/}
 			</div>
 		);
 	}

@@ -48,7 +48,7 @@ $navbar-border: (
 )  !default;
 $navbar-brand-width:                  155px !default;
 $navbar-brand-bg:                     #fff !default;
-// TODO logo
+//
 $navbar-brand-logo:                   url('../img/logo.png') !default;
 $navbar-brand-logo-size:              70px auto !default;
 $navbar-brand-border: (
@@ -61,7 +61,7 @@ $navbar-brand-border: (
 
 $navbar-brand-minimized-width:        50px !default;
 $navbar-brand-minimized-bg:           $navbar-brand-bg !default;
-// TODO symbol
+// TOTO symbol
 $navbar-brand-minimized-logo:         url('../img/logo-symbol.png') !default;
 $navbar-brand-minimized-logo-size:    24px !default;
 $navbar-brand-minimized-border:       $navbar-brand-border !default;
@@ -109,9 +109,9 @@ $sidebar-nav-title-padding-x:         1rem !default;
 $sidebar-nav-title-color:             $gray-200 !default;
 $sidebar-nav-link-padding-y:          .75rem !default;
 $sidebar-nav-link-padding-x:          1rem !default;
-$sidebar-nav-link-color:              #fff !default;
+$sidebar-nav-link-color:              $gray-100 !default;
 $sidebar-nav-link-bg:                 transparent !default;
-$sidebar-nav-link-icon-color:         $gray-600 !default;
+$sidebar-nav-link-icon-color:         $gray-100 !default;
 $sidebar-nav-link-borders:            0 !default;
 
 $sidebar-nav-link-hover-color:        #fff !default;

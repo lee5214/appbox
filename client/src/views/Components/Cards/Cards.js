@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {Badge, Row, Col, Card, CardHeader, CardFooter, CardBody, Label, Input} from 'reactstrap';
-
+import {Badge, Row, Col, Label, } from 'components';
+import {Card,CardBody,CardFooter,CardHeader,Input} from 'reactstrap'
 class Cards extends Component {
   render() {
     return (

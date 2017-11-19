@@ -6,7 +6,7 @@ const ROOT_URL = 'http://api.openweathermap.org/data/2.5';
 export const FETCH_CITYINFO = 'FETCH_CITYINFO';
 export const FETCH_CITY_CURRENT_TEMP = 'FETCH_CITY_CURRENT_TEMP';
 
-export async function fetchCity (cityName, unit = 'metric') {
+export async function fetchCity (cityName, unit = 'Imperial') {
 	// forecast 5d/3h
 	const url1 = `${ROOT_URL}/forecast?APPID=${OpenWeatherMap_Key}&q=${cityName}&units=${unit}`;
 	// get current weather

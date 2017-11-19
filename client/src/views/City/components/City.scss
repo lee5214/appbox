@@ -1,0 +1,13 @@
+//TODO config webpack so that I can use @import /absolute/path in scss
+
+.embed{
+  background: #1a1a1a; //$gray-800;
+  padding: 40px 0;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.chartHeader{
+  text-align: right;
+  border-bottom: 1px solid white !important;
+}

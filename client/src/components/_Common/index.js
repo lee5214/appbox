@@ -1,5 +1,8 @@
 import {
-	Card,
+	Card, CardImg, CardText, CardBody, CardLink,
+	CardTitle, CardSubtitle, CardFooter,CardImgOverlay,CardGroup
+} from 'reactstrap';
+import {
 	Accordion,
 	ButtonGroup,
 	ButtonToolbar,
@@ -46,49 +49,51 @@ import {
 	Well,
 } from 'react-bootstrap';
 
-import AffixWrap from './AffixWrap'
-import Alert from './Alert'
-import { AvatarIcon, AvatarImage, AvatarText } from './Avatar'
-import Badge from './Badge'
-import Breadcrumb from './Breadcrumb'
-import Button from './Button'
+import AffixWrap from './AffixWrap';
+import Alert from './Alert';
+import { AvatarIcon, AvatarImage, AvatarText } from './Avatar';
+import Badge from './Badge';
+import Breadcrumb from './Breadcrumb';
+import Button from './Button';
 //import Charts from './Charts'
-import CollapsablePanel from './CollapsablePanel'
-import ColorPicker from './ColorPicker'
-import { DatePicker, DateRangePicker } from './DatePicker'
-import Divider from './Divider'
-import FavoriteStar from './FavoriteStar'
-import Footer from './Footer'
-import FloatGrid from './FloatGrid'
-import GalleryThumbnail from './GalleryThumbnail'
+import CollapsablePanel from './CollapsablePanel';
+import ColorPicker from './ColorPicker';
+import { DatePicker, DateRangePicker } from './DatePicker';
+import Divider from './Divider';
+import FavoriteStar from './FavoriteStar';
+import Footer from './Footer';
+import FloatGrid from './FloatGrid';
+import GalleryThumbnail from './GalleryThumbnail';
 //import Header from './Header'
 //import Image from './Image'
-import Label from './Label'
+import Label from './Label';
 //import Layout from './Layout'
-import MaskedTextInput from './MaskedTextInput'
-import Media from './Media'
-import Modal from './Modal'
+import MaskedTextInput from './MaskedTextInput';
+import Media from './Media';
+import Modal from './Modal';
 //import Navbar from './Navbar'
-import OutsideClick from './OutsideClick'
-import Panel from './Panel'
-import Popover from './Popover'
-import RightSidebar from './RightSidebar'
-import ScrollBarContainer from './ScrollBarContainer'
+import OutsideClick from './OutsideClick';
+import Panel from './Panel';
+import Popover from './Popover';
+import RightSidebar from './RightSidebar';
+import ScrollBarContainer from './ScrollBarContainer';
 //import Sidebar from './Sidebar'
-import ProgressBar from './ProgressBar'
-import SlimProgressBar from './SlimProgressBar'
-import StarRating from './StarRating'
-import Table from './Table'
-import Tabs from './Tabs'
-import Thumbnail from './Thumbnail'
-import Timeline from './Timeline'
-import Tooltip from './Tooltip'
-import TreeNavigator from './TreeNavigator'
-import Editor from './Editor'
-import Treebeard from './Treebeard'
-import Wizard from './Wizard'
+import ProgressBar from './ProgressBar';
+import SlimProgressBar from './SlimProgressBar';
+import StarRating from './StarRating';
+import Table from './Table';
+import Tabs from './Tabs';
+import Thumbnail from './Thumbnail';
+import Timeline from './Timeline';
+import Tooltip from './Tooltip';
+import TreeNavigator from './TreeNavigator';
+import Editor from './Editor';
+import Treebeard from './Treebeard';
+import Wizard from './Wizard';
 
 export {
+	Card, CardImg, CardText, CardBody, CardLink,
+	CardTitle, CardSubtitle, CardFooter,CardImgOverlay,CardGroup,
 	Accordion,
 	ButtonGroup,
 	ButtonToolbar,

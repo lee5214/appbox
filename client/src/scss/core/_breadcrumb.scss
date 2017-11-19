@@ -1,4 +1,23 @@
 .breadcrumb {
   position: relative;
   @include borders($breadcrumb-borders);
+  display: block;
+  margin: 20px 0;
+  li{
+    display: inline-block;
+    // for breadcrumb '>' fix
+    &:before{
+      content: "\00a0 > \00a0";
+    }
+    &.active{
+      color: $gray-100;
+      &:before{
+        color: $white;
+      }
+    }
+  }
 }
+
+
+
+

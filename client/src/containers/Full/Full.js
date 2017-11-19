@@ -11,7 +11,7 @@ import Charts from '../../views/Charts/';
 import Widgets from '../../views/Widgets/';
 import Projects from '../../views/Projects/Projects';
 import City from '../../views/City/';
-import Test from '../../views/Test/'
+import Test from '../../views/Test/';
 // Components
 import Buttons from '../../views/Components/Buttons/';
 import Cards from '../../views/Components/Cards/';
@@ -21,59 +21,68 @@ import SocialButtons from '../../views/Components/SocialButtons/';
 import Switches from '../../views/Components/Switches/';
 import Tables from '../../views/Components/Tables/';
 import Tabs from '../../views/Components/Tabs/';
-
 // Icons
 import FontAwesome from '../../views/Icons/FontAwesome/';
 import SimpleLineIcons from '../../views/Icons/SimpleLineIcons/';
+import styled from 'styled-components';
 
+const Temp = styled.div`
+	margin: 20px 20px 40px 20px;
+	background-color: #262626;
+ 
+`;
 class Full extends Component {
 	render () {
 		return (
 			<div className="app">
 				<Header/>
 				<div className="app-body">
-					<Sidebar {...this.props}/>
+					<Sidebar { ...this.props }/>
 					<main className="main">
-						<Breadcrumb/>
-						<Container fluid>
+						<Temp>
+							<Container>
+								<Breadcrumb/>
+							</Container>
+						</Temp>
+						<Container>
 							<Switch>
 								<Route path="/dashboard" name="Dashboard"
-									   component={Dashboard}/>
+								       component={ Dashboard }/>
 								<Route path="/components/buttons" name="Buttons"
-									   component={Buttons}/>
+								       component={ Buttons }/>
 								<Route path="/components/cards" name="Cards"
-									   component={Cards}/>
+								       component={ Cards }/>
 								<Route path="/components/forms" name="Forms"
-									   component={Forms}/>
+								       component={ Forms }/>
 								<Route path="/components/modals" name="Modals"
-									   component={Modals}/>
+								       component={ Modals }/>
 								<Route path="/components/social-buttons"
-									   name="Social Buttons"
-									   component={SocialButtons}/>
+								       name="Social Buttons"
+								       component={ SocialButtons }/>
 								<Route path="/components/switches"
-									   name="Swithces"
-									   component={Switches}/>
+								       name="Swithces"
+								       component={ Switches }/>
 								<Route path="/components/tables" name="Tables"
-									   component={Tables}/>
+								       component={ Tables }/>
 								<Route path="/components/tabs" name="Tabs"
-									   component={Tabs}/>
+								       component={ Tabs }/>
 								<Route path="/icons/font-awesome"
-									   name="Font Awesome"
-									   component={FontAwesome}/>
+								       name="Font Awesome"
+								       component={ FontAwesome }/>
 								<Route path="/icons/simple-line-icons"
-									   name="Simple Line Icons"
-									   component={SimpleLineIcons}/>
+								       name="Simple Line Icons"
+								       component={ SimpleLineIcons }/>
 								<Route path="/widgets" name="Widgets"
-									   component={Widgets}/>
+								       component={ Widgets }/>
 								<Route path="/charts" name="Charts"
-									   component={Charts}/>
+								       component={ Charts }/>
 
 								<Route path="/projects" name="Projects"
-								       component={Projects}/>
+								       component={ Projects }/>
 								<Route path="/city" name="City"
-								       component={City}/>
+								       component={ City }/>
 								<Route path="/test" name="Test"
-								       component={Test}/>
+								       component={ Test }/>
 
 								<Redirect from="/" to="/dashboard"/>
 							</Switch>

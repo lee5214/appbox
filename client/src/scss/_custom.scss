@@ -50,3 +50,6 @@ code, kbd, pre, samp {
 
 //TODO fixed progress bsstyle problem, try combin as one stylesheet/method
 
+.breadcrumb > li + li:before {
+  content: "\00a0/\00a0";
+}

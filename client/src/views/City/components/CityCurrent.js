@@ -5,24 +5,11 @@ import 'weather-icons/css/weather-icons.css';
 import ForecastEmbed from './ForecastEmbed';
 import { fetchUserLocation } from '../../../utils';
 import { DataList } from '../components';
-import PricingTables from "../../Components/PricingTables/PricingTablesDisplay";
+import {PricingTable, PricingTableClean} from 'components/_Composite/PricingTables';
 import moment from 'moment';
 import uid from 'uuid';
+import classes from './City.scss'
 
-const priceData = {
-	id : uid.v4 (),
-	type : 'Basic',
-	bsStyle : 'info',
-	description : 'Very good to start your business',
-	price : 23.00,
-	capabilities : [
-		{key : 'Android / iOS', value : 'Yes'},
-		{key : 'Admin Web Access', value : '85421'},
-		{key : 'Appointments', value : 'Yes'},
-		{key : 'Import / Export Data', value : 'Yes'},
-		{key : 'Data Storage', value : '1GB'},
-	],
-};
 
 class CityCurrent extends Component {
 	renderCurrentTemp (data) {
@@ -56,44 +43,85 @@ class CityCurrent extends Component {
 	renderLineChart ({tempList, dateList, label}) {
 		return (
 			<Card>
-				<CardHeader className={ 'alert' }>
-					Forecast - Range <kbd>5 days</kbd> Frequency <kbd>3 hours</kbd>
-					<div className="card-actions">
+				<CardHeader className={classes.chartHeader}>
+					<h6>Tempature Forecast - Range: <kbd>5 days</kbd> Frequency: <kbd>3 hours</kbd></h6>
+
+					{/*<div className="card-actions">
 						<a href="">
-							<small className="text-muted">X</small>
+						<small className="text-muted">X</small>
 						</a>
-					</div>
+					</div>*/}
 				</CardHeader>
 				<CardBody>
 					<div className="chart-wrapper">
-						<Line data={ {
-							labels : dateList || [1, 2, 1, 1, 1, 1, 1, 1, 1],
-							datasets : [{
-								label : label || 'My First dataset',
-								fill : false,
-								lineTension : 0.1,
-								backgroundColor : 'rgba(75,192,192,0.4)',
-								borderColor : 'rgba(75,192,192,1)',
-								borderCapStyle : 'butt',
-								borderDash : [],
-								borderDashOffset : 0.0,
-								borderJoinStyle : 'miter',
-								pointBorderColor : 'rgba(75,192,192,1)',
-								pointBackgroundColor : '#fff',
-								pointBorderWidth : 1,
-								pointHoverRadius : 5,
-								pointHoverBackgroundColor : 'rgba(75,192,192,1)',
-								pointHoverBorderColor : 'rgba(220,220,220,1)',
-								pointHoverBorderWidth : 2,
-								pointRadius : 1,
-								pointHitRadius : 10,
-								data : tempList || [65, 59, 80, 81, 56, 55, 40],
-							},],
-						}
-						}
-						      options={ {
-							      maintainAspectRatio : false,
-						      } }
+						<Line
+							height={ 100 }
+							data={ {
+								labels : dateList || [1, 2, 1, 1, 1, 1, 1, 1, 1],
+								datasets : [{
+									label : label || 'My First dataset',
+									fill : false,
+									lineTension : 0.1,
+									backgroundColor : 'rgba(75,192,192,0.4)',
+									borderColor : 'rgba(75,192,192,1)',
+									borderCapStyle : 'butt',
+									borderDash : [],
+									borderDashOffset : 0.0,
+									borderJoinStyle : 'miter',
+									pointBorderColor : 'rgba(75,192,192,1)',
+									pointBackgroundColor : '#fff',
+									pointBorderWidth : 1,
+									pointHoverRadius : 5,
+									pointHoverBackgroundColor : 'rgba(75,192,192,1)',
+									pointHoverBorderColor : 'rgba(220,220,220,1)',
+									pointHoverBorderWidth : 2,
+									pointRadius : 1,
+									pointHitRadius : 10,
+									data : tempList || [65, 59, 80, 81, 56, 55, 40],
+								},],
+							}
+							}
+							options={
+								{
+									maintainAspectRatio : true,
+
+									// legend : {
+									//    display : false,
+									// },
+									// scales : {
+									//    xAxes : [{
+									//       gridLines : {
+									// 	      color : 'transparent',
+									// 	      zeroLineColor : 'transparent',
+									//       },
+									//       ticks : {
+									// 	      fontSize : 2,
+									// 	      fontColor : 'transparent',
+									//       },
+									//
+									//    }],
+									//    yAxes : [{
+									//       display : false,
+									//       ticks : {
+									// 	      display : false,
+									// 	      //min : Math.min.apply (Math, cardChartData1.datasets[0].data) - 5,
+									// 	      //max : Math.max.apply (Math, cardChartData1.datasets[0].data) + 5,
+									//       },
+									//    }],
+									// },
+									// elements : {
+									//    line : {
+									//       borderWidth : 1,
+									//    },
+									//    point : {
+									//       radius : 4,
+									//       hitRadius : 10,
+									//       hoverRadius : 4,
+									//    },
+									// },
+								}
+							}
+
 						/>
 					</div>
 				</CardBody>
@@ -163,9 +191,8 @@ class CityCurrent extends Component {
 		const label = city.name;
 		// get forecast temperature in array
 		const tempList = list.map ((item) => item.main.temp);
-		//split data I need, pass to charts props
-		const dateList = list.map ((item) => moment(item.dt_txt).local().format ('MM/DD HH:MM'));
-
+		// split data I need, pass to charts props
+		const dateList = list.map ((item) => moment (item.dt_txt).local ().format ('MM/DD HH:MM'));
 		// const obj = list.map ((item) => {
 		// 	//console.log('date==>', moment(item.dt).format('MM/DD HH'));
 		// 	var tempDate = moment(item.dt).format('MM/DD HH')
@@ -176,13 +203,27 @@ class CityCurrent extends Component {
 		// 	};
 		// });
 		//console.log ('obj=>', obj);
+		const priceData = {
+			id : uid.v4 (),
+			//type : 'Basic',
+			bsStyle : 'info',
+			description : '',
+			//price : '',
+			capabilities : [
+				{key : 'Country', value : sys.country},
+				{key : 'Pressure', value : pressure},
+				{key : 'Humidity', value : humidity},
+				{key : 'Visibility', value : visibility},
+				{key : 'Data Storage', value : '1GB'},
+			],
+		};
 
 		// TODO extends style rework
 		return (
 			<div>
-				<Row>
+				<Row className={classes.embed}>
+					<Col xs={12} lg={12} >
 					<ForecastEmbed lat={ coord.lat } lon={ coord.lon } name={ name }/>
-					<Col>
 						<h1 className={ 'text-center font-weight-bold' }>{ city.name }</h1>
 						<Row>
 							<Col className={ 'text-right' }>
@@ -206,57 +247,24 @@ class CityCurrent extends Component {
 								</div>
 							</Col>
 						</Row>
-						<hr/>
 					</Col>
-				</Row>
-				<Row>
-					<PricingTables { ...priceData }/>
-				</Row>
 
-				<Row>
-
-					<Col xs={ '12' } lg={ '3' }>
-						<DataList hum={ humidity } pres={ pressure } vis={ visibility }/>
+					<Col xs={12} lg={3}>
+						<PricingTableClean { ...priceData }/>
 					</Col>
 					<Col>
 						{ this.renderLineChart ({tempList : tempList, dateList : dateList, label : label}) }
 					</Col>
 				</Row>
-				<CardColumns className="cols-2">
+
+				{/*<CardColumns className="cols-2">
 					{ this.renderBarChart () }
 					{ this.renderDoughnutChart () }
-				</CardColumns>
+				</CardColumns>*/}
 			</div>
 		);
 	};
 }
-
-const returnLineData = (data) => {
-	return {
-		labels : data.map (i => i.date),
-		datasets : [{
-			label : data.label || 'My First dataset',
-			fill : false,
-			lineTension : 0.4,
-			backgroundColor : 'rgba(75,192,192,0.4)',
-			borderColor : 'rgba(75,192,192,1)',
-			borderCapStyle : 'butt',
-			borderDash : [],
-			borderDashOffset : 0.0,
-			borderJoinStyle : 'miter',
-			pointBorderColor : 'rgba(75,192,192,1)',
-			pointBackgroundColor : '#fff',
-			pointBorderWidth : 1,
-			pointHoverRadius : 5,
-			pointHoverBackgroundColor : 'rgba(75,192,192,1)',
-			pointHoverBorderColor : 'rgba(220,220,220,1)',
-			pointHoverBorderWidth : 2,
-			pointRadius : 1,
-			pointHitRadius : 10,
-			data : data.map (i => i.temp) || [65, 59, 80, 81, 56, 55, 40],
-		},],
-	};
-};
 
 const bar = {
 	labels : ['January', 'February', 'March', 'April', 'May', 'June', 'July'], datasets : [{
