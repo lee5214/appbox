@@ -4,64 +4,82 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import { fetchCity } from 'actions';
-import { Col, Form, FormGroup, FormText, Input, InputGroup, InputGroupButton } from 'reactstrap';
+import { Col, Form, Input, InputGroup, InputGroupButton } from 'reactstrap';
+import { fetchUserLocation } from 'utils';
 
 class SearchBar extends Component {
 	constructor (props) {
 		super (props);
-		this.state = {term : '', searchedTerm : []};
+		this.state = {term : '', searchedTerm : [], duplicatedSearch: false};
 	}
 
 	onInputChange = (e) => {
-		this.setState ({term : e.target.value});
+		this.setState ({term : e.target.value.toLowerCase()});
 	};
 
 	onSearchSubmit = (e) => {
 		e.preventDefault ();
-		console.log (this.state);
+		//console.log (this.state);
 		if (!this.state.searchedTerm.includes (this.state.term)) {
-			console.log ('you already searched this term');
+			//TODO warning implementation
+
+			this.setState({duplicatedSearch: false})
 			this.props.fetchCity (this.state.term);
 			this.setState ({term : '', searchedTerm : [...this.state.searchedTerm, this.state.term]});
+		} else {
+			this.setState({duplicatedSearch: true})
 		}
 	};
 
 	componentDidMount () {
+
+		//TODO implement this function later
+		console.log ('your current location=>', fetchUserLocation ());
 		// test purpose
+		this.setState ({term : '', searchedTerm : ['hayward']});
 		this.props.fetchCity ('Hayward');
+		//this.props.fetchCityNews('Hayward');
+
+	}
+
+	warningToggle(){
+		if(this.state.duplicatedSearch){
+			return<h1>Duplicated!!!!</h1>
+		}
 	}
 
 	render () {
-		return (<div>
+		return (
+			<div>
+				{this.warningToggle()}
 				<Form className={ 'input-group' } onSubmit={ (e) => {this.onSearchSubmit (e);} }>
-
 					<Col md="12">
 						<InputGroup>
-							<Input type="text" id="input1-group2" name="input1-group2" placeholder={ '  city name' }
+							<Input type="text" id="input1-group2" name="input1-group2" placeholder={ 'city name' }
 							       onChange={ (e) => this.onInputChange (e) }
 							       value={ this.state.term }/>
 							<InputGroupButton>
-								<Button bsStyle={'primary'} type={ 'submit' }><i className="fa fa-search"></i> Search</Button>
+								<Button bsStyle={ 'primary' } type={ 'submit' }><i className="fa fa-search"></i> Search</Button>
 							</InputGroupButton>
 						</InputGroup>
 					</Col>
 
 				</Form>
 
-				{/*<form className={ 'input-group' } onSubmit={ (e) => {this.onSearchSubmit (e);} }>*/}
-					{/*<input*/}
-						{/*style={ {backgroundColor : '#353535', border : 0, color : 'white'} }*/}
-						{/*placeholder={ '  city name' }*/}
-						{/*onChange={ (e) => this.onInputChange (e) }*/}
-						{/*value={ this.state.term }/>*/}
-					{/*<span className={ 'input-group-btn' }>*/}
-					{/*<Button bsStyle={ 'primary' } type={ 'submit' }>*/}
-						{/*Search*/}
-					{/*</Button>*/}
-				{/*</span>*/}
-					{/*<div>*/}
-					{/*</div>*/}
-				{/*</form>*/}
+				{ /*<form className={ 'input-group' } onSubmit={ (e) => {this.onSearchSubmit (e);} }>*/ }
+				{ /*<input*/ }
+				{ /*style={ {backgroundColor : '#353535', border : 0, color : 'white'} }*/ }
+				{ /*placeholder={ '  city name' }*/ }
+				{ /*onChange={ (e) => this.onInputChange (e) }*/ }
+				{ /*value={ this.state.term }/>*/ }
+				{ /*<span className={ 'input-group-btn' }>*/ }
+				{ /*<Button bsStyle={ 'primary' } type={ 'submit' }>*/ }
+				{ /*Search*/ }
+				{ /*</Button>*/ }
+				{ /*</span>*/ }
+				{ /*<div>*/ }
+				{ /*</div>*/ }
+				{ /*</form>*/ }
 			</div>
 		);
 	}

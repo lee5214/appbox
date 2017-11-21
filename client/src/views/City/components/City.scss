@@ -1,13 +1,32 @@
 //TODO config webpack so that I can use @import /absolute/path in scss
 
-.embed{
-  background: #1a1a1a; //$gray-800;
-  padding: 40px 0;
-  margin-top: 40px;
+.embed {
+  //background: black; //$gray-800;
+  opacity: 0.95;
   margin-bottom: 40px;
 }
 
-.chartHeader{
-  text-align: right;
-  border-bottom: 1px solid white !important;
+.chart {
+  border: 0 !important;
 }
+
+.chartHeader {
+  text-align: right;
+  border-bottom: 0px solid white !important;
+}
+
+.newsCard {
+  min-width: 45% !important;
+  margin-bottom: 20px !important;
+}
+
+.newsCardHeader {
+  border: 0 !important;
+  min-height: 70px !important;
+  padding-bottom: 0 !important;
+}
+
+.newsCardBody {
+  padding-top: 0 !important;
+}
+

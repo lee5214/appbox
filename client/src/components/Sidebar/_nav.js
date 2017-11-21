@@ -107,7 +107,7 @@ export default {
 			icon : 'icon-social-dropbox',
 		},
 		{
-			name : 'City',
+			name : 'Fetch Your City',
 			url : '/city',
 			icon : 'icon-social-dropbox',
 		},

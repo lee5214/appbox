@@ -1,6 +1,6 @@
 .card {
   margin-bottom: 1.5 * $spacer;
-  border: 0;
+  //border: 0;
   // Cards with color accent
   @each $color, $value in $theme-colors {
     &.bg-#{$color} {
@@ -19,9 +19,9 @@
 
 .card-header {
   background: transparent;
-  border: 0;
+  //border: 0;
   .icon-bg {
-    display: inline-body;
+    display: inline-block;
     padding: $card-spacer-y $card-spacer-x !important;
     margin-top: -$card-spacer-y;
     margin-right: $card-spacer-x;
@@ -71,7 +71,7 @@
 }
 //
 .card-footer {
-
+  background: transparent;
   ul {
     display: table;
     width: 100%;

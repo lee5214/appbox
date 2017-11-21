@@ -84,7 +84,7 @@ $sidebar-compact-width:               150px !default;
 $sidebar-compact-height:              $sidebar-compact-width !default;
 $sidebar-color:                       #fff !default;
 $sidebar-bg:                          $gray-800 !default;
-$sidebar-borders:                     none !default;
+$sidebar-borders:                     1px solid red !default;
 $mobile-sidebar-width:                220px !default;
 
 // Sidebar Header
@@ -135,7 +135,7 @@ $sidebar-nav-dropdown-indicator-hover:str-replace(url("data:image/svg+xml;charse
 // Sidebar Footer
 
 $sidebar-footer-height:               auto !default;
-$sidebar-footer-bg:                   rgba(0,0,0,.2) !default;
+$sidebar-footer-bg:                   rgba(0,0,0,.0) !default;
 $sidebar-footer-padding-y:            .75rem !default;
 $sidebar-footer-padding-x:            1rem !default;
 $sidebar-footer-borders:              0 !default;
@@ -205,7 +205,7 @@ $aside-menu-nav-padding-x:            1rem !default;
 // Footer
 
 $footer-height:                       50px !default;
-$footer-bg:                           $gray-100 !default;
+$footer-bg:                           $body-bg !default;
 $footer-color:                        $body-color !default;
 $footer-borders: (
   top: (

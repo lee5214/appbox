@@ -15,7 +15,7 @@ app-root {
   width: 100%;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(100deg, $gray-600, $gray-900)
+  background: $body-bg;// url(https://wallpaper.wiki/wp-content/uploads/2017/05/Desktop-Background-dark-wallpaper.png)//linear-gradient(100deg, $gray-600, $gray-900)
 }
 
 .app-header {
@@ -27,9 +27,10 @@ app-root {
 }
 
 .app-body {
+  background: $gray-700;
   position: fixed;
   overflow: scroll;
-  height: calc(100% - 50px);//header is 50px fixed
+  height: calc(100% - #{$navbar-height} - #{$footer-height});//special syntax to include the scss variable in scss function
   width: 100%;
   display: flex;
   flex-direction: row;

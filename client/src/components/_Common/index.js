@@ -1,11 +1,23 @@
 import {
-	Card, CardImg, CardText, CardBody, CardLink,
-	CardTitle, CardSubtitle, CardFooter,CardImgOverlay,CardGroup
-} from 'reactstrap';
-import {
+	Badge,
+	Label,
 	Accordion,
+	Button,
 	ButtonGroup,
 	ButtonToolbar,
+	Card,
+	CardBody,
+	CardFooter,
+	CardGroup,
+	CardHeader,
+	CardImg,
+	CardImgOverlay,
+	CardLink,
+	CardSubtitle,
+	CardText,
+	CardTitle,
+	CardDeck,
+	CardColumns,
 	Carousel,
 	CarouselItem,
 	Checkbox,
@@ -22,11 +34,16 @@ import {
 	Glyphicon,
 	Grid,
 	HelpBlock,
+	Input,
 	InputGroup,
 	Jumbotron,
 	ListGroup,
 	ListGroupItem,
 	MenuItem,
+	Modal,
+	ModalBody,
+	ModalFooter,
+	ModalHeader,
 	Nav,
 	NavDropdown,
 	NavItem,
@@ -47,14 +64,14 @@ import {
 	TabContent,
 	TabPane,
 	Well,
-} from 'react-bootstrap';
+} from 'reactstrap';
 
 import AffixWrap from './AffixWrap';
 import Alert from './Alert';
 import { AvatarIcon, AvatarImage, AvatarText } from './Avatar';
-import Badge from './Badge';
+//import Badge from './Badge';
 import Breadcrumb from './Breadcrumb';
-import Button from './Button';
+//import Button from './Button';
 //import Charts from './Charts'
 import CollapsablePanel from './CollapsablePanel';
 import ColorPicker from './ColorPicker';
@@ -66,11 +83,12 @@ import FloatGrid from './FloatGrid';
 import GalleryThumbnail from './GalleryThumbnail';
 //import Header from './Header'
 //import Image from './Image'
-import Label from './Label';
+//import Label from './Label';
 //import Layout from './Layout'
 import MaskedTextInput from './MaskedTextInput';
 import Media from './Media';
-import Modal from './Modal';
+//TODO remove?
+//import Modal from './Modal';
 //import Navbar from './Navbar'
 import OutsideClick from './OutsideClick';
 import Panel from './Panel';
@@ -92,8 +110,9 @@ import Treebeard from './Treebeard';
 import Wizard from './Wizard';
 
 export {
-	Card, CardImg, CardText, CardBody, CardLink,
-	CardTitle, CardSubtitle, CardFooter,CardImgOverlay,CardGroup,
+	Input,
+	Card, CardImg, CardText, CardBody, CardLink,CardDeck,CardColumns,
+	CardTitle, CardSubtitle, CardHeader, CardFooter, CardImgOverlay, CardGroup,
 	Accordion,
 	ButtonGroup,
 	ButtonToolbar,
@@ -164,7 +183,7 @@ export {
 	//Layout,
 	MaskedTextInput,
 	Media,
-	Modal,
+	Modal, ModalHeader, ModalFooter, ModalBody,
 	//Navbar,
 	OutsideClick,
 	Panel,

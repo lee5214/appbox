@@ -97,7 +97,6 @@ class City extends Component {
 	render () {
 		return (
 			<div className="animated fadeIn">
-
 				<Row>
 					<Col/>
 					<Col xs={ 'auto' }>
@@ -105,6 +104,7 @@ class City extends Component {
 					</Col>
 					<Col/>
 				</Row>
+
 				<CityList/>
 
 				{/*<CardColumns className="cols-2">

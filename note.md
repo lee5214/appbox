@@ -26,3 +26,7 @@ to render the data from async call directly in render for test
 		],
 	},
 
+
+highlight: nested reducer (sometimes need to re-organise the state like {[cityweather],[citynews]} =>{[city1:{cityweather,citynews}]})
+
+some site block iframe (like NYT)

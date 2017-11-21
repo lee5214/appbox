@@ -1070,7 +1070,7 @@ $orange:                          #f8cb00;
 $yellow:                          #ffc107 !default;
 $green:                           #4dbd74;
 $teal:                            #20c997 !default;
-$cyan:                            #63c2de;
+$cyan:                            #21a8d8;
 
 $colors: (
   blue:                           $blue,
@@ -1089,14 +1089,15 @@ $colors: (
 );
 
 $theme-colors: (
-  primary:                        $blue,
+  primary:                        $cyan,
   secondary:                      $gray-300,
   success:                        $green,
   info:                           $cyan,
   warning:                        $yellow,
   danger:                         $red,
   light:                          $gray-100,
-  dark:                           $gray-900
+  dark:                           $gray-900,
+  transparent:  transparent
 );
 
 // Options
@@ -1110,7 +1111,7 @@ $enable-rounded:                  false;
 //
 // Settings for the `<body>` element.
 
-$body-bg:                         $gray-700;
+$body-bg:                         $gray-800;
 $body-color: $white;
 //$font-family-base;
 //$font-size-base;
@@ -1119,7 +1120,7 @@ $body-color: $white;
 
 
 //breadcrumb
-$breadcrumb-bg: $gray-600;
+$breadcrumb-bg: transparent;
 //$breadcrumb-padding-y:              .75rem !default;
 //$breadcrumb-padding-x:              1rem !default;
 //$breadcrumb-item-padding:           .5rem !default;

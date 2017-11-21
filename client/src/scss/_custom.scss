@@ -53,3 +53,11 @@ code, kbd, pre, samp {
 .breadcrumb > li + li:before {
   content: "\00a0/\00a0";
 }
+.breadcrumb{
+  margin: 15px 0;
+}
+
+// add none border option
+.no-border{
+  border: 0 !important;
+}

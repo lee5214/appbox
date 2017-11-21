@@ -1,13 +1,14 @@
 import { combineReducers } from 'redux';
 
-import redu1 from './fetchData';
-import { cityWeather, fetchCurrentCityTemp } from './cityWeatherReducer';
+import { cityNews, cityWeatherInfo, city } from './cityInfoReducer';
 
 
 /*
  * function that maps each piece of data to the generated state object
  */
 export default combineReducers ({
-	cityInfo : cityWeather,
+	//cityWeatherInfo : cityWeatherInfo,
+	//cityNews : cityNews,
+	cityInfo : city
 	//cityCurrentTemp : fetchCurrentCityTemp,
 });

@@ -1,0 +1,6 @@
+.outline:not(:hover) {
+  background: transparent !important; }
+.outline:hover {
+  color: white !important; }
+
+/*# sourceMappingURL=Button.css.map */

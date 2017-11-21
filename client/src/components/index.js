@@ -1,6 +1,8 @@
 import {
-	Card, CardImg, CardText, CardBody, CardLink,
-	CardTitle, CardSubtitle, CardFooter,CardImgOverlay,CardGroup,
+	Modal,ModalHeader,ModalFooter,ModalBody,
+	Input,
+	Card, CardImg, CardText, CardBody, CardLink,CardDeck,CardColumns,
+	CardTitle, CardSubtitle, CardHeader, CardFooter,CardImgOverlay,CardGroup,
 
 	Accordion,
 	AffixWrap,
@@ -48,7 +50,6 @@ import {
 	MaskedTextInput,
 	Media,
 	MenuItem,
-	Modal,
 	Nav,
 	NavDropdown,
 	NavItem,
@@ -88,9 +89,10 @@ import {
 } from './_Common';
 
 export {
-	Card, CardImg, CardText, CardBody, CardLink,
-	CardTitle, CardSubtitle, CardFooter,CardImgOverlay,CardGroup,
-
+	Input,
+	Card, CardImg, CardText, CardBody, CardLink,CardDeck,CardColumns,
+	CardTitle, CardSubtitle, CardHeader, CardFooter,CardImgOverlay,CardGroup,
+	Modal,ModalHeader,ModalFooter,ModalBody,
 	Accordion,
 	ButtonGroup,
 	ButtonToolbar,
@@ -161,7 +163,6 @@ export {
 	//Layout,
 	MaskedTextInput,
 	Media,
-	Modal,
 	//Navbar,
 	OutsideClick,
 	Panel,

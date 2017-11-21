@@ -1,0 +1,10 @@
+.slimBarWrap > .slimBar {
+  border-radius: 0;
+  height: 3px;
+  margin-bottom: 0; }
+  .slimBarWrap > .slimBar.medium {
+    height: 6px; }
+  .slimBarWrap > .slimBar.large {
+    height: 9px; }
+
+/*# sourceMappingURL=SlimProgressBar.css.map */

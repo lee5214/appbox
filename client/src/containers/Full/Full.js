@@ -24,13 +24,8 @@ import Tabs from '../../views/Components/Tabs/';
 // Icons
 import FontAwesome from '../../views/Icons/FontAwesome/';
 import SimpleLineIcons from '../../views/Icons/SimpleLineIcons/';
-import styled from 'styled-components';
+import classes from './Full.scss'
 
-const Temp = styled.div`
-	margin: 20px 20px 40px 20px;
-	background-color: #262626;
- 
-`;
 class Full extends Component {
 	render () {
 		return (
@@ -39,12 +34,12 @@ class Full extends Component {
 				<div className="app-body">
 					<Sidebar { ...this.props }/>
 					<main className="main">
-						<Temp>
+						<div className={classes.breadcrumb_wrapper}>
 							<Container>
 								<Breadcrumb/>
 							</Container>
-						</Temp>
-						<Container>
+						</div>
+						<Container className={classes.container_content}>
 							<Switch>
 								<Route path="/dashboard" name="Dashboard"
 								       component={ Dashboard }/>

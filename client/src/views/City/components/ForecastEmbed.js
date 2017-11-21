@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class DK extends Component {
+export default class ForecastEmbed extends Component {
 	render () {
 		const {lat, lon, name} = this.props;
 

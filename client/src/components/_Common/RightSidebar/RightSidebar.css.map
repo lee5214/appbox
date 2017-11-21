@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,2BAA4B;EACxB,UAAU,EAAE,KAAK;;AAGrB,wBAAyB;EACrB,UAAU,EAAE,kBAAkB",
+"sources": ["RightSidebar.scss"],
+"names": [],
+"file": "RightSidebar.css"
+}
