@@ -1,37 +1,116 @@
 import React, { Component } from 'react';
-import { Card, CardBody, CardFooter, CardHeader, Col, Input, Label, Row } from 'components';
+import {
+	Button,
+	Card,
+	CardBody,
+	CardFooter,
+	CardHeader,
+	Col,
+	Input,
+	Label,
+	Modal,
+	ModalBody,
+	ModalFooter,
+	ModalHeader,
+	ModalTitle,
+	Row,
+} from 'components';
 
+import classes from './Test.scss'
 class Text extends Component {
+
+	constructor (props) {
+		super (props);
+		this.state = {
+			modal : false,
+			large : false,
+			small : false,
+			primary : false,
+			success : false,
+			warning : false,
+			danger : false,
+			info : false,
+			img_lg : '',
+			img_thumbnail : '',
+			start : false,
+		};
+	}
+
+	toggle = () => {
+		this.setState ({
+			modal : !this.state.modal,
+		});
+	};
+
+	toggleLarge = () => {
+		this.setState ({
+			large : !this.state.large,
+		});
+	};
+
+	toggleMusic () {
+		this.setState ({start : !this.state.start});
+	}
 
 	render () {
 		return (
-			<Row>
-				<Col xs={ 4 }>
-					<h1>TL;DR</h1>
-					<p className='small text-uppercase'>
-						<strong>
-							This is a test
-						</strong>
-					</p>
-					<Card>
+			<div>
+				<Row>
+					<Card xs={ 12 } md={ 6 }>
 						<CardHeader>
-							Card with switch <Label outline bsStyle={'primary'}>aaa</Label>
-							<Label className="switch switch-sm switch-text switch-info float-right mb-0">
-								<Input type="checkbox" className="switch-input" value={'on'}/>
-								<span className="switch-label" data-on="On" data-off="Off"></span>
-								<span className="switch-handle"></span>
-							</Label>
+							<Row>
+								<Col xs={ 10 } lg={ 10 }>
+
+								</Col>
+								<Col xs={ 2 } lg={ 2 }>
+									<Button className={ 'float-right' } outline color="primary" size="sm"
+									        onClick={ this.toggleLarge }>Read</Button>
+								</Col>
+							</Row>
 						</CardHeader>
-						<CardBody>
-							Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-							tincidunt ut
-							laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud
-							exerci tation
-							ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-						</CardBody>
+
+
+						{ /*<Card>*/ }
+						{ /*<CardHeader>*/ }
+						{ /*<i className="fa fa-align-justify"></i>*/ }
+						{ /*{ headline.main }*/ }
+						{ /*<div>*/ }
+						{ /*{ section_name }*/ }
+						{ /*</div>*/ }
+						{ /*<hr/>*/ }
+						{ /*<Button onClick={ this.toggleLarge }>Read</Button>*/ }
+						{ /*</CardHeader>*/ }
+						{ /*</Card>*/ }
+
+
+						<Modal isOpen={ this.state.large } toggle={ this.toggleLarge }
+						       className={ 'modal-lg ' + this.props.className }>
+							<ModalHeader toggle={ this.toggleLarge }>
+
+							</ModalHeader>
+							<ModalBody style={ {height : '100%'} }>
+								<div style={ {height : '80vh', widht : '100vw'} }>
+									<iframe width="0" height="0"
+									        src="https://www.youtube.com/embed/ZHGN3ViWrns?autoplay=1"
+									        frameborder="0"
+									        allowfullscreen>
+									</iframe>
+									<hr/>
+								</div>
+							</ModalBody>
+							<ModalFooter>
+							</ModalFooter>
+						</Modal>
+						<Button onClick={ e => this.toggleMusic (e) }>Toggle Music</Button>
+						{ this.state.start ? <div>
+							<iframe width="0" height="0" src="https://www.youtube.com/embed/ZHGN3ViWrns?autoplay=1"
+							        frameborder="0" allowfullscreen>
+							</iframe>
+							<hr/>
+						</div> : null }
 					</Card>
-				</Col>
-			</Row>
+				</Row>
+			</div>
 		);
 	}
 }

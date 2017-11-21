@@ -12,6 +12,8 @@ import Widgets from '../../views/Widgets/';
 import Projects from '../../views/Projects/Projects';
 import City from '../../views/City/';
 import Test from '../../views/Test/';
+import BannerLine from 'components/_Composite/BannerLine'
+
 // Components
 import Buttons from '../../views/Components/Buttons/';
 import Cards from '../../views/Components/Cards/';
@@ -35,6 +37,7 @@ class Full extends Component {
 					<Sidebar { ...this.props }/>
 					<main className="main">
 						<div className={classes.breadcrumb_wrapper}>
+							<BannerLine/>
 							<Container>
 								<Breadcrumb/>
 							</Container>
