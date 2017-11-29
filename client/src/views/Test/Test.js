@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import socketIOClient from 'socket.io-client';
 import {
 	Button,
 	Card,
@@ -16,43 +17,54 @@ import {
 	Row,
 } from 'components';
 
-import classes from './Test.scss'
-class Text extends Component {
+const socket = socketIOClient('http://localhost:4000')
+
+
+//TODO form knowledge review
+class Test extends Component {
 
 	constructor (props) {
 		super (props);
 		this.state = {
-			modal : false,
-			large : false,
-			small : false,
-			primary : false,
-			success : false,
-			warning : false,
-			danger : false,
-			info : false,
+			largeModal : false,
 			img_lg : '',
 			img_thumbnail : '',
-			start : false,
+			musicStart : false,
+			endpoint : 'http://localhost:4000',
+			color : 'empty',
 		};
+
 	}
 
-	toggle = () => {
+	toggleLargeModal = () => {
 		this.setState ({
-			modal : !this.state.modal,
+			largeModal : !this.state.largeModal,
 		});
 	};
 
-	toggleLarge = () => {
-		this.setState ({
-			large : !this.state.large,
-		});
+	toggleMusic = () => {
+		this.setState ({musicStart : !this.state.musicStart});
 	};
 
-	toggleMusic () {
-		this.setState ({start : !this.state.start});
-	}
+	send = () => {
+		socket.emit ('msg', 'msg');
+	};
+	send2 = () => {
+		socket.emit ('change color', 'red');
+	};
+
 
 	render () {
+		socket.on ('msg', (msg) => {
+			alert(msg)
+			//this.setState({msg:msg})
+			//document.body.style.backgroundColor = color
+		});
+		socket.on ('change color', (color) => {
+			//this.setState({msg:msg})
+			document.querySelector('.app-footer').style.backgroundColor = color
+		});
+
 		return (
 			<div>
 				<Row>
@@ -64,36 +76,21 @@ class Text extends Component {
 								</Col>
 								<Col xs={ 2 } lg={ 2 }>
 									<Button className={ 'float-right' } outline color="primary" size="sm"
-									        onClick={ this.toggleLarge }>Read</Button>
+									        onClick={ this.toggleLargeModal }>Read</Button>
 								</Col>
 							</Row>
 						</CardHeader>
-
-
-						{ /*<Card>*/ }
-						{ /*<CardHeader>*/ }
-						{ /*<i className="fa fa-align-justify"></i>*/ }
-						{ /*{ headline.main }*/ }
-						{ /*<div>*/ }
-						{ /*{ section_name }*/ }
-						{ /*</div>*/ }
-						{ /*<hr/>*/ }
-						{ /*<Button onClick={ this.toggleLarge }>Read</Button>*/ }
-						{ /*</CardHeader>*/ }
-						{ /*</Card>*/ }
-
-
-						<Modal isOpen={ this.state.large } toggle={ this.toggleLarge }
+						<Modal isOpen={ this.state.largeModal } toggle={ this.toggleLargeModal }
 						       className={ 'modal-lg ' + this.props.className }>
-							<ModalHeader toggle={ this.toggleLarge }>
+							<ModalHeader toggle={ this.toggleLargeModal }>
 
 							</ModalHeader>
 							<ModalBody style={ {height : '100%'} }>
 								<div style={ {height : '80vh', widht : '100vw'} }>
-									<iframe width="0" height="0"
+									<iframe width="100%" height="100%"
 									        src="https://www.youtube.com/embed/ZHGN3ViWrns?autoplay=1"
-									        frameborder="0"
-									        allowfullscreen>
+									        frameBorder="0"
+									        allowFullScreen>
 									</iframe>
 									<hr/>
 								</div>
@@ -102,17 +99,24 @@ class Text extends Component {
 							</ModalFooter>
 						</Modal>
 						<Button onClick={ e => this.toggleMusic (e) }>Toggle Music</Button>
-						{ this.state.start ? <div>
+						{ this.state.musicStart ? <div>
 							<iframe width="0" height="0" src="https://www.youtube.com/embed/ZHGN3ViWrns?autoplay=1"
-							        frameborder="0" allowfullscreen>
+							        frameBorder="0" allowFullScreen>
 							</iframe>
 							<hr/>
 						</div> : null }
 					</Card>
+				</Row>
+
+				<Row>
+					{ this.state.msg }
+					{ this.state.color }
+					<Button onClick={this.send }>change</Button>
+					<Button onClick={this.send2 }>change</Button>
 				</Row>
 			</div>
 		);
 	}
 }
 
-export default Text;
+export default Test;

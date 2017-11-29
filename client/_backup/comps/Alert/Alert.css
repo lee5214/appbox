@@ -1,11 +1,11 @@
 /*
 Error: $color: 'theme-color("primary")' is not a color for `darken'
-        on line 149 of ../bootstrap/_variables.scss
-        from line 1 of app.scss
+        on line 149 of ../../../scss/lee5214/bootstrap/_variables.scss
+        from line 1 of Alert.scss
 
 Backtrace:
-../bootstrap/_variables.scss:149
-app.scss:1
+../../../scss/lee5214/bootstrap/_variables.scss:149
+Alert.scss:1
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.3/lib/sass/script/tree/funcall.rb:315:in `reformat_argument_error'
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.3/lib/sass/script/tree/funcall.rb:162:in `rescue in _perform'
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.3/lib/sass/script/tree/funcall.rb:132:in `_perform'
@@ -61,4 +61,4 @@ app.scss:1
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: $color: 'theme-color(\"primary\")' is not a color for `darken'\A         on line 149 of ../bootstrap/_variables.scss\A         from line 1 of app.scss"; }
+  content: "Error: $color: 'theme-color(\"primary\")' is not a color for `darken'\A         on line 149 of ../../../scss/lee5214/bootstrap/_variables.scss\A         from line 1 of Alert.scss"; }

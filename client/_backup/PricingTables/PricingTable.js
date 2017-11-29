@@ -3,7 +3,7 @@ import hash from 'object-hash';
 import _ from 'lodash';
 import numeral from 'numeral';
 
-import { Button, Divider, Label, Panel, Table } from 'components/_Common';
+import { Button, Divider, Label, Panel, Table } from 'components';
 import classes from './PricingTables.scss';
 
 
@@ -14,7 +14,7 @@ const PricingTable = props => (
 				className={ classes.header }
 
 			>
-				<Label >
+				<Label>
 					{ props.type }
 				</Label>
 				<div>

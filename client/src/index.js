@@ -14,7 +14,7 @@ import 'simple-line-icons/css/simple-line-icons.css';
 import './scss/style.css';
 // Temp fix for reactstrap
 // import './scss/core/_dropdown-menu-right.scss'
-
+import { composeWithDevTools } from 'redux-devtools-extension';
 // Containers
 import Full from './containers/Full';
 // reducers
@@ -25,7 +25,8 @@ import Register from './views/Pages/Register/';
 import Page404 from './views/Pages/Page404/';
 import Page500 from './views/Pages/Page500/';
 
-const store = createStore(reducers, applyMiddleware(ReduxPromise));
+const store = createStore(reducers, composeWithDevTools(
+	applyMiddleware(ReduxPromise)));
 
 ReactDOM.render(
 

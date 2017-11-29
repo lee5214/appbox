@@ -5,42 +5,42 @@ import { Badge, Card, CardBody, CardHeader, Col, Row } from 'components';
 import 'weather-icons/css/weather-icons.css';
 import ForecastEmbed from './ForecastEmbed';
 import { fetchUserLocation } from '../../../utils';
-import { PricingTable, PricingTableClean } from 'components/_Composite/PricingTables';
+import { InfoList } from 'components';
 import moment from 'moment';
 import uid from 'uuid';
 import classes from './City.scss';
 import NYTNewsList from './NYTNewsList';
 
 class CityCurrent extends Component {
-	renderCurrentTemp (data) {
-		// set up a initial state for rendering 'null' when data
-		// from async call is not ready
-		if (!this.props.info) {
-			return <h1>Loading!!!!</h1>;
-		}
-		return (
-			<span>Temp: { data.main.temp }</span>
-		);
-	}
+	// renderCurrentTemp (data) {
+	// 	// set up a initial state for rendering 'null' when data
+	// 	// from async call is not ready
+	// 	if (!this.props.info) {
+	// 		return <h1>Loading!!!!</h1>;
+	// 	}
+	// 	return (
+	// 		<span>Temp: { data.main.temp }</span>
+	// 	);
+	// }
 
-	renderCurrentWeatherIcon (data) {
-		if (!data) {
-			return <h1>Loading Icon</h1>;
-		}
-		switch (data.weather[0].main) {
-			case 'Fog':
-				return (<i className='wi wi-day-fog'/>);
-			case 'Clouds':
-				return (<i className='wi wi-day-cloudy'/>);
-			case 'Clear':
-				return (<i className='wi wi-day-sunny'/>);
-			default:
-				return <h1>Loading</h1>;
-		}
+	// renderCurrentWeatherIcon (data) {
+	// 	if (!data) {
+	// 		return <h1>Loading Icon</h1>;
+	// 	}
+	// 	switch (data.weather[0].main) {
+	// 		case 'Fog':
+	// 			return (<i className='wi wi-day-fog'/>);
+	// 		case 'Clouds':
+	// 			return (<i className='wi wi-day-cloudy'/>);
+	// 		case 'Clear':
+	// 			return (<i className='wi wi-day-sunny'/>);
+	// 		default:
+	// 			return <h1>Loading</h1>;
+	// 	}
+	//
+	// }
 
-	}
-
-	renderLineChart ({tempList, dateList, label}) {
+	renderLineChart = ({tempList, dateList, label}) => {
 		return (
 			<Card className={ classes.chart }>
 				<CardHeader className={ classes.chartHeader }>
@@ -130,7 +130,7 @@ class CityCurrent extends Component {
 		);
 	}
 
-	renderBarChart () {
+	renderBarChart = () => {
 		return (
 
 			<Card>
@@ -155,7 +155,7 @@ class CityCurrent extends Component {
 		);
 	}
 
-	renderDoughnutChart () {
+	renderDoughnutChart = () => {
 		return (
 
 			<Card>
@@ -177,7 +177,7 @@ class CityCurrent extends Component {
 			;
 	}
 
-	componentWillMount () {
+	componentWillMount = () => {
 		fetchUserLocation ();
 		if (!this.props.info) {
 			return <h1>Loading!!!!</h1>;
@@ -204,10 +204,10 @@ class CityCurrent extends Component {
 		// 	};
 		// });
 		//console.log ('obj=>', obj);
-		const priceData = {
+		const infoListData = {
 			id : uid.v4 (),
 			//type : 'Basic',
-			bsStyle : 'info',
+			//bsStyle : 'info',
 			description : '',
 			//price : '',
 			capabilities : [
@@ -251,8 +251,8 @@ class CityCurrent extends Component {
 						</Row>
 					</Card>
 				</Col>
-				<Col xs={ 12 } lg={ 3 }>
-					<PricingTableClean { ...priceData }/>
+				<Col xs={ 12 } lg={ 3 } className={'d-flex'}>
+					<InfoList { ...infoListData }/>
 				</Col>
 				<Col xs={ 12 } lg={ 9 }>
 					{ this.renderLineChart ({tempList, dateList, label : city.name}) }

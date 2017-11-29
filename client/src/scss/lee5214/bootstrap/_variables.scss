@@ -735,7 +735,7 @@ $progress-bar-bg:                   theme-color("primary") !default;
 $progress-bar-animation-timing:     1s linear infinite !default;
 $progress-bar-transition:           width .6s ease !default;
 
-// List group
+// InfoList group
 
 $list-group-bg:                     $white !default;
 $list-group-border-color:           rgba($black,.125) !default;
@@ -1661,7 +1661,7 @@ $progress-bar-white-bg:       $brand-white;
 
 
 
-//== List group
+//== InfoList group
 //
 //##
 
@@ -1669,7 +1669,7 @@ $progress-bar-white-bg:       $brand-white;
 $list-group-bg:                 $navbar-inverse-bg;
 //** `.list-group-item` border color
 $list-group-border:             $gray-darker;
-//** List group border radius
+//** InfoList group border radius
 $list-group-border-radius:      $border-radius-base;
 
 //** Background color of single list items on hover

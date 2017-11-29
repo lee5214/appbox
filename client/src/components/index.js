@@ -1,9 +1,15 @@
+import Breadcrumb from './_Common/Breadcrumb/Breadcrumb'
+import {
+	InfoList,
+	BannerLine,
+	//PricingTable, PricingTableClean, PricingTablesDisplay
+	} from './_Composite'
+
 import {
 	Modal,ModalHeader,ModalFooter,ModalBody,
 	Input,
 	Card, CardImg, CardText, CardBody, CardLink,CardDeck,CardColumns,
 	CardTitle, CardSubtitle, CardHeader, CardFooter,CardImgOverlay,CardGroup,
-
 	Accordion,
 	AffixWrap,
 	Alert,
@@ -11,7 +17,6 @@ import {
 	AvatarImage,
 	AvatarText,
 	Badge,
-	Breadcrumb,
 	Button,
 	ButtonGroup,
 	ButtonToolbar,
@@ -86,9 +91,12 @@ import {
 	TreeNavigator,
 	Well,
 	Wizard,
-} from './_Common';
+} from 'reactstrap';
 
 export {
+	InfoList,
+	//PricingTable, PricingTableClean, PricingTablesDisplay,
+	Breadcrumb,
 	Input,
 	Card, CardImg, CardText, CardBody, CardLink,CardDeck,CardColumns,
 	CardTitle, CardSubtitle, CardHeader, CardFooter,CardImgOverlay,CardGroup,
@@ -144,7 +152,6 @@ export {
 	AvatarText,
 	AvatarIcon,
 	Badge,
-	Breadcrumb,
 	Button,
 	//Charts,
 	CollapsablePanel,

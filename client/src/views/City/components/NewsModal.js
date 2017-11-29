@@ -132,7 +132,7 @@ class Modals extends Component {
 							{ headline.main }
 						</Col>
 						<Col xs={ 2 } lg={ 2 }>
-							<Button className={ 'float-right' } outline color="primary" size="sm"
+							<Button className={ 'float-right mt-2' } outline color="primary" size="sm"
 							        onClick={ this.toggleLarge }>Read</Button>
 						</Col>
 					</Row>

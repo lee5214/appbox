@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import axios from 'axios';
-import { Bar, Doughnut, Line, Pie, Polar, Radar } from 'react-chartjs-2';
-import { Card, CardBody, CardColumns, CardHeader, Col, Row } from 'reactstrap';
+import { Col, Row } from 'reactstrap';
 import { CityList, SearchBar } from './index';
-import Badge from 'components/_Common/Badge';
 import { Colors } from 'consts';
 
 const line = {
@@ -94,6 +91,7 @@ class City extends Component {
 		super (props);
 		this.state = {quote : ''};
 	}
+
 	render () {
 		return (
 			<div className="animated fadeIn">
@@ -107,106 +105,106 @@ class City extends Component {
 
 				<CityList/>
 
-				{/*<CardColumns className="cols-2">
-					<Card>
-						<CardHeader className={ 'alert alert-primary' }>
-							Line Chart
-							<div className="card-actions">
-								<a href="http://www.chartjs.org">
-									<small className="text-muted">docs</small>
-								</a>
-							</div>
-						</CardHeader>
-						<CardBody>
-							<div className="chart-wrapper">
-								<Line data={ line }
-								      options={ {
-									      maintainAspectRatio : false,
-								      } }
-								/>
-							</div>
-						</CardBody>
-					</Card>
-					<Card>
-						<CardHeader>
-							Bar Chart
-							<div className="card-actions">
-								<a href="http://www.chartjs.org">
-									<small className="text-muted">docs</small>
-								</a>
-							</div>
-						</CardHeader>
-						<CardBody>
-							<div className="chart-wrapper">
-								<Bar data={ bar }
-								     options={ {
-									     maintainAspectRatio : false,
-								     } }
-								/>
-							</div>
-						</CardBody>
-					</Card>
-					<Card>
-						<CardHeader>
-							Doughnut Chart
-							<div className="card-actions">
-								<a href="http://www.chartjs.org">
-									<small className="text-muted">docs</small>
-								</a>
-							</div>
-						</CardHeader>
-						<CardBody>
-							<div className="chart-wrapper">
-								<Doughnut data={ doughnut }/>
-							</div>
-						</CardBody>
-					</Card>
-					<Card>
-						<CardHeader>
-							Radar Chart
-							<div className="card-actions">
-								<a href="http://www.chartjs.org">
-									<small className="text-muted">docs</small>
-								</a>
-							</div>
-						</CardHeader>
-						<CardBody>
-							<div className="chart-wrapper">
-								<Radar data={ radar }/>
-							</div>
-						</CardBody>
-					</Card>
-					<Card>
-						<CardHeader>
-							Pie Chart
-							<div className="card-actions">
-								<a href="http://www.chartjs.org">
-									<small className="text-muted">docs</small>
-								</a>
-							</div>
-						</CardHeader>
-						<CardBody>
-							<div className="chart-wrapper">
-								<Pie data={ pie }/>
-							</div>
-						</CardBody>
-					</Card>
-					<Card>
-						<CardHeader>
-							Polar Area Chart
-							<div className="card-actions">
-								<a href="http://www.chartjs.org">
-									<small className="text-muted">docs</small>
-								</a>
-							</div>
-						</CardHeader>
-						<CardBody>
-							<div className="chart-wrapper">
-								<Polar data={ polar }/>
-							</div>
-						</CardBody>
-					</Card>
-				</CardColumns>*/}
+				{ /*<CardColumns className="cols-2">
+				 <Card>
+				 <CardHeader className={ 'alert alert-primary' }>
+				 Line Chart
+				 <div className="card-actions">
+				 <a href="http://www.chartjs.org">
+				 <small className="text-muted">docs</small>
+				 </a>
+				 </div>
+				 </CardHeader>
+				 <CardBody>
+				 <div className="chart-wrapper">
+				 <Line data={ line }
+				 options={ {
+				 maintainAspectRatio : false,
+				 } }
+				 />
+				 </div>
+				 </CardBody>
+				 </Card>
+				 <Card>
+				 <CardHeader>
+				 Bar Chart
+				 <div className="card-actions">
+				 <a href="http://www.chartjs.org">
+				 <small className="text-muted">docs</small>
+				 </a>
+				 </div>
+				 </CardHeader>
+				 <CardBody>
+				 <div className="chart-wrapper">
+				 <Bar data={ bar }
+				 options={ {
+				 maintainAspectRatio : false,
+				 } }
+				 />
+				 </div>
+				 </CardBody>
+				 </Card>
+				 <Card>
+				 <CardHeader>
+				 Doughnut Chart
+				 <div className="card-actions">
+				 <a href="http://www.chartjs.org">
+				 <small className="text-muted">docs</small>
+				 </a>
+				 </div>
+				 </CardHeader>
+				 <CardBody>
+				 <div className="chart-wrapper">
+				 <Doughnut data={ doughnut }/>
+				 </div>
+				 </CardBody>
+				 </Card>
+				 <Card>
+				 <CardHeader>
+				 Radar Chart
+				 <div className="card-actions">
+				 <a href="http://www.chartjs.org">
+				 <small className="text-muted">docs</small>
+				 </a>
+				 </div>
+				 </CardHeader>
+				 <CardBody>
+				 <div className="chart-wrapper">
+				 <Radar data={ radar }/>
+				 </div>
+				 </CardBody>
+				 </Card>
+				 <Card>
+				 <CardHeader>
+				 Pie Chart
+				 <div className="card-actions">
+				 <a href="http://www.chartjs.org">
+				 <small className="text-muted">docs</small>
+				 </a>
+				 </div>
+				 </CardHeader>
+				 <CardBody>
+				 <div className="chart-wrapper">
+				 <Pie data={ pie }/>
+				 </div>
+				 </CardBody>
+				 </Card>
+				 <Card>
+				 <CardHeader>
+				 Polar Area Chart
+				 <div className="card-actions">
+				 <a href="http://www.chartjs.org">
+				 <small className="text-muted">docs</small>
+				 </a>
+				 </div>
+				 </CardHeader>
+				 <CardBody>
+				 <div className="chart-wrapper">
+				 <Polar data={ polar }/>
+				 </div>
+				 </CardBody>
+				 </Card>
+				 </CardColumns>*/ }
 			</div>
 		);
 	}

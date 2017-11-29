@@ -8,7 +8,7 @@
   },
   "scripts": {
     "client": "npm run start --prefix client",
-    "server": "node bin/start.js",
+    "server": "nodemon bin/start.js",
     "start": "concurrently \"npm run client \" \" npm run server \" ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -47,5 +47,7 @@
     "stripe": "^5.0.0",
     "weather-icons": "^1.3.2"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "socket.io": "^2.0.4"
+  }
 }

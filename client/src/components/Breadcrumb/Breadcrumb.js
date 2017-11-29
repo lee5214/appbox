@@ -52,7 +52,6 @@ const Breadcrumbs = ({...rest, location : {pathname}, match}) => {
 					{ items }
 				</Breadcrumb>
 			</Col>
-
 		</Row>
 
 	);
