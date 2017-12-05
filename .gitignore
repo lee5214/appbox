@@ -3,11 +3,17 @@
 # dependencies
 /node_modules
 /client/node_modules
+
+# secrets
+/config/credentials.js
+/client/_backup
+
 # testing
+/tests
 /coverage
 
 # production
-/build
+/client/build
 
 # misc
 .DS_Store
@@ -22,5 +28,5 @@ yarn-error.log*
 .gitignore
 etc/
 
-.idea/workspace.xml
+# .idea/workspace.xml
 
