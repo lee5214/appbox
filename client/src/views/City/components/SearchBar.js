@@ -34,7 +34,9 @@ class SearchBar extends Component {
 	componentDidMount () {
 
 		//TODO implement this function later
-		console.log ('your current location=>', fetchUserLocation ());
+
+		//console.log ('your current location=>', fetchUserLocation ());
+
 		// test purpose
 		this.setState ({term : '', searchedTerm : ['hayward']});
 		this.props.fetchCity ('Hayward');

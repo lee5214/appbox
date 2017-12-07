@@ -8,7 +8,7 @@ class CityList extends Component {
 
 	render () {
 		//const data = {weather: this.props.cityWeatherInfo,news: this.props.cityNews}
-		console.log(this.props.cityInfo)
+		//console.log(this.props.cityInfo)
 		return (
 			<div>
 				{ this.props.cityInfo.map (info => <CityCurrent key={info.cityWeather.id} info={ info }/>) }
@@ -19,7 +19,7 @@ class CityList extends Component {
 }
 
 function mapStateToProps (state) {
-	console.log ('CityList state=>', state);
+	//console.log ('CityList state=>', state);
 	return {
 		cityInfo: state.cityInfo,
 		// cityWeatherInfo : state.cityWeatherInfo,

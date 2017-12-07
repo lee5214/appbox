@@ -1,6 +1,19 @@
 import React, { Component } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import { Container } from 'reactstrap';
+import { connect } from "react-redux";
+import * as actions from '../../actions'
+import { bindActionCreators } from 'redux';
+import { fetchUser } from 'actions';
+// Components
+import Buttons from '../../views/Components/Buttons/';
+import Cards from '../../views/Components/Cards/';
+import Forms from '../../views/Components/Forms/';
+import Modals from '../../views/Components/Modals/';
+import SocialButtons from '../../views/Components/SocialButtons/';
+import Switches from '../../views/Components/Switches/';
+import Tables from '../../views/Components/Tables/';
+import Tabs from '../../views/Components/Tabs/';
 import Header from '../../components/Header/';
 import Sidebar from '../../components/Sidebar/';
 import Breadcrumb from '../../components/Breadcrumb/';
@@ -12,23 +25,18 @@ import Widgets from '../../views/Widgets/';
 import Projects from '../../views/Projects/Projects';
 import City from '../../views/City/';
 import Test from '../../views/Test/';
-import BannerLine from 'components/_Composite/BannerLine'
-
-// Components
-import Buttons from '../../views/Components/Buttons/';
-import Cards from '../../views/Components/Cards/';
-import Forms from '../../views/Components/Forms/';
-import Modals from '../../views/Components/Modals/';
-import SocialButtons from '../../views/Components/SocialButtons/';
-import Switches from '../../views/Components/Switches/';
-import Tables from '../../views/Components/Tables/';
-import Tabs from '../../views/Components/Tabs/';
+import BannerLine from 'components/_Composite/BannerLine';
 // Icons
 import FontAwesome from '../../views/Icons/FontAwesome/';
 import SimpleLineIcons from '../../views/Icons/SimpleLineIcons/';
-import classes from './Full.scss'
+import classes from './Full.scss';
 
 class Full extends Component {
+	componentDidMount () {
+		this.props.fetchUser();
+		//console.log('/full/ props',this.props)
+	}
+
 	render () {
 		return (
 			<div className="app">
@@ -36,13 +44,13 @@ class Full extends Component {
 				<div className="app-body">
 					<Sidebar { ...this.props }/>
 					<main className="main">
-						<div className={classes.breadcrumb_wrapper}>
+						<div className={ classes.breadcrumb_wrapper }>
 							<BannerLine/>
 							<Container>
 								<Breadcrumb/>
 							</Container>
 						</div>
-						<Container className={classes.container_content}>
+						<Container className={ classes.container_content }>
 							<Switch>
 								<Route path="/dashboard" name="Dashboard"
 								       component={ Dashboard }/>
@@ -94,4 +102,9 @@ class Full extends Component {
 	}
 }
 
-export default Full;
+function mapDispatchToProps (dispatch) {
+	return bindActionCreators ({fetchUser}, dispatch);
+}
+
+
+export default connect (null,mapDispatchToProps) (Full);

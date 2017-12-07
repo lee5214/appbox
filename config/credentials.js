@@ -1,4 +1,8 @@
-module.exports = {
-	googleClientID : '317666478276-1cm68env0ihvh7duulj20vvkuldnfhj2.apps.googleusercontent.com',
-	googleClientSecret : '6PuAXvkIcQGvv3rtzTOnHPyw',
-};
+const prodKey = require ('./prodKey.js');
+const devKey = require ('./devKey.js');
+
+if (process.env.NODE_ENV === 'production') {
+	module.exports = prodKey;
+} else {
+	module.exports = devKey;
+}

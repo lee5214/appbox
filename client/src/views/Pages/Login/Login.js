@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Container, Row, Col, CardGroup, Card, CardBody, Button, Input, InputGroup, InputGroupAddon} from 'reactstrap';
+import {Container, Row, Col, CardGroup, Card, CardBody,CardFooter, Button, Input, InputGroup, InputGroupAddon} from 'reactstrap';
 
 
 class Login extends Component {
@@ -31,6 +31,22 @@ class Login extends Component {
                       </Col>
                     </Row>
                   </CardBody>
+                  <CardFooter className="p-4">
+                    <Row>
+                      <Col xs="12" sm="6">
+                        <Button className="btn-facebook" block><span>facebook</span></Button>
+                      </Col>
+                      <Col xs="12" sm="6">
+                        <Button className="btn-google" block href={'/auth/google'}><span>google</span></Button>
+                      </Col>
+                      <Col xs="12" sm="6">
+                        <Button className="btn-logout" block href={'/api/logout'}><span>logout</span></Button>
+                      </Col>
+                      <Col xs="12" sm="6">
+                        <Button className="btn-twitter" block><span>twitter</span></Button>
+                      </Col>
+                    </Row>
+                  </CardFooter>
                 </Card>
                 <Card className="text-white bg-primary py-5 d-md-down-none" style={{ width: 44 + '%' }}>
                   <CardBody className="text-center">

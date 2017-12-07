@@ -1,7 +1,7 @@
 export function fetchUserLocation () {
 	if (navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition (function (position) {
-			console.log (position.coords.latitude, position.coords.longitude);
+			console.log ('get location in /utils',position.coords.latitude, position.coords.longitude);
 		});
 	}
 }

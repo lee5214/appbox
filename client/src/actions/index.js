@@ -1,7 +1,25 @@
 // fetchCity
-import { FETCH_CITY_WEATHER, fetchCityWeather, FETCH_CITY_NEWS, fetchCityNews,FETCH_CITY, fetchCity } from './fetchCity';
+import {
+	FETCH_CITY,
+	FETCH_CITY_NEWS,
+	FETCH_CITY_WEATHER,
+	fetchCity,
+	fetchCityNews,
+	fetchCityWeather,
+} from './fetchCity';
 
-export { FETCH_CITY_WEATHER, fetchCityWeather, FETCH_CITY_NEWS, fetchCityNews, FETCH_CITY, fetchCity };
+import { FETCH_USER, fetchUser, } from './fetchUser';
+
+export {
+	FETCH_CITY_WEATHER,
+	fetchCityWeather,
+	FETCH_CITY_NEWS,
+	fetchCityNews,
+	FETCH_CITY,
+	fetchCity,
+	FETCH_USER,
+	fetchUser,
+};
 
 // test
 // export function selectBook (str) {

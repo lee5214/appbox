@@ -15,7 +15,7 @@ class NYTNewsList extends Component {
 	}
 
 	render () {
-		console.log (this.props.newsList);
+		//console.log (this.props.newsList);
 		return (
 			<div>
 				<h1 className={ 'text-center font-weight-bold mb-4 mt-4' }> City News </h1>

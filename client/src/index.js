@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore,applyMiddleware } from 'redux';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import Thunk from 'redux-thunk';
+import ReduxThunk from 'redux-thunk';
 import ReduxPromise from 'redux-promise';
 // Styles
 // Import Font Awesome Icons Set
@@ -26,12 +26,14 @@ import Page404 from './views/Pages/Page404/';
 import Page500 from './views/Pages/Page500/';
 
 const store = createStore(reducers, composeWithDevTools(
-	applyMiddleware(ReduxPromise)));
+	applyMiddleware(ReduxThunk)));
 
 ReactDOM.render(
 
 	<Provider store={store}>
-		<HashRouter>
+
+		{/*<HashRouter> is for static website, <BrowserRouter> is more for dynamic*/}
+		<BrowserRouter>
 			<Switch>
 				<Route exact path="/login" name="Login Page" component={Login}/>
 				<Route exact path="/register" name="Register Page"
@@ -40,6 +42,6 @@ ReactDOM.render(
 				<Route exact path="/500" name="Page 500" component={Page500}/>
 				<Route path="/" name="Home" component={Full}/>
 			</Switch>
-		</HashRouter>
+		</BrowserRouter>
 	</Provider>
 	, document.getElementById('root'));
