@@ -12,10 +12,10 @@ require ('../server/socket') (server);
 
 //  mongoose
 require ('../models/User');
-mongoose.connect (keys.mongoUri);
+mongoose.connect (keys.mongo.dev.mongoUri);
 
 // passport
-require ('../server/passport') (keys);
+require ('../server/passport') ();
 
 // requests go through middleware before route handlers
 //  cookie

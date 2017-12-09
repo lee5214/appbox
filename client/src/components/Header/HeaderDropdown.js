@@ -19,12 +19,12 @@ class HeaderDropdown extends Component {
 	}
 
 	dropAccnt () {
-		const {photo, img} = this.props.userInfo;
+		const {avatar} = this.props.userInfo.local;
 		return (
 			<Dropdown isOpen={ this.state.dropdownOpen } toggle={ this.toggle }>
 				<DropdownToggle nav>
-					<img src={ photo || img || 'img/avatars/6.jpg' } className="img-avatar"
-					     alt="admin@bootstrapmaster.com"/>
+					<img src={ avatar || 'img/avatars/6.jpg' } className="img-avatar"
+					     alt={''} />
 				</DropdownToggle>
 				<DropdownMenu right>
 					<DropdownItem header tag="div" className="text-center"><strong>Account</strong></DropdownItem>

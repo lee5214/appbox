@@ -1,11 +1,13 @@
 const passport = require ('passport');
 const GoogleStrategy = require ('passport-google-oauth20');
+const FacebookStrategy = require ('passport-facebook');
 const mongoose = require ('mongoose');
+const keys = require ('../config/credentials');
 // special import style in mongoose in case you import multiple models
 // this schema is defined in /models
 const User = mongoose.model ('users');
 
-module.exports = (keys) => {
+module.exports = () => {
 	// user here is either existingUser or user in the promises below
 	// oauth's purpose is allowing someone to sign in
 	// then I use its own id saved in db
@@ -20,11 +22,12 @@ module.exports = (keys) => {
 				done (null, user);
 			});
 	});
+
 	passport.use (
 		new GoogleStrategy (
 			{
-				clientID : keys.googleClientID,
-				clientSecret : keys.googleClientSecret,
+				clientID : keys.google.googleClientID,
+				clientSecret : keys.google.googleClientSecret,
 				callbackURL : '/auth/google/callback',
 			},
 			// refactor promise using async/await
@@ -37,11 +40,12 @@ module.exports = (keys) => {
 				}
 				else {
 					const user = await new User ({
-						googleID : profile.id,
-						email : profile.emails[0].value,
-						photo : profile.photos[0].value,
-						language : profile._json.language,
-						img : profile._json.image.url,
+						local : {
+							email : profile.emails[0].value,
+							displayName : profile.displayName,
+							avatar : profile.photos[0].value,
+						},
+						google : profile._json,
 					}).save ();
 					// call done() after user is saved in db
 					// (error, user record)
@@ -70,4 +74,38 @@ module.exports = (keys) => {
 			},
 		),
 	);
+
+	passport.use (
+		new FacebookStrategy (
+			{
+				clientID : keys.facebook.facebookAppID,
+				clientSecret : keys.facebook.facebookAppSecret,
+				callbackURL : "/auth/facebook/callback",
+				profileFields : ['id', 'birthday', 'email', 'first_name', 'picture'],
+			},
+			async (accessToken, refreshToken, profile, done) => {
+				console.log ('profile=>', profile);
+				const existingUser = await User.findOne ({facebookID : profile.id});
+				if (existingUser) {
+					done (null, existingUser);
+				}
+				else {
+					const user = await new User ({
+						local : {
+							email : profile.emails[0].value,
+							//firstName : profile.first_name,
+
+							displayName : profile.displayName,
+							avatar : profile.photos[0].value || '',
+						},
+						facebook : profile._json,
+						// email : profile.emails[0].value,
+						// photo : profile.photos[0].value,
+						// language : profile._json.language,
+						// img : profile._json.image.url,
+					}).save ();
+					done (null, user);
+				}
+			},
+		));
 };

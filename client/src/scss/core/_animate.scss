@@ -25,3 +25,26 @@
 .fadeIn {
   animation-name: fadeIn;
 }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  50% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.fadeOut {
+  animation-name: fadeOut;
+}
+
+.alertFadeOut {
+  animation: fadeOut 3s ease-in .2s forwards;
+}

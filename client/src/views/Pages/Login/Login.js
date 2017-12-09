@@ -34,16 +34,15 @@ class Login extends Component {
                   <CardFooter className="p-4">
                     <Row>
                       <Col xs="12" sm="6">
-                        <Button className="btn-facebook" block><span>facebook</span></Button>
+                        <Button href={'/auth/facebook'} className="btn-facebook mb-3" block><span>facebook</span></Button>
                       </Col>
+
                       <Col xs="12" sm="6">
-                        <Button className="btn-google" block href={'/auth/google'}><span>google</span></Button>
+                        <Button href={'/auth/google'} className="btn-google-plus mb-3" block ><span>google</span></Button>
                       </Col>
+
                       <Col xs="12" sm="6">
-                        <Button className="btn-logout" block href={'/api/logout'}><span>logout</span></Button>
-                      </Col>
-                      <Col xs="12" sm="6">
-                        <Button className="btn-twitter" block><span>twitter</span></Button>
+                        <Button className="btn-twitter mb-3" block><span>twitter</span></Button>
                       </Col>
                     </Row>
                   </CardFooter>
@@ -54,7 +53,7 @@ class Login extends Component {
                       <h2>Sign up</h2>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua.</p>
-                      <Button color="primary" className="mt-3" active>Register Now!</Button>
+                      <Button href={'/register'} color="primary" className="mt-3" active>Register Now!</Button>
                     </div>
                   </CardBody>
                 </Card>

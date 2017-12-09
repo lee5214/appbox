@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Badge, Nav, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
+import { Fade, Alert, Badge, Nav, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
 import HeaderDropdown from './HeaderDropdown';
 
 class Header extends Component {
@@ -36,7 +36,7 @@ class Header extends Component {
 			case false:
 				return (
 					<NavItem className="d-md-down-none">
-						<NavLink href={ '/login' }><i className="icon-login" /></NavLink>
+						<NavLink href={ '/login' }><i className="icon-login"/></NavLink>
 					</NavItem>
 				);
 			default:
@@ -44,10 +44,25 @@ class Header extends Component {
 		}
 	}
 
+	renderLogInAlert () {
+		if (this.props.userInfo) {
+			return (
+					<Alert className={'alertFadeOut'} color="primary">
+						Welcome { this.props.userInfo.google.email || '' }
+					</Alert>
+			);
+		}
+		return null;
+	}
+
+	componentDidMount(){
+		{ this.renderLogInAlert () }
+	}
 	render () {
 		console.log ('user', this.props);
 		return (
 			<header className="app-header navbar">
+
 				<NavbarToggler className="d-lg-none" onClick={ this.mobileSidebarToggle }>
 					<span className="navbar-toggler-icon"></span>
 				</NavbarToggler>
