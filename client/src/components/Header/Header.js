@@ -44,20 +44,20 @@ class Header extends Component {
 		}
 	}
 
-	renderLogInAlert () {
-		if (this.props.userInfo) {
-			return (
-					<Alert className={'alertFadeOut'} color="primary">
-						Welcome { this.props.userInfo.google.email || '' }
-					</Alert>
-			);
-		}
-		return null;
-	}
-
-	componentDidMount(){
-		{ this.renderLogInAlert () }
-	}
+	// renderLogInAlert () {
+	// 	if (this.props.userInfo) {
+	// 		return (
+	// 				<Alert className={'alertFadeOut'} color="primary">
+	// 					Welcome { this.props.userInfo.local.email || '' }
+	// 				</Alert>
+	// 		);
+	// 	}
+	// 	return null;
+	// }
+	//
+	// componentDidMount(){
+	// 	{ this.renderLogInAlert () }
+	// }
 	render () {
 		console.log ('user', this.props);
 		return (
@@ -79,6 +79,9 @@ class Header extends Component {
 					</NavItem>
 					<NavItem className="px-3">
 						<NavLink href="#">Settings</NavLink>
+					</NavItem>
+					<NavItem className="px-3">
+						<NavLink href="/login">Login / Register</NavLink>
 					</NavItem>
 				</Nav>
 
@@ -102,11 +105,4 @@ class Header extends Component {
 	}
 }
 
-function mapStateToProps (state) {
-	console.log ('state', state.userInfo);
-	return {
-		userInfo : state.userInfo,
-	};
-}
-
-export default connect (mapStateToProps) (Header);
+export default connect () (Header);

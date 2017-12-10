@@ -40,7 +40,7 @@ class Full extends Component {
 	render () {
 		return (
 			<div className="app">
-				<Header/>
+				<Header userInfo = {this.props.userInfo} />
 				<div className="app-body">
 					<Sidebar { ...this.props }/>
 					<main className="main">
@@ -102,9 +102,12 @@ class Full extends Component {
 	}
 }
 
+function mapStateToProps (state) {
+	return {userInfo : state.userInfo};
+}
 function mapDispatchToProps (dispatch) {
 	return bindActionCreators ({fetchUser}, dispatch);
 }
 
 
-export default connect (null,mapDispatchToProps) (Full);
+export default connect (mapStateToProps,mapDispatchToProps) (Full);

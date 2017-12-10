@@ -1,12 +1,13 @@
-const app = require ('express') ();
+const Express = require ('express');
+const app = new Express();
 const server = require ('http').Server (app);
 const mongoose = require ('mongoose');
 const passport = require ('passport');
 const keys = require ('../config/credentials');
 const bodyParser = require ('body-parser');
 const cookieSession = require ('cookie-session');
+const path = require ('path');
 
-app.use (bodyParser.json ());
 // socket.io
 require ('../server/socket') (server);
 
@@ -17,7 +18,12 @@ mongoose.connect (keys.mongo.dev.mongoUri);
 // passport
 require ('../server/passport') ();
 
+
+/*
+ ************* middleware section
+ */
 // requests go through middleware before route handlers
+app.use (bodyParser.json ());
 //  cookie
 app.use (
 	cookieSession ({
@@ -29,10 +35,25 @@ app.use (
 app.use (passport.initialize ());
 app.use (passport.session ());
 
+// later refactor
+// require('../middleware')(app,cookieSession,passport,keys)
+
+
+
+
+/*
+ ************* route section
+ */
 // app routes
 require ('../routes/generalRoutes') (app);
 require ('../routes/authRoutes') (app);
+if (process.env.NODE_ENV === 'production') {
+	app.use (Express.static('client/build'));
 
+	app.get ('*', (req, res) => {
+		res.sendFile (path.resolve (__dirname, 'client', 'build', 'index.html'));
+	});
+}
 
 const PORT = process.env.PORT || 4000;
 server.listen (PORT);

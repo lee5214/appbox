@@ -81,8 +81,12 @@ module.exports = () => {
 				clientID : keys.facebook.facebookAppID,
 				clientSecret : keys.facebook.facebookAppSecret,
 				callbackURL : "/auth/facebook/callback",
-				profileFields : ['id', 'birthday', 'email', 'first_name', 'picture'],
-			},
+				profileFields : ['id', 'birthday', 'email', 'first_name', 'picture',
+					'cover',
+					'locale',
+					'timezone',
+					'updated_time',
+			]},
 			async (accessToken, refreshToken, profile, done) => {
 				console.log ('profile=>', profile);
 				const existingUser = await User.findOne ({facebookID : profile.id});
@@ -94,15 +98,11 @@ module.exports = () => {
 						local : {
 							email : profile.emails[0].value,
 							//firstName : profile.first_name,
-
-							displayName : profile.displayName,
+							displayName : profile.displayName || profile.first_name,
 							avatar : profile.photos[0].value || '',
+							language : profile._json.local,
 						},
 						facebook : profile._json,
-						// email : profile.emails[0].value,
-						// photo : profile.photos[0].value,
-						// language : profile._json.language,
-						// img : profile._json.image.url,
 					}).save ();
 					done (null, user);
 				}

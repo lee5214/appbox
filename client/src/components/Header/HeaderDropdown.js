@@ -19,12 +19,12 @@ class HeaderDropdown extends Component {
 	}
 
 	dropAccnt () {
-		const {avatar} = this.props.userInfo.local;
+		const {avatar,displayName} = this.props.userInfo.local;
 		return (
 			<Dropdown isOpen={ this.state.dropdownOpen } toggle={ this.toggle }>
 				<DropdownToggle nav>
 					<img src={ avatar || 'img/avatars/6.jpg' } className="img-avatar"
-					     alt={''} />
+					     alt={displayName} />
 				</DropdownToggle>
 				<DropdownMenu right>
 					<DropdownItem header tag="div" className="text-center"><strong>Account</strong></DropdownItem>
@@ -37,13 +37,13 @@ class HeaderDropdown extends Component {
 					<DropdownItem header tag="div" className="text-center"><strong>Settings</strong></DropdownItem>
 					<DropdownItem><i className="fa fa-user" /> Profile</DropdownItem>
 					<DropdownItem><i className="fa fa-wrench" /> Settings</DropdownItem>
-					<DropdownItem><i className="fa fa-usd" /> Payments<Badge
-						color="secondary">42</Badge></DropdownItem>
-					<DropdownItem><i className="fa fa-file" /> Projects<Badge
-						color="primary">42</Badge></DropdownItem>
-					<DropdownItem divider/>
-					<DropdownItem><i className="fa fa-shield" /> Lock Account</DropdownItem>
-					<DropdownItem href={'/api/logout'}><i className="fa fa-lock" /> Logout</DropdownItem>
+					{/*<DropdownItem><i className="fa fa-usd" /> Payments<Badge*/}
+						{/*color="secondary">42</Badge></DropdownItem>*/}
+					{/*<DropdownItem><i className="fa fa-file" /> Projects<Badge*/}
+						{/*color="primary">42</Badge></DropdownItem>*/}
+					{/*/!*<DropdownItem divider/>*!/*/}
+					{/*<DropdownItem><i className="fa fa-shield" /> Lock Account</DropdownItem>*/}
+					<DropdownItem href={'/api/logout'}><i className="icon-logout" /> Logout</DropdownItem>
 				</DropdownMenu>
 			</Dropdown>
 		);

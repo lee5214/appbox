@@ -278,8 +278,7 @@ $dropdown-bg:                    #1A1A1A;
 $dropdown-border:                $gray-darker;
 //** Dropdown menu `border-color` **for IE8**.
 $dropdown-fallback-border:       #ccc;
-//** Divider color for between dropdown items.
-$dropdown-divider-bg:            $dropdown-border;
+
 
 //** Dropdown link text color.
 $dropdown-link-color:            white;
@@ -1145,7 +1144,7 @@ $card-bg: transparent;
 
 $dropdown-padding-y:              0;
 $dropdown-border-color:           $gray-200;
-$dropdown-divider-bg:             $gray-100;
+$dropdown-divider-bg:             $gray-900;
 
 // Buttons
 

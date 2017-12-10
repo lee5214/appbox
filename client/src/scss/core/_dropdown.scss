@@ -26,6 +26,7 @@
 
 // Dropdown section headers
 .dropdown-header {
+  font-size: inherit;
   padding: 8px 20px;
   background: $dropdown-divider-bg;
   border-bottom: 1px solid $dropdown-border-color;
