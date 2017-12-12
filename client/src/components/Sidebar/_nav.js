@@ -102,13 +102,20 @@ export default {
 			icon : 'icon-pie-chart',
 		},
 		{
-			name : 'Projects',
-			url : '/projects',
+			divider : true,
+		},
+		{
+			title : true,
+			name : 'Personal Apps',
+		},
+		{
+			name : 'City Info',
+			url : '/cityinfo',
 			icon : 'icon-social-dropbox',
 		},
 		{
-			name : 'Fetch Your City',
-			url : '/city',
+			name : 'Chat Room',
+			url : '/chatroom/public',
 			icon : 'icon-social-dropbox',
 		},
 		{
@@ -116,6 +123,7 @@ export default {
 			url : '/test',
 			icon : 'icon-social-dropbox',
 		},
+
 		{
 			divider : true,
 		},
@@ -146,6 +154,28 @@ export default {
 				{
 					name : 'Error 500',
 					url : '/500',
+					icon : 'icon-star',
+				},
+			],
+		},
+		{
+			name : 'About',
+			url : '/about',
+			icon : 'icon-social-dropbox',
+			children : [
+				{
+					name : 'Myself',
+					url : '/about/myself',
+					icon : 'icon-star',
+				},
+				{
+					name : 'Resume',
+					url : '/about/resume',
+					icon : 'icon-star',
+				},
+				{
+					name : 'Blog',
+					url : '/about/blog',
 					icon : 'icon-star',
 				},
 			],

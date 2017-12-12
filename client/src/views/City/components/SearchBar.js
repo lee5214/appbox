@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import { fetchCity } from 'actions';
-import { Col, Form, Input, InputGroup, InputGroupButton } from 'reactstrap';
+import { Button, Col, Form, Input, InputGroup, InputGroupButton } from 'reactstrap';
 import { fetchUserLocation } from 'utils';
 
 class SearchBar extends Component {
@@ -38,8 +37,8 @@ class SearchBar extends Component {
 		//console.log ('your current location=>', fetchUserLocation ());
 
 		// test purpose
-		this.setState ({term : '', searchedTerm : ['hayward']});
-		this.props.fetchCity ('Hayward');
+		this.setState ({term : '', searchedTerm : ['San Francisco']});
+		this.props.fetchCity ('San Francisco');
 		//this.props.fetchCityNews('Hayward');
 
 	}
@@ -53,7 +52,7 @@ class SearchBar extends Component {
 	render () {
 		return (
 			<div>
-				{this.warningToggle()}
+				{/*{this.warningToggle()}*/}
 				<Form className={ 'input-group' } onSubmit={ (e) => {this.onSearchSubmit (e);} }>
 					<Col md="12">
 						<InputGroup>
@@ -61,7 +60,7 @@ class SearchBar extends Component {
 							       onChange={ (e) => this.onInputChange (e) }
 							       value={ this.state.term }/>
 							<InputGroupButton>
-								<Button bsStyle={ 'primary' } type={ 'submit' }><i className="fa fa-search"></i> Search</Button>
+								<Button color={ 'primary' } type={ 'submit' }><i className="fa fa-search"></i> Search</Button>
 							</InputGroupButton>
 						</InputGroup>
 					</Col>

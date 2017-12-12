@@ -106,10 +106,10 @@ class Modals extends Component {
 	formatCardBody (web_url, snippet) {
 		return this.getThumbnail (web_url) ?
 			<Row>
-				<Col xs={ 3 } md={3} lg={ 3 }>
+				<Col xs={ 3 } md={ 3 } lg={ 3 }>
 					{ this.getThumbnail (web_url) }
 				</Col>
-				<Col xs={ 9 } md={9} lg={ 9 }>
+				<Col xs={ 9 } md={ 9 } lg={ 9 }>
 					{ snippet }
 				</Col>
 			</Row>
@@ -168,7 +168,7 @@ class Modals extends Component {
 					<ModalFooter>
 						<Button color="primary" onClick={ this.toggleLarge } href={ web_url }
 						        target={ '_blank' }>
-							Full Article
+							Article
 						</Button>
 						<Button color="secondary" onClick={ this.toggleLarge }>Cancel</Button>
 					</ModalFooter>

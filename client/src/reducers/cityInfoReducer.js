@@ -1,4 +1,4 @@
-import { FETCH_CITY_WEATHER, FETCH_CITY_NEWS, FETCH_CITY } from '../actions/fetchCity';
+import { FETCH_CITY } from '../actions/city';
 
 // export function cityWeatherInfo (state = [], action) {
 // 	switch (action.type) {
@@ -20,15 +20,14 @@ import { FETCH_CITY_WEATHER, FETCH_CITY_NEWS, FETCH_CITY } from '../actions/fetc
 // 	}
 // }
 
-export function  city (state= [],action) {
-	switch(action.type){
+export const city = (state = [], action) => {
+	switch (action.type) {
 		case FETCH_CITY:
-			return [action.payload, ...state]
+			return [action.payload, ...state];
 		default:
-			return state
+			return state;
 	}
 }
-
 
 
 // export function cityReducer (state=[], action){

@@ -1,6 +1,7 @@
 const Express = require ('express');
 const app = new Express();
-const server = require ('http').Server (app);
+const http = require('http');
+const server = http.Server (app);
 const mongoose = require ('mongoose');
 const passport = require ('passport');
 const keys = require ('../config/credentials');
@@ -8,6 +9,13 @@ const bodyParser = require ('body-parser');
 const cookieSession = require ('cookie-session');
 const path = require ('path');
 
+const PORT = process.env.PORT || 4000;
+server.listen (PORT);
+// console.log ('node server is running on port:', PORT);
+
+app.get('/', function (req, res) {
+	res.sendfile(__dirname + '/index.html');
+});
 // socket.io
 require ('../server/socket') (server);
 
@@ -55,9 +63,6 @@ if (process.env.NODE_ENV === 'production') {
 	});
 }
 
-const PORT = process.env.PORT || 4000;
-server.listen (PORT);
-console.log ('node server is running on port:', PORT);
 
 
 

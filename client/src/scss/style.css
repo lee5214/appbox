@@ -8147,7 +8147,7 @@ base-chart.chart {
   .brand-minimized .app-header.navbar .navbar-brand {
     width: 50px;
     background-color: #1a1a1a;
-    background-image: url("../img/logo-symbol.png");
+    background-image: url("/img/logo-symbol.png");
     background-size: 24px; } }
 .progress-xs {
   height: 4px; }

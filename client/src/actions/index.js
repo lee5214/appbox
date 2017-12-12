@@ -1,24 +1,17 @@
 // fetchCity
-import {
-	FETCH_CITY,
-	FETCH_CITY_NEWS,
-	FETCH_CITY_WEATHER,
-	fetchCity,
-	fetchCityNews,
-	fetchCityWeather,
-} from './fetchCity';
+import { FETCH_CITY, fetchCity } from './city';
 
-import { FETCH_USER, fetchUser, } from './fetchUser';
+import { FETCH_USER, fetchUser } from './user';
+
+import { SEND_PUB_CHAT_MSGS, sendPubChatMsgs } from './chat';
 
 export {
-	FETCH_CITY_WEATHER,
-	fetchCityWeather,
-	FETCH_CITY_NEWS,
-	fetchCityNews,
 	FETCH_CITY,
 	fetchCity,
 	FETCH_USER,
 	fetchUser,
+	SEND_PUB_CHAT_MSGS,
+	sendPubChatMsgs,
 };
 
 // test

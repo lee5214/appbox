@@ -1,45 +1,16 @@
 import React, { Component } from 'react';
 //wrapper for chartjs
 import { Bar, Doughnut, Line } from 'react-chartjs-2';
-import { Badge, Card, CardBody, CardHeader, Col, Row } from 'components';
+import { Badge, Card, CardBody, CardHeader, Col, InfoList, Row } from 'components';
 import 'weather-icons/css/weather-icons.css';
 import ForecastEmbed from './ForecastEmbed';
 import { fetchUserLocation } from '../../../utils';
-import { InfoList } from 'components';
 import moment from 'moment';
 import uid from 'uuid';
 import classes from './City.scss';
 import NYTNewsList from './NYTNewsList';
 
 class CityCurrent extends Component {
-	// renderCurrentTemp (data) {
-	// 	// set up a initial state for rendering 'null' when data
-	// 	// from async call is not ready
-	// 	if (!this.props.info) {
-	// 		return <h1>Loading!!!!</h1>;
-	// 	}
-	// 	return (
-	// 		<span>Temp: { data.main.temp }</span>
-	// 	);
-	// }
-
-	// renderCurrentWeatherIcon (data) {
-	// 	if (!data) {
-	// 		return <h1>Loading Icon</h1>;
-	// 	}
-	// 	switch (data.weather[0].main) {
-	// 		case 'Fog':
-	// 			return (<i className='wi wi-day-fog'/>);
-	// 		case 'Clouds':
-	// 			return (<i className='wi wi-day-cloudy'/>);
-	// 		case 'Clear':
-	// 			return (<i className='wi wi-day-sunny'/>);
-	// 		default:
-	// 			return <h1>Loading</h1>;
-	// 	}
-	//
-	// }
-
 	renderLineChart = ({tempList, dateList, label}) => {
 		return (
 			<Card className={ classes.chart }>
@@ -128,7 +99,7 @@ class CityCurrent extends Component {
 				</CardBody>
 			</Card>
 		);
-	}
+	};
 
 	renderBarChart = () => {
 		return (
@@ -153,7 +124,7 @@ class CityCurrent extends Component {
 				</CardBody>
 			</Card>
 		);
-	}
+	};
 
 	renderDoughnutChart = () => {
 		return (
@@ -175,7 +146,7 @@ class CityCurrent extends Component {
 			</Card>
 		)
 			;
-	}
+	};
 
 	componentWillMount = () => {
 		fetchUserLocation ();
@@ -183,12 +154,12 @@ class CityCurrent extends Component {
 			return <h1>Loading!!!!</h1>;
 		}
 
-	}
+	};
 
 
 	render () {
 
-		const {dt, city, list, main : {humidity, pressure}, name, sys, visibility, weather, coord, wind} = this.props.info.cityWeather;
+		const {city, list, main : {humidity, pressure}, name, sys, visibility, coord} = this.props.info.cityWeather;
 		const {docs} = this.props.info.cityNews.response;
 		// get forecast temperature in array
 		const tempList = list.map ((item) => item.main.temp);
@@ -223,11 +194,10 @@ class CityCurrent extends Component {
 			<Row className={ 'mb-5' }>
 				<Col xs={ 12 } lg={ 12 }>
 					<Card body outline color="transparent">
-						<div>
-							<ForecastEmbed lat={ coord.lat } lon={ coord.lon } name={ name }/>
-							<h1 className={ 'text-center font-weight-bold' }>{ city.name }</h1>
-						</div>
-						<Row>
+						<Row className={'mt-5'}>
+							<Col xs={ 12 }>
+								<h1 className={ 'text-center font-weight-bold' }>{ city.name }</h1>
+							</Col>
 							<Col className={ 'text-right' }>
 								<div>
 									<span className={ 'font-weight-normal' }>Latitude </span>
@@ -249,9 +219,12 @@ class CityCurrent extends Component {
 								</div>
 							</Col>
 						</Row>
+						<Row>
+							<ForecastEmbed lat={ coord.lat } lon={ coord.lon } name={ name }/>
+						</Row>
 					</Card>
 				</Col>
-				<Col xs={ 12 } lg={ 3 } className={'d-flex'}>
+				<Col xs={ 12 } lg={ 3 } className={ 'd-flex' }>
 					<InfoList { ...infoListData }/>
 				</Col>
 				<Col xs={ 12 } lg={ 9 }>

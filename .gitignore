@@ -6,8 +6,8 @@
 
 # secrets
 /config/devKey.js
+/client/src/config/devKeys.js
 /client/_backup
-
 # testing
 /tests
 /coverage
@@ -29,4 +29,8 @@ yarn-error.log*
 etc/
 
 # .idea/workspace.xml
+
+# css
+*.css
+*.css.map
 

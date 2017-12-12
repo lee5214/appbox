@@ -59,21 +59,18 @@ class Header extends Component {
 	// 	{ this.renderLogInAlert () }
 	// }
 	render () {
-		console.log ('user', this.props);
+		console.log ('header user=>', this.props);
 		return (
 			<header className="app-header navbar">
 
 				<NavbarToggler className="d-lg-none" onClick={ this.mobileSidebarToggle }>
 					<span className="navbar-toggler-icon"></span>
 				</NavbarToggler>
-				<NavbarBrand href="#"><h1>LEE</h1></NavbarBrand>
+				<NavbarBrand href="#"><p>LEE</p></NavbarBrand>
 				<NavbarToggler className="d-md-down-none" onClick={ this.sidebarToggle }>
 					<span className="navbar-toggler-icon"></span>
 				</NavbarToggler>
 				<Nav className="d-md-down-none" navbar>
-					<NavItem className="px-3">
-						<NavLink href="#">Dashboard</NavLink>
-					</NavItem>
 					<NavItem className="px-3">
 						<NavLink href="#">Users</NavLink>
 					</NavItem>

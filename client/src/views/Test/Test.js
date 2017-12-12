@@ -19,7 +19,6 @@ import {
 
 const socket = socketIOClient('http://localhost:4000')
 
-
 //TODO form knowledge review
 class Test extends Component {
 
@@ -33,7 +32,17 @@ class Test extends Component {
 			endpoint : 'http://localhost:4000',
 			color : 'empty',
 		};
-
+		socket.on ('msg', (msg) => {
+			console.log(msg)
+			alert(msg)
+			//this.setState({msg:msg})
+			//document.body.style.backgroundColor = color
+		});
+		socket.on ('change color', (color) => {
+			//this.setState({msg:msg})
+			console.log(color)
+			document.querySelector('.app-footer').style.backgroundColor = color
+		});
 	}
 
 	toggleLargeModal = () => {
@@ -55,15 +64,7 @@ class Test extends Component {
 
 
 	render () {
-		socket.on ('msg', (msg) => {
-			alert(msg)
-			//this.setState({msg:msg})
-			//document.body.style.backgroundColor = color
-		});
-		socket.on ('change color', (color) => {
-			//this.setState({msg:msg})
-			document.querySelector('.app-footer').style.backgroundColor = color
-		});
+
 
 		return (
 			<div>

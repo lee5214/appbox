@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import { Container } from 'reactstrap';
 import { connect } from "react-redux";
-import * as actions from '../../actions'
 import { bindActionCreators } from 'redux';
 import { fetchUser } from 'actions';
 // Components
@@ -25,6 +24,7 @@ import Widgets from '../../views/Widgets/';
 import Projects from '../../views/Projects/Projects';
 import City from '../../views/City/';
 import Test from '../../views/Test/';
+import ChatRoom from '../../views/ChatRoom/ChatRoom';
 import BannerLine from 'components/_Composite/BannerLine';
 // Icons
 import FontAwesome from '../../views/Icons/FontAwesome/';
@@ -33,14 +33,14 @@ import classes from './Full.scss';
 
 class Full extends Component {
 	componentDidMount () {
-		this.props.fetchUser();
-		//console.log('/full/ props',this.props)
+		this.props.fetchUser ();
+		// console.log('/full/ props',this.props)
 	}
 
 	render () {
 		return (
 			<div className="app">
-				<Header userInfo = {this.props.userInfo} />
+				<Header userInfo={ this.props.userInfo }/>
 				<div className="app-body">
 					<Sidebar { ...this.props }/>
 					<main className="main">
@@ -66,7 +66,7 @@ class Full extends Component {
 								       name="Social Buttons"
 								       component={ SocialButtons }/>
 								<Route path="/components/switches"
-								       name="Swithces"
+								       name="Switches"
 								       component={ Switches }/>
 								<Route path="/components/tables" name="Tables"
 								       component={ Tables }/>
@@ -85,10 +85,14 @@ class Full extends Component {
 
 								<Route path="/projects" name="Projects"
 								       component={ Projects }/>
-								<Route path="/city" name="City"
+								<Route path="/cityinfo" name="City Info"
 								       component={ City }/>
 								<Route path="/test" name="Test"
 								       component={ Test }/>
+								<Route path="/chatroom/public" name="Chat Room"
+								       component={ ChatRoom }/>
+
+								<Route path="/chatrooms/:id" component={ ChatRoom } />
 
 								<Redirect from="/" to="/dashboard"/>
 							</Switch>
@@ -105,9 +109,11 @@ class Full extends Component {
 function mapStateToProps (state) {
 	return {userInfo : state.userInfo};
 }
+
 function mapDispatchToProps (dispatch) {
 	return bindActionCreators ({fetchUser}, dispatch);
 }
 
+export default connect (mapStateToProps, mapDispatchToProps) (Full);
 
-export default connect (mapStateToProps,mapDispatchToProps) (Full);
+// TODO intro that ppl could send me msg through app messager with my name, add feature that auto fullfill search name when type

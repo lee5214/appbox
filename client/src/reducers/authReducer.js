@@ -1,6 +1,6 @@
-import { FETCH_USER } from "../actions/fetchUser";
+import { FETCH_USER } from "../actions/user";
 
-export function user (state = null, action) {
+export const user = (state = null, action) => {
 	console.log ('action', action);
 	switch (action.type) {
 		case FETCH_USER:

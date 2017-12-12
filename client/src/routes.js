@@ -16,7 +16,9 @@ const routes = {
 	'/icons/simple-line-icons' : 'Simple Line Icons',
 	'/widgets' : 'Widgets',
 	'/projects' : 'Projects',
-	'/city' : 'Fetch Your City',
+	'/cityinfo' : 'Fetch Your City',
+	'/chatroom/public' : 'Chat Room',
+	'/chatroom/:id' : 'Private Chat Room',
 	'/test' : 'Test',
 };
 export default routes;
