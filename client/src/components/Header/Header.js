@@ -30,7 +30,7 @@ class Header extends Component {
 	}
 
 	renderUserInfo () {
-		switch (this.props.userInfo) {
+		switch (this.props.currentUserInfo) {
 			case null:
 				return 'null';
 			case false:
@@ -40,7 +40,7 @@ class Header extends Component {
 					</NavItem>
 				);
 			default:
-				return <HeaderDropdown userInfo={ this.props.userInfo }/>;
+				return <HeaderDropdown currentUserInfo={ this.props.currentUserInfo }/>;
 		}
 	}
 

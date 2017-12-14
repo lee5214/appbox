@@ -3,8 +3,21 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import socketIOClient from 'socket.io-client';
 import { sendPubChatMsgs } from 'actions';
-import { ListGroup,ListGroupItem,Button, Card, CardImg, Col, Form, Input, InputGroup, InputGroupButton, Row } from 'reactstrap';
-import moment from 'moment';
+import {
+	Container,
+	Button,
+	CardImg,
+	Col,
+	Form,
+	Input,
+	InputGroup,
+	InputGroupButton,
+	ListGroup,
+	ListGroupItem,
+	Row,
+} from 'reactstrap';
+import style from './ChatRoom.scss';
+import MessageBlock from "./MessageBlock";
 
 const socket = socketIOClient ('http://localhost:4000');
 
@@ -34,12 +47,7 @@ class ChatRoom extends Component {
 	showMessages = (data) => {
 		return (
 			<ListGroupItem key={ data.inputMessage }>
-				<div className={ 'avatar avatar-sm' }>
-					<CardImg className={ 'img-avatar' } src={ data.from }/>
-				</div>
-
-				<p>{ moment (data.time).local ().format ('MM/DD HH:MM') }</p>
-				<div>{ data.inputMessage }</div>
+				<MessageBlock data={data} />
 			</ListGroupItem>
 		);
 	};
@@ -49,8 +57,8 @@ class ChatRoom extends Component {
 	handleSubmit = (e) => {
 		e.preventDefault ();
 		let userImg;
-		if (this.props.userInfo) {
-			userImg = this.props.userInfo.local.avatar;
+		if (this.props.currentUserInfo) {
+			userImg = this.props.currentUserInfo.local.avatar;
 		} else {
 			userImg = '/img/avatars/1.jpg';
 		}
@@ -58,6 +66,7 @@ class ChatRoom extends Component {
 			'send msg',
 			{
 				inputMessage : this.state.inputMessage,
+				displayName : this.props.currentUserInfo.local.displayName,
 				from : userImg || '',
 				time : new Date (),
 			});
@@ -67,10 +76,10 @@ class ChatRoom extends Component {
 
 	render () {
 		return (
-			<div className="animated fadeIn">
+			<Container className="animated fadeIn">
 				<Row>
-					<Col xs={12} lg={12} xl={6}>
-						<ListGroup style={{height: '500px',overflow:'scroll',backgroundColor:'#1A1A1A'}}>
+					<Col xs={ 12 } lg={ 12 } xl={ 6 }>
+						<ListGroup className={style.messagesContainer}>
 							{ this.state.pubChatMessages.map ((msg) => this.showMessages (msg)) }
 						</ListGroup>
 
@@ -89,19 +98,19 @@ class ChatRoom extends Component {
 							</Col>
 						</Form>
 					</Col>
-					<Col xs={12} lg={12} xl={6}>
+					<Col xs={ 12 } lg={ 12 } xl={ 6 }>
 
 					</Col>
 				</Row>
-			</div>
+			</Container>
 		);
 	}
 }
 
 const mapStateToProps = (state) => {
 	return {
-		userInfo : state.userInfo || null,
-		pubChatMessages : state.messages.pubChatMessages,
+		currentUserInfo : state.currentUserInfo || null,
+		pubChatMessages : state.chatRoom.pubChatMessages,
 	};
 };
 const mapPropsToDispatch = (dispatch) => {

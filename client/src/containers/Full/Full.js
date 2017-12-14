@@ -3,7 +3,7 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import { Container } from 'reactstrap';
 import { connect } from "react-redux";
 import { bindActionCreators } from 'redux';
-import { fetchUser } from 'actions';
+import { fetchCurrentUser } from 'actions';
 // Components
 import Buttons from '../../views/Components/Buttons/';
 import Cards from '../../views/Components/Cards/';
@@ -24,7 +24,7 @@ import Widgets from '../../views/Widgets/';
 import Projects from '../../views/Projects/Projects';
 import City from '../../views/City/';
 import Test from '../../views/Test/';
-import ChatRoom from '../../views/ChatRoom/ChatRoom';
+import ChatRoom from '../../views/ChatRoom';
 import BannerLine from 'components/_Composite/BannerLine';
 // Icons
 import FontAwesome from '../../views/Icons/FontAwesome/';
@@ -33,14 +33,14 @@ import classes from './Full.scss';
 
 class Full extends Component {
 	componentDidMount () {
-		this.props.fetchUser ();
+		this.props.fetchCurrentUser ();
 		// console.log('/full/ props',this.props)
 	}
 
 	render () {
 		return (
 			<div className="app">
-				<Header userInfo={ this.props.userInfo }/>
+				<Header currentUserInfo={ this.props.currentUserInfo }/>
 				<div className="app-body">
 					<Sidebar { ...this.props }/>
 					<main className="main">
@@ -107,11 +107,11 @@ class Full extends Component {
 }
 
 function mapStateToProps (state) {
-	return {userInfo : state.userInfo};
+	return {currentUserInfo : state.currentUserInfo};
 }
 
 function mapDispatchToProps (dispatch) {
-	return bindActionCreators ({fetchUser}, dispatch);
+	return bindActionCreators ({fetchCurrentUser}, dispatch);
 }
 
 export default connect (mapStateToProps, mapDispatchToProps) (Full);

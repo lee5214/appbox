@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 
 import { cityNews, cityWeatherInfo, city } from './cityInfoReducer';
 
-import {user} from "./authReducer";
+import {currentUser} from "./authReducer";
 
 import {pubChatMessages} from './chatReducer'
 /*
@@ -12,7 +12,10 @@ export default combineReducers ({
 	//cityWeatherInfo : cityWeatherInfo,
 	//cityNews : cityNews,
 	cityInfo : city,
-	userInfo: user,
-	messages : combineReducers({pubChatMessages : pubChatMessages}),
+	currentUserInfo: currentUser,
+	chatRoom : combineReducers({
+		pubChatMessages : pubChatMessages,
+		//allUsers : pubChatUsers,
+	}),
 	//cityCurrentTemp : fetchCurrentCityTemp,
 });

@@ -19,7 +19,7 @@ class HeaderDropdown extends Component {
 	}
 
 	dropAccnt () {
-		const {avatar,displayName} = this.props.userInfo.local;
+		const {avatar,displayName} = this.props.currentUserInfo.local;
 		return (
 			<Dropdown isOpen={ this.state.dropdownOpen } toggle={ this.toggle }>
 				<DropdownToggle nav>

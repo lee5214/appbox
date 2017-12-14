@@ -1,0 +1,13 @@
+.messagesContainer{
+  height : 500px;
+  overflow : scroll;
+  background-color : #1A1A1A;
+
+}
+.singleMessageBlock{
+  background: #4a4a4a;
+  border-radius: 4px;
+
+  word-wrap: break-word;
+  word-break: normal;
+}
