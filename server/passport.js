@@ -14,9 +14,11 @@ module.exports = () => {
 	passport.serializeUser ((user, done) => {
 		// this is id in db
 		// for multiple social accounts sign in
+		console.log ('serializeUser=> ', user);
 		done (null, user.id);
 	});
 	passport.deserializeUser ((id, done) => {
+		console.log ('deserializeUser id=> ', id);
 		User.findById (id)
 			.then ((user) => {
 				done (null, user);
@@ -33,7 +35,7 @@ module.exports = () => {
 			// refactor promise using async/await
 			async (accessToken, refreshToken, profile, done) => {
 				console.log ('profile=>', profile);
-				const existingUser = await User.findOne ({googleID : profile.id});
+				const existingUser = await User.findOne ({'google.id' : profile.id});
 				if (existingUser) {
 					// (error, user record)
 					done (null, existingUser);
@@ -80,25 +82,28 @@ module.exports = () => {
 			{
 				clientID : keys.facebook.facebookAppID,
 				clientSecret : keys.facebook.facebookAppSecret,
-				callbackURL : "/auth/facebook/callback",
-				profileFields : ['id', 'birthday', 'email', 'first_name', 'picture',
+				callbackURL : '/auth/facebook/callback',
+				profileFields : [
+					'id', 'birthday', 'email', 'first_name', 'picture',
 					'cover',
 					'locale',
 					'timezone',
 					'updated_time',
-			]},
+				],
+			},
 			async (accessToken, refreshToken, profile, done) => {
 				console.log ('profile=>', profile);
-				const existingUser = await User.findOne ({facebookID : profile.id});
+				const existingUser = await User.findOne ({'facebook.id' : profile.id});
 				if (existingUser) {
+					console.log ('existing user___________________', existingUser);
 					done (null, existingUser);
 				}
 				else {
 					const user = await new User ({
 						local : {
 							email : profile.emails[0].value,
-							//firstName : profile.first_name,
-							displayName : profile.displayName || profile.first_name,
+							// firstName : profile.first_name,
+							displayName : profile.first_name,
 							avatar : profile.photos[0].value || '',
 							language : profile._json.local,
 						},

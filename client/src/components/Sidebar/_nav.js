@@ -181,17 +181,12 @@ export default {
 			],
 		},
 		{
-			name : 'Download CoreUI',
-			url : 'http://coreui.io/react/',
-			icon : 'icon-cloud-download',
+			name : 'My Website',
+			url : 'http://lee5214.com',
+			icon : 'icon-layers',
 			class : 'mt-auto',
 			variant : 'success',
 		},
-		{
-			name : 'Try CoreUI PRO',
-			url : 'http://coreui.io/pro/react/',
-			icon : 'icon-layers',
-			variant : 'danger',
-		},
+
 	],
 };
