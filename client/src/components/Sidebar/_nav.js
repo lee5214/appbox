@@ -115,7 +115,7 @@ export default {
 		},
 		{
 			name : 'Chat Room',
-			url : '/chatroom/public',
+			url : '/chatroom',
 			icon : 'icon-social-dropbox',
 		},
 		{

@@ -35,6 +35,7 @@ module.exports = () => {
 			// refactor promise using async/await
 			async (accessToken, refreshToken, profile, done) => {
 				console.log ('profile=>', profile);
+				// IMPORTANT ''
 				const existingUser = await User.findOne ({'google.id' : profile.id});
 				if (existingUser) {
 					// (error, user record)
@@ -95,7 +96,6 @@ module.exports = () => {
 				console.log ('profile=>', profile);
 				const existingUser = await User.findOne ({'facebook.id' : profile.id});
 				if (existingUser) {
-					console.log ('existing user___________________', existingUser);
 					done (null, existingUser);
 				}
 				else {

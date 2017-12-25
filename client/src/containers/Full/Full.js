@@ -89,7 +89,7 @@ class Full extends Component {
 								       component={ City }/>
 								<Route path="/test" name="Test"
 								       component={ Test }/>
-								<Route path="/chatroom/public" name="Chat Room"
+								<Route path="/chatroom" name="Chat Room"
 								       component={ ChatRoom }/>
 
 								<Route path="/chatrooms/:id" component={ ChatRoom } />

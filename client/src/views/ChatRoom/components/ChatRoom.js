@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import socketIOClient from 'socket.io-client';
 import { sendPubChatMsgs } from 'actions';
+import uuid from 'uuid'
 import {
 	Container,
 	Button,
@@ -25,6 +26,7 @@ class ChatRoom extends Component {
 	constructor (props) {
 		super (props);
 		this.state = {
+			userId : '',
 			newMsg : '',
 			currentUser : '',
 			pubChatMessages : [],
@@ -43,6 +45,15 @@ class ChatRoom extends Component {
 			//document.body.style.backgroundColor = color
 		});
 	}
+	initSocket = () => {
+		socket.on('connect', () => {
+			console.log('connected')
+		})
+		this.setState({userId:uuid.v4()})
+	}
+	componentDidMount(){
+		this.initSocket()
+	}
 
 	showMessages = (data) => {
 		return (
@@ -56,17 +67,20 @@ class ChatRoom extends Component {
 	};
 	handleSubmit = (e) => {
 		e.preventDefault ();
-		let userImg;
+		let userImg, displayName;
 		if (this.props.currentUserInfo) {
 			userImg = this.props.currentUserInfo.local.avatar;
+			displayName = this.props.currentUserInfo.local.displayName;
 		} else {
 			userImg = '/img/avatars/1.jpg';
+			displayName = `guest-${this.state.userId}`;
+
 		}
 		socket.emit (
 			'send msg',
 			{
 				inputMessage : this.state.inputMessage,
-				displayName : this.props.currentUserInfo.local.displayName,
+				displayName : displayName,
 				from : userImg || '',
 				time : new Date (),
 			});
@@ -78,7 +92,7 @@ class ChatRoom extends Component {
 		return (
 			<Container className="animated fadeIn">
 				<Row>
-					<Col xs={ 12 } lg={ 12 } xl={ 6 }>
+					<Col xs={ 12 }>
 						<ListGroup className={style.messagesContainer}>
 							{ this.state.pubChatMessages.map ((msg) => this.showMessages (msg)) }
 						</ListGroup>

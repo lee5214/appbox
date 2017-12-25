@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import routes from '../../routes';
+import routes from '../../delete-routes';
 import { Breadcrumb, Col, Row } from '../';
 import style from './Breadcrumb.scss';
 

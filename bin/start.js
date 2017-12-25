@@ -13,9 +13,10 @@ const PORT = process.env.PORT || 4000;
 server.listen (PORT);
 // console.log ('node server is running on port:', PORT);
 
-app.get('/', function (req, res) {
-	res.sendfile(__dirname + '/index.html');
-});
+// app.get('/', function (req, res) {
+// 	res.sendfile(__dirname + '/index.html');
+// });
+
 // socket.io
 require ('../server/socket') (server);
 

@@ -10,6 +10,8 @@ const InterpolateHtmlPlugin = require ('react-dev-utils/InterpolateHtmlPlugin');
 const WatchMissingNodeModulesPlugin = require ('react-dev-utils/WatchMissingNodeModulesPlugin');
 const eslintFormatter = require ('react-dev-utils/eslintFormatter');
 const ModuleScopePlugin = require ('react-dev-utils/ModuleScopePlugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 const getClientEnvironment = require ('./env');
 const paths = require ('./paths');
 
@@ -253,11 +255,7 @@ module.exports = {
 	plugins : [
 		//new webpack.optimize.UglifyJsPlugin({sourceMap: true}),
 		//new webpack.NamedModulesPlugin(),
-		// new CopyWebpackPlugin([
-		// 		{from: './public/img', to: 'img'}
-		// 	],
-		// 	{copyUnmodified: false}
-		// ),
+
 		extractCSS,
 		extractSCSS,
 		new HtmlWebpackPlugin(
@@ -266,6 +264,13 @@ module.exports = {
 				template: './public/index.html'
 			}
 		),
+		// new CopyWebpackPlugin([
+		// 		{from: './public/img', to: '/img'}
+		// 	],
+		// 	{copyUnmodified: false}
+		// ),
+
+
 
 
 		// Makes some environment variables available in index.html.

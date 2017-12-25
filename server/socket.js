@@ -8,11 +8,11 @@ module.exports = (server) => {
 		socket.on ('msg', (msg) => {
 			console.log ('server received msg=>', msg);
 			socket.emit ('msg', 'hello from server');
-			//io.sockets.emit ('msg', 'hello from serve');
+			// io.sockets.emit ('msg', 'hello from serve');
 		});
 		socket.on ('change color', (color) => {
 			console.log ('io receive message');
-			//socket.emit ('change color', color);// for one socket
+			// socket.emit ('change color', color);// for one socket
 			io.sockets.emit ('change color', color);// for all users!!!!
 		});
 		socket.on ('my other event', function (data) {
@@ -20,12 +20,15 @@ module.exports = (server) => {
 		});
 		socket.on('send msg', (msg) => {
 			console.log('socket received msg ',msg)
-			//socket.emit('receive msg', msg)
+			// socket.emit('receive msg', msg)
 			io.sockets.emit ('receive msg', msg);// for all users!!!!
 
 		})
 
-		socket.on ('disconnect', () => console.log ('Client disconnected'));
+		socket.on ('disconnect', () => {
+			console.log ('Client disconnected')
+			socket.emit('discounnected')
+		});
 	});
 };
 
