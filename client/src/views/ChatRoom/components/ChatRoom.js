@@ -3,12 +3,11 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import socketIOClient from 'socket.io-client';
 import { sendPubChatMsgs } from 'actions';
-import uuid from 'uuid'
+import uuid from 'uuid';
 import {
-	Container,
 	Button,
-	CardImg,
 	Col,
+	Container,
 	Form,
 	Input,
 	InputGroup,
@@ -23,10 +22,11 @@ import MessageBlock from "./MessageBlock";
 const socket = socketIOClient ('http://localhost:4000');
 
 class ChatRoom extends Component {
+
 	constructor (props) {
 		super (props);
 		this.state = {
-			userId : '',
+			guestId : '',
 			newMsg : '',
 			currentUser : '',
 			pubChatMessages : [],
@@ -45,20 +45,25 @@ class ChatRoom extends Component {
 			//document.body.style.backgroundColor = color
 		});
 	}
+	componentWillMount () {
+		this.initSocket ();
+
+		let guestId = uuid.v4 ().split ('-').pop ();
+		this.setState ({guestId});
+	}
+
 	initSocket = () => {
-		socket.on('connect', () => {
-			console.log('connected')
-		})
-		this.setState({userId:uuid.v4()})
-	}
-	componentDidMount(){
-		this.initSocket()
-	}
+
+		socket.on ('connect', () => {
+			console.log ('connected');
+		});
+
+	};
 
 	showMessages = (data) => {
 		return (
 			<ListGroupItem key={ data.inputMessage }>
-				<MessageBlock data={data} />
+				<MessageBlock data={ data }/>
 			</ListGroupItem>
 		);
 	};
@@ -73,7 +78,7 @@ class ChatRoom extends Component {
 			displayName = this.props.currentUserInfo.local.displayName;
 		} else {
 			userImg = '/img/avatars/1.jpg';
-			displayName = `guest-${this.state.userId}`;
+			displayName = `guest-${this.state.guestId}`;
 
 		}
 		socket.emit (
@@ -92,13 +97,16 @@ class ChatRoom extends Component {
 		return (
 			<Container className="animated fadeIn">
 				<Row>
-					<Col xs={ 12 }>
-						<ListGroup className={style.messagesContainer}>
+					<Col xs={ 3 }>
+						<h4>Contacts</h4>
+					</Col>
+
+					<Col xs={ 9 }>
+						<ListGroup className={ style.messagesContainer }>
 							{ this.state.pubChatMessages.map ((msg) => this.showMessages (msg)) }
 						</ListGroup>
-
-						<Form className={ 'input-group' } onSubmit={ (e) => {this.handleSubmit (e);} }>
-							<Col md="12">
+						<Col md="12">
+							<Form className={ 'input-group' } onSubmit={ (e) => {this.handleSubmit (e);} }>
 								<InputGroup>
 									<Input type="text" id="input1-group2" name="input1-group2"
 									       placeholder={ 'city name' }
@@ -109,11 +117,9 @@ class ChatRoom extends Component {
 											Send</Button>
 									</InputGroupButton>
 								</InputGroup>
-							</Col>
-						</Form>
-					</Col>
-					<Col xs={ 12 } lg={ 12 } xl={ 6 }>
 
+							</Form>
+						</Col>
 					</Col>
 				</Row>
 			</Container>
