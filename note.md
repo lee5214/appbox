@@ -30,3 +30,7 @@ to render the data from async call directly in render for test
 highlight: nested reducer (sometimes need to re-organise the state like {[cityweather],[citynews]} =>{[city1:{cityweather,citynews}]})
 
 some site block iframe (like NYT)
+
+---
+if there's a file imported in index.html such as <script src='...socketio.js'></script>
+you can use window.io() to access in components

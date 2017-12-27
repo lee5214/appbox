@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Media, Card, CardImg, Col, Container, Row } from 'reactstrap';
-import {Tooltip} from 'react-bootstrap'
+import { Card, CardImg, Col, Container, Media, Row } from 'reactstrap';
+import { Tooltip } from 'react-bootstrap';
 import moment from 'moment';
-import style from './ChatRoom.scss'
+import style from './ChatRoom.scss';
 
 class MessageBlock extends Component {
 
@@ -18,13 +18,18 @@ class MessageBlock extends Component {
 					</Media>
 					<Col xs={ 'auto' }>
 						<Col>
-							<Card className={style.singleMessageBlock}>{ data.inputMessage }</Card>
+							<Card className={ style.singleMessageBlock }>{ data.inputMessage }</Card>
 							<Tooltip placement="right" className="in" id="tooltip-right">
 								Tooltip right
 							</Tooltip>
 						</Col>
 						<Col>
-							<span>{ moment (data.time).local ().format ('MM/DD HH:MM') } <span style={{fontSize:'20px'}}>{ data.displayName } </span></span>
+							<span>{ moment (data.time)
+								.local ()
+								.format ('MM/DD HH:MM') }
+								<span style={ {fontSize : '20px'} }>{ data.displayName }
+								</span>
+							</span>
 						</Col>
 					</Col>
 

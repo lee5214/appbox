@@ -21,7 +21,7 @@ class Widget03 extends Component {
 		const data = dataBox ();
 		const variant = data.variant;
 
-		if (!variant || ['facebook', 'twitter', 'linkedin', 'google-plus'].indexOf (variant) < 0) {
+		if (!variant || [ 'facebook', 'twitter', 'linkedin', 'google-plus' ].indexOf (variant) < 0) {
 			return ( null );
 		}
 
@@ -36,12 +36,12 @@ class Widget03 extends Component {
 				<i className={ icon }></i>
 				<ul>
 					<li>
-						<strong>{ vals[1] }</strong>
-						<span>{ keys[1] }</span>
+						<strong>{ vals[ 1 ] }</strong>
+						<span>{ keys[ 1 ] }</span>
 					</li>
 					<li>
-						<strong>{ vals[2] }</strong>
-						<span>{ keys[2] }</span>
+						<strong>{ vals[ 2 ] }</strong>
+						<span>{ keys[ 2 ] }</span>
 					</li>
 				</ul>
 			</div>

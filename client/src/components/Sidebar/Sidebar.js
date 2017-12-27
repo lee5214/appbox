@@ -47,29 +47,29 @@ class Sidebar extends Component {
 
 		// nav list section title
 		const title = (title, key) => {
-			const classes = classNames ("nav-title", title.class);
+			const classes = classNames ('nav-title', title.class);
 			return (<li key={ key } className={ classes }>{ wrapper (title) } </li>);
 		};
 
 		// nav list divider
-		const divider = (divider, key) => (<li key={ key } className="divider"></li>);
+		const divider = (divider, key) => (<li key={ key } className="divider"/>);
 
 		// nav item with nav link
 		const navItem = (item, key) => {
 			const classes = classNames (item.class);
 			const isExternal = (url) => {
-				return url.substring (0, 4) === 'http' ? true : false;
+				return url.substring (0, 4) === 'http';
 			};
 			const variant = classNames ("nav-link", item.variant ? `nav-link-${item.variant}` : "");
 			return (
 				<NavItem key={ key } className={ classes }>
 					{ isExternal (item.url) ?
 						<RsNavLink href={ item.url } className={ variant } active>
-							<i className={ item.icon }></i>{ item.name }{ badge (item.badge) }
+							<i className={ item.icon }/>{ item.name }{ badge (item.badge) }
 						</RsNavLink>
 						:
 						<NavLink to={ item.url } className={ variant } activeClassName="active">
-							<i className={ item.icon }></i>{ item.name }{ badge (item.badge) }
+							<i className={ item.icon }/>{ item.name }{ badge (item.badge) }
 						</NavLink>
 					}
 				</NavItem>
@@ -80,8 +80,8 @@ class Sidebar extends Component {
 		const navDropdown = (item, key) => {
 			return (
 				<li key={ key } className={ activeRoute (item.url, props) }>
-					<a className="nav-link nav-dropdown-toggle" href="#" onClick={ handleClick.bind (this) }><i
-						className={ item.icon }></i>{ item.name }</a>
+					<a className="nav-link nav-dropdown-toggle" onClick={ handleClick.bind (this) }>
+						<i className={ item.icon }/>{ item.name }</a>
 					<ul className="nav-dropdown-items">
 						{ navList (item.children) }
 					</ul>

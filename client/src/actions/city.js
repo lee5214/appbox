@@ -3,8 +3,8 @@ import axios from 'axios';
 
 const WEATHER_URL = 'http://api.openweathermap.org/data/2.5';
 const NYT_NEWS_URL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json';
-//export const FETCH_CITY_WEATHER = 'FETCH_CITY_WEATHER';
-//export const FETCH_CITY_NEWS = 'FETCH_CITY_NEWS';
+// export const FETCH_CITY_WEATHER = 'FETCH_CITY_WEATHER';
+// export const FETCH_CITY_NEWS = 'FETCH_CITY_NEWS';
 export const FETCH_CITY = 'FETCH_CITY';
 
 // export async function fetchCityWeather (cityName, unit = 'Imperial') {
@@ -84,4 +84,4 @@ export const fetchCity = (cityName, unit = 'Imperial') => {
 		});
 	};
 };
-//TODO city search function complation (add feedback after submit)
+// TODO city search function complation (add feedback after submit)

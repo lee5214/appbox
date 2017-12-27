@@ -9,11 +9,11 @@ import { fetchUserLocation } from 'utils';
 class SearchBar extends Component {
 	constructor (props) {
 		super (props);
-		this.state = {term : '', searchedTerm : [], duplicatedSearch: false};
+		this.state = {term : '', searchedTerm : [], duplicatedSearch : false};
 	}
 
 	onInputChange = (e) => {
-		this.setState ({term : e.target.value.toLowerCase()});
+		this.setState ({term : e.target.value.toLowerCase ()});
 	};
 
 	onSearchSubmit = (e) => {
@@ -22,11 +22,11 @@ class SearchBar extends Component {
 		if (!this.state.searchedTerm.includes (this.state.term)) {
 			//TODO warning implementation
 
-			this.setState({duplicatedSearch: false})
+			this.setState ({duplicatedSearch : false});
 			this.props.fetchCity (this.state.term);
-			this.setState ({term : '', searchedTerm : [...this.state.searchedTerm, this.state.term]});
+			this.setState ({term : '', searchedTerm : [ ...this.state.searchedTerm, this.state.term ]});
 		} else {
-			this.setState({duplicatedSearch: true})
+			this.setState ({duplicatedSearch : true});
 		}
 	};
 
@@ -37,22 +37,22 @@ class SearchBar extends Component {
 		//console.log ('your current location=>', fetchUserLocation ());
 
 		// test purpose
-		this.setState ({term : '', searchedTerm : ['San Francisco']});
+		this.setState ({term : '', searchedTerm : [ 'San Francisco' ]});
 		this.props.fetchCity ('San Francisco');
 		//this.props.fetchCityNews('Hayward');
 
 	}
 
-	warningToggle(){
-		if(this.state.duplicatedSearch){
-			return<h1>Duplicated!!!!</h1>
+	warningToggle () {
+		if (this.state.duplicatedSearch) {
+			return <h1>Duplicated!!!!</h1>;
 		}
 	}
 
 	render () {
 		return (
 			<div>
-				{/*{this.warningToggle()}*/}
+				{ /*{this.warningToggle()}*/ }
 				<Form className={ 'input-group' } onSubmit={ (e) => {this.onSearchSubmit (e);} }>
 					<Col md="12">
 						<InputGroup>
@@ -60,7 +60,8 @@ class SearchBar extends Component {
 							       onChange={ (e) => this.onInputChange (e) }
 							       value={ this.state.term }/>
 							<InputGroupButton>
-								<Button color={ 'primary' } type={ 'submit' }><i className="fa fa-search"></i> Search</Button>
+								<Button color={ 'primary' } type={ 'submit' }><i className="fa fa-search"></i>
+									Search</Button>
 							</InputGroupButton>
 						</InputGroup>
 					</Col>

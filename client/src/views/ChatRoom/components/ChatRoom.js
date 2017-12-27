@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import socketIOClient from 'socket.io-client';
 import { sendPubChatMsgs } from 'actions';
 import uuid from 'uuid';
+import _ from 'lodash';
 import {
 	Button,
 	Col,
@@ -16,21 +17,26 @@ import {
 	ListGroupItem,
 	Row,
 } from 'reactstrap';
+import { USER_CONNECTED } from '../asserts/socketEvents';
 import style from './ChatRoom.scss';
 import MessageBlock from "./MessageBlock";
 
+// const socket = window.io.connect('http://localhost:4000')
 const socket = socketIOClient ('http://localhost:4000');
 
+// import socket from '../Socket'
 class ChatRoom extends Component {
-
 	constructor (props) {
 		super (props);
 		this.state = {
-			guestId : '',
+			userId : '',
+			userImg : '',
+			displayName : '',
 			newMsg : '',
 			currentUser : '',
 			pubChatMessages : [],
 			inputMessage : '',
+			userList : [ {displayName : 'jojo'} ],
 		};
 
 		/*
@@ -39,24 +45,60 @@ class ChatRoom extends Component {
 		 * otherwise it may be called multiple times
 		 */
 		socket.on ('receive msg', (msg) => {
-			this.setState ({pubChatMessages : [...this.state.pubChatMessages, msg]});
-			//alert(msg)
-			//this.setState({msg:msg})
-			//document.body.style.backgroundColor = color
+			this.setState ({pubChatMessages : [ ...this.state.pubChatMessages, msg ]});
+			// alert(msg)
+			// this.setState({msg:msg})
+			// document.body.style.backgroundColor = color
+		});
+
+		socket.on ('userList update', (userList) => {
+			this.setState ({userList});
+			console.log (this.state.userList);
 		});
 	}
-	componentWillMount () {
-		this.initSocket ();
 
-		let guestId = uuid.v4 ().split ('-').pop ();
-		this.setState ({guestId});
+	setUser (userImg, displayName) {
+		this.setState ({
+			userImg,
+			displayName,
+		});
+	}
+
+	componentDidMount () {
+		let userId = uuid.v4 ().split ('-').pop ();
+		this.setState ({userId});
+		if (this.props.currentUserInfo) {
+			const {avatar, displayName} = this.props.currentUserInfo.local;
+			this.setUser (avatar, displayName);
+		} else {
+			let ran = _.random (1, 4);
+			console.log ('ran', ran);
+			console.log (`/img/avatars/${ran}.jpg`);
+			this.setUser (`/img/avatars/${ran}.jpg`, `guest-${this.state.userId}`,);
+		}
+		this.initSocket ();
 	}
 
 	initSocket = () => {
 
-		socket.on ('connect', () => {
-			console.log ('connected');
-		});
+		// socket.on ('connect', () => {
+		// 	console.log ('connected');
+		// 	//return {};
+		// });
+
+		// socket.emit (
+		// 	'new user join',
+		// 	{
+		// 		userImg : this.state.userImg,
+		// 		displayName : this.state.displayName,
+		// 	});
+
+		// socket.on ('receive msg', (msg) => {
+		// 	this.setState ({pubChatMessages : [...this.state.pubChatMessages, msg]});
+		// 	//alert(msg)
+		// 	//this.setState({msg:msg})
+		// 	//document.body.style.backgroundColor = color
+		// });
 
 	};
 
@@ -78,7 +120,7 @@ class ChatRoom extends Component {
 			displayName = this.props.currentUserInfo.local.displayName;
 		} else {
 			userImg = '/img/avatars/1.jpg';
-			displayName = `guest-${this.state.guestId}`;
+			displayName = `guest-${this.state.userId}`;
 
 		}
 		socket.emit (
@@ -92,13 +134,19 @@ class ChatRoom extends Component {
 		this.setState ({inputMessage : ''});
 
 	};
+	handleUserList = (user) => {
+		return <div>{ user.displayName }</div>;
+	};
+	updateUserList = (method, userId) => {
+
+	};
 
 	render () {
 		return (
 			<Container className="animated fadeIn">
 				<Row>
 					<Col xs={ 3 }>
-						<h4>Contacts</h4>
+						{ this.state.userList.map ((user) => this.handleUserList (user)) }
 					</Col>
 
 					<Col xs={ 9 }>

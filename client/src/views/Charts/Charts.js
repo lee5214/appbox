@@ -3,7 +3,7 @@ import { Bar, Doughnut, Line, Pie, Polar, Radar } from 'react-chartjs-2';
 import { Card, CardBody, CardColumns, CardHeader } from 'reactstrap';
 
 const line = {
-	labels : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+	labels : [ 'January', 'February', 'March', 'April', 'May', 'June', 'July' ],
 	datasets : [
 		{
 			label : 'My First dataset',
@@ -24,13 +24,13 @@ const line = {
 			pointHoverBorderWidth : 2,
 			pointRadius : 1,
 			pointHitRadius : 10,
-			data : [65, 59, 80, 81, 56, 55, 40],
+			data : [ 65, 59, 80, 81, 56, 55, 40 ],
 		},
 	],
 };
 
 const bar = {
-	labels : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+	labels : [ 'January', 'February', 'March', 'April', 'May', 'June', 'July' ],
 	datasets : [
 		{
 			label : 'My First dataset',
@@ -39,7 +39,7 @@ const bar = {
 			borderWidth : 1,
 			hoverBackgroundColor : 'rgba(255,99,132,0.4)',
 			hoverBorderColor : 'rgba(255,99,132,1)',
-			data : [65, 59, 80, 81, 56, 55, 40],
+			data : [ 65, 59, 80, 81, 56, 55, 40 ],
 		},
 	],
 };
@@ -50,8 +50,8 @@ const doughnut = {
 		'Green',
 		'Yellow',
 	],
-	datasets : [{
-		data : [300, 50, 100],
+	datasets : [ {
+		data : [ 300, 50, 100 ],
 		backgroundColor : [
 			'#FF6384',
 			'#36A2EB',
@@ -62,11 +62,11 @@ const doughnut = {
 			'#36A2EB',
 			'#FFCE56',
 		],
-	}],
+	} ],
 };
 
 const radar = {
-	labels : ['Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running'],
+	labels : [ 'Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running' ],
 	datasets : [
 		{
 			label : 'My First dataset',
@@ -76,7 +76,7 @@ const radar = {
 			pointBorderColor : '#fff',
 			pointHoverBackgroundColor : '#fff',
 			pointHoverBorderColor : 'rgba(179,181,198,1)',
-			data : [65, 59, 90, 81, 56, 55, 40],
+			data : [ 65, 59, 90, 81, 56, 55, 40 ],
 		},
 		{
 			label : 'My Second dataset',
@@ -86,7 +86,7 @@ const radar = {
 			pointBorderColor : '#fff',
 			pointHoverBackgroundColor : '#fff',
 			pointHoverBorderColor : 'rgba(255,99,132,1)',
-			data : [28, 48, 40, 19, 96, 27, 100],
+			data : [ 28, 48, 40, 19, 96, 27, 100 ],
 		},
 	],
 };
@@ -97,8 +97,8 @@ const pie = {
 		'Green',
 		'Yellow',
 	],
-	datasets : [{
-		data : [300, 50, 100],
+	datasets : [ {
+		data : [ 300, 50, 100 ],
 		backgroundColor : [
 			'#FF6384',
 			'#36A2EB',
@@ -109,11 +109,11 @@ const pie = {
 			'#36A2EB',
 			'#FFCE56',
 		],
-	}],
+	} ],
 };
 
 const polar = {
-	datasets : [{
+	datasets : [ {
 		data : [
 			11,
 			16,
@@ -129,7 +129,7 @@ const polar = {
 			'#36A2EB',
 		],
 		label : 'My dataset' // for legend
-	}],
+	} ],
 	labels : [
 		'Red',
 		'Green',

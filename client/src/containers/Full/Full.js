@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import { Container } from 'reactstrap';
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchCurrentUser } from 'actions';
 // Components
@@ -92,7 +92,7 @@ class Full extends Component {
 								<Route path="/chatroom" name="Chat Room"
 								       component={ ChatRoom }/>
 
-								<Route path="/chatrooms/:id" component={ ChatRoom } />
+								<Route path="/chatrooms/:id" component={ ChatRoom }/>
 
 								<Redirect from="/" to="/dashboard"/>
 							</Switch>
@@ -116,4 +116,5 @@ function mapDispatchToProps (dispatch) {
 
 export default connect (mapStateToProps, mapDispatchToProps) (Full);
 
-// TODO intro that ppl could send me msg through app messager with my name, add feature that auto fullfill search name when type
+// TODO intro that ppl could send me msg through app messager with my name, add feature that auto fullfill search name
+// when type

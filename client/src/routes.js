@@ -1,3 +1,4 @@
+//for breadcrumb shows names
 const routes = {
 	'/' : 'Home',
 	'/dashboard' : 'Dashboard',
@@ -17,7 +18,7 @@ const routes = {
 	'/widgets' : 'Widgets',
 	'/projects' : 'Projects',
 	'/cityinfo' : 'Fetch Your City',
-	'/chatroom/public' : 'Chat Room',
+	'/chatroom' : 'Chat Room',
 	'/chatroom/:id' : 'Private Chat Room',
 	'/test' : 'Test',
 };

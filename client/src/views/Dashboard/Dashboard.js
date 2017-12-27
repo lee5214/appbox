@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { selectBook } from '../../actions';
-import { bindActionCreators } from 'redux';
 import { Bar, Line } from 'react-chartjs-2';
 import {
 	Badge,
@@ -34,13 +33,13 @@ const brandDanger = '#f86c6b';
 
 // Card Chart 1
 const cardChartData1 = {
-	labels : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+	labels : [ 'January', 'February', 'March', 'April', 'May', 'June', 'July' ],
 	datasets : [
 		{
 			label : 'My First dataset',
 			backgroundColor : brandPrimary,
 			borderColor : 'rgba(255,255,255,.55)',
-			data : [65, 59, 84, 84, 51, 55, 40],
+			data : [ 65, 59, 84, 84, 51, 55, 40 ],
 		},
 	],
 };
@@ -51,7 +50,7 @@ const cardChartOpts1 = {
 		display : false,
 	},
 	scales : {
-		xAxes : [{
+		xAxes : [ {
 			gridLines : {
 				color : 'transparent',
 				zeroLineColor : 'transparent',
@@ -61,15 +60,15 @@ const cardChartOpts1 = {
 				fontColor : 'transparent',
 			},
 
-		}],
-		yAxes : [{
+		} ],
+		yAxes : [ {
 			display : false,
 			ticks : {
 				display : false,
-				min : Math.min.apply (Math, cardChartData1.datasets[0].data) - 5,
-				max : Math.max.apply (Math, cardChartData1.datasets[0].data) + 5,
+				min : Math.min.apply (Math, cardChartData1.datasets[ 0 ].data) - 5,
+				max : Math.max.apply (Math, cardChartData1.datasets[ 0 ].data) + 5,
 			},
-		}],
+		} ],
 	},
 	elements : {
 		line : {
@@ -85,13 +84,13 @@ const cardChartOpts1 = {
 
 // Card Chart 2
 const cardChartData2 = {
-	labels : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+	labels : [ 'January', 'February', 'March', 'April', 'May', 'June', 'July' ],
 	datasets : [
 		{
 			label : 'My First dataset',
 			backgroundColor : brandInfo,
 			borderColor : 'rgba(255,255,255,.55)',
-			data : [1, 18, 9, 17, 34, 22, 11],
+			data : [ 1, 18, 9, 17, 34, 22, 11 ],
 		},
 	],
 };
@@ -102,7 +101,7 @@ const cardChartOpts2 = {
 		display : false,
 	},
 	scales : {
-		xAxes : [{
+		xAxes : [ {
 			gridLines : {
 				color : 'transparent',
 				zeroLineColor : 'transparent',
@@ -112,15 +111,15 @@ const cardChartOpts2 = {
 				fontColor : 'transparent',
 			},
 
-		}],
-		yAxes : [{
+		} ],
+		yAxes : [ {
 			display : false,
 			ticks : {
 				display : false,
-				min : Math.min.apply (Math, cardChartData2.datasets[0].data) - 5,
-				max : Math.max.apply (Math, cardChartData2.datasets[0].data) + 5,
+				min : Math.min.apply (Math, cardChartData2.datasets[ 0 ].data) - 5,
+				max : Math.max.apply (Math, cardChartData2.datasets[ 0 ].data) + 5,
 			},
-		}],
+		} ],
 	},
 	elements : {
 		line : {
@@ -137,13 +136,13 @@ const cardChartOpts2 = {
 
 // Card Chart 3
 const cardChartData3 = {
-	labels : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+	labels : [ 'January', 'February', 'March', 'April', 'May', 'June', 'July' ],
 	datasets : [
 		{
 			label : 'My First dataset',
 			backgroundColor : 'rgba(255,255,255,.2)',
 			borderColor : 'rgba(255,255,255,.55)',
-			data : [78, 81, 80, 45, 34, 12, 40],
+			data : [ 78, 81, 80, 45, 34, 12, 40 ],
 		},
 	],
 };
@@ -154,12 +153,12 @@ const cardChartOpts3 = {
 		display : false,
 	},
 	scales : {
-		xAxes : [{
+		xAxes : [ {
 			display : false,
-		}],
-		yAxes : [{
+		} ],
+		yAxes : [ {
 			display : false,
-		}],
+		} ],
 	},
 	elements : {
 		line : {
@@ -175,13 +174,13 @@ const cardChartOpts3 = {
 
 // Card Chart 4
 const cardChartData4 = {
-	labels : ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''],
+	labels : [ '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '' ],
 	datasets : [
 		{
 			label : 'My First dataset',
 			backgroundColor : 'rgba(255,255,255,.3)',
 			borderColor : 'transparent',
-			data : [78, 81, 80, 45, 34, 12, 40, 75, 34, 89, 32, 68, 54, 72, 18, 98],
+			data : [ 78, 81, 80, 45, 34, 12, 40, 75, 34, 89, 32, 68, 54, 72, 18, 98 ],
 		},
 	],
 };
@@ -192,28 +191,28 @@ const cardChartOpts4 = {
 		display : false,
 	},
 	scales : {
-		xAxes : [{
+		xAxes : [ {
 			display : false,
 			barPercentage : 0.6,
-		}],
-		yAxes : [{
+		} ],
+		yAxes : [ {
 			display : false,
-		}],
+		} ],
 	},
 };
 
 // Social Box Chart
 const socialBoxData = [
-	{data : [65, 59, 84, 84, 51, 55, 40], label : 'facebook'},
-	{data : [1, 13, 9, 17, 34, 41, 38], label : 'twitter'},
-	{data : [78, 81, 80, 45, 34, 12, 40], label : 'linkedin'},
-	{data : [35, 23, 56, 22, 97, 23, 64], label : 'google'},
+	{data : [ 65, 59, 84, 84, 51, 55, 40 ], label : 'facebook'},
+	{data : [ 1, 13, 9, 17, 34, 41, 38 ], label : 'twitter'},
+	{data : [ 78, 81, 80, 45, 34, 12, 40 ], label : 'linkedin'},
+	{data : [ 35, 23, 56, 22, 97, 23, 64 ], label : 'google'},
 ];
 
 const makeSocialBoxData = (dataSetNo) => {
-	const dataset = socialBoxData[dataSetNo];
+	const dataset = socialBoxData[ dataSetNo ];
 	const data = {
-		labels : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+		labels : [ 'January', 'February', 'March', 'April', 'May', 'June', 'July' ],
 		datasets : [
 			{
 				backgroundColor : 'rgba(255,255,255,.1)',
@@ -235,12 +234,12 @@ const socialChartOpts = {
 		display : false,
 	},
 	scales : {
-		xAxes : [{
+		xAxes : [ {
 			display : false,
-		}],
-		yAxes : [{
+		} ],
+		yAxes : [ {
 			display : false,
-		}],
+		} ],
 	},
 	elements : {
 		point : {
@@ -255,35 +254,35 @@ const socialChartOpts = {
 // sparkline charts
 const sparkLineChartData = [
 	{
-		data : [35, 23, 56, 22, 97, 23, 64],
+		data : [ 35, 23, 56, 22, 97, 23, 64 ],
 		label : 'New Clients',
 	},
 	{
-		data : [65, 59, 84, 84, 51, 55, 40],
+		data : [ 65, 59, 84, 84, 51, 55, 40 ],
 		label : 'Recurring Clients',
 	},
 	{
-		data : [35, 23, 56, 22, 97, 23, 64],
+		data : [ 35, 23, 56, 22, 97, 23, 64 ],
 		label : 'Pageviews',
 	},
 	{
-		data : [65, 59, 84, 84, 51, 55, 40],
+		data : [ 65, 59, 84, 84, 51, 55, 40 ],
 		label : 'Organic',
 	},
 	{
-		data : [78, 81, 80, 45, 34, 12, 40],
+		data : [ 78, 81, 80, 45, 34, 12, 40 ],
 		label : 'CTR',
 	},
 	{
-		data : [1, 13, 9, 17, 34, 41, 38],
+		data : [ 1, 13, 9, 17, 34, 41, 38 ],
 		label : 'Bounce Rate',
 	},
 ];
 
 const makeSparkLineData = (dataSetNo, variant) => {
-	const dataset = sparkLineChartData[dataSetNo];
+	const dataset = sparkLineChartData[ dataSetNo ];
 	const data = {
-		labels : ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+		labels : [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday' ],
 		datasets : [
 			{
 				backgroundColor : 'transparent',
@@ -300,12 +299,12 @@ const sparklineChartOpts = {
 	responsive : true,
 	maintainAspectRatio : true,
 	scales : {
-		xAxes : [{
+		xAxes : [ {
 			display : false,
-		}],
-		yAxes : [{
+		} ],
+		yAxes : [ {
 			display : false,
-		}],
+		} ],
 	},
 	elements : {
 		line : {
@@ -353,7 +352,7 @@ for (var i = 0; i <= elements; i++) {
 }
 
 const mainChart = {
-	labels : ['M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S'],
+	labels : [ 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S' ],
 	datasets : [
 		{
 			label : 'My First dataset',
@@ -377,7 +376,7 @@ const mainChart = {
 			borderColor : brandDanger,
 			pointHoverBackgroundColor : '#fff',
 			borderWidth : 1,
-			borderDash : [8, 5],
+			borderDash : [ 8, 5 ],
 			data : data3,
 		},
 	],
@@ -389,19 +388,19 @@ const mainChartOpts = {
 		display : false,
 	},
 	scales : {
-		xAxes : [{
+		xAxes : [ {
 			gridLines : {
 				drawOnChartArea : false,
 			},
-		}],
-		yAxes : [{
+		} ],
+		yAxes : [ {
 			ticks : {
 				beginAtZero : true,
 				maxTicksLimit : 5,
 				stepSize : Math.ceil (250 / 5),
 				max : 250,
 			},
-		}],
+		} ],
 	},
 	elements : {
 		point : {
@@ -876,8 +875,8 @@ class Dashboard extends Component {
 											<li className="divider text-center">
 												<Button color="link" size="sm" className="text-muted"
 												        data-toggle="tooltip" data-placement="top"
-												        title="" data-original-title="show more"><i
-													className="icon-options"></i></Button>
+												        title="" data-original-title="show more">
+													<i className="icon-options"></i></Button>
 											</li>
 										</ul>
 									</Col>
@@ -921,8 +920,8 @@ class Dashboard extends Component {
 													<strong>1.924</strong>
 												</div>
 												<div className="actions">
-													<Button color="link" className="text-muted"><i
-														className="icon-settings"></i></Button>
+													<Button color="link" className="text-muted">
+														<i className="icon-settings"></i></Button>
 												</div>
 											</li>
 											<li>
@@ -1026,238 +1025,245 @@ class Dashboard extends Component {
 								<br/>
 								<Table hover responsive className="table-outline mb-0 d-none d-sm-table">
 									<thead className="thead-light">
-									<tr>
-										<th className="text-center"><i className="icon-people"></i></th>
-										<th>User</th>
-										<th className="text-center">Country</th>
-										<th>Usage</th>
-										<th className="text-center">Payment Method</th>
-										<th>Activity</th>
-									</tr>
+										<tr>
+											<th className="text-center"><i className="icon-people"></i></th>
+											<th>User</th>
+											<th className="text-center">Country</th>
+											<th>Usage</th>
+											<th className="text-center">Payment Method</th>
+											<th>Activity</th>
+										</tr>
 									</thead>
 									<tbody>
-									<tr>
-										<td className="text-center">
-											<div className="avatar">
-												<img src={ 'img/avatars/1.jpg' } className="img-avatar"
-												     alt="admin@bootstrapmaster.com"/>
-												<span className="avatar-status badge-success"></span>
-											</div>
-										</td>
-										<td>
-											<div>Yiorgos Avraamu</div>
-											<div className="small text-muted">
-												<span>New</span> | Registered: Jan 1, 2015
-											</div>
-										</td>
-										<td className="text-center">
-											<img src={ 'img/flags/USA.png' } alt="USA" style={ {height : 24 + 'px'} }/>
-										</td>
-										<td>
-											<div className="clearfix">
-												<div className="float-left">
-													<strong>50%</strong>
+										<tr>
+											<td className="text-center">
+												<div className="avatar">
+													<img src={ 'img/avatars/1.jpg' } className="img-avatar"
+													     alt="admin@bootstrapmaster.com"/>
+													<span className="avatar-status badge-success"></span>
 												</div>
-												<div className="float-right">
-													<small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+											</td>
+											<td>
+												<div>Yiorgos Avraamu</div>
+												<div className="small text-muted">
+													<span>New</span> | Registered: Jan 1, 2015
 												</div>
-											</div>
-											<Progress className="progress-xs" color="success" value="50"/>
-										</td>
-										<td className="text-center">
-											<i className="fa fa-cc-mastercard" style={ {fontSize : 24 + 'px'} }></i>
-										</td>
-										<td>
-											<div className="small text-muted">Last login</div>
-											<strong>10 sec ago</strong>
-										</td>
-									</tr>
-									<tr>
-										<td className="text-center">
-											<div className="avatar">
-												<img src={ 'img/avatars/2.jpg' } className="img-avatar"
-												     alt="admin@bootstrapmaster.com"/>
-												<span className="avatar-status badge-danger"></span>
-											</div>
-										</td>
-										<td>
-											<div>Avram Tarasios</div>
-											<div className="small text-muted">
+											</td>
+											<td className="text-center">
+												<img src={ 'img/flags/USA.png' } alt="USA"
+												     style={ {height : 24 + 'px'} }/>
+											</td>
+											<td>
+												<div className="clearfix">
+													<div className="float-left">
+														<strong>50%</strong>
+													</div>
+													<div className="float-right">
+														<small className="text-muted">Jun 11, 2015 - Jul 10, 2015
+														</small>
+													</div>
+												</div>
+												<Progress className="progress-xs" color="success" value="50"/>
+											</td>
+											<td className="text-center">
+												<i className="fa fa-cc-mastercard" style={ {fontSize : 24 + 'px'} }></i>
+											</td>
+											<td>
+												<div className="small text-muted">Last login</div>
+												<strong>10 sec ago</strong>
+											</td>
+										</tr>
+										<tr>
+											<td className="text-center">
+												<div className="avatar">
+													<img src={ 'img/avatars/2.jpg' } className="img-avatar"
+													     alt="admin@bootstrapmaster.com"/>
+													<span className="avatar-status badge-danger"></span>
+												</div>
+											</td>
+											<td>
+												<div>Avram Tarasios</div>
+												<div className="small text-muted">
 
-												<span>Recurring</span> | Registered: Jan 1, 2015
-											</div>
-										</td>
-										<td className="text-center">
-											<img src={ 'img/flags/Brazil.png' } alt="Brazil"
-											     style={ {height : 24 + 'px'} }/>
-										</td>
-										<td>
-											<div className="clearfix">
-												<div className="float-left">
-													<strong>10%</strong>
+													<span>Recurring</span> | Registered: Jan 1, 2015
 												</div>
-												<div className="float-right">
-													<small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+											</td>
+											<td className="text-center">
+												<img src={ 'img/flags/Brazil.png' } alt="Brazil"
+												     style={ {height : 24 + 'px'} }/>
+											</td>
+											<td>
+												<div className="clearfix">
+													<div className="float-left">
+														<strong>10%</strong>
+													</div>
+													<div className="float-right">
+														<small className="text-muted">Jun 11, 2015 - Jul 10, 2015
+														</small>
+													</div>
 												</div>
-											</div>
-											<Progress className="progress-xs" color="info" value="10"/>
-										</td>
-										<td className="text-center">
-											<i className="fa fa-cc-visa" style={ {fontSize : 24 + 'px'} }></i>
-										</td>
-										<td>
-											<div className="small text-muted">Last login</div>
-											<strong>5 minutes ago</strong>
-										</td>
-									</tr>
-									<tr>
-										<td className="text-center">
-											<div className="avatar">
-												<img src={ 'img/avatars/3.jpg' } className="img-avatar"
-												     alt="admin@bootstrapmaster.com"/>
-												<span className="avatar-status badge-warning"></span>
-											</div>
-										</td>
-										<td>
-											<div>Quintin Ed</div>
-											<div className="small text-muted">
-												<span>New</span> | Registered: Jan 1, 2015
-											</div>
-										</td>
-										<td className="text-center">
-											<img src={ 'img/flags/India.png' } alt="India"
-											     style={ {height : 24 + 'px'} }/>
-										</td>
-										<td>
-											<div className="clearfix">
-												<div className="float-left">
-													<strong>74%</strong>
+												<Progress className="progress-xs" color="info" value="10"/>
+											</td>
+											<td className="text-center">
+												<i className="fa fa-cc-visa" style={ {fontSize : 24 + 'px'} }></i>
+											</td>
+											<td>
+												<div className="small text-muted">Last login</div>
+												<strong>5 minutes ago</strong>
+											</td>
+										</tr>
+										<tr>
+											<td className="text-center">
+												<div className="avatar">
+													<img src={ 'img/avatars/3.jpg' } className="img-avatar"
+													     alt="admin@bootstrapmaster.com"/>
+													<span className="avatar-status badge-warning"></span>
 												</div>
-												<div className="float-right">
-													<small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+											</td>
+											<td>
+												<div>Quintin Ed</div>
+												<div className="small text-muted">
+													<span>New</span> | Registered: Jan 1, 2015
 												</div>
-											</div>
-											<Progress className="progress-xs" color="warning" value="74"/>
-										</td>
-										<td className="text-center">
-											<i className="fa fa-cc-stripe" style={ {fontSize : 24 + 'px'} }></i>
-										</td>
-										<td>
-											<div className="small text-muted">Last login</div>
-											<strong>1 hour ago</strong>
-										</td>
-									</tr>
-									<tr>
-										<td className="text-center">
-											<div className="avatar">
-												<img src={ 'img/avatars/4.jpg' } className="img-avatar"
-												     alt="admin@bootstrapmaster.com"/>
-												<span className="avatar-status badge-secondary"></span>
-											</div>
-										</td>
-										<td>
-											<div>Enéas Kwadwo</div>
-											<div className="small text-muted">
-												<span>New</span> | Registered: Jan 1, 2015
-											</div>
-										</td>
-										<td className="text-center">
-											<img src={ 'img/flags/France.png' } alt="France"
-											     style={ {height : 24 + 'px'} }/>
-										</td>
-										<td>
-											<div className="clearfix">
-												<div className="float-left">
-													<strong>98%</strong>
+											</td>
+											<td className="text-center">
+												<img src={ 'img/flags/India.png' } alt="India"
+												     style={ {height : 24 + 'px'} }/>
+											</td>
+											<td>
+												<div className="clearfix">
+													<div className="float-left">
+														<strong>74%</strong>
+													</div>
+													<div className="float-right">
+														<small className="text-muted">Jun 11, 2015 - Jul 10, 2015
+														</small>
+													</div>
 												</div>
-												<div className="float-right">
-													<small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+												<Progress className="progress-xs" color="warning" value="74"/>
+											</td>
+											<td className="text-center">
+												<i className="fa fa-cc-stripe" style={ {fontSize : 24 + 'px'} }></i>
+											</td>
+											<td>
+												<div className="small text-muted">Last login</div>
+												<strong>1 hour ago</strong>
+											</td>
+										</tr>
+										<tr>
+											<td className="text-center">
+												<div className="avatar">
+													<img src={ 'img/avatars/4.jpg' } className="img-avatar"
+													     alt="admin@bootstrapmaster.com"/>
+													<span className="avatar-status badge-secondary"></span>
 												</div>
-											</div>
-											<Progress className="progress-xs" color="danger" value="98"/>
-										</td>
-										<td className="text-center">
-											<i className="fa fa-paypal" style={ {fontSize : 24 + 'px'} }></i>
-										</td>
-										<td>
-											<div className="small text-muted">Last login</div>
-											<strong>Last month</strong>
-										</td>
-									</tr>
-									<tr>
-										<td className="text-center">
-											<div className="avatar">
-												<img src={ 'img/avatars/5.jpg' } className="img-avatar"
-												     alt="admin@bootstrapmaster.com"/>
-												<span className="avatar-status badge-success"></span>
-											</div>
-										</td>
-										<td>
-											<div>Agapetus Tadeáš</div>
-											<div className="small text-muted">
-												<span>New</span> | Registered: Jan 1, 2015
-											</div>
-										</td>
-										<td className="text-center">
-											<img src={ 'img/flags/Spain.png' } alt="Spain"
-											     style={ {height : 24 + 'px'} }/>
-										</td>
-										<td>
-											<div className="clearfix">
-												<div className="float-left">
-													<strong>22%</strong>
+											</td>
+											<td>
+												<div>Enéas Kwadwo</div>
+												<div className="small text-muted">
+													<span>New</span> | Registered: Jan 1, 2015
 												</div>
-												<div className="float-right">
-													<small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+											</td>
+											<td className="text-center">
+												<img src={ 'img/flags/France.png' } alt="France"
+												     style={ {height : 24 + 'px'} }/>
+											</td>
+											<td>
+												<div className="clearfix">
+													<div className="float-left">
+														<strong>98%</strong>
+													</div>
+													<div className="float-right">
+														<small className="text-muted">Jun 11, 2015 - Jul 10, 2015
+														</small>
+													</div>
 												</div>
-											</div>
-											<Progress className="progress-xs" color="info" value="22"/>
-										</td>
-										<td className="text-center">
-											<i className="fa fa-google-wallet" style={ {fontSize : 24 + 'px'} }></i>
-										</td>
-										<td>
-											<div className="small text-muted">Last login</div>
-											<strong>Last week</strong>
-										</td>
-									</tr>
-									<tr>
-										<td className="text-center">
-											<div className="avatar">
-												<img src={ 'img/avatars/6.jpg' } className="img-avatar"
-												     alt="admin@bootstrapmaster.com"/>
-												<span className="avatar-status badge-danger"></span>
-											</div>
-										</td>
-										<td>
-											<div>Friderik Dávid</div>
-											<div className="small text-muted">
-												<span>New</span> | Registered: Jan 1, 2015
-											</div>
-										</td>
-										<td className="text-center">
-											<img src={ 'img/flags/Poland.png' } alt="Poland"
-											     style={ {height : 24 + 'px'} }/>
-										</td>
-										<td>
-											<div className="clearfix">
-												<div className="float-left">
-													<strong>43%</strong>
+												<Progress className="progress-xs" color="danger" value="98"/>
+											</td>
+											<td className="text-center">
+												<i className="fa fa-paypal" style={ {fontSize : 24 + 'px'} }></i>
+											</td>
+											<td>
+												<div className="small text-muted">Last login</div>
+												<strong>Last month</strong>
+											</td>
+										</tr>
+										<tr>
+											<td className="text-center">
+												<div className="avatar">
+													<img src={ 'img/avatars/5.jpg' } className="img-avatar"
+													     alt="admin@bootstrapmaster.com"/>
+													<span className="avatar-status badge-success"></span>
 												</div>
-												<div className="float-right">
-													<small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+											</td>
+											<td>
+												<div>Agapetus Tadeáš</div>
+												<div className="small text-muted">
+													<span>New</span> | Registered: Jan 1, 2015
 												</div>
-											</div>
-											<Progress className="progress-xs" color="success" value="43"/>
-										</td>
-										<td className="text-center">
-											<i className="fa fa-cc-amex" style={ {fontSize : 24 + 'px'} }></i>
-										</td>
-										<td>
-											<div className="small text-muted">Last login</div>
-											<strong>Yesterday</strong>
-										</td>
-									</tr>
+											</td>
+											<td className="text-center">
+												<img src={ 'img/flags/Spain.png' } alt="Spain"
+												     style={ {height : 24 + 'px'} }/>
+											</td>
+											<td>
+												<div className="clearfix">
+													<div className="float-left">
+														<strong>22%</strong>
+													</div>
+													<div className="float-right">
+														<small className="text-muted">Jun 11, 2015 - Jul 10, 2015
+														</small>
+													</div>
+												</div>
+												<Progress className="progress-xs" color="info" value="22"/>
+											</td>
+											<td className="text-center">
+												<i className="fa fa-google-wallet" style={ {fontSize : 24 + 'px'} }></i>
+											</td>
+											<td>
+												<div className="small text-muted">Last login</div>
+												<strong>Last week</strong>
+											</td>
+										</tr>
+										<tr>
+											<td className="text-center">
+												<div className="avatar">
+													<img src={ 'img/avatars/6.jpg' } className="img-avatar"
+													     alt="admin@bootstrapmaster.com"/>
+													<span className="avatar-status badge-danger"></span>
+												</div>
+											</td>
+											<td>
+												<div>Friderik Dávid</div>
+												<div className="small text-muted">
+													<span>New</span> | Registered: Jan 1, 2015
+												</div>
+											</td>
+											<td className="text-center">
+												<img src={ 'img/flags/Poland.png' } alt="Poland"
+												     style={ {height : 24 + 'px'} }/>
+											</td>
+											<td>
+												<div className="clearfix">
+													<div className="float-left">
+														<strong>43%</strong>
+													</div>
+													<div className="float-right">
+														<small className="text-muted">Jun 11, 2015 - Jul 10, 2015
+														</small>
+													</div>
+												</div>
+												<Progress className="progress-xs" color="success" value="43"/>
+											</td>
+											<td className="text-center">
+												<i className="fa fa-cc-amex" style={ {fontSize : 24 + 'px'} }></i>
+											</td>
+											<td>
+												<div className="small text-muted">Last login</div>
+												<strong>Yesterday</strong>
+											</td>
+										</tr>
 									</tbody>
 								</Table>
 							</CardBody>

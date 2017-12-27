@@ -17,7 +17,7 @@ class CityCurrent extends Component {
 				<CardHeader className={ classes.chartHeader }>
 					<h6>Tempature Forecast - Range: <kbd>5 days</kbd> Frequency: <kbd>3 hours</kbd></h6>
 
-					{ /*<div className="card-actions">
+					{ /* <div className="card-actions">
 					 <a href="">
 					 <small className="text-muted">X</small>
 					 </a>
@@ -30,7 +30,7 @@ class CityCurrent extends Component {
 							data={ {
 
 								labels : dateList || [],
-								datasets : [{
+								datasets : [ {
 									label : label || 'My First dataset',
 									fill : false,
 									lineTension : 0.1,
@@ -50,7 +50,7 @@ class CityCurrent extends Component {
 									pointRadius : 1,
 									pointHitRadius : 10,
 									data : tempList || [],
-								},],
+								}, ],
 							}
 							}
 							options={
@@ -144,8 +144,7 @@ class CityCurrent extends Component {
 					</div>
 				</CardBody>
 			</Card>
-		)
-			;
+		);
 	};
 
 	componentWillMount = () => {
@@ -174,13 +173,13 @@ class CityCurrent extends Component {
 		// 		temp : item.main.temp
 		// 	};
 		// });
-		//console.log ('obj=>', obj);
+		// console.log ('obj=>', obj);
 		const infoListData = {
 			id : uid.v4 (),
-			//type : 'Basic',
-			//bsStyle : 'info',
+			// type : 'Basic',
+			// bsStyle : 'info',
 			description : '',
-			//price : '',
+			// price : '',
 			capabilities : [
 				{key : 'Country', value : sys.country},
 				{key : 'Pressure', value : pressure},
@@ -194,7 +193,7 @@ class CityCurrent extends Component {
 			<Row className={ 'mb-5' }>
 				<Col xs={ 12 } lg={ 12 }>
 					<Card body outline color="transparent">
-						<Row className={'mt-5'}>
+						<Row className={ 'mt-5' }>
 							<Col xs={ 12 }>
 								<h1 className={ 'text-center font-weight-bold' }>{ city.name }</h1>
 							</Col>
@@ -239,23 +238,23 @@ class CityCurrent extends Component {
 }
 
 const bar = {
-	labels : ['January', 'February', 'March', 'April', 'May', 'June', 'July'], datasets : [{
+	labels : [ 'January', 'February', 'March', 'April', 'May', 'June', 'July' ], datasets : [ {
 		label : 'My First dataset',
 		backgroundColor : 'rgba(255,99,132,0.2)',
 		borderColor : 'rgba(255,99,132,1)',
 		borderWidth : 1,
 		hoverBackgroundColor : 'rgba(255,99,132,0.4)',
 		hoverBorderColor : 'rgba(255,99,132,1)',
-		data : [65, 59, 80, 81, 56, 55, 40],
-	},],
+		data : [ 65, 59, 80, 81, 56, 55, 40 ],
+	}, ],
 };
 
 const doughnut = {
-	labels : ['Red', 'Green', 'Yellow',], datasets : [{
-		data : [300, 50, 100],
-		backgroundColor : ['#FF6384', '#36A2EB', '#FFCE56',],
-		hoverBackgroundColor : ['#FF6384', '#36A2EB', '#FFCE56',],
-	}],
+	labels : [ 'Red', 'Green', 'Yellow', ], datasets : [ {
+		data : [ 300, 50, 100 ],
+		backgroundColor : [ '#FF6384', '#36A2EB', '#FFCE56', ],
+		hoverBackgroundColor : [ '#FF6384', '#36A2EB', '#FFCE56', ],
+	} ],
 };
 
 export default CityCurrent;

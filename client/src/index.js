@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore,applyMiddleware } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import ReduxThunk from 'redux-thunk';
-import ReduxPromise from 'redux-promise';
 // Styles
 // Import Font Awesome Icons Set
 import 'font-awesome/css/font-awesome.min.css';
@@ -25,23 +24,23 @@ import Register from './views/Pages/Register/';
 import Page404 from './views/Pages/Page404/';
 import Page500 from './views/Pages/Page500/';
 
-const store = createStore(reducers, composeWithDevTools(
-	applyMiddleware(ReduxThunk)));
+const store = createStore (reducers, composeWithDevTools (
+	applyMiddleware (ReduxThunk)));
 
-ReactDOM.render(
 
-	<Provider store={store}>
+ReactDOM.render (
+	<Provider store={ store }>
 
-		{/*<HashRouter> is for static website, <BrowserRouter> is more for dynamic*/}
+		{ /*<HashRouter> is for static website, <BrowserRouter> is more for dynamic*/ }
 		<BrowserRouter>
 			<Switch>
-				<Route exact path="/login" name="Login Page" component={Login}/>
+				<Route exact path="/login" name="Login Page" component={ Login }/>
 				<Route exact path="/register" name="Register Page"
-					   component={Register}/>
-				<Route exact path="/404" name="Page 404" component={Page404}/>
-				<Route exact path="/500" name="Page 500" component={Page500}/>
-				<Route path="/" name="Home" component={Full}/>
+				       component={ Register }/>
+				<Route exact path="/404" name="Page 404" component={ Page404 }/>
+				<Route exact path="/500" name="Page 500" component={ Page500 }/>
+				<Route path="/" name="Home" component={ Full }/>
 			</Switch>
 		</BrowserRouter>
 	</Provider>
-	, document.getElementById('root'));
+	, document.getElementById ('root'));

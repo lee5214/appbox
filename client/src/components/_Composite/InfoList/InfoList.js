@@ -10,8 +10,7 @@ const InfoList = (props) => {
 	return (
 		<Table className={ classes.capabilitiesTable }>
 			<tbody>
-			{
-				_.map (props.capabilities, capability => (
+				{ _.map (props.capabilities, capability => (
 					<tr key={ hash (capability) }>
 						<td>
 							{ capability.key }
@@ -21,7 +20,7 @@ const InfoList = (props) => {
 						</td>
 					</tr>
 				))
-			}
+				}
 			</tbody>
 		</Table>
 	);

@@ -1,13 +1,13 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import routes from '../../delete-routes';
+import routes from '../../routes';
 import { Breadcrumb, Col, Row } from '../';
 import style from './Breadcrumb.scss';
 
-const findRouteName = url => routes[url];
+const findRouteName = url => routes[ url ];
 
 const getPaths = (pathname) => {
-	const paths = ['/'];
+	const paths = [ '/' ];
 
 	if (pathname === '/') return paths;
 
@@ -20,7 +20,7 @@ const getPaths = (pathname) => {
 	return paths;
 };
 
-const BreadcrumbsItem = ({match,...rest}) => {
+const BreadcrumbsItem = ({match, ...rest}) => {
 	const routeName = findRouteName (match.url);
 	//console.log ('match', match);
 	if (routeName) {
@@ -39,25 +39,24 @@ const BreadcrumbsItem = ({match,...rest}) => {
 	return null;
 };
 
-const Breadcrumbs = ({...rest, location : {pathname}, match}) => {
+const Breadcrumbs = ({location : {pathname}, match, ...rest}) => {
 	const paths = getPaths (pathname);
 	const items = paths.map ((path, i) => <Route key={ i++ } path={ path } component={ BreadcrumbsItem }/>);
 	return (
 		<Row>
 			<Col lg={ 12 } className={ style.navbar_column }>
 				<h2 className={ style.sub_navbar_header }>
-					{ items[items.length - 1] }
+					{ items[ items.length - 1 ] }
 				</h2>
 				<Breadcrumb>
 					{ items }
 				</Breadcrumb>
 			</Col>
 		</Row>
-
 	);
 };
 
-export default props => (
+export default (props) => (
 	<div>
 		<Route path="/:path" component={ Breadcrumbs } { ...props } />
 	</div>
