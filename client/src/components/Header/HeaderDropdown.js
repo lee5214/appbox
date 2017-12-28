@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux'
 import { Badge, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, } from 'reactstrap';
 
 class HeaderDropdown extends Component {
@@ -27,7 +28,7 @@ class HeaderDropdown extends Component {
 					     alt={ displayName }/>
 				</DropdownToggle>
 				<DropdownMenu right>
-					<DropdownItem header tag="div" className="text-center"><strong>Account</strong></DropdownItem>
+					<DropdownItem header tag="div" className="text-center"><strong>Account - {displayName}</strong></DropdownItem>
 					<DropdownItem><i className="fa fa-bell-o"/> Updates<Badge color="info">42</Badge></DropdownItem>
 					<DropdownItem><i className="fa fa-envelope-o"/> Messages<Badge
 						color="success">42</Badge></DropdownItem>
@@ -57,4 +58,5 @@ class HeaderDropdown extends Component {
 	}
 }
 
-export default HeaderDropdown;
+
+export default connect()(HeaderDropdown);

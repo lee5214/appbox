@@ -3,7 +3,7 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import { Container } from 'reactstrap';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchCurrentUser } from 'actions';
+import { createGuestUser, fetchCurrentUser } from 'actions';
 // Components
 import Buttons from '../../views/Components/Buttons/';
 import Cards from '../../views/Components/Cards/';
@@ -23,7 +23,6 @@ import Charts from '../../views/Charts/';
 import Widgets from '../../views/Widgets/';
 import Projects from '../../views/Projects/Projects';
 import City from '../../views/City/';
-import Test from '../../views/Test/';
 import ChatRoom from '../../views/ChatRoom';
 import BannerLine from 'components/_Composite/BannerLine';
 // Icons
@@ -33,9 +32,11 @@ import classes from './Full.scss';
 
 class Full extends Component {
 	componentDidMount () {
+		//this.props.createGuestUser ();
+		// TODO fix
 		this.props.fetchCurrentUser ();
-		// console.log('/full/ props',this.props)
 	}
+
 
 	render () {
 		return (
@@ -88,7 +89,7 @@ class Full extends Component {
 								<Route path="/cityinfo" name="City Info"
 								       component={ City }/>
 								<Route path="/test" name="Test"
-								       component={ Test }/>
+								/>
 								<Route path="/chatroom" name="Chat Room"
 								       component={ ChatRoom }/>
 
@@ -111,7 +112,7 @@ function mapStateToProps (state) {
 }
 
 function mapDispatchToProps (dispatch) {
-	return bindActionCreators ({fetchCurrentUser}, dispatch);
+	return bindActionCreators ({fetchCurrentUser, createGuestUser}, dispatch);
 }
 
 export default connect (mapStateToProps, mapDispatchToProps) (Full);

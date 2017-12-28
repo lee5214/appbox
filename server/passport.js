@@ -43,6 +43,7 @@ module.exports = () => {
 				}
 				else {
 					const user = await new User ({
+						guest : false,
 						local : {
 							email : profile.emails[0].value,
 							displayName : profile.displayName,
@@ -100,10 +101,11 @@ module.exports = () => {
 				}
 				else {
 					const user = await new User ({
+						guest : false,
 						local : {
 							email : profile.emails[0].value,
 							// firstName : profile.first_name,
-							displayName : profile.first_name,
+							displayName : profile._json.first_name,
 							avatar : profile.photos[0].value || '',
 							language : profile._json.local,
 						},

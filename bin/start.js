@@ -9,7 +9,7 @@ const cookieSession = require ('cookie-session');
 const path = require ('path');
 const server = http.Server (app);
 // create variable also export it for other file(socketManager)
-const io = module.exports.io = require ('socket.io').listen(server);
+const io = module.exports.io = require ('socket.io')(server);
 const socketManager = require('../server/socketManager');
 const PORT = process.env.PORT || 4000;
 

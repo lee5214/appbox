@@ -1,6 +1,8 @@
 import axios from 'axios';
-
+import uuid from 'uuid';
+import _ from 'lodash';
 export const FETCH_CURRENT_USER = 'FETCH_CURRENT_USER';
+export const CREATE_GUEST_USER = 'CREATE_GUEST_USER';
 
 export const fetchCurrentUser = () => {
 	// if redux thunk see an action returns a function
@@ -8,9 +10,44 @@ export const fetchCurrentUser = () => {
 
 	return async function (dispatch) {
 		const user = await axios.get ('/api/current_user');
-		dispatch ({
-			type : FETCH_CURRENT_USER,
-			payload : user.data,
-		});
+		if(user.data) {
+			dispatch ({
+				type : FETCH_CURRENT_USER,
+				payload : user.data,
+			});
+		} else {
+			const ran =_.random (1, 16);
+			const guest = {
+				guest: true,
+				_id: uuid.v4(),
+				local:{
+					avatar: `/img/avatars/guest-${ran}.png`,
+					displayName: `guest-${uuid.v4().split('-').pop()}`
+				}
+			}
+			dispatch({
+				type : CREATE_GUEST_USER,
+				payload: guest
+			})
+		}
 	};
 };
+
+export const createGuestUser = () => {
+
+	return function(dispatch) {
+		const ran =_.random (1, 16);
+		const guest = {
+			guest: true,
+			_id: uuid.v4(),
+			local:{
+				avatar: `/img/avatars/guest-${ran}.png`,
+				displayName: `guest-${uuid.v4().split('-').pop()}`
+			}
+		}
+		dispatch({
+			type : CREATE_GUEST_USER,
+			payload: guest
+		})
+	}
+}

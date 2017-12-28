@@ -1,45 +1,53 @@
 const io = require ('../bin/start').io;
-let connectedUsers = [];
-let onlineUsers = -1;
+let connectedUsers = new Map();
+let onlineUsers = 0;
 module.exports = (socket) => {
 	onlineUsers++;
-	console.log('online users----',onlineUsers)
-	connectedUsers[socket.id] = socket;
+	//console.log('online users----',onlineUsers)
+	//connectedUsers[socket.id] = socket;
 	io.emit ('onlineUsersUpdate',onlineUsers);
-	console.log ('Server side io starts, socketID----: ', socket.id);
+	//console.log ('Server side io starts, socketID----: ', socket.id);
 
 	socket.on ('new user join', (user) => {
-		console.log ('user----',user);
-		connectedUsers[user.displayName] = user;
-
-		// io.of ('/chatroom').clients ((error, clients) => {
-		// 	if (error) {throw error;}
-		// 	;
-		// 	console.log ('clients--------------', clients); // => [Anw2LatarvGVVXEIAAAD]
-		// 	io.emit ('connectedUsers update', clients);
-		// });
-		//
-		// var clients = io.clients ();
-		// console.log('clients',clients)
+		console.log('new user!!!!',user.displayName)
+		connectedUsers = addUser(connectedUsers, user)
+		socket.user = user
 		// TODO need connectedUsers public var
-		if (connectedUsers.find ((element) => element === user)) {
-			connectedUsers = [user, ...connectedUsers];
-		}
-		io.emit ('connectedUsers update', connectedUsers);// addUser(connectedUsers,user))
-		//console.log ('list  ', connectedUsers);
+		// if (!connectedUsers.find ((element) => element === user)) {
+		// 	connectedUsers = [socket.UID, ...connectedUsers];
+		// }
+		io.emit('userList update', connectedUsers)
+		// console.log('connectedUsers',connectedUsers);
+
+
+
+
+		io.emit ('userList update', connectedUsers);// addUser(connectedUsers,user))
 	});
 	socket.on ('send msg', (msg) => {
-		console.log ('socket received msg ', msg);
+		//console.log ('socket received msg ', msg);
 		// socket.emit('receive msg', msg)
 		io.emit ('receive msg', msg);// for all users!!!!
 
 	});
 
 	socket.on ('disconnect', () => {
-		onlineUsers--;
-		console.log('online users----',onlineUsers)
-		console.log ('Client disconnected: ',socket.id);
-		io.emit ('onlineUsersUpdate',onlineUsers);
+		if ('user' in socket){
+			console.log('_________________________________________________')
+			connectedUsers = removeUser(connectedUsers, socket.user.userId)
+			console.log('disconnected from connectedUsers', connectedUsers)
+			io.emit('userList update', connectedUsers)
+		}
+		// onlineUsers--;
+		// console.log ('Client disconnected----', socket.UID);
+		// if (connectedUsers.find((element) => element === socket.UID)){
+		// 	let index = connectedUsers.valueOf(socket.UID);
+		// 	connectedUsers.splice(index,1)
+		// }
+		// console.log('disconn',connectedUsers)
+		//
+		//
+		// io.emit ('userList update',connectedUsers);
 	});
 
 	//test
@@ -77,6 +85,8 @@ module.exports = (socket) => {
  socket.broadcast.emit() ：向除去建立该连接的客户端的所有客户端广播
  io.emit() ：向所有客户端广播，等同于上面两个的和
  */
+
+
 const add = (connectedUsers, user) => {
 	if (!connectedUsers.find(user)){
 		connectedUsers = [user,...connectedUsers]
@@ -84,15 +94,16 @@ const add = (connectedUsers, user) => {
 	}
 }
 
-const addUser = (connectedUsers, user) => {
-	let newList = Object.assign ({}, user.displayName);
-	newList[user.displayName] = user;
+function addUser(list, user){
+	// object.assign(target, ...sources) is a clone method for object
+	// let newList = Object.assign({}, list)
+	let newList = {...list}
+	newList[user.userId] = user
+	return newList
+}
 
-	return newList;
-};
-
-const removeUser = (connectedUsers, userId) => {
-	let newList = Object.assign ({}, connectedUsers);
-	delete connectedUsers[userId];
+const removeUser = (list, userId) => {
+	let newList = {...list}
+	delete newList[userId];
 	return newList;
 };

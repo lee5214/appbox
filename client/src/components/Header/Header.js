@@ -59,7 +59,6 @@ class Header extends Component {
 	// 	{ this.renderLogInAlert () }
 	// }
 	render () {
-		console.log ('header user=>', this.props);
 		return (
 			<header className="app-header navbar">
 
@@ -78,7 +77,7 @@ class Header extends Component {
 						<NavLink href="#">Settings</NavLink>
 					</NavItem>
 					<NavItem className="px-3">
-						<NavLink href="/login">Login / Register</NavLink>
+						<NavLink href="/login"><i className="icon-login mr-1"/> Login / Register</NavLink>
 					</NavItem>
 				</Nav>
 

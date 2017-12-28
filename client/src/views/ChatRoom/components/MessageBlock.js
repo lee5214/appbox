@@ -13,7 +13,7 @@ class MessageBlock extends Component {
 				<Row>
 					<Media left>
 						<div className={ 'avatar avatar-sm' }>
-							<CardImg className={ 'img-avatar' } src={ data.from }/>
+							<CardImg className={ 'img-avatar' } src={ data.senderImg }/>
 						</div>
 					</Media>
 					<Col xs={ 'auto' }>
