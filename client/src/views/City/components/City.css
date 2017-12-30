@@ -7,7 +7,7 @@
 
 .chartHeader {
   text-align: right;
-  border-bottom: 0px solid white !important; }
+  border-bottom: 0 solid white !important; }
 
 .newsCard {
   min-width: 45% !important;

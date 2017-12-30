@@ -22,7 +22,7 @@ export const fetchCurrentUser = () => {
 				_id: uuid.v4(),
 				local:{
 					avatar: `/img/avatars/guest-${ran}.png`,
-					displayName: `guest-${uuid.v4().split('-').pop()}`
+					displayName: `Guest-${uuid.v4().split('-').pop()}`
 				}
 			}
 			dispatch({
@@ -33,21 +33,21 @@ export const fetchCurrentUser = () => {
 	};
 };
 
-export const createGuestUser = () => {
+// export const createGuestUser = () => {
 
-	return function(dispatch) {
-		const ran =_.random (1, 16);
-		const guest = {
-			guest: true,
-			_id: uuid.v4(),
-			local:{
-				avatar: `/img/avatars/guest-${ran}.png`,
-				displayName: `guest-${uuid.v4().split('-').pop()}`
-			}
-		}
-		dispatch({
-			type : CREATE_GUEST_USER,
-			payload: guest
-		})
-	}
-}
+	// return function(dispatch) {
+	// 	const ran =_.random (1, 16);
+	// 	const guest = {
+	// 		guest: true,
+	// 		_id: uuid.v4(),
+	// 		local:{
+	// 			avatar: `/img/avatars/guest-${ran}.png`,
+	// 			displayName: `guest-${uuid.v4().split('-').pop()}`
+	// 		}
+	// 	}
+	// 	dispatch({
+	// 		type : CREATE_GUEST_USER,
+	// 		payload: guest
+	// 	})
+	// }
+// }

@@ -3,39 +3,22 @@ let connectedUsers = new Map();
 let onlineUsers = 0;
 module.exports = (socket) => {
 	onlineUsers++;
-	//console.log('online users----',onlineUsers)
-	//connectedUsers[socket.id] = socket;
 	io.emit ('onlineUsersUpdate',onlineUsers);
-	//console.log ('Server side io starts, socketID----: ', socket.id);
 
 	socket.on ('new user join', (user) => {
-		console.log('new user!!!!',user.displayName)
+		console.log('user connected----',user.displayName)
 		connectedUsers = addUser(connectedUsers, user)
 		socket.user = user
-		// TODO need connectedUsers public var
-		// if (!connectedUsers.find ((element) => element === user)) {
-		// 	connectedUsers = [socket.UID, ...connectedUsers];
-		// }
 		io.emit('userList update', connectedUsers)
-		// console.log('connectedUsers',connectedUsers);
-
-
-
-
-		io.emit ('userList update', connectedUsers);// addUser(connectedUsers,user))
 	});
 	socket.on ('send msg', (msg) => {
-		//console.log ('socket received msg ', msg);
-		// socket.emit('receive msg', msg)
-		io.emit ('receive msg', msg);// for all users!!!!
+		io.emit ('receive msg', msg);
 
 	});
-
 	socket.on ('disconnect', () => {
 		if ('user' in socket){
-			console.log('_________________________________________________')
 			connectedUsers = removeUser(connectedUsers, socket.user.userId)
-			console.log('disconnected from connectedUsers', connectedUsers)
+			console.log('user disconnected----', socket.user.displayName)
 			io.emit('userList update', connectedUsers)
 		}
 		// onlineUsers--;
@@ -63,12 +46,6 @@ module.exports = (socket) => {
 	// socket.on ('my other event', function (data) {
 	// 	console.log (data);
 	// });
-
-	// chatroom
-	// io.socket.emit('user join', (user) => {
-	//
-	// })
-
 };
 
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 //wrapper for chartjs
-import { Bar, Doughnut, Line } from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2';
 import { Badge, Card, CardBody, CardHeader, Col, InfoList, Row } from 'components';
 import 'weather-icons/css/weather-icons.css';
 import ForecastEmbed from './ForecastEmbed';
@@ -51,46 +51,10 @@ class CityCurrent extends Component {
 									pointHitRadius : 10,
 									data : tempList || [],
 								}, ],
-							}
-							}
+							} }
 							options={
 								{
 									maintainAspectRatio : true,
-
-									// legend : {
-									//    display : false,
-									// },
-									// scales : {
-									//    xAxes : [{
-									//       gridLines : {
-									// 	      color : 'transparent',
-									// 	      zeroLineColor : 'transparent',
-									//       },
-									//       ticks : {
-									// 	      fontSize : 2,
-									// 	      fontColor : 'transparent',
-									//       },
-									//
-									//    }],
-									//    yAxes : [{
-									//       display : false,
-									//       ticks : {
-									// 	      display : false,
-									// 	      //min : Math.min.apply (Math, cardChartData1.datasets[0].data) - 5,
-									// 	      //max : Math.max.apply (Math, cardChartData1.datasets[0].data) + 5,
-									//       },
-									//    }],
-									// },
-									// elements : {
-									//    line : {
-									//       borderWidth : 1,
-									//    },
-									//    point : {
-									//       radius : 4,
-									//       hitRadius : 10,
-									//       hoverRadius : 4,
-									//    },
-									// },
 								}
 							}
 
@@ -101,53 +65,7 @@ class CityCurrent extends Component {
 		);
 	};
 
-	renderBarChart = () => {
-		return (
-
-			<Card>
-				<CardHeader>
-					Bar Chart
-					<div className="card-actions">
-						<a href="http://www.chartjs.org">
-							<small className="text-muted">docs</small>
-						</a>
-					</div>
-				</CardHeader>
-				<CardBody>
-					<div className="chart-wrapper">
-						<Bar data={ bar }
-						     options={ {
-							     maintainAspectRatio : false,
-						     } }
-						/>
-					</div>
-				</CardBody>
-			</Card>
-		);
-	};
-
-	renderDoughnutChart = () => {
-		return (
-
-			<Card>
-				<CardHeader>
-					Doughnut Chart
-					<div className="card-actions">
-						<a href="http://www.chartjs.org">
-							<small className="text-muted">docs</small>
-						</a>
-					</div>
-				</CardHeader>
-				<CardBody>
-					<div className="chart-wrapper">
-						<Doughnut data={ doughnut }/>
-					</div>
-				</CardBody>
-			</Card>
-		);
-	};
-
-	componentWillMount = () => {
+	componentWillMount () {
 		fetchUserLocation ();
 		if (!this.props.info) {
 			return <h1>Loading!!!!</h1>;

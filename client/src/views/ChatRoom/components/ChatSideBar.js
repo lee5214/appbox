@@ -1,68 +1,72 @@
 import React, { Component } from 'react';
+import { Media, Row } from 'reactstrap';
+import Divider from 'components/_Common/Divider/Divider';
 
 export default class ChatSideBar extends Component {
-	// handleUserList = (user) => {
-	// 	//return <div id={ user }>{ user }</div>;
-	//
-	// 	// console.log('try',this.state.userList.set(1,'a'))
-	// 	// for(let [key,value] of this.state.userList){
-	// 	// 	console.log('a')
-	//
-	// 	return <div> { user[ 'displayName' ] }</div>;
-	// };
-	constructor(props){
-		super(props)
+	constructor (props) {
+		super (props);
 		this.state = {
-			// userId: this.props.userList.userId,
-			// userImg: this.props.userList.userImg,
-			// displayName: this.props.userList.displayName,
-			userList: {},
-		}
+			userTotal : 0,
+			userList : {},
+		};
 
 	}
+
 	componentDidMount () {
 		const socket = this.props.socket;
 		socket.on ('userList update', (userList) => {
-			this.setState ({userList});
+			let userTotal = Object.keys (userList).length;
+			this.setState ({userTotal, userList});
 			console.log ('userlist update----', userList);
 		});
-		console.log(this.props.currentUserInfo.local)
+		console.log (this.props.currentUserInfo.local);
 		socket.emit (
 			'new user join',
 			{
 				userId : this.props.currentUserInfo._id,
-				userImg : this.props.currentUserInfo.local.userImg,
+				userAvatar : this.props.currentUserInfo.local.avatar,
 				displayName : this.props.currentUserInfo.local.displayName,
 			});
-		//
-		// if (this.props.currentUserInfo) {
-		// 	const {_id, local} = this.props.currentUserInfo;
-		// 	this.setState ({
-		// 			userId : _id,
-		// 			userImg : local.avatar,
-		// 			displayName : local.displayName,
-		// 		},
-		// 		// callback, fire after setState completed (it's not fire immediately )
-		// 		() => {
-		// 			socket.emit (
-		// 				'new user join',
-		// 				{
-		// 					userId : this.state.userId,
-		// 					userImg : this.state.userImg,
-		// 					displayName : this.state.displayName,
-		// 				});
-		// 		},
-		// 	);
-		// }
+	}
+
+
+	renderTotalNumber () {
+		return (
+			<Divider center>
+				<h6 className={ 'mb-0' }>
+					<strong>Total:
+						<span className={ 'text-white ml-2' }>{ this.state.userTotal }</span>
+					</strong>
+
+				</h6>
+			</Divider>
+		);
+	}
+
+	handleUserList (key) {
+		return (
+			<Row key={ key } className={ 'p-0 mt-2' }>
+				<Media left>
+					<div className={ 'avatar avatar-md mr-3' }>
+						<img className={ 'img-avatar' } src={ this.state.userList[ key ][ 'userAvatar' ] } alt={ '' }/>
+					</div>
+					<strong className={ 'text-white' }>{ this.state.userList[ key ][ 'displayName' ] }</strong>
+				</Media>
+			</Row>
+		);
+
 	}
 
 	render () {
 		return (
 			<div>
-				{ Object.keys (this.state.userList).map ((key) =>
-					{return <div key={key}> { this.state.userList[ key ][ 'displayName' ] }</div>
-				}
-				//handleUserList (this.state.userList[ key ]),
+				<Row>
+					<h4 className={ 'mb-0' }>Public Chat Room</h4>
+				</Row>
+				{ this.renderTotalNumber () }
+				{ Object.keys (this.state.userList).map ((key) => this.handleUserList (key),
+
+					//handleUserList (this.state.userList[ key ]),
 				) }
 				{ /*{ this.state.userList.map ((user) => this.handleUserList (user)) }*/ }
 			</div>

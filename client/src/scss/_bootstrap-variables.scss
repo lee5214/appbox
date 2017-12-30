@@ -752,39 +752,6 @@ $label-color:                 #fff;
 $label-link-hover-color:      #fff;
 
 
-//== Modals
-//
-//##
-
-//** Padding applied to the modal body
-$modal-inner-padding:         15px;
-
-//** Padding applied to the modal title
-$modal-title-padding:         15px;
-//** Modal title line-height
-$modal-title-line-height:     $line-height-base;
-
-//** Background color of modal content area
-$modal-content-bg:                             #1A1A1A;
-//** Modal content border color
-$modal-content-border-color:                   $brand-primary;
-//** Modal content border color **for IE8**
-$modal-content-fallback-border-color:          #999;
-
-//** Modal backdrop background color
-$modal-backdrop-bg:           #1A1A1A;
-//** Modal backdrop opacity
-$modal-backdrop-opacity:      .9;
-//** Modal header border color
-$modal-header-border-color:   $gray-darker;
-//** Modal footer border color
-$modal-footer-border-color:   $gray-darker;
-
-$modal-lg:                    900px;
-$modal-md:                    600px;
-$modal-sm:                    300px;
-
-
 //== Alerts
 //
 //## Define alert colors, border radius, and padding.
@@ -841,7 +808,7 @@ $progress-bar-white-bg:       $brand-white;
 //##
 
 //** Background color on `.list-group-item`
-$list-group-bg:                 $navbar-inverse-bg;
+$list-group-bg:                 transpanret;//$navbar-inverse-bg;
 //** `.list-group-item` border color
 $list-group-border:             $gray-darker;
 //** InfoList group border radius
@@ -870,43 +837,7 @@ $list-group-link-hover-color:   white;
 $list-group-link-heading-color: white;
 
 
-//== Panels
-//
-//##
 
-$panel-bg:                    $navbar-inverse-bg;
-$panel-body-padding:          15px;
-$panel-heading-padding:       10px 15px;
-$panel-footer-padding:        $panel-heading-padding;
-$panel-border-radius:         3px;
-
-//** Border color for elements within panels
-$panel-inner-border:          $gray-darker;
-$panel-footer-bg:             #282828;
-
-$panel-default-text:          white;
-$panel-default-border:        $gray-darker;
-$panel-default-heading-bg:    transparent;
-
-$panel-primary-text:          #fff;
-$panel-primary-border:        $panel-default-border;
-$panel-primary-heading-bg:    $brand-primary;
-
-$panel-success-text:          $state-success-text;
-$panel-success-border:        $panel-default-border;
-$panel-success-heading-bg:    $state-success-bg;
-
-$panel-info-text:             $state-info-text;
-$panel-info-border:           $panel-default-border;
-$panel-info-heading-bg:       $state-info-bg;
-
-$panel-warning-text:          $state-warning-text;
-$panel-warning-border:        $panel-default-border;
-$panel-warning-heading-bg:    $state-warning-bg;
-
-$panel-danger-text:           $state-danger-text;
-$panel-danger-border:         $panel-default-border;
-$panel-danger-heading-bg:     $state-danger-bg;
 
 
 //== Thumbnails
@@ -1111,14 +1042,14 @@ $enable-rounded:                  false;
 // Settings for the `<body>` element.
 
 $body-bg:                         $gray-800;
-$body-color: $white;
+$body-color: $gray-200;
 //$font-family-base;
 //$font-size-base;
 //$font-weight-base;
 //$line-height-base;
 
 
-//breadcrumb
+// Breadcrumb
 $breadcrumb-bg: transparent;
 //$breadcrumb-padding-y:              .75rem !default;
 //$breadcrumb-padding-x:              1rem !default;
@@ -1135,23 +1066,19 @@ $breadcrumb-divider:                "/" !default;
 $font-size-base:                  0.875rem;
 
 // Cards
-
 $card-border-color:               $gray-200;
 $card-cap-bg:                     $gray-100;
 $card-bg: transparent;
 
 // Dropdowns
-
 $dropdown-padding-y:              0;
 $dropdown-border-color:           $gray-200;
 $dropdown-divider-bg:             $gray-900;
 
 // Buttons
-
 $btn-secondary-border:            $gray-300;
 
 // Progress bars
-
 $progress-bg:                     $gray-100;
 
 // Tables
@@ -1174,7 +1101,74 @@ $input-color:                           $gray-200 !default;
 $input-focus-color:                     $white !default;
 $input-placeholder-color:               $gray-100 !default;
 
+//== Modals
+//
+//##
 
+//** Padding applied to the modal body
+$modal-inner-padding:         15px;
 
+//** Padding applied to the modal title
+$modal-title-padding:         15px;
+//** Modal title line-height
+$modal-title-line-height:     $line-height-base;
+
+//** Background color of modal content area
+$modal-content-bg:                             #1A1A1A;
+//** Modal content border color
+$modal-content-border-color:                   $cyan;
+//** Modal content border color **for IE8**
+$modal-content-fallback-border-color:          #999;
+
+//** Modal backdrop background color
+$modal-backdrop-bg:           #1A1A1A;
+//** Modal backdrop opacity
+$modal-backdrop-opacity:      .9;
+//** Modal header border color
+$modal-header-border-color:   $gray-600;
+//** Modal footer border color
+$modal-footer-border-color:   $gray-600;
+
+$modal-lg:                    900px;
+$modal-md:                    600px;
+$modal-sm:                    300px;
+
+//== Panels
+//
+//##
+
+$panel-bg:                    transparent;//$navbar-inverse-bg;
+$panel-body-padding:          15px;
+$panel-heading-padding:       10px 15px;
+$panel-footer-padding:        $panel-heading-padding;
+$panel-border-radius:         3px;
+
+//** Border color for elements within panels
+$panel-inner-border:          $gray-darker;
+$panel-footer-bg:             #282828;
+
+$panel-default-text:          white;
+$panel-default-border:        $gray-darker;
+$panel-default-heading-bg:    transparent;
+
+$panel-primary-text:          #fff;
+$panel-primary-border:        $panel-default-border;
+$panel-primary-heading-bg:    $brand-primary;
+
+$panel-success-text:          $state-success-text;
+$panel-success-border:        $panel-default-border;
+$panel-success-heading-bg:    $state-success-bg;
+
+$panel-info-text:             $state-info-text;
+$panel-info-border:           $panel-default-border;
+$panel-info-heading-bg:       $state-info-bg;
+
+$panel-warning-text:          $state-warning-text;
+$panel-warning-border:        $panel-default-border;
+$panel-warning-heading-bg:    $state-warning-bg;
+
+$panel-danger-text:           $state-danger-text;
+$panel-danger-border:         $panel-default-border;
+$panel-danger-heading-bg:     $state-danger-bg;
 /*----------------------------------*/
 

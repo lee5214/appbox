@@ -12,6 +12,13 @@ const server = http.Server (app);
 const io = module.exports.io = require ('socket.io')(server);
 const socketManager = require('../server/socketManager');
 const PORT = process.env.PORT || 4000;
+const _debug = require('debug')
+
+const debug = _debug('app:bin:server')
+debug(`Server is now running at http://host:${PORT}.`)
+debug(
+	`Server accessible via localhost:${PORT} if you are using the project defaults.`)
+
 
 io.on ('connection', socketManager);
 server.listen (PORT, () => {

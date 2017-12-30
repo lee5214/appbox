@@ -9,6 +9,7 @@ class MessageBlock extends Component {
 	render () {
 		const data = this.props.data;
 		return (
+
 			<Container>
 				<Row>
 					<Media left>
@@ -19,9 +20,9 @@ class MessageBlock extends Component {
 					<Col xs={ 'auto' }>
 						<Col>
 							<Card className={ style.singleMessageBlock }>{ data.inputMessage }</Card>
-							<Tooltip placement="right" className="in" id="tooltip-right">
-								Tooltip right
-							</Tooltip>
+							{/*<Tooltip placement="right" className="in" id="tooltip-right">*/}
+								{/*Tooltip right*/}
+							{/*</Tooltip>*/}
 						</Col>
 						<Col>
 							<span>{ moment (data.time)

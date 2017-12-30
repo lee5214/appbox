@@ -32,8 +32,8 @@ import classes from './Full.scss';
 
 class Full extends Component {
 	componentDidMount () {
+		//new Promise()
 		//this.props.createGuestUser ();
-		// TODO fix
 		this.props.fetchCurrentUser ();
 	}
 
