@@ -9706,9 +9706,6 @@ code, kbd, pre, samp {
 *:after {
   box-sizing: inherit; }
 
-.fe_forecast_link {
-  visibility: hidden; }
-
 .progress-bar-success {
   background-color: #84b547; }
 

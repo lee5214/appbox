@@ -226,7 +226,7 @@ body{
 		}
 	}
 */
-	//Full height sticky sidebar
+	//AppContainer height sticky sidebar
 	&.sidebar-fixed .navigation .sidebar.affix{
 		position: fixed;
 		// left: 0;
@@ -311,7 +311,7 @@ body{
     }
   }
 
-	//==================Full height sidebar=====================
+	//==================AppContainer height sidebar=====================
 	&.sidebar-full-height{
 		.navigation{
 			.navbar{

@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import ReduxThunk from 'redux-thunk';
 // Styles
 // Import Font Awesome Icons Set
-import 'font-awesome/css/font-awesome.min.css';
+//import 'font-awesome/css/font-awesome.min.css';
 // Import Simple Line Icons Set
 import 'simple-line-icons/css/simple-line-icons.css';
 // Import Main styles for this application
@@ -15,7 +15,7 @@ import './scss/style.css';
 // import './scss/core/_dropdown-menu-right.scss'
 import { composeWithDevTools } from 'redux-devtools-extension';
 // Containers
-import Full from './containers/Full';
+import App from './containers/AppContainer';
 // reducers
 import reducers from './reducers';
 // Views
@@ -39,7 +39,7 @@ ReactDOM.render (
 				       component={ Register }/>
 				<Route exact path="/404" name="Page 404" component={ Page404 }/>
 				<Route exact path="/500" name="Page 500" component={ Page500 }/>
-				<Route path="/" name="Home" component={ Full }/>
+				<Route path="/" name="Home" component={ App }/>
 			</Switch>
 		</BrowserRouter>
 	</Provider>

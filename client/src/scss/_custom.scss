@@ -11,6 +11,8 @@ body {
   height: 100%;
 }
 
+
+
 code, kbd, pre, samp {
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
   font-size: 1em;
@@ -20,11 +22,6 @@ code, kbd, pre, samp {
 *:before,
 *:after {
   box-sizing: inherit;
-}
-
-// hide dark sky name
-.fe_forecast_link {
-  visibility: hidden;
 }
 
 .progress-bar-success {

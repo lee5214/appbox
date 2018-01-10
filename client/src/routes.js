@@ -20,6 +20,7 @@ const routes = {
 	'/cityinfo' : 'Fetch Your City',
 	'/chatroom' : 'Chat Room',
 	'/chatroom/:id' : 'Private Chat Room',
+	'/secretlinks' : 'Secret Links',
 	'/test' : 'Test',
 };
 export default routes;

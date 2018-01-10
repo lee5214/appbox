@@ -111,12 +111,17 @@ export default {
 		{
 			name : 'City Info',
 			url : '/cityinfo',
-			icon : 'icon-social-dropbox',
+			icon : 'fa fa-street-view mr-2',
 		},
 		{
 			name : 'Chat Room',
 			url : '/chatroom',
-			icon : 'icon-social-dropbox',
+			icon : 'fa fa-comments mr-2',
+		},
+		{
+			name : 'Secret Links',
+			url : '/secretlinks',
+			icon : 'fa fa-user-secret mr-2',
 		},
 		{
 			name : 'Test',
