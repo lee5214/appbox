@@ -36,38 +36,21 @@ require ('../models/User');
 mongoose.connect (keys.mongo.dev.mongoUri);
 
 // passport
-require ('../server/passport') ();
+require ('../server/passport');
 
 
 /*
  * ---- middleware section ----
  */
+
+// http requests go through middleware before route handlers
 require('../middleware')(app)
-// requests go through middleware before route handlers
-
-// app.use (bodyParser.json ());
-// //  cookie
-// app.use (
-// 	cookieSession ({
-// 		maxAge : 30 * 24 * 60 * 60 * 1000,// 30 days
-// 		keys : [keys.cookieKey],
-// 	}),
-// );
-// // must be before authRoutes
-// app.use (passport.initialize ());
-// app.use (passport.session ());
-// app.use (function(req,res,next){
-// 	console.log('time',Date.now())
-// 	next()
-// });
-
-// later refactor
-// require('../middleware')(app,cookieSession,passport,keys)
 
 
 /*
  * ---- route section ----
  */
+
 // app routes
 require ('../routes/generalRoutes') (app);
 require ('../routes/authRoutes') (app);
