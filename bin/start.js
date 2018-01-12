@@ -42,23 +42,25 @@ require ('../server/passport') ();
 /*
  * ---- middleware section ----
  */
-
+require('../middleware')(app)
 // requests go through middleware before route handlers
-app.use (bodyParser.json ());
-//  cookie
-app.use (
-	cookieSession ({
-		maxAge : 30 * 24 * 60 * 60 * 1000,// 30 days
-		keys : [keys.cookieKey],
-	}),
-);
-// must be before authRoutes
-app.use (passport.initialize ());
-app.use (passport.session ());
-app.use (function(req,res,next){
-	console.log('time',Date.now())
-	next()
-});
+
+// app.use (bodyParser.json ());
+// //  cookie
+// app.use (
+// 	cookieSession ({
+// 		maxAge : 30 * 24 * 60 * 60 * 1000,// 30 days
+// 		keys : [keys.cookieKey],
+// 	}),
+// );
+// // must be before authRoutes
+// app.use (passport.initialize ());
+// app.use (passport.session ());
+// app.use (function(req,res,next){
+// 	console.log('time',Date.now())
+// 	next()
+// });
+
 // later refactor
 // require('../middleware')(app,cookieSession,passport,keys)
 

@@ -11,5 +11,8 @@ module.exports = (app) => {
 	app.use (passport.initialize ());
 	app.use (passport.session ());
 	//
-	//app.use ('/test2',(req) => console.log ('haha',req));
+	app.use (function (req, res, next) {
+		console.log ('time', Date.now ());
+		next ();
+	});
 };
