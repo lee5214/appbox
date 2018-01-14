@@ -35,8 +35,8 @@ module.exports = (socket) => {
 
 	//test
 	// socket.on ('msg', (msg) => {
-	// 	console.log ('server received msg=>', msg);
-	// 	socket.emit ('msg', 'hello from server');
+	// 	console.log ('services received msg=>', msg);
+	// 	socket.emit ('msg', 'hello from services');
 	// 	// io.emit ('msg', 'hello from serve');
 	// });
 	// socket.on ('change color', (color) => {

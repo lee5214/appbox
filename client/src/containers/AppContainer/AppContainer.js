@@ -44,9 +44,9 @@ class Full extends Component {
 				<div className="app-body">
 					<Sidebar { ...this.props }/>
 					<main className="main">
-						<video id="bgvid" autoPlay muted loop>
-							<source src={process.env.PUBLIC_URL + '/img/sc-bg-video.mp4'} type="video/mp4"/>
-						</video>
+						{/*<video id="bgvid" autoPlay muted loop>*/}
+							{/*<source src={process.env.PUBLIC_URL + '/img/sc-bg-video.mp4'} type="video/mp4"/>*/}
+						{/*</video>*/}
 						<div className={ style.breadcrumb_wrapper }>
 							<BannerLine/>
 							<Container>

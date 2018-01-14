@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import validUrl from 'valid-url';
 import { Button, Col, Form, FormGroup, Input, Label, Row } from 'reactstrap';
 
 class LinkCreatForm extends Component {
@@ -15,31 +14,44 @@ class LinkCreatForm extends Component {
 	//
 	// };
 
-	handleSubmit = (e) => {
-		e.preventDefault ();
-		console.log (this.state.inputRef);
-		console.log ('1111', validUrl.isUri (this.state.inputRef));
-	};
+	// handleSubmit = (e) => {
+	// 	e.preventDefault ();
+	// 	console.log (this.state.inputRef);
+	// 	console.log ('1111', validUrl.isUri (this.state.inputRef));
+	// };
 	onInputChange = (e) => {
 		this.setState ({inputRef : e.target.value});
+	};
+	handleUrlSubmit = (e) => {
+		this.props.handleSubmit (e, this.state.inputRef);
+		this.setState ({inputRef : ''});
 	};
 
 	render () {
 		return (
-			<Form onSubmit={ (e) => this.handleSubmit (e) }>
+			<Form onSubmit={ this.handleUrlSubmit }>
 				<FormGroup>
 					<Label>Target URL</Label>
 					<Row>
-						<Col sm={ 10 }>
-							<Input onChange={ (e) => this.onInputChange (e) } name={ 'url' }
+						<Col sm={ 12 }>
+							<Input onChange={ (e) => this.onInputChange (e) }
+							       name={ 'url' }
+							       value={ this.state.inputRef }
 							       placeholder={ 'enter your secret web address' }/>
 						</Col>
+					</Row>
+					<Row>
+						<Col>
+							{ this.props.errorMessage }
+						</Col>
+					</Row>
+					<br/>
+					<Row>
 						<Col sm={ 2 }>
-							<Button>Submit</Button>
+							<Button>Generate</Button>
 						</Col>
 					</Row>
 				</FormGroup>
-
 			</Form>
 		);
 	}

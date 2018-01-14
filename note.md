@@ -34,3 +34,27 @@ some site block iframe (like NYT)
 ---
 if there's a file imported in index.html such as <script src='...socketio.js'></script>
 you can use window.io() to access in components
+
+---
+there's a limit size of git repo (100mb), if you already pushed more than 1 time and github rejected, you may need to use 'BFG'
+to remove those big file in the history. 
+
+---
+proxy: package.json/proxy, used for solving CROS issue in dev mode(2 servers)
+
+---
+ajax, axios post  
+expmple from jquary: 
+$.ajax({
+    type: 'POST',
+    url: /your/url/,
+    data: data,
+    dataType: 'json', # 注意：这里是指希望服务端返回json格式的数据, 参数dataType：期望的服务器响应的数据类型，可以是null, xml, script, json
+    success: function(data) { # 这里的data就是json格式的数据
+    },
+    error: function(xhr, type) {
+    }
+});
+
+
+

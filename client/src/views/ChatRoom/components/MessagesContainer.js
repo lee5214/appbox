@@ -4,19 +4,7 @@ import { Panel } from 'react-bootstrap';
 import style from './ChatRoom.scss';
 import moment from 'moment';
 
-const sample = {
-	a4434eaee28223a8baab185 :
-		{
-			'displayName' :
-				"Cong",
-			'userAvatar' :
-				"https://scontent.xx.fbcdn.net/v/t1.0-1/c8.0.50.50/p50x50/600622_10202058405571393_1193000151_n.jpg?oh=c59e021798cea127e1fb00f69579bbfe&oe=5ABA8DAC",
-			'userId' :
-				"5a4434eaee28223a8baab185",
-		},
-};
-
-export default class MessagesContainer extends Component {
+class MessagesContainer extends Component {
 
 	showMessages = (data) => {
 		return (
@@ -112,7 +100,7 @@ export default class MessagesContainer extends Component {
 			       header={ (
 				       <Row>
 					       <Col sm={ 6 } xs={ 12 }>
-						       <h5></h5>
+						       <h5>Chat in Public Room</h5>
 					       </Col>
 				       </Row>
 			       ) }
@@ -125,6 +113,8 @@ export default class MessagesContainer extends Component {
 		);
 	}
 }
+
+export default MessagesContainer;
 
 {/*<Media*/}
 {/*key={ '' }*/}

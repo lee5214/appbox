@@ -13,7 +13,7 @@ const userSchema = new Schema ({
 	facebook : Object,
 });
 
-mongoose.model ('users', userSchema);
+mongoose.model ('Users_Model', userSchema);
 
 // { id: '108514836326941919078',
 // 	[1]   displayName: 'Cong Li',

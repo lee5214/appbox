@@ -58,8 +58,8 @@ module.exports = {
 		// Note: instead of the default WebpackDevServer client, we use a custom one
 		// to bring better experience for Create React App users. You can replace
 		// the line below with these two lines if you prefer the stock client:
-		// require.resolve('webpack-dev-server/client') + '?/',
-		// require.resolve('webpack/hot/dev-server'),
+		// require.resolve('webpack-dev-services/client') + '?/',
+		// require.resolve('webpack/hot/dev-services'),
 		require.resolve ('react-dev-utils/webpackHotDevClient'),
 		// Finally, this is your app's code:
 		paths.appIndexJs,
@@ -295,7 +295,7 @@ module.exports = {
 		// See https://github.com/facebookincubator/create-react-app/issues/240
 		new CaseSensitivePathsPlugin (),
 		// If you require a missing module and then `npm install` it, you still have
-		// to restart the development server for Webpack to discover it. This plugin
+		// to restart the development services for Webpack to discover it. This plugin
 		// makes the discovery automatic so you don't have to restart.
 		// See https://github.com/facebookincubator/create-react-app/issues/186
 		new WatchMissingNodeModulesPlugin (paths.appNodeModules),
