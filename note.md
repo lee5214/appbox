@@ -41,7 +41,7 @@ to remove those big file in the history.
 
 ---
 proxy: package.json/proxy, used for solving CROS issue in dev mode(2 servers)
-
+note: '/l' will include such as '/login', so make sure use '/l/'
 ---
 ajax, axios post  
 expmple from jquary: 

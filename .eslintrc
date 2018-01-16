@@ -511,7 +511,7 @@
     "object-property-newline": 0,
     // 强制函数中的变量要么一起声明要么分开声明
     "one-var": [
-      1,
+      0,
       {
         "initialized": "never"
       }

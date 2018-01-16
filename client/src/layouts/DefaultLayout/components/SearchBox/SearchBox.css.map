@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,YAAa;EACT,OAAO,EAAE,IAAI",
-"sources": ["SearchBox.scss"],
-"names": [],
-"file": "SearchBox.css"
-}

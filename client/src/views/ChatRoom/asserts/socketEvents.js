@@ -1,3 +1,4 @@
+//as reference for now, dont want to have 2 same files for both frontend & backend
 export default {
 	COMMUNITY_CHAT : 'COMMUNITY_CHAT',
 	USER_CONNECTED : 'USER_CONNECTED',

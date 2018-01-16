@@ -9266,6 +9266,13 @@ button {
     border-top-right-radius: 2px;
     border-top-left-radius: 2px; }
 
+.nav-tabs .nav-link.active, .nav-tabs .navbar .active.dropdown-toggle, .navbar .nav-tabs .active.dropdown-toggle {
+  color: white;
+  background: #1a1a1a; }
+
+.tab-content {
+  background: transparent; }
+
 @media all and (-ms-high-contrast: none) {
   html {
     display: flex;

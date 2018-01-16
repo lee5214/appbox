@@ -64,9 +64,11 @@ app.use (passport.session ());
 /*
  * ---- route section ----
  */
-require ('../routes/generalRoutes') (app);
 require ('../routes/authRoutes') (app);
 require ('../routes/secretLinkRoutes') (app);
+require ('../routes/generalRoutes') (app);
+
+
 
 if (process.env.NODE_ENV === 'production') {
 	app.use (Express.static ('client/build'));
