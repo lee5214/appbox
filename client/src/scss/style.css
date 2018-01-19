@@ -8249,7 +8249,7 @@ button {
     color: #8a8a8a;
     text-decoration: none;
     background: transparent; }
-    .sidebar .nav-link i, .sidebar .navbar .dropdown-toggle i, .navbar .sidebar .dropdown-toggle i {
+    .sidebar .nav-link i, .sidebar .navbar .dropdown-toggle i, .navbar .sidebar .dropdown-toggle i, .sidebar .nav-link svg, .sidebar .navbar .dropdown-toggle svg, .navbar .sidebar .dropdown-toggle svg {
       display: inline-block;
       width: 20px;
       margin: 0 0.5rem 0 0;
@@ -9266,9 +9266,14 @@ button {
     border-top-right-radius: 2px;
     border-top-left-radius: 2px; }
 
-.nav-tabs .nav-link.active, .nav-tabs .navbar .active.dropdown-toggle, .navbar .nav-tabs .active.dropdown-toggle {
-  color: white;
-  background: #1a1a1a; }
+.nav-tabs {
+  border-bottom: 0; }
+  .nav-tabs .nav-item {
+    cursor: pointer; }
+  .nav-tabs .nav-link.active, .nav-tabs .navbar .active.dropdown-toggle, .navbar .nav-tabs .active.dropdown-toggle {
+    color: white;
+    border-color: white;
+    background: #1a1a1a; }
 
 .tab-content {
   background: transparent; }

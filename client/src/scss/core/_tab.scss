@@ -1,6 +1,11 @@
 .nav-tabs {
+  border-bottom: 0;
+  .nav-item{
+    cursor: pointer;
+  }
   .nav-link.active {
     color: white;
+    border-color: white;
     background: $gray-800;
   }
 }

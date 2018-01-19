@@ -32,8 +32,8 @@ class LinksList extends Component {
 			<Table responsive striped className={ 'text-white' }>
 				<thead>
 					<tr>
+						<th>Generated Url</th>
 						<th>Origional Url</th>
-						<th>Target Url</th>
 						<th>Created Date</th>
 						<th>Author</th>
 						<th>Clicks</th>

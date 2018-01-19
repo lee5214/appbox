@@ -5,7 +5,7 @@ const Users_Model = mongoose.model ('Users_Model');
 
 module.exports = (app) => {
 	app.post ('/api/secretLinks/generateLink', requireLogin, async (req, res, next) => {
-		const {origionalUrl, userId, token} = req.body;
+		const {origionalUrl, userId, token, goPublic} = req.body;
 		let displayName = '', avatar = '', dateCreated = new Date ();
 		await Users_Model.findOne ({_id : userId}, (err, user) => {
 			console.log ('get user', user.local);
@@ -15,6 +15,7 @@ module.exports = (app) => {
 		const link = new SecretLinks_Model ({
 			userId,
 			origionalUrl,
+			goPublic,
 			dateCreated,
 			token,
 			avatar,
@@ -31,7 +32,7 @@ module.exports = (app) => {
 	});
 
 	app.get ('/api/secretLinks/publicLinksList', (req, res) => {
-		SecretLinks_Model.find ({}, (err, docs) => {
+		SecretLinks_Model.find ({goPublic : true}, (err, docs) => {
 			res.send (docs);
 		});
 	});

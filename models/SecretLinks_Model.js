@@ -4,6 +4,7 @@ const {Schema} = mongoose;
 const secretLinksSchema = new Schema (
 	{
 		userId : String,
+		goPublic : Boolean,
 		origionalUrl : String,
 		token : String,
 		targetUrl : String,
