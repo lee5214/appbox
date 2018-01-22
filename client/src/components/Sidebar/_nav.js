@@ -9,6 +9,91 @@ export default {
 				text : 'NEW',
 			},
 		},
+
+		{
+			divider : true,
+		},
+		{
+			title : true,
+			name : 'Personal Apps',
+		},
+		{
+			name : 'City Info',
+			url : '/cityinfo',
+			icon : 'fa fa-street-view',
+		},
+		{
+			name : 'Chat Room',
+			url : '/chatroom',
+			icon : 'fa fa-comments',
+		},
+		{
+			name : 'Secret Links',
+			url : '/secretlinks',
+			icon : 'fa fa-user-secret',
+		},
+		{
+			name : 'Test',
+			url : '/test',
+			icon : 'icon-social-dropbox',
+		},
+
+		{
+			divider : true,
+		},
+		{
+			title : true,
+			name : 'Extras',
+		},
+		{
+			name : 'Pages',
+			url : '/pages',
+			icon : 'icon-star',
+			children : [
+				{
+					name : 'Login',
+					url : '/login',
+					icon : 'icon-star',
+				},
+				{
+					name : 'Register',
+					url : '/register',
+					icon : 'icon-star',
+				},
+				{
+					name : 'Error 404',
+					url : '/404',
+					icon : 'icon-star',
+				},
+				{
+					name : 'Error 500',
+					url : '/500',
+					icon : 'icon-star',
+				},
+			],
+		},
+		{
+			name : 'About',
+			url : '/about',
+			icon : 'icon-social-dropbox',
+			children : [
+				{
+					name : 'Myself',
+					url : '/about/myself',
+					icon : 'icon-star',
+				},
+				{
+					name : 'Resume',
+					url : '/about/resume',
+					icon : 'icon-star',
+				},
+				{
+					name : 'Blog',
+					url : '/about/blog',
+					icon : 'icon-star',
+				},
+			],
+		},
 		{
 			title : true,
 			name : 'UI elements',
@@ -100,90 +185,6 @@ export default {
 			name : 'Charts',
 			url : '/charts',
 			icon : 'icon-pie-chart',
-		},
-		{
-			divider : true,
-		},
-		{
-			title : true,
-			name : 'Personal Apps',
-		},
-		{
-			name : 'City Info',
-			url : '/cityinfo',
-			icon : 'fa fa-street-view mr-2',
-		},
-		{
-			name : 'Chat Room',
-			url : '/chatroom',
-			icon : 'fa fa-comments mr-2',
-		},
-		{
-			name : 'Secret Links',
-			url : '/secretlinks',
-			icon : 'fa fa-user-secret mr-2',
-		},
-		{
-			name : 'Test',
-			url : '/test',
-			icon : 'icon-social-dropbox',
-		},
-
-		{
-			divider : true,
-		},
-		{
-			title : true,
-			name : 'Extras',
-		},
-		{
-			name : 'Pages',
-			url : '/pages',
-			icon : 'icon-star',
-			children : [
-				{
-					name : 'Login',
-					url : '/login',
-					icon : 'icon-star',
-				},
-				{
-					name : 'Register',
-					url : '/register',
-					icon : 'icon-star',
-				},
-				{
-					name : 'Error 404',
-					url : '/404',
-					icon : 'icon-star',
-				},
-				{
-					name : 'Error 500',
-					url : '/500',
-					icon : 'icon-star',
-				},
-			],
-		},
-		{
-			name : 'About',
-			url : '/about',
-			icon : 'icon-social-dropbox',
-			children : [
-				{
-					name : 'Myself',
-					url : '/about/myself',
-					icon : 'icon-star',
-				},
-				{
-					name : 'Resume',
-					url : '/about/resume',
-					icon : 'icon-star',
-				},
-				{
-					name : 'Blog',
-					url : '/about/blog',
-					icon : 'icon-star',
-				},
-			],
 		},
 		{
 			name : 'My Website',

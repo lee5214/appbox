@@ -19,6 +19,9 @@
     "test": "node scripts/test.js --env=jsdom"
   },
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.2",
+    "@fortawesome/fontawesome-free-solid": "^5.0.4",
+    "@fortawesome/react-fontawesome": "0.0.17",
     "assign-deep": "^0.4.6",
     "autoprefixer": "7.1.6",
     "axios": "^0.17.1",

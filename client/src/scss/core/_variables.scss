@@ -19,7 +19,7 @@ $github:                              #4183c4 !default;
 $html5:                               #e34f26 !default;
 $openid:                              #f78c40 !default;
 $stack-overflow:                      #fe7a15 !default;
-$youtube:                             #b00 !default;
+$youtube:                             #b00    !default;
 $css3:                                #0170ba !default;
 $dribbble:                            #ea4c89 !default;
 $google-plus:                         #bb4b39 !default;
@@ -67,7 +67,7 @@ $navbar-brand-minimized-logo-size:    24px !default;
 $navbar-brand-minimized-border:       $navbar-brand-border !default;
 
 $navbar-color:                        $gray-600 !default;
-$navbar-hover-color:                  $gray-800 !default;
+$navbar-hover-color:                  $primary  !default;
 $navbar-active-color:                 $gray-800 !default;
 $navbar-disabled-color:               $gray-300 !default;
 

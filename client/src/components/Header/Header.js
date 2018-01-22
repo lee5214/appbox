@@ -83,7 +83,7 @@ class Header extends Component {
 
 				<Nav className="ml-auto" navbar>
 					<NavItem className="d-md-down-none">
-						<NavLink href="#"><i className="icon-bell"/><Badge pill color="danger">5</Badge></NavLink>
+						<NavLink href="#"><i className="fa fa-bell"/><Badge pill color="danger">5</Badge></NavLink>
 					</NavItem>
 					<NavItem className="d-md-down-none">
 						<NavLink href="#"><i className="icon-list"/></NavLink>

@@ -46,17 +46,13 @@ class Login extends Component {
 									<CardFooter className="p-4">
 										<Row>
 											<Col xs="12" sm="6">
-												<Button href={ '/auth/facebook' } className="btn-facebook mb-3"
+												<Button href={ '/auth/facebook' } className="btn-facebook mt-3"
 												        block><span>facebook</span></Button>
 											</Col>
 
 											<Col xs="12" sm="6">
-												<Button href={ '/auth/google' } className="btn-google-plus mb-3"
+												<Button href={ '/auth/google' } className="btn-google-plus mt-3"
 												        block><span>google</span></Button>
-											</Col>
-
-											<Col xs="12" sm="6">
-												<Button className="btn-twitter mb-3" block><span>twitter</span></Button>
 											</Col>
 										</Row>
 									</CardFooter>

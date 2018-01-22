@@ -22,11 +22,14 @@
   }
 
   .navbar-toggler {
+    outline: none;
     min-width: 50px;
     padding: $navbar-toggler-padding-y 0;
 
     &:hover .navbar-toggler-icon {
       background-image: $navbar-toggler-icon-hover;
+      border: 1px solid $navbar-hover-color;
+      border-radius: 4px;
     }
   }
 

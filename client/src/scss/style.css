@@ -8025,7 +8025,7 @@ button {
 .nav-tabs .nav-link, .nav-tabs .navbar .dropdown-toggle, .navbar .nav-tabs .dropdown-toggle {
   color: #262626; }
   .nav-tabs .nav-link.active, .nav-tabs .navbar .active.dropdown-toggle, .navbar .nav-tabs .active.dropdown-toggle {
-    color: #1a1a1a;
+    color: #fff;
     background: #fff;
     border-color: #5c5c5c;
     border-bottom-color: #fff; }
@@ -8064,10 +8064,13 @@ button {
     background-position: center center;
     background-size: 70px auto; }
   .app-header.navbar .navbar-toggler {
+    outline: none;
     min-width: 50px;
     padding: 0.25rem 0; }
     .app-header.navbar .navbar-toggler:hover .navbar-toggler-icon {
-      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%231a1a1a' stroke-width='2.25' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); }
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%2320a8d8' stroke-width='2.25' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+      border: 1px solid #20a8d8;
+      border-radius: 4px; }
   .app-header.navbar .navbar-toggler-icon {
     height: 23px;
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23fff' stroke-width='2.25' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); }
@@ -8249,7 +8252,7 @@ button {
     color: #8a8a8a;
     text-decoration: none;
     background: transparent; }
-    .sidebar .nav-link i, .sidebar .navbar .dropdown-toggle i, .navbar .sidebar .dropdown-toggle i, .sidebar .nav-link svg, .sidebar .navbar .dropdown-toggle svg, .navbar .sidebar .dropdown-toggle svg {
+    .sidebar .nav-link i, .sidebar .navbar .dropdown-toggle i, .navbar .sidebar .dropdown-toggle i {
       display: inline-block;
       width: 20px;
       margin: 0 0.5rem 0 0;
