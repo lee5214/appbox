@@ -85,12 +85,7 @@ class Header extends Component {
 					<NavItem className="d-md-down-none">
 						<NavLink href="#"><i className="fa fa-bell"/><Badge pill color="danger">5</Badge></NavLink>
 					</NavItem>
-					<NavItem className="d-md-down-none">
-						<NavLink href="#"><i className="icon-list"/></NavLink>
-					</NavItem>
-					<NavItem className="d-md-down-none">
-						<NavLink href="#"><i className="icon-location-pin"/></NavLink>
-					</NavItem>
+
 					{ this.renderUserInfo () }
 				</Nav>
 				<NavbarToggler className="d-md-down-none" onClick={ this.asideToggle }>

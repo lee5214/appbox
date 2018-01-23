@@ -45,7 +45,7 @@ class Aside extends Component {
 				</Nav>
 				<TabContent activeTab={ this.state.activeTab }>
 					<TabPane tabId="1">
-						<div className="callout m-0 py-2 text-muted text-center bg-light text-uppercase">
+						<div className="callout m-0 py-2 text-white text-center bg-dark text-uppercase">
 							<small><b>Today</b></small>
 						</div>
 						<hr className="transparent mx-3 my-0"/>

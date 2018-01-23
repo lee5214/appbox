@@ -72,7 +72,6 @@ export const fetchCity = (cityName, unit = 'Imperial') => {
 		const cityCurrentTemp = await axios.get (currentURL);
 		const cityWeather = await {...cityInfo.data, ...cityCurrentTemp.data};
 		const url = `${NYT_NEWS_URL}?api-key=${keys.NYT_Key}&q=${cityName}`;
-
 		const cityNews = await axios.get (url).then (item => item.data);
 
 		dispatch ({

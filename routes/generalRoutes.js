@@ -1,5 +1,8 @@
 module.exports = (app) => {
-	app.get ('/', function (req, res) {
+	app.get ('/', (req, res) => {
 		res.send ('welcome');
 	});
+	app.post('/api/validateCityName', (req, res) => {
+
+	})
 };

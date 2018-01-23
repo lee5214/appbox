@@ -5,7 +5,8 @@ import PropTypes from 'prop-types';
 import { fetchCity } from 'actions';
 import { Button, Col, Form, Input, InputGroup, InputGroupButton } from 'reactstrap';
 import { fetchUserLocation } from 'utils';
-
+import {checkCityName} from 'utils/'
+import axios from 'axios'
 class SearchBar extends Component {
 	constructor (props) {
 		super (props);
@@ -31,7 +32,7 @@ class SearchBar extends Component {
 	};
 
 	componentDidMount () {
-
+		//checkCityName('hayward')
 		//TODO implement this function later
 
 		//console.log ('your current location=>', fetchUserLocation ());

@@ -33,6 +33,7 @@ export const fetchCurrentUser = () => {
 	};
 };
 
+
 // export const createGuestUser = () => {
 
 	// return function(dispatch) {

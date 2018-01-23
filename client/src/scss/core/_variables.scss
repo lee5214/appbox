@@ -109,7 +109,7 @@ $sidebar-nav-title-padding-x:         1rem !default;
 $sidebar-nav-title-color:             $gray-200 !default;
 $sidebar-nav-link-padding-y:          .75rem !default;
 $sidebar-nav-link-padding-x:          1rem !default;
-$sidebar-nav-link-color:              $gray-100 !default;
+$sidebar-nav-link-color:              $white !default;
 $sidebar-nav-link-bg:                 transparent !default;
 $sidebar-nav-link-icon-color:         $gray-100 !default;
 $sidebar-nav-link-borders:            0 !default;
@@ -143,11 +143,11 @@ $sidebar-footer-borders:              0 !default;
 // Sidebar Minimizer
 
 $sidebar-minimizer-height:            50px !default;
-$sidebar-minimizer-bg:                rgba(0,0,0,.2) !default;
+$sidebar-minimizer-bg:                rgba(0,0,0,0.5) !default;
 $sidebar-minimizer-borders:           0 !default;
-$sidebar-minimizer-indicator-color:   $gray-600 !default;
+$sidebar-minimizer-indicator-color:   $gray-100 !default;
 $sidebar-minimizer-indicator:         str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 14'%3E%3Cpath fill='#{$sidebar-minimizer-indicator-color}' d='M9.148 2.352l-4.148 4.148 4.148 4.148q0.148 0.148 0.148 0.352t-0.148 0.352l-1.297 1.297q-0.148 0.148-0.352 0.148t-0.352-0.148l-5.797-5.797q-0.148-0.148-0.148-0.352t0.148-0.352l5.797-5.797q0.148-0.148 0.352-0.148t0.352 0.148l1.297 1.297q0.148 0.148 0.148 0.352t-0.148 0.352z'/%3E%3C/svg%3E"), "#", "%23") !default;
-$sidebar-minimizer-hover-bg:          rgba(0,0,0,.3) !default;
+$sidebar-minimizer-hover-bg:          rgba(0,0,0,1) !default;
 $sidebar-minimizer-hover-indicator-color:$sidebar-nav-link-hover-color !default;
 $sidebar-minimizer-hover-indicator:   str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 14'%3E%3Cpath fill='#{$sidebar-minimizer-hover-indicator-color}' d='M9.148 2.352l-4.148 4.148 4.148 4.148q0.148 0.148 0.148 0.352t-0.148 0.352l-1.297 1.297q-0.148 0.148-0.352 0.148t-0.352-0.148l-5.797-5.797q-0.148-0.148-0.148-0.352t0.148-0.352l5.797-5.797q0.148-0.148 0.352-0.148t0.352 0.148l1.297 1.297q0.148 0.148 0.148 0.352t-0.148 0.352z'/%3E%3C/svg%3E"), "#", "%23") !default;
 
@@ -189,8 +189,8 @@ $breadcrumb-borders: (
 // Aside
 
 $aside-menu-width:                    250px !default;
-$aside-menu-color:                    $gray-800 !default;
-$aside-menu-bg:                       #fff !default;
+$aside-menu-color:                    $gray-100 !default;
+$aside-menu-bg:                       $gray-800 !default;
 $aside-menu-borders: (
   left: (
     size:                             1px,

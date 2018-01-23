@@ -75,7 +75,6 @@ class CityCurrent extends Component {
 
 
 	render () {
-
 		const {city, list, main : {humidity, pressure}, name, sys, visibility, coord} = this.props.info.cityWeather;
 		const {docs} = this.props.info.cityNews.response;
 		// get forecast temperature in array
