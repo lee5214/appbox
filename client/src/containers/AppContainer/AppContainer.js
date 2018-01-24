@@ -41,12 +41,9 @@ class Full extends Component {
 		return (
 			<div className="app">
 				<Header currentUserInfo={ this.props.currentUserInfo }/>
-				<div className="app-body">
+				<div className="app-body threed">
 					<Sidebar { ...this.props }/>
-					<main className="main">
-						{/*<video id="bgvid" autoPlay muted loop>*/}
-							{/*<source src={process.env.PUBLIC_URL + '/img/sc-bg-video.mp4'} type="video/mp4"/>*/}
-						{/*</video>*/}
+					<main className="main animated">
 						<div className={ style.breadcrumb_wrapper }>
 							<BannerLine/>
 							<Container>

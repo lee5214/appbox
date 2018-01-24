@@ -1,0 +1,11 @@
+.threed {
+  &.body {
+    perspective: 12in;
+    & *{
+      //transform-style: preserve-3d;
+    }
+  }
+  .app{
+    position: static;
+  }
+}

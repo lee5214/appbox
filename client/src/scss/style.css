@@ -1,8 +1,13 @@
 /*!
- * Main stylesheet, based on bootstrap core-ui
+ * Main stylesheet
  * sass's variable priority is top-highest, unlike es6 import style
  *
  */
+.threed.body {
+  perspective: 12in; }
+.threed .app {
+  position: static; }
+
 /*----------------------------------*/
 /*!
  * Bootstrap v4.0.0-beta.2 (https://getbootstrap.com)
@@ -9313,7 +9318,8 @@ app-root {
   overflow-x: hidden; }
   .app-body .main {
     flex: 1;
-    min-width: 0; }
+    min-width: 0;
+    overflow: scroll; }
   .app-body .sidebar {
     flex: 0 0 200px;
     order: -1; }

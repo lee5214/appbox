@@ -44,7 +44,7 @@ class ChatRoom extends Component {
 		 */
 		socket.on ('receive msg', (msg) => {
 			console.log ('msg', msg);
-			this.setState ({pubChatMessages : [ ...this.state.pubChatMessages, msg ]});
+			this.setState ({pubChatMessages : [ msg,...this.state.pubChatMessages]});
 		});
 		socket.on ('userList update', (userList) => {
 			this.setState ({userList});
