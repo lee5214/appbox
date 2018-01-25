@@ -31,17 +31,51 @@ import FontAwesome from '../../views/Icons/FontAwesome/';
 import SimpleLineIcons from '../../views/Icons/SimpleLineIcons/';
 import style from './AppContainer.scss';
 
-class Full extends Component {
+
+class AppContainer extends Component {
+	constructor (props) {
+		super (props);
+		this.state = {
+			roX : 0,
+			roY : 0
+		};
+	}
 	componentDidMount () {
 		this.props.fetchCurrentUser ();
 	}
-
+	onMouseMove = (e) => {
+		//this.setState ({mX : e.clientX, mY : e.clientY});
+		let mX = e.clientX, mY = e.clientY;
+		let maxRotate = 10;
+		let maxRotateY = 15;
+		let view_option = 3;
+		let {left, right, top, bottom, height, width} = this.appbodyRef.getBoundingClientRect ();
+		let centerX = width / 2,
+			centerY = height / 2,
+			curRelPosX = mX - left,
+			curRelPosY = mY - top,
+			percentX = (curRelPosX - centerX) / centerX,
+			percentY = (curRelPosY - centerY) / centerY;
+		//console.log(percentX,percentY)
+		let roX = -percentY * maxRotate, roY = percentX * maxRotateY;
+		if(roX !== this.state.roX || roY !== this.state.roY) {
+			this.setState ({roX , roY})
+		}
+		//console.log ('mouse position', e.clientX, e.clientY);
+	};
 
 	render () {
+		const app3d = {
+			transform : 'rotateX(' + this.state.roX + 'deg) rotateY(' + this.state.roY + 'deg)',
+		};
 		return (
 			<div className="app">
 				<Header currentUserInfo={ this.props.currentUserInfo }/>
-				<div className="app-body threed">
+				<div className="app-body"
+				     onMouseMove={ (e) => this.onMouseMove (e) }
+				     ref={ appbodyRef => {this.appbodyRef = appbodyRef;} }
+				     style={ app3d }
+				>
 					<Sidebar { ...this.props }/>
 					<main className="main animated">
 						<div className={ style.breadcrumb_wrapper }>
@@ -115,7 +149,7 @@ function mapDispatchToProps (dispatch) {
 	return bindActionCreators ({fetchCurrentUser}, dispatch);
 }
 
-export default connect (mapStateToProps, mapDispatchToProps) (Full);
+export default connect (mapStateToProps, mapDispatchToProps) (AppContainer);
 
 // TODO intro that ppl could send me msg through app messager with my name, add feature that auto fullfill search name
 // when type

@@ -9,6 +9,9 @@ import SidebarHeader from './../SidebarHeader';
 import SidebarMinimizer from './../SidebarMinimizer';
 
 class Sidebar extends Component {
+	constructor (props) {
+		super (props);
+	}
 
 	handleClick (e) {
 		e.preventDefault ();
@@ -22,6 +25,9 @@ class Sidebar extends Component {
 
 	}
 
+	on3DMouseOver = () => {
+
+	};
 	// todo Sidebar nav secondLevel
 	// secondLevelActive(routeName) {
 	//   return this.props.location.pathname.indexOf(routeName) > -1 ? "nav nav-second-level collapse in" : "nav
@@ -102,7 +108,7 @@ class Sidebar extends Component {
 
 		// sidebar-nav root
 		return (
-			<div className="sidebar">
+			<div className="sidebar tf3d" onMouseOver={ this.on3DMouseOver }>
 				<SidebarHeader/>
 				<SidebarForm/>
 				<nav className="sidebar-nav">

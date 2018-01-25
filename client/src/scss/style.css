@@ -6,7 +6,35 @@
 .threed.body {
   perspective: 12in; }
 .threed .app {
-  position: static; }
+  position: absolute;
+  overflow: hidden; }
+  .threed .app .app-body {
+    transform-style: preserve-3d;
+    background: transparent;
+    overflow: visible;
+    position: absolute; }
+.threed .main {
+  transform-style: preserve-3d;
+  overflow: visible !important; }
+  .threed .main .AppContainer__container_content {
+    height: calc(100% - 100px);
+    overflow: scroll;
+    transform: translateZ(1in); }
+
+.tf3d {
+  transform-origin: 150% 50%;
+  transform: rotateY(0deg) translateZ(0in); }
+  .tf3d:hover {
+    transform-origin: 150% 50%;
+    transition: 0.5s ease;
+    transition-delay: 0.2s;
+    transform: rotateY(30deg) translateZ(0in); }
+
+.three-3d-container {
+  transform-style: preserve-3d;
+  overflow: visible;
+  background: transparent;
+  position: absolute; }
 
 /*----------------------------------*/
 /*!
@@ -9314,8 +9342,7 @@ app-root {
   width: 100%;
   display: flex;
   flex-direction: row;
-  flex-grow: 1;
-  overflow-x: hidden; }
+  flex-grow: 1; }
   .app-body .main {
     flex: 1;
     min-width: 0;

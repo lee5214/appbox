@@ -1,5 +1,6 @@
 import keys from 'config/API_keys'
 import axios from 'axios'
+
 export const fetchUserLocation = () => {
 	if (navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition (function (position) {
