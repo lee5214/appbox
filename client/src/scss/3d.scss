@@ -1,13 +1,12 @@
 .threed {
   &.body {
     perspective: 12in;
-    & * {
-      //transform-style: preserve-3d;
-    }
   }
   .app {
+    transform-style: preserve-3d;
+    background: transparent;
+    overflow: visible;
     position: absolute;
-    overflow: hidden;
     .app-body {
       transform-style: preserve-3d;
       background: transparent;
@@ -21,27 +20,47 @@
     .AppContainer__container_content {
       height: calc(100% - 100px);
       overflow: scroll;
-      transform: translateZ(1in);
+      transform: translateZ(0in);
     }
   }
-}
-
-.tf3d {
-  transform-origin: 150% 50%;
-  transform: rotateY(0deg) translateZ(0in);
-  &:hover {
+  .sidebar{
+    transform-style: preserve-3d;
     transform-origin: 150% 50%;
-    transition: 0.5s ease;
-    transition-delay: 0.2s;
-    transform: rotateY(30deg) translateZ(0in) ;
+    transform: rotateY(0deg) translateZ(0in);
+    &:hover {
+      transform-origin: 150% 50%;
+      transition: 0.5s ease;
+      //transition-delay: 0.2s;
+      transform: rotateY(20deg) translateZ(0in) ;
+    }
+    .sidebar-nav{
+      overflow: visible;
+      .nav-item{
+        transform-style: preserve-3d;
+        margin:5px 0;
+        padding: 10px 0;
+        transition-delay: 2s;
+        //background: red;
+        transform: translateZ(0px);
+        transition: 0.5s ease;
+        &:hover {
+          background: white;
+          .nav-link {
+            border-radius: 5px;
+            background: $primary;
+            z-index: 2;
+            transform-origin: 50%;
+            transform: translateZ(50px) translateX(0px) rotateY(15deg) skewX(0deg);
+            transition-delay: 0.5s;
+            transition: 0.5s ease;
+          }
+        }
+        .nav-link{
+          transition-delay: 0.5s;
+          transition: 0.5s ease;
+        }
+      }
+    }
   }
-}
-
-//
-.three-3d-container {
-  transform-style: preserve-3d;
-  overflow: visible;
-  background: transparent;
-  position: absolute;
 }
 

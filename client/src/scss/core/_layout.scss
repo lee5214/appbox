@@ -293,19 +293,21 @@ app-root {
 //
 // Animations
 //
-.app-header,
-.app-footer,
-.sidebar,
-.main,
-.aside-menu {
-  transition: margin-left $layout-transition-speed, margin-right $layout-transition-speed, width $layout-transition-speed, flex $layout-transition-speed;
-}
-.sidebar-nav {
-  transition: width $layout-transition-speed;
-}
-.breadcrumb {
-  transition: left $layout-transition-speed, right $layout-transition-speed, width $layout-transition-speed;
-}
+// moved to _animate.scss
+
+//.app-header,
+//.app-footer,
+//.sidebar,
+//.main,
+//.aside-menu {
+//  transition: margin-left $layout-transition-speed, margin-right $layout-transition-speed, width $layout-transition-speed, flex $layout-transition-speed;
+//}
+//.sidebar-nav {
+//  transition: width $layout-transition-speed;
+//}
+//.breadcrumb {
+//  transition: left $layout-transition-speed, right $layout-transition-speed, width $layout-transition-speed;
+//}
 
 //
 // Mobile layout

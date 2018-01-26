@@ -7,14 +7,14 @@ import ForecastEmbed from './ForecastEmbed';
 import { fetchUserLocation } from '../../../utils';
 import moment from 'moment';
 import uid from 'uuid';
-import classes from './City.scss';
+import styles from './City.scss';
 import NYTNewsList from './NYTNewsList';
 
-class CityCurrent extends Component {
+class CityDetail extends Component {
 	renderLineChart = ({tempList, dateList, label}) => {
 		return (
-			<Card className={ classes.chart }>
-				<CardHeader className={ classes.chartHeader }>
+			<Card className={ styles.chart }>
+				<CardHeader className={ styles.chartHeader }>
 					<h6>Tempature Forecast - Range: <kbd>5 days</kbd> Frequency: <kbd>3 hours</kbd></h6>
 
 					{ /* <div className="card-actions">
@@ -136,6 +136,7 @@ class CityCurrent extends Component {
 							</Col>
 						</Row>
 						<Row>
+							<div className={styles.iframeMask} />
 							<ForecastEmbed lat={ coord.lat } lon={ coord.lon } name={ name }/>
 						</Row>
 					</Card>
@@ -174,4 +175,4 @@ const doughnut = {
 	} ],
 };
 
-export default CityCurrent;
+export default CityDetail;

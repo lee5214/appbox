@@ -36,6 +36,7 @@ class AppContainer extends Component {
 	constructor (props) {
 		super (props);
 		this.state = {
+			theme3D: false,
 			roX : 0,
 			roY : 0
 		};
@@ -46,8 +47,8 @@ class AppContainer extends Component {
 	onMouseMove = (e) => {
 		//this.setState ({mX : e.clientX, mY : e.clientY});
 		let mX = e.clientX, mY = e.clientY;
-		let maxRotate = 10;
-		let maxRotateY = 15;
+		let maxRotateX = 10;
+		let maxRotateY = 10;
 		let view_option = 3;
 		let {left, right, top, bottom, height, width} = this.appbodyRef.getBoundingClientRect ();
 		let centerX = width / 2,
@@ -57,7 +58,7 @@ class AppContainer extends Component {
 			percentX = (curRelPosX - centerX) / centerX,
 			percentY = (curRelPosY - centerY) / centerY;
 		//console.log(percentX,percentY)
-		let roX = -percentY * maxRotate, roY = percentX * maxRotateY;
+		let roX = -percentY * maxRotateX, roY = percentX * maxRotateY;
 		if(roX !== this.state.roX || roY !== this.state.roY) {
 			this.setState ({roX , roY})
 		}
@@ -68,14 +69,17 @@ class AppContainer extends Component {
 		const app3d = {
 			transform : 'rotateX(' + this.state.roX + 'deg) rotateY(' + this.state.roY + 'deg)',
 		};
+		const test = {
+			onMouseMove : (e) => this.onMouseMove (e) ,
+			ref : appbodyRef => {this.appbodyRef = appbodyRef;},
+			style : {app3d}
+		}
 		return (
-			<div className="app">
+			<div className="app" onMouseMove={ (e) => this.onMouseMove (e) }
+			     ref={ appbodyRef => {this.appbodyRef = appbodyRef;} }
+			     style={ app3d }>
 				<Header currentUserInfo={ this.props.currentUserInfo }/>
-				<div className="app-body"
-				     onMouseMove={ (e) => this.onMouseMove (e) }
-				     ref={ appbodyRef => {this.appbodyRef = appbodyRef;} }
-				     style={ app3d }
-				>
+				<div className="app-body">
 					<Sidebar { ...this.props }/>
 					<main className="main animated">
 						<div className={ style.breadcrumb_wrapper }>

@@ -3,8 +3,6 @@
  * sass's variable priority is top-highest, unlike es6 import style
  *
  */
-// theme file
-@import "./3d";
 // Override Boostrap variables
 @import "./bootstrap-variables";
 // Import Bootstrap source files
@@ -13,6 +11,8 @@
 @import "./core-variables";
 // Import core styles
 @import "./core/core";
+// theme file
+@import "./3d";
 // Custom styles
 @import "./custom";
 

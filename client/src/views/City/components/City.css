@@ -2,6 +2,11 @@
   opacity: 0.95;
   margin-bottom: 40px; }
 
+.iframeMask {
+  width: 100%;
+  height: 100%;
+  position: absolute; }
+
 .chart {
   border: 0 !important; }
 

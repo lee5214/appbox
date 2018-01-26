@@ -3,39 +3,6 @@
  * sass's variable priority is top-highest, unlike es6 import style
  *
  */
-.threed.body {
-  perspective: 12in; }
-.threed .app {
-  position: absolute;
-  overflow: hidden; }
-  .threed .app .app-body {
-    transform-style: preserve-3d;
-    background: transparent;
-    overflow: visible;
-    position: absolute; }
-.threed .main {
-  transform-style: preserve-3d;
-  overflow: visible !important; }
-  .threed .main .AppContainer__container_content {
-    height: calc(100% - 100px);
-    overflow: scroll;
-    transform: translateZ(1in); }
-
-.tf3d {
-  transform-origin: 150% 50%;
-  transform: rotateY(0deg) translateZ(0in); }
-  .tf3d:hover {
-    transform-origin: 150% 50%;
-    transition: 0.5s ease;
-    transition-delay: 0.2s;
-    transform: rotateY(30deg) translateZ(0in); }
-
-.three-3d-container {
-  transform-style: preserve-3d;
-  overflow: visible;
-  background: transparent;
-  position: absolute; }
-
 /*----------------------------------*/
 /*!
  * Bootstrap v4.0.0-beta.2 (https://getbootstrap.com)
@@ -6392,6 +6359,19 @@ body {
 .font-5xl {
   font-size: 2.5rem !important; }
 
+.app-header,
+.app-footer,
+.sidebar,
+.main,
+.aside-menu {
+  transition: margin-left 0.25s, margin-right 0.25s, width 0.25s, flex 0.25s, transform 0.5s; }
+
+.sidebar-nav {
+  transition: width 0.25s; }
+
+.breadcrumb {
+  transition: left 0.25s, right 0.25s, width 0.25s; }
+
 .animated {
   animation-duration: 1s; }
 
@@ -9455,19 +9435,6 @@ app-root {
 .footer-fixed .app-body {
   margin-bottom: 50px; }
 
-.app-header,
-.app-footer,
-.sidebar,
-.main,
-.aside-menu {
-  transition: margin-left 0.25s, margin-right 0.25s, width 0.25s, flex 0.25s; }
-
-.sidebar-nav {
-  transition: width 0.25s; }
-
-.breadcrumb {
-  transition: left 0.25s, right 0.25s, width 0.25s; }
-
 @media (max-width: 991px) {
   .app-header.navbar {
     position: fixed !important;
@@ -9735,6 +9702,56 @@ hr.transparent {
       float: left; }
   *[dir="rtl"] .callout-default {
     border-right-color: #525252; }
+
+.threed.body {
+  perspective: 12in; }
+.threed .app {
+  transform-style: preserve-3d;
+  background: transparent;
+  overflow: visible;
+  position: absolute; }
+  .threed .app .app-body {
+    transform-style: preserve-3d;
+    background: transparent;
+    overflow: visible;
+    position: absolute; }
+.threed .main {
+  transform-style: preserve-3d;
+  overflow: visible !important; }
+  .threed .main .AppContainer__container_content {
+    height: calc(100% - 100px);
+    overflow: scroll;
+    transform: translateZ(0in); }
+.threed .sidebar {
+  transform-style: preserve-3d;
+  transform-origin: 150% 50%;
+  transform: rotateY(0deg) translateZ(0in); }
+  .threed .sidebar:hover {
+    transform-origin: 150% 50%;
+    transition: 0.5s ease;
+    transform: rotateY(20deg) translateZ(0in); }
+  .threed .sidebar .sidebar-nav {
+    overflow: visible; }
+    .threed .sidebar .sidebar-nav .nav-item {
+      transform-style: preserve-3d;
+      margin: 5px 0;
+      padding: 10px 0;
+      transition-delay: 2s;
+      transform: translateZ(0px);
+      transition: 0.5s ease; }
+      .threed .sidebar .sidebar-nav .nav-item:hover {
+        background: white; }
+        .threed .sidebar .sidebar-nav .nav-item:hover .nav-link, .threed .sidebar .sidebar-nav .nav-item:hover .navbar .dropdown-toggle, .navbar .threed .sidebar .sidebar-nav .nav-item:hover .dropdown-toggle {
+          border-radius: 5px;
+          background: #20a8d8;
+          z-index: 2;
+          transform-origin: 50%;
+          transform: translateZ(50px) translateX(0px) rotateY(15deg) skewX(0deg);
+          transition-delay: 0.5s;
+          transition: 0.5s ease; }
+      .threed .sidebar .sidebar-nav .nav-item .nav-link, .threed .sidebar .sidebar-nav .nav-item .navbar .dropdown-toggle, .navbar .threed .sidebar .sidebar-nav .nav-item .dropdown-toggle {
+        transition-delay: 0.5s;
+        transition: 0.5s ease; }
 
 html {
   box-sizing: border-box; }

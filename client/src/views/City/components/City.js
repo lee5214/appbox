@@ -6,11 +6,7 @@ import PropTypes from 'prop-types';
 import { Colors } from 'consts';
 
 class City extends Component {
-	constructor (props) {
-		super (props);
-	}
 	render () {
-		console.log (this.props.cityInfo);
 		return (
 			<div className="animated fadeIn">
 				<Row className={'justify-content-center'}>
