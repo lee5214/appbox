@@ -24,11 +24,6 @@ class Sidebar extends Component {
 		return props.location.pathname.indexOf (routeName) > -1 ? 'nav-item nav-dropdown open' : 'nav-item nav-dropdown';
 
 	}
-
-	on3DMouseOver = () => {
-
-	};
-	// todo Sidebar nav secondLevel
 	// secondLevelActive(routeName) {
 	//   return this.props.location.pathname.indexOf(routeName) > -1 ? "nav nav-second-level collapse in" : "nav
 	// nav-second-level collapse"; }
@@ -108,7 +103,7 @@ class Sidebar extends Component {
 
 		// sidebar-nav root
 		return (
-			<div className="sidebar tf3d" onMouseOver={ this.on3DMouseOver }>
+			<div className="sidebar">
 				<SidebarHeader/>
 				<SidebarForm/>
 				<nav className="sidebar-nav">

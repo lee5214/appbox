@@ -35,7 +35,7 @@
     }
     .sidebar-nav{
       overflow: visible;
-      .nav-item{
+      > .nav > .nav-item{
         transform-style: preserve-3d;
         margin:5px 0;
         padding: 10px 0;
@@ -44,7 +44,7 @@
         transform: translateZ(0px);
         transition: 0.5s ease;
         &:hover {
-          background: white;
+          background: transparent;
           .nav-link {
             border-radius: 5px;
             background: $primary;
@@ -58,6 +58,10 @@
         .nav-link{
           transition-delay: 0.5s;
           transition: 0.5s ease;
+        }
+        .nav-item{
+          margin:5px 0;
+          padding: 10px 0;
         }
       }
     }
