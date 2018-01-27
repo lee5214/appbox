@@ -1,6 +1,5 @@
 'use strict';
 
-
 const autoprefixer = require ('autoprefixer');
 const path = require ('path');
 const webpack = require ('webpack');
@@ -10,8 +9,6 @@ const InterpolateHtmlPlugin = require ('react-dev-utils/InterpolateHtmlPlugin');
 const WatchMissingNodeModulesPlugin = require ('react-dev-utils/WatchMissingNodeModulesPlugin');
 const eslintFormatter = require ('react-dev-utils/eslintFormatter');
 const ModuleScopePlugin = require ('react-dev-utils/ModuleScopePlugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-
 const getClientEnvironment = require ('./env');
 const paths = require ('./paths');
 
@@ -35,15 +32,6 @@ module.exports = {
 	// You may want 'eval' instead if you prefer to see the compiled output in DevTools.
 	// See the discussion in https://github.com/facebookincubator/create-react-app/issues/343.
 	devtool : 'cheap-module-source-map',
-
-	//devserver
-	// devServer: {
-	// 	//contentBase: BUILD_DIR,
-	// 	//   port: 9001,
-	// 	//compress: true,
-	// 	hot: true,
-	// 	//open: true
-	// },
 	// These are the "entry points" to our application.
 	// This means they will be the "root" imports that are included in JS bundle.
 	// The first two entry points enable "hot" CSS and auto-refreshes for JS.

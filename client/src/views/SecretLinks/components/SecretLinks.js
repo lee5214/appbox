@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 import LinkCreateForm from './LinkCreatForm';
 import LinksList from './LinksList';
-import urlRegex from 'url-regex';
+//import urlRegex from 'url-regex';
 import { Col, Nav, NavItem, NavLink, Row, TabContent, TabPane } from 'reactstrap';
 import classnames from 'classnames';
 import {urlPrefix} from 'utils/'
@@ -31,7 +31,7 @@ class SecretLinks extends Component {
 	handleSubmit = (e, origionalUrl, goPublic) => {
 		e.preventDefault ();
 		try {
-			if (!urlRegex ({exact : true, strict : false}).test (origionalUrl)) {
+			if (true){//(!urlRegex ({exact : true, strict : false}).test (origionalUrl)) {
 				this.setState ({errorMessage : 'not an url, please try again'});
 			} else {
 				origionalUrl = urlPrefix(origionalUrl)
