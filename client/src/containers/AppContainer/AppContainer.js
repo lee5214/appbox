@@ -33,6 +33,7 @@ import style from './AppContainer.scss';
 
 
 class AppContainer extends Component {
+	// TODO theme3D
 	constructor (props) {
 		super (props);
 		this.state = {

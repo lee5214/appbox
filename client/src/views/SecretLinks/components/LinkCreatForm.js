@@ -9,7 +9,6 @@ class LinkCreatForm extends Component {
 			isChecked : true,
 		};
 	}
-
 	// validUrl = (url) => {
 	//
 	//
@@ -33,7 +32,6 @@ class LinkCreatForm extends Component {
 		//isCheck stays user selected
 		this.setState ({inputRef : ''});
 	};
-
 	render () {
 		return (
 			<Form onSubmit={ this.handleUrlSubmit }>
@@ -65,10 +63,9 @@ class LinkCreatForm extends Component {
 							<Label check>
 								<Input onChange={ this.onCheckChange }
 								       checked={ this.state.isChecked }
-								       type="checkbox"/>{ ' ' }
+								       type="checkbox"/>
 								also go public
 							</Label>
-
 						</Col>
 					</FormGroup>
 				</FormGroup>

@@ -20,6 +20,7 @@ const _debug = require ('debug');
 // debug(`Server accessible via localhost:${PORT} if you are using the project defaults.`)
 
 io.on ('connection', socketManager);
+
 server.listen (PORT, () => {
 	console.log ('Connected to Port: ', PORT);
 });

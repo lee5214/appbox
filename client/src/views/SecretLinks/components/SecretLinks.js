@@ -87,15 +87,8 @@ class SecretLinks extends Component {
 
 	componentDidMount = () => {
 		axios.get ('/api/secretLinks/publicLinksList').then ((res) => {
-			console.log ('didmount', res.data);
 			this.setState ({publicList : res.data});
 		});
-		axios.get ('/api/secretLinks/privateLinksList').then ((res) => {
-			console.log ('didmount', res.data);
-			this.setState ({privateList : res.data});
-		});
-
-
 	};
 
 	render () {
@@ -141,13 +134,10 @@ class SecretLinks extends Component {
 						</Row>
 					</TabPane>
 				</TabContent>
-
-
 			</div>
 		);
 	}
 }
-
 const mapStateToProps = (state) => {
 	return {
 		currentUserInfo : state.currentUserInfo,

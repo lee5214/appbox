@@ -39,7 +39,6 @@ import Page500 from './views/Pages/Page500/';
 // }
 ReactDOM.render (
 	<Provider store={ store }>
-
 		{ /*<HashRouter> is for static website, <BrowserRouter> is more for dynamic*/ }
 		<BrowserRouter>
 			<Switch>

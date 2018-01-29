@@ -3,11 +3,10 @@ import moment from 'moment';
 import { Table } from 'reactstrap';
 
 class LinksList extends Component {
-
-
 	renderListItem = ({_id, origionalUrl, token, dateCreated, clickCounter, avatar, displayName}) => {
 		const handleUrlClick = () => {
 			origionalUrl += 1;
+			clickCounter += 1;
 		};
 		return (
 			<tr key={ _id }>
