@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { applyMiddleware, createStore } from 'redux';
+import { applyMiddleware, createStore, compose } from 'redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import ReduxThunk from 'redux-thunk';
@@ -25,9 +25,16 @@ import Register from './views/Pages/Register/';
 import Page404 from './views/Pages/Page404/';
 import Page500 from './views/Pages/Page500/';
 
-const store = createStore (reducers, composeWithDevTools (
-	applyMiddleware (ReduxThunk)));
+// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+// const store = createStore(reducer, composeEnhancers(
+// 	applyMiddleware (ReduxThunk)
+// ))
 
+//const store = createStore (reducers, composeWithDevTools (
+//	applyMiddleware (ReduxThunk)));
+
+let createStoreWithMiddleware = applyMiddleware(ReduxThunk)(createStore);
+let store = createStoreWithMiddleware(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 ReactDOM.render (
 	<Provider store={ store }>
