@@ -32,10 +32,11 @@ import Page500 from './views/Pages/Page500/';
 
 //const store = createStore (reducers, composeWithDevTools (
 //	applyMiddleware (ReduxThunk)));
-
-let createStoreWithMiddleware = applyMiddleware(ReduxThunk)(createStore);
-let store = createStoreWithMiddleware(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
-
+if (process.env.NODE_ENV !== 'production') {
+	let createStoreWithMiddleware = applyMiddleware (ReduxThunk) (createStore);
+	let store = createStoreWithMiddleware (reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__ ())
+} else {
+	let store = createStore(reducers, applyMiddleware(ReduxThunk))
 ReactDOM.render (
 	<Provider store={ store }>
 
