@@ -2559,7 +2559,7 @@
       <workItem from="1516504892324" duration="321000" />
       <workItem from="1516511533357" duration="25879000" />
       <workItem from="1516710586204" duration="33994000" />
-      <workItem from="1516912998976" duration="51653000" />
+      <workItem from="1516912998976" duration="51734000" />
     </task>
     <task id="LOCAL-00001" summary="city app second stage&#10;found out how to handle async data rendering">
       <created>1510483398501</created>
@@ -2880,7 +2880,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1091548000" />
+    <option name="totallyTimeSpent" value="1091629000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
