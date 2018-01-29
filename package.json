@@ -39,7 +39,6 @@
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
     "socket.io": "^2.0.4",
-
     "concurrently": "^3.5.1",
     "eslint": "4.10.0",
     "eslint-config-react-app": "^2.1.0",
@@ -51,9 +50,7 @@
     "eslint-plugin-react": "7.4.0",
     "nodemon": "^1.14.11"
   },
-  "devDependencies": {
-
-  },
+  "devDependencies": {},
   "compilerOptions": {
     "target": "ES6"
   }
