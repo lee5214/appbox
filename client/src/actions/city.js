@@ -1,7 +1,8 @@
 import keys from 'config/API_keys';
 import axios from 'axios';
 
-const WEATHER_URL = 'http://api.openweathermap.org/data/2.5';
+// a workaround for production, heroku only alows https, but onpenweathermap provides http, so add 'https://cors-anywhere.herokuapp.com/'
+const WEATHER_URL = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5';
 const NYT_NEWS_URL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json';
 // export const FETCH_CITY_WEATHER = 'FETCH_CITY_WEATHER';
 // export const FETCH_CITY_NEWS = 'FETCH_CITY_NEWS';

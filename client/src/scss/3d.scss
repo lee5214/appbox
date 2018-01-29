@@ -33,35 +33,41 @@
       //transition-delay: 0.2s;
       transform: rotateY(20deg) translateZ(0in) ;
     }
-    .sidebar-nav{
+    .sidebar-nav {
       overflow: visible;
-      > .nav > .nav-item{
-        transform-style: preserve-3d;
-        margin:5px 0;
-        padding: 10px 0;
-        transition-delay: 2s;
-        //background: red;
-        transform: translateZ(0px);
-        transition: 0.5s ease;
-        &:hover {
-          background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      > .nav {
+        min-height: 0;
+        > .nav-item {
+          transform-style: preserve-3d;
+          //margin:5px 0;
+          padding: 10px 0;
+          transition-delay: 2s;
+          //background: red;
+          transform: translateZ(0px);
+          transition: 0.5s ease;
+          &:hover {
+            background: transparent;
+            .nav-link {
+              border-radius: 5px;
+              background: $primary;
+              z-index: 2;
+              transform-origin: 50%;
+              transform: translateZ(50px) translateX(0px) rotateY(15deg) skewX(0deg);
+              transition-delay: 0.5s;
+              transition: 0.5s ease;
+            }
+          }
           .nav-link {
-            border-radius: 5px;
-            background: $primary;
-            z-index: 2;
-            transform-origin: 50%;
-            transform: translateZ(50px) translateX(0px) rotateY(15deg) skewX(0deg);
             transition-delay: 0.5s;
             transition: 0.5s ease;
           }
-        }
-        .nav-link{
-          transition-delay: 0.5s;
-          transition: 0.5s ease;
-        }
-        .nav-item{
-          margin:5px 0;
-          padding: 10px 0;
+          .nav-item {
+            margin: 5px 0;
+            padding: 10px 0;
+          }
         }
       }
     }

@@ -72,7 +72,6 @@ require ('../routes/secretLinkRoutes') (app);
 require ('../routes/generalRoutes') (app);
 
 
-
 if (process.env.NODE_ENV === 'production') {
 	app.use (Express.static('client/build'));
 	app.get ('*', (req, res) => {

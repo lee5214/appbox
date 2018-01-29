@@ -4,12 +4,13 @@
     <list default="true" id="742d2f67-9123-492e-9892-2d49e2746a61" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/start.js" afterPath="$PROJECT_DIR$/bin/start.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/package.json" afterPath="$PROJECT_DIR$/client/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/actions/city.js" afterPath="$PROJECT_DIR$/client/src/actions/city.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/containers/AppContainer/AppContainer.js" afterPath="$PROJECT_DIR$/client/src/containers/AppContainer/AppContainer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/index.js" afterPath="$PROJECT_DIR$/client/src/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/scss/3d.scss" afterPath="$PROJECT_DIR$/client/src/scss/3d.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/scss/style.css" afterPath="$PROJECT_DIR$/client/src/scss/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/scss/style.css.map" afterPath="$PROJECT_DIR$/client/src/scss/style.css.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/views/ChatRoom/components/ChatRoom.js" afterPath="$PROJECT_DIR$/client/src/views/ChatRoom/components/ChatRoom.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/views/SecretLinks/components/LinkCreatForm.js" afterPath="$PROJECT_DIR$/client/src/views/SecretLinks/components/LinkCreatForm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/views/SecretLinks/components/LinksList.js" afterPath="$PROJECT_DIR$/client/src/views/SecretLinks/components/LinksList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/views/SecretLinks/components/SecretLinks.js" afterPath="$PROJECT_DIR$/client/src/views/SecretLinks/components/SecretLinks.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -2060,21 +2061,31 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/client/package.json">
+          <file leaf-file-name="3d.scss" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/client/src/scss/3d.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1530">
-                  <caret line="102" column="23" lean-forward="true" selection-start-line="102" selection-start-column="23" selection-end-line="102" selection-end-column="23" />
+                <state relative-caret-position="342">
+                  <caret line="40" column="14" lean-forward="true" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ChatRoom.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/client/package.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="75">
+                  <caret line="5" column="6" lean-forward="false" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ChatRoom.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/client/src/views/ChatRoom/components/ChatRoom.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="30">
-                  <caret line="23" column="51" lean-forward="true" selection-start-line="23" selection-start-column="51" selection-end-line="23" selection-end-column="51" />
+                <state relative-caret-position="45">
+                  <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -2099,8 +2110,8 @@
           <file leaf-file-name="start.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/bin/start.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-685">
-                  <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+                <state relative-caret-position="174">
+                  <caret line="72" column="0" lean-forward="true" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -2126,7 +2137,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="socketManager.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="socketManager.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/services/socketManager.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="90">
@@ -2139,8 +2150,8 @@
           <file leaf-file-name="webpack.config.prod.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/client/config/webpack.config.prod.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="615">
-                  <caret line="41" column="12" lean-forward="false" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="12" />
+                <state relative-caret-position="-550">
+                  <caret line="168" column="21" lean-forward="true" selection-start-line="168" selection-start-column="21" selection-end-line="168" selection-end-column="21" />
                   <folding />
                 </state>
               </provider>
@@ -2158,12 +2169,46 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="AppContainer.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/client/src/containers/AppContainer/AppContainer.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="31">
+                  <caret line="77" column="40" lean-forward="false" selection-start-line="77" selection-start-column="32" selection-end-line="77" selection-end-column="40" />
+                  <folding>
+                    <element signature="e#1369#1426#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="webpackDevServer.config.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/client/config/webpackDevServer.config.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1132">
-                  <caret line="78" column="8" lean-forward="false" selection-start-line="78" selection-start-column="4" selection-end-line="78" selection-end-column="8" />
+                <state relative-caret-position="939">
+                  <caret line="79" column="8" lean-forward="false" selection-start-line="79" selection-start-column="8" selection-end-line="79" selection-end-column="8" />
                   <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="AppContainer.scss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/client/src/containers/AppContainer/AppContainer.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="150">
+                  <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="city.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/client/src/actions/city.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="45">
+                  <caret line="3" column="136" lean-forward="false" selection-start-line="3" selection-start-column="136" selection-end-line="3" selection-end-column="136" />
+                  <folding>
+                    <element signature="e#0#35#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -2181,8 +2226,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>margin-left</find>
-      <find>redux-devtools-extension</find>
       <find>composeWithDevTools</find>
       <find>dot-no</find>
       <find>keys</find>
@@ -2200,17 +2243,19 @@
       <find>webpac</find>
       <find>babel</find>
       <find>webpack</find>
-      <find>extract-text-webpack-plugin</find>
-      <find>style</find>
       <find>container</find>
       <find>https</find>
       <find>addUser</find>
-      <find>host</find>
       <find>local</find>
       <find>socket</find>
       <find>http</find>
       <find>console</find>
       <find>topologicalSort</find>
+      <find>style</find>
+      <find>app3d</find>
+      <find>app-body</find>
+      <find>extract-text-webpack-plugin</find>
+      <find>host</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -2237,7 +2282,6 @@
         <option value="$PROJECT_DIR$/client/src/scss/core/_variables.scss" />
         <option value="$PROJECT_DIR$/client/src/reducers/cityInfoReducer.js" />
         <option value="$PROJECT_DIR$/client/src/config/devKeys.js" />
-        <option value="$PROJECT_DIR$/client/src/actions/city.js" />
         <option value="$PROJECT_DIR$/client/src/views/City/components/SearchBar.js" />
         <option value="$PROJECT_DIR$/client/public/mouse_3d.js" />
         <option value="$PROJECT_DIR$/client/public/index.html" />
@@ -2251,7 +2295,6 @@
         <option value="$PROJECT_DIR$/client/src/scss/style.scss" />
         <option value="$PROJECT_DIR$/client/src/utils/index.js" />
         <option value="$PROJECT_DIR$/client/src/components/Sidebar/Sidebar.js" />
-        <option value="$PROJECT_DIR$/client/src/scss/3d.scss" />
         <option value="$PROJECT_DIR$/config/credentials/prodKey.js" />
         <option value="$PROJECT_DIR$/.eslintrc" />
         <option value="$PROJECT_DIR$/client/config/webpack.config.dev.js" />
@@ -2260,16 +2303,18 @@
         <option value="$PROJECT_DIR$/client/src/config/prodKeys.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/client/src/config/API_keys.js" />
-        <option value="$PROJECT_DIR$/client/package.json" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/routes/generalRoutes.js" />
         <option value="$PROJECT_DIR$/client/src/views/SecretLinks/components/LinksList.js" />
         <option value="$PROJECT_DIR$/client/src/views/SecretLinks/components/SecretLinks.js" />
         <option value="$PROJECT_DIR$/client/src/views/SecretLinks/components/LinkCreatForm.js" />
-        <option value="$PROJECT_DIR$/bin/start.js" />
-        <option value="$PROJECT_DIR$/client/src/containers/AppContainer/AppContainer.js" />
         <option value="$PROJECT_DIR$/client/src/index.js" />
+        <option value="$PROJECT_DIR$/client/src/containers/AppContainer/AppContainer.js" />
         <option value="$PROJECT_DIR$/client/src/views/ChatRoom/components/ChatRoom.js" />
+        <option value="$PROJECT_DIR$/client/package.json" />
+        <option value="$PROJECT_DIR$/client/src/scss/3d.scss" />
+        <option value="$PROJECT_DIR$/bin/start.js" />
+        <option value="$PROJECT_DIR$/client/src/actions/city.js" />
       </list>
     </option>
   </component>
@@ -2382,6 +2427,13 @@
               <item name="react-admin" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="actions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="containers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -2391,6 +2443,13 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="containers" type="462c0819:PsiDirectoryNode" />
               <item name="AppContainer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="scss" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="react-admin" type="b2602c69:ProjectViewProjectNode" />
@@ -2517,7 +2576,7 @@
       <workItem from="1516504892324" duration="321000" />
       <workItem from="1516511533357" duration="25879000" />
       <workItem from="1516710586204" duration="33994000" />
-      <workItem from="1516912998976" duration="58002000" />
+      <workItem from="1516912998976" duration="61662000" />
     </task>
     <task id="LOCAL-00001" summary="city app second stage&#10;found out how to handle async data rendering">
       <created>1510483398501</created>
@@ -2845,7 +2904,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1097897000" />
+    <option name="totallyTimeSpent" value="1101557000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -2858,6 +2917,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1079" y="-480" width="1074" height="1845" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32995495" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21747388" sideWeight="0.7364991" order="0" side_tool="false" content_ui="combo" />
@@ -2868,7 +2928,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23828572" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24881291" sideWeight="0.49321628" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38628572" sideWeight="0.4814815" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38628572" sideWeight="0.4814815" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21747388" sideWeight="0.26350093" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -2947,22 +3007,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.eslintrc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="163" column="7" lean-forward="false" selection-start-line="163" selection-start-column="7" selection-end-line="163" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/node_modules/util/util.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="76" column="21" lean-forward="true" selection-start-line="76" selection-start-column="21" selection-end-line="76" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/node_modules/url-regex/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -3083,14 +3127,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="51" column="25" lean-forward="false" selection-start-line="51" selection-start-column="25" selection-end-line="51" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/services/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -3123,14 +3159,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/config/webpack.config.prod.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="41" column="12" lean-forward="false" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/config/paths.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-458">
@@ -3154,14 +3182,6 @@
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/start.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-685">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3199,14 +3219,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1530">
-          <caret line="102" column="23" lean-forward="true" selection-start-line="102" selection-start-column="23" selection-end-line="102" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/views/Dashboard/Dashboard.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
@@ -3214,24 +3226,6 @@
           <folding>
             <element signature="e#0#41#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/containers/AppContainer/AppContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="35" column="19" lean-forward="false" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/containers/AppContainer/AppContainer.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3332,16 +3326,8 @@
         <state relative-caret-position="345">
           <caret line="23" column="1" lean-forward="false" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/config/webpackDevServer.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1132">
-          <caret line="78" column="8" lean-forward="false" selection-start-line="78" selection-start-column="4" selection-end-line="78" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3363,11 +3349,87 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/config/webpack.config.prod.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-550">
+          <caret line="168" column="21" lean-forward="true" selection-start-line="168" selection-start-column="21" selection-end-line="168" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/containers/AppContainer/AppContainer.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/config/webpackDevServer.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="939">
+          <caret line="79" column="8" lean-forward="false" selection-start-line="79" selection-start-column="8" selection-end-line="79" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/containers/AppContainer/AppContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="31">
+          <caret line="77" column="40" lean-forward="false" selection-start-line="77" selection-start-column="32" selection-end-line="77" selection-end-column="40" />
+          <folding>
+            <element signature="e#1369#1426#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/views/ChatRoom/components/ChatRoom.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="23" column="51" lean-forward="true" selection-start-line="23" selection-start-column="51" selection-end-line="23" selection-end-column="51" />
+        <state relative-caret-position="45">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="6" lean-forward="false" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="51" column="25" lean-forward="false" selection-start-line="51" selection-start-column="25" selection-end-line="51" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/start.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="72" column="0" lean-forward="true" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/scss/3d.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="40" column="14" lean-forward="true" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/actions/city.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="136" lean-forward="false" selection-start-line="3" selection-start-column="136" selection-end-line="3" selection-end-column="136" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

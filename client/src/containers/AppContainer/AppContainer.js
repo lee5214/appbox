@@ -70,11 +70,6 @@ class AppContainer extends Component {
 		const app3d = {
 			transform : 'rotateX(' + this.state.roX + 'deg) rotateY(' + this.state.roY + 'deg)',
 		};
-		const test = {
-			onMouseMove : (e) => this.onMouseMove (e) ,
-			ref : appbodyRef => {this.appbodyRef = appbodyRef;},
-			style : {app3d}
-		}
 		return (
 			<div className="app" onMouseMove={ (e) => this.onMouseMove (e) }
 			     ref={ appbodyRef => {this.appbodyRef = appbodyRef;} }
