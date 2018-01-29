@@ -4,6 +4,8 @@ import { applyMiddleware, createStore } from 'redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import ReduxThunk from 'redux-thunk';
+// redux devtool
+import { composeWithDevTools } from 'redux-devtools-extension';
 // Styles
 // Import Font Awesome Icons Set
 //import 'font-awesome/css/font-awesome.min.css';
@@ -16,7 +18,6 @@ import './scss/style.css';
 // import './scss/core/_dropdown-menu-right.scss'
 // Containers
 import App from './containers/AppContainer';
-// reducers
 import reducers from './reducers';
 // Views
 import Login from './views/Pages/Login/';
@@ -35,8 +36,12 @@ import Page500 from './views/Pages/Page500/';
 // 	let createStoreWithMiddleware = applyMiddleware (ReduxThunk) (createStore);
 // 	let store = createStoreWithMiddleware (reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__ ());
 // } else {
-	let store = createStore (reducers, applyMiddleware (ReduxThunk));
+//	let store = createStore (reducers, applyMiddleware (ReduxThunk));
 // }
+const store = createStore (reducers, composeWithDevTools (
+	applyMiddleware (ReduxThunk))
+);
+
 ReactDOM.render (
 	<Provider store={ store }>
 		{ /*<HashRouter> is for static website, <BrowserRouter> is more for dynamic*/ }

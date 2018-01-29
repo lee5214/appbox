@@ -21,8 +21,13 @@ import {
 	Row,
 } from 'reactstrap';
 
-const socket = socketIOClient ('http://localhost:4000');
-
+let host = window.location.host;
+if (host === 'localhost:3000'){
+	host = 'localhost:4000'
+}
+const socket = socketIOClient (host);
+console.log('socket',window.location.host)
+console.log('2',process.env.SOCKET_URL)
 class ChatRoom extends Component {
 	constructor (props) {
 		super (props);
