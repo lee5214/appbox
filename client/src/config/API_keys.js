@@ -2,7 +2,6 @@
 // import devKeys from './devKeys';
 
 let keys;
-
 if (process.env.NODE_ENV === 'production') {
 	keys = {
 		'OpenWeatherMap_Key' : '58bc6bdbc6285ac512cb870c3a126018',
