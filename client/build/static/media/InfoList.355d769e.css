@@ -1,0 +1,13 @@
+.capabilitiesTable {
+  align-self: center; }
+  .capabilitiesTable td {
+    vertical-align: middle; }
+    .capabilitiesTable td:first-child {
+      text-align: left; }
+    .capabilitiesTable td:last-child {
+      text-align: right;
+      color: white; }
+  .capabilitiesTable tr:first-child td {
+    border-top: none; }
+
+/*# sourceMappingURL=InfoList.355d769e.css.map */

@@ -1,0 +1,11 @@
+.navbar_column{
+  display: flex;
+  align-items: baseline;
+  background-color: #262626;
+
+  .sub_navbar_header{
+    align-self: center;
+    list-style: none;
+
+  }
+}
