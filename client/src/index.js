@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { applyMiddleware, createStore, compose } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import ReduxThunk from 'redux-thunk';
@@ -14,7 +14,6 @@ import 'simple-line-icons/css/simple-line-icons.css';
 import './scss/style.css';
 // Temp fix for reactstrap
 // import './scss/core/_dropdown-menu-right.scss'
-import { composeWithDevTools } from 'redux-devtools-extension';
 // Containers
 import App from './containers/AppContainer';
 // reducers
@@ -34,9 +33,10 @@ import Page500 from './views/Pages/Page500/';
 //	applyMiddleware (ReduxThunk)));
 if (process.env.NODE_ENV !== 'production') {
 	let createStoreWithMiddleware = applyMiddleware (ReduxThunk) (createStore);
-	let store = createStoreWithMiddleware (reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__ ())
+	let store = createStoreWithMiddleware (reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__ ());
 } else {
-	let store = createStore(reducers, applyMiddleware(ReduxThunk))
+	let store = createStore (reducers, applyMiddleware (ReduxThunk));
+}
 ReactDOM.render (
 	<Provider store={ store }>
 
@@ -52,4 +52,5 @@ ReactDOM.render (
 			</Switch>
 		</BrowserRouter>
 	</Provider>
-	, document.getElementById ('root'));
+	, document.getElementById ('root'),
+);
