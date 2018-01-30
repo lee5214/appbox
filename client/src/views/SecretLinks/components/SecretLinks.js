@@ -84,7 +84,6 @@ class SecretLinks extends Component {
 			</div>
 		);
 	};
-
 	componentDidMount = () => {
 		axios.get ('/api/secretLinks/publicLinksList').then ((res) => {
 			this.setState ({publicList : res.data});

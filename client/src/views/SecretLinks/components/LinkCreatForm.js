@@ -59,7 +59,7 @@ class LinkCreatForm extends Component {
 
 					<FormGroup row>
 						<Col>
-							<Button className={'mr-2'}>Generate</Button>
+							<Button className={'mr-5'}>Generate</Button>
 							<Label check>
 								<Input onChange={ this.onCheckChange }
 								       checked={ this.state.isChecked }

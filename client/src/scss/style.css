@@ -9883,7 +9883,7 @@ hr.transparent {
         transition: 0.5s ease; }
         .threed .sidebar .sidebar-nav > .nav > .nav-item:hover {
           background: transparent; }
-          .threed .sidebar .sidebar-nav > .nav > .nav-item:hover .nav-link, .threed .sidebar .sidebar-nav > .nav > .nav-item:hover .navbar .dropdown-toggle, .navbar .threed .sidebar .sidebar-nav > .nav > .nav-item:hover .dropdown-toggle {
+          .threed .sidebar .sidebar-nav > .nav > .nav-item:hover .nav-link, .threed .sidebar .sidebar-nav > .nav > .nav-item:hover .navbar .dropdown-toggle, .navbar .threed .sidebar .sidebar-nav > .nav > .nav-item:hover .dropdown-toggle, .threed .sidebar .sidebar-nav > .nav > .nav-item:hover .nav-dropdown-items {
             border-radius: 5px;
             background: #20a8d8;
             z-index: 2;

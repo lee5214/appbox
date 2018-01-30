@@ -50,7 +50,7 @@
           transition: 0.5s ease;
           &:hover {
             background: transparent;
-            .nav-link {
+            .nav-link, .nav-dropdown-items {
               border-radius: 5px;
               background: $primary;
               z-index: 2;
