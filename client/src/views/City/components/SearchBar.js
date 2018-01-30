@@ -6,20 +6,17 @@ import { fetchCity } from 'actions';
 import { Button, Col, Form, Input, InputGroup, InputGroupButton } from 'reactstrap';
 import { fetchUserLocation } from 'utils';
 import {checkCityName} from 'utils/'
-import axios from 'axios'
+
 class SearchBar extends Component {
 	constructor (props) {
 		super (props);
 		this.state = {term : '', searchedTerm : [], duplicatedSearch : false};
 	}
-
 	onInputChange = (e) => {
 		this.setState ({term : e.target.value.toLowerCase ()});
 	};
-
 	onSearchSubmit = (e) => {
 		e.preventDefault ();
-		//console.log (this.state);
 		if (!this.state.searchedTerm.includes (this.state.term)) {
 			//TODO warning implementation
 
@@ -66,23 +63,7 @@ class SearchBar extends Component {
 							</InputGroupButton>
 						</InputGroup>
 					</Col>
-
 				</Form>
-
-				{ /*<form className={ 'input-group' } onSubmit={ (e) => {this.onSearchSubmit (e);} }>*/ }
-				{ /*<input*/ }
-				{ /*style={ {backgroundColor : '#353535', border : 0, color : 'white'} }*/ }
-				{ /*placeholder={ '  city name' }*/ }
-				{ /*onChange={ (e) => this.onInputChange (e) }*/ }
-				{ /*value={ this.state.term }/>*/ }
-				{ /*<span className={ 'input-group-btn' }>*/ }
-				{ /*<Button bsStyle={ 'primary' } type={ 'submit' }>*/ }
-				{ /*Search*/ }
-				{ /*</Button>*/ }
-				{ /*</span>*/ }
-				{ /*<div>*/ }
-				{ /*</div>*/ }
-				{ /*</form>*/ }
 			</div>
 		);
 	}

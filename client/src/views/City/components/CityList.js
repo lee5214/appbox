@@ -5,7 +5,6 @@ import 'weather-icons/css/weather-icons.css';
 import CityDetail from './CityDetail';
 
 class CityList extends Component {
-
 	render () {
 		return (
 			<div>
@@ -14,9 +13,4 @@ class CityList extends Component {
 		);
 	}
 }
-
-
-
-
-
 export default CityList;

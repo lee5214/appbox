@@ -3,8 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="742d2f67-9123-492e-9892-2d49e2746a61" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/start.js" afterPath="$PROJECT_DIR$/bin/start.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/views/ChatRoom/components/ChatRoom.js" afterPath="$PROJECT_DIR$/client/src/views/ChatRoom/components/ChatRoom.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/config/API_keys.js" afterPath="$PROJECT_DIR$/client/src/config/API_keys.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/config/prodKeys.js" afterPath="$PROJECT_DIR$/client/src/config/prodKeys.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/reducers/authReducer.js" afterPath="$PROJECT_DIR$/client/src/reducers/authReducer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/views/City/components/CityList.js" afterPath="$PROJECT_DIR$/client/src/views/City/components/CityList.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/views/City/components/SearchBar.js" afterPath="$PROJECT_DIR$/client/src/views/City/components/SearchBar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/credentials/prodKey.js" afterPath="$PROJECT_DIR$/config/credentials/prodKey.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -2043,28 +2047,6 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="API_keys.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/client/src/config/API_keys.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="270">
-                  <caret line="18" column="20" lean-forward="false" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
-                  <folding>
-                    <element signature="n#!!doc" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="3d.scss" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/client/src/scss/3d.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="331">
-                  <caret line="38" column="26" lean-forward="true" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="City.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/client/src/views/City/components/City.js">
               <provider selected="true" editor-type-id="text-editor">
@@ -2085,7 +2067,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ChatRoom.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="ChatRoom.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/client/src/views/ChatRoom/components/ChatRoom.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="204">
@@ -2100,8 +2082,8 @@
           <file leaf-file-name="SecretLinks.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/client/src/views/SecretLinks/components/SecretLinks.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="371">
-                  <caret line="43" column="58" lean-forward="true" selection-start-line="43" selection-start-column="29" selection-end-line="43" selection-end-column="58" />
+                <state relative-caret-position="206">
+                  <caret line="32" column="13" lean-forward="true" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
                   <folding>
                     <marker date="1517216100594" expanded="true" signature="2543:3741" ph="..." />
                   </folding>
@@ -2112,8 +2094,8 @@
           <file leaf-file-name="SearchBar.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/client/src/views/City/components/SearchBar.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="495">
-                  <caret line="33" column="16" lean-forward="false" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="16" />
+                <state relative-caret-position="366">
+                  <caret line="64" column="26" lean-forward="false" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="26" />
                   <folding>
                     <element signature="e#0#41#0" expanded="true" />
                   </folding>
@@ -2121,14 +2103,34 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="CityList.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/client/src/views/City/components/CityList.js">
+          <file leaf-file-name="authReducer.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/client/src/reducers/authReducer.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <state relative-caret-position="45">
+                  <caret line="3" column="54" lean-forward="false" selection-start-line="3" selection-start-column="54" selection-end-line="3" selection-end-column="54" />
                   <folding>
-                    <element signature="e#0#41#0" expanded="true" />
+                    <element signature="e#0#53#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="authRoutes.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/routes/authRoutes.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="159">
+                  <caret line="31" column="9" lean-forward="true" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="30" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="devKey.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/config/credentials/devKey.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="255">
+                  <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -2157,7 +2159,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="socketManager.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="socketManager.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/services/socketManager.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="112">
@@ -2177,18 +2179,6 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="LinkCreatForm.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/client/src/views/SecretLinks/components/LinkCreatForm.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="105">
-                  <caret line="33" column="6" lean-forward="true" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
-                  <folding>
-                    <element signature="e#0#41#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="AppContainer.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/client/src/containers/AppContainer/AppContainer.js">
               <provider selected="true" editor-type-id="text-editor">
@@ -2201,26 +2191,6 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="webpackDevServer.config.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/client/config/webpackDevServer.config.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="939">
-                  <caret line="79" column="8" lean-forward="false" selection-start-line="79" selection-start-column="8" selection-end-line="79" selection-end-column="8" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="AppContainer.scss" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/client/src/containers/AppContainer/AppContainer.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="150">
-                  <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="city.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/client/src/actions/city.js">
               <provider selected="true" editor-type-id="text-editor">
@@ -2229,6 +2199,48 @@
                   <folding>
                     <element signature="e#0#35#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="prodKey.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/config/credentials/prodKey.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="93">
+                  <caret line="8" column="40" lean-forward="false" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="40" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="API_keys.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/client/src/config/API_keys.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="120">
+                  <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+                  <folding>
+                    <element signature="e#0#34#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="devKeys.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/client/src/config/devKeys.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="60">
+                  <caret line="4" column="68" lean-forward="false" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="68" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="prodKeys.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/client/src/config/prodKeys.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="45">
+                  <caret line="3" column="40" lean-forward="true" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="61" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -2246,7 +2258,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>dot-no</find>
       <find>keys</find>
       <find>engine</find>
       <find>acti</find>
@@ -2272,10 +2283,11 @@
       <find>host</find>
       <find>extract-text-webpack-plugin</find>
       <find>topologicalSort</find>
-      <find>id</find>
       <find>dev</find>
       <find>app-body</find>
+      <find>c</find>
       <find>console</find>
+      <find>id</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -2284,8 +2296,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/client/src/scss/_bootstrap-variables.scss" />
-        <option value="$PROJECT_DIR$/client/src/scss/core/core.scss" />
         <option value="$PROJECT_DIR$/client/src/scss/core/_tab.scss" />
         <option value="$PROJECT_DIR$/models/SecretLinks_Model.js" />
         <option value="$PROJECT_DIR$/routes/secretLinkRoutes.js" />
@@ -2302,7 +2312,6 @@
         <option value="$PROJECT_DIR$/client/src/scss/core/_variables.scss" />
         <option value="$PROJECT_DIR$/client/src/reducers/cityInfoReducer.js" />
         <option value="$PROJECT_DIR$/client/src/config/devKeys.js" />
-        <option value="$PROJECT_DIR$/client/src/views/City/components/SearchBar.js" />
         <option value="$PROJECT_DIR$/client/public/mouse_3d.js" />
         <option value="$PROJECT_DIR$/client/public/index.html" />
         <option value="$PROJECT_DIR$/client/src/views/City/components/City.scss" />
@@ -2310,19 +2319,15 @@
         <option value="$PROJECT_DIR$/client/src/scss/core/_layout.scss" />
         <option value="$PROJECT_DIR$/client/src/scss/core/_animate.scss" />
         <option value="$PROJECT_DIR$/client/src/views/City/components/CityCurrent.js" />
-        <option value="$PROJECT_DIR$/client/src/views/City/components/CityList.js" />
         <option value="$PROJECT_DIR$/client/src/views/City/components/City.js" />
         <option value="$PROJECT_DIR$/client/src/scss/style.scss" />
         <option value="$PROJECT_DIR$/client/src/utils/index.js" />
         <option value="$PROJECT_DIR$/client/src/components/Sidebar/Sidebar.js" />
-        <option value="$PROJECT_DIR$/config/credentials/prodKey.js" />
         <option value="$PROJECT_DIR$/.eslintrc" />
         <option value="$PROJECT_DIR$/client/config/webpack.config.dev.js" />
         <option value="$PROJECT_DIR$/client/config/webpack.config.prod.js" />
         <option value="$PROJECT_DIR$/client/src/utils/url-regex.js" />
-        <option value="$PROJECT_DIR$/client/src/config/prodKeys.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/client/src/config/API_keys.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/routes/generalRoutes.js" />
         <option value="$PROJECT_DIR$/client/src/views/SecretLinks/components/LinksList.js" />
@@ -2335,6 +2340,13 @@
         <option value="$PROJECT_DIR$/client/src/index.js" />
         <option value="$PROJECT_DIR$/bin/start.js" />
         <option value="$PROJECT_DIR$/client/src/views/ChatRoom/components/ChatRoom.js" />
+        <option value="$PROJECT_DIR$/client/src/views/City/components/CityList.js" />
+        <option value="$PROJECT_DIR$/client/src/views/City/components/SearchBar.js" />
+        <option value="$PROJECT_DIR$/client/src/reducers/authReducer.js" />
+        <option value="$PROJECT_DIR$/config/credentials/devKey.js" />
+        <option value="$PROJECT_DIR$/config/credentials/prodKey.js" />
+        <option value="$PROJECT_DIR$/client/src/config/API_keys.js" />
+        <option value="$PROJECT_DIR$/client/src/config/prodKeys.js" />
       </list>
     </option>
   </component>
@@ -2447,6 +2459,13 @@
               <item name="react-admin" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="containers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -2462,24 +2481,23 @@
               <item name="react-admin" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="reducers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="react-admin" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-admin" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="City" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="react-admin" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-admin" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="City" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="credentials" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="react-admin" type="b2602c69:ProjectViewProjectNode" />
@@ -2574,7 +2592,7 @@
       <workItem from="1516504892324" duration="321000" />
       <workItem from="1516511533357" duration="25879000" />
       <workItem from="1516710586204" duration="33994000" />
-      <workItem from="1516912998976" duration="65397000" />
+      <workItem from="1516912998976" duration="68587000" />
     </task>
     <task id="LOCAL-00001" summary="city app second stage&#10;found out how to handle async data rendering">
       <created>1510483398501</created>
@@ -2898,11 +2916,18 @@
       <option name="project" value="LOCAL" />
       <updated>1517210116787</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="heroku deployment github">
+      <created>1517270416617</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1517270416617</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1105292000" />
+    <option name="totallyTimeSpent" value="1108482000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -2915,7 +2940,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1079" y="-480" width="1074" height="1845" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32995495" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21747388" sideWeight="0.7364991" order="0" side_tool="false" content_ui="combo" />
@@ -2926,7 +2950,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23828572" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24881291" sideWeight="0.49321628" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38628572" sideWeight="0.4814815" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38628572" sideWeight="0.4814815" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21747388" sideWeight="0.26350093" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -2971,7 +2995,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="start refactoring app routes" />
     <MESSAGE value="oath 1/2 done" />
     <MESSAGE value="google oath done&#10;login/out done" />
     <MESSAGE value="facebook oauth done" />
@@ -2996,7 +3019,8 @@
     <MESSAGE value="sidebar style" />
     <MESSAGE value="heroku test" />
     <MESSAGE value="heroku deployment sucessed" />
-    <option name="LAST_COMMIT_MESSAGE" value="heroku deployment sucessed" />
+    <MESSAGE value="heroku deployment github" />
+    <option name="LAST_COMMIT_MESSAGE" value="heroku deployment github" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3005,46 +3029,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/src/utils/url-regex.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/config/prodKeys.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="70" lean-forward="false" selection-start-line="3" selection-start-column="70" selection-end-line="3" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/credentials/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/config/devKeys.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="70" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="4" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/node_modules/font-awesome/css/font-awesome.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="3" column="5896" lean-forward="false" selection-start-line="3" selection-start-column="5896" selection-end-line="3" selection-end-column="5896" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/node_modules/font-awesome/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="235">
@@ -3154,7 +3138,7 @@
         <state relative-caret-position="105">
           <caret line="33" column="6" lean-forward="true" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3236,14 +3220,6 @@
     <entry file="file://$PROJECT_DIR$/models/SecretLinks_Model.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/authRoutes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-306">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -3331,46 +3307,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/config/API_keys.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="20" lean-forward="false" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/views/SecretLinks/components/SecretLinks.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="43" column="58" lean-forward="true" selection-start-line="43" selection-start-column="29" selection-end-line="43" selection-end-column="58" />
-          <folding>
-            <marker date="1517216100594" expanded="true" signature="2543:3741" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/views/City/components/SearchBar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="16" lean-forward="false" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/views/City/components/CityList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/views/City/components/City.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -3432,6 +3368,96 @@
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/views/City/components/CityList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#41#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/views/SecretLinks/components/SecretLinks.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="32" column="13" lean-forward="true" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+          <folding>
+            <marker date="1517216100594" expanded="true" signature="2543:3741" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/reducers/authReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="54" lean-forward="false" selection-start-line="3" selection-start-column="54" selection-end-line="3" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/authRoutes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="31" column="9" lean-forward="true" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/views/City/components/SearchBar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="64" column="26" lean-forward="false" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/credentials/devKey.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/config/API_keys.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/credentials/prodKey.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="8" column="40" lean-forward="false" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/config/prodKeys.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="40" lean-forward="true" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/config/devKeys.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="68" lean-forward="false" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="68" />
+          <folding />
         </state>
       </provider>
     </entry>
