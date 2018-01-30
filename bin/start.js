@@ -19,7 +19,6 @@ const _debug = require ('debug');
 // debug(`Server is now running at http://host:${PORT}.`)
 // debug(`Server accessible via localhost:${PORT} if you are using the project defaults.`)
 
-
 if (process.env.NODE_ENV === 'production') {
 	app.use (Express.static('client/build'));
 	app.get ('*', (req, res) => {
@@ -75,8 +74,8 @@ app.use (passport.session ());
  */
 require ('../routes/authRoutes') (app);
 require ('../routes/secretLinkRoutes') (app);
+require ('../routes/cityRoutes') (app);
 require ('../routes/generalRoutes') (app);
-
 
 
 

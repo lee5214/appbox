@@ -31,7 +31,7 @@ class SecretLinks extends Component {
 	handleSubmit = (e, origionalUrl, goPublic) => {
 		e.preventDefault ();
 		try {
-			if (true){//(!urlRegex ({exact : true, strict : false}).test (origionalUrl)) {
+			if (false){//(!urlRegex ({exact : true, strict : false}).test (origionalUrl)) {
 				this.setState ({errorMessage : 'not an url, please try again'});
 			} else {
 				origionalUrl = urlPrefix(origionalUrl)
@@ -56,7 +56,7 @@ class SecretLinks extends Component {
 
 				     })
 				     .catch (error => {
-					     this.setState ({errorMessage : `${error.response.data.error}`});
+					     this.setState ({errorMessage : `${error.response}`});
 				     });
 				this.setState ({errorMessage : ''});
 			}
@@ -88,6 +88,9 @@ class SecretLinks extends Component {
 	componentDidMount = () => {
 		axios.get ('/api/secretLinks/publicLinksList').then ((res) => {
 			this.setState ({publicList : res.data});
+		});
+		axios.get ('/api/secretLinks/privateLinksList').then ((res) => {
+			this.setState ({privateList : res.data});
 		});
 	};
 

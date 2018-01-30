@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,kBAAmB;EACjB,UAAU,EAAE,MAAM;EAClB,qBAAG;IACD,cAAc,EAAE,MAAM;IACtB,iCAAc;MACZ,UAAU,EAAE,IAAI;IAElB,gCAAa;MACX,UAAU,EAAE,KAAK;MACjB,KAAK,EAAE,KAAK;EAIhB,oCAAkB;IAChB,UAAU,EAAE,IAAI",
-"sources": ["InfoList.355d769e.scss"],
-"names": [],
-"file": "InfoList.355d769e.css"
-}

@@ -38,8 +38,8 @@ module.exports = (app) => {
 	});
 	app.get ('/api/secretLinks/privateLinksList', (req, res) => {
 		SecretLinks_Model.find ({userId : req.user._id}, (err, docs) => {
-			console.log(req)
-			res.send(docs)
+			console.log (req);
+			res.send (docs);
 		});
 	});
 	// const middleware = ConnectRoute((router) => {
