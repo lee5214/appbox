@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="742d2f67-9123-492e-9892-2d49e2746a61" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/package.json" afterPath="$PROJECT_DIR$/client/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/index.js" afterPath="$PROJECT_DIR$/client/src/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/start.js" afterPath="$PROJECT_DIR$/bin/start.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/views/ChatRoom/components/ChatRoom.js" afterPath="$PROJECT_DIR$/client/src/views/ChatRoom/components/ChatRoom.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -2030,14 +2029,13 @@
     <splitter split-orientation="vertical" split-proportion="0.60084033">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/client/src/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="6" column="9" lean-forward="false" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+                <state relative-caret-position="184">
+                  <caret line="13" column="25" lean-forward="false" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
-                    <element signature="e#464#511#0" expanded="true" />
                     <element signature="e#727#771#0" expanded="true" />
                     <element signature="e#816#857#0" expanded="true" />
                   </folding>
@@ -2087,11 +2085,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ChatRoom.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="ChatRoom.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/client/src/views/ChatRoom/components/ChatRoom.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="375">
-                  <caret line="25" column="27" lean-forward="true" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
+                <state relative-caret-position="204">
+                  <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#41#0" expanded="true" />
                   </folding>
@@ -2142,8 +2140,8 @@
           <file leaf-file-name="start.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/bin/start.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="174">
-                  <caret line="72" column="0" lean-forward="true" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+                <state relative-caret-position="112">
+                  <caret line="32" column="7" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="7" />
                   <folding />
                 </state>
               </provider>
@@ -2159,11 +2157,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="socketManager.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="socketManager.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/services/socketManager.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="45">
-                  <caret line="3" column="30" lean-forward="true" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
+                <state relative-caret-position="112">
+                  <caret line="20" column="19" lean-forward="false" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="19" />
                   <folding />
                 </state>
               </provider>
@@ -2191,7 +2189,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="AppContainer.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="AppContainer.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/client/src/containers/AppContainer/AppContainer.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="540">
@@ -2269,15 +2267,15 @@
       <find>local</find>
       <find>socket</find>
       <find>http</find>
-      <find>console</find>
       <find>app3d</find>
-      <find>app-body</find>
       <find>style</find>
       <find>host</find>
       <find>extract-text-webpack-plugin</find>
       <find>topologicalSort</find>
       <find>id</find>
       <find>dev</find>
+      <find>app-body</find>
+      <find>console</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -2331,12 +2329,12 @@
         <option value="$PROJECT_DIR$/client/src/views/SecretLinks/components/SecretLinks.js" />
         <option value="$PROJECT_DIR$/client/src/views/SecretLinks/components/LinkCreatForm.js" />
         <option value="$PROJECT_DIR$/client/src/scss/3d.scss" />
-        <option value="$PROJECT_DIR$/bin/start.js" />
         <option value="$PROJECT_DIR$/client/src/actions/city.js" />
         <option value="$PROJECT_DIR$/client/package.json" />
-        <option value="$PROJECT_DIR$/client/src/views/ChatRoom/components/ChatRoom.js" />
         <option value="$PROJECT_DIR$/client/src/containers/AppContainer/AppContainer.js" />
         <option value="$PROJECT_DIR$/client/src/index.js" />
+        <option value="$PROJECT_DIR$/bin/start.js" />
+        <option value="$PROJECT_DIR$/client/src/views/ChatRoom/components/ChatRoom.js" />
       </list>
     </option>
   </component>
@@ -2576,7 +2574,7 @@
       <workItem from="1516504892324" duration="321000" />
       <workItem from="1516511533357" duration="25879000" />
       <workItem from="1516710586204" duration="33994000" />
-      <workItem from="1516912998976" duration="64357000" />
+      <workItem from="1516912998976" duration="65397000" />
     </task>
     <task id="LOCAL-00001" summary="city app second stage&#10;found out how to handle async data rendering">
       <created>1510483398501</created>
@@ -2904,7 +2902,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1104252000" />
+    <option name="totallyTimeSpent" value="1105292000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -3291,14 +3289,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/start.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="72" column="0" lean-forward="true" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/actions/city.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -3361,16 +3351,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/views/ChatRoom/components/ChatRoom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="27" lean-forward="true" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/views/City/components/SearchBar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
@@ -3399,14 +3379,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/services/socketManager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="30" lean-forward="true" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/containers/AppContainer/AppContainer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
@@ -3425,15 +3397,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/bin/start.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="32" column="7" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="9" lean-forward="false" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+        <state relative-caret-position="184">
+          <caret line="13" column="25" lean-forward="false" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
-            <element signature="e#464#511#0" expanded="true" />
             <element signature="e#727#771#0" expanded="true" />
             <element signature="e#816#857#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/socketManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="20" column="19" lean-forward="false" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/views/ChatRoom/components/ChatRoom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>

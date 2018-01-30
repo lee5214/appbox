@@ -19,11 +19,17 @@ const _debug = require ('debug');
 // debug(`Server is now running at http://host:${PORT}.`)
 // debug(`Server accessible via localhost:${PORT} if you are using the project defaults.`)
 
+
+if (process.env.NODE_ENV === 'production') {
+	app.use (Express.static('client/build'));
+	app.get ('*', (req, res) => {
+		res.sendFile (path.resolve (__dirname, 'client', 'build', 'index.html'));
+	});
+}
+
 io.on ('connection', socketManager);
 
-server.listen (PORT, () => {
-	console.log ('Connected to Port: ', PORT);
-});
+server.listen (PORT);
 console.log ('node services is running on port:', PORT);
 
 // app.get('/', function (req, res) {
@@ -70,14 +76,6 @@ app.use (passport.session ());
 require ('../routes/authRoutes') (app);
 require ('../routes/secretLinkRoutes') (app);
 require ('../routes/generalRoutes') (app);
-
-
-if (process.env.NODE_ENV === 'production') {
-	app.use (Express.static('client/build'));
-	app.get ('*', (req, res) => {
-		res.sendFile (path.resolve (__dirname, 'client', 'build', 'index.html'));
-	});
-}
 
 
 
