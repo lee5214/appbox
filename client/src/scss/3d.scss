@@ -48,16 +48,43 @@
           //background: red;
           transform: translateZ(0px);
           transition: 0.5s ease;
+          > .nav-link > .nav-dropdown-items {
+            z-index: 2;
+            transform-origin: 50%;
+            transform: translateZ(0px) translateX(0px) rotateY(0deg) skewX(0deg);
+            transition-delay: 0.5s;
+            transition: 0.5s ease;
+            > .nav-link{
+              border: 0 solid white;
+              border-radius: 5px;
+            }
+          }
           &:hover {
+            z-index: 2019;
             background: transparent;
-            .nav-link, .nav-dropdown-items {
+            > .nav-link {
+              //border: 1px solid white;
               border-radius: 5px;
               background: $primary;
               z-index: 2;
               transform-origin: 50%;
-              transform: translateZ(50px) translateX(0px) rotateY(15deg) skewX(0deg);
+              transform: translateZ(40px) translateX(0px) rotateY(15deg) skewX(0deg);
               transition-delay: 0.5s;
               transition: 0.5s ease;
+            }
+            > .nav-dropdown-items{
+              z-index: 2;
+              transform-origin: 50%;
+              transform: translateZ(30px) translateX(0px) rotateY(15deg) skewX(0deg);
+              transition-delay: 0.5s;
+              transition: 0.5s ease;
+              .nav-link{
+                border: 1px solid white !important;
+                border-radius: 5px;
+                &:hover{
+                  border: 1px solid transparent !important;
+                }
+              }
             }
           }
           .nav-link {

@@ -9881,16 +9881,37 @@ hr.transparent {
         transition-delay: 2s;
         transform: translateZ(0px);
         transition: 0.5s ease; }
+        .threed .sidebar .sidebar-nav > .nav > .nav-item > .nav-link > .nav-dropdown-items, .threed .sidebar .navbar .sidebar-nav > .nav > .nav-item > .dropdown-toggle > .nav-dropdown-items, .navbar .threed .sidebar .sidebar-nav > .nav > .nav-item > .dropdown-toggle > .nav-dropdown-items {
+          z-index: 2;
+          transform-origin: 50%;
+          transform: translateZ(0px) translateX(0px) rotateY(0deg) skewX(0deg);
+          transition-delay: 0.5s;
+          transition: 0.5s ease; }
+          .threed .sidebar .sidebar-nav > .nav > .nav-item > .nav-link > .nav-dropdown-items > .nav-link, .threed .sidebar .navbar .sidebar-nav > .nav > .nav-item > .dropdown-toggle > .nav-dropdown-items > .nav-link, .navbar .threed .sidebar .sidebar-nav > .nav > .nav-item > .dropdown-toggle > .nav-dropdown-items > .nav-link, .threed .sidebar .navbar .sidebar-nav > .nav > .nav-item > .nav-link > .nav-dropdown-items > .dropdown-toggle, .navbar .threed .sidebar .sidebar-nav > .nav > .nav-item > .nav-link > .nav-dropdown-items > .dropdown-toggle, .threed .sidebar .navbar .sidebar-nav > .nav > .nav-item > .dropdown-toggle > .nav-dropdown-items > .dropdown-toggle, .navbar .threed .sidebar .sidebar-nav > .nav > .nav-item > .dropdown-toggle > .nav-dropdown-items > .dropdown-toggle {
+            border: 0 solid white;
+            border-radius: 5px; }
         .threed .sidebar .sidebar-nav > .nav > .nav-item:hover {
+          z-index: 2019;
           background: transparent; }
-          .threed .sidebar .sidebar-nav > .nav > .nav-item:hover .nav-link, .threed .sidebar .sidebar-nav > .nav > .nav-item:hover .navbar .dropdown-toggle, .navbar .threed .sidebar .sidebar-nav > .nav > .nav-item:hover .dropdown-toggle, .threed .sidebar .sidebar-nav > .nav > .nav-item:hover .nav-dropdown-items {
+          .threed .sidebar .sidebar-nav > .nav > .nav-item:hover > .nav-link, .threed .sidebar .navbar .sidebar-nav > .nav > .nav-item:hover > .dropdown-toggle, .navbar .threed .sidebar .sidebar-nav > .nav > .nav-item:hover > .dropdown-toggle {
             border-radius: 5px;
             background: #20a8d8;
             z-index: 2;
             transform-origin: 50%;
-            transform: translateZ(50px) translateX(0px) rotateY(15deg) skewX(0deg);
+            transform: translateZ(40px) translateX(0px) rotateY(15deg) skewX(0deg);
             transition-delay: 0.5s;
             transition: 0.5s ease; }
+          .threed .sidebar .sidebar-nav > .nav > .nav-item:hover > .nav-dropdown-items {
+            z-index: 2;
+            transform-origin: 50%;
+            transform: translateZ(30px) translateX(0px) rotateY(15deg) skewX(0deg);
+            transition-delay: 0.5s;
+            transition: 0.5s ease; }
+            .threed .sidebar .sidebar-nav > .nav > .nav-item:hover > .nav-dropdown-items .nav-link, .threed .sidebar .sidebar-nav > .nav > .nav-item:hover > .nav-dropdown-items .navbar .dropdown-toggle, .navbar .threed .sidebar .sidebar-nav > .nav > .nav-item:hover > .nav-dropdown-items .dropdown-toggle {
+              border: 1px solid white !important;
+              border-radius: 5px; }
+              .threed .sidebar .sidebar-nav > .nav > .nav-item:hover > .nav-dropdown-items .nav-link:hover, .threed .sidebar .sidebar-nav > .nav > .nav-item:hover > .nav-dropdown-items .navbar .dropdown-toggle:hover, .navbar .threed .sidebar .sidebar-nav > .nav > .nav-item:hover > .nav-dropdown-items .dropdown-toggle:hover {
+                border: 1px solid transparent !important; }
         .threed .sidebar .sidebar-nav > .nav > .nav-item .nav-link, .threed .sidebar .sidebar-nav > .nav > .nav-item .navbar .dropdown-toggle, .navbar .threed .sidebar .sidebar-nav > .nav > .nav-item .dropdown-toggle {
           transition-delay: 0.5s;
           transition: 0.5s ease; }

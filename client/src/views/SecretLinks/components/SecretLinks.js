@@ -56,7 +56,7 @@ class SecretLinks extends Component {
 
 				     })
 				     .catch (error => {
-					     this.setState ({errorMessage : `${error.response}`});
+					     this.setState ({errorMessage : `${error.response.data.error}`});
 				     });
 				this.setState ({errorMessage : ''});
 			}
