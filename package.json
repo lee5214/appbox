@@ -11,7 +11,7 @@
     "react-admin": "start.js"
   },
   "scripts": {
-    "start": "concurrently \"npm run client \" \" npm run server \" ",
+    "start": "npm run server",
     "server": "node bin/start.js",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run client \" \" npm run server \" ",
