@@ -36,9 +36,8 @@ module.exports = (app) => {
 			res.send (docs);
 		});
 	});
-	app.get ('/api/secretLinks/privateLinksList', (req, res) => {
+	app.get ('/api/secretLinks/privateLinksList',requireLogin, (req, res) => {
 		SecretLinks_Model.find ({userId : req.user._id}, (err, docs) => {
-			console.log (req);
 			res.send (docs);
 		});
 	});
