@@ -10,10 +10,11 @@
     "npm": "5.6.0"
   },
   "scripts": {
-    "start": "npm run server",
-    "server": "nodemon bin/start.js",
+    "start": "npm run server:prod",
+    "server:prod": "node bin/start.js",
+    "server:dev": "nodemon bin/start.js",
     "client": "npm run start --prefix client",
-    "dev": "concurrently \"npm run client \" \" npm run server \" ",
+    "dev": "concurrently \"npm run client \" \" npm run server:dev \" ",
     "heroku-postbuild": "npm install --prefix client && npm run build --prefix client",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -47,11 +48,12 @@
     "path-parser": "^2.0.2",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
-    "socket.io": "^2.0.4"
+    "socket.io": "^2.0.4",
+    "nodemon": "^1.14.11"
 
   },
   "devDependencies": {
-    "nodemon": "^1.14.11"
+
   }
 
 }

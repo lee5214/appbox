@@ -10,8 +10,8 @@ const path = require ('path');
 const server = http.Server (app);
 const cors = require('cors')
 // create variable also export it for other file(socketManager)
-const io = module.exports.io = require ('socket.io') (server);
-const socketManager = require ('../services/socketManager');
+//const io = module.exports.io = require ('socket.io') (server);
+//const socketManager = require ('../services/socketManager');
 const PORT = process.env.PORT || 4000;
 const _debug = require ('debug');
 
@@ -24,7 +24,7 @@ if (process.env.NODE_ENV === 'production') {
 	});
 }
 
-io.on ('connection', socketManager);
+//io.on ('connection', socketManager);
 app.listen(PORT)
 //server.listen (PORT);
 console.log ('node services is running on port:', PORT);
