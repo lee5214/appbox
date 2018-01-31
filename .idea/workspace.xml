@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="742d2f67-9123-492e-9892-2d49e2746a61" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/start.js" afterPath="$PROJECT_DIR$/bin/start.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -2118,8 +2117,8 @@
           <file leaf-file-name="start.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/bin/start.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="208">
-                  <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+                <state relative-caret-position="188">
+                  <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="27" selection-end-column="1" />
                   <folding />
                 </state>
               </provider>
@@ -2128,8 +2127,8 @@
           <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/package.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="105">
-                  <caret line="7" column="18" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+                <state relative-caret-position="250">
+                  <caret line="17" column="69" lean-forward="true" selection-start-line="17" selection-start-column="69" selection-end-line="17" selection-end-column="69" />
                   <folding />
                 </state>
               </provider>
@@ -2305,8 +2304,8 @@
         <option value="$PROJECT_DIR$/client/src/config/API_keys.js" />
         <option value="$PROJECT_DIR$/client/src/containers/AppContainer/AppContainer.js" />
         <option value="$PROJECT_DIR$/client/src/utils/index.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/bin/start.js" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -2545,14 +2544,7 @@
       <workItem from="1516504892324" duration="321000" />
       <workItem from="1516511533357" duration="25879000" />
       <workItem from="1516710586204" duration="33994000" />
-      <workItem from="1516912998976" duration="107100000" />
-    </task>
-    <task id="LOCAL-00020" summary="facebook oauth done">
-      <created>1512794684465</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1512794684465</updated>
+      <workItem from="1516912998976" duration="107608000" />
     </task>
     <task id="LOCAL-00021" summary="facebook oauth done2">
       <created>1512890225104</created>
@@ -2890,11 +2882,18 @@
       <option name="project" value="LOCAL" />
       <updated>1517370979099</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="backend fix8">
+      <created>1517372585993</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1517372585993</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1146995000" />
+    <option name="totallyTimeSpent" value="1147503000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -2963,7 +2962,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="large file size fix" />
     <MESSAGE value="db crud done" />
     <MESSAGE value="secretlinks finished pub/pri and tabs" />
     <MESSAGE value="secretlinks finished" />
@@ -2988,7 +2986,8 @@
     <MESSAGE value="backend fix5" />
     <MESSAGE value="backend fix6" />
     <MESSAGE value="backend fix7" />
-    <option name="LAST_COMMIT_MESSAGE" value="backend fix7" />
+    <MESSAGE value="backend fix8" />
+    <option name="LAST_COMMIT_MESSAGE" value="backend fix8" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3401,16 +3400,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/start.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        <state relative-caret-position="188">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="27" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="18" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+        <state relative-caret-position="250">
+          <caret line="17" column="69" lean-forward="true" selection-start-line="17" selection-start-column="69" selection-end-line="17" selection-end-column="69" />
           <folding />
         </state>
       </provider>
