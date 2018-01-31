@@ -12,7 +12,7 @@
   },
   "scripts": {
     "client": "npm run start --prefix client",
-    "server": "nodemon bin/start.js",
+    "server": "node bin/start.js",
     "start": "concurrently \"npm run client \" \" npm run server \" ",
     "test": "echo \"Error: no test specified\" && exit 1",
     "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
