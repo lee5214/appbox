@@ -11,7 +11,7 @@
     "react-admin": "start.js"
   },
   "scripts": {
-    "start": "nodemon start.js",
+    "start": " node start.js",
     "server": "node start.js --prefix bin",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run client \" \" npm run server \" ",
@@ -50,10 +50,11 @@
     "path-parser": "^2.0.2",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
-    "socket.io": "^2.0.4"
+    "socket.io": "^2.0.4",
+    "nodemon": "^1.14.11"
   },
   "devDependencies": {
-    "nodemon": "^1.14.11"
+
   },
   "compilerOptions": {
     "target": "ES6"
