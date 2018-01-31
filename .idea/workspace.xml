@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="742d2f67-9123-492e-9892-2d49e2746a61" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/config/webpack.config.prod.js" afterPath="$PROJECT_DIR$/client/config/webpack.config.prod.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/scss/3d.scss" afterPath="$PROJECT_DIR$/client/src/scss/3d.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/scss/style.css" afterPath="$PROJECT_DIR$/client/src/scss/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/scss/style.css.map" afterPath="$PROJECT_DIR$/client/src/scss/style.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/views/SecretLinks/components/SecretLinks.js" afterPath="$PROJECT_DIR$/client/src/views/SecretLinks/components/SecretLinks.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/config/webpackDevServer.config.js" afterPath="$PROJECT_DIR$/client/config/webpackDevServer.config.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -2045,8 +2041,8 @@
           <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/client/package.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="630">
-                  <caret line="42" column="26" lean-forward="true" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
+                <state relative-caret-position="477">
+                  <caret line="112" column="43" lean-forward="true" selection-start-line="112" selection-start-column="43" selection-end-line="112" selection-end-column="43" />
                   <folding />
                 </state>
               </provider>
@@ -2062,10 +2058,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="SecretLinks.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="SecretLinks.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/client/src/views/SecretLinks/components/SecretLinks.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="600">
+                <state relative-caret-position="615">
                   <caret line="47" column="76" lean-forward="true" selection-start-line="47" selection-start-column="76" selection-end-line="47" selection-end-column="76" />
                   <folding>
                     <marker date="1517354446369" expanded="true" signature="2661:3859" ph="..." />
@@ -2114,6 +2110,16 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="webpackDevServer.config.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/client/config/webpackDevServer.config.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="120">
+                  <caret line="8" column="65" lean-forward="true" selection-start-line="8" selection-start-column="65" selection-end-line="8" selection-end-column="65" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
         </leaf>
       </split-first>
       <split-second>
@@ -2141,8 +2147,8 @@
           <file leaf-file-name="webpack.config.prod.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/client/config/webpack.config.prod.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="363">
-                  <caret line="81" column="57" lean-forward="false" selection-start-line="81" selection-start-column="57" selection-end-line="81" selection-end-column="57" />
+                <state relative-caret-position="167">
+                  <caret line="41" column="35" lean-forward="false" selection-start-line="41" selection-start-column="35" selection-end-line="41" selection-end-column="35" />
                   <folding />
                 </state>
               </provider>
@@ -2269,7 +2275,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/client/src/scss/core/_sidebar.scss" />
         <option value="$PROJECT_DIR$/client/src/scss/core/_buttons.scss" />
         <option value="$PROJECT_DIR$/client/src/views/Pages/Login/Login.js" />
         <option value="$PROJECT_DIR$/client/src/components/Sidebar/_nav.js" />
@@ -2320,6 +2325,7 @@
         <option value="$PROJECT_DIR$/client/src/scss/3d.scss" />
         <option value="$PROJECT_DIR$/client/src/views/SecretLinks/components/SecretLinks.js" />
         <option value="$PROJECT_DIR$/client/config/webpack.config.prod.js" />
+        <option value="$PROJECT_DIR$/client/config/webpackDevServer.config.js" />
       </list>
     </option>
   </component>
@@ -2604,21 +2610,7 @@
       <workItem from="1516504892324" duration="321000" />
       <workItem from="1516511533357" duration="25879000" />
       <workItem from="1516710586204" duration="33994000" />
-      <workItem from="1516912998976" duration="93291000" />
-    </task>
-    <task id="LOCAL-00005" summary="backup before npm run eject !">
-      <created>1510704565687</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1510704565687</updated>
-    </task>
-    <task id="LOCAL-00006" summary="backup before npm run eject 2 !">
-      <created>1510704875786</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1510704875786</updated>
+      <workItem from="1516912998976" duration="94381000" />
     </task>
     <task id="LOCAL-00007" summary="backup before npm run eject 2 !">
       <created>1510704923431</created>
@@ -2949,11 +2941,25 @@
       <option name="project" value="LOCAL" />
       <updated>1517351811314</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Invalid Host header">
+      <created>1517355683235</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1517355683236</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Invalid Host header2">
+      <created>1517355916927</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1517355916927</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1133186000" />
+    <option name="totallyTimeSpent" value="1134276000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -2966,6 +2972,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1079" y="-480" width="1074" height="1845" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32995495" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21747388" sideWeight="0.7377599" order="0" side_tool="false" content_ui="combo" />
@@ -2976,7 +2983,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23828572" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24881291" sideWeight="0.49321628" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.148" sideWeight="0.4814815" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.148" sideWeight="0.4814815" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21747388" sideWeight="0.2622401" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -3021,8 +3028,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="facebook oauth done2" />
-    <MESSAGE value="chat pub room done" />
     <MESSAGE value="in the middle of chatroom features" />
     <MESSAGE value="auth moongose (findOne with nested object) fix" />
     <MESSAGE value="backup before warning fix" />
@@ -3046,7 +3051,9 @@
     <MESSAGE value="repo rename / NODE_ENV variables" />
     <MESSAGE value="prodKeys fix" />
     <MESSAGE value="async calls fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="async calls fixed" />
+    <MESSAGE value="Invalid Host header" />
+    <MESSAGE value="Invalid Host header2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Invalid Host header2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3197,14 +3204,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/config/webpackDevServer.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="939">
-          <caret line="79" column="8" lean-forward="false" selection-start-line="79" selection-start-column="8" selection-end-line="79" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -3397,14 +3396,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="42" column="26" lean-forward="true" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/config/devKeys.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -3465,7 +3456,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/views/SecretLinks/components/SecretLinks.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
+        <state relative-caret-position="615">
           <caret line="47" column="76" lean-forward="true" selection-start-line="47" selection-start-column="76" selection-end-line="47" selection-end-column="76" />
           <folding>
             <marker date="1517354446369" expanded="true" signature="2661:3859" ph="..." />
@@ -3475,8 +3466,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/config/webpack.config.prod.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="81" column="57" lean-forward="false" selection-start-line="81" selection-start-column="57" selection-end-line="81" selection-end-column="57" />
+        <state relative-caret-position="167">
+          <caret line="41" column="35" lean-forward="false" selection-start-line="41" selection-start-column="35" selection-end-line="41" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="477">
+          <caret line="112" column="43" lean-forward="true" selection-start-line="112" selection-start-column="43" selection-end-line="112" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/config/webpackDevServer.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="65" lean-forward="true" selection-start-line="8" selection-start-column="65" selection-end-line="8" selection-end-column="65" />
           <folding />
         </state>
       </provider>
