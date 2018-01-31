@@ -1,5 +1,5 @@
 {
-  "name": "appbox",
+  "name": "react-admin",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,10 +8,10 @@
     "npm": "5.6.0"
   },
   "bin": {
-    "appbox": "start.js"
+    "react-admin": "start.js"
   },
   "scripts": {
-    "start": "node bin/start.js",
+    "start": "concurrently \"npm run client \" \" npm run server \" ",
     "server": "nodemon bin/start.js",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run client \" \" npm run server \" ",
