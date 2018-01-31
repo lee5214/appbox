@@ -104,6 +104,7 @@ export const fetchCity = (cityName, unit = 'Imperial') => {
 		const {cityWeather, cityNews} = await axios.post ('/api/city/getCityInfo', {cityName, unit})
 		                                           .then (res => {
 			                                           return res.data
+			                                           console.log('res.data',res.data)
 		                                           })
 		                                           .catch (err => {
 			                                           console.log ('err', err);
