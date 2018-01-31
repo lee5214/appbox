@@ -2,7 +2,7 @@ const axios = require ('axios');
 const keys = require ('../config/credentials')
 
 module.exports = (app) => {
-	app.post ('/api/city/getCityInfo', async (req, res, next) => {
+	app.post ('/api/city/getCityInfo', async (req, res) => {
 		console.log ('get request', req.body);
 		const {cityName,unit} = req.body
 
@@ -17,7 +17,6 @@ module.exports = (app) => {
 		const forecastURL = `${WEATHER_URL}/forecast?APPID=${keys.OpenWeatherMap_Key}&q=${cityName}&units=${unit}`;
 		// get current weather
 		const currentURL = `${WEATHER_URL}/weather?APPID=${keys.OpenWeatherMap_Key}&q=${cityName}&units=${unit}`;
-
 		const NYT_NEWS_URL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json';
 
 		const cityForecastTemp = await axios.get (forecastURL);
@@ -26,6 +25,5 @@ module.exports = (app) => {
 		const cityWeather = {...cityForecastTemp.data, ...cityCurrentTemp.data};
 		const cityNews = await axios.get (NYT_URL).then ((item) => item.data.response);
 		res.send ({cityWeather,cityNews});
-		next();
 	});
 }

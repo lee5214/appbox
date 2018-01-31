@@ -21,7 +21,7 @@ import {
 	Row,
 } from 'reactstrap';
 
-let host = 'https://myappbox5214.herokuapp.com/';//window.location.host;
+let host = window.location.host;
 console.log('host=>',host)
 if (host === 'localhost:3000'){
 	host = 'localhost:4000'

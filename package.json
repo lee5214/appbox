@@ -12,7 +12,7 @@
   "scripts": {
     "start": "npm run server:prod",
     "server:prod": "node start.js",
-    "server:dev": "node start.js",
+    "server:dev": "nodemon start.js",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run client \" \" npm run server:dev \" ",
     "heroku-postbuild": "npm install --prefix client && npm run build --prefix client",
