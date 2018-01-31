@@ -100,23 +100,25 @@ export const FETCH_CITY = 'FETCH_CITY';
 // };
 
 export const fetchCity = (cityName, unit = 'Imperial') => {
-	return async function (dispatch) {
-		const {cityWeather, cityNews} = await axios.post ('/api/city/getCityInfo', {cityName, unit})
-		                                           .then (res => {
-			                                           return res.data
-			                                           console.log('res.data',res.data)
-		                                           })
-		                                           .catch (err => {
-			                                           console.log ('err', err);
-		                                           });
+	return function (dispatch) {
+		axios.post ('/api/city/getCityInfo', {cityName, unit})
+		     .then (res => {
+		     	let {cityWeather, cityNews} = res.data
+			     dispatch ({
+				     type : FETCH_CITY,
+				     payload : {
+					     cityWeather,
+					     cityNews,
+				     },
+			     });
+			     console.log ('res.data', res.data);
+		     })
+		     .catch (err => {
+		     	return err.response
+			     console.log ('action fetchCity err', err);
+		     });
 		console.log ('fetch city weather & news =>', cityNews);
-		dispatch ({
-			type : FETCH_CITY,
-			payload : {
-				cityWeather,
-				cityNews,
-			},
-		});
+
 	};
 };
 // TODO city search function complation (add feedback after submit)
