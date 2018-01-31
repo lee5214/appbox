@@ -2,13 +2,12 @@
   "name": "react-admin",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "",
+  "author": "Cong Li",
+  "license": "ISC",
   "engines": {
-    "node": "8.9.4",
-    "npm": "5.6.0"
-  },
-  "bin": {
-    "react-admin": "start.js"
+    "node": ">=8.9.4",
+    "npm": ">=5.6.0"
   },
   "scripts": {
     "start": "npm run server",
@@ -18,8 +17,6 @@
     "heroku-postbuild": "npm install --prefix client && npm run build --prefix client",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Cong Li",
-  "license": "ISC",
   "dependencies": {
     "axios": "^0.17.1",
     "babel-eslint": "^8.2.1",
@@ -55,8 +52,6 @@
   },
   "devDependencies": {
 
-  },
-  "compilerOptions": {
-    "target": "ES6"
   }
+
 }
