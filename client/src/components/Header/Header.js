@@ -32,7 +32,7 @@ class Header extends Component {
 	renderUserInfo () {
 		switch (this.props.currentUserInfo) {
 			case null:
-				return 'null';
+				return <div>Loading</div>;
 			case false:
 				return (
 					<NavItem className="d-md-down-none">

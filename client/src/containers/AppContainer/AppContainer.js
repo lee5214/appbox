@@ -74,7 +74,7 @@ class AppContainer extends Component {
 			<div className="app" onMouseMove={ (e) => this.onMouseMove (e) }
 			     ref={ appbodyRef => {this.appbodyRef = appbodyRef;} }
 			     style={ app3d }>
-				<Header currentUserInfo={ this.props.currentUserInfo }/>
+				<Header currentUserInfo={ this.props.currentUserInfo || null }/>
 				<div className="app-body">
 					<Sidebar { ...this.props }/>
 					<main className="main animated">
