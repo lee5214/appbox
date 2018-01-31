@@ -11,8 +11,8 @@
     "react-admin": "start.js"
   },
   "scripts": {
-    "start": "npm run server",
-    "server": "node bin/start.js",
+    "start": "concurrently \"npm run client \" \" npm run server \"",
+    "server": "nodemon bin/start.js",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run client \" \" npm run server \" ",
     "heroku-postbuild": "npm install --prefix client && npm run build --prefix client",
