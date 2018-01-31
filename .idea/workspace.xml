@@ -2127,8 +2127,8 @@
           <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/package.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="210">
-                  <caret line="14" column="43" lean-forward="true" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
+                <state relative-caret-position="118">
+                  <caret line="12" column="14" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
                   <folding />
                 </state>
               </provider>
@@ -2554,14 +2554,7 @@
       <workItem from="1516504892324" duration="321000" />
       <workItem from="1516511533357" duration="25879000" />
       <workItem from="1516710586204" duration="33994000" />
-      <workItem from="1516912998976" duration="109028000" />
-    </task>
-    <task id="LOCAL-00024" summary="auth moongose (findOne with nested object) fix">
-      <created>1513381659715</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1513381659715</updated>
+      <workItem from="1516912998976" duration="109323000" />
     </task>
     <task id="LOCAL-00025" summary="backup before warning fix">
       <created>1514231283731</created>
@@ -2899,11 +2892,18 @@
       <option name="project" value="LOCAL" />
       <updated>1517374000812</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="backend fix stage3">
+      <created>1517374513906</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1517374513906</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1148923000" />
+    <option name="totallyTimeSpent" value="1149218000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -2972,7 +2972,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="secretlinks finished" />
     <MESSAGE value="working on header small fixes" />
     <MESSAGE value="start 3d theme" />
     <MESSAGE value="migrate my old 3d-theme feature from jquery to react" />
@@ -2997,7 +2996,8 @@
     <MESSAGE value="backend fix8" />
     <MESSAGE value="backend fix stage1" />
     <MESSAGE value="backend fix stage2" />
-    <option name="LAST_COMMIT_MESSAGE" value="backend fix stage2" />
+    <MESSAGE value="backend fix stage3" />
+    <option name="LAST_COMMIT_MESSAGE" value="backend fix stage3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3418,8 +3418,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="43" lean-forward="true" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
+        <state relative-caret-position="118">
+          <caret line="12" column="14" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
           <folding />
         </state>
       </provider>
