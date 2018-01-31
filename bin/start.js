@@ -24,10 +24,9 @@ if (process.env.NODE_ENV === 'production') {
 	});
 }
 
-
 io.on ('connection', socketManager);
-
-server.listen (PORT);
+app.listen(PORT)
+//server.listen (PORT);
 console.log ('node services is running on port:', PORT);
 
 // app.get('/', function (req, res) {
@@ -35,7 +34,7 @@ console.log ('node services is running on port:', PORT);
 // });
 
 // socket.io
-require ('../services/socketManager') (server);
+//require ('../services/socketManager') (server);
 
 //  model & mongoose
 require ('../models/Users_Model');
