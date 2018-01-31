@@ -1,5 +1,5 @@
 module.exports = {
-	'cookieKey' : process.env.COOKIE_KEY,
+	'cookieKey' : 'lee5214sdfniusdnfgseiprhuigdrignfdoisgjnbldfjgafnmlvcxlnmvomoprefmioearsjvziasndfksdmg',//process.env.COOKIE_KEY,
 	'mongo' : {
 		'mongoUri' : 'mongodb://lee5214:5214yuna@ds129946.mlab.com:29946/react-admin'//process.env.MONGO_URI,
 	},
