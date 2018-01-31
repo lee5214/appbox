@@ -15,15 +15,13 @@ const socketManager = require ('../services/socketManager');
 const PORT = process.env.PORT || 4000;
 const _debug = require ('debug');
 
-
-
 console.log('port:',PORT)
 
 if (process.env.NODE_ENV === 'production') {
 	app.use (Express.static('client/build'));
-	// app.get ('*', (req, res) => {
-	// 	res.sendFile (path.resolve (__dirname, 'client', 'build', 'index.html'));
-	// });
+	app.get ('*', (req, res) => {
+		res.sendFile (path.resolve (__dirname, 'client', 'build', 'index.html'));
+	});
 }
 
 
@@ -42,7 +40,7 @@ require ('../services/socketManager') (server);
 //  model & mongoose
 require ('../models/Users_Model');
 require ('../models/SecretLinks_Model');
-mongoose.connect (keys.mongo.dev.mongoUri);
+mongoose.connect (keys.mongo.mongoUri);
 
 // passport
 require ('../services/passport') ();

@@ -1,9 +1,7 @@
 module.exports = {
 	'cookieKey' : 'lee5214sdfniusdnfgseiprhuigdrignfdoisgjnbldfjgafnmlvcxlnmvomoprefmioearsjvziasndfksdmg',
 	'mongo' : {
-		'dev' : {
-			'mongoUri' : 'mongodb://lee5214:5214yuna@ds129946.mlab.com:29946/react-admin',
-		},
+		'mongoUri' : 'mongodb://lee5214:5214yuna@ds129946.mlab.com:29946/react-admin',
 	},
 	'google' : {
 		'googleClientID' : '317666478276-1cm68env0ihvh7duulj20vvkuldnfhj2.apps.googleusercontent.com',

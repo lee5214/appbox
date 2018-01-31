@@ -1,9 +1,7 @@
 module.exports = {
 	'cookieKey' : process.env.COOKIE_KEY,
 	'mongo' : {
-		'dev' : {
-			'mongoUri' : process.env.MONGO_URI,
-		},
+		'mongoUri' : 'mongodb://lee5214:5214yuna@ds129946.mlab.com:29946/react-admin'//process.env.MONGO_URI,
 	},
 	'google' : {
 		'googleClientID' : process.env.GOOGLE_CLIENT_ID,
