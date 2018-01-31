@@ -11,11 +11,12 @@
     "appbox": "start.js"
   },
   "scripts": {
-    "start": "node bin/start.js",
-    "server": "nodemon bin/start.js",
     "client": "npm run start --prefix client",
-    "dev": "concurrently \"npm run client \" \" npm run server \" ",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "node bin/start.js",
+    "devServer": "nodemon bin/start.js",
+    "start": "concurrently \"npm run client \" \" npm run server \" ",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
   },
   "author": "Cong Li",
   "license": "ISC",

@@ -19,13 +19,16 @@ const _debug = require ('debug');
 // debug(`Server is now running at http://host:${PORT}.`)
 // debug(`Server accessible via localhost:${PORT} if you are using the project defaults.`)
 console.log('port:',PORT)
+
 if (process.env.NODE_ENV === 'production') {
 	app.use (Express.static('client/build'));
 	app.get ('*', (req, res) => {
 		res.sendFile (path.resolve (__dirname, 'client', 'build', 'index.html'));
 	});
 }
-
+app.get ('/welcome', (req, res) => {
+	res.send ('welcome');
+});
 io.on ('connection', socketManager);
 
 server.listen (PORT);
