@@ -1,5 +1,5 @@
 {
-  "name": "react-admin",
+  "name": "appbox",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,16 +8,17 @@
     "npm": "5.6.0"
   },
   "bin": {
-    "react-admin": "start.js"
+    "appbox": "start.js"
   },
   "scripts": {
+    "start": "node bin/start.js",
+    "server": "nodemon bin/start.js",
     "client": "npm run start --prefix client",
-    "server": "node bin/start.js",
-    "start": "concurrently \"npm run client \" \" npm run server \" ",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
+    "dev": "concurrently \"npm run client \" \" npm run server \" ",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Cong Li",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.17.1",
@@ -41,7 +42,6 @@
     "lodash": "^4.17.4",
     "material-ui": "^0.19.3",
     "mongoose": "^4.13.10",
-    "nodemon": "^1.14.11",
     "npm": "^5.6.0",
     "passport": "^0.4.0",
     "passport-facebook": "^2.1.1",
@@ -52,7 +52,9 @@
     "redux": "^3.7.2",
     "socket.io": "^2.0.4"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^1.14.11"
+  },
   "compilerOptions": {
     "target": "ES6"
   }
