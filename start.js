@@ -3,7 +3,7 @@ const app = new Express ();
 const http = require ('http');
 const mongoose = require ('mongoose');
 const passport = require ('passport');
-const keys = require ('../config/credentials');
+const keys = require ('./config/credentials');
 const bodyParser = require ('body-parser');
 const cookieSession = require ('cookie-session');
 const path = require ('path');
@@ -11,7 +11,7 @@ const server = http.Server (app);
 const cors = require('cors')
 // create variable also export it for other file(socketManager)
 //const io = module.exports.io = require ('socket.io') (server);
-//const socketManager = require ('../services/socketManager');
+//const socketManager = require ('./services/socketManager');
 const PORT = process.env.PORT || 4000;
 const _debug = require ('debug');
 
@@ -34,15 +34,15 @@ console.log ('node services is running on port:', PORT);
 // });
 
 // socket.io
-//require ('../services/socketManager') (server);
+//require ('./services/socketManager') (server);
 
 //  model & mongoose
-require ('../models/Users_Model');
-require ('../models/SecretLinks_Model');
+require ('./models/Users_Model');
+require ('./models/SecretLinks_Model');
 mongoose.connect (keys.mongo.mongoUri);
 
 // passport
-require ('../services/passport') ();
+require ('./services/passport') ();
 
 /*
  * ---- middleware section ----
@@ -63,7 +63,7 @@ app.use (passport.initialize ());
 app.use (passport.session ());
 
 // later refactor
-// require('../middleware')(app,cookieSession,passport,keys)
+// require('./middleware')(app,cookieSession,passport,keys)
 
 
 /*
@@ -72,8 +72,8 @@ app.use (passport.session ());
 app.get ('/welcome', (req, res) => {
 	res.send ('welcome');
 });
-require ('../routes/authRoutes') (app);
-require ('../routes/secretLinkRoutes') (app);
-require ('../routes/cityRoutes') (app);
-require ('../routes/generalRoutes') (app);
+require ('./routes/authRoutes') (app);
+require ('./routes/secretLinkRoutes') (app);
+require ('./routes/cityRoutes') (app);
+require ('./routes/generalRoutes') (app);
 

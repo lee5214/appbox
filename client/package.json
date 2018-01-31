@@ -1,7 +1,6 @@
 {
   "name": "react-admin",
   "version": "0.1.0",
-  "private": true,
   "proxy": {
     "/": {
       "target": "http://localhost:4000"
