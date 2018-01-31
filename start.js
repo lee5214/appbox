@@ -7,7 +7,7 @@ const keys = require ('./config/credentials');
 const bodyParser = require ('body-parser');
 const cookieSession = require ('cookie-session');
 const path = require ('path');
-const server = http.Server (app);
+//const server = http.Server (app);
 const cors = require('cors')
 // create variable also export it for other file(socketManager)
 //const io = module.exports.io = require ('socket.io') (server);

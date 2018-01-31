@@ -123,10 +123,10 @@ class AppContainer extends Component {
 								       component={ City }/>
 								<Route path="/test" name="Test"
 								/>
-								<Route path="/chatroom" name="Chat Room"
-								       component={ ChatRoom }/>
+								{/*<Route path="/chatroom" name="Chat Room"*/}
+								       {/*component={ ChatRoom }/>*/}
 
-								<Route path="/chatrooms/:id" component={ ChatRoom }/>
+								{/*<Route path="/chatrooms/:id" component={ ChatRoom }/>*/}
 								<Route path="/secretlinks" name="Secret Links"
 								       component={ SecretLinks }/>
 								<Redirect from="/" to="/dashboard"/>
