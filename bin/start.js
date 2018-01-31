@@ -17,13 +17,6 @@ const _debug = require ('debug');
 
 console.log('port:',PORT)
 
-if (process.env.NODE_ENV === 'production') {
-	app.use (Express.static('client/build'));
-	app.get ('*', (req, res) => {
-		res.sendFile (path.resolve (__dirname, 'client', 'build', 'index.html'));
-	});
-}
-
 
 io.on ('connection', socketManager);
 
@@ -48,7 +41,12 @@ require ('../services/passport') ();
 /*
  * ---- middleware section ----
  */
-
+if (process.env.NODE_ENV === 'production') {
+	app.use (Express.static('client/build'));
+	app.get ('*', (req, res) => {
+		res.sendFile (path.resolve (__dirname, 'client', 'build', 'index.html'));
+	});
+}
 // requests go through middleware before route handlers
 app.use(cors());
 app.use (bodyParser.json ());

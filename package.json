@@ -11,7 +11,7 @@
   },
   "scripts": {
     "start": "npm run server:prod",
-    "server:prod": "node start.js",
+    "server:prod": "node bin/start.js",
     "server:dev": "nodemon bin/start.js",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run client \" \" npm run server:dev \" ",
