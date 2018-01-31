@@ -18,6 +18,13 @@ const _debug = require ('debug');
 // const debug = _debug('app:bin:services')
 // debug(`Server is now running at http://host:${PORT}.`)
 // debug(`Server accessible via localhost:${PORT} if you are using the project defaults.`)
+console.log('port:',PORT)
+if (process.env.NODE_ENV === 'production') {
+	app.use (Express.static('client/build'));
+	app.get ('*', (req, res) => {
+		res.sendFile (path.resolve (__dirname, 'client', 'build', 'index.html'));
+	});
+}
 
 io.on ('connection', socketManager);
 
@@ -69,11 +76,4 @@ require ('../routes/authRoutes') (app);
 require ('../routes/secretLinkRoutes') (app);
 require ('../routes/cityRoutes') (app);
 require ('../routes/generalRoutes') (app);
-
-if (process.env.NODE_ENV === 'production') {
-	app.use (Express.static('client/build'));
-	// app.get ('*', (req, res) => {
-	// 	res.sendFile (path.resolve (__dirname, 'client', 'build', 'index.html'));
-	// });
-}
 

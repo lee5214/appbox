@@ -6,14 +6,13 @@
 
 # secrets
 /config/devKey.js
-/client/src/config/devKeys.js
 /client/_backup
 # testing
 /tests
 /coverage
 
 # production
-#/client/build
+
 
 # misc
 .DS_Store
@@ -35,3 +34,14 @@ etc/
 #*.css
 #*.css.map
 
+build/asset-manifest.json
+build/favicon.ico
+build/img/
+build/index.html
+build/manifest.json
+build/service-worker.js
+build/static/
+src/config/devKeys.js
+src/views/City/asserts/
+src/views/City/modules/
+src/views/SecretLinks/asserts/

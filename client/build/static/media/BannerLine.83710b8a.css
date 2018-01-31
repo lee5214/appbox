@@ -1,0 +1,47 @@
+@keyframes bannerTitleLine {
+  0%, 25% {
+    -webkit-transform: translateX(-64px);
+    transform: translateX(-64px); }
+  75%, 100% {
+    -webkit-transform: translateX(300px);
+    transform: translateX(300px); } }
+.wrapperLine {
+  width: 300px;
+  opacity: 1;
+  transform: translate(0px, 0px);
+  will-change: transform;
+  height: 2px;
+  overflow: hidden;
+  background: transparent; }
+
+.line {
+  transform: translateX(-64px);
+  animation: bannerTitleLine 3s ease-in-out 0s infinite;
+  height: 100%;
+  width: 64px;
+  background: linear-gradient(90deg, rgba(24, 144, 255, 0) 0, #1890ff); }
+
+@keyframes bannerTitleLine2 {
+  0%,25% {
+    -webkit-transform: translateX(-264px);
+    transform: translateX(-264px); }
+  75%,100% {
+    -webkit-transform: translateX(100vw);
+    transform: translateX(100vw); } }
+.wrapperLine2 {
+  width: 100%;
+  opacity: 1;
+  transform: translate(0px, 0px);
+  will-change: transform;
+  height: 3px;
+  overflow: hidden;
+  background: transparent; }
+
+.line2 {
+  transform: translateX(-264px);
+  animation: bannerTitleLine2 8s ease-in-out 0s infinite;
+  height: 100%;
+  width: 264px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), #21a8d8, rgba(0, 0, 0, 0)); }
+
+/*# sourceMappingURL=BannerLine.83710b8a.css.map */
