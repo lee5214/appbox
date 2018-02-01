@@ -2,7 +2,7 @@ const axios = require ('axios');
 const keys = require ('../config/credentials')
 
 module.exports = (app) => {
-	app.post ('/api/city/getCityInfo', async (req, res, next) => {
+	app.get ('/api/city/getCityInfo', async (req, res, next) => {
 		console.log ('/api/city/getCityInfo receive =>', req.body);
 		//const {cityName,unit} = req.body
 		const cityName = 'San Francisco'

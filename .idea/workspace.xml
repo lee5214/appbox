@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="742d2f67-9123-492e-9892-2d49e2746a61" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/reducers/cityInfoReducer.js" afterPath="$PROJECT_DIR$/client/src/reducers/cityInfoReducer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/credentials/prodKey.js" afterPath="$PROJECT_DIR$/config/credentials/prodKey.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/actions/city.js" afterPath="$PROJECT_DIR$/client/src/actions/city.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/cityRoutes.js" afterPath="$PROJECT_DIR$/routes/cityRoutes.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -2085,8 +2084,8 @@
           <file leaf-file-name="secretLinkRoutes.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/routes/secretLinkRoutes.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="630">
-                  <caret line="42" column="7" lean-forward="true" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
+                <state relative-caret-position="480">
+                  <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -2099,7 +2098,7 @@
           <file leaf-file-name="start.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/bin/start.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="148">
+                <state relative-caret-position="-172">
                   <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
                   <folding />
                 </state>
@@ -2126,21 +2125,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="city.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="city.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/client/src/actions/city.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="246">
-                  <caret line="117" column="50" lean-forward="false" selection-start-line="117" selection-start-column="42" selection-end-line="117" selection-end-column="50" />
+                <state relative-caret-position="291">
+                  <caret line="119" column="80" lean-forward="false" selection-start-line="119" selection-start-column="80" selection-end-line="119" selection-end-column="80" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="cityRoutes.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="cityRoutes.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/routes/cityRoutes.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="450">
-                  <caret line="30" column="7" lean-forward="true" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
+                <state relative-caret-position="270">
+                  <caret line="18" column="30" lean-forward="true" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
                   <folding />
                 </state>
               </provider>
@@ -2271,17 +2270,17 @@
         <option value="$PROJECT_DIR$/client/src/containers/AppContainer/AppContainer.js" />
         <option value="$PROJECT_DIR$/client/src/components/Header/Header.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/routes/secretLinkRoutes.js" />
         <option value="$PROJECT_DIR$/client/src/views/ChatRoom/components/ChatRoom.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/config/credentials/devKey.js" />
         <option value="$PROJECT_DIR$/start.js" />
         <option value="$PROJECT_DIR$/client/src/views/ChatRoom/components/ChatSideBar.js" />
         <option value="$PROJECT_DIR$/client/src/views/City/components/SearchBar.js" />
-        <option value="$PROJECT_DIR$/client/src/actions/city.js" />
         <option value="$PROJECT_DIR$/config/credentials/prodKey.js" />
         <option value="$PROJECT_DIR$/client/src/reducers/cityInfoReducer.js" />
+        <option value="$PROJECT_DIR$/routes/secretLinkRoutes.js" />
         <option value="$PROJECT_DIR$/routes/cityRoutes.js" />
+        <option value="$PROJECT_DIR$/client/src/actions/city.js" />
       </list>
     </option>
   </component>
@@ -2512,14 +2511,7 @@
       <workItem from="1516511533357" duration="25879000" />
       <workItem from="1516710586204" duration="33994000" />
       <workItem from="1516912998976" duration="114533000" />
-      <workItem from="1517380061974" duration="28648000" />
-    </task>
-    <task id="LOCAL-00053" summary="async calls fixed">
-      <created>1517351811314</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1517351811314</updated>
+      <workItem from="1517380061974" duration="29357000" />
     </task>
     <task id="LOCAL-00054" summary="Invalid Host header">
       <created>1517355683235</created>
@@ -2857,11 +2849,18 @@
       <option name="project" value="LOCAL" />
       <updated>1517446169416</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="api call problem city2">
+      <created>1517448120389</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1517448120389</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1183076000" />
+    <option name="totallyTimeSpent" value="1183785000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -2874,7 +2873,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1079" y="-480" width="1074" height="1845" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21747388" sideWeight="0.7377599" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32777777" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -2883,7 +2881,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24881291" sideWeight="0.49321628" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.148" sideWeight="0.4814815" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.148" sideWeight="0.4814815" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21747388" sideWeight="0.2622401" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -2930,7 +2928,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Invalid Host header3" />
     <MESSAGE value="remove jquery &amp; mouse_3d" />
     <MESSAGE value="backend fix1" />
     <MESSAGE value="backend fix2" />
@@ -2955,7 +2952,8 @@
     <MESSAGE value="yeah deployment fixed" />
     <MESSAGE value="api call problem" />
     <MESSAGE value="api call problem city" />
-    <option name="LAST_COMMIT_MESSAGE" value="api call problem city" />
+    <MESSAGE value="api call problem city2" />
+    <option name="LAST_COMMIT_MESSAGE" value="api call problem city2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3264,14 +3262,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/start.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/authRoutes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -3322,10 +3312,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/secretLinkRoutes.js">
+    <entry file="file://$PROJECT_DIR$/bin/start.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="42" column="7" lean-forward="true" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
+        <state relative-caret-position="-172">
+          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -3338,18 +3328,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/actions/city.js">
+    <entry file="file://$PROJECT_DIR$/routes/secretLinkRoutes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="117" column="50" lean-forward="false" selection-start-line="117" selection-start-column="42" selection-end-line="117" selection-end-column="50" />
+        <state relative-caret-position="480">
+          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/cityRoutes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="7" lean-forward="true" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
+        <state relative-caret-position="270">
+          <caret line="18" column="30" lean-forward="true" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/actions/city.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="119" column="80" lean-forward="false" selection-start-line="119" selection-start-column="80" selection-end-line="119" selection-end-column="80" />
           <folding />
         </state>
       </provider>
