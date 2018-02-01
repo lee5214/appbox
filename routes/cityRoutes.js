@@ -6,13 +6,14 @@ module.exports = (app) => {
 		console.log ('/api/city/getCityInfo receive =>', req.body);
 		const {cityName,unit} = req.body
 
+		const WEATHER_URL = 'https://api.openweathermap.org/data/2.5';
 		// prefix to change http to https
-		let WEATHER_URL;
-		if (process.env.NODE_ENV === 'production') {
-			WEATHER_URL = 'https://cors.now.sh/http://api.openweathermap.org/data/2.5';
-		} else {
-			WEATHER_URL = 'http://api.openweathermap.org/data/2.5';
-		}
+		// let WEATHER_URL;
+		// if (process.env.NODE_ENV === 'production') {
+		// 	WEATHER_URL = 'https://cors.now.sh/http://api.openweathermap.org/data/2.5';
+		// } else {
+		// 	WEATHER_URL = 'http://api.openweathermap.org/data/2.5';
+		// }
 		// forecast 5d/3h
 		const forecastURL = `${WEATHER_URL}/forecast?APPID=${keys.OpenWeatherMap_Key}&q=${cityName}&units=${unit}`;
 		// get current weather
