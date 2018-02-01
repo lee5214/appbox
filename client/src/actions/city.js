@@ -13,33 +13,6 @@ const NYT_NEWS_URL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json';
 // export const FETCH_CITY_NEWS = 'FETCH_CITY_NEWS';
 export const FETCH_CITY = 'FETCH_CITY';
 
-// export async function fetchCityWeather (cityName, unit = 'Imperial') {
-// 	// forecast 5d/3h
-// 	const url1 = `${WEATHER_URL}/forecast?APPID=${OpenWeatherMap_Key}&q=${cityName}&units=${unit}`;
-// 	// get current weather
-// 	const url2 = `${WEATHER_URL}/weather?APPID=${OpenWeatherMap_Key}&q=${cityName}&units=${unit}`;
-//
-// 	const cityInfo = await axios.get (url1);
-// 	const cityCurrentTemp = await axios.get (url2);
-//
-// 	const cityWeather = await {...cityInfo.data, ...cityCurrentTemp.data};
-// 	return {
-// 		type : FETCH_CITY_WEATHER,
-// 		payload : cityWeather,
-// 	};
-// }
-//
-// export async function fetchCityNews (cityName) {
-// 	const url = `${NYT_NEWS_URL}?api-key=${NYT_Key}&q=${cityName}`;
-//
-// 	const cityNews = await axios.get (url).then (item => item.data);
-// 	return {
-// 		type : FETCH_CITY_NEWS,
-// 		payload : cityNews,
-// 	};
-// }
-
-
 // using redux-promise
 
 // export async function fetchCity (cityName, unit = 'Imperial') {
@@ -121,12 +94,33 @@ export const FETCH_CITY = 'FETCH_CITY';
 //
 // 	};
 // };
-export const fetchCity = (cityName, unit = 'Imperial') => {
+
+// export const fetchCity = (cityName, unit) => {
+// 	return async function (dispatch) {
+// 		const {cityWeather, cityNews} = await axios.post ('/api/city/getCityInfo', {cityName, unit})
+// 		                                           .then (res => {
+// 			                                           return res.data;
+// 			                                           console.log ('res.data', res.data);
+// 		                                           })
+// 		                                           .catch (err => {
+// 			                                           console.log ('action fetchCity err', err);
+// 		                                           });
+// 		dispatch ({
+// 			type : FETCH_CITY,
+// 			payload : {
+// 				cityWeather,
+// 				cityNews,
+// 			},
+// 		});
+// 	};
+// };
+
+export const fetchCity = (cityName, unit='Imperial') => {
 	return async function (dispatch) {
 		const {cityWeather, cityNews} = await axios.post ('/api/city/getCityInfo', {cityName, unit})
 		                                           .then (res => {
-			                                           return res.data;
 			                                           console.log ('res.data', res.data);
+			                                           return res.data;
 		                                           })
 		                                           .catch (err => {
 			                                           console.log ('action fetchCity err', err);

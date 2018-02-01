@@ -2,7 +2,7 @@ const axios = require ('axios');
 const keys = require ('../config/credentials')
 
 module.exports = (app) => {
-	app.post ('/api/city/getCityInfo', async (req, res) => {
+	app.post ('/api/city/getCityInfo', async (req, res, next) => {
 		console.log ('get request', req.body);
 		const {cityName,unit} = req.body
 
@@ -25,5 +25,7 @@ module.exports = (app) => {
 		const cityWeather = {...cityForecastTemp.data, ...cityCurrentTemp.data};
 		const cityNews = await axios.get (NYT_URL).then ((item) => item.data.response);
 		res.send ({cityWeather,cityNews});
+		console.log('cityInfo sent to frontend =>',cityWeather,cityNews)
+		next();
 	});
 }
