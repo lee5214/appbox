@@ -2,24 +2,14 @@ const axios = require ('axios');
 const keys = require ('../config/credentials')
 
 module.exports = (app) => {
-	app.get('/api/city/getCityWeather', (req,res) =>{
-		const cityName = 'San Francisco'
-		const unit = 'Imperial'
-		let WEATHER_URL = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5';
-		const forecastURL = `${WEATHER_URL}/forecast?APPID=${keys.OpenWeatherMap_Key}&q=${cityName}&units=${unit}`;
-		const cityForecastTemp = axios.get (forecastURL);
-		console.log(cityForecastTemp)
-		res.json (cityForecastTemp);
-	})
-	app.get ('/api/city/getCityInfo', async (req, res, next) => {
+	app.post ('/api/city/getCityInfo', async (req, res, next) => {
 		console.log ('/api/city/getCityInfo receive =>', req.body);
-		//const {cityName,unit} = req.body
-		const cityName = 'San Francisco'
-		const unit = 'Imperial'
+		const {cityName,unit} = req.body
+
 		// prefix to change http to https
 		let WEATHER_URL;
 		if (process.env.NODE_ENV === 'production') {
-			WEATHER_URL = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5';
+			WEATHER_URL = 'https://cors.now.sh/http://api.openweathermap.org/data/2.5';
 		} else {
 			WEATHER_URL = 'http://api.openweathermap.org/data/2.5';
 		}
@@ -34,8 +24,17 @@ module.exports = (app) => {
 		const NYT_URL = `${NYT_NEWS_URL}?api-key=${keys.NYT_Key}&q=${cityName}`;
 		const cityWeather = {...cityForecastTemp.data, ...cityCurrentTemp.data};
 		const cityNews = await axios.get (NYT_URL).then ((item) => item.data.response);
-		res.json ({cityWeather,cityNews});
+		res.send ({cityWeather,cityNews});
 		console.log('cityInfo sent to frontend =>',cityWeather,cityNews)
 		next();
 	});
+	app.get('/api/city/getCityWeather', (req,res) =>{
+		const cityName = 'San Francisco'
+		const unit = 'Imperial'
+		let WEATHER_URL = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5';
+		const forecastURL = `${WEATHER_URL}/forecast?APPID=${keys.OpenWeatherMap_Key}&q=${cityName}&units=${unit}`;
+		const cityForecastTemp = axios.get (forecastURL);
+		console.log(cityForecastTemp)
+		res.json (cityForecastTemp);
+	})
 }
