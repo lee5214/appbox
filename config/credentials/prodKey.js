@@ -27,7 +27,7 @@ module.exports = {
 		'facebookAppID' : '300125043809975',
 		'facebookAppSecret' : 'aea15c248ce03bea2d3a8b3d6644fa18',
 	},
-	'OpenWeatherMap_Key' : '58bc6bdbc6285ac512cb870c3a126018',
+	'OpenWeatherMap_Key' : '3b66bb7b6d8553495ec74cd06215a771',
 	'NYT_Key' : '4c9f849989d4458cb0affe67246ab052',
 	'GoogleGlobalAPI_Key' : 'AIzaSyCLCYRWrzT5cfMKwnSbKNYIBcZKw14dRwM',
 };

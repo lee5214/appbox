@@ -3,9 +3,10 @@ const keys = require ('../config/credentials')
 
 module.exports = (app) => {
 	app.post ('/api/city/getCityInfo', async (req, res, next) => {
-		console.log ('get request', req.body);
-		const {cityName,unit} = req.body
-
+		console.log ('/api/city/getCityInfo receive =>', req.body);
+		//const {cityName,unit} = req.body
+		const cityName = 'San Francisco'
+		const unit = 'Imperial'
 		// prefix to change http to https
 		let WEATHER_URL;
 		if (process.env.NODE_ENV === 'production') {
@@ -24,7 +25,7 @@ module.exports = (app) => {
 		const NYT_URL = `${NYT_NEWS_URL}?api-key=${keys.NYT_Key}&q=${cityName}`;
 		const cityWeather = {...cityForecastTemp.data, ...cityCurrentTemp.data};
 		const cityNews = await axios.get (NYT_URL).then ((item) => item.data.response);
-		res.send ({cityWeather,cityNews});
+		res.json ({cityWeather,cityNews});
 		console.log('cityInfo sent to frontend =>',cityWeather,cityNews)
 		next();
 	});
