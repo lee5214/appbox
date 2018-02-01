@@ -9,7 +9,6 @@ export default class ChatSideBar extends Component {
 			userTotal : 0,
 			userList : {},
 		};
-
 	}
 
 	componentDidMount () {

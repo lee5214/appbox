@@ -21,6 +21,7 @@ import { FETCH_CITY } from '../actions/city';
 // }
 
 export const city = (state = [], action) => {
+	console.log('cityInfoReducer receive new payload=>',action.payload)
 	switch (action.type) {
 		case FETCH_CITY:
 			return [action.payload, ...state];

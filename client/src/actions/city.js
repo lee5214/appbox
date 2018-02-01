@@ -2,13 +2,13 @@ import axios from 'axios';
 
 // a workaround for production, heroku only alows https, but onpenweathermap provides http, so add
 // 'https://cors-anywhere.herokuapp.com/'
-let WEATHER_URL;
-if (process.env.NODE_ENV === 'production') {
-	WEATHER_URL = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5';
-} else {
-	WEATHER_URL = 'http://api.openweathermap.org/data/2.5';
-}
-const NYT_NEWS_URL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json';
+// let WEATHER_URL;
+// if (process.env.NODE_ENV === 'production') {
+// 	WEATHER_URL = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5';
+// } else {
+// 	WEATHER_URL = 'http://api.openweathermap.org/data/2.5';
+// }
+// const NYT_NEWS_URL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json';
 // export const FETCH_CITY_WEATHER = 'FETCH_CITY_WEATHER';
 // export const FETCH_CITY_NEWS = 'FETCH_CITY_NEWS';
 export const FETCH_CITY = 'FETCH_CITY';
@@ -117,8 +117,6 @@ export const fetchCity = (cityName, unit = 'Imperial') => {
 		     	return err.response
 			     console.log ('action fetchCity err', err);
 		     });
-		console.log ('fetch city weather & news =>', cityNews);
-
 	};
 };
 // TODO city search function complation (add feedback after submit)
