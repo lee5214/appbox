@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="742d2f67-9123-492e-9892-2d49e2746a61" name="Default" comment="api call problem">
+    <list default="true" id="742d2f67-9123-492e-9892-2d49e2746a61" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/actions/city.js" afterPath="$PROJECT_DIR$/client/src/actions/city.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/reducers/cityInfoReducer.js" afterPath="$PROJECT_DIR$/client/src/reducers/cityInfoReducer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/views/ChatRoom/components/ChatSideBar.js" afterPath="$PROJECT_DIR$/client/src/views/ChatRoom/components/ChatSideBar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/views/City/components/SearchBar.js" afterPath="$PROJECT_DIR$/client/src/views/City/components/SearchBar.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -2130,8 +2127,8 @@
           <file leaf-file-name="city.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/client/src/actions/city.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="724">
-                  <caret line="118" column="16" lean-forward="false" selection-start-line="118" selection-start-column="16" selection-end-line="118" selection-end-column="16" />
+                <state relative-caret-position="290">
+                  <caret line="128" column="90" lean-forward="true" selection-start-line="128" selection-start-column="90" selection-end-line="128" selection-end-column="90" />
                   <folding />
                 </state>
               </provider>
@@ -2547,14 +2544,7 @@
       <workItem from="1516511533357" duration="25879000" />
       <workItem from="1516710586204" duration="33994000" />
       <workItem from="1516912998976" duration="114533000" />
-      <workItem from="1517380061974" duration="24541000" />
-    </task>
-    <task id="LOCAL-00050" summary="prodKeys fix">
-      <created>1517279181117</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1517279181118</updated>
+      <workItem from="1517380061974" duration="25238000" />
     </task>
     <task id="LOCAL-00051" summary="prodKeys fix">
       <created>1517281180866</created>
@@ -2892,11 +2882,18 @@
       <option name="project" value="LOCAL" />
       <updated>1517442299520</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="api call problem">
+      <created>1517443698049</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1517443698049</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1178969000" />
+    <option name="totallyTimeSpent" value="1179666000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -3374,8 +3371,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/actions/city.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="724">
-          <caret line="118" column="16" lean-forward="false" selection-start-line="118" selection-start-column="16" selection-end-line="118" selection-end-column="16" />
+        <state relative-caret-position="290">
+          <caret line="128" column="90" lean-forward="true" selection-start-line="128" selection-start-column="90" selection-end-line="128" selection-end-column="90" />
           <folding />
         </state>
       </provider>
