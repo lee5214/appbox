@@ -2,6 +2,15 @@ const axios = require ('axios');
 const keys = require ('../config/credentials')
 
 module.exports = (app) => {
+	app.get('/api/city/getCityWeather', (req,res) =>{
+		const cityName = 'San Francisco'
+		const unit = 'Imperial'
+		let WEATHER_URL = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5';
+		const forecastURL = `${WEATHER_URL}/forecast?APPID=${keys.OpenWeatherMap_Key}&q=${cityName}&units=${unit}`;
+		const cityForecastTemp = axios.get (forecastURL);
+		console.log(cityForecastTemp)
+		res.json (cityForecastTemp);
+	})
 	app.get ('/api/city/getCityInfo', async (req, res, next) => {
 		console.log ('/api/city/getCityInfo receive =>', req.body);
 		//const {cityName,unit} = req.body
