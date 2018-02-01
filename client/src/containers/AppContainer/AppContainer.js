@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
-import { Container } from 'reactstrap';
+import { Container, NavbarToggler } from 'reactstrap';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { createGuestUser, fetchCurrentUser } from 'actions';
@@ -37,14 +37,16 @@ class AppContainer extends Component {
 	constructor (props) {
 		super (props);
 		this.state = {
-			theme3D: false,
+			theme3D : false,
 			roX : 0,
-			roY : 0
+			roY : 0,
 		};
 	}
+
 	componentDidMount () {
 		this.props.fetchCurrentUser ();
 	}
+
 	onMouseMove = (e) => {
 		//this.setState ({mX : e.clientX, mY : e.clientY});
 		let mX = e.clientX, mY = e.clientY;
@@ -60,10 +62,29 @@ class AppContainer extends Component {
 			percentY = (curRelPosY - centerY) / centerY;
 		//console.log(percentX,percentY)
 		let roX = -percentY * maxRotateX, roY = percentX * maxRotateY;
-		if(roX !== this.state.roX || roY !== this.state.roY) {
-			this.setState ({roX , roY})
+		if (roX !== this.state.roX || roY !== this.state.roY) {
+			this.setState ({roX, roY});
 		}
 		//console.log ('mouse position', e.clientX, e.clientY);
+	};
+	sidebarToggle = (e) => {
+		e.preventDefault ();
+		document.body.classList.toggle ('sidebar-hidden');
+	};
+
+	sidebarMinimize = (e) => {
+		e.preventDefault ();
+		document.body.classList.toggle ('sidebar-minimized');
+	};
+
+	mobileSidebarToggle = (e) => {
+		e.preventDefault ();
+		document.body.classList.toggle ('sidebar-mobile-show');
+	};
+
+	asideToggle = (e) => {
+		e.preventDefault ();
+		document.body.classList.toggle ('aside-menu-hidden');
 	};
 
 	render () {
@@ -84,6 +105,13 @@ class AppContainer extends Component {
 								<Breadcrumb/>
 							</Container>
 						</div>
+
+						<NavbarToggler className="d-md-down-none" onClick={ this.sidebarToggle }>
+							<span className="navbar-toggler-icon"/>
+						</NavbarToggler>
+						<NavbarToggler className="d-md-down-none mr-0" onClick={ this.asideToggle }>
+							<span className="navbar-toggler-icon"/>
+						</NavbarToggler>
 						<Container className={ style.container_content }>
 							<Switch>
 								<Route path="/dashboard" name="Dashboard"

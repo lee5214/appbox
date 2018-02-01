@@ -76,6 +76,7 @@ app-root {
 .sidebar-hidden {
   .sidebar {
     margin-left: - $sidebar-width;
+    opacity:0;
   }
 }
 
@@ -175,6 +176,7 @@ app-root {
 .aside-menu-hidden {
   .aside-menu {
     margin-right: - $aside-menu-width;
+    opacity:0;
   }
 }
 

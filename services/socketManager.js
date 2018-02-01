@@ -1,4 +1,4 @@
-const io = require ('../start').io;
+const io = require ('../bin/start').io;
 let connectedUsers = new Map();
 let onlineUsers = 0;
 module.exports = (socket) => {

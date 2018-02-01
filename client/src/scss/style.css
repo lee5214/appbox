@@ -9479,7 +9479,8 @@ app-root {
   margin-top: 50px; }
 
 .sidebar-hidden .sidebar {
-  margin-left: -200px; }
+  margin-left: -200px;
+  opacity: 0; }
 
 .sidebar-fixed .sidebar {
   position: fixed;
@@ -9519,7 +9520,8 @@ app-root {
   .sidebar-minimized.sidebar-fixed.sidebar-hidden .main, .sidebar-minimized.sidebar-fixed.sidebar-hidden .app-footer {
     margin-left: 0; } }
 .aside-menu-hidden .aside-menu {
-  margin-right: -250px; }
+  margin-right: -250px;
+  opacity: 0; }
 
 .aside-menu-fixed .aside-menu {
   position: fixed;
@@ -9841,83 +9843,90 @@ hr.transparent {
   *[dir="rtl"] .callout-default {
     border-right-color: #525252; }
 
-.threed.body {
+.mode-3d.body {
   perspective: 12in; }
-.threed .app {
+.mode-3d .app {
   transform-style: preserve-3d;
   background: transparent;
   overflow: visible;
   position: absolute; }
-  .threed .app .app-body {
+  .mode-3d .app .app-body {
     transform-style: preserve-3d;
     background: transparent;
     overflow: visible;
     position: absolute; }
-.threed .main {
+.mode-3d .main {
   transform-style: preserve-3d;
   overflow: visible !important; }
-  .threed .main .AppContainer__container_content {
+  .mode-3d .main .AppContainer__container_content {
     height: calc(100% - 100px);
     overflow: scroll;
     transform: translateZ(0in); }
-.threed .sidebar {
+.mode-3d .sidebar {
   transform-style: preserve-3d;
   transform-origin: 150% 50%;
   transform: rotateY(0deg) translateZ(0in); }
-  .threed .sidebar:hover {
+  .mode-3d .sidebar:hover {
     transform-origin: 150% 50%;
     transition: 0.5s ease;
     transform: rotateY(20deg) translateZ(0in); }
-  .threed .sidebar .sidebar-nav {
+  .mode-3d .sidebar .sidebar-nav {
     overflow: visible;
     display: flex;
     align-items: center;
     justify-content: center; }
-    .threed .sidebar .sidebar-nav > .nav {
+    .mode-3d .sidebar .sidebar-nav > .nav {
       min-height: 0; }
-      .threed .sidebar .sidebar-nav > .nav > .nav-item {
+      .mode-3d .sidebar .sidebar-nav > .nav > .nav-item {
         transform-style: preserve-3d;
         padding: 10px 0;
         transition-delay: 2s;
         transform: translateZ(0px);
         transition: 0.5s ease; }
-        .threed .sidebar .sidebar-nav > .nav > .nav-item > .nav-link > .nav-dropdown-items, .threed .sidebar .navbar .sidebar-nav > .nav > .nav-item > .dropdown-toggle > .nav-dropdown-items, .navbar .threed .sidebar .sidebar-nav > .nav > .nav-item > .dropdown-toggle > .nav-dropdown-items {
+        .mode-3d .sidebar .sidebar-nav > .nav > .nav-item > .nav-link > .nav-dropdown-items, .mode-3d .sidebar .navbar .sidebar-nav > .nav > .nav-item > .dropdown-toggle > .nav-dropdown-items, .navbar .mode-3d .sidebar .sidebar-nav > .nav > .nav-item > .dropdown-toggle > .nav-dropdown-items {
           z-index: 2;
           transform-origin: 50%;
           transform: translateZ(0px) translateX(0px) rotateY(0deg) skewX(0deg);
           transition-delay: 0.5s;
           transition: 0.5s ease; }
-          .threed .sidebar .sidebar-nav > .nav > .nav-item > .nav-link > .nav-dropdown-items > .nav-link, .threed .sidebar .navbar .sidebar-nav > .nav > .nav-item > .dropdown-toggle > .nav-dropdown-items > .nav-link, .navbar .threed .sidebar .sidebar-nav > .nav > .nav-item > .dropdown-toggle > .nav-dropdown-items > .nav-link, .threed .sidebar .navbar .sidebar-nav > .nav > .nav-item > .nav-link > .nav-dropdown-items > .dropdown-toggle, .navbar .threed .sidebar .sidebar-nav > .nav > .nav-item > .nav-link > .nav-dropdown-items > .dropdown-toggle, .threed .sidebar .navbar .sidebar-nav > .nav > .nav-item > .dropdown-toggle > .nav-dropdown-items > .dropdown-toggle, .navbar .threed .sidebar .sidebar-nav > .nav > .nav-item > .dropdown-toggle > .nav-dropdown-items > .dropdown-toggle {
+          .mode-3d .sidebar .sidebar-nav > .nav > .nav-item > .nav-link > .nav-dropdown-items > .nav-link, .mode-3d .sidebar .navbar .sidebar-nav > .nav > .nav-item > .dropdown-toggle > .nav-dropdown-items > .nav-link, .navbar .mode-3d .sidebar .sidebar-nav > .nav > .nav-item > .dropdown-toggle > .nav-dropdown-items > .nav-link, .mode-3d .sidebar .navbar .sidebar-nav > .nav > .nav-item > .nav-link > .nav-dropdown-items > .dropdown-toggle, .navbar .mode-3d .sidebar .sidebar-nav > .nav > .nav-item > .nav-link > .nav-dropdown-items > .dropdown-toggle, .mode-3d .sidebar .navbar .sidebar-nav > .nav > .nav-item > .dropdown-toggle > .nav-dropdown-items > .dropdown-toggle, .navbar .mode-3d .sidebar .sidebar-nav > .nav > .nav-item > .dropdown-toggle > .nav-dropdown-items > .dropdown-toggle {
             border: 0 solid white;
             border-radius: 5px; }
-        .threed .sidebar .sidebar-nav > .nav > .nav-item:hover {
+        .mode-3d .sidebar .sidebar-nav > .nav > .nav-item:hover {
           z-index: 2019;
           background: transparent; }
-          .threed .sidebar .sidebar-nav > .nav > .nav-item:hover > .nav-link, .threed .sidebar .navbar .sidebar-nav > .nav > .nav-item:hover > .dropdown-toggle, .navbar .threed .sidebar .sidebar-nav > .nav > .nav-item:hover > .dropdown-toggle {
+          .mode-3d .sidebar .sidebar-nav > .nav > .nav-item:hover > .nav-link, .mode-3d .sidebar .navbar .sidebar-nav > .nav > .nav-item:hover > .dropdown-toggle, .navbar .mode-3d .sidebar .sidebar-nav > .nav > .nav-item:hover > .dropdown-toggle {
             border-radius: 5px;
             background: #20a8d8;
             z-index: 2;
             transform-origin: 50%;
             transform: translateZ(40px) translateX(0px) rotateY(15deg) skewX(0deg);
-            transition-delay: 0.5s;
             transition: 0.5s ease; }
-          .threed .sidebar .sidebar-nav > .nav > .nav-item:hover > .nav-dropdown-items {
+          .mode-3d .sidebar .sidebar-nav > .nav > .nav-item:hover > .nav-dropdown-items {
             z-index: 2;
             transform-origin: 50%;
-            transform: translateZ(30px) translateX(0px) rotateY(15deg) skewX(0deg);
+            transform: translateZ(40px) translateX(0px) rotateY(15deg) skewX(0deg);
             transition-delay: 0.5s;
             transition: 0.5s ease; }
-            .threed .sidebar .sidebar-nav > .nav > .nav-item:hover > .nav-dropdown-items .nav-link, .threed .sidebar .sidebar-nav > .nav > .nav-item:hover > .nav-dropdown-items .navbar .dropdown-toggle, .navbar .threed .sidebar .sidebar-nav > .nav > .nav-item:hover > .nav-dropdown-items .dropdown-toggle {
+            .mode-3d .sidebar .sidebar-nav > .nav > .nav-item:hover > .nav-dropdown-items .nav-link, .mode-3d .sidebar .sidebar-nav > .nav > .nav-item:hover > .nav-dropdown-items .navbar .dropdown-toggle, .navbar .mode-3d .sidebar .sidebar-nav > .nav > .nav-item:hover > .nav-dropdown-items .dropdown-toggle {
               border: 1px solid white !important;
               border-radius: 5px; }
-              .threed .sidebar .sidebar-nav > .nav > .nav-item:hover > .nav-dropdown-items .nav-link:hover, .threed .sidebar .sidebar-nav > .nav > .nav-item:hover > .nav-dropdown-items .navbar .dropdown-toggle:hover, .navbar .threed .sidebar .sidebar-nav > .nav > .nav-item:hover > .nav-dropdown-items .dropdown-toggle:hover {
+              .mode-3d .sidebar .sidebar-nav > .nav > .nav-item:hover > .nav-dropdown-items .nav-link:hover, .mode-3d .sidebar .sidebar-nav > .nav > .nav-item:hover > .nav-dropdown-items .navbar .dropdown-toggle:hover, .navbar .mode-3d .sidebar .sidebar-nav > .nav > .nav-item:hover > .nav-dropdown-items .dropdown-toggle:hover {
                 border: 1px solid transparent !important; }
-        .threed .sidebar .sidebar-nav > .nav > .nav-item .nav-link, .threed .sidebar .sidebar-nav > .nav > .nav-item .navbar .dropdown-toggle, .navbar .threed .sidebar .sidebar-nav > .nav > .nav-item .dropdown-toggle {
+        .mode-3d .sidebar .sidebar-nav > .nav > .nav-item .nav-link, .mode-3d .sidebar .sidebar-nav > .nav > .nav-item .navbar .dropdown-toggle, .navbar .mode-3d .sidebar .sidebar-nav > .nav > .nav-item .dropdown-toggle {
           transition-delay: 0.5s;
           transition: 0.5s ease; }
-        .threed .sidebar .sidebar-nav > .nav > .nav-item .nav-item {
+        .mode-3d .sidebar .sidebar-nav > .nav > .nav-item .nav-item {
           margin: 5px 0;
           padding: 10px 0; }
+
+.mode-3d .sidebar .nav-link, .mode-3d .sidebar .navbar .dropdown-toggle, .navbar .mode-3d .sidebar .dropdown-toggle {
+  filter: blur(2px) brightness(1.4);
+  color: red; }
+.mode-3d .sidebar:hover .nav-link, .mode-3d .sidebar:hover .navbar .dropdown-toggle, .navbar .mode-3d .sidebar:hover .dropdown-toggle {
+  transition: filter 2s ease-in-out;
+  filter: blur(0px) brightness(1);
+  color: white; }
 
 html {
   box-sizing: border-box; }

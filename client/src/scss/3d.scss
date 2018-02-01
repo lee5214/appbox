@@ -1,4 +1,4 @@
-.threed {
+.mode-3d {
   &.body {
     perspective: 12in;
   }
@@ -23,7 +23,7 @@
       transform: translateZ(0in);
     }
   }
-  .sidebar{
+  .sidebar {
     transform-style: preserve-3d;
     transform-origin: 150% 50%;
     transform: rotateY(0deg) translateZ(0in);
@@ -31,7 +31,7 @@
       transform-origin: 150% 50%;
       transition: 0.5s ease;
       //transition-delay: 0.2s;
-      transform: rotateY(20deg) translateZ(0in) ;
+      transform: rotateY(20deg) translateZ(0in);
     }
     .sidebar-nav {
       overflow: visible;
@@ -48,17 +48,20 @@
           //background: red;
           transform: translateZ(0px);
           transition: 0.5s ease;
-          > .nav-link > .nav-dropdown-items {
-            z-index: 2;
-            transform-origin: 50%;
-            transform: translateZ(0px) translateX(0px) rotateY(0deg) skewX(0deg);
-            transition-delay: 0.5s;
-            transition: 0.5s ease;
-            > .nav-link{
-              border: 0 solid white;
-              border-radius: 5px;
+          > .nav-link {
+            > .nav-dropdown-items {
+              z-index: 2;
+              transform-origin: 50%;
+              transform: translateZ(0px) translateX(0px) rotateY(0deg) skewX(0deg);
+              transition-delay: 0.5s;
+              transition: 0.5s ease;
+              > .nav-link {
+                border: 0 solid white;
+                border-radius: 5px;
+              }
             }
           }
+
           &:hover {
             z-index: 2019;
             background: transparent;
@@ -69,19 +72,19 @@
               z-index: 2;
               transform-origin: 50%;
               transform: translateZ(40px) translateX(0px) rotateY(15deg) skewX(0deg);
-              transition-delay: 0.5s;
+              //transition-delay: 0.5s;
               transition: 0.5s ease;
             }
-            > .nav-dropdown-items{
+            > .nav-dropdown-items {
               z-index: 2;
               transform-origin: 50%;
-              transform: translateZ(30px) translateX(0px) rotateY(15deg) skewX(0deg);
+              transform: translateZ(40px) translateX(0px) rotateY(15deg) skewX(0deg);
               transition-delay: 0.5s;
               transition: 0.5s ease;
-              .nav-link{
+              .nav-link {
                 border: 1px solid white !important;
                 border-radius: 5px;
-                &:hover{
+                &:hover {
                   border: 1px solid transparent !important;
                 }
               }
@@ -101,3 +104,31 @@
   }
 }
 
+// maoboli
+
+//.mode-3d .sidebar-nav > .nav > .nav-item {
+//  .nav-link {
+//    filter: blur(2px) brightness(1.4);
+//    color: red;
+//  }
+//  &:hover {
+//    .nav-link {
+//      transition: filter 2s ease-in-out;
+//      filter: blur(0px) brightness(1);
+//      color: white;
+//    }
+//  }
+//}
+.mode-3d .sidebar {
+  .nav-link {
+    filter: blur(2px) brightness(1.4);
+    color: red;
+  }
+  &:hover {
+    .nav-link {
+      transition: filter 2s ease-in-out;
+      filter: blur(0px) brightness(1);
+      color: white;
+    }
+  }
+}
