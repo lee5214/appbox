@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="742d2f67-9123-492e-9892-2d49e2746a61" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/credentials/prodKey.js" afterPath="$PROJECT_DIR$/config/credentials/prodKey.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/views/City/components/ForecastEmbed.js" afterPath="$PROJECT_DIR$/client/src/views/City/components/ForecastEmbed.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -2080,11 +2080,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="prodKey.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="ForecastEmbed.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/client/src/views/City/components/ForecastEmbed.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="210">
+                  <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="prodKey.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/config/credentials/prodKey.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="480">
-                  <caret line="32" column="2" lean-forward="true" selection-start-line="32" selection-start-column="2" selection-end-line="32" selection-end-column="2" />
+                <state relative-caret-position="510">
+                  <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -2285,7 +2295,6 @@
         <option value="$PROJECT_DIR$/client/src/scss/core/_variables.scss" />
         <option value="$PROJECT_DIR$/client/public/mouse_3d.js" />
         <option value="$PROJECT_DIR$/client/src/views/City/components/City.scss" />
-        <option value="$PROJECT_DIR$/client/src/views/City/components/ForecastEmbed.js" />
         <option value="$PROJECT_DIR$/client/src/scss/core/_animate.scss" />
         <option value="$PROJECT_DIR$/client/src/views/City/components/CityCurrent.js" />
         <option value="$PROJECT_DIR$/client/src/views/City/components/City.js" />
@@ -2332,6 +2341,7 @@
         <option value="$PROJECT_DIR$/client/src/scss/3d.scss" />
         <option value="$PROJECT_DIR$/services/socketManager.js" />
         <option value="$PROJECT_DIR$/config/credentials/prodKey.js" />
+        <option value="$PROJECT_DIR$/client/src/views/City/components/ForecastEmbed.js" />
       </list>
     </option>
   </component>
@@ -2455,14 +2465,6 @@
               <item name="react-admin" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Header" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-admin" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="containers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -2479,6 +2481,30 @@
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="reducers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="City" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="City" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="react-admin" type="b2602c69:ProjectViewProjectNode" />
@@ -2592,14 +2618,7 @@
       <workItem from="1516511533357" duration="25879000" />
       <workItem from="1516710586204" duration="33994000" />
       <workItem from="1516912998976" duration="114533000" />
-      <workItem from="1517380061974" duration="45008000" />
-    </task>
-    <task id="LOCAL-00059" summary="backend fix1">
-      <created>1517360126167</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1517360126167</updated>
+      <workItem from="1517380061974" duration="45987000" />
     </task>
     <task id="LOCAL-00060" summary="backend fix2">
       <created>1517362663775</created>
@@ -2937,11 +2956,18 @@
       <option name="project" value="LOCAL" />
       <updated>1517528774308</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <task id="LOCAL-00108" summary="err appeared2">
+      <created>1517534789265</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1517534789265</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1199436000" />
+    <option name="totallyTimeSpent" value="1200415000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -3010,8 +3036,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="backend fix3" />
-    <MESSAGE value="backend fix4" />
     <MESSAGE value="backend fix5" />
     <MESSAGE value="backend fix6" />
     <MESSAGE value="backend fix7" />
@@ -3035,7 +3059,9 @@
     <MESSAGE value="api call problem city3" />
     <MESSAGE value="api call problem city4 another cors prefix" />
     <MESSAGE value="base done, sidebar blur" />
-    <option name="LAST_COMMIT_MESSAGE" value="base done, sidebar blur" />
+    <MESSAGE value="err apeared2" />
+    <MESSAGE value="err appeared2" />
+    <option name="LAST_COMMIT_MESSAGE" value="err appeared2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3044,7 +3070,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/public/mouse_3d.js" />
     <entry file="file://$PROJECT_DIR$/client/config/env.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="635">
@@ -3436,8 +3461,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/credentials/prodKey.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="2" lean-forward="true" selection-start-line="32" selection-start-column="2" selection-end-line="32" selection-end-column="2" />
+        <state relative-caret-position="510">
+          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/views/City/components/ForecastEmbed.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding />
         </state>
       </provider>
