@@ -23,9 +23,9 @@ io.on ('connection', socketManager);
 server.listen (PORT);
 console.log ('node services is running on port:', PORT);
 
-// app.get('/', function (req, res) {
-// 	res.sendfile(__dirname + '/index.html');
-// });
+app.get('/', function (req, res) {
+	res.sendfile(__dirname + '/index.html');
+});
 
 // socket.io
 require ('../services/socketManager') (server);

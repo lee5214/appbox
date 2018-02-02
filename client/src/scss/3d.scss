@@ -133,10 +133,17 @@
 .mode-3d .main {
   .sidebar-btn {
     top: 50%;
-    left: 0px;
+    left: 0;
   }
   .aside-btn {
     top: 50%;
-    right: 0px;
+    right: 0;
+  }
+}
+
+//border
+.mode-3d {
+  .sidebar-nav, .aside-menu {
+    border: none;
   }
 }

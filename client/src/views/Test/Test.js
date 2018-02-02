@@ -1,4 +1,5 @@
-// import React, { Component } from 'react';
+import React, { Component } from 'react';
+import TestField1 from './TestField1'
 // import socketIOClient from 'socket.io-client';
 // import {
 // 	Button,
@@ -20,7 +21,16 @@
 // const socket = socketIOClient('http://localhost:4000')
 //
 // //TODO form knowledge review
-// class Test extends Component {
+class Test extends Component {
+	render () {
+		return(
+
+			<iframe title={ 'test1' } className={ 'aaaa' } width={ '100%' } height={ '250px' }
+			        frameBorder={ '0' }
+			        src={ '' }/>
+
+		)
+	}
 //
 // 	constructor (props) {
 // 		super (props);
@@ -118,6 +128,6 @@
 // 			</div>
 // 		);
 // 	}
-// }
-//
-// export default Test;
+}
+
+export default Test;

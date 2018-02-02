@@ -26,6 +26,7 @@ import City from '../../views/City/';
 import ChatRoom from '../../views/ChatRoom';
 import SecretLinks from '../../views/SecretLinks';
 import BannerLine from 'components/_Composite/BannerLine';
+import Test from '../../views/Test/Test'
 // Icons
 import FontAwesome from '../../views/Icons/FontAwesome/';
 import SimpleLineIcons from '../../views/Icons/SimpleLineIcons/';
@@ -152,14 +153,17 @@ class AppContainer extends Component {
 								       component={ Projects }/>
 								<Route path="/cityinfo" name="City Info"
 								       component={ City }/>
-								<Route path="/test" name="Test"
-								/>
+
 								<Route path="/chatroom" name="Chat Room"
 								       component={ ChatRoom }/>
 
 								<Route path="/chatrooms/:id" component={ ChatRoom }/>
 								<Route path="/secretlinks" name="Secret Links"
 								       component={ SecretLinks }/>
+
+								<Route path="/test" name="Test"
+								       component={ Test }
+								/>
 								<Redirect from="/" to="/dashboard"/>
 							</Switch>
 						</Container>

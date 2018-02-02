@@ -9870,7 +9870,8 @@ hr.transparent {
 .mode-3d .sidebar {
   transform-style: preserve-3d;
   transform-origin: right;
-  transform: rotateY(0deg) translateZ(0in); }
+  transform: rotateY(0deg) translateZ(0in);
+  transition: 1s ease; }
   .mode-3d .sidebar:hover {
     transition: 0.5s ease;
     transform: rotateY(50deg) translateZ(0in); }
@@ -9940,10 +9941,13 @@ hr.transparent {
 
 .mode-3d .main .sidebar-btn {
   top: 50%;
-  left: 0px; }
+  left: 0; }
 .mode-3d .main .aside-btn {
   top: 50%;
-  right: 0px; }
+  right: 0; }
+
+.mode-3d .sidebar-nav, .mode-3d .aside-menu {
+  border: none; }
 
 html {
   box-sizing: border-box; }
