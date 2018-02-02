@@ -153,16 +153,7 @@ module.exports = {
 							cacheDirectory : true,
 						},
 					},
-					// css to import old css stylesheets
-					// {
-					// 	test: /\.css$/,
-					// 	use: [
-					// 		{ loader: "style-loader" },
-					// 		{ loader: "css-loader" },
-					// 	],
-					// 	exclude: [/node_modules/]
-					// },
-					// scss to use css module style
+
 					{
 						test: /\.(scss)$/,
 						use: ['css-hot-loader'].concat(extractSCSS.extract({
@@ -251,11 +242,6 @@ module.exports = {
 				template: './public/index.html'
 			}
 		),
-		// new CopyWebpackPlugin([
-		// 		{from: './public/img', to: '/img'}
-		// 	],
-		// 	{copyUnmodified: false}
-		// ),
 
 
 

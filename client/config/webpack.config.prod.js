@@ -14,6 +14,11 @@ const ModuleScopePlugin = require ('react-dev-utils/ModuleScopePlugin');
 const getClientEnvironment = require ('./env');
 const paths = require ('./paths');
 
+//custom
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const extractCSS = new ExtractTextPlugin('[name].fonts.css');
+const extractSCSS = new ExtractTextPlugin('[name].styles.css');
+
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
 const publicPath = paths.servedPath;
@@ -154,6 +159,23 @@ module.exports = {
 							compact : true,
 						},
 					},
+
+					//add for scss
+					{
+						test: /\.(scss)$/,
+						use: ['css-hot-loader'].concat(extractSCSS.extract({
+							fallback: 'style-loader',
+							use: [
+								{loader:'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]'},
+								{loader:'sass-loader?sourceMap',
+									options: {
+										includePaths: ["client/src/scss"]
+									}
+								}
+							],
+
+						}))
+					},
 					// The notation here is somewhat confusing.
 					// "postcss" loader applies autoprefixer to our CSS.
 					// "css" loader resolves paths in CSS and adds assets as dependencies.
@@ -235,6 +257,11 @@ module.exports = {
 		],
 	},
 	plugins : [
+
+		//custom
+		extractCSS,
+		extractSCSS,
+
 		// Makes some environment variables available in index.html.
 		// The public URL is available as %PUBLIC_URL% in index.html, e.g.:
 		// <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
