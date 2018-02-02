@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="742d2f67-9123-492e-9892-2d49e2746a61" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/views/Test/TestField1.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/start.js" afterPath="$PROJECT_DIR$/bin/start.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/containers/AppContainer/AppContainer.js" afterPath="$PROJECT_DIR$/client/src/containers/AppContainer/AppContainer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/index.js" afterPath="$PROJECT_DIR$/client/src/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/scss/3d.scss" afterPath="$PROJECT_DIR$/client/src/scss/3d.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/scss/style.css" afterPath="$PROJECT_DIR$/client/src/scss/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/scss/style.css.map" afterPath="$PROJECT_DIR$/client/src/scss/style.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/views/Test/Test.js" afterPath="$PROJECT_DIR$/client/src/views/Test/Test.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -2102,11 +2094,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="start.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="start.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/bin/start.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="253">
-                  <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+                <state relative-caret-position="421">
+                  <caret line="45" column="4" lean-forward="false" selection-start-line="45" selection-start-column="4" selection-end-line="47" selection-end-column="10" />
                   <folding />
                 </state>
               </provider>
@@ -2186,7 +2178,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/client/src/index.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="274">
@@ -2300,9 +2292,9 @@
         <option value="$PROJECT_DIR$/client/src/views/Test/TestField1.js" />
         <option value="$PROJECT_DIR$/client/src/views/City/components/ForecastEmbed.js" />
         <option value="$PROJECT_DIR$/client/src/views/Test/Test.js" />
-        <option value="$PROJECT_DIR$/bin/start.js" />
         <option value="$PROJECT_DIR$/client/config/webpackDevServer.config.js" />
         <option value="$PROJECT_DIR$/client/src/index.js" />
+        <option value="$PROJECT_DIR$/bin/start.js" />
       </list>
     </option>
   </component>
@@ -2595,14 +2587,7 @@
       <workItem from="1516710586204" duration="33994000" />
       <workItem from="1516912998976" duration="114533000" />
       <workItem from="1517380061974" duration="54793000" />
-      <workItem from="1517552567732" duration="11320000" />
-    </task>
-    <task id="LOCAL-00065" summary="backend fix5">
-      <created>1517368241911</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1517368241911</updated>
+      <workItem from="1517552567732" duration="11653000" />
     </task>
     <task id="LOCAL-00066" summary="backend fix6">
       <created>1517370484866</created>
@@ -2940,11 +2925,18 @@
       <option name="project" value="LOCAL" />
       <updated>1517560077852</updated>
     </task>
-    <option name="localTasksCounter" value="114" />
+    <task id="LOCAL-00114" summary="browser router =&gt; hash router">
+      <created>1517610789118</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1517610789118</updated>
+    </task>
+    <option name="localTasksCounter" value="115" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1220541000" />
+    <option name="totallyTimeSpent" value="1220874000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -3013,7 +3005,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="backend fix stage2" />
     <MESSAGE value="backend fix stage3" />
     <MESSAGE value="backend fix stage5" />
     <MESSAGE value="backend fix stage6 with proxy" />
@@ -3038,7 +3029,8 @@
     <MESSAGE value="try webpack prod work with scss" />
     <MESSAGE value="try webpack prod work with scss2" />
     <MESSAGE value="work on togglers" />
-    <option name="LAST_COMMIT_MESSAGE" value="work on togglers" />
+    <MESSAGE value="browser router =&gt; hash router" />
+    <option name="LAST_COMMIT_MESSAGE" value="browser router =&gt; hash router" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3219,14 +3211,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="46" lean-forward="false" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/cityRoutes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="88" lean-forward="false" selection-start-line="10" selection-start-column="88" selection-end-line="10" selection-end-column="88" />
           <folding />
         </state>
       </provider>
@@ -3419,14 +3403,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/start.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/config/webpackDevServer.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
@@ -3457,6 +3433,22 @@
             <element signature="e#739#783#0" expanded="true" />
             <element signature="e#828#869#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/cityRoutes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="88" lean-forward="false" selection-start-line="10" selection-start-column="88" selection-end-line="10" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/start.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="45" column="4" lean-forward="false" selection-start-line="45" selection-start-column="4" selection-end-line="47" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
