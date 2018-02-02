@@ -28,6 +28,7 @@
     transform-style: preserve-3d;
     transform-origin: right;
     transform: rotateY(0deg) translateZ(0in);
+    transition: 1s ease;
     &:hover {
       //transform-origin: 150% 50%;
       transition: 0.5s ease;
