@@ -21,23 +21,6 @@
     @include borders($navbar-brand-border);
   }
 
-  .navbar-toggler {
-    outline: none;
-    min-width: 50px;
-    padding: $navbar-toggler-padding-y 0;
-
-    &:hover .navbar-toggler-icon {
-      background-image: $navbar-toggler-icon-hover;
-      border: 1px solid $navbar-hover-color;
-      border-radius: 4px;
-    }
-  }
-
-  .navbar-toggler-icon {
-    height: 23px;
-    background-image: $navbar-toggler-icon;
-  }
-
   .navbar-nav {
     flex-direction: row;
     align-items: center;
@@ -83,6 +66,24 @@
   .dropdown-item {
     min-width: 100px;
   }
+}
+
+
+.navbar-toggler {
+  outline: none;
+  min-width: 50px;
+  padding: $navbar-toggler-padding-y 0;
+
+  &:hover .navbar-toggler-icon {
+    background-image: $navbar-toggler-icon-hover;
+    border: 1px solid $navbar-hover-color;
+    border-radius: 4px;
+  }
+}
+
+.navbar-toggler-icon {
+  height: 23px;
+  background-image: $navbar-toggler-icon;
 }
 
 .navbar-brand {

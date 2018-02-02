@@ -17,6 +17,7 @@
   .main {
     transform-style: preserve-3d;
     overflow: visible !important;
+    transform: translateZ(-100px);
     .AppContainer__container_content {
       height: calc(100% - 100px);
       overflow: scroll;
@@ -25,13 +26,19 @@
   }
   .sidebar {
     transform-style: preserve-3d;
-    transform-origin: 150% 50%;
+    transform-origin: right;
     transform: rotateY(0deg) translateZ(0in);
     &:hover {
-      transform-origin: 150% 50%;
+      //transform-origin: 150% 50%;
       transition: 0.5s ease;
       //transition-delay: 0.2s;
-      transform: rotateY(20deg) translateZ(0in);
+      transform: rotateY(50deg) translateZ(0in);
+      .nav-title{
+        transition: 2s ease;
+        color: red;
+        transform: translateZ(-40px)
+      }
+
     }
     .sidebar-nav {
       overflow: visible;
@@ -40,6 +47,9 @@
       justify-content: center;
       > .nav {
         min-height: 0;
+        .nav-title {
+          transition: 2s ease;
+        }
         > .nav-item {
           transform-style: preserve-3d;
           //margin:5px 0;
@@ -52,7 +62,7 @@
             > .nav-dropdown-items {
               z-index: 2;
               transform-origin: 50%;
-              transform: translateZ(0px) translateX(0px) rotateY(0deg) skewX(0deg);
+              transform: translateZ(0px) translateX(0px) rotateY(-15deg) skewX(0deg);
               transition-delay: 0.5s;
               transition: 0.5s ease;
               > .nav-link {
@@ -61,7 +71,6 @@
               }
             }
           }
-
           &:hover {
             z-index: 2019;
             background: transparent;
@@ -70,15 +79,15 @@
               border-radius: 5px;
               background: $primary;
               z-index: 2;
-              transform-origin: 50%;
-              transform: translateZ(40px) translateX(0px) rotateY(15deg) skewX(0deg);
+              transform-origin: right;
+              transform: translateZ(70px) translateX(0px) rotateY(0deg) skewX(0deg);
               //transition-delay: 0.5s;
               transition: 0.5s ease;
             }
             > .nav-dropdown-items {
               z-index: 2;
               transform-origin: 50%;
-              transform: translateZ(40px) translateX(0px) rotateY(15deg) skewX(0deg);
+              transform: translateZ(70px) translateX(0px) rotateY(0deg) skewX(0deg);
               transition-delay: 0.5s;
               transition: 0.5s ease;
               .nav-link {
@@ -105,20 +114,6 @@
 }
 
 // maoboli
-
-//.mode-3d .sidebar-nav > .nav > .nav-item {
-//  .nav-link {
-//    filter: blur(2px) brightness(1.4);
-//    color: red;
-//  }
-//  &:hover {
-//    .nav-link {
-//      transition: filter 2s ease-in-out;
-//      filter: blur(0px) brightness(1);
-//      color: white;
-//    }
-//  }
-//}
 .mode-3d .sidebar {
   .nav-link {
     filter: blur(2px) brightness(1.4);
@@ -130,5 +125,17 @@
       filter: blur(0px) brightness(1);
       color: white;
     }
+  }
+}
+
+//sidebar toggler
+.mode-3d .main {
+  .sidebar-btn {
+    top: 50%;
+    left: 0px;
+  }
+  .aside-btn {
+    top: 50%;
+    right: 0px;
   }
 }

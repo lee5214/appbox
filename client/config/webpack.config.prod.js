@@ -15,8 +15,8 @@ const getClientEnvironment = require ('./env');
 const paths = require ('./paths');
 
 //custom
-const extractCSS = new ExtractTextPlugin('[name].fonts.css');
-const extractSCSS = new ExtractTextPlugin('[name].styles.css');
+const extractCSS = new ExtractTextPlugin ('[name].fonts.css');
+const extractSCSS = new ExtractTextPlugin ('[name].styles.css');
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
@@ -161,19 +161,20 @@ module.exports = {
 
 					//add for scss
 					{
-						test: /\.(scss)$/,
-						use: extractSCSS.extract({
-							fallback: 'style-loader',
-							use: [
-								{loader:'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]'},
-								{loader:'sass-loader?sourceMap',
-									options: {
-										includePaths: ["client/src/scss"]
-									}
-								}
+						test : /\.(scss)$/,
+						use : extractSCSS.extract ({
+							fallback : 'style-loader',
+							use : [
+								{loader : 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]'},
+								{
+									loader : 'sass-loader?sourceMap',
+									options : {
+										includePaths : [ "client/src/scss" ],
+									},
+								},
 							],
 
-						})
+						}),
 					},
 					// The notation here is somewhat confusing.
 					// "postcss" loader applies autoprefixer to our CSS.

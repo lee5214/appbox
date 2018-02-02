@@ -106,12 +106,15 @@ class AppContainer extends Component {
 							</Container>
 						</div>
 
-						<NavbarToggler className="d-md-down-none" onClick={ this.sidebarToggle }>
-							<span className="navbar-toggler-icon"/>
+						<NavbarToggler className="d-md-down-none position-absolute sidebar-btn" onClick={ this.sidebarToggle }>
+							<i className={'fa fa-arrow-left fa-2x text-white'}/>
+							{/*<span className="navbar-toggler-icon"/>*/}
 						</NavbarToggler>
-						<NavbarToggler className="d-md-down-none mr-0" onClick={ this.asideToggle }>
-							<span className="navbar-toggler-icon"/>
+						<NavbarToggler className="d-md-down-none position-absolute aside-btn" onClick={ this.asideToggle }>
+							<i className={'fa fa-arrow-right fa-2x text-white'}/>
+							{/*<span className="navbar-toggler-icon"/>*/}
 						</NavbarToggler>
+
 						<Container className={ style.container_content }>
 							<Switch>
 								<Route path="/dashboard" name="Dashboard"
