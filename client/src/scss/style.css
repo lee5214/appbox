@@ -7975,7 +7975,7 @@ button {
   align-items: center;
   padding: 0 1rem;
   color: #5c5c5c;
-  background: #1a1a1a;
+  background: transparent;
   border-top: 1px solid #444444; }
 
 .row.row-equal {
@@ -9860,25 +9860,19 @@ hr.transparent {
     overflow: visible;
     position: absolute; }
 .mode-3d .main {
+  z-index: 2020;
   transform-style: preserve-3d;
-  overflow: visible !important;
-  transform: translateZ(-100px); }
-  .mode-3d .main .AppContainer__container_content {
+  overflow: visible !important; }
+  .mode-3d .main .AppContainer__block {
+    transition: 2s ease;
     height: calc(100% - 100px);
     overflow: scroll;
-    transform: translateZ(0in); }
+    background: #0000001c;
+    margin-top: 20px;
+    padding: 0 30px; }
 .mode-3d .sidebar {
   transform-style: preserve-3d;
-  transform-origin: right;
-  transform: rotateY(0deg) translateZ(0in);
   transition: 1s ease; }
-  .mode-3d .sidebar:hover {
-    transition: 0.5s ease;
-    transform: rotateY(50deg) translateZ(0in); }
-    .mode-3d .sidebar:hover .nav-title {
-      transition: 2s ease;
-      color: red;
-      transform: translateZ(-40px); }
   .mode-3d .sidebar .sidebar-nav {
     overflow: visible;
     display: flex;
@@ -9887,11 +9881,11 @@ hr.transparent {
     .mode-3d .sidebar .sidebar-nav > .nav {
       min-height: 0; }
       .mode-3d .sidebar .sidebar-nav > .nav .nav-title {
-        transition: 2s ease; }
+        transition: 0.5s ease-in-out; }
       .mode-3d .sidebar .sidebar-nav > .nav > .nav-item {
         transform-style: preserve-3d;
         padding: 10px 0;
-        transition-delay: 2s;
+        text-align: right;
         transform: translateZ(0px);
         transition: 0.5s ease; }
         .mode-3d .sidebar .sidebar-nav > .nav > .nav-item > .nav-link > .nav-dropdown-items, .mode-3d .sidebar .navbar .sidebar-nav > .nav > .nav-item > .dropdown-toggle > .nav-dropdown-items, .navbar .mode-3d .sidebar .sidebar-nav > .nav > .nav-item > .dropdown-toggle > .nav-dropdown-items {
@@ -9948,6 +9942,32 @@ hr.transparent {
 
 .mode-3d .sidebar-nav, .mode-3d .aside-menu {
   border: none; }
+
+.mode-3d .sidebar:hover {
+  transition: 2s ease;
+  transform: rotateY(50deg) translateZ(0in); }
+  .mode-3d .sidebar:hover .nav-title {
+    transition: 2s ease;
+    color: red;
+    transform: translateZ(-40px); }
+.mode-3d .aside-menu:hover {
+  transform: rotateY(-50deg) translateZ(0in); }
+
+.mode-3d .sidebar .nav-dropdown-toggle:before {
+  left: 1rem;
+  right: auto; }
+
+.mode-3d .sidebar, .mode-3d .aside {
+  transform: translateZ(-100px); }
+.mode-3d .main {
+  transform: translateZ(-100px); }
+  .mode-3d .main .AppContainer__block {
+    transform: translateZ(100px); }
+
+.mode-3d.sidebar-minimized .sidebar {
+  transform-origin: -100%; }
+.mode-3d.sidebar-minimized .main .AppContainer__block {
+  transform: translateZ(-100px); }
 
 html {
   box-sizing: border-box; }

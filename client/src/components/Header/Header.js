@@ -29,6 +29,11 @@ class Header extends Component {
 		document.body.classList.toggle ('aside-menu-hidden');
 	};
 
+	mode3dToggle = (e) => {
+
+		this.props.toggle3d()
+	}
+
 	renderUserInfo () {
 		switch (this.props.currentUserInfo) {
 			case null:
@@ -36,7 +41,7 @@ class Header extends Component {
 			case false:
 				return (
 					<NavItem className="d-md-down-none">
-						<NavLink href={ '/login' }><i className="icon-login"/></NavLink>
+						<NavLink href={ '/#/login' }><i className="icon-login"/></NavLink>
 					</NavItem>
 				);
 			default:
@@ -80,6 +85,8 @@ class Header extends Component {
 						<NavLink href="/login"><i className="fa fa-sign-in-alt mr-2"/> Login / Register</NavLink>
 					</NavItem>
 				</Nav>
+
+				<button onClick={this.props.toggle3d}>3D Toggle</button>
 
 				<Nav className="ml-auto" navbar>
 					<NavItem className="d-md-down-none">

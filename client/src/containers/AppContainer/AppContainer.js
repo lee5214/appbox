@@ -26,7 +26,7 @@ import City from '../../views/City/';
 import ChatRoom from '../../views/ChatRoom';
 import SecretLinks from '../../views/SecretLinks';
 import BannerLine from 'components/_Composite/BannerLine';
-import Test from '../../views/Test/Test'
+import Test from '../../views/Test/Test';
 // Icons
 import FontAwesome from '../../views/Icons/FontAwesome/';
 import SimpleLineIcons from '../../views/Icons/SimpleLineIcons/';
@@ -34,11 +34,11 @@ import style from './AppContainer.scss';
 
 
 class AppContainer extends Component {
-	// TODO theme3D
+	// TODO theme3D -- done
 	constructor (props) {
 		super (props);
 		this.state = {
-			theme3D : false,
+			mode3d : true,
 			roX : 0,
 			roY : 0,
 		};
@@ -49,7 +49,6 @@ class AppContainer extends Component {
 	}
 
 	onMouseMove = (e) => {
-		//this.setState ({mX : e.clientX, mY : e.clientY});
 		let mX = e.clientX, mY = e.clientY;
 		let maxRotateX = 10;
 		let maxRotateY = 10;
@@ -61,12 +60,10 @@ class AppContainer extends Component {
 			curRelPosY = mY - top,
 			percentX = (curRelPosX - centerX) / centerX,
 			percentY = (curRelPosY - centerY) / centerY;
-		//console.log(percentX,percentY)
 		let roX = -percentY * maxRotateX, roY = percentX * maxRotateY;
 		if (roX !== this.state.roX || roY !== this.state.roY) {
 			this.setState ({roX, roY});
 		}
-		//console.log ('mouse position', e.clientX, e.clientY);
 	};
 	sidebarToggle = (e) => {
 		e.preventDefault ();
@@ -77,15 +74,15 @@ class AppContainer extends Component {
 		e.preventDefault ();
 		document.body.classList.toggle ('sidebar-minimized');
 	};
-
-	mobileSidebarToggle = (e) => {
-		e.preventDefault ();
-		document.body.classList.toggle ('sidebar-mobile-show');
-	};
-
 	asideToggle = (e) => {
 		e.preventDefault ();
 		document.body.classList.toggle ('aside-menu-hidden');
+	};
+	// trigger 3d mode
+	toggle3d = (e) => {
+		e.preventDefault ();
+		document.body.classList.toggle ('mode-3d');
+		this.setState ({mode3d : !this.state.mode3d});
 	};
 
 	render () {
@@ -93,10 +90,13 @@ class AppContainer extends Component {
 			transform : 'rotateX(' + this.state.roX + 'deg) rotateY(' + this.state.roY + 'deg)',
 		};
 		return (
-			<div className="app" onMouseMove={ (e) => this.onMouseMove (e) }
+			<div className="app" onMouseMove={ this.state.mode3d ? this.onMouseMove : null }
 			     ref={ appbodyRef => {this.appbodyRef = appbodyRef;} }
 			     style={ app3d }>
-				<Header currentUserInfo={ this.props.currentUserInfo || null }/>
+
+				<Header currentUserInfo={ this.props.currentUserInfo || null }
+				        toggle3d={ this.toggle3d }
+				/>
 				<div className="app-body">
 					<Sidebar { ...this.props }/>
 					<main className="main animated">
@@ -107,16 +107,18 @@ class AppContainer extends Component {
 							</Container>
 						</div>
 
-						<NavbarToggler className="d-md-down-none position-absolute sidebar-btn" onClick={ this.sidebarToggle }>
-							<i className={'fa fa-arrow-left fa-2x text-white'}/>
-							{/*<span className="navbar-toggler-icon"/>*/}
+						<NavbarToggler className="d-md-down-none position-absolute sidebar-btn"
+						               onClick={ this.sidebarToggle }>
+							<i className={ 'fa fa-arrow-left fa-2x text-white' }/>
+							{ /*<span className="navbar-toggler-icon"/>*/ }
 						</NavbarToggler>
-						<NavbarToggler className="d-md-down-none position-absolute aside-btn" onClick={ this.asideToggle }>
-							<i className={'fa fa-arrow-right fa-2x text-white'}/>
-							{/*<span className="navbar-toggler-icon"/>*/}
+						<NavbarToggler className="d-md-down-none position-absolute aside-btn"
+						               onClick={ this.asideToggle }>
+							<i className={ 'fa fa-arrow-right fa-2x text-white' }/>
+							{ /*<span className="navbar-toggler-icon"/>*/ }
 						</NavbarToggler>
 
-						<Container className={ style.container_content }>
+						<Container className={ style.block }>
 							<Switch>
 								<Route path="/dashboard" name="Dashboard"
 								       component={ Dashboard }/>

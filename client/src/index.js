@@ -17,7 +17,7 @@ import './scss/style.css';
 // Temp fix for reactstrap
 // import './scss/core/_dropdown-menu-right.scss'
 // Containers
-import App from './containers/AppContainer';
+import AppContainer from './containers/AppContainer';
 import reducers from './reducers';
 // Views
 import Login from './views/Pages/Login/';
@@ -47,12 +47,12 @@ ReactDOM.render (
 		{ /*<HashRouter> is for static website, <BrowserRouter> is more for dynamic*/ }
 		<HashRouter>
 			<Switch>
-				<Route exact path="/login" name="Login Page" component={ Login }/>
+				<Route exact path="#/login" name="Login Page" component={ Login }/>
 				<Route exact path="/register" name="Register Page"
 				       component={ Register }/>
 				<Route exact path="/404" name="Page 404" component={ Page404 }/>
 				<Route exact path="/500" name="Page 500" component={ Page500 }/>
-				<Route path="/" name="Home" component={ App }/>
+				<Route path="/" name="Home" component={ AppContainer }/>
 			</Switch>
 		</HashRouter>
 	</Provider>

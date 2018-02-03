@@ -15,32 +15,21 @@
     }
   }
   .main {
+    z-index: 2020;
     transform-style: preserve-3d;
     overflow: visible !important;
-    transform: translateZ(-100px);
-    .AppContainer__container_content {
+    .AppContainer__block {
+      transition: 2s ease;
       height: calc(100% - 100px);
       overflow: scroll;
-      transform: translateZ(0in);
+      background: #0000001c;
+      margin-top:20px;
+      padding: 0 30px;
     }
   }
   .sidebar {
     transform-style: preserve-3d;
-    transform-origin: right;
-    transform: rotateY(0deg) translateZ(0in);
     transition: 1s ease;
-    &:hover {
-      //transform-origin: 150% 50%;
-      transition: 0.5s ease;
-      //transition-delay: 0.2s;
-      transform: rotateY(50deg) translateZ(0in);
-      .nav-title{
-        transition: 2s ease;
-        color: red;
-        transform: translateZ(-40px)
-      }
-
-    }
     .sidebar-nav {
       overflow: visible;
       display: flex;
@@ -49,14 +38,12 @@
       > .nav {
         min-height: 0;
         .nav-title {
-          transition: 2s ease;
+          transition: 0.5s ease-in-out;
         }
         > .nav-item {
           transform-style: preserve-3d;
-          //margin:5px 0;
           padding: 10px 0;
-          transition-delay: 2s;
-          //background: red;
+          text-align: right;
           transform: translateZ(0px);
           transition: 0.5s ease;
           > .nav-link {
@@ -146,4 +133,48 @@
   .sidebar-nav, .aside-menu {
     border: none;
   }
+}
+
+//sidebar & aside-menu hover
+.mode-3d {
+  .sidebar:hover {
+    transition: 2s ease;
+    //transition-delay: 0.2s;
+    transform: rotateY(50deg) translateZ(0in);
+    .nav-title {
+      transition: 2s ease;
+      color: red;
+      transform: translateZ(-40px)
+    }
+  }
+  .aside-menu:hover {
+    transform: rotateY(-50deg) translateZ(0in);
+  }
+}
+
+//dropdown arrow position
+.mode-3d .sidebar .nav-dropdown-toggle:before {
+  left: 1rem;
+  right: auto
+}
+
+//transform position
+.mode-3d {
+  .sidebar, .aside {
+    transform: translateZ(-100px);
+  }
+  .main {
+    transform: translateZ(-100px);
+    .AppContainer__block{
+      transform: translateZ(100px)
+    }
+  }
+  .aside {
+  }
+}
+
+//when sidebar minimized
+.mode-3d.sidebar-minimized{
+  .sidebar{transform-origin: -100%}
+  .main .AppContainer__block{transform:translateZ(-100px)}
 }
