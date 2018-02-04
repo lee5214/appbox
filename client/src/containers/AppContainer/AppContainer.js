@@ -44,8 +44,12 @@ class AppContainer extends Component {
 		};
 	}
 
-	componentDidMount () {
+	componentDidMount = () => {
 		this.props.fetchCurrentUser ();
+		window.addEventListener('resize',this.handleResize)
+		console.log('3d mode activation =>',this.state.mode3d)
+		console.log('app position =>',this.appbodyRef.getBoundingClientRect ())
+		console.log('host =>',window.location.host)
 	}
 
 	onMouseMove = (e) => {
@@ -81,9 +85,20 @@ class AppContainer extends Component {
 	// trigger 3d mode
 	toggle3d = (e) => {
 		e.preventDefault ();
-		document.body.classList.toggle ('mode-3d');
-		this.setState ({mode3d : !this.state.mode3d});
+		if(window.innerWidth >= 1200) {
+			document.body.classList.toggle ('mode-3d');
+			this.setState ({roX : 0, roY : 0, mode3d : !this.state.mode3d});
+			console.log ('3d mode activation =>', !this.state.mode3d)
+		} else {
+			console.log('3d mode =>', 'disable')
+		}
 	};
+	handleResize = () => {
+		if(window.innerWidth < 1200){
+			document.body.classList.remove ('mode-3d');
+			this.setState ({roX : 0, roY : 0, mode3d : false});
+		}
+	}
 
 	render () {
 		const app3d = {

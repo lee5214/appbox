@@ -22,7 +22,6 @@ import {
 } from 'reactstrap';
 
 let host = window.location.host;
-console.log('host=>',host)
 if (host === 'localhost:3000'){
 	host = 'localhost:4000'
 }
