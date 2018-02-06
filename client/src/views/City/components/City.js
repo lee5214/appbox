@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Col, Row } from 'reactstrap';
-import { CityList, SearchBar } from './index';
+import { CityList,CityDetail, SearchBar } from './index';
 import PropTypes from 'prop-types';
 import { Colors } from 'consts';
 
@@ -15,7 +15,7 @@ class City extends Component {
 					</Col>
 				</Row>
 				<Row className={'justify-content-center'}>
-					{ this.props.cityInfo ? <CityList cityInfo={ this.props.cityInfo }/> : <h1>Fetching Data</h1> }
+					{ this.props.cityInfo.map (info => <CityDetail key={ info.cityWeather.id } info={ info }/>) }
 				</Row>
 
 			</div>

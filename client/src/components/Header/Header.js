@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Badge, Nav, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
 import HeaderDropdown from './HeaderDropdown';
@@ -81,9 +82,12 @@ class Header extends Component {
 					<NavItem className="px-3">
 						<NavLink href="#"><i className="fa fa-cogs mr-2"/>Settings</NavLink>
 					</NavItem>
+
+					<Route path="/login" name="login">
 					<NavItem className="px-3">
-						<NavLink href="/login"><i className="fa fa-sign-in-alt mr-2"/> Login / Register</NavLink>
+						<NavLink href="#/login"><i className="fa fa-sign-in-alt mr-2"/> Login / Register</NavLink>
 					</NavItem>
+					</Route>
 				</Nav>
 
 				<button onClick={this.props.toggle3d}>3D Toggle</button>

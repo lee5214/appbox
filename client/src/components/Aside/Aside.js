@@ -44,7 +44,7 @@ class Aside extends Component {
 					</NavItem>
 				</Nav>
 				<TabContent activeTab={ this.state.activeTab }>
-					<TabPane tabId="1">
+					<TabPane tabId="1" className={ 'mode3d-blur' }>
 						<div className="callout m-0 py-2 text-white text-center bg-dark text-uppercase">
 							<small><b>Today</b></small>
 						</div>
@@ -76,7 +76,8 @@ class Aside extends Component {
 						<hr className="transparent mx-3 my-0"/>
 						<div className="callout callout-danger m-0 py-3">
 							<div>New UI Project - <strong>deadline</strong></div>
-							<small className="text-muted mr-3"><i className="icon-calendar"/>&nbsp; 10 - 11pm</small>
+							<small className="text-muted mr-3"><i className="icon-calendar"/>&nbsp; 10 - 11pm
+							</small>
 							<small className="text-muted"><i className="icon-home"/>&nbsp; creativeLabs HQ</small>
 							<div className="avatars-stack mt-2">
 								<div className="avatar avatar-xs">
@@ -146,7 +147,8 @@ class Aside extends Component {
 						</div>
 						<hr className="mx-3 my-0"/>
 					</TabPane>
-					<TabPane tabId="2" className="p-3">
+
+					<TabPane tabId="2" className="p-3 mode3d-blur">
 						<div className="message">
 							<div className="py-3 pb-5 mr-3 float-left">
 								<div className="avatar">
@@ -242,7 +244,7 @@ class Aside extends Component {
 							</small>
 						</div>
 					</TabPane>
-					<TabPane tabId="3" className="p-3">
+					<TabPane tabId="3" className="p-3 mode3d-blur">
 						<h6>Settings</h6>
 
 						<div className="aside-options">

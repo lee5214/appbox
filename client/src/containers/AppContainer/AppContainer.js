@@ -4,6 +4,7 @@ import { Container, NavbarToggler } from 'reactstrap';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { createGuestUser, fetchCurrentUser } from 'actions';
+import {CSSTransitionGroup} from 'react-transition-group'
 // Components
 import Buttons from '../../views/Components/Buttons/';
 import Cards from '../../views/Components/Cards/';
@@ -38,19 +39,22 @@ class AppContainer extends Component {
 	constructor (props) {
 		super (props);
 		this.state = {
-			mode3d : true,
+			mode3d : false,
 			roX : 0,
 			roY : 0,
+			videoURL : 'http://techslides.com/demos/sample-videos/small.mp4',
+			test:false,
 		};
+		this.minimalInnerlWidth = 1200;
 	}
 
 	componentDidMount = () => {
 		this.props.fetchCurrentUser ();
-		window.addEventListener('resize',this.handleResize)
-		console.log('3d mode activation =>',this.state.mode3d)
-		console.log('app position =>',this.appbodyRef.getBoundingClientRect ())
-		console.log('host =>',window.location.host)
-	}
+		window.addEventListener ('resize', this.handleResize);
+		console.log ('host =>', window.location.host);
+		console.log ('3d mode activation =>', this.state.mode3d);
+		console.log ('app position =>', this.appbodyRef.getBoundingClientRect ());
+	};
 
 	onMouseMove = (e) => {
 		let mX = e.clientX, mY = e.clientY;
@@ -85,21 +89,26 @@ class AppContainer extends Component {
 	// trigger 3d mode
 	toggle3d = (e) => {
 		e.preventDefault ();
-		if(window.innerWidth >= 1200) {
+		if (window.innerWidth >= this.minimalInnerlWidth) {
 			document.body.classList.toggle ('mode-3d');
-			this.setState ({roX : 0, roY : 0, mode3d : !this.state.mode3d});
-			console.log ('3d mode activation =>', !this.state.mode3d)
+			this.setState ({mode3d : !this.state.mode3d});
+			console.log ('3d mode activation =>', !this.state.mode3d);
 		} else {
-			console.log('3d mode =>', 'disable')
+			console.log ('3d mode =>', 'disable');
 		}
 	};
 	handleResize = () => {
-		if(window.innerWidth < 1200){
+		if (window.innerWidth < this.minimalInnerlWidth) {
 			document.body.classList.remove ('mode-3d');
-			this.setState ({roX : 0, roY : 0, mode3d : false});
+			this.setState ({mode3d : false});
+			console.log (`resize detected, inner width breakpoint: --${this.minimalInnerlWidth}px--, 3d mode disable`);
 		}
-	}
+	};
 
+	test = () => {
+		console.log(this.state.test)
+		this.setState({test: !this.state.test})
+	}
 	render () {
 		const app3d = {
 			transform : 'rotateX(' + this.state.roX + 'deg) rotateY(' + this.state.roY + 'deg)',
@@ -107,7 +116,7 @@ class AppContainer extends Component {
 		return (
 			<div className="app" onMouseMove={ this.state.mode3d ? this.onMouseMove : null }
 			     ref={ appbodyRef => {this.appbodyRef = appbodyRef;} }
-			     style={ app3d }>
+			     style={ this.state.mode3d ? app3d : null }>
 
 				<Header currentUserInfo={ this.props.currentUserInfo || null }
 				        toggle3d={ this.toggle3d }
@@ -115,11 +124,28 @@ class AppContainer extends Component {
 				<div className="app-body">
 					<Sidebar { ...this.props }/>
 					<main className="main animated">
+						{/*<video id="background-video" loop autoPlay muted*/}
+						       {/*style={{minHeight:'100%',minWidth:'100%',position:'fixed'}}*/}
+						{/*>*/}
+							{/*<source src={ this.state.videoURL } type="video/mp4"/>*/}
+							{/*<source src={ this.state.videoURL } type="video/ogg"/>*/}
+							{/*Your browser does not support the video tag.*/}
+						{/*</video>*/}
+
 						<div className={ style.breadcrumb_wrapper }>
 							<BannerLine/>
 							<Container>
 								<Breadcrumb/>
 							</Container>
+							<button onClick = {this.test}>test</button>
+							<CSSTransitionGroup
+								transitionName="example"
+								transitionAppear={true}
+								transitionAppearTimeout={500}
+								transitionEnter={false}
+								transitionLeave={false}>
+								<h1 key={'test'} style={{opacity:this.state.test?0:1}}>Fading at Initial Mount</h1>
+							</CSSTransitionGroup>
 						</div>
 
 						<NavbarToggler className="d-md-down-none position-absolute sidebar-btn"

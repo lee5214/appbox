@@ -61,7 +61,7 @@ class Sidebar extends Component {
 			const isExternal = (url) => {
 				return url.substring (0, 4) === 'http';
 			};
-			const variant = classNames ("nav-link", item.variant ? `nav-link-${item.variant}` : "");
+			const variant = classNames ("nav-link mode3d-blur", item.variant ? `nav-link-${item.variant}` : "");
 			return (
 				<NavItem key={ key } className={ classes }>
 					{ isExternal (item.url) ?

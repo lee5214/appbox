@@ -128,6 +128,7 @@ export const fetchCity = (cityName, unit = 'Imperial') => {
 		dispatch ({
 			type : FETCH_CITY,
 			payload : {
+				cityName,
 				cityWeather,
 				cityNews,
 			},

@@ -108,6 +108,7 @@ export default {
 			name : 'Components',
 			url : '/components',
 			icon : 'icon-puzzle',
+			class : 'mt-auto',
 			children : [
 				{
 					name : 'Buttons',
