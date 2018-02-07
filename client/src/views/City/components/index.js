@@ -1,6 +1,6 @@
 import SearchBar from './SearchBar';
-import CityList from './remove-CityList';
+//import CityList from './remove-CityList';
 import CityDetail from './CityDetail'
-import DataList from './NYTNewsList';
+import NYTNewsList from './NYTNewsList';
 
-export { SearchBar, CityList, DataList, CityDetail };
+export { SearchBar, CityDetail };

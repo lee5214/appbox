@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Col, Row } from 'reactstrap';
-import { CityList,CityDetail, SearchBar } from './index';
+import { CityDetail, SearchBar } from './index';
 import PropTypes from 'prop-types';
 import { Colors } from 'consts';
 
