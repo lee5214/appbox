@@ -32,7 +32,6 @@ import FontAwesome from '../../views/Icons/FontAwesome/';
 import SimpleLineIcons from '../../views/Icons/SimpleLineIcons/';
 import style from './AppContainer.scss';
 
-
 class AppContainer extends Component {
 	// TODO theme3D -- done
 	constructor (props) {
@@ -96,6 +95,7 @@ class AppContainer extends Component {
 	};
 	resetCamera = () => {
 		this.setState ({roX : 0, roY : 0});
+		this.props.setMouseTrack(false)
 	};
 
 	render () {

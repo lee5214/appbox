@@ -1,47 +1,17 @@
-@keyframes bannerTitleLine {
-  0%, 25% {
-    -webkit-transform: translateX(-64px);
-    transform: translateX(-64px); }
-  75%, 100% {
-    -webkit-transform: translateX(300px);
-    transform: translateX(300px); } }
-.wrapperLine {
-  width: 300px;
-  opacity: 1;
-  transform: translate(0px, 0px);
-  will-change: transform;
-  height: 2px;
-  overflow: hidden;
-  background: transparent; }
+.progressbar {
+  border: 1px solid rgba(52, 64, 69, 0.5);
+  height: 6px; }
+  .progressbar span {
+    display: block;
+    border-right: 2px solid #e03a43;
+    background: rgba(39, 144, 128, 0);
+    height: 100%;
+    animation: go ease-in-out 2s infinite; }
 
-.line {
-  transform: translateX(-64px);
-  animation: bannerTitleLine 3s ease-in-out 0s infinite;
-  height: 100%;
-  width: 64px;
-  background: linear-gradient(90deg, rgba(24, 144, 255, 0) 0, #1890ff); }
-
-@keyframes bannerTitleLine2 {
+@keyframes go {
   0% {
-    -webkit-transform: translateX(-64px);
-    transform: translateX(-64px); }
+    transform: translatex(-100%); }
   100% {
-    -webkit-transform: translateX(100vw);
-    transform: translateX(100vw); } }
-.wrapperLine2 {
-  width: 100%;
-  opacity: 1;
-  transform: translate(0px, 0px);
-  will-change: transform;
-  height: 1px;
-  overflow: hidden;
-  background: transparent; }
+    transform: translatex(0%); } }
 
-.line2 {
-  transform: translateX(-64px);
-  animation: bannerTitleLine2 3s ease-in-out 0s infinite;
-  height: 100%;
-  width: 64px;
-  background: linear-gradient(90deg, rgba(24, 144, 255, 0) 0, #1890ff); }
-
-/*# sourceMappingURL=BannerLine.cssne.css.map */
+/*# sourceMappingURL=Test.css.map */

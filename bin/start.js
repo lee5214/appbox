@@ -17,6 +17,11 @@ const _debug = require ('debug');
 
 console.log('port:',PORT)
 
+var os = require('os');
+
+console.log(os.cpus());
+console.log(os.totalmem());
+console.log(os.freemem())
 
 io.on ('connection', socketManager);
 

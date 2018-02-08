@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import TestField1 from './TestField1'
 // import socketIOClient from 'socket.io-client';
 // import {
 // 	Button,
@@ -21,16 +20,25 @@ import TestField1 from './TestField1'
 // const socket = socketIOClient('http://localhost:4000')
 //
 // //TODO form knowledge review
+import classes from './Test.scss'
+
 class Test extends Component {
 	render () {
-		return(
+		return (
+			<div>
+				<div className={classes.bar} style={ {
 
-			<iframe title={ 'test1' } className={ 'aaaa' } width={ '100%' } height={ '250px' }
-			        frameBorder={ '0' }
-			        src={ '' }/>
 
-		)
+
+				} } data-path="/">
+					<span style={{
+
+					}} />
+				</div>
+			</div>
+		);
 	}
+
 //
 // 	constructor (props) {
 // 		super (props);

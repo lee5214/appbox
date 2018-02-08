@@ -12,6 +12,7 @@ class Aside extends Component {
 		this.toggle = this.toggle.bind (this);
 		this.state = {
 			activeTab : '1',
+			cameraCenter : false,
 		};
 	}
 
@@ -50,60 +51,63 @@ class Aside extends Component {
 						</NavLink>
 					</NavItem>
 				</Nav>
-				<TabContent activeTab={ this.state.activeTab }>
-					<TabPane tabId="1" className="p-3 ">
+				<TabContent className={'d-flex'} activeTab={ this.state.activeTab }>
+					<TabPane tabId="1" className={`p-3 ${mode==='3D'?'align-self-center':null}`}>
 						<h6>Settings</h6>
-						<div>
-							<button onClick={ () => this.props.setMode ('2D') }>2D</button>
-							<button onClick={ () => this.props.setMode ('3D') }>3D</button>
-							<button onClick={ () => this.props.setMouseTrack (true) }>mouse true</button>
-							<button onClick={ () => this.props.setMouseTrack (false) }>mouse false</button>
-							<button onClick={ () => this.props.resetCamera () }>reset camera</button>
-						</div>
-
 						<div className="aside-options">
 							<div className="clearfix mt-4">
-								<small><b>Mode:{ mode }</b></small>
+								<small><b>MODE </b></small><span className={ 'badge badge-info' }> { mode }</span>
 								<Label for='mode-button'
 								       className="switch switch-text switch-pill switch-success switch-sm float-right">
 									<Input id='mode-button' type="checkbox" className="switch-input"
 									       checked={ mode === '3D' }
-									       onChange={()=>this.props.setMode(this.props.mode==='3D'?'2D':'3D')}
+									       onChange={ () => this.props.setMode (this.props.mode === '3D' ? '2D' : '3D') }
 									/>
 									<span className="switch-label" data-on="On" data-off="Off"/>
 									<span className="switch-handle"/>
 								</Label>
 							</div>
 							<div>
-								<small className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-									sed do eiusmod
-									tempor incididunt ut labore et dolore magna aliqua.
+								<small className="text-muted">
+									2D/3D switch, 3D mode is disabled on mobile device
 								</small>
 							</div>
 						</div>
-
 						<div className="aside-options">
 							<div className="clearfix mt-3">
-								<small><b>Option 2</b></small>
-								<Label className="switch switch-text switch-pill switch-success switch-sm float-right">
-									<Input type="checkbox" className="switch-input"/>
+								<small><b>CURSOR TRACK </b></small>
+								<Label for='cursor-button'
+								       className="switch switch-text switch-pill switch-success switch-sm float-right">
+									<Input id='cursor-button' type="checkbox" className="switch-input"
+									       checked={ this.props.mouseTrack === true }
+									       onChange={ () => {
+										       this.props.setMouseTrack (!this.props.mouseTrack);
+										       this.setState ({cameraCenter : false});
+									       } }
+									/>
 									<span className="switch-label" data-on="On" data-off="Off"/>
 									<span className="switch-handle"/>
 								</Label>
 							</div>
 							<div>
-								<small className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-									sed do eiusmod
-									tempor incididunt ut labore et dolore magna aliqua.
+								<small className="text-muted">
+									Switch for mouse tracking function, it will change user view based on cursor
+									position, I implemented from my old website and tweeked a little for performance.
 								</small>
 							</div>
 						</div>
 
 						<div className="aside-options">
 							<div className="clearfix mt-3">
-								<small><b>Option 3</b></small>
-								<Label className="switch switch-text switch-pill switch-success switch-sm float-right">
-									<Input type="checkbox" className="switch-input"/>
+								<small><b>CAMERA CENTER</b></small>
+								<Label for='cameraCenter-button'
+								       className="switch switch-text switch-pill switch-success switch-sm float-right">
+									<Input id='cameraCenter-button' type="checkbox" className="switch-input"
+									       checked={ this.state.cameraCenter }
+									       onChange={ () => {
+										       this.props.resetCamera ();
+										       this.setState ({cameraCenter : !this.state.cameraCenter});
+									       } }/>
 									<span className="switch-label" data-on="On" data-off="Off"/>
 									<span className="switch-handle"/>
 								</Label>
@@ -149,7 +153,7 @@ class Aside extends Component {
 						<small className="text-muted">25GB/256GB</small>
 					</TabPane>
 
-					<TabPane tabId="2" className={ '' }>
+					<TabPane tabId="2" className={`p-3 ${mode==='3D'?'align-self-center':null}`}>
 						<div className="callout m-0 py-2 text-white text-center bg-dark text-uppercase">
 							<small><b>Today</b></small>
 						</div>
@@ -253,7 +257,7 @@ class Aside extends Component {
 						<hr className="mx-3 my-0"/>
 					</TabPane>
 
-					<TabPane tabId="3" className="p-3 mode3D-blur">
+					<TabPane tabId="3" className={`p-3 ${mode==='3D'?'align-self-center':null}`}>
 						<div className="message">
 							<div className="py-3 pb-5 mr-3 float-left">
 								<div className="avatar">

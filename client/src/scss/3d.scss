@@ -69,14 +69,14 @@
                 background: $primary;
                 z-index: 2;
                 transform-origin: right;
-                transform: translateZ(70px) translateX(0px) rotateY(0deg) skewX(0deg);
+                transform: translateZ(40px) translateX(0px) rotateY(0deg) skewX(0deg);
                 //transition-delay: 0.5s;
                 transition: 0.5s ease;
               }
               > .nav-dropdown-items {
                 z-index: 2;
                 transform-origin: 50%;
-                transform: translateZ(70px) translateX(0px) rotateY(0deg) skewX(0deg);
+                transform: translateZ(40px) translateX(0px) rotateY(0deg) skewX(0deg);
                 transition-delay: 0.5s;
                 transition: 0.5s ease;
                 .nav-link {
@@ -131,32 +131,34 @@
       right: 0;
     }
   }
-
-  //border
   .mode-3D {
     .sidebar-nav, .aside-menu {
       border: none;
     }
   }
-
-  //sidebar & aside-menu hover
   .mode-3D {
     .sidebar {
-      animation: transf-ry--50 2s forwards;
+      transition: 1s ease-in-out;
+      transform-origin: center;
     }
     .sidebar:hover {
       transition: 2s ease;
-      transition-delay: 1s;
-      animation: transf-ry-50 2s forwards;
+      //transition-delay: 1s;
+      transform: rotateY(0deg) translateZ(-40px);
+      //animation: transf-ry-50 2s forwards;
       .nav-title {
-        transition: 2s ease-in-out !important;
+        transition: 3s ease-in-out !important;
         color: red;
         transform: translateZ(-40px)
       }
     }
+    .aside-menu{
+      transition: 0.5s ease-in-out 1s;
+    }
     .aside-menu:hover {
-      transform-origin: left;
-      transform: rotateY(-50deg);
+      transition: 0.5s ease-in-out 0s;
+      transform-origin: center;
+      transform: rotateY(-20deg) translateZ(-40px);
     }
   }
 
@@ -190,11 +192,11 @@
   //transform position
   .mode-3D {
     .sidebar {
-      transform-origin: right;
+      transform-origin: center;
       transform: translateZ(-100px);
     }
     .aside-menu {
-      transform-origin: left;
+      transform-origin: center;
       transform: translateZ(-100px);
     }
     .main {
@@ -207,6 +209,9 @@
   }
 
   //when sidebar minimized
+  .mode-3D .sidebar-minimizer{
+    display: none;
+  }
   .mode-3D.sidebar-minimized {
     .sidebar {
       transform-origin: -100%

@@ -9924,12 +9924,12 @@ hr.transparent {
               background: #20a8d8;
               z-index: 2;
               transform-origin: right;
-              transform: translateZ(70px) translateX(0px) rotateY(0deg) skewX(0deg);
+              transform: translateZ(40px) translateX(0px) rotateY(0deg) skewX(0deg);
               transition: 0.5s ease; }
             .mode-3D-on.body .mode-3D .sidebar .sidebar-nav > .nav > .nav-item:hover > .nav-dropdown-items {
               z-index: 2;
               transform-origin: 50%;
-              transform: translateZ(70px) translateX(0px) rotateY(0deg) skewX(0deg);
+              transform: translateZ(40px) translateX(0px) rotateY(0deg) skewX(0deg);
               transition-delay: 0.5s;
               transition: 0.5s ease; }
               .mode-3D-on.body .mode-3D .sidebar .sidebar-nav > .nav > .nav-item:hover > .nav-dropdown-items .nav-link, .mode-3D-on.body .mode-3D .sidebar .sidebar-nav > .nav > .nav-item:hover > .nav-dropdown-items .navbar .dropdown-toggle, .navbar .mode-3D-on.body .mode-3D .sidebar .sidebar-nav > .nav > .nav-item:hover > .nav-dropdown-items .dropdown-toggle {
@@ -9963,18 +9963,21 @@ hr.transparent {
   .mode-3D-on.body .mode-3D .sidebar-nav, .mode-3D-on.body .mode-3D .aside-menu {
     border: none; }
   .mode-3D-on.body .mode-3D .sidebar {
-    animation: transf-ry--50 2s forwards; }
+    transition: 1s ease-in-out;
+    transform-origin: center; }
   .mode-3D-on.body .mode-3D .sidebar:hover {
     transition: 2s ease;
-    transition-delay: 1s;
-    animation: transf-ry-50 2s forwards; }
+    transform: rotateY(0deg) translateZ(-40px); }
     .mode-3D-on.body .mode-3D .sidebar:hover .nav-title {
-      transition: 2s ease-in-out !important;
+      transition: 3s ease-in-out !important;
       color: red;
       transform: translateZ(-40px); }
+  .mode-3D-on.body .mode-3D .aside-menu {
+    transition: 0.5s ease-in-out 1s; }
   .mode-3D-on.body .mode-3D .aside-menu:hover {
-    transform-origin: left;
-    transform: rotateY(-50deg); }
+    transition: 0.5s ease-in-out 0s;
+    transform-origin: center;
+    transform: rotateY(-20deg) translateZ(-40px); }
 @keyframes transf-ry-50 {
   0% {
     transform: rotateY(0deg) translateZ(-100px); }
@@ -9992,15 +9995,17 @@ hr.transparent {
     left: 1rem;
     right: auto; }
   .mode-3D-on.body .mode-3D .sidebar {
-    transform-origin: right;
+    transform-origin: center;
     transform: translateZ(-100px); }
   .mode-3D-on.body .mode-3D .aside-menu {
-    transform-origin: left;
+    transform-origin: center;
     transform: translateZ(-100px); }
   .mode-3D-on.body .mode-3D .main {
     transform: translateZ(-100px); }
     .mode-3D-on.body .mode-3D .main .AppContainer__block {
       animation: pump 10s infinite; }
+  .mode-3D-on.body .mode-3D .sidebar-minimizer {
+    display: none; }
   .mode-3D-on.body .mode-3D.sidebar-minimized .sidebar {
     transform-origin: -100%; }
   .mode-3D-on.body .mode-3D.sidebar-minimized .main {
