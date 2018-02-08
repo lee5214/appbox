@@ -1,21 +1,18 @@
 import { combineReducers } from 'redux';
 
-import { cityNews, cityWeatherInfo, city } from './cityInfoReducer';
+import { setting } from './settingReducer';
 
-import {currentUser} from "./authReducer";
+import { city, cityNews, cityWeatherInfo } from './cityInfoReducer';
 
-import {pubChatMessages} from './chatReducer'
-/*
- * function that maps each piece of data to the generated state object
- */
+import { currentUser } from "./authReducer";
+
+import { pubChatMessages } from './chatReducer';
+
 export default combineReducers ({
-	//cityWeatherInfo : cityWeatherInfo,
-	//cityNews : cityNews,
+	setting,
+	currentUserInfo : currentUser,
 	cityInfo : city,
-	currentUserInfo: currentUser,
-	chatRoom : combineReducers({
+	chatRoom : combineReducers ({
 		pubChatMessages : pubChatMessages,
-		//allUsers : pubChatUsers,
 	}),
-	//cityCurrentTemp : fetchCurrentCityTemp,
 });

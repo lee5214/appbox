@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Input, Label, Nav, NavItem, NavLink, Progress, TabContent, TabPane } from 'reactstrap';
 import classnames from 'classnames';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { setMode, setMouseTrack } from "actions/setting";
 
 class Aside extends Component {
 	constructor (props) {
@@ -12,15 +15,19 @@ class Aside extends Component {
 		};
 	}
 
-	toggle (tab) {
+	toggle = (tab) => {
 		if (this.state.activeTab !== tab) {
 			this.setState ({
 				activeTab : tab,
 			});
 		}
-	}
+	};
+	componentDidMount = () => {
+		//this.props.setMouseTrack (true)
+	};
 
 	render () {
+		let {mode, mouseTrack} = this.props;
 		return (
 			<aside className="aside-menu">
 				<Nav tabs>
@@ -44,7 +51,105 @@ class Aside extends Component {
 					</NavItem>
 				</Nav>
 				<TabContent activeTab={ this.state.activeTab }>
-					<TabPane tabId="1" className={ 'mode3d-blur' }>
+					<TabPane tabId="1" className="p-3 ">
+						<h6>Settings</h6>
+						<div>
+							<button onClick={ () => this.props.setMode ('2D') }>2D</button>
+							<button onClick={ () => this.props.setMode ('3D') }>3D</button>
+							<button onClick={ () => this.props.setMouseTrack (true) }>mouse true</button>
+							<button onClick={ () => this.props.setMouseTrack (false) }>mouse false</button>
+							<button onClick={ () => this.props.resetCamera () }>reset camera</button>
+						</div>
+
+						<div className="aside-options">
+							<div className="clearfix mt-4">
+								<small><b>Mode:{ mode }</b></small>
+								<Label for='mode-button'
+								       className="switch switch-text switch-pill switch-success switch-sm float-right">
+									<Input id='mode-button' type="checkbox" className="switch-input"
+									       checked={ mode === '3D' }
+									       onClick={()=>this.props.setMode(this.props.mode==='3D'?'2D':'3D')}
+									/>
+									<span className="switch-label" data-on="On" data-off="Off"/>
+									<span className="switch-handle"/>
+								</Label>
+							</div>
+							<div>
+								<small className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+									sed do eiusmod
+									tempor incididunt ut labore et dolore magna aliqua.
+								</small>
+							</div>
+						</div>
+
+						<div className="aside-options">
+							<div className="clearfix mt-3">
+								<small><b>Option 2</b></small>
+								<Label className="switch switch-text switch-pill switch-success switch-sm float-right">
+									<Input type="checkbox" className="switch-input"/>
+									<span className="switch-label" data-on="On" data-off="Off"/>
+									<span className="switch-handle"/>
+								</Label>
+							</div>
+							<div>
+								<small className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+									sed do eiusmod
+									tempor incididunt ut labore et dolore magna aliqua.
+								</small>
+							</div>
+						</div>
+
+						<div className="aside-options">
+							<div className="clearfix mt-3">
+								<small><b>Option 3</b></small>
+								<Label className="switch switch-text switch-pill switch-success switch-sm float-right">
+									<Input type="checkbox" className="switch-input"/>
+									<span className="switch-label" data-on="On" data-off="Off"/>
+									<span className="switch-handle"/>
+								</Label>
+							</div>
+						</div>
+
+						<div className="aside-options">
+							<div className="clearfix mt-3">
+								<small><b>Option 4</b></small>
+								<Label className="switch switch-text switch-pill switch-success switch-sm float-right">
+									<Input type="checkbox" className="switch-input" defaultChecked/>
+									<span className="switch-label" data-on="On" data-off="Off"/>
+									<span className="switch-handle"/>
+								</Label>
+							</div>
+						</div>
+
+						<hr/>
+						<h6>System Utilization</h6>
+
+						<div className="text-uppercase mb-1 mt-4">
+							<small><b>CPU Usage</b></small>
+						</div>
+						<Progress className="progress-xs" color="info" value="25"/>
+						<small className="text-muted">348 Processes. 1/4 Cores.</small>
+
+						<div className="text-uppercase mb-1 mt-2">
+							<small><b>Memory Usage</b></small>
+						</div>
+						<Progress className="progress-xs" color="warning" value="70"/>
+						<small className="text-muted">11444GB/16384MB</small>
+
+						<div className="text-uppercase mb-1 mt-2">
+							<small><b>SSD 1 Usage</b></small>
+						</div>
+						<Progress className="progress-xs" color="danger" value="95"/>
+						<small className="text-muted">243GB/256GB</small>
+
+						<div className="text-uppercase mb-1 mt-2">
+							<small><b>SSD 2 Usage</b></small>
+						</div>
+						<Progress className="progress-xs" color="success" value="10"/>
+						<small className="text-muted">25GB/256GB</small>
+					</TabPane>
+
+					<TabPane tabId="2" className={ '' }>
 						<div className="callout m-0 py-2 text-white text-center bg-dark text-uppercase">
 							<small><b>Today</b></small>
 						</div>
@@ -148,7 +253,7 @@ class Aside extends Component {
 						<hr className="mx-3 my-0"/>
 					</TabPane>
 
-					<TabPane tabId="2" className="p-3 mode3d-blur">
+					<TabPane tabId="3" className="p-3 mode3D-blur">
 						<div className="message">
 							<div className="py-3 pb-5 mr-3 float-left">
 								<div className="avatar">
@@ -243,92 +348,6 @@ class Aside extends Component {
 								tempor incididunt...
 							</small>
 						</div>
-					</TabPane>
-					<TabPane tabId="3" className="p-3 mode3d-blur">
-						<h6>Settings</h6>
-
-						<div className="aside-options">
-							<div className="clearfix mt-4">
-								<small><b>Option 1</b></small>
-								<Label className="switch switch-text switch-pill switch-success switch-sm float-right">
-									<Input type="checkbox" className="switch-input" defaultChecked/>
-									<span className="switch-label" data-on="On" data-off="Off"/>
-									<span className="switch-handle"/>
-								</Label>
-							</div>
-							<div>
-								<small className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-									sed do eiusmod
-									tempor incididunt ut labore et dolore magna aliqua.
-								</small>
-							</div>
-						</div>
-
-						<div className="aside-options">
-							<div className="clearfix mt-3">
-								<small><b>Option 2</b></small>
-								<Label className="switch switch-text switch-pill switch-success switch-sm float-right">
-									<Input type="checkbox" className="switch-input"/>
-									<span className="switch-label" data-on="On" data-off="Off"/>
-									<span className="switch-handle"/>
-								</Label>
-							</div>
-							<div>
-								<small className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-									sed do eiusmod
-									tempor incididunt ut labore et dolore magna aliqua.
-								</small>
-							</div>
-						</div>
-
-						<div className="aside-options">
-							<div className="clearfix mt-3">
-								<small><b>Option 3</b></small>
-								<Label className="switch switch-text switch-pill switch-success switch-sm float-right">
-									<Input type="checkbox" className="switch-input"/>
-									<span className="switch-label" data-on="On" data-off="Off"/>
-									<span className="switch-handle"/>
-								</Label>
-							</div>
-						</div>
-
-						<div className="aside-options">
-							<div className="clearfix mt-3">
-								<small><b>Option 4</b></small>
-								<Label className="switch switch-text switch-pill switch-success switch-sm float-right">
-									<Input type="checkbox" className="switch-input" defaultChecked/>
-									<span className="switch-label" data-on="On" data-off="Off"/>
-									<span className="switch-handle"/>
-								</Label>
-							</div>
-						</div>
-
-						<hr/>
-						<h6>System Utilization</h6>
-
-						<div className="text-uppercase mb-1 mt-4">
-							<small><b>CPU Usage</b></small>
-						</div>
-						<Progress className="progress-xs" color="info" value="25"/>
-						<small className="text-muted">348 Processes. 1/4 Cores.</small>
-
-						<div className="text-uppercase mb-1 mt-2">
-							<small><b>Memory Usage</b></small>
-						</div>
-						<Progress className="progress-xs" color="warning" value="70"/>
-						<small className="text-muted">11444GB/16384MB</small>
-
-						<div className="text-uppercase mb-1 mt-2">
-							<small><b>SSD 1 Usage</b></small>
-						</div>
-						<Progress className="progress-xs" color="danger" value="95"/>
-						<small className="text-muted">243GB/256GB</small>
-
-						<div className="text-uppercase mb-1 mt-2">
-							<small><b>SSD 2 Usage</b></small>
-						</div>
-						<Progress className="progress-xs" color="success" value="10"/>
-						<small className="text-muted">25GB/256GB</small>
 					</TabPane>
 				</TabContent>
 			</aside>
@@ -336,4 +355,12 @@ class Aside extends Component {
 	}
 }
 
-export default Aside;
+const mapStateToProps = (state) => {
+	return {
+		setting : state.setting,
+	};
+};
+const mapDispatchToProps = (dispatch) => {
+	return bindActionCreators ({setMode, setMouseTrack}, dispatch);
+};
+export default connect (mapStateToProps, mapDispatchToProps) (Aside);

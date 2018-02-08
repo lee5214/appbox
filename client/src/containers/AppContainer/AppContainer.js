@@ -3,8 +3,7 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import { Container, NavbarToggler } from 'reactstrap';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { createGuestUser, fetchCurrentUser } from 'actions';
-import {CSSTransitionGroup} from 'react-transition-group'
+import { createGuestUser, fetchCurrentUser, setMode, setMouseTrack } from 'actions';
 // Components
 import Buttons from '../../views/Components/Buttons/';
 import Cards from '../../views/Components/Cards/';
@@ -39,23 +38,21 @@ class AppContainer extends Component {
 	constructor (props) {
 		super (props);
 		this.state = {
-			mode3d : false,
+			mode3D_permission: true,
 			roX : 0,
 			roY : 0,
 			videoURL : 'http://techslides.com/demos/sample-videos/small.mp4',
-			test:false,
 		};
 		this.minimalInnerlWidth = 1200;
 	}
-
 	componentDidMount = () => {
 		this.props.fetchCurrentUser ();
 		window.addEventListener ('resize', this.handleResize);
 		console.log ('host =>', window.location.host);
-		console.log ('3d mode activation =>', this.state.mode3d);
+		console.log ('mode activation =>', this.props.setting.layout.mode);
 		console.log ('app position =>', this.appbodyRef.getBoundingClientRect ());
+		console.log ('children', React.Children.count (this.props.children));
 	};
-
 	onMouseMove = (e) => {
 		let mX = e.clientX, mY = e.clientY;
 		let maxRotateX = 10;
@@ -77,7 +74,6 @@ class AppContainer extends Component {
 		e.preventDefault ();
 		document.body.classList.toggle ('sidebar-hidden');
 	};
-
 	sidebarMinimize = (e) => {
 		e.preventDefault ();
 		document.body.classList.toggle ('sidebar-minimized');
@@ -86,66 +82,52 @@ class AppContainer extends Component {
 		e.preventDefault ();
 		document.body.classList.toggle ('aside-menu-hidden');
 	};
-	// trigger 3d mode
-	toggle3d = (e) => {
-		e.preventDefault ();
-		if (window.innerWidth >= this.minimalInnerlWidth) {
-			document.body.classList.toggle ('mode-3d');
-			this.setState ({mode3d : !this.state.mode3d});
-			console.log ('3d mode activation =>', !this.state.mode3d);
-		} else {
-			console.log ('3d mode =>', 'disable');
-		}
-	};
 	handleResize = () => {
 		if (window.innerWidth < this.minimalInnerlWidth) {
-			document.body.classList.remove ('mode-3d');
-			this.setState ({mode3d : false});
-			console.log (`resize detected, inner width breakpoint: --${this.minimalInnerlWidth}px--, 3d mode disable`);
+			document.body.classList.remove ('mode-3D-on');
+			this.setState({mode3D_permission:false})
+			this.props.setMode('2D')
+			this.props.setMouseTrack(false)
+			console.log (`resize detected, inner width breakpoint: --${this.minimalInnerlWidth}px--, 3D mode disable`);
+		} else {
+			document.body.classList.add ('mode-3D-on');
+			this.setState({mode3D_permission:true})
 		}
 	};
+	resetCamera = () => {
+		this.setState ({roX : 0, roY : 0});
+	};
 
-	test = () => {
-		console.log(this.state.test)
-		this.setState({test: !this.state.test})
-	}
 	render () {
-		const app3d = {
+		//let setting = this.props.setting;
+		let app3D = {
 			transform : 'rotateX(' + this.state.roX + 'deg) rotateY(' + this.state.roY + 'deg)',
 		};
+		let {setMode,setMouseTrack,setting:{layout:{mode,mouseTrack}}} = this.props
 		return (
-			<div className="app" onMouseMove={ this.state.mode3d ? this.onMouseMove : null }
+			<div className={ `app mode-${mode}` }
+			     onMouseMove={ this.state.mode3D_permission && mouseTrack ? this.onMouseMove : null }
 			     ref={ appbodyRef => {this.appbodyRef = appbodyRef;} }
-			     style={ this.state.mode3d ? app3d : null }>
+			     style={ this.state.mode3D_permission && mode === '3D' ? app3D : null }>
 
 				<Header currentUserInfo={ this.props.currentUserInfo || null }
-				        toggle3d={ this.toggle3d }
 				/>
 				<div className="app-body">
 					<Sidebar { ...this.props }/>
 					<main className="main animated">
-						{/*<video id="background-video" loop autoPlay muted*/}
-						       {/*style={{minHeight:'100%',minWidth:'100%',position:'fixed'}}*/}
-						{/*>*/}
-							{/*<source src={ this.state.videoURL } type="video/mp4"/>*/}
-							{/*<source src={ this.state.videoURL } type="video/ogg"/>*/}
-							{/*Your browser does not support the video tag.*/}
-						{/*</video>*/}
+						{ /*<video id="background-video" loop autoPlay muted*/ }
+						{ /*style={{minHeight:'100%',minWidth:'100%',position:'fixed'}}*/ }
+						{ /*>*/ }
+						{ /*<source src={ this.state.videoURL } type="video/mp4"/>*/ }
+						{ /*<source src={ this.state.videoURL } type="video/ogg"/>*/ }
+						{ /*Your browser does not support the video tag.*/ }
+						{ /*</video>*/ }
 
 						<div className={ style.breadcrumb_wrapper }>
 							<BannerLine/>
 							<Container>
 								<Breadcrumb/>
 							</Container>
-							<button onClick = {this.test}>test</button>
-							<CSSTransitionGroup
-								transitionName="example"
-								transitionAppear={true}
-								transitionAppearTimeout={500}
-								transitionEnter={false}
-								transitionLeave={false}>
-								<h1 key={'test'} style={{opacity:this.state.test?0:1}}>Fading at Initial Mount</h1>
-							</CSSTransitionGroup>
 						</div>
 
 						<NavbarToggler className="d-md-down-none position-absolute sidebar-btn"
@@ -211,7 +193,7 @@ class AppContainer extends Component {
 							</Switch>
 						</Container>
 					</main>
-					<Aside/>
+					<Aside mode={mode} mouseTrack={mouseTrack} resetCamera={this.resetCamera}/>
 				</div>
 				<Footer/>
 			</div>
@@ -220,11 +202,12 @@ class AppContainer extends Component {
 }
 
 function mapStateToProps (state) {
-	return {currentUserInfo : state.currentUserInfo};
+	console.log ('received state', state.setting);
+	return {currentUserInfo : state.currentUserInfo, setting : state.setting};
 }
 
 function mapDispatchToProps (dispatch) {
-	return bindActionCreators ({fetchCurrentUser}, dispatch);
+	return bindActionCreators ({fetchCurrentUser, setMode, setMouseTrack}, dispatch);
 }
 
 export default connect (mapStateToProps, mapDispatchToProps) (AppContainer);

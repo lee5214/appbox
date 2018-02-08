@@ -1,4 +1,4 @@
-import { FETCH_CITY } from '../actions/city';
+import { FETCH_CITY } from '../actions';
 
 export const city = (state = [], action) => {
 	switch (action.type) {

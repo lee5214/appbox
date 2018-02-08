@@ -25,19 +25,6 @@ import Register from './views/Pages/Register/';
 import Page404 from './views/Pages/Page404/';
 import Page500 from './views/Pages/Page500/';
 
-// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-// const store = createStore(reducer, composeEnhancers(
-// 	applyMiddleware (ReduxThunk)
-// ))
-
-//const store = createStore (reducers, composeWithDevTools (
-//	applyMiddleware (ReduxThunk)));
-// if (process.env.NODE_ENV !== 'production') {
-// 	let createStoreWithMiddleware = applyMiddleware (ReduxThunk) (createStore);
-// 	let store = createStoreWithMiddleware (reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__ ());
-// } else {
-//	let store = createStore (reducers, applyMiddleware (ReduxThunk));
-// }
 const store = createStore (reducers, composeWithDevTools (
 	applyMiddleware (ReduxThunk))
 );
@@ -47,7 +34,7 @@ ReactDOM.render (
 		{ /*<HashRouter> is for static website, <BrowserRouter> is more for dynamic*/ }
 		<HashRouter>
 			<Switch>
-				<Route exact path="#/login" name="Login Page" component={ Login }/>
+				<Route exact path="/login" name="Login Page" component={ Login }/>
 				<Route exact path="/register" name="Register Page"
 				       component={ Register }/>
 				<Route exact path="/404" name="Page 404" component={ Page404 }/>

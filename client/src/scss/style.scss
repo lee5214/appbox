@@ -1,8 +1,9 @@
 /*!
  * Main stylesheet
  * sass's variable priority is top-highest, unlike es6 import style
- *
  */
+//@import '../../node_modules/bootstrap/scss/functions';
+
 // Override Boostrap variables
 @import "./bootstrap-variables";
 // Import Bootstrap source files
