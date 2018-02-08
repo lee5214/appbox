@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import NewsModal from './NewsModal';
 import { CardDeck } from 'components';
-import classes from './City.scss';
 
 class NYTNewsList extends Component {
 
