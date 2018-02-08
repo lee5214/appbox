@@ -68,7 +68,7 @@ class Aside extends Component {
 								       className="switch switch-text switch-pill switch-success switch-sm float-right">
 									<Input id='mode-button' type="checkbox" className="switch-input"
 									       checked={ mode === '3D' }
-									       onClick={()=>this.props.setMode(this.props.mode==='3D'?'2D':'3D')}
+									       onChange={()=>this.props.setMode(this.props.mode==='3D'?'2D':'3D')}
 									/>
 									<span className="switch-label" data-on="On" data-off="Off"/>
 									<span className="switch-handle"/>
