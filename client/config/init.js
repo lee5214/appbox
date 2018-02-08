@@ -1,3 +1,5 @@
+'use strict';
+
 let bodyElement = document.querySelector ('body');
 bodyElement.classList.add ('loading');
 

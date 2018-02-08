@@ -36,7 +36,6 @@ module.exports = {
 	// This means they will be the "root" imports that are included in JS bundle.
 	// The first two entry points enable "hot" CSS and auto-refreshes for JS.
 	entry : [
-		require.resolve('./init.js'),
 		// We ship a few polyfills by default:
 		require.resolve ('./polyfills'),
 		// Include an alternative client for WebpackDevServer. A client's job is to
@@ -51,6 +50,7 @@ module.exports = {
 		// require.resolve('webpack/hot/dev-services'),
 		require.resolve ('react-dev-utils/webpackHotDevClient'),
 		// Finally, this is your app's code:
+		require.resolve('./init.js'),
 		paths.appIndexJs,
 		// We include the app code last so that if there is a runtime error during
 		// initialization, it doesn't blow up the WebpackDevServer client, and
