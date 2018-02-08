@@ -25,6 +25,7 @@ import Register from './views/Pages/Register/';
 import Page404 from './views/Pages/Page404/';
 import Page500 from './views/Pages/Page500/';
 
+import './init.js'
 const store = createStore (reducers, composeWithDevTools (
 	applyMiddleware (ReduxThunk))
 );
