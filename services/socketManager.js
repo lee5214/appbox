@@ -1,25 +1,38 @@
 const io = require ('../bin/start').io;
-let connectedUsers = new Map();
+let connectedUsers = new Map ();
 let onlineUsers = 0;
+const addUser = (list, user) => {
+	// object.assign(target, ...sources) is a clone method for object
+	// let newList = Object.assign({}, list)
+	let newList = {...list};
+	newList[ user.userId ] = user;
+	return newList;
+};
+
+const removeUser = (list, userId) => {
+	let newList = {...list};
+	delete newList[ userId ];
+	return newList;
+};
 module.exports = (socket) => {
 	onlineUsers++;
-	io.emit ('onlineUsersUpdate',onlineUsers);
+	io.emit ('onlineUsersUpdate', onlineUsers);
 
 	socket.on ('new user join', (user) => {
-		console.log('user connected----',user.displayName)
-		connectedUsers = addUser(connectedUsers, user)
-		socket.user = user
-		io.emit('userList update', connectedUsers)
+		console.log ('user connected----', user.displayName);
+		connectedUsers = addUser (connectedUsers, user);
+		socket.user = user;
+		io.emit ('userList update', connectedUsers);
 	});
 	socket.on ('send msg', (msg) => {
 		io.emit ('receive msg', msg);
 
 	});
 	socket.on ('disconnect', () => {
-		if ('user' in socket){
-			connectedUsers = removeUser(connectedUsers, socket.user.userId)
-			console.log('user disconnected----', socket.user.displayName)
-			io.emit('userList update', connectedUsers)
+		if ('user' in socket) {
+			connectedUsers = removeUser (connectedUsers, socket.user.userId);
+			console.log ('user disconnected----', socket.user.displayName);
+			io.emit ('userList update', connectedUsers);
 		}
 		// onlineUsers--;
 		// console.log ('Client disconnected----', socket.UID);
@@ -64,23 +77,4 @@ module.exports = (socket) => {
  */
 
 
-const add = (connectedUsers, user) => {
-	if (!connectedUsers.find(user)){
-		connectedUsers = [user,...connectedUsers]
-		return connectedUsers
-	}
-}
 
-function addUser(list, user){
-	// object.assign(target, ...sources) is a clone method for object
-	// let newList = Object.assign({}, list)
-	let newList = {...list}
-	newList[user.userId] = user
-	return newList
-}
-
-const removeUser = (list, userId) => {
-	let newList = {...list}
-	delete newList[userId];
-	return newList;
-};

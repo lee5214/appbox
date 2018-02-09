@@ -91,7 +91,7 @@ class ChatRoom extends Component {
 
 	render () {
 		return (
-			<Container className="animated fadeIn">
+			<Container className="animated fadeIn align-self-center">
 				<Row>
 					<Col xs={ 3 }>
 						{

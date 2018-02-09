@@ -23,14 +23,11 @@ console.log(os.cpus());
 console.log(os.totalmem());
 console.log(os.freemem())
 
+
 io.on ('connection', socketManager);
 
 server.listen (PORT);
 console.log ('node services is running on port:', PORT);
-
-// app.get('/', function (req, res) {
-// 	res.sendfile(__dirname + '/index.html');
-// });
 
 // socket.io
 require ('../services/socketManager') (server);
@@ -52,6 +49,7 @@ if (process.env.NODE_ENV === 'production') {
 	// 	res.sendFile (__dirname + 'client/build/index.html')//(path.resolve (__dirname, 'client', 'build','index.html'));
 	// });
 }
+
 // requests go through middleware before route handlers
 app.use(cors());
 app.use (bodyParser.json ());
@@ -65,10 +63,6 @@ app.use (
 // must be before authRoutes
 app.use (passport.initialize ());
 app.use (passport.session ());
-
-// later refactor
-// require('../middleware')(app,cookieSession,passport,keys)
-
 
 /*
  * ---- route section ----

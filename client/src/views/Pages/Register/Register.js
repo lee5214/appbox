@@ -11,8 +11,21 @@ import {
 	InputGroupAddon,
 	Row,
 } from 'reactstrap';
+import axios from 'axios'
 
 class Register extends Component {
+	constructor (props){
+		super(props)
+		this.state={
+			userName: '',
+			email: '',
+			password: '',
+			repeatPassword: ''
+		}
+	}
+	hundleSubmit = () => {
+		axios.post('/register',this.state.userRegisterInfo)
+	}
 	render () {
 		return (
 			<div className="app flex-row align-items-center">
@@ -25,21 +38,31 @@ class Register extends Component {
 									<p className="text-muted">Create your account</p>
 									<InputGroup className="mb-3">
 										<InputGroupAddon><i className="icon-user"></i></InputGroupAddon>
-										<Input type="text" placeholder="Username"/>
+										<Input type="text" placeholder="Username"
+										       onChange={e => this.setState({userName:e.target.value})}
+										       value = {this.state.userName}
+										/>
 									</InputGroup>
+									<p>{this.state.userName}</p>
 									<InputGroup className="mb-3">
 										<InputGroupAddon>@</InputGroupAddon>
-										<Input type="text" placeholder="Email"/>
+										<Input type="text" placeholder="Email"
+										       onChange={e => this.setState({email:e.target.value})}
+										       value = {this.state.email}/>
 									</InputGroup>
 									<InputGroup className="mb-3">
 										<InputGroupAddon><i className="icon-lock"></i></InputGroupAddon>
-										<Input type="password" placeholder="Password"/>
+										<Input type="password" placeholder="Password"
+										       onChange={e => this.setState({passWord:e.target.value})}
+										       value = {this.state.passWord}/>
 									</InputGroup>
 									<InputGroup className="mb-4">
 										<InputGroupAddon><i className="icon-lock"></i></InputGroupAddon>
-										<Input type="password" placeholder="Repeat password"/>
+										<Input type="password" placeholder="Repeat password"
+										       onChange={e => this.setState({repeatPassword:e.target.value})}
+										       value = {this.state.repeatPassword}/>
 									</InputGroup>
-									<Button color="success" block>Create Account</Button>
+									<Button color="success" block onSubmit={this.hundleSubmit}>Create Account</Button>
 								</CardBody>
 								<CardFooter className="p-4">
 									<Row>

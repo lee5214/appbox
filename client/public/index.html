@@ -10,20 +10,78 @@
           content="CongLi,Bootstrap,Angular,CSS,HTML,React,React.js">
     <link rel="shortcut icon" href="img/favicon.png">
     <title>Cong's App Box</title>
+    <!-- loader style -->
     <style>
-        #initial-loader{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;width:100%;background:#212121;position:fixed;z-index:10000;top:0;left:0;bottom:0;right:0;transition:opacity .2s ease-out}#initial-loader .initial-loader-top{display:flex;align-items:center;justify-content:space-between;width:200px;border-bottom:1px solid #2d2d2d;padding-bottom:5px}#initial-loader .initial-loader-top > *{display:block;flex-shrink:0;flex-grow:0}#initial-loader .initial-loader-bottom{padding-top:10px;color:#5C5C5C;font-family:-apple-system,"Helvetica Neue",Helvetica,"Segoe UI",Arial,sans-serif;font-size:12px}@keyframes spin{100%{transform:rotate(360deg)}}#initial-loader .loader g{transform-origin:50% 50%;animation:spin .5s linear infinite}body.loading {overflow: hidden !important} body.loaded #initial-loader{opacity:0}
+        #initial-loader {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+            background: #212121;
+            position: fixed;
+            z-index: 10000;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            transition: opacity .2s ease-out
+        }
+
+        #initial-loader .initial-loader-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 200px;
+            border-bottom: 1px solid #2d2d2d;
+            padding-bottom: 5px
+        }
+
+        #initial-loader .initial-loader-top > * {
+            display: block;
+            flex-shrink: 0;
+            flex-grow: 0
+        }
+
+        #initial-loader .initial-loader-bottom {
+            padding-top: 10px;
+            color: #5C5C5C;
+            font-family: -apple-system, "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
+            font-size: 12px
+        }
+
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg)
+            }
+        }
+
+        #initial-loader .loader g {
+            transform-origin: 50% 50%;
+            animation: spin .5s linear infinite
+        }
+
+        body.loading {
+            overflow: hidden !important
+        }
+
+        body.loaded #initial-loader {
+            opacity: 0
+        }
     </style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-81618671-2"></script>
+    <script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-81618671-2');
+    </script>
 
 </head>
 
 <!-- BODY options, add following classes to body to change options
-
-// Header options
-1. '.header-fixed'					- Fixed Header
-
-// Brand options
-1. '.brand-minimized'       - Minimized brand (Only symbol)
-
 // Sidebar options
 1. '.sidebar-fixed'					- Fixed Sidebar
 2. '.sidebar-hidden'				- Hidden Sidebar
@@ -35,13 +93,6 @@
 1. '.aside-menu-fixed'			- Fixed Aside Menu
 2. '.aside-menu-hidden'			- Hidden Aside Menu
 3. '.aside-menu-off-canvas'	- Off Canvas Aside Menu
-
-// Breadcrumb options
-1. '.breadcrumb-fixed'			- Fixed Breadcrumb
-
-// Footer options
-1. '.footer-fixed'					- Fixed footer
-
 -->
 
 <body class="body header-fixed footer-fixed sidebar-fixed aside-menu-fixed mode-3D-on">
@@ -55,14 +106,15 @@
                         version="1.1"
                         id="loader-1"
                         xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        x="0px" y="0px"
                         width="30px" height="30px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve"
                     >
                         <g>
                             <path
                                 fill="#2d2d2d"
                                 d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"
-                            />
+                            >
+                            </path>
                             <path
                                 fill="#2c97de"
                                 d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0C22.32,8.481,24.301,9.057,26.013,10.047z"
@@ -79,16 +131,6 @@
 </div>
 <div id="root"></div>
 <canvas id="bg"></canvas>
-<!--
-  This HTML file is a template.
-  If you open it directly in the browser, you will see an empty page.
-
-  You can add webfonts, meta tags, or analytics to this file.
-  The build step will place the bundled scripts into the <body> tag.
-
-  To begin the development, run `npm start`.
-  To create a production bundle, use `npm run build`.
--->
 <script src='canvas2.js'></script>
 </body>
 </html>

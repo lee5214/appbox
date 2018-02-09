@@ -82,7 +82,7 @@ $sidebar-minimized-width:             50px !default;
 $sidebar-minimized-height:            $sidebar-minimized-width !default;
 $sidebar-compact-width:               150px !default;
 $sidebar-compact-height:              $sidebar-compact-width !default;
-$sidebar-color:                       #fff !default;
+$sidebar-color:                       red !default;
 $sidebar-bg:                          $gray-800 !default;
 $sidebar-borders:                     1px solid red !default;
 $mobile-sidebar-width:                220px !default;
@@ -103,13 +103,13 @@ $sidebar-form-placeholder-color:      rgba(255,255,255,.7) !default;
 
 // Sidebar Navigation
 
-$sidebar-nav-color:                   #fff !default;
+// $sidebar-nav-color:                   red !default;
 $sidebar-nav-title-padding-y:         .75rem !default;
 $sidebar-nav-title-padding-x:         1rem !default;
 $sidebar-nav-title-color:             $white !default;
 $sidebar-nav-link-padding-y:          .75rem !default;
 $sidebar-nav-link-padding-x:          1rem !default;
-$sidebar-nav-link-color:              $white !default;
+$sidebar-nav-link-color:              red !default;
 $sidebar-nav-link-bg:                 transparent !default;
 $sidebar-nav-link-icon-color:         $gray-100 !default;
 $sidebar-nav-link-borders:            0 !default;
@@ -124,12 +124,12 @@ $sidebar-nav-link-active-bg:          lighten($sidebar-bg, 5%) !default;
 $sidebar-nav-link-active-icon-color:  theme-color("primary") !default;
 $sidebar-nav-link-active-borders:     0 !default;
 
-$sidebar-nav-dropdown-color:          #fff !default;
+$sidebar-nav-dropdown-color:          red !default;
 $sidebar-nav-dropdown-bg:             rgba(0,0,0,.2) !default;
 $sidebar-nav-dropdown-borders:        0 !default;
 $sidebar-nav-dropdown-indicator-color:$gray-600 !default;
 $sidebar-nav-dropdown-indicator:      str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 14'%3E%3Cpath fill='#{$sidebar-nav-dropdown-indicator-color}' d='M9.148 2.352l-4.148 4.148 4.148 4.148q0.148 0.148 0.148 0.352t-0.148 0.352l-1.297 1.297q-0.148 0.148-0.352 0.148t-0.352-0.148l-5.797-5.797q-0.148-0.148-0.148-0.352t0.148-0.352l5.797-5.797q0.148-0.148 0.352-0.148t0.352 0.148l1.297 1.297q0.148 0.148 0.148 0.352t-0.148 0.352z'/%3E%3C/svg%3E"), "#", "%23") !default;
-$sidebar-nav-dropdown-indicator-hover-color:$sidebar-nav-link-hover-color;
+$sidebar-nav-dropdown-indicator-hover-color: $sidebar-nav-link-hover-color;
 $sidebar-nav-dropdown-indicator-hover:str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 14'%3E%3Cpath fill='#{$sidebar-nav-dropdown-indicator-hover-color}' d='M9.148 2.352l-4.148 4.148 4.148 4.148q0.148 0.148 0.148 0.352t-0.148 0.352l-1.297 1.297q-0.148 0.148-0.352 0.148t-0.352-0.148l-5.797-5.797q-0.148-0.148-0.148-0.352t0.148-0.352l5.797-5.797q0.148-0.148 0.352-0.148t0.352 0.148l1.297 1.297q0.148 0.148 0.148 0.352t-0.148 0.352z'/%3E%3C/svg%3E"), "#", "%23") !default;
 
 // Sidebar Footer

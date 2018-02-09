@@ -29,12 +29,6 @@ class Header extends Component {
 		e.preventDefault ();
 		document.body.classList.toggle ('aside-menu-hidden');
 	};
-
-	mode3dToggle = (e) => {
-
-		this.props.toggle3d()
-	}
-
 	renderUserInfo () {
 		switch (this.props.currentUserInfo) {
 			case null:
@@ -89,8 +83,6 @@ class Header extends Component {
 					</NavItem>
 					</Route>
 				</Nav>
-
-				<button onClick={this.props.toggle3d}>3D Toggle</button>
 
 				<Nav className="ml-auto" navbar>
 					<NavItem className="d-md-down-none">

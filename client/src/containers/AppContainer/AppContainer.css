@@ -3,6 +3,7 @@
   background: #272727; }
 
 .block {
-  margin-top: 50px; }
+  margin-top: 50px;
+  display: flex; }
 
 /*# sourceMappingURL=AppContainer.css.map */

@@ -50,7 +50,6 @@ class AppContainer extends Component {
 		console.log ('host =>', window.location.host);
 		console.log ('mode activation =>', this.props.setting.layout.mode);
 		console.log ('app position =>', this.appbodyRef.getBoundingClientRect ());
-		console.log ('children', React.Children.count (this.props.children));
 	};
 	onMouseMove = (e) => {
 		let mX = e.clientX, mY = e.clientY;
@@ -110,7 +109,7 @@ class AppContainer extends Component {
 			     ref={ appbodyRef => {this.appbodyRef = appbodyRef;} }
 			     style={ this.state.mode3D_permission && mode === '3D' ? app3D : null }>
 
-				<Header currentUserInfo={ this.props.currentUserInfo || null }
+				<Header currentUserInfo={ this.props.currentUserInfo }
 				/>
 				<div className="app-body">
 					<Sidebar { ...this.props }/>
@@ -132,12 +131,12 @@ class AppContainer extends Component {
 
 						<NavbarToggler className="d-md-down-none position-absolute sidebar-btn"
 						               onClick={ this.sidebarToggle }>
-							<i className={ 'fa fa-arrow-left fa-2x text-white' }/>
+							<i className={ 'fa fa-angle-double-left fa-2x text-white' }/>
 							{ /*<span className="navbar-toggler-icon"/>*/ }
 						</NavbarToggler>
 						<NavbarToggler className="d-md-down-none position-absolute aside-btn"
 						               onClick={ this.asideToggle }>
-							<i className={ 'fa fa-arrow-right fa-2x text-white' }/>
+							<i className={ 'fa fa-angle-double-right fa-2x text-white' }/>
 							{ /*<span className="navbar-toggler-icon"/>*/ }
 						</NavbarToggler>
 
@@ -202,7 +201,6 @@ class AppContainer extends Component {
 }
 
 function mapStateToProps (state) {
-	console.log ('received state', state.setting);
 	return {currentUserInfo : state.currentUserInfo, setting : state.setting};
 }
 

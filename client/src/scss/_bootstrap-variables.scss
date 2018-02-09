@@ -87,7 +87,7 @@ $font-family-serif:       Georgia, "Times New Roman", Times, serif;
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
 $font-family-base:        $font-family-sans-serif;
 
-$font-size-base:          13px;
+$font-size-base:          14px;
 $font-size-large:         ceil(($font-size-base * 1.05)); // ~18px
 $font-size-small:         ceil(($font-size-base * 0.75)); // ~12px
 
@@ -1042,7 +1042,7 @@ $body-bg:                         $gray-800;
 $body-color: $gray-200;
 //$font-family-base;
 //$font-size-base;
-//$font-weight-base;
+$font-weight-base: bolder;
 //$line-height-base;
 
 
@@ -1060,7 +1060,7 @@ $breadcrumb-divider:                "/" !default;
 //
 // Font, line-height, and color for body text, headings, and more.
 
-$font-size-base:                  0.875rem;
+$font-size-base:                  1rem;
 
 // Cards
 $card-border-color:               $gray-200;

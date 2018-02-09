@@ -4,7 +4,7 @@ import axios from 'axios';
 import LinkCreateForm from './LinkCreatForm';
 import LinksList from './LinksList';
 //import urlRegex from 'url-regex';
-import { Col, Nav, NavItem, NavLink, Row, TabContent, TabPane } from 'reactstrap';
+import { Container, Col, Nav, NavItem, NavLink, Row, TabContent, TabPane } from 'reactstrap';
 import classnames from 'classnames';
 import {urlPrefix} from 'utils/'
 class SecretLinks extends Component {
@@ -95,7 +95,7 @@ class SecretLinks extends Component {
 
 	render () {
 		return (
-			<div>
+			<Container className="animated fadeIn align-self-center">>
 				<Row>
 					<Col xs={12} md={{size:6, offset:3}} >
 						<LinkCreateForm handleSubmit={ this.handleSubmit } errorMessage={ this.state.errorMessage }/>
@@ -136,7 +136,7 @@ class SecretLinks extends Component {
 						</Row>
 					</TabPane>
 				</TabContent>
-			</div>
+			</Container>
 		);
 	}
 }

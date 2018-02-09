@@ -62,11 +62,11 @@ class Login extends Component {
 									<CardBody className="text-center">
 										<div>
 											<h2>Sign up</h2>
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-												tempor incididunt ut
-												labore et dolore magna aliqua.</p>
-											<Button href={ '/register' } color="primary" className="mt-3" active>Register
-												Now!</Button>
+											<p>
+												OAuth2.0 implemented, recommend log in with social account, or register with your email address & password </p>
+											<Button href={ '#/register' } color="primary" className="mt-3" active>
+												Hit The Button
+											</Button>
 										</div>
 									</CardBody>
 								</Card>
