@@ -4,6 +4,8 @@ const {Schema} = mongoose;
 const userSchema = new Schema ({
 
 	local : {
+		username : String,
+		password : String,
 		email : String,
 		displayName : String,
 		avatar : String,

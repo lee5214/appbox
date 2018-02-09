@@ -1,6 +1,7 @@
 const passport = require ('passport');
 const GoogleStrategy = require ('passport-google-oauth20');
 const FacebookStrategy = require ('passport-facebook');
+const LocalStrategy = require ('passport-local').Strategy;
 const mongoose = require ('mongoose');
 const keys = require ('../config/credentials');
 // special import style in mongoose in case you import multiple models
@@ -20,10 +21,27 @@ module.exports = () => {
 	passport.deserializeUser ((id, done) => {
 		console.log ('deserializeUser id=> ', id);
 		User.findById (id)
-			.then ((user) => {
-				done (null, user);
-			});
+		    .then ((user) => {
+			    done (null, user);
+		    });
 	});
+
+	passport.use (
+		new LocalStrategy (
+			 async (username, password, done) => {
+				await User.findOne ({'local.username' : username}, function (err, user) {
+					if (err) { return done (err); }
+					if (!user) {
+						return done (null, false, {message : 'Incorrect username.'});
+					}
+					if (!user.local.password === password) {
+						return done (null, false, {message : 'Incorrect password.'});
+					}
+					return done (null, user);
+				});
+			},
+
+		));
 
 	passport.use (
 		new GoogleStrategy (
@@ -34,7 +52,6 @@ module.exports = () => {
 			},
 			// refactor promise using async/await
 			async (accessToken, refreshToken, profile, done) => {
-				console.log ('profile=>', profile);
 				// IMPORTANT ''
 				const existingUser = await User.findOne ({'google.id' : profile.id});
 				if (existingUser) {
@@ -45,9 +62,9 @@ module.exports = () => {
 					const user = await new User ({
 						guest : false,
 						local : {
-							email : profile.emails[0].value,
+							email : profile.emails[ 0 ].value,
 							displayName : profile.displayName,
-							avatar : profile.photos[0].value,
+							avatar : profile.photos[ 0 ].value,
 						},
 						google : profile._json,
 					}).save ();
@@ -94,7 +111,6 @@ module.exports = () => {
 				],
 			},
 			async (accessToken, refreshToken, profile, done) => {
-				console.log ('profile=>', profile);
 				const existingUser = await User.findOne ({'facebook.id' : profile.id});
 				if (existingUser) {
 					done (null, existingUser);
@@ -103,10 +119,10 @@ module.exports = () => {
 					const user = await new User ({
 						guest : false,
 						local : {
-							email : profile.emails[0].value,
+							email : profile.emails[ 0 ].value,
 							// firstName : profile.first_name,
 							displayName : profile._json.first_name,
-							avatar : profile.photos[0].value || '',
+							avatar : profile.photos[ 0 ].value || '',
 							language : profile._json.local,
 						},
 						facebook : profile._json,

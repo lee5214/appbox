@@ -47,6 +47,7 @@
     "passport-facebook": "^2.1.1",
     "passport-google-oauth": "^1.0.0",
     "passport-google-oauth20": "^1.0.0",
+    "passport-local": "^1.0.0",
     "path-parser": "^2.0.2",
     "react-dev-utils": "^5.0.0",
     "react-redux": "^5.0.6",

@@ -1,5 +1,6 @@
 const passport = require ('passport');
-
+const mongoose = require('mongoose')
+const User = mongoose.model ('Users_Model');
 module.exports = (app) => {
 
 	/*
@@ -9,9 +10,9 @@ module.exports = (app) => {
 		// for cookie-session test: res.send(req.session)
 		res.send (req.user);
 	});
-	app.get ('/api/all_user', (req, res)=> {
-		res.send(req.user)
-	})
+	app.get ('/api/all_user', (req, res) => {
+		res.send (req.user);
+	});
 	app.get ('/api/logout', (req, res) => {
 		req.logout ();
 		// res.redirect('/')
@@ -19,6 +20,19 @@ module.exports = (app) => {
 		// pre-check=0');
 		res.redirect ('back');
 	});
+	app.post ('/auth/local_register', async (req, res) => {
+		try {
+			const user = await new User(req.body).save();
+			res.send(user);
+		} catch (e) {
+			res.status(402).send({ error : e.errmsg });
+		}
+		console.log (req.body);
+	});
+	app.post ('/auth/local_login',
+		passport.authenticate ('local'),
+		(req, res) => {res.send(req.user);},
+	);
 
 	/*
 	 * google
@@ -33,7 +47,7 @@ module.exports = (app) => {
 	// passport is a middleware, this shows how to  use middleware in only one route
 	app.get (
 		'/auth/google/callback',
-		passport.authenticate ('google'),
+		passport.authenticate ('google', {failureRedirect : '/login'}),
 		(req, res) => {
 			// const backURL = req.header ('Referer') || '/';
 			res.redirect ('/');

@@ -11,21 +11,25 @@ import {
 	InputGroupAddon,
 	Row,
 } from 'reactstrap';
-import axios from 'axios'
+import axios from 'axios';
 
 class Register extends Component {
-	constructor (props){
-		super(props)
-		this.state={
-			userName: '',
-			email: '',
-			password: '',
-			repeatPassword: ''
-		}
+	constructor (props) {
+		super (props);
+		this.state = {
+			userName : '',
+			email : '',
+			password : '',
+			repeatPassword : '',
+		};
 	}
-	hundleSubmit = () => {
-		axios.post('/register',this.state.userRegisterInfo)
-	}
+
+	handleSubmit = (e) => {
+		e.preventDefault ();
+		axios.post ('/auth/local_register', {username : this.state.userName, password : this.state.password})
+			.then(res => console.log(res));
+	};
+
 	render () {
 		return (
 			<div className="app flex-row align-items-center">
@@ -39,30 +43,32 @@ class Register extends Component {
 									<InputGroup className="mb-3">
 										<InputGroupAddon><i className="icon-user"></i></InputGroupAddon>
 										<Input type="text" placeholder="Username"
-										       onChange={e => this.setState({userName:e.target.value})}
-										       value = {this.state.userName}
+										       onChange={ e => this.setState ({userName : e.target.value}) }
+										       value={ this.state.userName }
 										/>
 									</InputGroup>
-									<p>{this.state.userName}</p>
+									<p>{ this.state.userName }</p>
 									<InputGroup className="mb-3">
 										<InputGroupAddon>@</InputGroupAddon>
 										<Input type="text" placeholder="Email"
-										       onChange={e => this.setState({email:e.target.value})}
-										       value = {this.state.email}/>
+										       onChange={ e => this.setState ({email : e.target.value}) }
+										       value={ this.state.email }/>
 									</InputGroup>
 									<InputGroup className="mb-3">
 										<InputGroupAddon><i className="icon-lock"></i></InputGroupAddon>
 										<Input type="password" placeholder="Password"
-										       onChange={e => this.setState({passWord:e.target.value})}
-										       value = {this.state.passWord}/>
+										       onChange={ e => this.setState ({passWord : e.target.value}) }
+										       />
 									</InputGroup>
 									<InputGroup className="mb-4">
 										<InputGroupAddon><i className="icon-lock"></i></InputGroupAddon>
 										<Input type="password" placeholder="Repeat password"
-										       onChange={e => this.setState({repeatPassword:e.target.value})}
-										       value = {this.state.repeatPassword}/>
+										       onChange={ e => this.setState ({repeatPassword : e.target.value}) }
+										       value={ this.state.repeatPassword }/>
 									</InputGroup>
-									<Button color="success" block onSubmit={this.hundleSubmit}>Create Account</Button>
+									<Button color="success" block onClick={ e => this.handleSubmit(e) }>
+										Create Account
+									</Button>
 								</CardBody>
 								<CardFooter className="p-4">
 									<Row>
