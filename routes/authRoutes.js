@@ -1,5 +1,5 @@
 const passport = require ('passport');
-const mongoose = require('mongoose')
+const mongoose = require ('mongoose');
 const User = mongoose.model ('Users_Model');
 module.exports = (app) => {
 
@@ -22,16 +22,18 @@ module.exports = (app) => {
 	});
 	app.post ('/auth/local_register', async (req, res) => {
 		try {
-			const user = await new User(req.body).save();
-			res.send(user);
+			const user = await new User (req.body).save ();
+			res.send (user);
 		} catch (e) {
-			res.status(402).send({ error : e.errmsg });
+			res.status (402).send ({error : e.errmsg});
 		}
-		console.log (req.body);
 	});
 	app.post ('/auth/local_login',
+		// IMPORTANT ajax call will not redirect the url, so I send the url back to front end, /Login handler takes it
 		passport.authenticate ('local'),
-		(req, res) => {res.send(req.user);},
+		(req, res) => {
+			res.send ({redirect : '/'});
+		},
 	);
 
 	/*

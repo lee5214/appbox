@@ -25,7 +25,15 @@ class Login extends Component {
 	}
 
 	handleLoginButton = () => {
-		axios.post ('/auth/local_login', {'username' : this.state.username, 'password' : this.state.password});
+		axios.post (
+			'/auth/local_login',
+			{'username' : this.state.username, 'password' : this.state.password},
+		).then((res)=>{
+			console.log(res.data.redirect)
+			// IMPORTANT read /authRoutes/important
+			window.location = res.data.redirect;
+
+		});
 	};
 
 	render () {

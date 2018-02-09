@@ -98,7 +98,6 @@ class AppContainer extends Component {
 	};
 
 	render () {
-		//let setting = this.props.setting;
 		let app3D = {
 			transform : 'rotateX(' + this.state.roX + 'deg) rotateY(' + this.state.roY + 'deg)',
 		};

@@ -67,9 +67,6 @@ app.use (passport.session ());
 /*
  * ---- route section ----
  */
-app.get ('/welcome', (req, res) => {
-	res.send ('welcome');
-});
 require ('../routes/authRoutes') (app);
 require ('../routes/secretLinkRoutes') (app);
 require ('../routes/cityRoutes') (app);

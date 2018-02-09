@@ -7,7 +7,6 @@ export const CREATE_GUEST_USER = 'CREATE_GUEST_USER';
 export const fetchCurrentUser = () => {
 	// if redux thunk see an action returns a function
 	// it will call the func with dispatch automaticlly
-
 	return async function (dispatch) {
 		const user = await axios.get ('/api/current_user');
 		if(user.data) {

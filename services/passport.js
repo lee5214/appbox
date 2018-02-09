@@ -29,16 +29,21 @@ module.exports = () => {
 	passport.use (
 		new LocalStrategy (
 			 async (username, password, done) => {
-				await User.findOne ({'local.username' : username}, function (err, user) {
-					if (err) { return done (err); }
-					if (!user) {
-						return done (null, false, {message : 'Incorrect username.'});
-					}
-					if (!user.local.password === password) {
-						return done (null, false, {message : 'Incorrect password.'});
-					}
-					return done (null, user);
-				});
+				// await User.findOne ({'local.username' : username}, function (err, user) {
+				// 	if (err) { return done (err); }
+				// 	if (!user) {
+				// 		return done (null, false, {message : 'Incorrect username.'});
+				// 	}
+				// 	if (!user.local.password === password) {
+				// 		return done (null, false, {message : 'Incorrect password.'});
+				// 	}
+				// 	return done (null, user);
+				// });
+				 const existingU = await User.findOne({'local.username' : username});
+				 if (existingU){
+				 	done (null,existingU)
+				 }
+
 			},
 
 		));

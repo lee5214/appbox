@@ -27,7 +27,7 @@ class Register extends Component {
 	handleSubmit = (e) => {
 		e.preventDefault ();
 		axios.post ('/auth/local_register', {username : this.state.userName, password : this.state.password})
-			.then(res => console.log(res));
+			.then(res => console.log(res.data));
 	};
 
 	render () {
