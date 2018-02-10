@@ -9958,6 +9958,8 @@ hr.transparent {
     transition: filter 0s ease-in-out;
     filter: blur(0px) brightness(1);
     color: white; }
+  .mode-3D-on.body .mode-3D .main .sidebar-btn, .mode-3D-on.body .mode-3D .main .aside-btn {
+    display: block !important; }
   .mode-3D-on.body .mode-3D .main .sidebar-btn {
     top: 50%;
     left: 0; }

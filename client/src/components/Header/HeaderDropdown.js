@@ -31,10 +31,10 @@ class HeaderDropdown extends Component {
 					<DropdownItem header tag="div" className="text-center"><strong>Account</strong></DropdownItem>
 					<DropdownItem><i className="fa fa-user"/> {displayName}</DropdownItem>
 					<DropdownItem disabled><i className="fa fa-bell-o"/> Updates<Badge color="info"></Badge></DropdownItem>
-					<DropdownItem disabled><i className="fa fa-envelope-o"/> Messages<Badge
-						color="success">42</Badge></DropdownItem>
-					<DropdownItem disabled><i className="fa fa-comments"/> Comments<Badge
-						color="warning">42</Badge></DropdownItem>
+					<DropdownItem disabled><i className="fa fa-envelope-o"/> Mail <Badge
+						color="success">0</Badge></DropdownItem>
+					<DropdownItem disabled><i className="fa fa-comments"/> Message <Badge
+						color="warning">0</Badge></DropdownItem>
 					<DropdownItem header tag="div" className="text-center"><strong>Settings</strong></DropdownItem>
 					<DropdownItem disabled><i className="fa fa-wrench"/> Settings</DropdownItem>
 					{ /* <DropdownItem><i className="fa fa-usd" /> Payments<Badge*/ }

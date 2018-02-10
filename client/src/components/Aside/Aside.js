@@ -131,7 +131,6 @@ class Aside extends Component {
 								</Label>
 							</div>
 						</div>
-
 						<hr/>
 						<h6 className={ 'translatex-40 text-right' }>SERVER UTILIZATION</h6>
 
@@ -160,45 +159,51 @@ class Aside extends Component {
 						<small className="text-muted">25GB/256GB</small>
 
 						<div className="text-uppercase mb-1 mt-2">
-							<a href={ '/api/current_user' }>client info</a>
+							<a href={ '/api/current_user' } target={ '_blank' }>client info</a>
 						</div>
 						<div className="text-uppercase mb-1 mt-2">
-							<a href={ '/api/clientLog' }>client log</a>
+							<a href={ '/api/clientLog' } target={ '_blank' }>client log</a>
 						</div>
 					</TabPane>
 
 					<TabPane tabId="2" className={ `p-3 ${mode === '3D' ? 'align-self-center' : null}` }>
 						<div className="callout m-0 py-2 text-white text-center bg-dark text-uppercase">
-							<small><b>Today</b></small>
+							<small><b>Connect</b></small>
 						</div>
 						<hr className="transparent mx-3 my-0"/>
 						<div className="callout callout-warning m-0 py-3">
 							<div className="avatar float-right">
 								<img src={ 'img/avatars/7.jpg' } className="img-avatar"
-								     alt="admin@bootstrapmaster.com"/>
+								     alt="cong-li@cong-li.com"/>
 							</div>
-							<div>Meeting with <strong>Lucas</strong></div>
-							<small className="text-muted mr-3"><i className="icon-calendar"/>&nbsp; 1 - 3pm</small>
-							<small className="text-muted"><i className="icon-location-pin"/>&nbsp; Palo Alto, CA
+							<div>Find <strong>Cong</strong></div>
+							<small className="text-muted mr-3 text-bold"><i className="fa fa-google mr-2"/>
+								<a href={ 'https://groups.google.com/a/cong-li.com/forum/#!forum/discuss' }
+								   target={ '_blank' }>google group</a>
 							</small>
+							<br/>
+							<small className="text-muted mr-3 bold"><i className="fa fa-envelope mr-2"/>
+								<a href={ 'mailto:cong-li@cong-li.com' }>cong-li@cong-li.com</a>
+							</small>
+
 						</div>
 						<hr className="mx-3 my-0"/>
-						<div className="callout callout-info m-0 py-3">
-							<div className="avatar float-right">
-								<img src={ 'img/avatars/4.jpg' } className="img-avatar"
-								     alt="admin@bootstrapmaster.com"/>
-							</div>
-							<div>Skype with <strong>Megan</strong></div>
-							<small className="text-muted mr-3"><i className="icon-calendar"/>&nbsp; 4 - 5pm</small>
-							<small className="text-muted"><i className="icon-social-skype"/>&nbsp; On-line</small>
-						</div>
+						{/*<div className="callout callout-info m-0 py-3">*/}
+							{/*<div className="avatar float-right">*/}
+								{/*<img src={ 'img/avatars/4.jpg' } className="img-avatar"*/}
+								     {/*alt="admin@bootstrapmaster.com"/>*/}
+							{/*</div>*/}
+							{/*<div>Skype with <strong>Megan</strong></div>*/}
+							{/*<small className="text-muted mr-3"><i className="icon-calendar"/>&nbsp; 4 - 5pm</small>*/}
+							{/*<small className="text-muted"><i className="icon-social-skype"/>&nbsp; On-line</small>*/}
+						{/*</div>*/}
 						<hr className="transparent mx-3 my-0"/>
-						<div className="callout m-0 py-2 text-muted text-center bg-light text-uppercase">
-							<small><b>Tomorrow</b></small>
+						<div className="callout m-0 py-2 text-muted text-center bg-white text-uppercase">
+							<small><b>General</b></small>
 						</div>
 						<hr className="transparent mx-3 my-0"/>
 						<div className="callout callout-danger m-0 py-3">
-							<div>New UI Project - <strong>deadline</strong></div>
+							<div><strong> All User Avatars </strong></div>
 							<small className="text-muted mr-3"><i className="icon-calendar"/>&nbsp; 10 - 11pm
 							</small>
 							<small className="text-muted"><i className="icon-home"/>&nbsp; creativeLabs HQ</small>

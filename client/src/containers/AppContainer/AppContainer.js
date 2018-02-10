@@ -141,12 +141,12 @@ class AppContainer extends Component {
 							</Container>
 						</div>
 
-						<NavbarToggler className="d-md-down-none position-absolute sidebar-btn"
+						<NavbarToggler className="d-md-down-none position-absolute sidebar-btn d-none"
 						               onClick={ this.sidebarToggle }>
 							<i className={ 'fa fa-angle-double-left fa-2x text-white' }/>
 							{ /*<span className="navbar-toggler-icon"/>*/ }
 						</NavbarToggler>
-						<NavbarToggler className="d-md-down-none position-absolute aside-btn"
+						<NavbarToggler className="d-md-down-none position-absolute aside-btn d-none"
 						               onClick={ this.asideToggle }>
 							<i className={ 'fa fa-angle-double-right fa-2x text-white' }/>
 							{ /*<span className="navbar-toggler-icon"/>*/ }

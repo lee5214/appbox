@@ -8,16 +8,21 @@ import { Colors } from 'consts';
 class City extends Component {
 	render () {
 		return (
-			<div className="animated fadeIn">
-				<Row className={'justify-content-center'}>
+			<div className="animated fadeIn container">
+				<Row className={ 'justify-content-center' }>
 					<Col xs={ 'auto' }>
-						<SearchBar/>
+						<SearchBar defaultCity={ 'San Francisco' }/>
 					</Col>
-				</Row>
-				<Row className={'justify-content-center'}>
-					{ this.props.cityInfo.map (info => <CityDetail key={ info.cityWeather.id } info={ info }/>) }
-				</Row>
 
+				</Row>
+				{ this.props.cityInfo[ 0 ] ?
+					<Row className={ 'justify-content-center' }>
+						{ this.props.cityInfo.map (info => <CityDetail key={ info.cityWeather.id }
+						                                               info={ info }/>) }
+					</Row>
+					:
+					<Row className={'loading'}>loading</Row>
+				}
 			</div>
 		);
 	}

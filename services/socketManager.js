@@ -1,26 +1,8 @@
 const io = require ('../bin/start').io;
-const os = require ('os');
+const {clientLog} = require('../services/log');
 let connectedUsers = new Map ();
 let onlineUsers = 0;
-let log = {
-	EOL : os.EOL,
-	arch : os.arch (),
-	constants : os.constants,
-	cpus : os.cpus (),
-	endianness : os.endianness (),
-	freemem : os.freemem (),
-	homedir : os.homedir (),
-	hostname : os.hostname (),
-	loadavg : os.loadavg (),
-	networkInterfaces : os.networkInterfaces (),
-	platform : os.platform (),
-	release : os.release (),
-	tmpdir : os.tmpdir (),
-	totalmem : os.totalmem (),
-	type : os.type (),
-	uptime : os.uptime (),
-	userInfo : os.userInfo (),
-};
+
 
 const addUser = (list, user) => {
 	// object.assign(target, ...sources) is a clone method for object
@@ -37,8 +19,8 @@ const removeUser = (list, userId) => {
 };
 
 const updateServerData = () => {
-	io.emit ('server data update', log);
-	setTimeout (updateServerData, 10000);
+	io.emit ('server data update', clientLog());
+	setTimeout (updateServerData, 100000);
 };
 
 module.exports = (socket) => {

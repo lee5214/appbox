@@ -136,6 +136,9 @@
 
   //sidebar toggler
   .mode-3D .main {
+    .sidebar-btn, .aside-btn{
+      display: block !important;
+    }
     .sidebar-btn {
       top: 50%;
       left: 0;

@@ -7,7 +7,6 @@ import LinksList from './LinksList';
 import { Alert, Col, Container, Nav, NavItem, NavLink, Row, TabContent, TabPane } from 'reactstrap';
 import classnames from 'classnames';
 import { urlPrefix } from 'utils/';
-import style from './SecretLinks.scss'
 
 class SecretLinks extends Component {
 	constructor (props) {
@@ -19,6 +18,7 @@ class SecretLinks extends Component {
 			privateList : null,
 		};
 	}
+
 	componentDidMount = () => {
 		axios.get ('/api/secretLinks/publicLinksList').then ((res) => {
 			this.setState ({publicList : res.data});
@@ -26,8 +26,9 @@ class SecretLinks extends Component {
 		axios.post ('/api/secretLinks/privateLinksList')
 		     .then ((res) => {this.setState ({privateList : res.data});})
 		     .catch (err => {
-			     this.setState({errorMessage: err.response.data.error})
+			     this.setState ({errorMessage : err.response.data.error});
 		     });
+		//this.setState ({errorMessage : ''});
 	};
 	toggle = (tab) => {
 		if (this.state.activeTab !== tab) {
@@ -39,34 +40,30 @@ class SecretLinks extends Component {
 	handleSubmit = (e, origionalUrl, goPublic) => {
 		e.preventDefault ();
 		try {
-			if (false) {//(!urlRegex ({exact : true, strict : false}).test (origionalUrl)) {
-				this.setState ({errorMessage : 'not an url, please try again'});
-			} else {
-				origionalUrl = urlPrefix (origionalUrl);
-				const inputData = {
-					origionalUrl : origionalUrl,
-					userId : this.props.currentUserInfo._id,
-					goPublic : goPublic,
-					token : Math.random ().toString (36).slice (-5),
-				};
-				axios.post ('/api/secretLinks/generateLink', inputData)
-				     .then (res => {
-					     if (res.data.goPublic) {
-						     this.setState ({
-							     publicList : [ res.data, ...this.state.publicList ],
-							     privateList : [ res.data, ...this.state.privateList ],
-						     });
-					     } else {
-						     this.setState ({
-							     privateList : [ res.data, ...this.state.privateList ],
-						     });
-					     }
-				     })
-				     .catch (error => {
-					     this.setState ({errorMessage : error.response.data.error});
-				     });
-				this.setState ({errorMessage : ''});
-			}
+			origionalUrl = urlPrefix (origionalUrl);
+			const inputData = {
+				origionalUrl : origionalUrl,
+				userId : this.props.currentUserInfo._id,
+				goPublic : goPublic,
+				token : Math.random ().toString (36).slice (-5),
+			};
+			axios.post ('/api/secretLinks/generateLink', inputData)
+			     .then (res => {
+				     if (res.data.goPublic) {
+					     this.setState ({
+						     publicList : [ res.data, ...this.state.publicList ],
+						     privateList : [ res.data, ...this.state.privateList ],
+					     });
+				     } else {
+					     this.setState ({
+						     privateList : [ res.data, ...this.state.privateList ],
+					     });
+				     }
+			     })
+			     .catch (error => {
+				     this.setState ({errorMessage : error.response.data.error});
+			     });
+			this.setState ({errorMessage : ''});
 		}
 		catch (err) {
 			console.log (err);
@@ -88,12 +85,12 @@ class SecretLinks extends Component {
 			<Container className="animated fadeIn align-self-center h-100">
 				<Row>
 					<Col xs={ 12 } md={ {size : 6, offset : 3} }>
-						<LinkCreateForm handleSubmit={ this.handleSubmit } />
+						<LinkCreateForm handleSubmit={ this.handleSubmit }/>
 						<Alert className={ 'p-1 mb-1' }
 						       color={ 'danger' }
-						       isOpen={ this.props.errorMessage !== '' }
+						       isOpen={ this.state.errorMessage !== '' }
 						>
-							message from server: { this.state.errorMessage }
+							Server Message: { this.state.errorMessage }
 						</Alert>
 					</Col>
 				</Row>
