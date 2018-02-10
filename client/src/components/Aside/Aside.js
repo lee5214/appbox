@@ -51,13 +51,14 @@ class Aside extends Component {
 						</NavLink>
 					</NavItem>
 				</Nav>
-				<TabContent className={'d-flex'} activeTab={ this.state.activeTab }>
-					<TabPane tabId="1" className={`p-3 ${mode==='3D'?'align-self-center':null}`}>
-						<h6 className={'translatex-40 text-right'}>SETTINGS</h6>
+				<TabContent className={ 'd-flex' } activeTab={ this.state.activeTab }>
+					<TabPane tabId="1" className={ `p-3 ${mode === '3D' ? 'align-self-center' : null}` }>
+						<h6 className={ 'translatex-40 text-right' }>SETTINGS</h6>
 						<div className="aside-options mode3D-blur">
 							<div className="clearfix mt-4 ">
-								<small><b>MODE </b></small><span className={ 'badge' +
-							' badge-info' }> { mode }</span>
+								<small><b>MODE </b></small>
+								<span className={ 'badge' +
+								' badge-info' }> { mode }</span>
 								<Label for='mode-button'
 								       className="switch switch-text switch-pill switch-success switch-sm float-right">
 									<Input id='mode-button' type="checkbox" className="switch-input"
@@ -132,7 +133,7 @@ class Aside extends Component {
 						</div>
 
 						<hr/>
-						<h6 className={'translatex-40 text-right'}>SERVER UTILIZATION</h6>
+						<h6 className={ 'translatex-40 text-right' }>SERVER UTILIZATION</h6>
 
 						<div className="text-uppercase mb-1 mt-4">
 							<small><b>CPU Usage</b></small>
@@ -157,9 +158,16 @@ class Aside extends Component {
 						</div>
 						<Progress className="progress-xs" color="success" value="10"/>
 						<small className="text-muted">25GB/256GB</small>
+
+						<div className="text-uppercase mb-1 mt-2">
+							<a href={ '/api/current_user' }>client info</a>
+						</div>
+						<div className="text-uppercase mb-1 mt-2">
+							<a href={ '/api/clientLog' }>client log</a>
+						</div>
 					</TabPane>
 
-					<TabPane tabId="2" className={`p-3 ${mode==='3D'?'align-self-center':null}`}>
+					<TabPane tabId="2" className={ `p-3 ${mode === '3D' ? 'align-self-center' : null}` }>
 						<div className="callout m-0 py-2 text-white text-center bg-dark text-uppercase">
 							<small><b>Today</b></small>
 						</div>
@@ -263,7 +271,7 @@ class Aside extends Component {
 						<hr className="mx-3 my-0"/>
 					</TabPane>
 
-					<TabPane tabId="3" className={`p-3 ${mode==='3D'?'align-self-center':null}`}>
+					<TabPane tabId="3" className={ `p-3 ${mode === '3D' ? 'align-self-center' : null}` }>
 						<div className="message">
 							<div className="py-3 pb-5 mr-3 float-left">
 								<div className="avatar">

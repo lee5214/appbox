@@ -420,8 +420,8 @@ class Dashboard extends Component {
 		this.toggle = this.toggle.bind (this);
 		this.state = {
 			dropdownOpen : false,
-			serverData : {},
-			serverDataArr : []
+			serverLog : {},
+			serverLogArr : []
 		};
 	}
 
@@ -433,13 +433,14 @@ class Dashboard extends Component {
 
 	componentDidMount = () => {
 		this.props.socket.on ('server data update', (data) => {
-			this.setState ({serverData : data.freemem});
+			console.log(data)
+			this.setState ({serverLog : data});
 			//console.log(data.freemem/10000000)
-			if (this.state.serverDataArr.length>= 27){
-				let temp = this.state.serverDataArr.slice(1,27);
-				this.setState({serverDataArr : [...temp,data.freemem/40000000]})
+			if (this.state.serverLogArr.length>= 27){
+				let temp = this.state.serverLogArr.slice(1,27);
+				this.setState({serverLogArr : [...temp,data.freemem/40000000]})
 			} else{
-				this.setState({serverDataArr : [...this.state.serverDataArr,data.freemem/40000000]})
+				this.setState({serverLogArr : [...this.state.serverLogArr,data.freemem/40000000]})
 			}
 		});
 	};
@@ -453,7 +454,15 @@ class Dashboard extends Component {
 					borderColor : brandInfo,
 					pointHoverBackgroundColor : '#fff',
 					borderWidth : 2,
-					data : this.state.serverDataArr,
+					data : this.state.serverLogArr,
+				},
+				{
+					label : 'My First dataset',
+					backgroundColor : convertHex (brandInfo, 10),
+					borderColor : brandInfo,
+					pointHoverBackgroundColor : '#fff',
+					borderWidth : 2,
+					data : this.state.serverLogArr,
 				},
 			],
 		};
@@ -477,9 +486,10 @@ class Dashboard extends Component {
 										</DropdownMenu>
 									</ButtonDropdown>
 								</ButtonGroup>
-								<h4 className="mb-0">9.823</h4>
+								<h4 className="mb-0">Client Machine Log</h4>
 
-								<p>Server Free Memeory {this.state.serverData.freemem}</p>
+								<p>Free Memeory {this.state.serverLog.freemem} </p>
+								<p>Total Memory {this.state.serverLog.totalmem}</p>
 							</CardBody>
 							<div className="chart-wrapper px-3" style={ {height : '70px'} }>
 								<Line data={ cardChartData1 } options={ cardChartOpts1 } height={ 70 }/>
