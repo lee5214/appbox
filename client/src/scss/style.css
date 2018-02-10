@@ -9902,8 +9902,6 @@ hr.transparent {
     justify-content: center; }
     .mode-3D-on.body .mode-3D .sidebar .sidebar-nav > .nav {
       min-height: 0; }
-      .mode-3D-on.body .mode-3D .sidebar .sidebar-nav > .nav .translatex-40 {
-        transition: 2s ease-in-out; }
       .mode-3D-on.body .mode-3D .sidebar .sidebar-nav > .nav > .nav-item {
         transform-style: preserve-3d;
         padding: 10px 0;
@@ -9966,6 +9964,8 @@ hr.transparent {
   .mode-3D-on.body .mode-3D .main .aside-btn {
     top: 50%;
     right: 0; }
+  .mode-3D-on.body .mode-3D .sidebar .translatex-40, .mode-3D-on.body .mode-3D .aside-menu .translatex-40 {
+    transition: 2s ease-in-out; }
   .mode-3D-on.body .mode-3D .sidebar:hover, .mode-3D-on.body .mode-3D .aside-menu:hover {
     transition: 2s ease;
     transform: rotateY(0deg) translateZ(0px); }

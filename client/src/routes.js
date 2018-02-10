@@ -21,6 +21,8 @@ const routes = {
 	'/chatroom' : 'Chat Room',
 	'/chatroom/:id' : 'Private Chat Room',
 	'/secretlinks' : 'Secret Links',
+	'/about' : 'About',
+	'/about/myself' : 'Myself',
 	'/test' : 'Test',
 };
 export default routes;

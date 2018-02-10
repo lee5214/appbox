@@ -53,7 +53,7 @@ class Aside extends Component {
 				</Nav>
 				<TabContent className={'d-flex'} activeTab={ this.state.activeTab }>
 					<TabPane tabId="1" className={`p-3 ${mode==='3D'?'align-self-center':null}`}>
-						<h6 className={'translatex-40 text-right'}>Settings</h6>
+						<h6 className={'translatex-40 text-right'}>SETTINGS</h6>
 						<div className="aside-options mode3D-blur">
 							<div className="clearfix mt-4 ">
 								<small><b>MODE </b></small><span className={ 'badge' +
@@ -132,7 +132,7 @@ class Aside extends Component {
 						</div>
 
 						<hr/>
-						<h6 className={'translatex-40 text-right'}>System Utilization</h6>
+						<h6 className={'translatex-40 text-right'}>SERVER UTILIZATION</h6>
 
 						<div className="text-uppercase mb-1 mt-4">
 							<small><b>CPU Usage</b></small>

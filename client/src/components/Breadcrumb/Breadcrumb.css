@@ -5,5 +5,7 @@
   .navbar_column .sub_navbar_header {
     align-self: center;
     list-style: none; }
+  .navbar_column .sub_breadcrumb li::before {
+    color: red !important; }
 
 /*# sourceMappingURL=Breadcrumb.css.map */

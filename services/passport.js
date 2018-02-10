@@ -26,29 +26,46 @@ module.exports = () => {
 		    });
 	});
 
-	passport.use (
+	passport.use ('local-register',
 		new LocalStrategy (
-			 async (username, password, done) => {
-				// await User.findOne ({'local.username' : username}, function (err, user) {
-				// 	if (err) { return done (err); }
-				// 	if (!user) {
-				// 		return done (null, false, {message : 'Incorrect username.'});
-				// 	}
-				// 	if (!user.local.password === password) {
-				// 		return done (null, false, {message : 'Incorrect password.'});
-				// 	}
-				// 	return done (null, user);
-				// });
-				 const existingU = await User.findOne({'local.username' : username});
-				 if (existingU){
-				 	done (null,existingU)
-				 }
-
+			async (username, password, done) => {
+				await User.findOne ({'local.username' : username}, async function (err, registerUser) {
+					if (err) { return done (err); }
+					if (registerUser) {
+						return done (null, false, {message : 'Username already exist'});
+					}
+					const user = await new User ({
+						guest : false,
+						local : {
+							username : username,
+							password : password,
+							displayName : username,
+						}
+					}).save ();
+					return done (null, user);
+				});
 			},
 
 		));
 
-	passport.use (
+	passport.use ('local-login',
+		new LocalStrategy (
+			async (username, password, done) => {
+				await User.findOne ({'local.username' : username}, function (err, user) {
+					if (err) { return done (err); }
+					if (!user) {
+						return done (null, false, {message : 'Incorrect username.'});
+					}
+					if (!user.local.password === password) {
+						return done (null, false, {message : 'Incorrect password.'});
+					}
+					return done (null, user);
+				});
+			},
+
+		));
+
+	passport.use ('google',
 		new GoogleStrategy (
 			{
 				clientID : keys.google.googleClientID,
@@ -101,7 +118,7 @@ module.exports = () => {
 		),
 	);
 
-	passport.use (
+	passport.use ('facebook',
 		new FacebookStrategy (
 			{
 				clientID : keys.facebook.facebookAppID,

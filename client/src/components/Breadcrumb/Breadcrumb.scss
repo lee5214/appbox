@@ -8,4 +8,8 @@
     list-style: none;
 
   }
+
+  .sub_breadcrumb li::before{
+    color: red !important;
+  }
 }

@@ -26,8 +26,11 @@ class Register extends Component {
 
 	handleSubmit = (e) => {
 		e.preventDefault ();
-		axios.post ('/auth/local_register', {username : this.state.userName, password : this.state.password})
-			.then(res => console.log(res.data));
+		axios.post (
+			'/auth/local_register', {'username' : this.state.userName, 'password' : this.state.password},
+		).then ((res) => {
+			window.location = res.data.redirect;
+		});
 	};
 
 	render () {
@@ -57,8 +60,9 @@ class Register extends Component {
 									<InputGroup className="mb-3">
 										<InputGroupAddon><i className="icon-lock"></i></InputGroupAddon>
 										<Input type="password" placeholder="Password"
-										       onChange={ e => this.setState ({passWord : e.target.value}) }
-										       />
+										       onChange={ e => this.setState ({password : e.target.value}) }
+										       value={ this.state.password }
+										/>
 									</InputGroup>
 									<InputGroup className="mb-4">
 										<InputGroupAddon><i className="icon-lock"></i></InputGroupAddon>
@@ -66,7 +70,7 @@ class Register extends Component {
 										       onChange={ e => this.setState ({repeatPassword : e.target.value}) }
 										       value={ this.state.repeatPassword }/>
 									</InputGroup>
-									<Button color="success" block onClick={ e => this.handleSubmit(e) }>
+									<Button color="success" block onClick={ e => this.handleSubmit (e) }>
 										Create Account
 									</Button>
 								</CardBody>

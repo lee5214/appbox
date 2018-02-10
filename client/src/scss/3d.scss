@@ -43,9 +43,6 @@
         justify-content: center;
         > .nav {
           min-height: 0;
-          .translatex-40 {
-            transition: 2s ease-in-out;
-          }
           > .nav-item {
             transform-style: preserve-3d;
             padding: 10px 0;
@@ -150,7 +147,10 @@
   }
 
   .mode-3D {
-    .sidebar {
+    .sidebar, .aside-menu {
+      .translatex-40{
+        transition: 2s ease-in-out;
+      }
     }
 
     .sidebar:hover, .aside-menu:hover {

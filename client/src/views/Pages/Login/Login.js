@@ -28,11 +28,13 @@ class Login extends Component {
 		axios.post (
 			'/auth/local_login',
 			{'username' : this.state.username, 'password' : this.state.password},
-		).then((res)=>{
-			console.log(res.data.redirect)
+		).then ((res) => {
 			// IMPORTANT read /authRoutes/important
 			window.location = res.data.redirect;
+			//browserHistory.push('/')
 
+		}).catch (err => {
+			console.log ('err =>', err);
 		});
 	};
 

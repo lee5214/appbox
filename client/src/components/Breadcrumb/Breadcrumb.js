@@ -48,7 +48,7 @@ const Breadcrumbs = ({location : {pathname}, match, ...rest}) => {
 				<h2 className={ style.sub_navbar_header }>
 					{ items[ items.length - 1 ] }
 				</h2>
-				<Breadcrumb>
+				<Breadcrumb className={style.sub_breadcrumb}>
 					{ items }
 				</Breadcrumb>
 			</Col>

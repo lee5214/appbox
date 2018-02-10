@@ -26,6 +26,7 @@ import City from '../../views/City/';
 import ChatRoom from '../../views/ChatRoom';
 import SecretLinks from '../../views/SecretLinks';
 import BannerLine from 'components/_Composite/BannerLine';
+import {Myself} from '../../views/About';
 import Test from '../../views/Test/Test';
 // Icons
 import FontAwesome from '../../views/Icons/FontAwesome/';
@@ -184,6 +185,9 @@ class AppContainer extends Component {
 								<Route path="/secretlinks" name="Secret Links"
 								       component={ SecretLinks }/>
 
+								<Route path="/about/myself" name="myself"
+								       component={ Myself }
+								/>
 								<Route path="/test" name="Test"
 								       component={ Test }
 								/>
