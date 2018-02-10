@@ -12,7 +12,7 @@ import {
 	Row,
 } from 'reactstrap';
 import axios from 'axios';
-
+import {randomAvatarUrl} from 'utils'
 class Register extends Component {
 	constructor (props) {
 		super (props);
@@ -21,15 +21,18 @@ class Register extends Component {
 			email : '',
 			password : '',
 			repeatPassword : '',
+			avatar : '',
 		};
 	}
-
 	handleSubmit = (e) => {
 		e.preventDefault ();
+		const avatar = randomAvatarUrl();
 		axios.post (
-			'/auth/local_register', {'username' : this.state.userName, 'password' : this.state.password},
+			'/auth/local_register', {'username' : this.state.userName, 'password' : this.state.password, 'avatar' : avatar},
 		).then ((res) => {
 			window.location = res.data.redirect;
+		}).catch((err) => {
+			console.log(err)
 		});
 	};
 

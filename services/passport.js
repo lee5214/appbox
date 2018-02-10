@@ -28,7 +28,12 @@ module.exports = () => {
 
 	passport.use ('local-register',
 		new LocalStrategy (
-			async (username, password, done) => {
+			{
+				// only username & password allowed by default
+				// add this option to allow modify req, so that we could use req.body in this strategy
+				passReqToCallback : true,
+			},
+			async (req, username, password, done) => {
 				await User.findOne ({'local.username' : username}, async function (err, registerUser) {
 					if (err) { return done (err); }
 					if (registerUser) {
@@ -40,12 +45,12 @@ module.exports = () => {
 							username : username,
 							password : password,
 							displayName : username,
-						}
+							avatar : req.body.avatar,
+						},
 					}).save ();
 					return done (null, user);
 				});
 			},
-
 		));
 
 	passport.use ('local-login',
@@ -62,7 +67,6 @@ module.exports = () => {
 					return done (null, user);
 				});
 			},
-
 		));
 
 	passport.use ('google',

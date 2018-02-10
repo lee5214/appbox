@@ -420,6 +420,8 @@ class Dashboard extends Component {
 		this.toggle = this.toggle.bind (this);
 		this.state = {
 			dropdownOpen : false,
+			serverData : {},
+			serverDataArr : []
 		};
 	}
 
@@ -429,9 +431,32 @@ class Dashboard extends Component {
 		});
 	}
 
-
+	componentDidMount = () => {
+		this.props.socket.on ('server data update', (data) => {
+			this.setState ({serverData : data.freemem});
+			//console.log(data.freemem/10000000)
+			if (this.state.serverDataArr.length>= 27){
+				let temp = this.state.serverDataArr.slice(1,27);
+				this.setState({serverDataArr : [...temp,data.freemem/40000000]})
+			} else{
+				this.setState({serverDataArr : [...this.state.serverDataArr,data.freemem/40000000]})
+			}
+		});
+	};
 	render () {
-
+		let mainChartServer = {
+			labels : [ 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S' ],
+			datasets : [
+				{
+					label : 'My First dataset',
+					backgroundColor : convertHex (brandInfo, 10),
+					borderColor : brandInfo,
+					pointHoverBackgroundColor : '#fff',
+					borderWidth : 2,
+					data : this.state.serverDataArr,
+				},
+			],
+		};
 		return (
 			<div className="animated fadeIn">
 				<Row>
@@ -454,7 +479,7 @@ class Dashboard extends Component {
 								</ButtonGroup>
 								<h4 className="mb-0">9.823</h4>
 
-								<p>Members online</p>
+								<p>Server Free Memeory {this.state.serverData.freemem}</p>
 							</CardBody>
 							<div className="chart-wrapper px-3" style={ {height : '70px'} }>
 								<Line data={ cardChartData1 } options={ cardChartOpts1 } height={ 70 }/>
@@ -543,7 +568,7 @@ class Dashboard extends Component {
 							<CardBody>
 								<Row>
 									<Col sm="5">
-										<CardTitle className="mb-0">Traffic</CardTitle>
+										<CardTitle className="mb-0">Server Performance</CardTitle>
 										<div className="small text-muted">November 2015</div>
 									</Col>
 									<Col sm="7" className="d-none d-sm-inline-block">
@@ -567,7 +592,7 @@ class Dashboard extends Component {
 									</Col>
 								</Row>
 								<div className="chart-wrapper" style={ {height : 300 + 'px', marginTop : 40 + 'px'} }>
-									<Line data={ mainChart } options={ mainChartOpts } height={ 300 }/>
+									<Line data={ mainChartServer } options={ mainChartOpts } height={ 300 }/>
 								</div>
 							</CardBody>
 							<CardFooter>

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import uuid from 'uuid';
 import _ from 'lodash';
+import {randomAvatarUrl} from 'utils'
 export const FETCH_CURRENT_USER = 'FETCH_CURRENT_USER';
 export const CREATE_GUEST_USER = 'CREATE_GUEST_USER';
 
@@ -15,12 +16,11 @@ export const fetchCurrentUser = () => {
 				payload : user.data,
 			});
 		} else {
-			const ran =_.random (1, 16);
 			const guest = {
 				guest: true,
 				_id: uuid.v4(),
 				local:{
-					avatar: `/img/avatars/guest-${ran}.png`,
+					avatar: randomAvatarUrl(),
 					displayName: `Guest-${uuid.v4().split('-').pop()}`
 				}
 			}

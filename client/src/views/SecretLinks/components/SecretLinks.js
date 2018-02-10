@@ -4,9 +4,11 @@ import axios from 'axios';
 import LinkCreateForm from './LinkCreatForm';
 import LinksList from './LinksList';
 //import urlRegex from 'url-regex';
-import { Container, Col, Nav, NavItem, NavLink, Row, TabContent, TabPane } from 'reactstrap';
+import { Alert, Col, Container, Nav, NavItem, NavLink, Row, TabContent, TabPane } from 'reactstrap';
 import classnames from 'classnames';
-import {urlPrefix} from 'utils/'
+import { urlPrefix } from 'utils/';
+import style from './SecretLinks.scss'
+
 class SecretLinks extends Component {
 	constructor (props) {
 		super (props);
@@ -17,10 +19,16 @@ class SecretLinks extends Component {
 			privateList : null,
 		};
 	}
-
-	// onLinkClick = () =>{
-	//
-	// }
+	componentDidMount = () => {
+		axios.get ('/api/secretLinks/publicLinksList').then ((res) => {
+			this.setState ({publicList : res.data});
+		});
+		axios.post ('/api/secretLinks/privateLinksList')
+		     .then ((res) => {this.setState ({privateList : res.data});})
+		     .catch (err => {
+			     this.setState({errorMessage: err.response.data.error})
+		     });
+	};
 	toggle = (tab) => {
 		if (this.state.activeTab !== tab) {
 			this.setState ({
@@ -31,10 +39,10 @@ class SecretLinks extends Component {
 	handleSubmit = (e, origionalUrl, goPublic) => {
 		e.preventDefault ();
 		try {
-			if (false){//(!urlRegex ({exact : true, strict : false}).test (origionalUrl)) {
+			if (false) {//(!urlRegex ({exact : true, strict : false}).test (origionalUrl)) {
 				this.setState ({errorMessage : 'not an url, please try again'});
 			} else {
-				origionalUrl = urlPrefix(origionalUrl)
+				origionalUrl = urlPrefix (origionalUrl);
 				const inputData = {
 					origionalUrl : origionalUrl,
 					userId : this.props.currentUserInfo._id,
@@ -53,10 +61,9 @@ class SecretLinks extends Component {
 							     privateList : [ res.data, ...this.state.privateList ],
 						     });
 					     }
-
 				     })
 				     .catch (error => {
-					     this.setState ({errorMessage : `${error.response.data.error}`});
+					     this.setState ({errorMessage : error.response.data.error});
 				     });
 				this.setState ({errorMessage : ''});
 			}
@@ -64,15 +71,6 @@ class SecretLinks extends Component {
 		catch (err) {
 			console.log (err);
 		}
-
-
-		// const origionalUrl = e.target.value()
-		// axios.post ('/api/secretLinks/generateLink', {
-		// 	"origionalUrl" : origionalUrl,
-		// 	"userId" : `${this.props.currentUserInfo._id}`
-		// }).then (res => {console.log ('res', res);}).catch (error => {
-		// 	this.setState ({errorMessage : error.response.data.error});
-		// });
 	};
 
 	renderListItem = ({origionalUrl, userId}) => {
@@ -84,21 +82,19 @@ class SecretLinks extends Component {
 			</div>
 		);
 	};
-	componentDidMount = () => {
-		axios.get ('/api/secretLinks/publicLinksList').then ((res) => {
-			this.setState ({publicList : res.data});
-		});
-		axios.get ('/api/secretLinks/privateLinksList').then ((res) => {
-			this.setState ({privateList : res.data});
-		});
-	};
 
 	render () {
 		return (
-			<Container className="animated fadeIn align-self-center">>
+			<Container className="animated fadeIn align-self-center h-100">
 				<Row>
-					<Col xs={12} md={{size:6, offset:3}} >
-						<LinkCreateForm handleSubmit={ this.handleSubmit } errorMessage={ this.state.errorMessage }/>
+					<Col xs={ 12 } md={ {size : 6, offset : 3} }>
+						<LinkCreateForm handleSubmit={ this.handleSubmit } />
+						<Alert className={ 'p-1 mb-1' }
+						       color={ 'danger' }
+						       isOpen={ this.props.errorMessage !== '' }
+						>
+							message from server: { this.state.errorMessage }
+						</Alert>
 					</Col>
 				</Row>
 				<Nav tabs className={ 'mb-2' }>
@@ -140,6 +136,7 @@ class SecretLinks extends Component {
 		);
 	}
 }
+
 const mapStateToProps = (state) => {
 	return {
 		currentUserInfo : state.currentUserInfo,

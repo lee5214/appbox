@@ -1,6 +1,13 @@
 const io = require ('../bin/start').io;
+const os = require ('os');
 let connectedUsers = new Map ();
 let onlineUsers = 0;
+
+
+console.log (os.cpus ());
+console.log (os.totalmem ());
+console.log (os.freemem ());
+
 const addUser = (list, user) => {
 	// object.assign(target, ...sources) is a clone method for object
 	// let newList = Object.assign({}, list)
@@ -14,8 +21,19 @@ const removeUser = (list, userId) => {
 	delete newList[ userId ];
 	return newList;
 };
+
+const updateServerData = () => {
+	io.emit ('server data update', {freemem : os.freemem ()});
+	setTimeout (updateServerData, 10000);
+};
+
 module.exports = (socket) => {
 	onlineUsers++;
+
+	io.on ('connection', () => {
+		updateServerData ();
+	});
+
 	io.emit ('onlineUsersUpdate', onlineUsers);
 
 	socket.on ('new user join', (user) => {
@@ -34,16 +52,6 @@ module.exports = (socket) => {
 			console.log ('user disconnected----', socket.user.displayName);
 			io.emit ('userList update', connectedUsers);
 		}
-		// onlineUsers--;
-		// console.log ('Client disconnected----', socket.UID);
-		// if (connectedUsers.find((element) => element === socket.UID)){
-		// 	let index = connectedUsers.valueOf(socket.UID);
-		// 	connectedUsers.splice(index,1)
-		// }
-		// console.log('disconn',connectedUsers)
-		//
-		//
-		// io.emit ('userList update',connectedUsers);
 	});
 
 	//test

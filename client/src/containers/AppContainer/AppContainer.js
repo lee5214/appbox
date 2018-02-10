@@ -4,7 +4,7 @@ import { Container, NavbarToggler } from 'reactstrap';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { createGuestUser, fetchCurrentUser, setMode, setMouseTrack } from 'actions';
-// Components
+// Route & Components
 import Buttons from '../../views/Components/Buttons/';
 import Cards from '../../views/Components/Cards/';
 import Forms from '../../views/Components/Forms/';
@@ -26,31 +26,43 @@ import City from '../../views/City/';
 import ChatRoom from '../../views/ChatRoom';
 import SecretLinks from '../../views/SecretLinks';
 import BannerLine from 'components/_Composite/BannerLine';
-import {Myself} from '../../views/About';
+import { Myself } from '../../views/About';
 import Test from '../../views/Test/Test';
-// Icons
+//
+// Icons & Style
 import FontAwesome from '../../views/Icons/FontAwesome/';
 import SimpleLineIcons from '../../views/Icons/SimpleLineIcons/';
 import style from './AppContainer.scss';
+//
+// Socket Client
+import socketIOClient from 'socket.io-client';
+//
+
+let host = window.location.host;
+if (host === 'localhost:3000') { host = 'localhost:4000';} // rewrite host in dev env
+const socket = socketIOClient (host);
 
 class AppContainer extends Component {
 	// TODO theme3D -- done
 	constructor (props) {
 		super (props);
 		this.state = {
-			mode3D_permission: true,
+			mode3D_permission : true,
 			roX : 0,
 			roY : 0,
 			videoURL : 'http://techslides.com/demos/sample-videos/small.mp4',
 		};
 		this.minimalInnerlWidth = 1200;
 	}
+
 	componentDidMount = () => {
 		this.props.fetchCurrentUser ();
 		window.addEventListener ('resize', this.handleResize);
-		console.log ('host =>', window.location.host);
-		console.log ('mode activation =>', this.props.setting.layout.mode);
-		console.log ('app position =>', this.appbodyRef.getBoundingClientRect ());
+
+		console.log ('Host =>', window.location.host);
+		console.log ('Mode Activation =>', this.props.setting.layout.mode);
+		console.log ('Socket Connection =>', socket);
+		console.log ('App Rect =>', this.appbodyRef.getBoundingClientRect ());
 	};
 	onMouseMove = (e) => {
 		let mX = e.clientX, mY = e.clientY;
@@ -84,25 +96,25 @@ class AppContainer extends Component {
 	handleResize = () => {
 		if (window.innerWidth < this.minimalInnerlWidth) {
 			document.body.classList.remove ('mode-3D-on');
-			this.setState({mode3D_permission:false})
-			this.props.setMode('2D')
-			this.props.setMouseTrack(false)
+			this.setState ({mode3D_permission : false});
+			this.props.setMode ('2D');
+			this.props.setMouseTrack (false);
 			console.log (`resize detected, inner width breakpoint: --${this.minimalInnerlWidth}px--, 3D mode disable`);
 		} else {
 			document.body.classList.add ('mode-3D-on');
-			this.setState({mode3D_permission:true})
+			this.setState ({mode3D_permission : true});
 		}
 	};
 	resetCamera = () => {
 		this.setState ({roX : 0, roY : 0});
-		this.props.setMouseTrack(false)
+		this.props.setMouseTrack (false);
 	};
 
 	render () {
 		let app3D = {
 			transform : 'rotateX(' + this.state.roX + 'deg) rotateY(' + this.state.roY + 'deg)',
 		};
-		let {setMode,setMouseTrack,setting:{layout:{mode,mouseTrack}}} = this.props
+		let {setMode, setMouseTrack, setting : {layout : {mode, mouseTrack}}} = this.props;
 		return (
 			<div className={ `app mode-${mode}` }
 			     onMouseMove={ this.state.mode3D_permission && mouseTrack ? this.onMouseMove : null }
@@ -143,7 +155,9 @@ class AppContainer extends Component {
 						<Container className={ style.block }>
 							<Switch>
 								<Route path="/dashboard" name="Dashboard"
-								       component={ Dashboard }/>
+								       render={ () => < Dashboard socket={ socket }/> }
+									// component={ Dashboard }/>
+								/>
 								<Route path="/components/buttons" name="Buttons"
 								       component={ Buttons }/>
 								<Route path="/components/cards" name="Cards"
@@ -178,9 +192,11 @@ class AppContainer extends Component {
 								<Route path="/cityinfo" name="City Info"
 								       component={ City }/>
 
+								{ /* IMPORTANT below shows how to pass props in Route */ }
 								<Route path="/chatroom" name="Chat Room"
-								       component={ ChatRoom }/>
-
+								       render={ () => < ChatRoom socket={ socket }/> }
+									//component={ ChatRoom }
+								/>
 								<Route path="/chatrooms/:id" component={ ChatRoom }/>
 								<Route path="/secretlinks" name="Secret Links"
 								       component={ SecretLinks }/>
@@ -195,7 +211,7 @@ class AppContainer extends Component {
 							</Switch>
 						</Container>
 					</main>
-					<Aside mode={mode} mouseTrack={mouseTrack} resetCamera={this.resetCamera}/>
+					<Aside mode={ mode } mouseTrack={ mouseTrack } resetCamera={ this.resetCamera }/>
 				</div>
 				<Footer/>
 			</div>

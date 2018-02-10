@@ -1,31 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import socketIOClient from 'socket.io-client';
 import { sendPubChatMsgs } from 'actions';
 import ChatSideBar from './ChatSideBar';
 import { USER_CONNECTED } from '../asserts/socketEvents';
-import style from './ChatRoom.scss';
 import MessageBlock from "./MessageBlock";
-import { Panel } from 'react-bootstrap';
-import MessagesContainer from './MessagesContainer'
-import {
-	Button,
-	Col,
-	Container,
-	Form,
-	Input,
-	InputGroup,
-	InputGroupButton,
-	ListGroup,
-	ListGroupItem,
-	Row,
-} from 'reactstrap';
-
-let host = window.location.host;
-if (host === 'localhost:3000'){
-	host = 'localhost:4000'
-}
-const socket = socketIOClient (host);
+import MessagesContainer from './MessagesContainer';
+import { Button, Col, Container, Form, Input, InputGroup, InputGroupButton, ListGroupItem, Row, } from 'reactstrap';
 
 class ChatRoom extends Component {
 	constructor (props) {
@@ -41,29 +21,24 @@ class ChatRoom extends Component {
 			inputMessage : '',
 			userList : null,
 		};
-		/*
-		 * IMPORTANT
-		 * put socket client listener in constructor, not render function
-		 * otherwise it may be called multiple times
-		 */
-		socket.on ('receive msg', (msg) => {
+	}
+
+	componentDidMount () {
+		this.props.socket.on ('receive msg', (msg) => {
 			console.log ('msg', msg);
-			this.setState ({pubChatMessages : [ msg,...this.state.pubChatMessages]});
+			this.setState ({pubChatMessages : [ msg, ...this.state.pubChatMessages ]});
 		});
-		socket.on ('userList update', (userList) => {
+		this.props.socket.on ('userList update', (userList) => {
 			this.setState ({userList});
 			console.log ('userlist update----', userList);
 		});
-	}
 
-	componentWillMount () {}
+	}
 
 	// IMPORTANT
 	// When dealing with parent/child relation, keep in mind that the componentDidMount is called on the
 	// children before it is called on the parent
 	// so at this time the redux state has not been received as props
-	componentDidMount () {}
-
 	showMessages = (data) => {
 		return (
 			<ListGroupItem key={ data.inputMessage }>
@@ -78,7 +53,7 @@ class ChatRoom extends Component {
 
 	handleSubmit = (e) => {
 		e.preventDefault ();
-		socket.emit (
+		this.props.socket.emit (
 			'send msg',
 			{
 				inputMessage : this.state.inputMessage,
@@ -95,7 +70,7 @@ class ChatRoom extends Component {
 				<Row>
 					<Col xs={ 3 }>
 						{
-							this.props.currentUserInfo ? <ChatSideBar socket={ socket }
+							this.props.currentUserInfo ? <ChatSideBar socket={ this.props.socket }
 							                                          currentUserInfo={ this.props.currentUserInfo }
 							/> : <div>loading</div>
 						}
@@ -103,10 +78,10 @@ class ChatRoom extends Component {
 
 					<Col xs={ 9 }>
 
-							<MessagesContainer message = {this.state.pubChatMessages} />
+						<MessagesContainer message={ this.state.pubChatMessages }/>
 
-							<Row>
-								<Col>
+						<Row>
+							<Col>
 								<Form className={ 'input-group' } onSubmit={ (e) => { this.handleSubmit (e); } }>
 									<InputGroup>
 										<Input type="text" id="input-chat" name="input-chat"
@@ -120,8 +95,8 @@ class ChatRoom extends Component {
 										</InputGroupButton>
 									</InputGroup>
 								</Form>
-								</Col>
-							</Row>
+							</Col>
+						</Row>
 
 					</Col>
 				</Row>
@@ -133,11 +108,6 @@ class ChatRoom extends Component {
 const mapStateToProps = (state) => {
 	return {
 		currentUserInfo : state.currentUserInfo,
-		//pubChatMessages : state.chatRoom.pubChatMessages,
 	};
 };
-// const mapPropsToDispatch = (dispatch) => {
-// 	return bindActionCreators ({sendPubChatMsgs}, dispatch);
-// };
-
 export default connect (mapStateToProps) (ChatRoom);

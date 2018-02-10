@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 import { Table } from 'reactstrap';
-
+import style from './SecretLinks.scss'
 class LinksList extends Component {
+
 	renderListItem = ({_id, origionalUrl, token, dateCreated, clickCounter, avatar, displayName}) => {
 		const handleUrlClick = () => {
-			origionalUrl += 1;
-			clickCounter += 1;
+			// origionalUrl =+ 1;
+			// clickCounter =+ 1;
 		};
 		return (
 			<tr key={ _id }>
 				<td><a target={ '_blank' }
-				       href={ `http://${window.location.host}/l/${token}` }>{ `http://localhost:3000/l/${ token }` }</a>
+				       href={ `http://${window.location.host}/l/${token}` }>{ `http://${window.location.host}/l/${token}` }</a>
 				</td>
-				<td onClick={ handleUrlClick }>{ origionalUrl }</td>
+				<td className={style.td_max100} onClick={ handleUrlClick }>{ origionalUrl }</td>
 				<td>{ moment (dateCreated).format ('MM-DD hh:mm') }</td>
 				<td>
 					<div className={ 'avatar avatar-xs mr-1' }>

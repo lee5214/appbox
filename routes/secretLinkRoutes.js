@@ -1,10 +1,11 @@
 const mongoose = require ('mongoose');
 const requireLogin = require ('../middleware/requireLogin');
+const validUrl = require ('../middleware/validUrl')
 const SecretLinks_Model = mongoose.model ('SecretLinks_Model');
 const Users_Model = mongoose.model ('Users_Model');
 
 module.exports = (app) => {
-	app.post ('/api/secretLinks/generateLink', requireLogin, async (req, res, next) => {
+	app.post ('/api/secretLinks/generateLink', requireLogin, validUrl, async (req, res, next) => {
 		const {origionalUrl, userId, token, goPublic} = req.body;
 		let displayName = '', avatar = '', dateCreated = new Date ();
 		await Users_Model.findOne ({_id : userId}, (err, user) => {
@@ -36,7 +37,7 @@ module.exports = (app) => {
 			res.send (docs);
 		});
 	});
-	app.get ('/api/secretLinks/privateLinksList',requireLogin, (req, res) => {
+	app.post ('/api/secretLinks/privateLinksList',requireLogin, (req, res) => {
 		SecretLinks_Model.find ({userId : req.user._id}, (err, docs) => {
 			res.send (docs);
 		});

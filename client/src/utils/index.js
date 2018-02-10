@@ -1,5 +1,3 @@
-import axios from 'axios'
-
 export const fetchUserLocation = () => {
 	if (navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition (function (position) {
@@ -20,12 +18,14 @@ export const urlPrefix = (url) => {
 	return url;
 };
 
+export const randomAvatarUrl = () => {
+	const ran = _.random (1, 16);
+	return `/img/avatars/guest-${ran}.png`;
+};
+
 // export const checkCityName = async (name) => {
-// 	let url = `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${name}&types=(cities)&key=${keys.GoogleGlobalAPI_Key}`;
-// 	await axios.get(url).then(doc => {
-// 			console.log ('cityname', doc)
-// 		}
-// 	)
-// }
+// 	let url =
+// `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${name}&types=(cities)&key=${keys.GoogleGlobalAPI_Key}`;
+// await axios.get(url).then(doc => { console.log ('cityname', doc) } ) }
 
 // TODO

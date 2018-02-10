@@ -24,7 +24,7 @@ class HeaderDropdown extends Component {
 		return (
 			<Dropdown isOpen={ this.state.dropdownOpen } toggle={ this.toggle }>
 				<DropdownToggle nav>
-					<img src={ avatar || 'img/avatars/6.jpg' } className="img-avatar"
+					<img src={ avatar } className="img-avatar"
 					     alt={ displayName }/>
 				</DropdownToggle>
 				<DropdownMenu right>

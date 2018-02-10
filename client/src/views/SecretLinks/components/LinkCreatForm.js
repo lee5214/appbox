@@ -36,7 +36,7 @@ class LinkCreatForm extends Component {
 		return (
 			<Form onSubmit={ this.handleUrlSubmit }>
 				<FormGroup>
-					<Label>Enter URL</Label>
+					<Label>Encrypt your link and proxy through my router</Label>
 					<Row>
 						<Col sm={ 12 }>
 							<Input onChange={ (e) => this.onUrlInputChange (e) }
@@ -47,12 +47,6 @@ class LinkCreatForm extends Component {
 					</Row>
 					<Row>
 						<Col>
-							<Alert className={ 'p-1 mb-1' }
-							       color={ 'danger' }
-							       isOpen={ this.props.errorMessage !== '' }
-							>
-								{ this.props.errorMessage }
-							</Alert>
 						</Col>
 					</Row>
 					<br/>
