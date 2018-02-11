@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="742d2f67-9123-492e-9892-2d49e2746a61" name="Default" comment="work on domain mask forward....&#10;change idea to work with dns hoster&#10;try google app engine">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/views/ChatRoomV2/asserts/socketEvents.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/views/ChatRoomV2/components/ChatRoom.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/views/ChatRoomV2/components/ChatRoom.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/views/ChatRoomV2/components/ChatRoom.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/views/ChatRoomV2/components/ChatRoom.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/views/ChatRoomV2/components/ChatSideBar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/views/ChatRoomV2/components/MessageBlock.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/views/ChatRoomV2/components/MessagesContainer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/views/ChatRoomV2/components/_panel.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/views/ChatRoomV2/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.travis.yml" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/asset-manifest.json" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/favicon.ico" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/avatars/1.jpg" afterPath="" />
@@ -327,18 +318,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/media/weathericons-regular-webfont.b2233bc1.svg" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/media/weathericons-regular-webfont.e7ef2b44.eot" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/media/weathericons-regular-webfont.f5b0d0d9.woff" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/start.js" afterPath="$PROJECT_DIR$/bin/start.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/package-lock.json" afterPath="$PROJECT_DIR$/client/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/package.json" afterPath="$PROJECT_DIR$/client/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/public/index.html" afterPath="$PROJECT_DIR$/client/public/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Sidebar/_nav.js" afterPath="$PROJECT_DIR$/client/src/components/Sidebar/_nav.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/containers/AppContainer/AppContainer.js" afterPath="$PROJECT_DIR$/client/src/containers/AppContainer/AppContainer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/routes.js" afterPath="$PROJECT_DIR$/client/src/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/views/Dashboard/Dashboard.js" afterPath="$PROJECT_DIR$/client/src/views/Dashboard/Dashboard.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/socketManager.js" afterPath="$PROJECT_DIR$/services/socketManager.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -2363,18 +2343,6 @@
     <splitter split-orientation="vertical" split-proportion="0.50403225">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="Breadcrumb.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/client/src/components/Breadcrumb/Breadcrumb.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="448">
-                  <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#0#26#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="Dashboard.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/client/src/views/Dashboard/Dashboard.js">
               <provider selected="true" editor-type-id="text-editor">
@@ -2407,7 +2375,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+          <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/.gitignore">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="180">
@@ -2464,6 +2432,16 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="30">
                   <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="13" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name=".travis.yml" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/.travis.yml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -3057,14 +3035,7 @@
       <workItem from="1517999681993" duration="317000" />
       <workItem from="1518000068735" duration="1300000" />
       <workItem from="1518015818196" duration="129599000" />
-      <workItem from="1518315372872" duration="30565000" />
-    </task>
-    <task id="LOCAL-00089" summary="backend fix stage13">
-      <created>1517428669511</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1517428669511</updated>
+      <workItem from="1518315372872" duration="30956000" />
     </task>
     <task id="LOCAL-00090" summary="yeah deployment fixed">
       <created>1517430024963</created>
@@ -3402,11 +3373,18 @@
       <option name="project" value="LOCAL" />
       <updated>1518327984590</updated>
     </task>
-    <option name="localTasksCounter" value="138" />
+    <task id="LOCAL-00138" summary="major patch: &#10;removed socket&#10;added firebase support&#10;re-created chatroom based on firebase">
+      <created>1518389609034</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1518389609034</updated>
+    </task>
+    <option name="localTasksCounter" value="139" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1438128000" />
+    <option name="totallyTimeSpent" value="1438519000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -3494,7 +3472,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="err apeared2" />
     <MESSAGE value="err appeared2" />
     <MESSAGE value="start styled component fix" />
     <MESSAGE value="embed https fix, deploy succeed" />
@@ -3519,7 +3496,8 @@
     <MESSAGE value="node os client log" />
     <MESSAGE value="aside some content change" />
     <MESSAGE value="work on domain mask forward....&#10;change idea to work with dns hoster&#10;try google app engine" />
-    <option name="LAST_COMMIT_MESSAGE" value="work on domain mask forward....&#10;change idea to work with dns hoster&#10;try google app engine" />
+    <MESSAGE value="major patch: &#10;removed socket&#10;added firebase support&#10;re-created chatroom based on firebase" />
+    <option name="LAST_COMMIT_MESSAGE" value="major patch: &#10;removed socket&#10;added firebase support&#10;re-created chatroom based on firebase" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3528,14 +3506,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/middleware/validUrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/views/SecretLinks/components/LinkCreatForm.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -4059,6 +4029,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="9" lean-forward="true" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
