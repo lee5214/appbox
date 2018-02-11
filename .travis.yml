@@ -1,4 +1,8 @@
 language: node_js
 node_js:
   - "iojs"
-  - "7"
+  - "8.94"
+install:
+  - npm run client-build
+script:
+  - npm run start
