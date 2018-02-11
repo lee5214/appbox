@@ -62,14 +62,14 @@ class Login extends Component {
 											/>
 										</InputGroup>
 										<Row>
-											<Col xs="6">
+											<Col xs="12" className={'text-center'} >
 												<Button color="primary" className="px-4"
 												        onClick={ this.handleLoginButton }
 												>Login</Button>
 											</Col>
-											<Col xs="6" className="text-right">
-												<Button color="link" className="px-0">Forgot password?</Button>
-											</Col>
+											{/*<Col xs="6" className="text-right">*/}
+												{/*<Button color="link" className="px-0">Forgot password?</Button>*/}
+											{/*</Col>*/}
 										</Row>
 									</CardBody>
 									<CardFooter className="p-4">
@@ -88,7 +88,7 @@ class Login extends Component {
 								</Card>
 								<Card className="text-white bg-primary py-5 d-md-down-none"
 								      style={ {width : 44 + '%'} }>
-									<CardBody className="text-center">
+									<CardBody className="text-center pt-0">
 										<div>
 											<h2>Sign up</h2>
 											<p>

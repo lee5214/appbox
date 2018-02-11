@@ -488,9 +488,9 @@ class Dashboard extends Component {
 								</ButtonGroup>
 
 								<h4 className="mb-0">Client Ram</h4>
-								<p>Dir= {this.state.serverLog.homedir}</p>
-								<p>Host= {this.state.serverLog.hostname}</p>
-								<p>Ram= Free{Math.round(this.state.serverLog.freemem/ Math.pow(1024,3)) }GB/Total{this.state.serverLog.totalmem / Math.pow(1024,3)}GB</p>
+								<p>DIR= {this.state.serverLog.homedir}</p>
+								<p>HOST= {this.state.serverLog.hostname}</p>
+								<p>MEM= Free{Math.round(this.state.serverLog.freemem/ Math.pow(1024,3)) }GB/Total{this.state.serverLog.totalmem / Math.pow(1024,3)}GB</p>
 							</CardBody>
 							<div className="chart-wrapper px-3" style={ {height : '70px'} }>
 								<Line data={ cardChartData1 } options={ cardChartOpts1 } height={ 70 }/>

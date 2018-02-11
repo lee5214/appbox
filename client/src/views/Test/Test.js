@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MainCanvas from './MainCanvas'
 // import socketIOClient from 'socket.io-client';
 // import {
 // 	Button,
@@ -26,19 +27,13 @@ class Test extends Component {
 	render () {
 		return (
 			<div>
-				<div className={classes.bar} style={ {
-
-
-
-				} } data-path="/">
-					<span style={{
-
-					}} />
-				</div>
+				<MainCanvas/>
 			</div>
 		);
 	}
+}
 
+export default Test;
 //
 // 	constructor (props) {
 // 		super (props);
@@ -136,6 +131,4 @@ class Test extends Component {
 // 			</div>
 // 		);
 // 	}
-}
 
-export default Test;

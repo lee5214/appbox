@@ -93,7 +93,7 @@ class Aside extends Component {
 							</div>
 							<div>
 								<small className="text-muted">
-									Switch for mouse tracking function, it will change user view based on cursor
+									For mouse tracking function, it will change user view based on cursor
 									position, I implemented from my old website and tweeked a little for performance.
 								</small>
 							</div>
@@ -121,16 +121,6 @@ class Aside extends Component {
 							</div>
 						</div>
 
-						<div className="aside-options mode3D-blur">
-							<div className="clearfix mt-3">
-								<small><b>Option 4</b></small>
-								<Label className="switch switch-text switch-pill switch-success switch-sm float-right">
-									<Input type="checkbox" className="switch-input" defaultChecked/>
-									<span className="switch-label" data-on="On" data-off="Off"/>
-									<span className="switch-handle"/>
-								</Label>
-							</div>
-						</div>
 						<hr/>
 						<h6 className={ 'translatex-40 text-right' }>SERVER UTILIZATION</h6>
 

@@ -69,7 +69,6 @@ class SecretLinks extends Component {
 			console.log (err);
 		}
 	};
-
 	renderListItem = ({origionalUrl, userId}) => {
 		console.log (origionalUrl);
 		return (
@@ -79,7 +78,6 @@ class SecretLinks extends Component {
 			</div>
 		);
 	};
-
 	render () {
 		return (
 			<Container className="animated fadeIn align-self-center h-100">

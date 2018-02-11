@@ -100,7 +100,7 @@ class MessagesContainer extends Component {
 			       header={ (
 				       <Row>
 					       <Col sm={ 6 } xs={ 12 }>
-						       <h5>Chat in Public Room</h5>
+						       <h5>Chat in 	&lt; Public Room &gt; </h5>
 					       </Col>
 				       </Row>
 			       ) }
