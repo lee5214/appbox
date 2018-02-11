@@ -1,3 +1,10 @@
+chinese-poetry
+==============
+
+[![Build Status](https://travis-ci.org/lee5214/appbox.svg?branch=master)
+[![License](http://img.shields.io/badge/license-mit-blue.svg?style=flat-square)](https://github.com/lee5214/appbox/master/LICENSE)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
