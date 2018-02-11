@@ -10,20 +10,20 @@ const path = require ('path');
 const server = http.Server (app);
 const cors = require('cors')
 // create variable also export it for other file(socketManager)
-const io = module.exports.io = require ('socket.io') (server);
+// const io = module.exports.io = require ('socket.io').listen(server,{'transports' : ['polling']}); //(server);
 const socketManager = require ('../services/socketManager');
 const PORT = process.env.PORT || 4000;
 const _debug = require ('debug');
 
 console.log('port:',PORT)
 
-io.on ('connection', socketManager);
+// disable socket.io
+// io.on ('connection', socketManager);
+// require ('../services/socketManager') (server);
+
 
 server.listen (PORT);
 console.log ('node services is running on port:', PORT);
-
-// socket.io
-require ('../services/socketManager') (server);
 
 //  model & mongoose
 require ('../models/Users_Model');

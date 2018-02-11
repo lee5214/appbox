@@ -432,17 +432,17 @@ class Dashboard extends Component {
 	}
 
 	componentDidMount = () => {
-		this.props.socket.on ('server data update', (data) => {
-			console.log(data)
-			this.setState ({serverLog : data});
-			//console.log(data.freemem/10000000)
-			if (this.state.serverLogArr.length>= 27){
-				let temp = this.state.serverLogArr.slice(1,27);
-				this.setState({serverLogArr : [...temp,data.freemem/40000000]})
-			} else{
-				this.setState({serverLogArr : [...this.state.serverLogArr,data.freemem/40000000]})
-			}
-		});
+		// this.props.socket.on ('server data update', (data) => {
+		// 	console.log(data)
+		// 	this.setState ({serverLog : data});
+		// 	//console.log(data.freemem/10000000)
+		// 	if (this.state.serverLogArr.length>= 27){
+		// 		let temp = this.state.serverLogArr.slice(1,27);
+		// 		this.setState({serverLogArr : [...temp,data.freemem/40000000]})
+		// 	} else{
+		// 		this.setState({serverLogArr : [...this.state.serverLogArr,data.freemem/40000000]})
+		// 	}
+		// });
 	};
 	render () {
 		let mainChartServer = {

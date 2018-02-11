@@ -23,7 +23,8 @@ import Charts from '../../views/Charts/';
 import Widgets from '../../views/Widgets/';
 import Projects from '../../views/Projects/Projects';
 import City from '../../views/City/';
-import ChatRoom from '../../views/ChatRoom';
+// import ChatRoom from '../../views/ChatRoom';
+import ChatRoomV2 from '../../views/ChatRoomV2';
 import SecretLinks from '../../views/SecretLinks';
 import BannerLine from 'components/_Composite/BannerLine';
 import { Myself } from '../../views/About';
@@ -35,12 +36,15 @@ import SimpleLineIcons from '../../views/Icons/SimpleLineIcons/';
 import style from './AppContainer.scss';
 //
 // Socket Client
-import socketIOClient from 'socket.io-client';
 //
 
-let host = window.location.host;
-if (host === 'localhost:3000') { host = 'localhost:4000';} // rewrite host in dev env
-const socket = socketIOClient (host);
+/*
+ let webSocketUri = window.location.host;
+ console.log ('react gets window.location.host =>', webSocketUri);
+ if (webSocketUri === 'localhost:3000') { webSocketUri = 'localhost:4000';} // rewrite host in dev env
+
+ const socket = socketIOClient (webSocketUri);
+ */
 
 class AppContainer extends Component {
 	// TODO theme3D -- done
@@ -61,7 +65,7 @@ class AppContainer extends Component {
 
 		console.log ('Host =>', window.location.host);
 		console.log ('Mode Activation =>', this.props.setting.layout.mode);
-		console.log ('Socket Connection =>', socket);
+		//console.log ('Socket Connection =>', socket);
 		console.log ('App Rect =>', this.appbodyRef.getBoundingClientRect ());
 	};
 	onMouseMove = (e) => {
@@ -155,7 +159,7 @@ class AppContainer extends Component {
 						<Container className={ style.block }>
 							<Switch>
 								<Route path="/dashboard" name="Dashboard"
-								       render={ () => < Dashboard socket={ socket }/> }
+								       render={ () => < Dashboard/> }
 									// component={ Dashboard }/>
 								/>
 								<Route path="/components/buttons" name="Buttons"
@@ -193,11 +197,18 @@ class AppContainer extends Component {
 								       component={ City }/>
 
 								{ /* IMPORTANT below shows how to pass props in Route */ }
-								<Route path="/chatroom" name="Chat Room"
-								       render={ () => < ChatRoom socket={ socket }/> }
-									//component={ ChatRoom }
+
+								<Route disable path="/chatroom" name="Chat Room"
+								       /*render={ () => < ChatRoom/> }
+								       socket={ socket }*/
 								/>
-								<Route path="/chatrooms/:id" component={ ChatRoom }/>
+
+								<Route path="/chatroom-v2" name="Chat Room V2"
+									// render={ () => < ChatRoom socket={ socket }/>  }
+									   component={ ChatRoomV2 }
+								/>
+
+								{ /*<Route path="/chatrooms/:id" component={ ChatRoom }/>*/ }
 								<Route path="/secretlinks" name="Secret Links"
 								       component={ SecretLinks }/>
 

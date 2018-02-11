@@ -131,6 +131,23 @@
 </div>
 <div id="root"></div>
 <canvas id="bg"></canvas>
-<script src='canvas2.js'></script>
+
+
+<!--TODO-->
+<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+<script>
+	// Initialize Firebase
+	var config = {
+		apiKey: "AIzaSyBqm1lWfImVwT88KhwoBpLPtoNtc35mS4A",
+		authDomain: "app-box-prod.firebaseapp.com",
+		databaseURL: "https://app-box-prod.firebaseio.com",
+		projectId: "app-box-prod",
+		storageBucket: "app-box-prod.appspot.com",
+		messagingSenderId: "141932841759"
+	};
+	firebase.initializeApp(config);
+</script>
+
+<!--<script src='canvas2.js'></script>-->
 </body>
 </html>

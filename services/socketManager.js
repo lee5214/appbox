@@ -1,5 +1,5 @@
 const io = require ('../bin/start').io;
-const {clientLog} = require('../services/log');
+const {clientLog} = require ('../services/log');
 let connectedUsers = new Map ();
 let onlineUsers = 0;
 
@@ -19,16 +19,16 @@ const removeUser = (list, userId) => {
 };
 
 const updateServerData = () => {
-	io.emit ('server data update', clientLog());
+	io.emit ('server data update', clientLog ());
 	setTimeout (updateServerData, 100000);
 };
 
 module.exports = (socket) => {
 	onlineUsers++;
 
-	io.on ('connection', () => {
-		updateServerData ();
-	});
+	// io.on ('connection', () => {
+	// 	updateServerData ();
+	// });
 
 	io.emit ('onlineUsersUpdate', onlineUsers);
 

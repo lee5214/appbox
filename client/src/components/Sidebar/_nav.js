@@ -28,6 +28,11 @@ export default {
 			icon : 'fa fa-comments',
 		},
 		{
+			name : 'Chat Room V2',
+			url : '/chatroom-v2',
+			icon : 'fa fa-comments',
+		},
+		{
 			name : 'Secret Links',
 			url : '/secretlinks',
 			icon : 'fa fa-user-secret',
