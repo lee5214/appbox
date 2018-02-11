@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="742d2f67-9123-492e-9892-2d49e2746a61" name="Default" comment="work on domain mask forward....&#10;change idea to work with dns hoster&#10;try google app engine">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.travis.yml" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/asset-manifest.json" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/favicon.ico" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/avatars/1.jpg" afterPath="" />
@@ -319,6 +318,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/media/weathericons-regular-webfont.e7ef2b44.eot" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/media/weathericons-regular-webfont.f5b0d0d9.woff" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -2440,8 +2440,8 @@
           <file leaf-file-name=".travis.yml" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/.travis.yml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <state relative-caret-position="45">
+                  <caret line="3" column="7" lean-forward="false" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
                   <folding />
                 </state>
               </provider>
@@ -2641,7 +2641,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/client/src/scss/core/_aside.scss" />
         <option value="$PROJECT_DIR$/client/src/scss/core/_variables.scss" />
         <option value="$PROJECT_DIR$/client/src/scss/core/_sidebar.scss" />
         <option value="$PROJECT_DIR$/models/Users_Model.js" />
@@ -2692,6 +2691,7 @@
         <option value="$PROJECT_DIR$/client/src/views/ChatRoomV2/components/ChatRoom.js" />
         <option value="$PROJECT_DIR$/app.yaml" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
       </list>
     </option>
   </component>
@@ -3035,14 +3035,7 @@
       <workItem from="1517999681993" duration="317000" />
       <workItem from="1518000068735" duration="1300000" />
       <workItem from="1518015818196" duration="129599000" />
-      <workItem from="1518315372872" duration="30956000" />
-    </task>
-    <task id="LOCAL-00090" summary="yeah deployment fixed">
-      <created>1517430024963</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1517430024963</updated>
+      <workItem from="1518315372872" duration="31521000" />
     </task>
     <task id="LOCAL-00091" summary="yeah deployment fixed">
       <created>1517430488788</created>
@@ -3380,11 +3373,18 @@
       <option name="project" value="LOCAL" />
       <updated>1518389609034</updated>
     </task>
-    <option name="localTasksCounter" value="139" />
+    <task id="LOCAL-00139" summary="CI">
+      <created>1518389927385</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1518389927385</updated>
+    </task>
+    <option name="localTasksCounter" value="140" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1438519000" />
+    <option name="totallyTimeSpent" value="1439084000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -3472,7 +3472,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="err appeared2" />
     <MESSAGE value="start styled component fix" />
     <MESSAGE value="embed https fix, deploy succeed" />
     <MESSAGE value="try webpack prod work with scss" />
@@ -3497,7 +3496,8 @@
     <MESSAGE value="aside some content change" />
     <MESSAGE value="work on domain mask forward....&#10;change idea to work with dns hoster&#10;try google app engine" />
     <MESSAGE value="major patch: &#10;removed socket&#10;added firebase support&#10;re-created chatroom based on firebase" />
-    <option name="LAST_COMMIT_MESSAGE" value="major patch: &#10;removed socket&#10;added firebase support&#10;re-created chatroom based on firebase" />
+    <MESSAGE value="CI" />
+    <option name="LAST_COMMIT_MESSAGE" value="CI" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -4035,8 +4035,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="45">
+          <caret line="3" column="7" lean-forward="false" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
           <folding />
         </state>
       </provider>
