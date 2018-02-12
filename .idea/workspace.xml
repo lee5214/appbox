@@ -1,324 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="742d2f67-9123-492e-9892-2d49e2746a61" name="Default" comment="work on domain mask forward....&#10;change idea to work with dns hoster&#10;try google app engine">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LICENSE" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/asset-manifest.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/favicon.ico" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/avatars/1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/avatars/2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/avatars/3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/avatars/4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/avatars/5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/avatars/6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/avatars/7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/avatars/8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/avatars/guest-1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/avatars/guest-10.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/avatars/guest-11.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/avatars/guest-12.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/avatars/guest-13.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/avatars/guest-14.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/avatars/guest-15.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/avatars/guest-16.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/avatars/guest-2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/avatars/guest-3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/avatars/guest-4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/avatars/guest-5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/avatars/guest-6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/avatars/guest-7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/avatars/guest-8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/avatars/guest-9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/favicon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/ASEAN.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Afghanistan.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/African Union.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Albania.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Algeria.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/American Samoa.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Andorra.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Angola.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Anguilla.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Antarctica.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Antigua &amp; Barbuda.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Arab League.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Argentina.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Armenia.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Aruba.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Australia.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Austria.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Azerbaijan.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Bahamas.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Bahrain.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Bangladesh.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Barbados.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Belarus.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Belgium.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Belize.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Benin.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Bermuda.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Bhutan.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Bolivia.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Bosnia &amp; Herzegovina.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Botswana.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Brazil.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Brunei.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Bulgaria.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Burkina Faso.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Burundi.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/CARICOM.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/CIS.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Cambodja.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Cameroon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Canada.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Cape Verde.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Cayman Islands.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Central African Republic.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Chad.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Chile.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/China.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Colombia.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Commonwealth.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Comoros.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Congo-Brazzaville.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Congo-Kinshasa(Zaire).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Cook Islands.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Costa Rica.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Cote d'Ivoire.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Croatia.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Cuba.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Cyprus.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Czech Republic.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Denmark.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Djibouti.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Dominica.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Dominican Republic.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Ecuador.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Egypt.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/El Salvador.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/England.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Equatorial Guinea.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Eritrea.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Estonia.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Ethiopia.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/European Union.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Faroes.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Fiji.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Finland.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/France.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Gabon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Gambia.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Georgia.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Germany.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Ghana.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Gibraltar.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Greece.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Greenland.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Grenada.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Guadeloupe.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Guam.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Guatemala.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Guernsey.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Guinea-Bissau.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Guinea.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Guyana.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Haiti.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Honduras.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Hong Kong.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Hungary.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Iceland.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/India.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Indonezia.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Iran.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Iraq.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Ireland.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Islamic Conference.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Isle of Man.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Israel.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Italy.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Jamaica.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Japan.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Jersey.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Jordan.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Kazakhstan.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Kenya.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Kiribati.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Kosovo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Kuwait.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Kyrgyzstan.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Laos.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Latvia.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Lebanon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Lesotho.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Liberia.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Libya.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Liechtenshein.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Lithuania.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Luxembourg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Macao.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Macedonia.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Madagascar.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Malawi.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Malaysia.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Maldives.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Mali.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Malta.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Marshall Islands.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Martinique.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Mauritania.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Mauritius.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Mexico.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Micronesia.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Moldova.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Monaco.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Mongolia.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Montenegro.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Montserrat.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Morocco.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Mozambique.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Myanmar(Burma).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/NATO.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Namibia.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Nauru.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Nepal.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Netherlands Antilles.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Netherlands.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/New Caledonia.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/New Zealand.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Nicaragua.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Niger.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Nigeria.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/North Korea.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Northern Cyprus.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Northern Ireland.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Norway.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/OPEC.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Olimpic Movement.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Oman.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Pakistan.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Palau.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Palestine.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Panama.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Papua New Guinea.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Paraguay.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Peru.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Philippines.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Poland.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Portugal.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Puerto Rico.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Qatar.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Red Cross.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Reunion.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Romania.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Russia.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Rwanda.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Saint Lucia.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Samoa.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/San Marino.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Sao Tome &amp; Principe.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Saudi Arabia.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Scotland.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Senegal.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Serbia(Yugoslavia).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Seychelles.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Sierra Leone.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Singapore.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Slovakia.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Slovenia.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Solomon Islands.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Somalia.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Somaliland.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/South Africa.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/South Korea.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Spain.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Sri Lanka.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/St Kitts &amp; Nevis.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/St Vincent &amp; the Grenadines.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Sudan.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Suriname.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Swaziland.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Sweden.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Switzerland.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Syria.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Tahiti(French Polinesia).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Taiwan.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Tajikistan.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Tanzania.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Thailand.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Timor-Leste.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Togo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Tonga.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Trinidad &amp; Tobago.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Tunisia.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Turkey.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Turkmenistan.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Turks and Caicos Islands.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Tuvalu.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/USA.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Uganda.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Ukraine.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/United Arab Emirates.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/United Nations.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/United-Kingdom.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Uruguay.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Uzbekistan.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Vanutau.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Vatican City.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Venezuela.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Viet Nam.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Virgin Islands British.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Virgin Islands US.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Wales.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Western Sahara.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Yemen.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Zambia.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/Zimbabwe.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/flags/logo-symbol.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/logo-symbol.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/img/logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/manifest.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/service-worker.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/css/main.c8ba747d.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/css/main.c8ba747d.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/js/main.3590921e.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/js/main.3590921e.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/media/AppContainer.dc31f99a.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/media/AppContainer.dc31f99a.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/media/AppContainer.dc31f99a.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/media/BannerLine.83710b8a.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/media/BannerLine.83710b8a.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/media/BannerLine.83710b8a.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/media/Breadcrumb.6783f741.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/media/Breadcrumb.6783f741.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/media/Breadcrumb.6783f741.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/media/Breadcrumb.96bb844c.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/media/Breadcrumb.96bb844c.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/media/Breadcrumb.96bb844c.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/media/ChatRoom.ea8d1e1b.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/media/ChatRoom.ea8d1e1b.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/media/ChatRoom.ea8d1e1b.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/media/City.57389ecb.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/media/City.57389ecb.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/media/City.57389ecb.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/media/InfoList.355d769e.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/media/InfoList.355d769e.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/media/InfoList.355d769e.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/media/Simple-Line-Icons.0cb0b9c5.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/media/Simple-Line-Icons.2fe2efe6.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/media/Simple-Line-Icons.78f07e2c.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/media/Simple-Line-Icons.d2285965.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/media/Simple-Line-Icons.f33df365.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/media/fontawesome-webfont.674f50d2.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/media/fontawesome-webfont.912ec66d.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/media/fontawesome-webfont.af7ae505.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/media/fontawesome-webfont.b06871f2.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/media/fontawesome-webfont.fee66e71.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/media/weathericons-regular-webfont.2ca3df09.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/media/weathericons-regular-webfont.b2233bc1.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/media/weathericons-regular-webfont.e7ef2b44.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/build/static/media/weathericons-regular-webfont.f5b0d0d9.woff" afterPath="" />
+    <list default="true" id="742d2f67-9123-492e-9892-2d49e2746a61" name="Default" comment="readme &amp; license added">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -2408,84 +2093,13 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+          <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/README.md">
               <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
                 <state split_layout="SPLIT">
-                  <first_editor relative-caret-position="45">
-                    <caret line="3" column="72" lean-forward="false" selection-start-line="3" selection-start-column="72" selection-end-line="3" selection-end-column="72" />
-                    <folding>
-                      <marker date="1518392050504" expanded="true" signature="12595:12623" ph="{...}" />
-                      <marker date="1518392050504" expanded="true" signature="14016:14292" ph="{&quot;version&quot;: &quot;0.2.0&quot;...}" />
-                      <marker date="1518392050504" expanded="true" signature="14060:14290" ph="[...]" />
-                      <marker date="1518392050504" expanded="true" signature="14061:14289" ph="{&quot;name&quot;: &quot;Chrome&quot;...}" />
-                      <marker date="1518392050504" expanded="true" signature="14237:14285" ph="{&quot;webpack:///src/*&quot;: &quot;${webRoot}/*&quot;...}" />
-                      <marker date="1518392050504" expanded="true" signature="19524:19555" ph="{...}" />
-                      <marker date="1518392050504" expanded="true" signature="19537:19553" ph="{...}" />
-                      <marker date="1518392050504" expanded="true" signature="19661:19726" ph="..." />
-                      <marker date="1518392050504" expanded="true" signature="19805:19860" ph="{...}" />
-                      <marker date="1518392050504" expanded="true" signature="19818:19858" ph="{...}" />
-                      <marker date="1518392050504" expanded="true" signature="21722:22019" ph="{...}" />
-                      <marker date="1518392050504" expanded="true" signature="21746:21896" ph="{...}" />
-                      <marker date="1518392050504" expanded="true" signature="21801:21833" ph="{...}" />
-                      <marker date="1518392050504" expanded="true" signature="21855:21890" ph="{...}" />
-                      <marker date="1518392050504" expanded="true" signature="21910:22017" ph="{...}" />
-                      <marker date="1518392050504" expanded="true" signature="21931:22006" ph="&lt;div/&gt;" />
-                      <marker date="1518392050504" expanded="true" signature="22952:22972" ph="{...}" />
-                      <marker date="1518392050504" expanded="true" signature="23008:23065" ph="..." />
-                      <marker date="1518392050504" expanded="true" signature="23147:23252" ph="{...}" />
-                      <marker date="1518392050504" expanded="true" signature="23160:23250" ph="{...}" />
-                      <marker date="1518392050504" expanded="true" signature="24329:24395" ph="{...}" />
-                      <marker date="1518392050504" expanded="true" signature="24428:24715" ph="{...}" />
-                      <marker date="1518392050504" expanded="true" signature="30227:30277" ph="..." />
-                      <marker date="1518392050504" expanded="true" signature="30384:30471" ph="{...}" />
-                      <marker date="1518392050504" expanded="true" signature="30681:30721" ph="{...}" />
-                      <marker date="1518392050504" expanded="true" signature="33553:33818" ph="{...}" />
-                      <marker date="1518392050504" expanded="true" signature="33557:33751" ph="//..." />
-                      <marker date="1518392050504" expanded="true" signature="36251:36335" ph="..." />
-                      <marker date="1518392050504" expanded="true" signature="36336:36440" ph="//..." />
-                      <marker date="1518392050504" expanded="true" signature="41607:41754" ph="..." />
-                      <marker date="1518392050504" expanded="true" signature="41694:41747" ph="..." />
-                      <marker date="1518392050504" expanded="true" signature="42204:42230" ph="{...}" />
-                      <marker date="1518392050504" expanded="true" signature="51117:51230" ph="{...}" />
-                      <marker date="1518392050504" expanded="true" signature="51139:51219" ph="{...}" />
-                      <marker date="1518392050504" expanded="true" signature="51153:51215" ph="{...}" />
-                      <marker date="1518392050504" expanded="true" signature="51573:52173" ph="{...}" />
-                      <marker date="1518392050504" expanded="true" signature="51595:52162" ph="{...}" />
-                      <marker date="1518392050504" expanded="true" signature="51655:51719" ph="{...}" />
-                      <marker date="1518392050504" expanded="true" signature="51779:51905" ph="{...}" />
-                      <marker date="1518392050504" expanded="true" signature="51848:51886" ph="{...}" />
-                      <marker date="1518392050504" expanded="true" signature="51987:52034" ph="{...}" />
-                      <marker date="1518392050504" expanded="true" signature="52112:52158" ph="{...}" />
-                      <marker date="1518392050504" expanded="true" signature="53104:53489" ph="{...}" />
-                      <marker date="1518392050504" expanded="true" signature="53126:53478" ph="{...}" />
-                      <marker date="1518392050504" expanded="true" signature="53143:53474" ph="{...}" />
-                      <marker date="1518392050504" expanded="true" signature="53203:53438" ph="//..." />
-                      <marker date="1518392050504" expanded="true" signature="54597:54726" ph="..." />
-                      <marker date="1518392050504" expanded="true" signature="54606:54726" ph="..." />
-                      <marker date="1518392050504" expanded="true" signature="56422:56518" ph="&lt;html/&gt;" />
-                      <marker date="1518392050504" expanded="true" signature="56441:56518" ph="&lt;head/&gt;" />
-                      <marker date="1518392050504" expanded="true" signature="56452:56518" ph="&lt;script/&gt;" />
-                      <marker date="1518392050504" expanded="true" signature="60398:60465" ph="{...}" />
-                      <marker date="1518392050504" expanded="true" signature="61345:61423" ph="..." />
-                      <marker date="1518392050504" expanded="true" signature="61462:61543" ph="{...}" />
-                      <marker date="1518392050504" expanded="true" signature="62796:62871" ph="..." />
-                      <marker date="1518392050504" expanded="true" signature="62971:63049" ph="..." />
-                      <marker date="1518392050504" expanded="true" signature="63088:63111" ph="{...}" />
-                      <marker date="1518392050504" expanded="true" signature="64022:64100" ph="..." />
-                      <marker date="1518392050504" expanded="true" signature="64138:64328" ph="{...}" />
-                      <marker date="1518392050504" expanded="true" signature="65786:65836" ph="..." />
-                      <marker date="1518392050504" expanded="true" signature="66309:66375" ph="{...}" />
-                      <marker date="1518392050504" expanded="true" signature="67703:68120" ph="{&quot;name&quot;: &quot;your-package&quot;...}" />
-                      <marker date="1518392050504" expanded="true" signature="67741:68118" ph="{...}" />
-                      <marker date="1518392050504" expanded="true" signature="67771:67871" ph="[...]" />
-                      <marker date="1518392050504" expanded="true" signature="67898:68026" ph="{...}" />
-                      <marker date="1518392050504" expanded="true" signature="67916:68020" ph="{&quot;branches&quot;: 90...}" />
-                      <marker date="1518392050504" expanded="true" signature="70326:70444" ph="{...}" />
-                      <marker date="1518392050504" expanded="true" signature="84730:84794" ph="{...}" />
-                      <marker date="1518392050504" expanded="true" signature="107040:107088" ph="..." />
-                      <marker date="1518392050504" expanded="true" signature="107230:107305" ph="..." />
-                    </folding>
+                  <first_editor relative-caret-position="355">
+                    <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+                    <folding />
                   </first_editor>
                   <second_editor />
                 </state>
@@ -2502,11 +2116,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name=".travis.yml" pinned="false" current-in-tab="false">
+          <file leaf-file-name=".travis.yml" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/.travis.yml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="120">
-                  <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+                <state relative-caret-position="105">
+                  <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -2591,8 +2205,8 @@
           <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/package.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="240">
-                  <caret line="16" column="43" lean-forward="false" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
+                <state relative-caret-position="75">
+                  <caret line="5" column="22" lean-forward="true" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
                   <folding />
                 </state>
               </provider>
@@ -2742,7 +2356,6 @@
         <option value="$PROJECT_DIR$/client/public/index.html" />
         <option value="$PROJECT_DIR$/client/src/routes.js" />
         <option value="$PROJECT_DIR$/client/src/components/Sidebar/_nav.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/client/src/views/ChatRoomV2/components/ChatSideBar.js" />
         <option value="$PROJECT_DIR$/client/src/views/Test/Test.js" />
         <option value="$PROJECT_DIR$/client/package.json" />
@@ -2754,8 +2367,9 @@
         <option value="$PROJECT_DIR$/client/src/views/ChatRoomV2/components/ChatRoom.js" />
         <option value="$PROJECT_DIR$/app.yaml" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/LICENSE" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
+        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
@@ -3100,14 +2714,7 @@
       <workItem from="1517999681993" duration="317000" />
       <workItem from="1518000068735" duration="1300000" />
       <workItem from="1518015818196" duration="129599000" />
-      <workItem from="1518315372872" duration="33114000" />
-    </task>
-    <task id="LOCAL-00093" summary="yeah deployment fixed">
-      <created>1517431880323</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1517431880324</updated>
+      <workItem from="1518315372872" duration="35864000" />
     </task>
     <task id="LOCAL-00094" summary="yeah deployment fixed">
       <created>1517432554306</created>
@@ -3445,11 +3052,18 @@
       <option name="project" value="LOCAL" />
       <updated>1518391396538</updated>
     </task>
-    <option name="localTasksCounter" value="142" />
+    <task id="LOCAL-00142" summary="readme &amp; license added">
+      <created>1518392091375</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1518392091375</updated>
+    </task>
+    <option name="localTasksCounter" value="143" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1440677000" />
+    <option name="totallyTimeSpent" value="1443427000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -3462,7 +3076,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1081" y="-480" width="1080" height="1920" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2115203" sideWeight="0.7150036" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32777777" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -3538,7 +3151,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="embed https fix, deploy succeed" />
     <MESSAGE value="try webpack prod work with scss" />
     <MESSAGE value="try webpack prod work with scss2" />
     <MESSAGE value="work on togglers" />
@@ -3563,7 +3175,8 @@
     <MESSAGE value="CI" />
     <MESSAGE value="work on domain mask forward....&#10;change idea to work with dns hoster&#10;try google app engine" />
     <MESSAGE value="test ci" />
-    <option name="LAST_COMMIT_MESSAGE" value="test ci" />
+    <MESSAGE value="readme &amp; license added" />
+    <option name="LAST_COMMIT_MESSAGE" value="readme &amp; license added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -4002,14 +3615,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="43" lean-forward="false" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/LICENSE">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -4018,10 +3623,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.travis.yml">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state relative-caret-position="75">
+          <caret line="5" column="22" lean-forward="true" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -4029,82 +3634,19 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="45">
-            <caret line="3" column="72" lean-forward="false" selection-start-line="3" selection-start-column="72" selection-end-line="3" selection-end-column="72" />
-            <folding>
-              <marker date="1518392050504" expanded="true" signature="12595:12623" ph="{...}" />
-              <marker date="1518392050504" expanded="true" signature="14016:14292" ph="{&quot;version&quot;: &quot;0.2.0&quot;...}" />
-              <marker date="1518392050504" expanded="true" signature="14060:14290" ph="[...]" />
-              <marker date="1518392050504" expanded="true" signature="14061:14289" ph="{&quot;name&quot;: &quot;Chrome&quot;...}" />
-              <marker date="1518392050504" expanded="true" signature="14237:14285" ph="{&quot;webpack:///src/*&quot;: &quot;${webRoot}/*&quot;...}" />
-              <marker date="1518392050504" expanded="true" signature="19524:19555" ph="{...}" />
-              <marker date="1518392050504" expanded="true" signature="19537:19553" ph="{...}" />
-              <marker date="1518392050504" expanded="true" signature="19661:19726" ph="..." />
-              <marker date="1518392050504" expanded="true" signature="19805:19860" ph="{...}" />
-              <marker date="1518392050504" expanded="true" signature="19818:19858" ph="{...}" />
-              <marker date="1518392050504" expanded="true" signature="21722:22019" ph="{...}" />
-              <marker date="1518392050504" expanded="true" signature="21746:21896" ph="{...}" />
-              <marker date="1518392050504" expanded="true" signature="21801:21833" ph="{...}" />
-              <marker date="1518392050504" expanded="true" signature="21855:21890" ph="{...}" />
-              <marker date="1518392050504" expanded="true" signature="21910:22017" ph="{...}" />
-              <marker date="1518392050504" expanded="true" signature="21931:22006" ph="&lt;div/&gt;" />
-              <marker date="1518392050504" expanded="true" signature="22952:22972" ph="{...}" />
-              <marker date="1518392050504" expanded="true" signature="23008:23065" ph="..." />
-              <marker date="1518392050504" expanded="true" signature="23147:23252" ph="{...}" />
-              <marker date="1518392050504" expanded="true" signature="23160:23250" ph="{...}" />
-              <marker date="1518392050504" expanded="true" signature="24329:24395" ph="{...}" />
-              <marker date="1518392050504" expanded="true" signature="24428:24715" ph="{...}" />
-              <marker date="1518392050504" expanded="true" signature="30227:30277" ph="..." />
-              <marker date="1518392050504" expanded="true" signature="30384:30471" ph="{...}" />
-              <marker date="1518392050504" expanded="true" signature="30681:30721" ph="{...}" />
-              <marker date="1518392050504" expanded="true" signature="33553:33818" ph="{...}" />
-              <marker date="1518392050504" expanded="true" signature="33557:33751" ph="//..." />
-              <marker date="1518392050504" expanded="true" signature="36251:36335" ph="..." />
-              <marker date="1518392050504" expanded="true" signature="36336:36440" ph="//..." />
-              <marker date="1518392050504" expanded="true" signature="41607:41754" ph="..." />
-              <marker date="1518392050504" expanded="true" signature="41694:41747" ph="..." />
-              <marker date="1518392050504" expanded="true" signature="42204:42230" ph="{...}" />
-              <marker date="1518392050504" expanded="true" signature="51117:51230" ph="{...}" />
-              <marker date="1518392050504" expanded="true" signature="51139:51219" ph="{...}" />
-              <marker date="1518392050504" expanded="true" signature="51153:51215" ph="{...}" />
-              <marker date="1518392050504" expanded="true" signature="51573:52173" ph="{...}" />
-              <marker date="1518392050504" expanded="true" signature="51595:52162" ph="{...}" />
-              <marker date="1518392050504" expanded="true" signature="51655:51719" ph="{...}" />
-              <marker date="1518392050504" expanded="true" signature="51779:51905" ph="{...}" />
-              <marker date="1518392050504" expanded="true" signature="51848:51886" ph="{...}" />
-              <marker date="1518392050504" expanded="true" signature="51987:52034" ph="{...}" />
-              <marker date="1518392050504" expanded="true" signature="52112:52158" ph="{...}" />
-              <marker date="1518392050504" expanded="true" signature="53104:53489" ph="{...}" />
-              <marker date="1518392050504" expanded="true" signature="53126:53478" ph="{...}" />
-              <marker date="1518392050504" expanded="true" signature="53143:53474" ph="{...}" />
-              <marker date="1518392050504" expanded="true" signature="53203:53438" ph="//..." />
-              <marker date="1518392050504" expanded="true" signature="54597:54726" ph="..." />
-              <marker date="1518392050504" expanded="true" signature="54606:54726" ph="..." />
-              <marker date="1518392050504" expanded="true" signature="56422:56518" ph="&lt;html/&gt;" />
-              <marker date="1518392050504" expanded="true" signature="56441:56518" ph="&lt;head/&gt;" />
-              <marker date="1518392050504" expanded="true" signature="56452:56518" ph="&lt;script/&gt;" />
-              <marker date="1518392050504" expanded="true" signature="60398:60465" ph="{...}" />
-              <marker date="1518392050504" expanded="true" signature="61345:61423" ph="..." />
-              <marker date="1518392050504" expanded="true" signature="61462:61543" ph="{...}" />
-              <marker date="1518392050504" expanded="true" signature="62796:62871" ph="..." />
-              <marker date="1518392050504" expanded="true" signature="62971:63049" ph="..." />
-              <marker date="1518392050504" expanded="true" signature="63088:63111" ph="{...}" />
-              <marker date="1518392050504" expanded="true" signature="64022:64100" ph="..." />
-              <marker date="1518392050504" expanded="true" signature="64138:64328" ph="{...}" />
-              <marker date="1518392050504" expanded="true" signature="65786:65836" ph="..." />
-              <marker date="1518392050504" expanded="true" signature="66309:66375" ph="{...}" />
-              <marker date="1518392050504" expanded="true" signature="67703:68120" ph="{&quot;name&quot;: &quot;your-package&quot;...}" />
-              <marker date="1518392050504" expanded="true" signature="67741:68118" ph="{...}" />
-              <marker date="1518392050504" expanded="true" signature="67771:67871" ph="[...]" />
-              <marker date="1518392050504" expanded="true" signature="67898:68026" ph="{...}" />
-              <marker date="1518392050504" expanded="true" signature="67916:68020" ph="{&quot;branches&quot;: 90...}" />
-              <marker date="1518392050504" expanded="true" signature="70326:70444" ph="{...}" />
-              <marker date="1518392050504" expanded="true" signature="84730:84794" ph="{...}" />
-              <marker date="1518392050504" expanded="true" signature="107040:107088" ph="..." />
-              <marker date="1518392050504" expanded="true" signature="107230:107305" ph="..." />
-            </folding>
+          <first_editor relative-caret-position="355">
+            <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <folding />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
