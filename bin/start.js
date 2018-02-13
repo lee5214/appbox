@@ -38,6 +38,11 @@ require ('../services/passport') ();
  */
 if (process.env.NODE_ENV === 'production') {
 	app.use (Express.static ('client/build'));
+
+	// force naked domain to redirect to SSL
+	app.get ('/', (req, res) => {
+		res.redirect('https://' + req.headers.host + req.url);
+	});
 	// app.get ('/', (req, res) => {
 	// 	res.sendFile (__dirname + 'client/build/index.html')//(path.resolve (__dirname, 'client',
 	// 'build','index.html')); });
@@ -60,9 +65,7 @@ app.use (passport.session ());
 /*
  * ---- route section ----
  */
-app.get ('*', (req, res) => {
-	res.redirect('https://' + req.headers.host + req.url);
-});
+
 require ('../routes/authRoutes') (app);
 require ('../routes/secretLinkRoutes') (app);
 require ('../routes/cityRoutes') (app);
