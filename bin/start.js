@@ -14,14 +14,14 @@ const cors = require ('cors');
 const socketManager = require ('../services/socketManager');
 const PORT = process.env.PORT || 4000;
 const _debug = require ('debug');
-
+const yes = require('yes-https')
 console.log ('port:', PORT);
 
 // disable socket.io
 // io.on ('connection', socketManager);
 // require ('../services/socketManager') (server);
 
-
+app.use(yes())
 server.listen (PORT);
 console.log ('node services is running on port:', PORT);
 
@@ -49,6 +49,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // requests go through middleware before route handlers
+
 app.use (cors ());
 app.use (bodyParser.json ());
 //  cookie
