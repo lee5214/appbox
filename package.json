@@ -10,13 +10,14 @@
     "npm": "5.6.0"
   },
   "scripts": {
-    "start": "npm run server:prod",
+    "start": "NODE_ENV=production npm run server:prod",
     "client-build": "npm run build --prefix client",
     "server:prod": "node bin/start.js",
     "server:dev": "nodemon bin/start.js",
     "client": "npm run start --prefix client",
-    "dev": "concurrently \"npm run client \" \" npm run server:dev \" ",
+    "dev": "NODE_ENV=development concurrently \"npm run client \" \" npm run server:dev \" ",
     "heroku-postbuild": "npm install --prefix client && npm run build --prefix client",
+    "deploy-google": "gcloud app deploy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
