@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { createGuestUser, fetchCurrentUser, sendPubChatMsgs, setMode, setMouseTrack } from 'actions';
+import { createGuestUser, fetchCurrentUser, sendPubChatMsgs, setMode, setMouseTrack, } from 'actions';
 import ChatSideBar from './ChatSideBar';
 //import MessageBlock from "./MessageBlock";
 import MessagesContainer from './MessagesContainer';
 import { bindActionCreators } from 'redux';
-import { Button, Col, Container, Form, Input, InputGroup, InputGroupButton, Row, } from 'reactstrap';
+import { Button, Col, Container, Form, Input, InputGroup, InputGroupAddon, InputGroupButton, Row } from 'reactstrap';
 // import firebase from 'firebase';
 
 
@@ -16,12 +16,12 @@ class ChatRoom extends Component {
 		super (props);
 		this.state = {
 			//socket : null,
-			messageNumber : 0,
 			inputMessage : '',
 			users : null,
 			messagesList : [],
 			currentMessages : [],
 			usersNumber : 0,
+			Anonymous : false,
 		};
 	}
 
@@ -52,30 +52,21 @@ class ChatRoom extends Component {
 		// but to fetch current user info is an async call, so
 		if (this.props.currentUserInfo) {
 			rootDB.child ('users/' + this.props.currentUserInfo._id).set (this.props.currentUserInfo.local);
+			rootDB.child ('users/' + this.props.currentUserInfo._id).onDisconnect ().remove ();
 		}
 	}
-
-	// componentDidMount () {
-	// 	if (this.props.currentUserInfo && !this.props.currentUserInfo.guest !== true) {
-	// 		//firebase.database ().ref (userDB + this.props.currentUserInfo._id).set
-	// (this.props.currentUserInfo.local); }   }
 
 	// IMPORTANT for async data dispatched onto props
 	componentWillReceiveProps = (nextProps) => {
 		if (nextProps.currentUserInfo && !nextProps.currentUserInfo.guest !== true) {
 			rootDB.child ('users/' + nextProps.currentUserInfo._id).set (nextProps.currentUserInfo.local);
-
-			//firebase.database ().ref (userDB + nextProps.currentUserInfo._id).set (nextProps.currentUserInfo.local);
+			rootDB.child ('users/' + nextProps.currentUserInfo._id).set (nextProps.currentUserInfo.local);
+			rootDB.child ('users/' + nextProps.currentUserInfo._id).onDisconnect ().remove ();
 		}
 	};
-	// componentWillUpdate(nextProps, nextState){
-	// 	if(nextProps.currentUserInfo !== this.props.currentUserInfo){
-	// 		firebase.database ().ref (userDB + nextProps.currentUserInfo._id).set (nextProps.currentUserInfo.local);
-	// 	}
-	// }
 
 	componentWillUnmount = () => {
-		firebase.database ().ref (`chatroom/users/${this.props.currentUserInfo._id}`).remove ();
+		rootDB.child(`users/${this.props.currentUserInfo._id}`).remove ();
 	};
 
 	onInputChange = (input) => {
@@ -85,22 +76,23 @@ class ChatRoom extends Component {
 	handleSubmit = (e) => {
 		e.preventDefault ();
 		const nextMessage = {
-			//id : this.state.messageNumber + 1,
 			inputMessage : this.state.inputMessage,
-			displayName : this.props.currentUserInfo.local.displayName,
+			displayName : this.state.Anonymous ? 'Anonymis' : this.props.currentUserInfo.local.displayName,
 			senderImg : this.props.currentUserInfo.local.avatar,
 			time : new Date (),
 			online : false,
 		};
 		rootDB.child ('messages/').push (nextMessage);
-		//rootDB.child('users/'+this.props.currentUserInfo._id).remove();
 
 
 		this.setState ({inputMessage : ''});
 	};
 
-	render () {
+	toggleAnonymous = () => {
+		this.setState ({Anonymous : !this.state.Anonymous});
+	};
 
+	render () {
 		return (
 			<Container className="animated fadeIn align-self-center">
 				<Row>
@@ -115,8 +107,14 @@ class ChatRoom extends Component {
 							<Col>
 								<Form className={ 'input-group' } onSubmit={ (e) => { this.handleSubmit (e); } }>
 									<InputGroup>
+										<InputGroupAddon className={ 'm-2' }>
+											Anonymise？
+											<Input addon type="checkbox" aria-label="Checkbox for Anonymous"
+											       onChange={ this.toggleAnonymous }
+											/>
+										</InputGroupAddon>
 										<Input type="text" id="input-chat" name="input-chat"
-										       placeholder={ 'start chat' }
+										       placeholder={ 'say something' }
 										       onChange={ (e) => this.onInputChange (e) }
 										       value={ this.state.inputMessage }/>
 										<InputGroupButton>
