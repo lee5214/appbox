@@ -40,7 +40,7 @@ module.exports = () => {
 						return done (null, false, {message : 'Username already exist'});
 					}
 					const user = await new User ({
-						guest : false,
+
 						local : {
 							username : username,
 							password : password,
@@ -86,7 +86,7 @@ module.exports = () => {
 				}
 				else {
 					const user = await new User ({
-						guest : false,
+
 						local : {
 							email : profile.emails[ 0 ].value,
 							displayName : profile.displayName,
@@ -143,7 +143,7 @@ module.exports = () => {
 				}
 				else {
 					const user = await new User ({
-						guest : false,
+
 						local : {
 							email : profile.emails[ 0 ].value,
 							// firstName : profile.first_name,

@@ -2,7 +2,7 @@ const mongoose = require ('mongoose');
 const {Schema} = mongoose;
 
 const userSchema = new Schema ({
-
+	guest : Boolean,
 	local : {
 		username : String,
 		password : String,

@@ -36,7 +36,7 @@ class Header extends Component {
 			case false:
 				return (
 					<NavItem className="d-md-down-none">
-						<NavLink href={ '/#/login' }><i className="icon-login"/></NavLink>
+						<NavLink href={ '/login' }><i className="icon-login"/></NavLink>
 					</NavItem>
 				);
 			default:

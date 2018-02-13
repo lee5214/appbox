@@ -4,30 +4,32 @@ AppBox
 [![License](http://img.shields.io/badge/license-mit-blue.svg?style=flat-square)](https://github.com/lee5214/appbox/master/LICENSE)
 
 
-###Description
+
+### Description
+===
 This is an all in one project I created as my SPA & website & toolkit 
 
 
 ### Demo
-my personal website : https://cong-li.com
+===
+https://cong-li.com
 
 
 ### Credits
-    
-    Express
-    Node
+===
 >Client
 >> `React, Redux`
 
 >Server
 >> `Express, Node, Firebase, Gooeld Cloud, MongoDB`
 
-
-|Author|Cong Li|
-|---|---
-|email|cong-li@cong-li.com
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
-
+### Details
+===
+```
+Author: Cong Li
+Email: cong-li@cong-li.com
+Site: lee5214.com
+```
 
 ### Run on local
 ```javascript

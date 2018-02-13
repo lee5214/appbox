@@ -7,36 +7,33 @@ export default class ChatSideBar extends Component {
 		super (props);
 		this.state = {
 			userTotal : 0,
-			userList : {},
+			onlineUserList : {},
 		};
 	}
-
-	componentDidMount () {
-
+	componentDidMount(){
+		this.setState({onlineUerList:this.props.users})
+		console.log('online users list =>',this.props.users)
 	}
-
-
 	renderTotalNumber () {
 		return (
 			<Divider center>
 				<h6 className={ 'mb-0' }>
 					<strong>Total:
-						<span className={ 'text-white ml-2' }>{ this.state.userTotal }</span>
+						<span className={ 'text-white ml-2' }>{ Object.keys(this.props.users).length}</span>
 					</strong>
-
 				</h6>
 			</Divider>
 		);
 	}
-
 	handleUserList (key) {
+
 		return (
 			<Row key={ key } className={ 'p-0 mt-2' }>
 				<Media left>
 					<div className={ 'avatar avatar-md mr-3' }>
-						<img className={ 'img-avatar' } src={ this.state.userList[ key ][ 'userAvatar' ] } alt={ '' }/>
+						<img className={ 'img-avatar' } src={ this.props.users[ key ][ 'avatar' ] } alt={ '' }/>
 					</div>
-					<strong className={ 'text-white' }>{ this.state.userList[ key ][ 'displayName' ] }</strong>
+					<strong className={ 'text-white' }>{ this.props.users[ key ][ 'displayName' ] }</strong>
 				</Media>
 			</Row>
 		);
@@ -50,11 +47,11 @@ export default class ChatSideBar extends Component {
 					<h4 className={ 'mb-0' }>Public Chat Room</h4>
 				</Row>
 				{ this.renderTotalNumber () }
-				{ Object.keys (this.state.userList).map ((key) => this.handleUserList (key),
+				{ Object.keys (this.props.users).map ((key) => this.handleUserList (key),
 
-					//handleUserList (this.state.userList[ key ]),
+					//handleUserList (this.props.users[ key ]),
 				) }
-				{ /*{ this.state.userList.map ((user) => this.handleUserList (user)) }*/ }
+				{ /*{ this.props.users.map ((user) => this.handleUserList (user)) }*/ }
 			</div>
 		);
 	}

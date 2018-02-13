@@ -6,6 +6,10 @@ import moment from 'moment';
 import uuid from 'uuid'
 class MessagesContainer extends Component {
 
+
+	componentDidMount = () => {
+		console.log(this.props.messagesList)
+	}
 	showMessages = (data) => {
 		return (
 			<Media key={ uuid.v4() }>
@@ -29,71 +33,6 @@ class MessagesContainer extends Component {
 		);
 	};
 
-	renderChatMessage = (message, leftAligned) => (
-		<div>
-			<Media
-				key={ '' }
-			>
-				{
-					leftAligned && (
-						<Media.Left>
-							<div className={ 'avatar avatar-sm' }>
-								<CardImg className={ 'img-avatar' }
-								         src={ message.senderImg }
-								         showStatus
-								         statusPlacement='bottom'
-								/>
-							</div>
-						</Media.Left>
-					)
-				}
-				<Media.Body>
-					<div className={ '' }>
-						{ message.inputMessage }
-					</div>
-					{
-						leftAligned ?
-							(
-								<div className={ '' }>
-			<span className='text-white'>
-			{ message.displayName }
-			</span>
-									<small>
-										{ ` at  ${message.time}` }
-									</small>
-								</div>
-							) :
-							(
-								<div className={ '' }>
-									<small>
-										{ `$ ` }
-									</small>
-									<span className='text-white'>
-			{ message.displayName }
-			</span>
-								</div>
-							)
-					}
-				</Media.Body>
-				{
-					!leftAligned && (
-						<Media.Right>
-							<div className={ 'avatar avatar-sm' }>
-								<CardImg className={ 'img-avatar' }
-								         src={ message.senderImg }
-								         showStatus
-								         statusPlacement='bottom'
-								/>
-							</div>
-						</Media.Right>
-					)
-				}
-			</Media>
-
-		</div>
-
-	);
-
 	render () {
 		return (
 			<Panel className={ style.chatPanel }
@@ -108,7 +47,7 @@ class MessagesContainer extends Component {
 				       <Row></Row>
 			       ) }
 			>
-				{ this.props.messages.map ((msg) => this.showMessages (msg)) }
+				{ this.props.messagesList.map ((msg) => this.showMessages (msg)) }
 			</Panel>
 		);
 	}

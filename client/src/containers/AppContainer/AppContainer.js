@@ -34,6 +34,7 @@ import Test from '../../views/Test/Test';
 import FontAwesome from '../../views/Icons/FontAwesome/';
 import SimpleLineIcons from '../../views/Icons/SimpleLineIcons/';
 import style from './AppContainer.scss';
+
 //
 // Socket Client
 //
@@ -45,6 +46,20 @@ import style from './AppContainer.scss';
 
  const socket = socketIOClient (webSocketUri);
  */
+
+
+/*
+import firebase from 'firebase';
+let config = {
+	apiKey: "AIzaSyBqm1lWfImVwT88KhwoBpLPtoNtc35mS4A",
+	authDomain: "app-box-prod.firebaseapp.com",
+	databaseURL: "https://app-box-prod.firebaseio.com",
+	projectId: "app-box-prod",
+	storageBucket: "app-box-prod.appspot.com",
+	messagingSenderId: "141932841759"
+};
+firebase.initializeApp(config);
+*/
 
 class AppContainer extends Component {
 	// TODO theme3D -- done
@@ -61,6 +76,7 @@ class AppContainer extends Component {
 
 	componentDidMount = () => {
 		this.props.fetchCurrentUser ();
+
 		window.addEventListener ('resize', this.handleResize);
 
 		console.log ('Host =>', window.location.host);
@@ -156,7 +172,7 @@ class AppContainer extends Component {
 							{ /*<span className="navbar-toggler-icon"/>*/ }
 						</NavbarToggler>
 
-						<Container className={ style.block }>
+						<Container className={ style.block } fluid>
 							<Switch>
 								<Route path="/dashboard" name="Dashboard"
 								       render={ () => < Dashboard/> }
@@ -199,13 +215,12 @@ class AppContainer extends Component {
 								{ /* IMPORTANT below shows how to pass props in Route */ }
 
 								<Route disable path="/chatroom" name="Chat Room"
-								       /*render={ () => < ChatRoom/> }
-								       socket={ socket }*/
+									/*render={ () => < ChatRoom/> }
+									 socket={ socket }*/
 								/>
 
 								<Route path="/chatroom-v2" name="Chat Room V2"
-									// render={ () => < ChatRoom socket={ socket }/>  }
-									   component={ ChatRoomV2 }
+								       component={ ChatRoomV2 }
 								/>
 
 								{ /*<Route path="/chatrooms/:id" component={ ChatRoom }/>*/ }
