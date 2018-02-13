@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="742d2f67-9123-492e-9892-2d49e2746a61" name="Default" comment="remove">
+    <list default="true" id="742d2f67-9123-492e-9892-2d49e2746a61" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/config/credentials/devKey.js" afterPath="$PROJECT_DIR$/config/credentials/devKey.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -2673,14 +2672,7 @@
       <workItem from="1518315372872" duration="43840000" />
       <workItem from="1518415845842" duration="36343000" />
       <workItem from="1518483684881" duration="84000" />
-      <workItem from="1518483790420" duration="16808000" />
-    </task>
-    <task id="LOCAL-00100" summary="api call problem city">
-      <created>1517444471659</created>
-      <option name="number" value="00100" />
-      <option name="presentableId" value="LOCAL-00100" />
-      <option name="project" value="LOCAL" />
-      <updated>1517444471659</updated>
+      <workItem from="1518483790420" duration="16861000" />
     </task>
     <task id="LOCAL-00101" summary="api call problem city">
       <created>1517446169416</created>
@@ -3018,11 +3010,18 @@
       <option name="project" value="LOCAL" />
       <updated>1518505749820</updated>
     </task>
-    <option name="localTasksCounter" value="149" />
+    <task id="LOCAL-00149" summary="change config production keys">
+      <created>1518509076459</created>
+      <option name="number" value="00149" />
+      <option name="presentableId" value="LOCAL-00149" />
+      <option name="project" value="LOCAL" />
+      <updated>1518509076459</updated>
+    </task>
+    <option name="localTasksCounter" value="150" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1504638000" />
+    <option name="totallyTimeSpent" value="1504691000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -3112,7 +3111,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="3d mode toggle &amp; 3 panels transform &amp; route" />
     <MESSAGE value="3d mode forbidden on mobile or small size" />
     <MESSAGE value="backup before rename" />
     <MESSAGE value="add init into webpack entry" />
@@ -3137,7 +3135,8 @@
     <MESSAGE value="a rework for chat app" />
     <MESSAGE value="a rework for chat app v2 --database remove user when component unmound and disconnected" />
     <MESSAGE value="production configs" />
-    <option name="LAST_COMMIT_MESSAGE" value="production configs" />
+    <MESSAGE value="change config production keys" />
+    <option name="LAST_COMMIT_MESSAGE" value="change config production keys" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
