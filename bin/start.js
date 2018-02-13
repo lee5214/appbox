@@ -8,14 +8,14 @@ const bodyParser = require ('body-parser');
 const cookieSession = require ('cookie-session');
 const path = require ('path');
 const server = http.Server (app);
-const cors = require('cors')
+const cors = require ('cors');
 // create variable also export it for other file(socketManager)
 // const io = module.exports.io = require ('socket.io').listen(server,{'transports' : ['polling']}); //(server);
 const socketManager = require ('../services/socketManager');
 const PORT = process.env.PORT || 4000;
 const _debug = require ('debug');
 
-console.log('port:',PORT)
+console.log ('port:', PORT);
 
 // disable socket.io
 // io.on ('connection', socketManager);
@@ -37,14 +37,14 @@ require ('../services/passport') ();
  * ---- middleware section ----
  */
 if (process.env.NODE_ENV === 'production') {
-	app.use (Express.static('client/build'));
+	app.use (Express.static ('client/build'));
 	// app.get ('/', (req, res) => {
-	// 	res.sendFile (__dirname + 'client/build/index.html')//(path.resolve (__dirname, 'client', 'build','index.html'));
-	// });
+	// 	res.sendFile (__dirname + 'client/build/index.html')//(path.resolve (__dirname, 'client',
+	// 'build','index.html')); });
 }
 
 // requests go through middleware before route handlers
-app.use(cors());
+app.use (cors ());
 app.use (bodyParser.json ());
 //  cookie
 app.use (
@@ -60,6 +60,9 @@ app.use (passport.session ());
 /*
  * ---- route section ----
  */
+app.get ('*', (req, res) => {
+	res.redirect('https://' + req.headers.host + req.url);
+});
 require ('../routes/authRoutes') (app);
 require ('../routes/secretLinkRoutes') (app);
 require ('../routes/cityRoutes') (app);
