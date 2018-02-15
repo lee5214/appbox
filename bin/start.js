@@ -21,7 +21,6 @@ console.log ('port:', PORT);
 // io.on ('connection', socketManager);
 // require ('../services/socketManager') (server);
 
-app.use(yes())
 server.listen (PORT);
 console.log ('node services is running on port:', PORT);
 
@@ -39,10 +38,8 @@ require ('../services/passport') ();
 if (process.env.NODE_ENV === 'production') {
 	app.use (Express.static ('client/build'));
 
-	// force naked domain to redirect to SSL
-	app.get ('/', (req, res) => {
-		res.redirect('https://' + req.headers.host + req.url);
-	});
+	// force naked domain redirect to SSL
+	app.use(yes())
 	// app.get ('/', (req, res) => {
 	// 	res.sendFile (__dirname + 'client/build/index.html')//(path.resolve (__dirname, 'client',
 	// 'build','index.html')); });
