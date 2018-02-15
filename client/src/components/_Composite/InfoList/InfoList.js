@@ -3,7 +3,7 @@ import hash from 'object-hash';
 import _ from 'lodash';
 
 import { Button, Divider, Label, Table } from 'components';
-import { Colors } from 'consts';
+// import { Colors } from 'remove-consts';
 import classes from './InfoList.scss';
 
 const InfoList = (props) => {

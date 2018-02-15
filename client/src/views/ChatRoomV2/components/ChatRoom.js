@@ -6,21 +6,17 @@ import ChatSideBar from './ChatSideBar';
 import MessagesContainer from './MessagesContainer';
 import { bindActionCreators } from 'redux';
 import { Button, Col, Container, Form, Input, InputGroup, InputGroupAddon, InputGroupButton, Row } from 'reactstrap';
-// import firebase from 'firebase';
+import fire from 'utils/fire';
 
-
-const rootDB = firebase.database ().ref ().child ('chatroom/');
+const rootDB = fire.database ().ref ().child ('chatroom/');
 
 class ChatRoom extends Component {
 	constructor (props) {
 		super (props);
 		this.state = {
-			//socket : null,
 			inputMessage : '',
 			users : null,
 			messagesList : [],
-			currentMessages : [],
-			usersNumber : 0,
 			Anonymous : false,
 		};
 	}
@@ -30,13 +26,14 @@ class ChatRoom extends Component {
 	// children before it is called on the parent
 	// so at this time the redux state has not been received as props
 	componentDidMount () {
+		console.log ('didmount');
 		rootDB.child ('users').on ('value', (snapshot) => {
 			const users = snapshot.val ();
 			console.log ('user ref =>', users);
 			this.setState ({users : users});
 		});
 
-		rootDB.child ('messages').on ('child_added', (snapshot) => {
+		rootDB.child ('messages').limitToLast(100).on ('child_added', (snapshot) => {
 			const messagesSnapshot = snapshot.val ();
 			if (messagesSnapshot) {
 				this.setState ({
@@ -46,6 +43,23 @@ class ChatRoom extends Component {
 				});
 			}
 		});
+		// rootDB.child ('messages').limitToLast (100).on ('value', (snapshot) => {
+		// 	const messagesSnapshot = snapshot.val ();
+		// 	// if (messagesSnapshot) {
+		// 	// 	this.setState ({
+		// 	// 		messagesList : //messagesSnapshot,
+		// 	// 			[ messagesSnapshot, ...this.state.messagesList ],
+		// 	// 		//messageNumber : this.state.messageNumber + 1,
+		// 	// 	});
+		// 	// }
+		// 	console.log('snap',messagesSnapshot)
+		// 	if (messagesSnapshot) {
+		// 		this.setState ({
+		// 			messagesList : Object.keys (messagesSnapshot).map (key => messagesSnapshot[ key ] ),
+		// 		}, console.log ('list',this.state.messagesList));
+		// 	}
+		//
+		// });
 
 		// IMPORTANT
 		// by default I wannt firebase auto detect user when component rendered
@@ -66,7 +80,10 @@ class ChatRoom extends Component {
 	};
 
 	componentWillUnmount = () => {
-		rootDB.child(`users/${this.props.currentUserInfo._id}`).remove ();
+		rootDB.child (`users/${this.props.currentUserInfo._id}`).remove ();
+		// offline the messages DB
+		// so that next time chatroom re-mounted, messages could be added correctly
+		rootDB.child ('messages').off();
 	};
 
 	onInputChange = (input) => {
@@ -102,13 +119,16 @@ class ChatRoom extends Component {
 					</Col>
 
 					<Col xs={ 9 }>
-						<MessagesContainer messagesList={ this.state.messagesList }/>
+						{ this.state.messagesList ?
+							<MessagesContainer messagesList={ this.state.messagesList }/>
+							: <div>Loading</div>
+						}
 						<Row>
 							<Col>
 								<Form className={ 'input-group' } onSubmit={ (e) => { this.handleSubmit (e); } }>
 									<InputGroup>
 										<InputGroupAddon className={ 'm-2' }>
-											Anonymise？
+											Anonymous？
 											<Input addon type="checkbox" aria-label="Checkbox for Anonymous"
 											       onChange={ this.toggleAnonymous }
 											/>

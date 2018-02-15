@@ -1,4 +1,8 @@
 const passport = require ('passport');
+const mongoose = require ('mongoose');
+const requireLogin = require ('../middleware/requireLogin');
+const Users_Model = mongoose.model ('Users_Model');
+
 module.exports = (app) => {
 
 	/*
@@ -8,14 +12,25 @@ module.exports = (app) => {
 		// for cookie-session test: res.send(req.session)
 		res.send (req.user);
 	});
-	app.get ('/api/all_user', (req, res) => {
-		res.send (req.user);
+	app.get ('/api/all_registered_users', (req, res) => {
+		Users_Model.find ({}, (err, users) => {
+			console.log ('aa');
+			res.send (users);
+		});
 	});
+	app.get ('/api/all_google_users', (req, res) => {
+		Users_Model.find ({'google' : {$exists : true}}, (err, users) => {
+			res.send (users);
+		});
+	});
+	app.get ('/api/all_facebook_users', (req, res) => {
+		Users_Model.find ({'facebook' : {$exists : true}}, (err, users) => {
+			res.send (users);
+		});
+	});
+
 	app.get ('/api/logout', (req, res) => {
 		req.logout ();
-		// res.redirect('/')
-		// res.header('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0,
-		// pre-check=0');
 		res.redirect ('/');
 	});
 

@@ -3,12 +3,12 @@ import { connect } from 'react-redux';
 import { Col, Row } from 'reactstrap';
 import { CityDetail, SearchBar } from './index';
 import PropTypes from 'prop-types';
-import { Colors } from 'consts';
+//import { Colors } from 'remove-consts';
 
 class City extends Component {
 	render () {
 		return (
-			<div className="animated fadeIn container">
+			<div className="animated fadeIn container pt-4">
 				<Row className={ 'justify-content-center' }>
 					<Col xs={ 'auto' }>
 						<SearchBar defaultCity={ 'San Francisco' }/>

@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { setMode, setMouseTrack } from "actions/setting";
+import axios from 'axios';
 
 class Aside extends Component {
 	constructor (props) {
@@ -11,8 +12,11 @@ class Aside extends Component {
 
 		this.toggle = this.toggle.bind (this);
 		this.state = {
+			mode : '',
 			activeTab : '1',
-			cameraCenter : false,
+			cameraFixed : false,
+			allGoogleUsers : [],
+			allFacebookUsers : [],
 		};
 	}
 
@@ -24,7 +28,40 @@ class Aside extends Component {
 		}
 	};
 	componentDidMount = () => {
-		//this.props.setMouseTrack (true)
+		axios.get ('/api/all_google_users')
+		     .then (res => {
+			     Object.keys (res.data).map (key => res.data[ key ]);
+			     this.setState ({allGoogleUsers : res.data});
+		     })
+		     .catch (err => {
+			     console.log (err);
+		     });
+		axios.get ('/api/all_facebook_users')
+		     .then (res => {
+			     Object.keys (res.data).map (key => res.data[ key ]);
+			     this.setState ({allFacebookUsers : res.data});
+		     })
+		     .catch (err => {
+			     console.log (err);
+		     });
+
+	};
+
+	componentWillReceiveProps (nextProps) {
+		if (nextProps.mode) {
+			this.setState ({mode : nextProps.mode});
+		}
+	}
+
+	renderUser = (obj) => {
+		return (
+			<div key={ obj._id } className="avatar avatar-xs">
+				<img src={ obj.local.avatar } className="img-avatar"
+				     alt={ obj.local.displayName }
+				     title={ obj.local.displayName }
+				/>
+			</div>
+		);
 	};
 
 	render () {
@@ -62,8 +99,12 @@ class Aside extends Component {
 								<Label for='mode-button'
 								       className="switch switch-text switch-pill switch-success switch-sm float-right">
 									<Input id='mode-button' type="checkbox" className="switch-input"
-									       checked={ mode === '3D' }
-									       onChange={ () => this.props.setMode (this.props.mode === '3D' ? '2D' : '3D') }
+									       checked={ this.state.mode === '3D' }
+									       onChange={ (e) => {
+										       //this.props.mode3DToggle(e)
+										       this.props.setMode (this.props.mode === '3D' ? '2D' : '3D');
+										       // document.body.classList.toggle ('mode-3D-on');
+									       } }
 									/>
 									<span className="switch-label" data-on="On" data-off="Off"/>
 									<span className="switch-handle"/>
@@ -84,7 +125,7 @@ class Aside extends Component {
 									       checked={ this.props.mouseTrack === true }
 									       onChange={ () => {
 										       this.props.setMouseTrack (!this.props.mouseTrack);
-										       this.setState ({cameraCenter : false});
+										       this.setState ({cameraFixed : false});
 									       } }
 									/>
 									<span className="switch-label" data-on="On" data-off="Off"/>
@@ -101,14 +142,14 @@ class Aside extends Component {
 
 						<div className="aside-options mode3D-blur">
 							<div className="clearfix mt-3">
-								<small><b>CAMERA CENTER</b></small>
-								<Label for='cameraCenter-button'
+								<small><b>CAMERA FIXED</b></small>
+								<Label for='cameraFixed-button'
 								       className="switch switch-text switch-pill switch-success switch-sm float-right">
-									<Input id='cameraCenter-button' type="checkbox" className="switch-input"
-									       checked={ this.state.cameraCenter }
+									<Input id='cameraFixed-button' type="checkbox" className="switch-input"
+									       checked={ this.state.cameraFixed }
 									       onChange={ () => {
 										       this.props.resetCamera ();
-										       this.setState ({cameraCenter : !this.state.cameraCenter});
+										       this.setState ({cameraFixed : !this.state.cameraFixed});
 									       } }/>
 									<span className="switch-label" data-on="On" data-off="Off"/>
 									<span className="switch-handle"/>
@@ -163,10 +204,13 @@ class Aside extends Component {
 						<hr className="transparent mx-3 my-0"/>
 						<div className="callout callout-warning m-0 py-3">
 							<div className="avatar float-right">
-								<img src={ 'img/avatars/7.jpg' } className="img-avatar"
+								<img src={ 'img/dynanic-anime.gif' } className="img-avatar"
 								     alt="cong-li@cong-li.com"/>
 							</div>
-							<div>Find <strong>Cong</strong></div>
+							<div>
+								<small>Find</small>
+								&nbsp;<strong>Cong</strong>?
+							</div>
 							<small className="text-muted mr-3 text-bold"><i className="fa fa-google mr-2"/>
 								<a href={ 'https://groups.google.com/a/cong-li.com/forum/#!forum/discuss' }
 								   target={ '_blank' }>google group</a>
@@ -178,59 +222,49 @@ class Aside extends Component {
 
 						</div>
 						<hr className="mx-3 my-0"/>
-						{/*<div className="callout callout-info m-0 py-3">*/}
-							{/*<div className="avatar float-right">*/}
-								{/*<img src={ 'img/avatars/4.jpg' } className="img-avatar"*/}
-								     {/*alt="admin@bootstrapmaster.com"/>*/}
-							{/*</div>*/}
-							{/*<div>Skype with <strong>Megan</strong></div>*/}
-							{/*<small className="text-muted mr-3"><i className="icon-calendar"/>&nbsp; 4 - 5pm</small>*/}
-							{/*<small className="text-muted"><i className="icon-social-skype"/>&nbsp; On-line</small>*/}
-						{/*</div>*/}
+						{ /*<div className="callout callout-info m-0 py-3">*/ }
+						{ /*<div className="avatar float-right">*/ }
+						{ /*<img src={ 'img/avatars/4.jpg' } className="img-avatar"*/ }
+						{ /*alt="admin@bootstrapmaster.com"/>*/ }
+						{ /*</div>*/ }
+						{ /*<div>Skype with <strong>Megan</strong></div>*/ }
+						{ /*<small className="text-muted mr-3"><i className="icon-calendar"/>&nbsp; 4 - 5pm</small>*/ }
+						{ /*<small className="text-muted"><i className="icon-social-skype"/>&nbsp; On-line</small>*/ }
+						{ /*</div>*/ }
 						<hr className="transparent mx-3 my-0"/>
 						<div className="callout m-0 py-2 text-muted text-center bg-white text-uppercase">
-							<small><b>General</b></small>
+							<small><b>Users Database</b></small>
 						</div>
 						<hr className="transparent mx-3 my-0"/>
 						<div className="callout callout-danger m-0 py-3">
-							<div><strong> All User Avatars </strong></div>
-							<small className="text-muted mr-3"><i className="icon-calendar"/>&nbsp; 10 - 11pm
+							<div><strong> Google Users</strong></div>
+							<small className="text-muted mr-3"><i
+								className="icon-calendar"/>&nbsp; total: { this.state.allGoogleUsers.length } users
 							</small>
-							<small className="text-muted"><i className="icon-home"/>&nbsp; creativeLabs HQ</small>
 							<div className="avatars-stack mt-2">
-								<div className="avatar avatar-xs">
-									<img src={ 'img/avatars/2.jpg' } className="img-avatar"
-									     alt="admin@bootstrapmaster.com"/>
-								</div>
-								<div className="avatar avatar-xs">
-									<img src={ 'img/avatars/3.jpg' } className="img-avatar"
-									     alt="admin@bootstrapmaster.com"/>
-								</div>
-								<div className="avatar avatar-xs">
-									<img src={ 'img/avatars/4.jpg' } className="img-avatar"
-									     alt="admin@bootstrapmaster.com"/>
-								</div>
-								<div className="avatar avatar-xs">
-									<img src={ 'img/avatars/5.jpg' } className="img-avatar"
-									     alt="admin@bootstrapmaster.com"/>
-								</div>
-								<div className="avatar avatar-xs">
-									<img src={ 'img/avatars/6.jpg' } className="img-avatar"
-									     alt="admin@bootstrapmaster.com"/>
-								</div>
+								{ this.state.allGoogleUsers.length > 0 ?
+									this.state.allGoogleUsers.map (item => this.renderUser (item))
+									: <div>Loading</div>
+								}
 							</div>
 						</div>
-						<hr className="mx-3 my-0"/>
-						<div className="callout callout-success m-0 py-3">
-							<div><strong>#10 Startups.Garden</strong> Meetup</div>
-							<small className="text-muted mr-3"><i className="icon-calendar"/>&nbsp; 1 - 3pm</small>
-							<small className="text-muted"><i className="icon-location-pin"/>&nbsp; Palo Alto, CA
+						<hr className="transparent mx-3 my-0"/>
+						<div className="callout callout-danger m-0 py-3">
+							<div><strong> Facebook Users</strong></div>
+							<small className="text-muted mr-3"><i
+								className="icon-calendar"/>&nbsp; total: { this.state.allFacebookUsers.length } users
 							</small>
+							<div className="avatars-stack mt-2">
+								{ this.state.allFacebookUsers.length > 0 ?
+									this.state.allFacebookUsers.map (item => this.renderUser (item))
+									: <div>Loading</div>
+								}
+							</div>
 						</div>
+
 						<hr className="mx-3 my-0"/>
 						<div className="callout callout-primary m-0 py-3">
 							<div><strong>Team meeting</strong></div>
-							<small className="text-muted mr-3"><i className="icon-calendar"/>&nbsp; 4 - 6pm</small>
 							<small className="text-muted"><i className="icon-home"/>&nbsp; creativeLabs HQ</small>
 							<div className="avatars-stack mt-2">
 								<div className="avatar avatar-xs">

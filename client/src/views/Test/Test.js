@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import MainCanvas from './MainCanvas'
+import TestField1 from './TestField1'
+import TestField2 from './TestField2'
+import TestField3 from './TestField3'
+import TestField4 from './TestField4'
 // import socketIOClient from 'socket.io-client';
 // import {
 // 	Button,
@@ -27,7 +30,10 @@ class Test extends Component {
 	render () {
 		return (
 			<div>
-				<MainCanvas/>
+				<TestField1/>
+				<TestField2/>
+				<TestField3/>
+				<TestField4/>
 			</div>
 		);
 	}

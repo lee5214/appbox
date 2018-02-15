@@ -47,20 +47,6 @@ import style from './AppContainer.scss';
  const socket = socketIOClient (webSocketUri);
  */
 
-
-/*
-import firebase from 'firebase';
-let config = {
-	apiKey: "AIzaSyBqm1lWfImVwT88KhwoBpLPtoNtc35mS4A",
-	authDomain: "app-box-prod.firebaseapp.com",
-	databaseURL: "https://app-box-prod.firebaseio.com",
-	projectId: "app-box-prod",
-	storageBucket: "app-box-prod.appspot.com",
-	messagingSenderId: "141932841759"
-};
-firebase.initializeApp(config);
-*/
-
 class AppContainer extends Component {
 	// TODO theme3D -- done
 	constructor (props) {
@@ -113,13 +99,27 @@ class AppContainer extends Component {
 		e.preventDefault ();
 		document.body.classList.toggle ('aside-menu-hidden');
 	};
+	// mode3DToggle = (e) => {
+	// 	e.preventDefault ();
+	// 	if (window.innerWidth < this.minimalInnerlWidth) {
+	// 		document.body.classList.remove ('mode-3D-on');
+	// 		this.setState ({mode3D_permission : false});
+	// 		this.props.setMode ('2D');
+	// 		this.props.setMouseTrack (false);
+	// 		console.log (`force 2D mode, minimal width breakpoint: --${this.minimalInnerlWidth}px--, 3D mode disable`);
+	// 	} else {
+	// 		document.body.classList.toggle ('mode-3D-on');
+	// 		this.props.setMode(this.props.setting.layout.mode==='3D'?'2D':'3D')
+	// 		this.setState ({mode3D_permission : true});
+	// 	}
+	// };
 	handleResize = () => {
 		if (window.innerWidth < this.minimalInnerlWidth) {
 			document.body.classList.remove ('mode-3D-on');
 			this.setState ({mode3D_permission : false});
 			this.props.setMode ('2D');
 			this.props.setMouseTrack (false);
-			console.log (`resize detected, inner width breakpoint: --${this.minimalInnerlWidth}px--, 3D mode disable`);
+			console.log (`resize detected, minimal width breakpoint: --${this.minimalInnerlWidth}px--, 3D mode disable`);
 		} else {
 			document.body.classList.add ('mode-3D-on');
 			this.setState ({mode3D_permission : true});

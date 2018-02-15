@@ -6,29 +6,24 @@ AppBox
 
 
 ### Description
-===
-This is an all in one project I created as my SPA & website & toolkit 
+This is an all-in-one project I created as my SPA & website 
 
 
 ### Demo
-===
 https://cong-li.com
 
 
 ### Credits
-===
 >Client
->> `React, Redux`
+>> `React, Redux, Webpack`
 
 >Server
->> `Express, Node, Firebase, Gooeld Cloud, MongoDB`
+>> `Express, Node, Gooeld Cloud, Heroku, MongoDB, Firebase, Travis CI`
 
 ### Details
-===
 ```
-Author: Cong Li
-Email: cong-li@cong-li.com
-Site: lee5214.com
+author: Cong Li
+email: cong-li@cong-li.com
 ```
 
 ### Run on local
@@ -39,15 +34,20 @@ default frontend react server: localhost:3000
 default backend express server: localhost: 4000
 
 
-### Build steps in production
-
+### Build and Run
+Div
+___
 ```javascript
->> git push
->> go through CI
->> CI deploy onto google app engine & heroku
+>> npm run dev
 ```
+___
 
 ```diff
++ SSL
 + firebase
++ google cloud
++ socket.io
++ redux-thunk
 - socket.io
+- materialUI
 ```

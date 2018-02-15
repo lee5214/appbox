@@ -312,5 +312,7 @@
   //  width: 100px;
   //  transform:translatey(-50%)
   //}
-
+  .AppContainer__breadcrumb_wrapper, .Breadcrumb__navbar_column{
+    background-color: transparent;
+  }
 }

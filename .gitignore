@@ -7,7 +7,7 @@
 # secrets
 /app.yaml
 /config/credentials/devKey.js
-/client/_backup
+client/_backup
 # testing
 /tests
 /coverage
@@ -35,3 +35,5 @@ etc/
 #*.css
 #*.css.map
 
+.idea/codeStyles/
+package-lock.json

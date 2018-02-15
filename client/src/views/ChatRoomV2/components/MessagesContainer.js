@@ -34,6 +34,7 @@ class MessagesContainer extends Component {
 	};
 
 	render () {
+		const {messagesList} = this.props
 		return (
 			<Panel className={ style.chatPanel }
 			       header={ (
@@ -47,7 +48,7 @@ class MessagesContainer extends Component {
 				       <Row></Row>
 			       ) }
 			>
-				{ this.props.messagesList.map ((msg) => this.showMessages (msg)) }
+				{ messagesList.map ((msg) => this.showMessages (msg)) }
 			</Panel>
 		);
 	}

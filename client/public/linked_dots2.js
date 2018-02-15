@@ -7,17 +7,17 @@ function dot(width, height, speed) {
 }
 
 function dotGraph() {
-	var maxDistance = 100;
-	var numDots = 100;
+	let maxDistance = 100;
+	let numDots = 100;
 
-	var canvas = document.getElementById("bg");
-	var stage;
-	var width = window.innerWidth;
-	var height = window.innerHeight;
-	var dots = [];
-	var timer;
+	let canvas = document.getElementById("bg");
+	let stage;
+	let width = window.innerWidth;
+	let height = window.innerHeight;
+	let dots = [];
+	let timer;
 
-	var tick = function () {
+	let tick = function () {
 
 		//Paints over old frame
 		stage.fillStyle = "#000000";
@@ -25,7 +25,7 @@ function dotGraph() {
 		stage.fill();
 
 		stage.fillStyle = "#FFFFFF";
-		var i=0;
+		let i=0;
 		for (i=0; i<dots.length; i++) {
 
 			//Move dot
