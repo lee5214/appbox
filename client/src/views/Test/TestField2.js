@@ -58,7 +58,7 @@ class Scene extends Component {
 		this.theta +=0.1
 		this.cube.rotation.x += 0.01
 		this.cube.rotation.y += 0.01
-		this.camera.position.z = 2 * Math.sin( THREE.Math.degToRad( this.theta ) );
+		this.camera.position.z = 20 * Math.sin( THREE.Math.degToRad( this.theta ) );
 
 		this.renderScene()
 		this.frameId = window.requestAnimationFrame(this.animate)
@@ -71,7 +71,7 @@ class Scene extends Component {
 	render() {
 		return (
 			<div
-				style={{ width: '400px', height: '400px' }}
+				style={{ borderRadius:'50%',width: '100%', height: '100%', position:'absolute',top:'50%',left:'50%',transform:'translate(-50%,-50%)' }}
 				ref={(mount) => { this.mount = mount }}
 			/>
 		)

@@ -9999,8 +9999,6 @@ hr.transparent {
     transform: translateZ(-100px); }
   .mode-3D-on.body .mode-3D .main {
     transform: translateZ(-100px); }
-    .mode-3D-on.body .mode-3D .main .AppContainer__block {
-      animation: pump 30s infinite; }
   .mode-3D-on.body .mode-3D .sidebar-minimizer {
     display: none; }
   .mode-3D-on.body .mode-3D.sidebar-minimized .sidebar {

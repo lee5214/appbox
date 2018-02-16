@@ -3,6 +3,10 @@
   background: #272727; }
 
 .block {
-  display: flex; }
+  display: flex;
+  height: calc(100% - 100px);
+  overflow: scroll;
+  padding: 0 30px;
+  width: 90%; }
 
 /*# sourceMappingURL=AppContainer.css.map */

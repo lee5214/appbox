@@ -7,4 +7,8 @@
 
 .block{
   display: flex;
+  height: calc(100% - 100px);
+  overflow: scroll;
+  padding: 0 30px;
+  width: 90%;
 }
