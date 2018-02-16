@@ -7,13 +7,15 @@
 # secrets
 /app.yaml
 /config/credentials/devKey.js
-client/_backup
 # testing
 /tests
 /coverage
 
 # production
 /client/build
+
+# backup
+/client/_backup
 
 # misc
 .DS_Store

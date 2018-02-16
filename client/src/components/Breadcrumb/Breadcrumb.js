@@ -27,7 +27,7 @@ const BreadcrumbsItem = ({match, ...rest}) => {
 		return (
 			match.isExact ?
 				(
-					<Breadcrumb.Item active>{ routeName }</Breadcrumb.Item>
+					<Breadcrumb.Item active>{ routeName.toUpperCase() }</Breadcrumb.Item>
 				) :
 				(
 					<Breadcrumb.Item href={ match.url || '' }>

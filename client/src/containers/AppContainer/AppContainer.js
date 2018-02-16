@@ -62,6 +62,7 @@ class AppContainer extends Component {
 
 	componentDidMount = () => {
 		this.props.fetchCurrentUser ();
+		this.handleResize()
 
 		window.addEventListener ('resize', this.handleResize);
 
@@ -70,6 +71,7 @@ class AppContainer extends Component {
 		//console.log ('Socket Connection =>', socket);
 		console.log ('App Rect =>', this.appbodyRef.getBoundingClientRect ());
 	};
+
 	onMouseMove = (e) => {
 		let mX = e.clientX, mY = e.clientY;
 		let maxRotateX = 10;
@@ -172,7 +174,7 @@ class AppContainer extends Component {
 							{ /*<span className="navbar-toggler-icon"/>*/ }
 						</NavbarToggler>
 
-						<Container className={ style.block } fluid>
+						<Container className={ style.block }>
 							<Switch>
 								<Route path="/dashboard" name="Dashboard"
 								       render={ () => < Dashboard/> }

@@ -15,7 +15,7 @@ let defaultSetting =
 export const setting = (state = defaultSetting, action) => {
 	switch (action.type) {
 		case SET_MODE:
-			console.log (action.payload);
+			action.payload === '3D' ? document.body.classList.add ('mode-3D-on') : document.body.classList.remove ('mode-3D-on');
 			return {...state, layout : {...state.layout, mode : action.payload}};
 		case SET_MOUSE_TRACK:
 			return {...state, layout : {...state.layout, mouseTrack : action.payload}};

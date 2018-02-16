@@ -29,10 +29,10 @@ import classes from './Test.scss'
 class Test extends Component {
 	render () {
 		return (
-			<div>
-				<TestField1/>
+			<div className={'animated fadeIn container d-flex'}>
+				{/*<TestField1/>*/}
 				<TestField2/>
-				<TestField3/>
+				{/*<TestField3/>*/}
 				<TestField4/>
 			</div>
 		);

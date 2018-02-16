@@ -1,7 +1,7 @@
 export const SET_MODE = 'SET_MODE';
 export const SET_MOUSE_TRACK = 'SET_MOUSE_TRACK';
 
-export const setMode = (mode='2D') => {
+export const setMode = (mode) => {
 	if(window.innerWidth < 1200){
 		return {
 			type : SET_MODE,
