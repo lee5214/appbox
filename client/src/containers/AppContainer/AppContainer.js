@@ -33,6 +33,7 @@ import Test from '../../views/Test/Test';
 // Icons & Style
 import FontAwesome from '../../views/Icons/FontAwesome/';
 import SimpleLineIcons from '../../views/Icons/SimpleLineIcons/';
+import { calcAngleDegrees } from 'utils';
 import style from './AppContainer.scss';
 
 //
@@ -55,6 +56,7 @@ class AppContainer extends Component {
 			mode3D_permission : true,
 			roX : 0,
 			roY : 0,
+			roZ : 0,
 			videoURL : 'http://techslides.com/demos/sample-videos/small.mp4',
 		};
 		this.minimalInnerlWidth = 1200;
@@ -62,22 +64,23 @@ class AppContainer extends Component {
 
 	componentDidMount = () => {
 		this.props.fetchCurrentUser ();
-		this.handleResize()
+		this.handleResize ();
 
 		window.addEventListener ('resize', this.handleResize);
 
 		console.log ('Host =>', window.location.host);
 		console.log ('Mode Activation =>', this.props.setting.layout.mode);
 		//console.log ('Socket Connection =>', socket);
-		console.log ('App Rect =>', this.appbodyRef.getBoundingClientRect ());
+		console.log ('App Rect =>', this.appBodyRef.getBoundingClientRect ());
 	};
 
 	onMouseMove = (e) => {
 		let mX = e.clientX, mY = e.clientY;
 		let maxRotateX = 10;
 		let maxRotateY = 10;
+		let maxRotateZ = 360;
 		let view_option = 3;
-		let {left, right, top, bottom, height, width} = this.appbodyRef.getBoundingClientRect ();
+		let {left, right, top, bottom, height, width} = this.appBodyRef.getBoundingClientRect ();
 		let centerX = width / 2,
 			centerY = height / 2,
 			curRelPosX = mX - left,
@@ -85,8 +88,10 @@ class AppContainer extends Component {
 			percentX = (curRelPosX - centerX) / centerX,
 			percentY = (curRelPosY - centerY) / centerY;
 		let roX = -percentY * maxRotateX, roY = percentX * maxRotateY;
+		let roZ = calcAngleDegrees (curRelPosX - centerX, -(curRelPosY - centerY)).toFixed(2);//
+
 		if (roX !== this.state.roX || roY !== this.state.roY) {
-			this.setState ({roX, roY});
+			this.setState ({roX, roY, roZ});
 		}
 	};
 	sidebarToggle = (e) => {
@@ -108,13 +113,10 @@ class AppContainer extends Component {
 	// 		this.setState ({mode3D_permission : false});
 	// 		this.props.setMode ('2D');
 	// 		this.props.setMouseTrack (false);
-	// 		console.log (`force 2D mode, minimal width breakpoint: --${this.minimalInnerlWidth}px--, 3D mode disable`);
-	// 	} else {
-	// 		document.body.classList.toggle ('mode-3D-on');
-	// 		this.props.setMode(this.props.setting.layout.mode==='3D'?'2D':'3D')
-	// 		this.setState ({mode3D_permission : true});
-	// 	}
-	// };
+	// 		console.log (`force 2D mode, minimal width breakpoint: --${this.minimalInnerlWidth}px--, 3D mode
+	// disable`); } else { document.body.classList.toggle ('mode-3D-on');
+	// this.props.setMode(this.props.setting.layout.mode==='3D'?'2D':'3D') this.setState ({mode3D_permission : true});
+	// } };
 	handleResize = () => {
 		if (window.innerWidth < this.minimalInnerlWidth) {
 			document.body.classList.remove ('mode-3D-on');
@@ -140,22 +142,13 @@ class AppContainer extends Component {
 		return (
 			<div className={ `app mode-${mode}` }
 			     onMouseMove={ this.state.mode3D_permission && mouseTrack ? this.onMouseMove : null }
-			     ref={ appbodyRef => {this.appbodyRef = appbodyRef;} }
+			     ref={ appBodyRef => {this.appBodyRef = appBodyRef;} }
 			     style={ this.state.mode3D_permission && mode === '3D' ? app3D : null }>
-
 				<Header currentUserInfo={ this.props.currentUserInfo }
 				/>
 				<div className="app-body">
 					<Sidebar { ...this.props }/>
 					<main className="main animated">
-						{ /*<video id="background-video" loop autoPlay muted*/ }
-						{ /*style={{minHeight:'100%',minWidth:'100%',position:'fixed'}}*/ }
-						{ /*>*/ }
-						{ /*<source src={ this.state.videoURL } type="video/mp4"/>*/ }
-						{ /*<source src={ this.state.videoURL } type="video/ogg"/>*/ }
-						{ /*Your browser does not support the video tag.*/ }
-						{ /*</video>*/ }
-
 						<div className={ style.breadcrumb_wrapper }>
 							<BannerLine/>
 							<Container>
@@ -233,7 +226,7 @@ class AppContainer extends Component {
 								       component={ Myself }
 								/>
 								<Route path="/test" name="Test"
-								       component={ Test }
+								       render={ () => <Test roZ={ this.state.roZ }/> }
 								/>
 								<Redirect from="/" to="/dashboard"/>
 							</Switch>

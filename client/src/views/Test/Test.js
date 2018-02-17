@@ -33,7 +33,7 @@ class Test extends Component {
 				{/*<TestField1/>*/}
 				{/*<TestField2/>*/}
 				{/*<TestField3/>*/}
-				<TestField4/>
+				<TestField4 roZ={this.props.roZ}/>
 			</div>
 		);
 	}

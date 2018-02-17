@@ -23,7 +23,7 @@
 
 .st1 {
   stroke-width: 60;
-  stroke-dasharray: 1,8
+  stroke-dasharray: 1,6
 }
 
 .st2 {
@@ -59,6 +59,12 @@
   //transform: rotate(50deg);
 }
 .g1{
+  position: absolute;
+  stroke: #5c5c5c;
+  width: 80px;
+  height: 80px;
+}
+.g2{
   position: absolute;
   stroke: #5c5c5c;
   width: 80px;

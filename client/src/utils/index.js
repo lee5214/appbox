@@ -23,6 +23,10 @@ export const randomAvatarUrl = () => {
 	return `/img/avatars/guest-${ran}.png`;
 };
 
+export const calcAngleDegrees = (x, y) => {
+	return Math.atan2 (x, y) * 180 / Math.PI;
+};
+
 // export const checkCityName = async (name) => {
 // 	let url =
 // `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${name}&types=(cities)&key=${keys.GoogleGlobalAPI_Key}`;
