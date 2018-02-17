@@ -146,6 +146,7 @@ class AppContainer extends Component {
 			     style={ this.state.mode3D_permission && mode === '3D' ? app3D : null }>
 				<Header currentUserInfo={ this.props.currentUserInfo }
 				/>
+				<div></div>
 				<div className="app-body">
 					<Sidebar { ...this.props }/>
 					<main className="main animated">

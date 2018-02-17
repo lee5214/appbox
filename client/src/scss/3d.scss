@@ -123,6 +123,10 @@
         filter: blur(1px) brightness(1.4);
         color: red;
       }
+      .overlayLED {
+        transition: 1s ease-in-out 0.5s;
+        display: block;
+      }
       &:hover {
         //z-index: 1020;
         .mode3D-blur {
@@ -130,11 +134,15 @@
           filter: blur(0px) brightness(1);
           color: white;
         }
+        .overlayLED {
+          transition: 1s ease-in-out 0.5s;
+          display: none;
+        }
       }
     }
   }
 
-  //sidebar toggler
+  // toggler
   .mode-3D .main {
     .sidebar-btn, .aside-btn{
       display: block !important;
@@ -151,7 +159,7 @@
 
   .mode-3D {
     .sidebar, .aside-menu {
-      .translatex-40{
+      .translateX-40{
         transition: 2s ease-in-out;
       }
     }

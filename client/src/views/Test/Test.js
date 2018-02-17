@@ -31,7 +31,7 @@ class Test extends Component {
 		return (
 			<div className={'animated fadeIn container d-flex'}>
 				{/*<TestField1/>*/}
-				{/*<TestField2/>*/}
+				<TestField2/>
 				{/*<TestField3/>*/}
 				<TestField4 roZ={this.props.roZ}/>
 			</div>

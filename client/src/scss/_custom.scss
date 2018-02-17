@@ -13,8 +13,6 @@ body {
   height: 100%;
 }
 
-
-
 code, kbd, pre, samp {
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
   font-size: 1em;
@@ -52,11 +50,22 @@ code, kbd, pre, samp {
 .breadcrumb > li + li:before {
   content: "\00a0/\00a0";
 }
-.breadcrumb{
+
+.breadcrumb {
   margin: 15px 0;
 }
 
 // add none border option
-.no-border{
+.no-border {
   border: 0 !important;
+}
+
+//overlay
+.overlayLED {
+  display: none;
+  background: url(/ov6.png) repeat;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 9999;
 }

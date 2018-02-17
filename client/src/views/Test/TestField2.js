@@ -4,8 +4,7 @@ import * as THREE from 'three'
 class Scene extends Component {
 	constructor(props) {
 		super(props)
-		this.theta=0
-
+		//this.theta=0
 	}
 
 	componentDidMount() {
@@ -24,7 +23,7 @@ class Scene extends Component {
 		const material = new THREE.MeshBasicMaterial({ color: '#433F81' })
 		const cube = new THREE.Mesh(geometry, material)
 
-		camera.position.z = 20
+		camera.position.z = 2.5
 		scene.add(cube)
 		renderer.setClearColor('#000000')
 		renderer.setSize(width, height)
@@ -55,11 +54,10 @@ class Scene extends Component {
 	}
 
 	animate=()=> {
-		this.theta +=0.1
+		//this.theta +=0.1
 		this.cube.rotation.x += 0.01
 		this.cube.rotation.y += 0.01
-		this.camera.position.z = 20 * Math.sin( THREE.Math.degToRad( this.theta ) );
-
+		//this.camera.position.z = 20 * Math.sin( THREE.Math.degToRad( this.theta ) );
 		this.renderScene()
 		this.frameId = window.requestAnimationFrame(this.animate)
 	}
@@ -69,13 +67,18 @@ class Scene extends Component {
 	}
 
 	render() {
+		let w = window.innerWidth*.5, h = window.innerWidth*.5
 		return (
 			<div
-				style={{ borderRadius:'50%',width: '100%', height: '100%', position:'absolute',top:'50%',left:'50%',transform:'translate(-50%,-50%)' }}
+				style={{ borderRadius:'50%',width: w, height:h, position:'absolute',top:'50%',left:'50%',transform:'translate(-50%,-50%)' }}
 				ref={(mount) => { this.mount = mount }}
-			/>
+			>
+				<div className={'overlayLED'}/>
+			</div>
 		)
 	}
 }
 
 export default Scene
+
+// TODO seperate mouse tracker xy with z

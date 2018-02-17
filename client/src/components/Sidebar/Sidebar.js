@@ -104,6 +104,7 @@ class Sidebar extends Component {
 		// sidebar-nav root
 		return (
 			<div className="sidebar">
+				<div className={'overlayLED'}/>
 				<SidebarHeader/>
 				<SidebarForm/>
 				<nav className="sidebar-nav">

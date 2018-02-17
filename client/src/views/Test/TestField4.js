@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import style from './svgCircle.scss';
 import TweenMax from 'gsap';
-
+import TestField1 from './TestField1'
 class Scene extends Component {
 	constructor (props) {
 		super (props);
@@ -20,7 +20,8 @@ class Scene extends Component {
 			boxShadow : "0px 0px 10px 10px rgb(0, 204, 0)",
 		});
 	};
-	componentWillReceiveProps(nextProps){
+
+	componentWillReceiveProps (nextProps) {
 		//nextProps.roZ?this.setState({roZ:nextProps.roZ}):null;
 	}
 
@@ -46,16 +47,24 @@ class Scene extends Component {
 	render () {
 		let svgAnimation = {
 			transform : 'rotateZ(' + this.props.roZ + 'deg)',
-		}
+		};
 		return (
-			<div className={ 'container d-flex' }
-
-			    // ref={ mainSvg => {this.mainSvg = mainSvg;} }
-			>
+			<div className={ 'container d-flex' }>
+				<div className={style.backgroundContainer}>
+				</div>
 				<svg className={ style.svgMainSpinner } version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
 				     xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 				     viewBox="0 0 1000 1000" style={ {enableBackground : 'new 0 0 1000 1000'} } xmlSpace="preserve">
-					<text x="100" y="100" transform="rotate(30 20,40)" style={{stroke:'none',fill:'red'}}>{this.props.roZ}</text>
+					<canvas width={500} height={500}/>
+					<text className={ style.angNum } x="490" y="50"
+					      transform="rotate(30 500,500)">{ this.props.roZ }</text>
+					<text className={ style.angNum } x="490" y="50"
+					      transform="rotate(-90 500,500)">AAA</text>
+					<text className={ style.angNum } x="900" y="900"
+					      transform="rotate(0 500,500)">
+						App Box
+					</text>
+
 					<circle className={ style.st0 } cx="500" cy="500" r="480"/>
 					<circle style={ {stroke : this.state.colorDefault} } className={ style.st1 } cx="500" cy="500"
 					        r="400">
@@ -66,32 +75,8 @@ class Scene extends Component {
 						                  to='360 500 500'
 						                  dur="100s"
 						                  repeatCount="indefinite"/>
-						{ /*<animate attributeType="xml"*/ }
-						{ /*attributeName="stroke"*/ }
-						{ /*from="#5c5c5c"*/ }
-						{ /*to="#000000"*/ }
-						{ /*dur="10s"*/ }
-						{ /*repeatCount="indefinite"/>*/ }
 					</circle>
-					{ /*<circle className={ style.st2 } cx="500" cy="500" r="400">
-					 <animateTransform attributeType="xml"
-					 attributeName="transform"
-					 type="rotate"
-					 from="0 500 500"
-					 to="360 500 500"
-					 dur="40s"
-					 repeatCount="indefinite"/>
-					 </circle>*/ }
-					{ /*<circle className={ style.st2 } cx="500" cy="500" r="366.8" transform="rotate(0 500 500)">*/ }
-					{ /*<animateTransform attributeType="xml"*/ }
-					{ /*attributeName="transform"*/ }
-					{ /*type="rotate"*/ }
-					{ /*from="0 500 500"*/ }
-					{ /*to="-360 500 500"*/ }
-					{ /*dur="50s"*/ }
-					{ /*repeatCount="indefinite"/>*/ }
-					{ /*</circle>*/ }
-					<circle className={ style.st4 } cx="500" cy="500" r="370">
+					<circle className={ style.st2 } cx="500" cy="500" r="370">
 						<animateTransform attributeType="xml"
 						                  attributeName="transform"
 						                  type="rotate"
@@ -100,25 +85,34 @@ class Scene extends Component {
 						                  dur="50s"
 						                  repeatCount="indefinite"/>
 					</circle>
+					<circle className={ style.st3 } cx="500" cy="500" r="350">
+						<animateTransform attributeType="xml"
+						                  attributeName="transform"
+						                  type="rotate"
+						                  from="0 500 500"
+						                  to="-360 500 500"
+						                  dur="50s"
+						                  repeatCount="indefinite"/>
+					</circle>
+					<g className={ style.graphInsideArrow } style={ svgAnimation }>>
+						<polyline className={ style.p0 } points="300,960,500,500,700,960"/>
+						<polyline  className={ style.p1 } transform="rotate(180 500,500)" points="300,960,500,500,700,960">
+							<text>aaaa</text>
+						</polyline>
 
-					<circle id='aaa' className={ style.st3 } cx="500" cy="500" r="300">
-						<animateTransform attributeType="xml"
-						                  attributeName="transform"
-						                  type="rotate"
-						                  from="0 500 500"
-						                  to="-360 500 500"
-						                  dur="50s"
-						                  repeatCount="indefinite"/>
-					</circle>
-					<g className={ style.g0 } style={ svgAnimation }>>
-						<polygon className={ style.p0 } points="500,0, 400,1000 600,1000"/>
-						<polyline className={ style.p1 } fill="none" stroke="#FFFFFF" points="480,15 500,0 520,15 "/>
+						<polyline  className={ style.p1 } points="500,5,500,10" transform="rotate(20 500,500)"/>
+
+						<polyline className={style.dot.d1} points="500,0,500,20" transform="rotate(23.5 500,500)" />
+						<polyline  className={ style.p1 } points="500,5,500,10"/>
+						<polyline  className={ style.p1 } points="500,955,500,950"/>
+						{/*<polyline className={ style.p1 } fill="none" stroke="#FFFFFF" points="480,15 500,0 520,15 "/>
+						*/}
 						{ /*<polygon className={style.p2} points="500,200,750,350,750,500,700,650,500,800,300,350"/>*/ }
 					</g>
 				</svg>
 				<svg className={ style.g1 } version="1.1" xmlns="http://www.w3.org/2000/svg"
 				     xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-				     viewBox="0 0 80 80" style={ {enableBackground : 'new 0 0 1000 1000'} } xmlSpace="preserve">
+				     viewBox="0 0 1000 1000" style={ {enableBackground : 'new 0 0 1000 1000'} } xmlSpace="preserve">
 
 					<g>
 						<path className="st0" d="M0,0v34.7h8.8v34.7h1.6c2.2-5.5,4.8-10.8,7.8-15.7h-6.2V40.3h13.3v3.1c2.9-3.7,6.1-7.3,9.6-10.6V16.7h16.3V20

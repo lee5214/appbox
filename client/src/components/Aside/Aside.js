@@ -68,6 +68,7 @@ class Aside extends Component {
 		let {mode, mouseTrack} = this.props;
 		return (
 			<aside className="aside-menu">
+				<div className={'overlayLED'} />
 				<Nav tabs>
 					<NavItem>
 						<NavLink className={ classnames ({active : this.state.activeTab === '1'}) }
