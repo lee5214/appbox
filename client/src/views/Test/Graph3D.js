@@ -50,15 +50,8 @@ class Scene extends Component {
 		this.scene.add (this.sphere);
 		this.container.appendChild (this.renderer.domElement);
 
-		//window.addEventListener('resize', this.handleWindowResize, false);
 	};
-	/*handleWindowResize() {
-	 this.height = window.innerHeight;
-	 this.width = window.innerWidth;
-	 this.renderer.setSize(this.width, this.height);
-	 camera.aspect = this.width / this.height;
-	 camera.updateProjectionMatrix();
-	 }*/
+
 	createLights = () => {
 		let lights = [];
 		lights[ 0 ] = new THREE.PointLight (0xffffff, 1, 0);
@@ -70,25 +63,7 @@ class Scene extends Component {
 		this.scene.add (lights[ 0 ]);
 		this.scene.add (lights[ 1 ]);
 		this.scene.add (lights[ 2 ]);
-		// let mesh = new THREE.Object3D ();
-		// mesh.add (new THREE.LineSegments (
-		// 	new THREE.Geometry (),
-		// 	new THREE.LineBasicMaterial ({
-		// 		color : 0xffffff,
-		// 		transparent : true,
-		// 		opacity : 0.5,
-		// 	}),
-		// ));
-		// mesh.add (new THREE.Mesh (
-		// 	new THREE.Geometry (),
-		// 	new THREE.MeshPhongMaterial ({
-		// 		color : 0x156289,
-		// 		emissive : 0x072534,
-		// 		side : THREE.DoubleSide,
-		// 		flatShading : true,
-		// 	}),
-		// ));
-		// this.scene.add (mesh);
+
 	};
 	createSphere = (r, w, h, colorNum) => {
 		let colorPicker = [ 'red', 'white', 'brown', 'pink', 'brownDark', 'blue' ];

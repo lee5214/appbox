@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="A full-stack web app I created as container for my projects.">
+    <meta name="description" content="A full-stack react app I created as container for other projects.">
     <meta name="author" content="Cong Li">
     <meta name="keyword"
           content="CongLi,Bootstrap,Angular,CSS,HTML,React,React.js">
     <link rel="shortcut icon" href="img/favicon.png">
-    <title>Cong's App Box</title>
+    <title>AppBox</title>
     <!-- loader style -->
     <style>
         #initial-loader {
@@ -26,15 +26,19 @@
             bottom: 0;
             right: 0;
             transition: opacity .2s ease-out
+
         }
 
         #initial-loader .initial-loader-top {
+            color : white;
             display: flex;
             align-items: center;
             justify-content: space-between;
             width: 200px;
             border-bottom: 1px solid #2d2d2d;
-            padding-bottom: 5px
+            padding-bottom: 5px;
+            font-family: -apple-system, "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
+
         }
 
         #initial-loader .initial-loader-top > * {
@@ -46,8 +50,9 @@
         #initial-loader .initial-loader-bottom {
             padding-top: 10px;
             color: #5C5C5C;
+            font-size: 12px;
             font-family: -apple-system, "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
-            font-size: 12px
+
         }
 
         @keyframes spin {
@@ -100,7 +105,7 @@
 <div id="initial-loader">
     <div>
         <div class="initial-loader-top">
-            <h4>Cong Li</h4>
+            <h4>AppBox</h4>
             <!--<img class="initial-loader-logo" src="//i.imgur.com/R9bWCHz.png" />-->
             <div class="loader loader--style1">
                 <svg
@@ -140,8 +145,9 @@
 
 
 <!--with bg-->
-<canvas id="bg"></canvas>
-<canvas id="test"></canvas>
+<!--<canvas id="bg"></canvas>
+<canvas id="test"></canvas>-->
+
 <!--<script src="linked_dots1.js"></script>-->
 <!--<script src="linked_dots2.js"></script>-->
 

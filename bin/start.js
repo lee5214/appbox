@@ -14,15 +14,11 @@ const cors = require ('cors');
 const socketManager = require ('../services/socketManager');
 const PORT = process.env.PORT || 4000;
 const _debug = require ('debug');
-const yes = require('yes-https')
-console.log ('port:', PORT);
+const yes = require ('yes-https');
 
 // disable socket.io
 // io.on ('connection', socketManager);
 // require ('../services/socketManager') (server);
-
-server.listen (PORT);
-console.log ('node services is running on port:', PORT);
 
 //  model & mongoose
 require ('../models/Users_Model');
@@ -39,7 +35,7 @@ if (process.env.NODE_ENV === 'production') {
 	app.use (Express.static ('client/build'));
 
 	// force naked domain redirect to SSL
-	app.use(yes())
+	app.use (yes ());
 	// app.get ('/', (req, res) => {
 	// 	res.sendFile (__dirname + 'client/build/index.html')//(path.resolve (__dirname, 'client',
 	// 'build','index.html')); });
@@ -68,3 +64,32 @@ require ('../routes/authRoutes') (app);
 require ('../routes/secretLinkRoutes') (app);
 require ('../routes/cityRoutes') (app);
 require ('../routes/generalRoutes') (app);
+
+// error route handler
+
+app.use (function (req, res, next) {
+	let err = new Error ('Not Found');
+	err.status = 404;
+	res.redirect('/#/404')
+	//next (err);
+});
+
+if (process.env.NODE_ENV !== 'production') {
+	app.use (function (err, req, res, next) {
+		res.status (err.status || 500);
+		res.render ('error', {
+			message : err.message,
+			error : err,
+		});
+	});
+}
+
+app.use (function (err, req, res, next) {
+	res.status (err.status || 500);
+	res.render ('error', {
+		message : err.message,
+	});
+});
+
+server.listen (PORT);
+console.log ('node services is running on port:', PORT);

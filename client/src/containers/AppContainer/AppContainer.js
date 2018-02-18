@@ -236,7 +236,8 @@ class AppContainer extends Component {
 								<Route path="/test" name="Test"
 								       render={ () => <Test roZ={ this.state.roZ }/> }
 								/>
-								<Redirect from="/" to="/dashboard"/>
+								{/*<Redirect to="/404" />*/}
+								<Redirect from="/" to="/panel"/>
 							</Switch>
 						</Container>
 					</main>

@@ -5,9 +5,9 @@ import _ from 'lodash';
 let Colors = {
 	red : 0xff0000,
 	white : 0xd8d0d1,
-	black : 0x111111,
-	pink : 0xF5986E,
-	brownDark : 0x23190f,
+	purple : 0xFF00FF,
+	yellow : 0xffff00,
+	green: 0x7cfc00,
 	blue : 0x2fa1d6,
 };
 
@@ -22,6 +22,7 @@ class Scene extends Component {
 			rotateX : 0.1,
 			rotateY : 0.1,
 			rotateSpeed : 1,
+			color : 0,
 		};
 	}
 
@@ -39,7 +40,7 @@ class Scene extends Component {
 
 		camera.position.x = 0;
 		camera.position.y = 0;
-		camera.position.z = 800;
+		camera.position.z = 600;
 
 		renderer.setClearColor ('#000000');
 		renderer.setSize (width, height);
@@ -49,7 +50,6 @@ class Scene extends Component {
 		this.scene.fog = new THREE.Fog (0xffffff, 0.015, 100);
 		this.camera = camera;
 		this.renderer = renderer;
-		this.scene.add (this.sphere);
 		this.container.appendChild (this.renderer.domElement);
 
 		//window.addEventListener('resize', this.handleWindowResize, false);
@@ -93,10 +93,10 @@ class Scene extends Component {
 		// this.scene.add (mesh);
 	};
 	createSphere = (r, w, h, colorNum, roX, roY) => {
-		let colorPicker = [ 'red', 'white', 'brown', 'pink', 'brownDark', 'blue' ];
+		let colorPicker = Object.keys(Colors).map(key => key)
 		let geometry = new THREE.SphereGeometry (r, w, h);
 		let mat = new THREE.MeshPhongMaterial ({
-			color : Colors[ colorPicker[ colorNum ] ],
+			color : Colors[ colorPicker[ colorNum ] ]||0,
 			emissive : 0x072534,
 			side : THREE.DoubleSide,
 			flatShading : true,
@@ -107,7 +107,7 @@ class Scene extends Component {
 		sphere.rotation.x = roX || 0;
 		sphere.rotation.y = roY || 0;
 		this.sphere = sphere;
-		this.scene.add (sphere);
+		this.scene.add (this.sphere);
 	};
 	updateNewSphere = (r, w, h, color, roX, roY) => {
 		this.setState ({radius : r, widthSegments : w, heightSegments : h, color : color});
@@ -118,6 +118,7 @@ class Scene extends Component {
 		this.createScene ();
 		this.createLights ();
 		this.createSphere (6, 6, 3);
+		this.scene.add (this.sphere);
 		setInterval (() => {
 			clearInterval (this.startAnimation);
 			this.handleRandomSphere ();
@@ -148,72 +149,41 @@ class Scene extends Component {
 		});
 		this.updateNewSphere (r, w, h, color, roX, roY);
 	};
-	handleKeyDown = (e) => {
-		if (e.keyCode === 27) {
-			console.log ('true');
-		}
-	};
-
 
 	//resize = () => this.forceUpdate()
 	componentDidMount () {
 		this.init ();
 		this.start ();
-		let startAnimation = setInterval (this.handleRandomSphere, 100);
+		let startAnimation = setInterval (this.handleRandomSphere, 200);
 		setTimeout (() => {
 			clearInterval (startAnimation);
-			this.updateNewSphere (8, 8, 8, 2);
 		}, 2000);
-
-		//window.addEventListener('resize', this.resize)
 	}
-
 	componentWillUnmount () {
 		this.stop ();
 		this.container.removeChild (this.renderer.domElement);
-		//window.removeEventListener('resize', this.resize)
 	}
-
-	resize () {
-		// 更新渲染器的高度和宽度以及相机的纵横比
-		let h = this.container.clientHeight;
-		let w = this.container.clientWidth;
-		this.renderer.setSize (w, h);
-		this.camera.aspect = w / h;
-		this.camera.updateProjectionMatrix ();
-	}
-
 	start = () => {
 		if (!this.frameId) {
 			this.frameId = requestAnimationFrame (this.animate);
 		}
 	};
-
 	stop = () => {
 		cancelAnimationFrame (this.frameId);
-	};
-
-	update = (a, b, c) => {
-		// this.sphere.position.x = this.state.test||0;
-		// this.sphere.scale.x = this.state.test || 100
-		// this.sphere.scale.y = this.state.test/10 || 10
-
-		//this.scene.remove(this.sphere)
-		//this.createSphere(10,20,1)
-
 	};
 	animate = () => {
 		//this.theta +=0.1
 		if (this.camera.position.z >= 30) {
-			this.camera.position.z -= 10;
+			this.camera.position.z -= 5;
 		}
 		this.sphere.rotation.x += this.state.roX*this.state.rotateSpeed;
 		this.sphere.rotation.y += this.state.roY*this.state.rotateSpeed;
-		this.update ();
+
 
 		//this.camera.position.z = 20 * Math.sin( THREE.Math.degToRad( this.theta ) );
 		this.renderScene ();
 		this.frameId = window.requestAnimationFrame (this.animate);
+
 	};
 
 	renderScene () {
@@ -237,7 +207,7 @@ class Scene extends Component {
 				 </lable>
 				 </form>*/ }
 				<div>
-					{ this.state.radius }{ this.state.widthSegments }{ this.state.heightSegments }
+					{ this.state.radius },{ this.state.widthSegments },{ this.state.heightSegments },{this.state.color}
 				</div>
 			</div>
 		);
