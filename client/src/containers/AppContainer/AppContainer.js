@@ -22,11 +22,15 @@ import Dashboard from '../../views/Dashboard/';
 import Charts from '../../views/Charts/';
 import Widgets from '../../views/Widgets/';
 import Projects from '../../views/Projects/Projects';
+
+import Panel from '../../views/Panel';
 import City from '../../views/City/';
 // import ChatRoom from '../../views/ChatRoom';
-import ChatRoomV2 from '../../views/ChatRoomV2';
-import SecretLinks from '../../views/SecretLinks';
-import BannerLine from 'components/_Composite/BannerLine';
+import ChatRoomV2 from '../../views/ChatRoomV2/';
+import SecretLinks from '../../views/SecretLinks/';
+
+
+import BannerLine from 'components/_Composite/BannerLine/';
 import { Myself } from '../../views/About';
 import Test from '../../views/Test/Test';
 //
@@ -170,6 +174,9 @@ class AppContainer extends Component {
 
 						<Container className={ style.block }>
 							<Switch>
+								<Route path="/panel" name="Panel"
+								       render={ () => <Panel roZ={ this.state.roZ }/> }
+								/>
 								<Route path="/dashboard" name="Dashboard"
 								       render={ () => < Dashboard/> }
 									// component={ Dashboard }/>

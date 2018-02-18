@@ -28,7 +28,7 @@ app-root {
 }
 
 .app-body {
-  background: $gray-700;
+  background: $black;
   position: fixed;
   overflow: scroll;
   height: calc(100% - #{$navbar-height} - #{$footer-height});//special syntax to include the scss variable in scss function

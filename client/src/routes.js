@@ -1,6 +1,7 @@
 //for breadcrumb shows names
 const routes = {
 	'/' : 'Home',
+	'/panel' : 'Panel',
 	'/dashboard' : 'Dashboard',
 	'/components' : 'Components',
 	'/charts' : 'Charts',

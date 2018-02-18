@@ -1,13 +1,18 @@
 export default {
 	items : [
 		{
-			name : 'Dashboard',
-			url : '/dashboard',
+			name : 'Panel',
+			url : '/panel',
 			icon : 'icon-speedometer',
 			badge : {
 				variant : 'info',
-				text : 'NEW',
+				text : 'MAIN',
 			},
+		},
+		{
+			name : 'Dashboard',
+			url : '/dashboard',
+			icon : 'icon-calculator',
 		},
 
 		{
