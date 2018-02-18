@@ -49,7 +49,7 @@ class GraphCircle extends Component {
 			transform : 'rotateZ(' + this.props.roZ + 'deg)',
 		};
 		return (
-			<div className={ 'container d-flex' }>
+			<div className={style.svgContainer}>
 				<div className={style.backgroundContainer}>
 				</div>
 				<svg className={ style.svgMainSpinner } version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"

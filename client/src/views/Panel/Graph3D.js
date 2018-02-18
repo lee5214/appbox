@@ -3,9 +3,9 @@ import * as THREE from 'three';
 import _ from 'lodash';
 
 let Colors = {
-	red : 0xf25346,
+	red : 0xff0000,
 	white : 0xd8d0d1,
-	brown : 0x59332e,
+	black : 0x111111,
 	pink : 0xF5986E,
 	brownDark : 0x23190f,
 	blue : 0x2fa1d6,
@@ -35,16 +35,18 @@ class Scene extends Component {
 			1, // nearPlane
 			1000, // farPlane
 		);
-		const renderer = new THREE.WebGLRenderer (/*{alpha : true, antialias : true}*/);
+		const renderer = new THREE.WebGLRenderer ({alpha : true, antialias : true});
 
 		camera.position.x = 0;
 		camera.position.y = 0;
-		camera.position.z = 1000;
+		camera.position.z = 800;
 
 		renderer.setClearColor ('#000000');
 		renderer.setSize (width, height);
 
+
 		this.scene = scene;
+		this.scene.fog = new THREE.Fog (0xffffff, 0.015, 100);
 		this.camera = camera;
 		this.renderer = renderer;
 		this.scene.add (this.sphere);
@@ -90,36 +92,61 @@ class Scene extends Component {
 		// ));
 		// this.scene.add (mesh);
 	};
-	createSphere = (r, w, h, colorNum) => {
+	createSphere = (r, w, h, colorNum, roX, roY) => {
 		let colorPicker = [ 'red', 'white', 'brown', 'pink', 'brownDark', 'blue' ];
 		let geometry = new THREE.SphereGeometry (r, w, h);
 		let mat = new THREE.MeshPhongMaterial ({
-			color : Colors[ colorPicker[ colorNum] ],
-			emissive: 0x072534,
-			side: THREE.DoubleSide,
-			flatShading: true
+			color : Colors[ colorPicker[ colorNum ] ],
+			emissive : 0x072534,
+			side : THREE.DoubleSide,
+			flatShading : true,
+			//fog: true
 		});
 
 		let sphere = new THREE.Mesh (geometry, mat);
+		sphere.rotation.x = roX || 0;
+		sphere.rotation.y = roY || 0;
 		this.sphere = sphere;
 		this.scene.add (sphere);
 	};
-	updateNewSphere = (r, w, h, color) => {
+	updateNewSphere = (r, w, h, color, roX, roY) => {
 		this.setState ({radius : r, widthSegments : w, heightSegments : h, color : color});
 		this.scene.remove (this.sphere);
-		this.createSphere (r, w, h, color);
+		this.createSphere (r, w, h, color, roX, roY);
 	};
 	init = () => {
 		this.createScene ();
 		this.createLights ();
 		this.createSphere (6, 6, 3);
-		setInterval (() => {this.handleRandomSphere ();}, 20000);
+		setInterval (() => {
+			clearInterval (this.startAnimation);
+			this.handleRandomSphere ();
+		}, 20000);
 		document.addEventListener ('click', this.handleRandomSphere, false);
 	};
 	// events
 	handleRandomSphere = () => {
-		let r = _.random (4, 6), w = _.random (2,8), h = _.random (2,8), color = _.random (0,5);
-		this.updateNewSphere (r, w, h, color);
+		let ran = _.random (0, 20),
+			r = _.random (4, 8),
+			w = ran /*_.random (ran,10-ran)*/,
+			h = (20 - ran) /*_.random (10,20-ran)*/,
+			color = _.random (0, Object.keys(Colors).length-1),
+			roX = _.random(0,1)===0?-1:1,
+			roY = _.random(0,1)===0?-1:1,
+			angX = _.random (0, 360),
+			angY = _.random (0, 360),
+			rotateSpeed = _.random(0.001,0.005);
+		this.setState ({
+			radius : r,
+			widthSegments : w,
+			heightSegments : h,
+			roX : roX,
+			roY : roY,
+			angX : angX,
+			angY : angY,
+			rotateSpeed,
+		});
+		this.updateNewSphere (r, w, h, color, roX, roY);
 	};
 	handleKeyDown = (e) => {
 		if (e.keyCode === 27) {
@@ -127,10 +154,17 @@ class Scene extends Component {
 		}
 	};
 
+
 	//resize = () => this.forceUpdate()
 	componentDidMount () {
 		this.init ();
 		this.start ();
+		let startAnimation = setInterval (this.handleRandomSphere, 100);
+		setTimeout (() => {
+			clearInterval (startAnimation);
+			this.updateNewSphere (8, 8, 8, 2);
+		}, 2000);
+
 		//window.addEventListener('resize', this.resize)
 	}
 
@@ -140,7 +174,7 @@ class Scene extends Component {
 		//window.removeEventListener('resize', this.resize)
 	}
 
-	handleWindowResize () {
+	resize () {
 		// 更新渲染器的高度和宽度以及相机的纵横比
 		let h = this.container.clientHeight;
 		let w = this.container.clientWidth;
@@ -173,8 +207,8 @@ class Scene extends Component {
 		if (this.camera.position.z >= 30) {
 			this.camera.position.z -= 10;
 		}
-		this.sphere.rotation.x += 0.01;
-		this.sphere.rotation.y += 0.01;
+		this.sphere.rotation.x += this.state.roX*this.state.rotateSpeed;
+		this.sphere.rotation.y += this.state.roY*this.state.rotateSpeed;
 		this.update ();
 
 		//this.camera.position.z = 20 * Math.sin( THREE.Math.degToRad( this.theta ) );
