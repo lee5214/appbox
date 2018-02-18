@@ -9,83 +9,8 @@ let Colors = {
 	brownDark : 0x23190f,
 	blue : 0x68c3c0,
 };
-let AirPlane = function () {
-
-	this.mesh = new THREE.Object3D ();
-
-	// 创建机舱
-	var geomCockpit = new THREE.BoxGeometry (60, 50, 50, 1, 1, 1);
-	var matCockpit = new THREE.MeshPhongMaterial ({
-		color : Colors.red,
-		shading : THREE.FlatShading,
-	});
-	var cockpit = new THREE.Mesh (geomCockpit, matCockpit);
-	cockpit.castShadow = true;
-	cockpit.receiveShadow = true;
-	this.mesh.add (cockpit);
-
-	// 创建引擎
-	var geomEngine = new THREE.BoxGeometry (20, 50, 50, 1, 1, 1);
-	var matEngine = new THREE.MeshPhongMaterial ({
-		color : Colors.white,
-		shading : THREE.FlatShading,
-	});
-	var engine = new THREE.Mesh (geomEngine, matEngine);
-	engine.position.x = 40;
-	engine.castShadow = true;
-	engine.receiveShadow = true;
-	this.mesh.add (engine);
-
-	// 创建机尾
-	var geomTailPlane = new THREE.BoxGeometry (15, 20, 5, 1, 1, 1);
-	var matTailPlane = new THREE.MeshPhongMaterial ({
-		color : Colors.red,
-		shading : THREE.FlatShading,
-	});
-	var tailPlane = new THREE.Mesh (geomTailPlane, matTailPlane);
-	tailPlane.position.set (-35, 25, 0);
-	tailPlane.castShadow = true;
-	tailPlane.receiveShadow = true;
-	this.mesh.add (tailPlane);
-
-	// 创建机翼
-	var geomSideWing = new THREE.BoxGeometry (40, 8, 150, 1, 1, 1);
-	var matSideWing = new THREE.MeshPhongMaterial ({
-		color : Colors.red,
-		shading : THREE.FlatShading,
-	});
-	var sideWing = new THREE.Mesh (geomSideWing, matSideWing);
-	sideWing.castShadow = true;
-	sideWing.receiveShadow = true;
-	this.mesh.add (sideWing);
-
-	// 创建螺旋桨
-	var geomPropeller = new THREE.BoxGeometry (20, 10, 10, 1, 1, 1);
-	var matPropeller = new THREE.MeshPhongMaterial ({
-		color : Colors.brown,
-		shading : THREE.FlatShading,
-	});
-	this.propeller = new THREE.Mesh (geomPropeller, matPropeller);
-	this.propeller.castShadow = true;
-	this.propeller.receiveShadow = true;
-
-	// 创建螺旋桨的桨叶
-	var geomBlade = new THREE.BoxGeometry (1, 100, 20, 1, 1, 1);
-	var matBlade = new THREE.MeshPhongMaterial ({
-		color : Colors.brownDark,
-		shading : THREE.FlatShading,
-	});
-
-	var blade = new THREE.Mesh (geomBlade, matBlade);
-	blade.position.set (8, 0, 0);
-	blade.castShadow = true;
-	blade.receiveShadow = true;
-	this.propeller.add (blade);
-	this.propeller.position.set (50, 0, 0);
-	this.mesh.add (this.propeller);
-};
 let Sea = function () {
-	var geom = new THREE.CylinderGeometry (600, 600, 800, 40, 10);
+	var geom = new THREE.SphereGeometry(1 , 10, 10 );
 	geom.applyMatrix (new THREE.Matrix4 ().makeRotationX (-Math.PI / 2));
 
 	// 重点：通过合并顶点，我们确保海浪的连续性
@@ -100,14 +25,13 @@ let Sea = function () {
 	for (var i = 0; i < l; i++) {
 		// 获取每个顶点
 		var v = geom.vertices[ i ];
-
 		// 存储一些关联的数值
 		this.waves.push ({
 			y : v.y,
 			x : v.x,
 			z : v.z,
 			// 随机角度
-			ang : Math.random () * Math.PI * 2,
+			ang : 1,//Math.random () * Math.PI * 2,
 			// 随机距离
 			amp : 5 + Math.random () * 15,
 			// 在0.016至0.048度/帧之间的随机速度
@@ -161,10 +85,8 @@ class Scene extends Component {
 		this.camera = null;
 		this.renderer = null;
 		this.material = null;
-		this.cube = null;
 		this.container = null;
 	}
-
 	createScene = () => {
 		const width = this.container.clientWidth;
 		const height = this.container.clientHeight;
@@ -173,35 +95,28 @@ class Scene extends Component {
 			60, // fieldOfView
 			width / height, // aspectRatio
 			1, // nearPlane
-			10000, // farPlane
+			100, // farPlane
 		);
-		const renderer = new THREE.WebGLRenderer ({alpha : true, antialias : true});
-		const geometry = new THREE.BoxGeometry (1, 1, 1);
-		const material = new THREE.MeshBasicMaterial ({color : '#ffffff'});
-		const cube = new THREE.Mesh (geometry, material);
+		const renderer = new THREE.WebGLRenderer (/*{alpha : true, antialias : true}*/);
 
-
-		//
-		scene.fog = new THREE.Fog (0xf7d9aa, 100, 950);
-		renderer.shadowMap.enable = true;
-
-
-		//
+		var geometry = new THREE.SphereGeometry( 5,32,32 );
+		var material = new THREE.MeshBasicMaterial( {color: 0xffff00} );
+		var sphere = new THREE.Mesh( geometry, material );
+		this.sphere = sphere
 
 		camera.position.x = 0;
-		camera.position.z = 200;
-		camera.position.y = 100;
-		scene.add (cube);
+		camera.position.y = 0;
+		camera.position.z = 20;
+
 		renderer.setClearColor ('#000000');
 		renderer.setSize (width, height);
 
 		this.scene = scene;
 		this.camera = camera;
 		this.renderer = renderer;
-		this.material = material;
-		this.cube = cube;
-
+		this.scene.add(this.sphere)
 		this.container.appendChild (this.renderer.domElement);
+
 		//window.addEventListener('resize', this.handleWindowResize, false);
 	};
 	/*handleWindowResize() {
@@ -230,16 +145,10 @@ class Scene extends Component {
 		this.scene.add (hemisphereLight);
 		this.scene.add (shadowLight);
 	};
-	createPlane = () => {
-		let airplane = new AirPlane ();
-		airplane.mesh.scale.set (.25, .25, .25);
-		airplane.mesh.position.y = 100;
-		this.scene.add (airplane.mesh);
-	};
 	createSea = () => {
 		this.sea = new Sea ();
 		// 在场景底部，稍微推挤一下
-		this.sea.mesh.position.y = -750;
+		this.sea.mesh.position.y = 0;
 		// 添加大海的网格至场景
 		this.scene.add (this.sea.mesh);
 	};
@@ -247,7 +156,6 @@ class Scene extends Component {
 		this.createScene ();
 		this.createLights ();
 		this.createSea ();
-		this.createPlane ();
 	};
 
 	//resize = () => this.forceUpdate()
@@ -284,8 +192,6 @@ class Scene extends Component {
 
 	animate = () => {
 		//this.theta +=0.1
-		this.cube.rotation.x += 0.01;
-		this.cube.rotation.y += 0.01;
 		this.sea.moveWaves ();
 		this.sea.mesh.rotation.z += .005;
 		//this.camera.position.z = 20 * Math.sin( THREE.Math.degToRad( this.theta ) );

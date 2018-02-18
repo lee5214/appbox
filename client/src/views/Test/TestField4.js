@@ -95,20 +95,14 @@ class Scene extends Component {
 						                  repeatCount="indefinite"/>
 					</circle>
 					<g className={ style.graphInsideArrow } style={ svgAnimation }>>
+						{/* crosses */}
 						<polyline className={ style.p0 } points="300,960,500,500,700,960"/>
-						<polyline  className={ style.p1 } transform="rotate(180 500,500)" points="300,960,500,500,700,960">
-							<text>aaaa</text>
-						</polyline>
-
-						<polyline  className={ style.p1 } points="500,5,500,10" transform="rotate(20 500,500)"/>
-
-						<polyline className={style.dot.d1} points="500,0,500,20" transform="rotate(23.5 500,500)" />
-						<polyline  className={ style.p1 } points="500,5,500,10"/>
-						<polyline  className={ style.p1 } points="500,955,500,950"/>
-						{/*<polyline className={ style.p1 } fill="none" stroke="#FFFFFF" points="480,15 500,0 520,15 "/>
-						*/}
-						{ /*<polygon className={style.p2} points="500,200,750,350,750,500,700,650,500,800,300,350"/>*/ }
-					</g>
+						<polyline  className={ style.p1 } transform="rotate(180 500,500)" points="300,960,500,500,700,960" />
+						{/* dots */}
+						<polyline className={style.dot_d1} points="500,0,500,20" transform="rotate(23.5 500,500)" />
+						<polyline className={style.dot_d1} points="500,0,500,20" transform="rotate(-23.5 500,500)" />
+						<polyline  className={ style.dot_d1 } points="500,960,500,940"/>
+						</g>
 				</svg>
 				<svg className={ style.g1 } version="1.1" xmlns="http://www.w3.org/2000/svg"
 				     xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"

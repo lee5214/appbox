@@ -263,7 +263,7 @@ class Aside extends Component {
 							</div>
 						</div>
 
-						<hr className="mx-3 my-0"/>
+						{/*<hr className="mx-3 my-0"/>
 						<div className="callout callout-primary m-0 py-3">
 							<div><strong>Team meeting</strong></div>
 							<small className="text-muted"><i className="icon-home"/>&nbsp; creativeLabs HQ</small>
@@ -298,7 +298,7 @@ class Aside extends Component {
 								</div>
 							</div>
 						</div>
-						<hr className="mx-3 my-0"/>
+						<hr className="mx-3 my-0"/>*/}
 					</TabPane>
 
 					<TabPane tabId="3" className={ `p-3 ${mode === '3D' ? 'align-self-center' : null}` }>

@@ -3,6 +3,7 @@ import TestField1 from './TestField1'
 import TestField2 from './TestField2'
 import TestField3 from './TestField3'
 import TestField4 from './TestField4'
+import TestField5 from './TestField5'
 // import socketIOClient from 'socket.io-client';
 // import {
 // 	Button,
@@ -31,9 +32,10 @@ class Test extends Component {
 		return (
 			<div className={'animated fadeIn container d-flex'}>
 				{/*<TestField1/>*/}
-				<TestField2/>
+				{/*<TestField2/>*/}
 				{/*<TestField3/>*/}
-				<TestField4 roZ={this.props.roZ}/>
+				{/*<TestField4 roZ={this.props.roZ}/>*/}
+				<TestField5/>
 			</div>
 		);
 	}

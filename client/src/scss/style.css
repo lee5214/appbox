@@ -1,7 +1,7 @@
 /*!
  * Main stylesheet
  * sass's variable priority is top-highest, unlike es6 import style
- */
+*/
 /*----------------------------------*/
 /*!
  * Bootstrap v4.0.0 (https://getbootstrap.com)
@@ -6468,6 +6468,8 @@ a.text-transparent:hover, a.text-transparent:focus {
   .table-bordered th,
   .table-bordered td {
     border: 1px solid #ddd !important; } }
+/*// Override core variables
+@import "./core-variables";*/
 body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased; }
@@ -6711,6 +6713,7 @@ body {
 
 .breadcrumb {
   position: relative;
+  border-bottom: 0px solid #444444;
   display: block;
   margin: 20px 0; }
   .breadcrumb li {
@@ -8224,7 +8227,8 @@ button {
   height: 50px;
   padding: 0;
   margin: 0;
-  background-color: #1a1a1a; }
+  background-color: #1a1a1a;
+  border-bottom: 1px solid #444444; }
   .app-header.navbar .navbar-brand {
     display: inline-block;
     width: 155px;
@@ -8232,10 +8236,11 @@ button {
     padding: 0.5rem 1rem;
     margin-right: 0;
     background-color: #1a1a1a;
-    background-image: none;
+    background-image: url("/img/logo_face.png");
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: 70px auto; }
+    background-size: 70px auto;
+    border-bottom: 1px solid #444444; }
   .app-header.navbar .navbar-nav {
     flex-direction: row;
     align-items: center; }
@@ -8323,10 +8328,11 @@ button {
 
 @media (min-width: 992px) {
   .brand-minimized .app-header.navbar .navbar-brand {
-    width: 50px;
+    width: 49px;
     background-color: #1a1a1a;
     background-image: url("/img/logo-symbol.png");
-    background-size: 24px; } }
+    background-size: 24px;
+    border-bottom: 1px solid #444444; } }
 .progress-xs {
   height: 4px; }
 
@@ -9605,7 +9611,8 @@ app-root {
     z-index: 1020;
     width: 100%;
     text-align: center;
-    background-color: #1a1a1a; }
+    background-color: #1a1a1a;
+    border-bottom: 1px solid #444444; }
     .app-header.navbar .navbar-toggler {
       color: #fff; }
     .app-header.navbar .navbar-brand {
@@ -10091,7 +10098,7 @@ code, kbd, pre, samp {
 
 .overlayLED {
   display: none;
-  background: url(/ov6.png) repeat;
+  background: url(/img/overlay/ov6.png) repeat;
   height: 100%;
   width: 100%;
   position: absolute;

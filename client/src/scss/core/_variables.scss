@@ -38,7 +38,7 @@ $vimeo:                               #aad450 !default;
 // Navbar
 
 $navbar-height:                       55px !default;
-$navbar-bg:                           #fff !default;
+$navbar-bg:                           $gray-800 !default;
 $navbar-border: (
   bottom: (
     size:                             1px,
@@ -47,9 +47,9 @@ $navbar-border: (
   )
 )  !default;
 $navbar-brand-width:                  155px !default;
-$navbar-brand-bg:                     #fff !default;
+$navbar-brand-bg:                     $gray-800 !default;
 //
-$navbar-brand-logo:                   url('/img/logo.png') !default;
+$navbar-brand-logo:                   url('/img/logo_face.png') !default;
 $navbar-brand-logo-size:              70px auto !default;
 $navbar-brand-border: (
   bottom: (
@@ -59,16 +59,16 @@ $navbar-brand-border: (
   )
 ) !default;
 
-$navbar-brand-minimized-width:        50px !default;
+$navbar-brand-minimized-width:        49px !default;
 $navbar-brand-minimized-bg:           $navbar-brand-bg !default;
 // TOTO symbol
 $navbar-brand-minimized-logo:         url('/img/logo-symbol.png') !default;
 $navbar-brand-minimized-logo-size:    24px !default;
 $navbar-brand-minimized-border:       $navbar-brand-border !default;
 
-$navbar-color:                        $gray-600 !default;
+$navbar-color:                        $white !default;
 $navbar-hover-color:                  $primary  !default;
-$navbar-active-color:                 $gray-800 !default;
+$navbar-active-color:                 $white !default;
 $navbar-disabled-color:               $gray-300 !default;
 
 $navbar-toggler-icon:                 str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-color}' stroke-width='2.25' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23") !default;
@@ -180,7 +180,7 @@ $top-nav-height:                      $navbar-height - 15px !default;
 // Breadcrumb
 $breadcrumb-borders: (
   bottom: (
-    size:                             1px,
+    size:                             0px,
     style:                            solid,
     color:                            $border-color
   )

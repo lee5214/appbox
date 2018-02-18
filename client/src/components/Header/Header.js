@@ -65,7 +65,7 @@ class Header extends Component {
 				<NavbarToggler className="d-lg-none" onClick={ this.mobileSidebarToggle }>
 					<span className="navbar-toggler-icon"/>
 				</NavbarToggler>
-				<NavbarBrand href="#"><p>LEE</p></NavbarBrand>
+				<NavbarBrand href="#" />
 				<NavbarToggler className="d-md-down-none" onClick={ this.sidebarToggle }>
 					<span className="navbar-toggler-icon"/>
 				</NavbarToggler>

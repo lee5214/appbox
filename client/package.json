@@ -90,6 +90,7 @@
     "react-router-dom": "^4.2.2",
     "react-sparklines": "^1.7.0",
     "react-text-mask": "^5.1.0",
+    "react-three-renderer": "^3.2.3",
     "react-transition-group": "^1.2.1",
     "react-treebeard": "^2.1.0",
     "reactstrap": "^5.0.0-alpha.4",
