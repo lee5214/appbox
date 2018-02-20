@@ -24,6 +24,10 @@ class Header extends Component {
 		e.preventDefault ();
 		document.body.classList.toggle ('sidebar-mobile-show');
 	};
+	mobileAsideMenuToggle = (e) => {
+		e.preventDefault ();
+		document.body.classList.toggle ('aside-menu-mobile-show');
+	};
 
 	asideToggle = (e) => {
 		e.preventDefault ();
@@ -92,6 +96,10 @@ class Header extends Component {
 					{ this.renderUserInfo () }
 				</Nav>
 				<NavbarToggler className="d-md-down-none" onClick={ this.asideToggle }>
+					<span className="navbar-toggler-icon"/>
+				</NavbarToggler>
+
+				<NavbarToggler className="d-lg-none" onClick={ this.mobileAsideMenuToggle }>
 					<span className="navbar-toggler-icon"/>
 				</NavbarToggler>
 			</header>

@@ -118,6 +118,7 @@ class AppContainer extends Component {
 		} else {
 			document.body.classList.add ('mode-3D-on');
 			this.setState ({mode3D_permission : true});
+			this.props.setMode ('3D');
 		}
 	};
 	resetCamera = () => {

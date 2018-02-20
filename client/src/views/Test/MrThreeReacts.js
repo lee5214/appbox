@@ -3,15 +3,14 @@ import * as THREE from 'three';
 import Sea from './asserts/Sea';
 import Sky from './asserts/Sky';
 import AirPlane from './asserts/AirPlane';
-import {Button} from 'reactstrap'
-import {Colors} from './asserts/setting'
-import styles from './MrThreeReacts.scss'
-import BannerLine from "../../components/_Composite/BannerLine/BannerLine";
+import { Button } from 'reactstrap';
+import styles from './MrThreeReacts.scss';
+
 class MrThree extends Component {
 	constructor (props) {
 		super (props);
 		this.state = {
-			fullScreen: false,
+			fullScreen : false,
 			mousePos : {x : 0, y : 0},
 			cameraZ : 200,
 			cameraRotateY : 0,
@@ -48,7 +47,7 @@ class MrThree extends Component {
 	createLights = () => {
 		let hemisphereLight = new THREE.HemisphereLight (0xaaaaaa, 0x000000, .9);
 		let shadowLight = new THREE.DirectionalLight (0xffffff, .9);
-		let ambientLight = new THREE.AmbientLight(0xdc8874, .5);
+		let ambientLight = new THREE.AmbientLight (0xdc8874, .5);
 		shadowLight.position.set (150, 350, 350);
 		shadowLight.castShadow = true;
 		shadowLight.shadow.camera.left = -400;
@@ -61,7 +60,7 @@ class MrThree extends Component {
 		shadowLight.shadow.mapSize.height = 2048;
 		this.scene.add (hemisphereLight);
 		this.scene.add (shadowLight);
-		this.scene.add(ambientLight);
+		this.scene.add (ambientLight);
 	};
 	createSea = () => {
 		this.sea = new Sea ();
@@ -76,8 +75,8 @@ class MrThree extends Component {
 	createAirPlane = () => {
 		this.airplane = new AirPlane ();
 		this.airplane.mesh.scale.set (.25, .25, .25);
-		this.airplane.mesh.position.x = this.width/2;
-		this.airplane.mesh.position.y = -this.height/2;
+		this.airplane.mesh.position.x = this.width / 2;
+		this.airplane.mesh.position.y = -this.height / 2;
 		this.scene.add (this.airplane.mesh);
 	};
 	init = () => {
@@ -93,13 +92,16 @@ class MrThree extends Component {
 		this.start ();
 		document.addEventListener ('mousemove', this.handleMouseMove, false);
 	}
+
 	handleMouseMove = (e) => {
 		this.setState ({mousePos : {x : -1 + (e.clientX / this.width) * 2, y : 1 - (e.clientY / this.height) * 2}});
 	};
+
 	componentWillUnmount () {
 		this.stop ();
 		this.container.removeChild (this.renderer.domElement);
 	}
+
 	start = () => {
 		if (!this.frameId) {
 			this.frameId = requestAnimationFrame (this.animate);
@@ -112,14 +114,14 @@ class MrThree extends Component {
 		var targetX = this.normalize (this.state.mousePos.x, -1, 1, -100, 100);
 		var targetY = this.normalize (this.state.mousePos.y, -1, 1, 25, 175);
 
-		this.airplane.mesh.position.y += (targetY-this.airplane.mesh.position.y)*0.1;
-		this.airplane.mesh.rotation.z = (targetY-this.airplane.mesh.position.y)*0.0128;
-		this.airplane.mesh.rotation.x = (this.airplane.mesh.position.y-targetY)*0.0064;
+		this.airplane.mesh.position.y += (targetY - this.airplane.mesh.position.y) * 0.1;
+		this.airplane.mesh.rotation.z = (targetY - this.airplane.mesh.position.y) * 0.0128;
+		this.airplane.mesh.rotation.x = (this.airplane.mesh.position.y - targetY) * 0.0064;
 		this.airplane.propeller.rotation.x += 0.3;
 
-		this.airplane.mesh.position.x = 0//targetX;
-		this.camera.position.z  = this.state.cameraZ + targetX
-		this.camera.rotation.y = this.state.cameraRotateY - targetX/300
+		this.airplane.mesh.position.x = 0;//targetX;
+		this.camera.position.z = this.state.cameraZ + targetX;
+		this.camera.rotation.y = this.state.cameraRotateY - targetX / 300;
 	};
 	normalize = (v, vmin, vmax, tmin, tmax) => {
 		var nv = Math.max (Math.min (v, vmax), vmin);
@@ -137,7 +139,7 @@ class MrThree extends Component {
 		//this.airplane.propeller.rotation.x += 0.3;
 		this.updatePlane ();
 		this.airplane.propeller.rotation.x += 0.3;
-		this.airplane.pilot.updateHairs();
+		this.airplane.pilot.updateHairs ();
 		//this.camera.position.z = 20 * Math.sin( THREE.Math.degToRad( this.theta ) );
 		this.renderScene ();
 		this.frameId = window.requestAnimationFrame (this.animate);
@@ -147,23 +149,26 @@ class MrThree extends Component {
 		this.renderer.render (this.scene, this.camera);
 	}
 
-	toggleFullScreen =()=>{
-		this.setState({fullScreen: !this.state.fullScreen})
-	}
+	toggleFullScreen = () => {
+		document.body.classList.toggle ('sidebar-hidden');
+		document.body.classList.toggle ('aside-menu-hidden');
+		this.setState ({fullScreen : !this.state.fullScreen});
+	};
 
 	render () {
 		let w = window.innerWidth * .5, h = window.innerWidth * .5;
 		return (
-			<div style={{
-				width: `${this.state.fullScreen?'100vw':'100%'}`,
-				height: `${this.state.fullScreen?'100vh':'100%'}`
-			}}
-			     className={styles.GameContainer}
+			<div style={ {
+				width : `${this.state.fullScreen ? '100vw' : '100%'}`,
+				height : `${this.state.fullScreen ? '100vh' : '100%'}`,
+			} }
+			     className={ styles.GameContainer }
 
-				ref={ (mount) => { this.container = mount; } }
+			     ref={ (mount) => { this.container = mount; } }
 			>
-				<Button outline color={this.state.fullScreen?'secondary':'primary'} size="md" className={styles.button} onClick={this.toggleFullScreen}>
-					{this.state.fullScreen?'Exit Full Screen':'Enter Full Screen'}
+				<Button outline color={ this.state.fullScreen ? 'secondary' : 'primary' } size="md"
+				        className={ styles.button } onClick={ this.toggleFullScreen }>
+					{ this.state.fullScreen ? 'Exit Full Screen' : 'Enter Full Screen' }
 				</Button>
 				{ /*<form onSubmit={ e => this.onSubmit (e) }>
 				 <lable>

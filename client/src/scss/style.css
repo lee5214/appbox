@@ -9549,29 +9549,6 @@ app-root {
     width: 50px; }
   .sidebar-minimized.sidebar-fixed.sidebar-hidden .main, .sidebar-minimized.sidebar-fixed.sidebar-hidden .app-footer {
     margin-left: 0; } }
-.aside-menu-hidden .aside-menu {
-  margin-right: -250px;
-  opacity: 0; }
-
-.aside-menu-fixed .aside-menu {
-  position: fixed;
-  right: 0;
-  height: 100%; }
-  .aside-menu-fixed .aside-menu .tab-content {
-    height: calc(100vh - 2.5rem - 50px); }
-.aside-menu-fixed .main, .aside-menu-fixed .app-footer {
-  margin-right: 250px; }
-.aside-menu-fixed.aside-menu-hidden .main, .aside-menu-fixed.aside-menu-hidden .app-footer {
-  margin-right: 0; }
-
-.aside-menu-off-canvas .aside-menu {
-  position: fixed;
-  right: 0;
-  z-index: 1019;
-  height: 100%; }
-  .aside-menu-off-canvas .aside-menu .tab-content {
-    height: calc(100vh - 2.5rem - 50px); }
-
 .breadcrumb-fixed .main {
   padding-top: 4rem; }
 .breadcrumb-fixed .breadcrumb {
@@ -9644,8 +9621,16 @@ app-root {
     .sidebar-fixed .sidebar .sidebar-minimizer {
       display: none; }
 
+  .aside-menu,
+  .aside-menu-fixed .aside-menu {
+    position: fixed;
+    z-index: 1019;
+    width: 220px;
+    margin-right: -220px; }
+
   .main, .app-footer {
-    margin-left: 0 !important; }
+    margin-left: 0 !important;
+    margin-right: 0 !important; }
 
   .sidebar-hidden .sidebar {
     margin-left: -220px; }
@@ -9656,6 +9641,33 @@ app-root {
   .sidebar-mobile-show .main {
     margin-right: -220px !important;
     margin-left: 220px !important; } }
+.aside-menu-hidden .aside-menu {
+  margin-right: -250px;
+  opacity: 0; }
+
+.aside-menu-fixed .aside-menu {
+  position: fixed;
+  right: 0;
+  height: 100%; }
+  .aside-menu-fixed .aside-menu .tab-content {
+    height: calc(100vh - 2.5rem - 50px); }
+.aside-menu-fixed .main, .aside-menu-fixed .app-footer {
+  margin-right: 250px; }
+.aside-menu-fixed.aside-menu-hidden .main, .aside-menu-fixed.aside-menu-hidden .app-footer {
+  margin-right: 0; }
+
+.aside-menu-mobile-show .aside-menu {
+  width: 220px;
+  margin-right: 0; }
+
+.aside-menu-off-canvas .aside-menu {
+  position: fixed;
+  right: 0;
+  z-index: 1019;
+  height: 100%; }
+  .aside-menu-off-canvas .aside-menu .tab-content {
+    height: calc(100vh - 2.5rem - 50px); }
+
 hr.transparent {
   border-top: 1px solid transparent; }
 
