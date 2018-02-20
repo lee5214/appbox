@@ -2,17 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="742d2f67-9123-492e-9892-2d49e2746a61" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/Test/Mr.Three Reacts.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/Test/Mr.Three Reacts.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/Test/asserts/AirPlane.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/Test/asserts/Cloud.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/Test/asserts/Pilot.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/Test/asserts/Sea.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/Test/asserts/Sky.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/Test/asserts/setting.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/Test/Graph3D.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/client/src/containers/AppContainer/AppContainer.js" afterPath="$PROJECT_DIR$/client/src/containers/AppContainer/AppContainer.js" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/Test/GraphCircle.js" afterPath="$PROJECT_DIR$/client/src/views/Test/GraphCircle.js" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/Test/Mr.Three Reacts.js" afterPath="$PROJECT_DIR$/client/src/views/Test/MrThreeReacts.js" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/Test/Mr.Three Reacts.scss" afterPath="$PROJECT_DIR$/client/src/views/Test/MrThreeReacts.scss" />
       <change beforePath="$PROJECT_DIR$/client/src/views/Test/Test.js" afterPath="$PROJECT_DIR$/client/src/views/Test/Test.js" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/Test/asserts/AirPlane.js" afterPath="$PROJECT_DIR$/client/src/views/Test/asserts/AirPlane.js" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/Test/asserts/Cloud.js" afterPath="$PROJECT_DIR$/client/src/views/Test/asserts/Cloud.js" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/Test/asserts/Pilot.js" afterPath="$PROJECT_DIR$/client/src/views/Test/asserts/Pilot.js" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/Test/asserts/setting.js" afterPath="$PROJECT_DIR$/client/src/views/Test/asserts/setting.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -2033,23 +2032,13 @@
     <fileColor scope="Non-Project Files (Material Palenight)" color="2f2e43" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.5758781">
+    <splitter split-orientation="vertical" split-proportion="0.50037795">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="start.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/bin/start.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="125">
-                  <caret line="68" column="0" lean-forward="true" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="Test.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/client/src/views/Test/Test.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="490">
+                <state relative-caret-position="-265">
                   <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#41#0" expanded="true" />
@@ -2058,16 +2047,13 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Mr.Three Reacts.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/client/src/views/Test/Mr.Three Reacts.js">
+          <file leaf-file-name="AppContainer.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/client/src/containers/AppContainer/AppContainer.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="513">
-                  <caret line="128" column="34" lean-forward="true" selection-start-line="128" selection-start-column="34" selection-end-line="128" selection-end-column="34" />
+                <state relative-caret-position="181">
+                  <caret line="119" column="55" lean-forward="true" selection-start-line="119" selection-start-column="55" selection-end-line="119" selection-end-column="55" />
                   <folding>
-                    <element signature="e#0#41#0" expanded="true" />
-                    <element signature="e#2165#2263#0" expanded="false" />
-                    <marker date="1519034893206" expanded="true" signature="5313:5496" ph="..." />
-                    <marker date="1519034893206" expanded="true" signature="5347:5483" ph="..." />
+                    <element signature="e#1610#1667#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -2077,7 +2063,7 @@
             <entry file="file://$PROJECT_DIR$/client/src/views/Test/asserts/AirPlane.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="504">
-                  <caret line="90" column="0" lean-forward="true" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+                  <caret line="91" column="0" lean-forward="true" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#31#0" expanded="true" />
                   </folding>
@@ -2089,7 +2075,7 @@
             <entry file="file://$PROJECT_DIR$/client/src/views/Test/asserts/Cloud.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="0">
-                  <caret line="0" column="12" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
+                  <caret line="1" column="12" lean-forward="false" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
                   <folding />
                 </state>
               </provider>
@@ -2109,7 +2095,7 @@
             <entry file="file://$PROJECT_DIR$/client/src/views/Test/asserts/Pilot.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="403">
-                  <caret line="88" column="5" lean-forward="true" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
+                  <caret line="85" column="5" lean-forward="true" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
                   <folding>
                     <element signature="e#0#30#0" expanded="true" />
                   </folding>
@@ -2117,8 +2103,8 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Mr.Three Reacts.scss" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/client/src/views/Test/Mr.Three Reacts.scss">
+          <file leaf-file-name="MrThreeReacts.scss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/client/src/views/Test/MrThreeReacts.scss">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="294">
                   <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
@@ -2141,7 +2127,7 @@
             <entry file="file://$PROJECT_DIR$/client/src/views/Test/asserts/setting.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="42">
-                  <caret line="2" column="21" lean-forward="true" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+                  <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
                   <folding />
                 </state>
               </provider>
@@ -2159,20 +2145,123 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/client/src/index.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="294">
+                  <caret line="21" column="8" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
         </leaf>
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="GraphCircle.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/client/src/views/Test/GraphCircle.js">
+          <file leaf-file-name="MrThreeReacts.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/client/src/views/Test/MrThreeReacts.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="499">
-                  <caret line="97" column="35" lean-forward="false" selection-start-line="97" selection-start-column="35" selection-end-line="97" selection-end-column="35" />
+                <state relative-caret-position="197">
+                  <caret line="56" column="36" lean-forward="false" selection-start-line="56" selection-start-column="36" selection-end-line="56" selection-end-column="36" />
                   <folding>
                     <element signature="e#0#41#0" expanded="true" />
-                    <marker date="1518862016077" expanded="true" signature="177:7241" ph="{...}" />
-                    <marker date="1518862016077" expanded="true" signature="234:279" ph="{...}" />
+                    <element signature="e#2157#2255#0" expanded="false" />
+                    <marker date="1519083445788" expanded="true" signature="5368:5551" ph="..." />
+                    <marker date="1519083445788" expanded="true" signature="5402:5538" ph="..." />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="GraphCircle.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/client/src/views/Test/GraphCircle.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-51">
+                  <caret line="23" column="10" lean-forward="true" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+                  <folding>
+                    <element signature="e#0#41#0" expanded="true" />
+                    <marker date="1519052113645" expanded="true" signature="177:6421" ph="{...}" />
+                    <marker date="1519052113645" expanded="true" signature="234:279" ph="{...}" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="start.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/bin/start.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-46">
+                  <caret line="68" column="0" lean-forward="true" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="AirPlane.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/client/src/views/Test/asserts/AirPlane.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="414">
+                  <caret line="87" column="49" lean-forward="false" selection-start-line="87" selection-start-column="49" selection-end-line="87" selection-end-column="49" />
+                  <folding>
+                    <element signature="e#0#31#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Pilot.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/client/src/views/Test/asserts/Pilot.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-1712">
+                  <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#0#30#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Test.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/client/src/views/Test/Test.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="315">
+                  <caret line="15" column="10" lean-forward="true" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+                  <folding>
+                    <element signature="e#0#41#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="setting.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/client/src/views/Test/asserts/setting.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="147">
+                  <caret line="7" column="20" lean-forward="true" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Cloud.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/client/src/views/Test/asserts/Cloud.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="179">
+                  <caret line="10" column="32" lean-forward="true" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+                  <folding>
+                    <element signature="e#0#26#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Sky.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/client/src/views/Test/asserts/Sky.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="189">
+                  <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -2190,8 +2279,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>new</find>
-      <find>create</find>
       <find>startanim</find>
       <find>test</find>
       <find>rando</find>
@@ -2214,12 +2301,14 @@
       <find>shading</find>
       <find>add</find>
       <find>airp</find>
-      <find>color</find>
-      <find>pilot</find>
       <find>remove</find>
       <find>font</find>
       <find>sce</find>
       <find>with ico</find>
+      <find>pilot</find>
+      <find>hair</find>
+      <find>color</find>
+      <find>body</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -2229,11 +2318,13 @@
         <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
+    <push-targets>
+      <push-target-info target-remote="origin" target-branch="master" repo="$PROJECT_DIR$" source="panel-design" />
+    </push-targets>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/client/src/views/Test/Test.scss" />
         <option value="$PROJECT_DIR$/client/src/components/Breadcrumb/Breadcrumb.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/client/src/containers/AppContainer/AppContainer.scss" />
@@ -2268,22 +2359,23 @@
         <option value="$PROJECT_DIR$/middleware/requireLogin.js" />
         <option value="$PROJECT_DIR$/bin/start.js" />
         <option value="$PROJECT_DIR$/client/src/registerServiceWorker.js" />
-        <option value="$PROJECT_DIR$/client/src/containers/AppContainer/AppContainer.js" />
         <option value="$PROJECT_DIR$/client/src/views/Panel/Graph3D.js" />
         <option value="$PROJECT_DIR$/client/public/index.html" />
         <option value="$PROJECT_DIR$/client/src/views/Test/Graph3D.js" />
         <option value="$PROJECT_DIR$/client/src/views/Test/asserts/Sea.js" />
-        <option value="$PROJECT_DIR$/client/src/views/Test/asserts/setting.js" />
         <option value="$PROJECT_DIR$/client/src/views/Test/TestField5.js" />
-        <option value="$PROJECT_DIR$/client/src/views/Test/asserts/Cloud.js" />
         <option value="$PROJECT_DIR$/client/src/views/Test/Mr.Three.js" />
         <option value="$PROJECT_DIR$/client/src/views/Test/asserts/Sky.js" />
-        <option value="$PROJECT_DIR$/client/src/views/Test/asserts/Pilot.js" />
-        <option value="$PROJECT_DIR$/client/src/views/Test/Test.js" />
-        <option value="$PROJECT_DIR$/client/src/views/Test/asserts/AirPlane.js" />
         <option value="$PROJECT_DIR$/client/src/views/Panel/GraphCircle.js" />
         <option value="$PROJECT_DIR$/client/src/views/Test/Mr.Three Reacts.scss" />
+        <option value="$PROJECT_DIR$/client/src/containers/AppContainer/AppContainer.js" />
+        <option value="$PROJECT_DIR$/client/src/views/Test/GraphCircle.js" />
         <option value="$PROJECT_DIR$/client/src/views/Test/Mr.Three Reacts.js" />
+        <option value="$PROJECT_DIR$/client/src/views/Test/asserts/AirPlane.js" />
+        <option value="$PROJECT_DIR$/client/src/views/Test/Test.js" />
+        <option value="$PROJECT_DIR$/client/src/views/Test/asserts/setting.js" />
+        <option value="$PROJECT_DIR$/client/src/views/Test/asserts/Pilot.js" />
+        <option value="$PROJECT_DIR$/client/src/views/Test/asserts/Cloud.js" />
       </list>
     </option>
   </component>
@@ -2687,14 +2779,7 @@
       <workItem from="1518655281454" duration="2276000" />
       <workItem from="1518657902343" duration="1024000" />
       <workItem from="1518658949392" duration="28649000" />
-      <workItem from="1518741907384" duration="126983000" />
-    </task>
-    <task id="LOCAL-00115" summary="test bin/start/index.html static location">
-      <created>1517611081279</created>
-      <option name="number" value="00115" />
-      <option name="presentableId" value="LOCAL-00115" />
-      <option name="project" value="LOCAL" />
-      <updated>1517611081279</updated>
+      <workItem from="1518741907384" duration="134887000" />
     </task>
     <task id="LOCAL-00116" summary="3d mode toggle &amp; 3 panels transform &amp; route">
       <created>1517645266760</created>
@@ -3032,11 +3117,18 @@
       <option name="project" value="LOCAL" />
       <updated>1518978797541</updated>
     </task>
-    <option name="localTasksCounter" value="164" />
+    <task id="LOCAL-00164" summary="game added, full screen button aaded">
+      <created>1519035030398</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
+      <option name="project" value="LOCAL" />
+      <updated>1519035030398</updated>
+    </task>
+    <option name="localTasksCounter" value="165" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1712544000" />
+    <option name="totallyTimeSpent" value="1720448000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -3049,7 +3141,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1080" y="-480" width="1080" height="1920" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="GfmBrowser" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32777777" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -3057,14 +3148,14 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18350628" sideWeight="0.4871795" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23593664" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17586018" sideWeight="0.4806421" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25122884" sideWeight="0.4806421" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32995495" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23314066" sideWeight="0.71106696" order="0" side_tool="false" content_ui="combo" x="-1080" y="-480" width="256" height="1440" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23314066" sideWeight="0.71115977" order="0" side_tool="false" content_ui="combo" x="-1080" y="-480" width="256" height="1440" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32495904" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Copy/Paste" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24881291" sideWeight="0.49321628" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23314066" sideWeight="0.28893307" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23314066" sideWeight="0.28884026" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -3108,7 +3199,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="node os client log" />
     <MESSAGE value="aside some content change" />
     <MESSAGE value="major patch: &#10;removed socket&#10;added firebase support&#10;re-created chatroom based on firebase" />
     <MESSAGE value="CI" />
@@ -3133,7 +3223,8 @@
     <MESSAGE value="get a basic panel" />
     <MESSAGE value="add more parameters for 3d&#10;modify readme&#10;start game" />
     <MESSAGE value="should I handle 404/500 err page or just redirect to /panel?" />
-    <option name="LAST_COMMIT_MESSAGE" value="should I handle 404/500 err page or just redirect to /panel?" />
+    <MESSAGE value="game added, full screen button aaded" />
+    <option name="LAST_COMMIT_MESSAGE" value="game added, full screen button aaded" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3184,18 +3275,6 @@
         <state relative-caret-position="798">
           <caret line="38" column="41" lean-forward="false" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="41" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/views/Test/GraphCircle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="97" column="35" lean-forward="false" selection-start-line="97" selection-start-column="35" selection-end-line="97" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-            <marker date="1518862016077" expanded="true" signature="177:7241" ph="{...}" />
-            <marker date="1518862016077" expanded="true" signature="234:279" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3419,16 +3498,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="21" column="8" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Aside/Aside.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="569">
@@ -3447,16 +3516,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/views/Test/asserts/Sky.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="11" lean-forward="true" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#31#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/views/Test/asserts/Sea.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
@@ -3465,40 +3524,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/views/Test/asserts/Cloud.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="12" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/views/Test/asserts/Pilot.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="88" column="5" lean-forward="true" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/views/Test/asserts/AirPlane.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="90" column="0" lean-forward="true" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/views/Panel/Graph3D.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="734">
           <caret line="219" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="219" selection-end-column="0" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3511,27 +3542,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/containers/AppContainer/AppContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="605">
-          <caret line="239" column="64" lean-forward="true" selection-start-line="239" selection-start-column="64" selection-end-line="239" selection-end-column="64" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-            <element signature="e#347#401#0" expanded="true" />
-            <element signature="e#1340#1389#0" expanded="true" />
-            <element signature="e#1610#1667#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/start.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="68" column="0" lean-forward="true" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="588">
@@ -3540,28 +3550,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/views/Test/Test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/views/Panel/GraphCircle.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="536">
           <caret line="51" column="38" lean-forward="false" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/views/Test/asserts/setting.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="21" lean-forward="true" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -3576,7 +3568,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/views/Test/Mr.Three Reacts.scss">
+    <entry file="file://$PROJECT_DIR$/client/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="21" column="8" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/views/Test/GraphCircle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51">
+          <caret line="23" column="10" lean-forward="true" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <marker date="1519052113645" expanded="true" signature="177:6421" ph="{...}" />
+            <marker date="1519052113645" expanded="true" signature="234:279" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/start.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-46">
+          <caret line="68" column="0" lean-forward="true" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/containers/AppContainer/AppContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="119" column="55" lean-forward="true" selection-start-line="119" selection-start-column="55" selection-end-line="119" selection-end-column="55" />
+          <folding>
+            <element signature="e#1610#1667#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/views/Test/asserts/AirPlane.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="87" column="49" lean-forward="false" selection-start-line="87" selection-start-column="49" selection-end-line="87" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/views/Test/Test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="10" lean-forward="true" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/views/Test/MrThreeReacts.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
           <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
@@ -3584,15 +3634,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/views/Test/Mr.Three Reacts.js">
+    <entry file="file://$PROJECT_DIR$/client/src/views/Test/asserts/setting.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="128" column="34" lean-forward="true" selection-start-line="128" selection-start-column="34" selection-end-line="128" selection-end-column="34" />
+        <state relative-caret-position="147">
+          <caret line="7" column="20" lean-forward="true" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/views/Test/MrThreeReacts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="56" column="36" lean-forward="false" selection-start-line="56" selection-start-column="36" selection-end-line="56" selection-end-column="36" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-            <element signature="e#2165#2263#0" expanded="false" />
-            <marker date="1519034893206" expanded="true" signature="5313:5496" ph="..." />
-            <marker date="1519034893206" expanded="true" signature="5347:5483" ph="..." />
+            <element signature="e#2157#2255#0" expanded="false" />
+            <marker date="1519083445788" expanded="true" signature="5368:5551" ph="..." />
+            <marker date="1519083445788" expanded="true" signature="5402:5538" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/views/Test/asserts/Pilot.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1712">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/views/Test/asserts/Sky.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/views/Test/asserts/Cloud.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="10" column="32" lean-forward="true" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>

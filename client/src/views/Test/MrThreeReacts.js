@@ -5,15 +5,16 @@ import Sky from './asserts/Sky';
 import AirPlane from './asserts/AirPlane';
 import {Button} from 'reactstrap'
 import {Colors} from './asserts/setting'
-import styles from './Mr.Three Reacts.scss'
+import styles from './MrThreeReacts.scss'
 import BannerLine from "../../components/_Composite/BannerLine/BannerLine";
 class MrThree extends Component {
 	constructor (props) {
 		super (props);
 		this.state = {
-			fluuScreen: false,
+			fullScreen: false,
 			mousePos : {x : 0, y : 0},
 			cameraZ : 200,
+			cameraRotateY : 0,
 		};
 	}
 
@@ -30,7 +31,6 @@ class MrThree extends Component {
 		camera.position.x = 0;
 		camera.position.y = 100;
 		camera.position.z = 200;
-		camera.rotation.y = -0.2;
 
 		// renderer
 		const renderer = new THREE.WebGLRenderer ({alpha : true, antialias : true});
@@ -93,16 +93,13 @@ class MrThree extends Component {
 		this.start ();
 		document.addEventListener ('mousemove', this.handleMouseMove, false);
 	}
-
 	handleMouseMove = (e) => {
 		this.setState ({mousePos : {x : -1 + (e.clientX / this.width) * 2, y : 1 - (e.clientY / this.height) * 2}});
 	};
-
 	componentWillUnmount () {
 		this.stop ();
 		this.container.removeChild (this.renderer.domElement);
 	}
-
 	start = () => {
 		if (!this.frameId) {
 			this.frameId = requestAnimationFrame (this.animate);
@@ -122,6 +119,7 @@ class MrThree extends Component {
 
 		this.airplane.mesh.position.x = 0//targetX;
 		this.camera.position.z  = this.state.cameraZ + targetX
+		this.camera.rotation.y = this.state.cameraRotateY - targetX/300
 	};
 	normalize = (v, vmin, vmax, tmin, tmax) => {
 		var nv = Math.max (Math.min (v, vmax), vmin);

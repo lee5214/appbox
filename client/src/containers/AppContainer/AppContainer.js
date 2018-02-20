@@ -61,7 +61,6 @@ class AppContainer extends Component {
 			roX : 0,
 			roY : 0,
 			roZ : 0,
-			videoURL : 'http://techslides.com/demos/sample-videos/small.mp4',
 		};
 		this.minimalInnerlWidth = 1200;
 	}
@@ -74,7 +73,6 @@ class AppContainer extends Component {
 
 		console.log ('Host =>', window.location.host);
 		console.log ('Mode Activation =>', this.props.setting.layout.mode);
-		//console.log ('Socket Connection =>', socket);
 		console.log ('App Rect =>', this.appBodyRef.getBoundingClientRect ());
 	};
 
@@ -110,17 +108,6 @@ class AppContainer extends Component {
 		e.preventDefault ();
 		document.body.classList.toggle ('aside-menu-hidden');
 	};
-	// mode3DToggle = (e) => {
-	// 	e.preventDefault ();
-	// 	if (window.innerWidth < this.minimalInnerlWidth) {
-	// 		document.body.classList.remove ('mode-3D-on');
-	// 		this.setState ({mode3D_permission : false});
-	// 		this.props.setMode ('2D');
-	// 		this.props.setMouseTrack (false);
-	// 		console.log (`force 2D mode, minimal width breakpoint: --${this.minimalInnerlWidth}px--, 3D mode
-	// disable`); } else { document.body.classList.toggle ('mode-3D-on');
-	// this.props.setMode(this.props.setting.layout.mode==='3D'?'2D':'3D') this.setState ({mode3D_permission : true});
-	// } };
 	handleResize = () => {
 		if (window.innerWidth < this.minimalInnerlWidth) {
 			document.body.classList.remove ('mode-3D-on');
@@ -160,16 +147,13 @@ class AppContainer extends Component {
 								<Breadcrumb/>
 							</Container>
 						</div>
-
 						<NavbarToggler className="d-md-down-none position-absolute sidebar-btn d-none"
 						               onClick={ this.sidebarToggle }>
 							<i className={ 'fa fa-angle-double-left fa-2x text-white' }/>
-							{ /*<span className="navbar-toggler-icon"/>*/ }
 						</NavbarToggler>
 						<NavbarToggler className="d-md-down-none position-absolute aside-btn d-none"
 						               onClick={ this.asideToggle }>
 							<i className={ 'fa fa-angle-double-right fa-2x text-white' }/>
-							{ /*<span className="navbar-toggler-icon"/>*/ }
 						</NavbarToggler>
 
 						<Container className={ style.block }>

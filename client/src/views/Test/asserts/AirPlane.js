@@ -85,6 +85,7 @@ export default class AirPlane {
 		this.propeller.position.set (50, 0, 0);
 		this.mesh.add (this.propeller);
 		this.pilot = new Pilot();
-		this.mesh.add(this.pilot)
+		this.pilot.mesh.position.set(-10, 27, 0);
+		this.mesh.add(this.pilot.mesh)
 	}
 }

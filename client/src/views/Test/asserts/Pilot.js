@@ -1,14 +1,11 @@
 import * as THREE from 'three'
 import {Colors} from './setting'
-
 export default class Pilot{
 	constructor(){
 		this.mesh = new THREE.Object3D();
 		this.mesh.name = "pilot";
-
 		// angleHairs是用于后面头发的动画的属性
 		this.angleHairs=0;
-
 		// 飞行员的身体
 		var bodyGeom = new THREE.BoxGeometry(15,15,15);
 		var bodyMat = new THREE.MeshPhongMaterial({color:Colors.brown, shading:THREE.FlatShading});
@@ -24,7 +21,7 @@ export default class Pilot{
 
 		// 飞行员的头发
 		var hairGeom = new THREE.BoxGeometry(4,4,4);
-		var hairMat = new THREE.MeshLambertMaterial({color:Colors.brown});
+		var hairMat = new THREE.MeshLambertMaterial({color:Colors.black});
 		var hair = new THREE.Mesh(hairGeom, hairMat);
 		// 调整头发的形状至底部的边界，这将使它更容易扩展。
 		hair.geometry.applyMatrix(new THREE.Matrix4().makeTranslation(0,2,0));
@@ -67,7 +64,7 @@ export default class Pilot{
 		this.mesh.add(hairs);
 
 		var glassGeom = new THREE.BoxGeometry(5,5,5);
-		var glassMat = new THREE.MeshLambertMaterial({color:Colors.brown});
+		var glassMat = new THREE.MeshLambertMaterial({color:Colors.black});
 		var glassR = new THREE.Mesh(glassGeom,glassMat);
 		glassR.position.set(6,0,3);
 		var glassL = glassR.clone();
