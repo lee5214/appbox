@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as THREE from 'three';
 import _ from 'lodash';
-
+import styles from './svgCircle.scss'
 let Colors = {
 	red : 0xff0000,
 	white : 0xd8d0d1,
@@ -100,8 +100,6 @@ class Scene extends Component {
 			emissive : 0x072534,
 			side : THREE.DoubleSide,
 			flatShading : true,
-			roughness : 0.1,
-			metalness : 1,
 			shininess : 1,
 			//fog: true
 		});
@@ -196,11 +194,7 @@ class Scene extends Component {
 	render () {
 		let w = window.innerWidth * .5, h = window.innerWidth * .5;
 		return (
-			<div
-				style={ {
-					borderRadius : '50%', width : w, height : h, position : 'absolute', top : '50%', left : '50%',
-					transform : 'translate(-50%,-50%)',
-				} }
+			<div className={styles.ThreeContainer} style={{ width : w, height : h, }}
 				ref={ (mount) => { this.container = mount; } }
 			>
 				{ /*<form onSubmit={ e => this.onSubmit (e) }>

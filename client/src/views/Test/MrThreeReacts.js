@@ -14,6 +14,8 @@ class MrThree extends Component {
 			mousePos : {x : 0, y : 0},
 			cameraZ : 200,
 			cameraRotateY : 0,
+			skyRotateSpeed : .01,
+			seaRotateSpeed : .005,
 		};
 	}
 
@@ -32,13 +34,13 @@ class MrThree extends Component {
 		camera.position.z = 200;
 
 		// renderer
-		const renderer = new THREE.WebGLRenderer ({alpha : true, antialias : true});
+		const renderer = new THREE.WebGLRenderer ({alpha : true, antialias : false});
 		//renderer.setClearColor ('#000000');
 		renderer.setSize (this.width, this.height);
 		renderer.shadowMap.enabled = true;
 
 		this.scene = scene;
-		this.scene.fog = new THREE.Fog (0xf7d9aa, 100, 950);
+		//this.scene.fog = new THREE.Fog (0xf7d9aa, 100, 950);
 		//this.scene.background = //Colors.yellow;
 		this.camera = camera;
 		this.renderer = renderer;
@@ -83,7 +85,7 @@ class MrThree extends Component {
 		this.createScene ();
 		this.createLights ();
 		this.createSea ();
-		this.createSky (40);
+		this.createSky (20);
 		this.createAirPlane ();
 	};
 
@@ -134,10 +136,9 @@ class MrThree extends Component {
 		return tv;
 	};
 	animate = () => {
-		this.sea.mesh.rotation.z += .005;
+		this.sky.mesh.rotation.z += this.state.skyRotateSpeed;
+		this.sea.mesh.rotation.z += this.state.seaRotateSpeed;
 		this.sea.moveWaves ();
-		this.sea.mesh.rotation.z += .005;
-		this.sky.mesh.rotation.z += .01;
 		//this.airplane.propeller.rotation.x += 0.3;
 		this.updatePlane ();
 		this.airplane.propeller.rotation.x += 0.3;
@@ -158,7 +159,7 @@ class MrThree extends Component {
 	};
 
 	render () {
-		let w = window.innerWidth * .5, h = window.innerWidth * .5;
+		//let w = window.innerWidth * .5, h = window.innerWidth * .5;
 		return (
 			<div style={ {
 				width : `${this.state.fullScreen ? '100vw' : '100%'}`,
