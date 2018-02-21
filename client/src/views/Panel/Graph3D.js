@@ -100,6 +100,9 @@ class Scene extends Component {
 			emissive : 0x072534,
 			side : THREE.DoubleSide,
 			flatShading : true,
+			roughness : 0.1,
+			metalness : 1,
+			shininess : 1,
 			//fog: true
 		});
 
@@ -127,10 +130,10 @@ class Scene extends Component {
 	};
 	// events
 	handleRandomSphere = () => {
-		let ran = _.random (0, 20),
+		let ran = _.random (0, 14),
 			r = _.random (4, 8),
 			w = ran /*_.random (ran,10-ran)*/,
-			h = (20 - ran) /*_.random (10,20-ran)*/,
+			h = (14 - ran) /*_.random (10,20-ran)*/,
 			color = _.random (0, Object.keys(Colors).length-1),
 			roX = _.random(0,1)===0?-1:1,
 			roY = _.random(0,1)===0?-1:1,

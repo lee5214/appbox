@@ -91,6 +91,8 @@ class MrThree extends Component {
 		this.init ();
 		this.start ();
 		document.addEventListener ('mousemove', this.handleMouseMove, false);
+
+
 	}
 
 	handleMouseMove = (e) => {

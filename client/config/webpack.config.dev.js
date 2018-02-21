@@ -105,6 +105,12 @@ module.exports = {
 	module : {
 		strictExportPresence : true,
 		rules : [
+			// try load .objs
+			/*{ test: /\.obj$/,
+				loader: 'url-loader',
+
+				include: paths.obj
+			},*/
 			// TODO: Disable require.ensure as it's not a standard language feature.
 			// We are waiting for https://github.com/facebookincubator/create-react-app/issues/2176.
 			// { parser: { requireEnsure: false } },
