@@ -87,6 +87,7 @@ class MrThree extends Component {
 		this.pilot = new Pilot ();
 		this.pilot.mesh.position.set (-10, 27, 0);
 		this.airplane.mesh.add (this.pilot.mesh);
+		this.airplane.mesh.position.set (0, 50, 0);
 		this.scene.add (this.airplane.mesh);
 
 	};
@@ -175,13 +176,24 @@ class MrThree extends Component {
 	updatePlane = () => {
 		let targetX = this.normalize (this.state.mousePos.x, -1, 1, -100, 100);
 		let targetY = this.normalize (this.state.mousePos.y, -1, 1, 25, 175);
-		this.airplane.mesh.position.y += (targetY - this.airplane.mesh.position.y) * 0.04 * this.state.worldSpeed;
+		//this.airplane.mesh.position.y += (targetY - this.airplane.mesh.position.y) * 0.04 * this.state.worldSpeed;
+		//this.airplane.mesh.position.z += (targetY - this.airplane.mesh.position.y) * 0.01 * this.state.worldSpeed;
+
+		//this.airplane.mesh.rotation.x = (this.airplane.mesh.position.x - targetX) * 0.02 * this.state.worldSpeed;
+		this.airplane.mesh.rotation.y = -(this.airplane.mesh.position.y - targetY) * 0.06 * this.state.worldSpeed;
 		this.airplane.mesh.rotation.z = (targetY - this.airplane.mesh.position.y) * 0.01 * this.state.worldSpeed;
-		this.airplane.mesh.rotation.x = (this.airplane.mesh.position.y - targetY) * 0.02 * this.state.worldSpeed;
+
 		this.airplane.propeller.rotation.x += 0.3 * this.state.worldSpeed;
 		this.airplane.mesh.position.x = 0;//targetX;
-		this.camera.position.z = this.state.cameraZ + targetX;
-		this.camera.rotation.y = this.state.cameraRotateY - targetX / 300;
+		//this.camera.position.z = this.state.cameraZ + targetX;
+		//this.camera.rotation.y = this.state.cameraRotateY - targetX / 300;
+
+		this.sky.mesh.rotation.z += this.state.skyRotateSpeed * 0.001*this.state.worldSpeed;
+		this.sky.mesh.rotation.x += (targetX - this.airplane.mesh.position.x) *0.0001* this.state.worldSpeed;
+
+		this.sea.mesh.rotation.z += this.state.skyRotateSpeed * 0.001 *this.state.worldSpeed;
+		this.sea.mesh.rotation.x += (targetX - this.airplane.mesh.position.x) *0.0001* this.state.worldSpeed;
+
 	};
 	updateEnergy=()=>{
 		// console.log(this.energyCharge,this.state.energyRecharge)
@@ -200,7 +212,7 @@ class MrThree extends Component {
 		return tv;
 	};
 	animate = () => {
-		this.sky.mesh.rotation.z += this.state.skyRotateSpeed * this.state.worldSpeed;
+
 		this.sea.mesh.rotation.z += this.state.seaRotateSpeed * this.state.worldSpeed;
 		this.sea.moveWaves (0.001);
 		//this.airplane.propeller.rotation.x += 0.3;

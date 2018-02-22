@@ -4,24 +4,38 @@ import Sea from './asserts/Sea';
 import Sky from './asserts/Sky';
 import AirPlane from './asserts/AirPlane';
 import Pilot from './asserts/Pilot';
+import { EnemiesHolder, Enemy } from './asserts/Enemy';
 import { Button } from 'reactstrap';
 import styles from './MrThreeReacts.scss';
+import { Param } from "./asserts/setting";
 
 class MrThree extends Component {
 	constructor (props) {
 		super (props);
 		this.state = {
-			fullScreen : false,
-			mousePos : {x : 0, y : 0},
-			cameraZ : 200,
-			cameraRotateY : 0,
+			//basic setup
 			worldSpeed : 1,
+			cameraPosition: {x:0,y:100,z:200},//default camera pos
+			fullScreen : false, //fs toggler
+			mousePos : {x : 0, y : 0}, //tracking mouse pos
+			cameraZ : 3000,//200,
+			cameraRotateY : 0,
 			skyRotateSpeed : .005,
 			seaRotateSpeed : .005,
+			energyCharge:1,
+			bulletTime : false,
 		};
+		this.deltaTime = 0;
+		this.newTime = new Date ().getTime ();
+		this.oldTime = new Date ().getTime ();
 		this.energyBar = 10000;
 		this.energyCharge = 0;
-
+		this.enemiesPool = [];
+		this.distance = 0;
+		this.distanceForEnnemiesSpawn = 50;
+		this.enemyLastSpawn = 0;
+		this.speed = 1;//Param.speed;
+		this.ratioSpeedDistance = 50;//Param.speed;
 	}
 
 	createScene = () => {
@@ -34,7 +48,7 @@ class MrThree extends Component {
 			1, // nearPlane
 			10000, // farPlane
 		);
-		camera.position.set (0, 100, 200);
+		camera.position.set (this.state.cameraPosition.x,this.state.cameraPosition.y,this.state.cameraPosition.z);
 
 		//const controls = new THREE.OrbitControls( camera );
 
@@ -83,46 +97,21 @@ class MrThree extends Component {
 		this.airplane = new AirPlane ();
 		this.airplane.mesh.scale.set (.25, .25, .25);
 		this.airplane.mesh.position.x = this.width / 2;
-		this.airplane.mesh.position.y = -this.height / 2;
+		this.airplane.mesh.position.y = this.height / 2;
 		this.pilot = new Pilot ();
 		this.pilot.mesh.position.set (-10, 27, 0);
 		this.airplane.mesh.add (this.pilot.mesh);
 		this.scene.add (this.airplane.mesh);
 
 	};
-	createEnemyHolder = (nEnemy=20,ang,) => {
-		createEnemy = (stepAngel) => {
-			let e = new AirPlane();
-			let a = stepAngel*i + Math.random(0.1,1)*10;
-			let h = 650 + Math.random()*100;
-			e.mesh.rotation.set(0,180,a+Math.PI/2)
-			e.mesh.position.y = Math.sin(a)*h;
-			e.mesh.position.x = Math.cos(a)*h;
-			e.mesh.scale.set (.25, .25, .25);
-			this.sky.mesh.add(e.mesh)
+	createEnemies = () => {
+		for (let i = 0; i < 10; i++) {
+			let enemy = new Enemy ();
+			this.enemiesPool.push (enemy);
 		}
-
-
-		let stepAngle2 = Math.PI*2 / nEnemy;
-		for( let i=0; i< nEnemy;i++){
-			let e = new AirPlane();
-			let a = stepAngle2*i  + Math.random(0.1,1)*10; //这是云的最终角度
-			let h = 650 + Math.random()*100; // 这是轴的中心和云本身之间的距离
-
-			// 三角函数！！！希望你还记得数学学过的东西 :)
-			// 假如你不记得:
-			// 我们简单地把极坐标转换成笛卡坐标
-			e.mesh.position.y = Math.sin(a)*h;
-			e.mesh.position.x = Math.cos(a)*h;
-
-			// 根据云的位置旋转它
-			e.mesh.rotation.z = a + Math.PI/2;
-
-			e.mesh.scale.set (.25, .25, .25);
-
-			this.mesh.add (e.mesh);
-		}
-	}
+		this.enemiesHolder = new EnemiesHolder ();
+		this.scene.add (this.enemiesHolder.mesh);
+	};
 
 	init = () => {
 		this.createScene ();
@@ -130,7 +119,9 @@ class MrThree extends Component {
 		this.createSea ();
 		this.createSky (20, 10);
 		this.createAirPlane ();
-		//this.createEnemy ();
+		this.createEnemies ();
+		let enemy = new Enemy ();
+		this.scene.add(enemy.mesh);
 	};
 
 	componentDidMount () {
@@ -140,19 +131,22 @@ class MrThree extends Component {
 		window.addEventListener ('mousedown', this.mouseDownEvent, false);
 		window.addEventListener ('mouseup', this.mouseUpEvent, false);
 	}
+
 	mouseMoveEvent = (e) => {
 		this.setState ({mousePos : {x : -1 + (e.clientX / this.width) * 2, y : 1 - (e.clientY / this.height) * 2}});
 	};
 	mouseDownEvent = () => {
-		this.energyCharge = -10;
-		// this.setState({energyRecharge:-10})
+		if(this.energyBar>0) {
+			this.setState ({energyCharge : -1,bulletTime : true})
+		} else {
+			this.setState ({energyCharge : 3,bulletTime : false})
+		}
 	};
 	mouseUpEvent = () => {
-		this.energyCharge = 3;
-		// this.setState ({worldSpeed : 1, energyRecharge : 1});
+		this.setState ({energyCharge : 3,bulletTime : false})
 	};
-	touchMoverEvent = ()=>{}
-	touchEndEvent=()=>{}
+	touchMoverEvent = () => {};
+	touchEndEvent = () => {};
 
 
 	componentWillUnmount () {
@@ -161,6 +155,12 @@ class MrThree extends Component {
 		window.removeEventListener ('mousedown', this.mouseDownEvent, false);
 		window.removeEventListener ('mouseup', this.mouseUpEvent, false);
 		this.container.removeChild (this.renderer.domElement);
+
+	}
+
+	updateDistance () {
+		this.distance += Math.floor(this.speed * this.deltaTime * this.ratioSpeedDistance*0.001);
+		let d = 502 * (1 - (this.distance % this.distanceForLevelUpdate) / this.distanceForLevelUpdate);
 
 	}
 
@@ -177,19 +177,20 @@ class MrThree extends Component {
 		let targetY = this.normalize (this.state.mousePos.y, -1, 1, 25, 175);
 		this.airplane.mesh.position.y += (targetY - this.airplane.mesh.position.y) * 0.04 * this.state.worldSpeed;
 		this.airplane.mesh.rotation.z = (targetY - this.airplane.mesh.position.y) * 0.01 * this.state.worldSpeed;
-		this.airplane.mesh.rotation.x = (this.airplane.mesh.position.y - targetY) * 0.02 * this.state.worldSpeed;
+
+		!this.state.bulletTime ? this.airplane.mesh.rotation.x = (this.airplane.mesh.position.y - targetY) * 0.02 * this.state.worldSpeed : null;
 		this.airplane.propeller.rotation.x += 0.3 * this.state.worldSpeed;
 		this.airplane.mesh.position.x = 0;//targetX;
 		this.camera.position.z = this.state.cameraZ + targetX;
 		this.camera.rotation.y = this.state.cameraRotateY - targetX / 300;
 	};
-	updateEnergy=()=>{
+	updateEnergy = () => {
 		// console.log(this.energyCharge,this.state.energyRecharge)
-		this.energyCharge<0&&this.energyBar>0?this.setState ({worldSpeed : 0.3}):this.setState ({worldSpeed : 1});
-		this.energyBar += this.energyCharge;
-		this.energyBar = Math.floor(Math.max(0,this.energyBar))
-		this.energyBar = Math.floor(Math.min(this.energyBar,1000))
-	}
+		this.state.energyCharge < 0 && this.energyBar > 0 ? this.setState ({worldSpeed : 0.3}) : this.setState ({worldSpeed : 1});
+		this.energyBar += this.state.energyCharge;
+		this.energyBar = Math.floor (Math.max (0, this.energyBar));
+		this.energyBar = Math.floor (Math.min (this.energyBar, 1000));
+	};
 	normalize = (v, vmin, vmax, tmin, tmax) => {
 		let nv = Math.max (Math.min (v, vmax), vmin);
 		let dv = vmax - vmin;
@@ -200,54 +201,61 @@ class MrThree extends Component {
 		return tv;
 	};
 	animate = () => {
+		this.newTime = new Date ().getTime ();
+		this.deltaTime = this.newTime - this.oldTime;
+		this.oldTime = this.newTime;
+
+		if (this.totle <= 10) {
+			this.enemiesHolder.spawnEnemies (2, this.enemiesPool);
+		}
+
+		if (Math.floor (this.distance) % this.distanceForEnnemiesSpawn === 0 && Math.floor (this.distance) > this.enemyLastSpawn) {
+			this.enemyLastSpawn = Math.floor (this.distance);
+			this.enemiesHolder.spawnEnemies ();
+		}
+
 		this.sky.mesh.rotation.z += this.state.skyRotateSpeed * this.state.worldSpeed;
 		this.sea.mesh.rotation.z += this.state.seaRotateSpeed * this.state.worldSpeed;
 		this.sea.moveWaves (0.001);
 		//this.airplane.propeller.rotation.x += 0.3;
 		this.updatePlane ();
+		this.updateDistance ();
 		this.pilot.updateHairs ();
-		this.updateEnergy()
+		this.updateEnergy ();
 		//setTimeout( ()=> {
 		this.renderScene ();
 		this.frameId = window.requestAnimationFrame (this.animate);
 		//}, 1000 / 30 );
-
 	};
-
 	renderScene () {
 		this.renderer.render (this.scene, this.camera);
 	}
-
 	toggleFullScreen = () => {
 		document.body.classList.toggle ('sidebar-hidden');
 		document.body.classList.toggle ('aside-menu-hidden');
 		this.setState ({fullScreen : !this.state.fullScreen});
 	};
-
 	render () {
 		//let w = window.innerWidth * .5, h = window.innerWidth * .5;
 		return (
-			<div style={ {
-				width : `${this.state.fullScreen ? '100vw' : '100%'}`,
-				height : `${this.state.fullScreen ? '100vh' : '100%'}`,
-			} }
-			     className={ styles.GameContainer }
-
-			     ref={ (mount) => { this.container = mount; } }
-			>
+			<div>
+				<div style={ {
+					width : `${this.state.fullScreen ? '100vw' : '100%'}`,
+					height : `${this.state.fullScreen ? '100vh' : '100%'}`,
+				} }
+				     className={ styles.GameContainer }
+				     ref={ (mount) => { this.container = mount; } }
+				>
+				</div>
+				<div className={ 'position-absolute' }>
+					<p>Energy: { this.energyBar }</p>
+					<p>Distance: { this.distance }</p>
+					<p>Delta: { this.deltaTime}</p>
+				</div>
 				<Button outline color={ this.state.fullScreen ? 'secondary' : 'primary' } size="md"
 				        className={ styles.button } onClick={ this.toggleFullScreen }>
 					{ this.state.fullScreen ? 'Exit Full Screen' : 'Enter Full Screen' }
 				</Button>
-				<div className={'position-absolute'}>
-					{ this.energyBar }
-				</div>
-				{ /*<form onSubmit={ e => this.onSubmit (e) }>
-				 <lable>
-				 <input type="text" ref={ (input) => this.input = input }/>
-				 <button type='submit' value="submit">change</button>
-				 </lable>
-				 </form>*/ }
 			</div>
 		);
 	}

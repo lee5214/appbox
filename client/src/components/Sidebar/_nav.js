@@ -53,6 +53,15 @@ export default {
 		},
 		{
 			title : true,
+			name : '3D Games',
+		},
+		{
+			name : 'Mr Three Reacts',
+			url : '/mrthreereacts',
+			icon : 'icon-social-dropbox',
+		},
+		{
+			title : true,
 			name : 'Extras',
 		},
 		{

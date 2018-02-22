@@ -37,7 +37,11 @@ export default class Sky {
 			// 不要忘记将每朵云的网格添加到场景中
 			this.mesh.add(c.mesh);
 		}
-		let stepAngle2 = Math.PI*2 / nEnemy;
+
+
+
+
+		/*let stepAngle2 = Math.PI*2 / nEnemy;
 		for( let i=0; i< nEnemy;i++){
 			let e = new AirPlane();
 			let a = stepAngle2*i  + Math.random(0.1,1)*10; //这是云的最终角度
@@ -55,6 +59,6 @@ export default class Sky {
 			e.mesh.scale.set (.25, .25, .25);
 
 			this.mesh.add (e.mesh);
-		}
+		}*/
 	}
 }

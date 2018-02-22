@@ -21,7 +21,7 @@ class Sea {
 		const mat = new THREE.MeshPhongMaterial({
 			color: Colors.blue,
 			transparent: true,
-			opacity: 0.8,
+			opacity: 0.1,
 			flatShading: true,
 		});
 

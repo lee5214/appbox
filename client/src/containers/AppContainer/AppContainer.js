@@ -28,7 +28,7 @@ import City from '../../views/City/';
 // import ChatRoom from '../../views/ChatRoom';
 import ChatRoomV2 from '../../views/ChatRoomV2/';
 import SecretLinks from '../../views/SecretLinks/';
-
+import MrThreeReacts from '../../views/MrThreeReacts';
 
 import BannerLine from 'components/_Composite/BannerLine/';
 import { Myself } from '../../views/About';
@@ -217,6 +217,9 @@ class AppContainer extends Component {
 
 								<Route path="/about/myself" name="myself"
 								       component={ Myself }
+								/>
+								<Route path="/mrthreereacts" name="Mr Three Reacts"
+								       component={ MrThreeReacts }
 								/>
 								<Route path="/test" name="Test"
 								       render={ () => <Test roZ={ this.state.roZ }/> }
