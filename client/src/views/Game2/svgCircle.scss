@@ -1,20 +1,3 @@
-.ThreeContainer{
-  borderRadius : '50%';
-  position : absolute;
-  top : 50%;
-  left : 50%;
-  transform : translate(-50%,-50%);
-}
-.svgContainer{
-  z-index: 1;
-  border-radius: 50%;
-  width: 100%;
-  max-width: 1000px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
 .svgMainSpinner {
   z-index: 1;
   display: block;
