@@ -219,7 +219,7 @@ class AppContainer extends Component {
 								       component={ Myself }
 								/>
 								<Route path="/mrthreereacts" name="Mr Three Reacts"
-								       component={ MrThreeReacts }
+								       render={()=> <MrThreeReacts currentUserInfo = {this.props.currentUserInfo}/> }
 								/>
 								<Route path="/test" name="Test"
 								       render={ () => <Test roZ={ this.state.roZ }/> }

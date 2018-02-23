@@ -22,7 +22,7 @@ class EnemiesHolder {
 		this.enemiesInUse = [];
 	}
 	spawnEnemies = (level, enemiesPool) =>{
-		for (let i = 0; i < level; i++) {
+		for (let i = 0; i < level+1; i++) {
 			let enemy;
 			if (enemiesPool.length) {
 				enemy = enemiesPool.pop ();
@@ -40,10 +40,10 @@ class EnemiesHolder {
 			this.enemiesInUse.push (enemy);
 		}
 	};
-	rotateEnemies = (deltaTime,airplane,enemiesPool,speed) =>{
+	rotateEnemies = (deltaTime,airplane,enemiesPool,worldSpeed,changeWorldSpeed,reduceEnergy) =>{
 		for (let i = 0; i < this.enemiesInUse.length; i++) {
 			let enemy = this.enemiesInUse[ i ];
-			enemy.angle += speed * deltaTime * Param.enemiesSpeed/1000;
+			enemy.angle += worldSpeed * deltaTime * Param.enemiesSpeed/1000;
 			if (enemy.angle > Math.PI * 2) enemy.angle -= Math.PI * 2;
 
 			enemy.mesh.position.y = -Param.seaRadius + Math.sin (enemy.angle) * enemy.distance;
@@ -54,9 +54,13 @@ class EnemiesHolder {
 			//let globalEnemyPosition =  enemy.mesh.localToWorld(new THREE.Vector3());
 
 			let diffPos = airplane.mesh.position.clone ().sub (enemy.mesh.position.clone ());
+			console.log(diffPos)
 			let d = diffPos.length ();
+			if(d<Param.enemyBulletTime){
+				changeWorldSpeed(0.1)
+			}
 			if (d < Param.enemyDistanceTolerance) {
-
+				//changeWorldSpeed(0.1)
 				//particlesHolder.spawnParticles (enemy.mesh.position.clone (), 15, Colors.red, 3);
 
 				enemiesPool.unshift (this.enemiesInUse.splice (i, 1)[ 0 ]);
@@ -65,8 +69,10 @@ class EnemiesHolder {
 				this.planeCollisionSpeedY = 100 * diffPos.y / d;
 				//ambientLight.intensity = 2;
 				//removeEnergy ();
+				reduceEnergy()
 				i--;
 			} else if (enemy.angle > Math.PI) {
+				//changeWorldSpeed(0.1)
 				enemiesPool.unshift (this.enemiesInUse.splice (i, 1)[ 0 ]);
 				this.mesh.remove (enemy.mesh);
 				i--;

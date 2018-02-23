@@ -83,7 +83,7 @@ class ChatRoom extends Component {
 		rootDB.child (`users/${this.props.currentUserInfo._id}`).remove ();
 		// offline the messages DB
 		// so that next time chatroom re-mounted, messages could be added correctly
-		rootDB.child ('messages').off();
+		rootDB.off();
 	};
 
 	onInputChange = (input) => {
