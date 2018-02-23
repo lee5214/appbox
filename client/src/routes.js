@@ -25,6 +25,7 @@ const routes = {
 	'/secretlinks' : 'Secret Links',
 	'/about' : 'About',
 	'/about/myself' : 'Myself',
+	'/mrthreereacts' : 'MrThreeReacts',
 	'/test' : 'Test',
 };
 export default routes;
