@@ -17,17 +17,18 @@ class MrThree extends Component {
 			worldSpeed : 1,
 			cameraPosition: {x:0,y:100,z:200},//default camera pos
 			fullScreen : false, //fs toggler
-			mousePos : {x : 0, y : 0}, //tracking mouse pos
-			cameraZ : 3000,//200,
+			cameraZ : 300,//200,
 			cameraRotateY : 0,
 			skyRotateSpeed : .005,
 			seaRotateSpeed : .005,
 			energyCharge:1,
 			bulletTime : false,
+			seaRadius : Param.seaRadius
 		};
-		this.deltaTime = 0;
-		this.newTime = new Date ().getTime ();
-		this.oldTime = new Date ().getTime ();
+		this.prevTime = new Date ().getTime ();
+		this.mousePos = {x : 0, y : 0}; //tracking mouse pos
+		//this.oldTime = new Date ().getTime ();
+
 		this.energyBar = 10000;
 		this.energyCharge = 0;
 		this.enemiesPool = [];
@@ -65,6 +66,7 @@ class MrThree extends Component {
 		this.renderer = renderer;
 		this.container.appendChild (this.renderer.domElement);
 	};
+
 	createLights = () => {
 		let hemisphereLight = new THREE.HemisphereLight (0xaaaaaa, 0x000000, .9);
 		let shadowLight = new THREE.DirectionalLight (0xffffff, .9);
@@ -84,11 +86,11 @@ class MrThree extends Component {
 		this.scene.add (ambientLight);
 	};
 	createSea = () => {
-		this.sea = new Sea ();
+		this.sea = new Sea (this.state.seaRadius);
 		this.sea.mesh.position.y = -700;
 		this.scene.add (this.sea.mesh);
 	};
-	createSky = (nClouds, nEnemy) => {
+	createSky = (nClouds) => {
 		this.sky = new Sky (40, 20);
 		this.sky.mesh.position.y = -600;
 		this.scene.add (this.sky.mesh);
@@ -133,7 +135,8 @@ class MrThree extends Component {
 	}
 
 	mouseMoveEvent = (e) => {
-		this.setState ({mousePos : {x : -1 + (e.clientX / this.width) * 2, y : 1 - (e.clientY / this.height) * 2}});
+		this.mousePos.x = -1 + (e.clientX / this.width) * 2;
+		this.mousePos.y = 1 - (e.clientY / this.height) * 2;
 	};
 	mouseDownEvent = () => {
 		if(this.energyBar>0) {
@@ -159,9 +162,8 @@ class MrThree extends Component {
 	}
 
 	updateDistance () {
-		this.distance += Math.floor(this.speed * this.deltaTime * this.ratioSpeedDistance*0.001);
-		let d = 502 * (1 - (this.distance % this.distanceForLevelUpdate) / this.distanceForLevelUpdate);
-
+		this.distance += Math.floor(this.speed * this.deltaTime * this.ratioSpeedDistance * 0.001);
+		//let d = 502 * (1 - (this.distance % this.distanceForLevelUpdate) / this.distanceForLevelUpdate);
 	}
 
 	start = () => {
@@ -173,8 +175,8 @@ class MrThree extends Component {
 		cancelAnimationFrame (this.frameId);
 	};
 	updatePlane = () => {
-		let targetX = this.normalize (this.state.mousePos.x, -1, 1, -100, 100);
-		let targetY = this.normalize (this.state.mousePos.y, -1, 1, 25, 175);
+		let targetX = this.normalize (this.mousePos.x, -1, 1, -100, 100);
+		let targetY = this.normalize (this.mousePos.y, -1, 1, 25, 175);
 		this.airplane.mesh.position.y += (targetY - this.airplane.mesh.position.y) * 0.04 * this.state.worldSpeed;
 		this.airplane.mesh.rotation.z = (targetY - this.airplane.mesh.position.y) * 0.01 * this.state.worldSpeed;
 
@@ -201,31 +203,33 @@ class MrThree extends Component {
 		return tv;
 	};
 	animate = () => {
-		this.newTime = new Date ().getTime ();
-		this.deltaTime = this.newTime - this.oldTime;
-		this.oldTime = this.newTime;
+		// framerate independent motion
+		let currentTime = new Date ().getTime ();
+		this.deltaTime = currentTime - this.prevTime;
+		this.prevTime = currentTime;
 
-		if (this.totle <= 10) {
-			this.enemiesHolder.spawnEnemies (2, this.enemiesPool);
-		}
-
+		/*if (this.totle <= 10) {
+			this.enemiesHolder.spawnEnemies (4, this.enemiesPool);
+		}*/
 		if (Math.floor (this.distance) % this.distanceForEnnemiesSpawn === 0 && Math.floor (this.distance) > this.enemyLastSpawn) {
 			this.enemyLastSpawn = Math.floor (this.distance);
-			this.enemiesHolder.spawnEnemies ();
+			this.enemiesHolder.spawnEnemies (4,this.enemiesPool);
 		}
 
-		this.sky.mesh.rotation.z += this.state.skyRotateSpeed * this.state.worldSpeed;
-		this.sea.mesh.rotation.z += this.state.seaRotateSpeed * this.state.worldSpeed;
+
+		this.sky.mesh.rotation.z += this.state.skyRotateSpeed * this.state.worldSpeed * this.deltaTime * 0.05;
+		this.sea.mesh.rotation.z += this.state.seaRotateSpeed * this.state.worldSpeed * this.deltaTime * 0.05;
 		this.sea.moveWaves (0.001);
 		//this.airplane.propeller.rotation.x += 0.3;
 		this.updatePlane ();
 		this.updateDistance ();
 		this.pilot.updateHairs ();
+		this.enemiesHolder.rotateEnemies(this.deltaTime, this.airplane,this.enemiesPool,this.state.worldSpeed);
 		this.updateEnergy ();
-		//setTimeout( ()=> {
+
+		// re-draw
 		this.renderScene ();
 		this.frameId = window.requestAnimationFrame (this.animate);
-		//}, 1000 / 30 );
 	};
 	renderScene () {
 		this.renderer.render (this.scene, this.camera);
@@ -251,6 +255,7 @@ class MrThree extends Component {
 					<p>Energy: { this.energyBar }</p>
 					<p>Distance: { this.distance }</p>
 					<p>Delta: { this.deltaTime}</p>
+					<p>enemyLastSpawn: { this.enemyLastSpawn}</p>
 				</div>
 				<Button outline color={ this.state.fullScreen ? 'secondary' : 'primary' } size="md"
 				        className={ styles.button } onClick={ this.toggleFullScreen }>

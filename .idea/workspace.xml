@@ -2,63 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="742d2f67-9123-492e-9892-2d49e2746a61" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/congli.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/Game2/GraphCircle.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/Game2/MrThreeReacts.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/Game2/MrThreeReacts.css.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/Game2/MrThreeReacts.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/Game2/MrThreeReacts.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/Game2/Test.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/Game2/Test.css.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/Game2/Test.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/Game2/Test.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/Game2/TestField1.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/Game2/TestField2.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/Game2/TestField3.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/Game2/asserts/AirPlane.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/Game2/asserts/Cloud.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/Game2/asserts/Enemy.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/Game2/asserts/Pilot.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/Game2/asserts/Sea.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/Game2/asserts/Sky.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/Game2/asserts/animation.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/Game2/asserts/setting.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/Game2/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/Game2/svgCircle.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/Game2/svgCircle.css.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/Game2/svgCircle.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/MrThreeReacts/GraphCircle.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/MrThreeReacts/MrThreeReacts.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/MrThreeReacts/MrThreeReacts.css.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/MrThreeReacts/MrThreeReacts.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/MrThreeReacts/MrThreeReacts.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/MrThreeReacts/Test.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/MrThreeReacts/Test.css.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/MrThreeReacts/Test.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/MrThreeReacts/Test.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/MrThreeReacts/asserts/AirPlane.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/MrThreeReacts/asserts/Cloud.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/MrThreeReacts/asserts/Enemy.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/MrThreeReacts/asserts/Pilot.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/MrThreeReacts/asserts/Sea.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/MrThreeReacts/asserts/Sky.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/MrThreeReacts/asserts/animation.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/MrThreeReacts/asserts/setting.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/MrThreeReacts/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/views/Test/asserts/Enemy.js" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Sidebar/_nav.js" afterPath="$PROJECT_DIR$/client/src/components/Sidebar/_nav.js" />
-      <change beforePath="$PROJECT_DIR$/client/src/containers/AppContainer/AppContainer.js" afterPath="$PROJECT_DIR$/client/src/containers/AppContainer/AppContainer.js" />
-      <change beforePath="$PROJECT_DIR$/client/src/routes.js" afterPath="$PROJECT_DIR$/client/src/routes.js" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/Test/MrThreeReacts.js" afterPath="$PROJECT_DIR$/client/src/views/Test/MrThreeReacts.js" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/Test/MrThreeReacts.scss" afterPath="$PROJECT_DIR$/client/src/views/Test/MrThreeReacts.scss" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/Test/asserts/AirPlane.js" afterPath="$PROJECT_DIR$/client/src/views/Test/asserts/AirPlane.js" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/Test/asserts/Cloud.js" afterPath="$PROJECT_DIR$/client/src/views/Test/asserts/Cloud.js" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/Test/asserts/Pilot.js" afterPath="$PROJECT_DIR$/client/src/views/Test/asserts/Pilot.js" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/Test/asserts/Sea.js" afterPath="$PROJECT_DIR$/client/src/views/Test/asserts/Sea.js" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/Test/asserts/Sky.js" afterPath="$PROJECT_DIR$/client/src/views/Test/asserts/Sky.js" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/Test/asserts/setting.js" afterPath="$PROJECT_DIR$/client/src/views/Test/asserts/setting.js" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/MrThreeReacts/MrThreeReacts.js" afterPath="$PROJECT_DIR$/client/src/views/MrThreeReacts/MrThreeReacts.js" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/MrThreeReacts/asserts/Enemy.js" afterPath="$PROJECT_DIR$/client/src/views/MrThreeReacts/asserts/Enemy.js" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/MrThreeReacts/asserts/Sea.js" afterPath="$PROJECT_DIR$/client/src/views/MrThreeReacts/asserts/Sea.js" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/MrThreeReacts/asserts/Sky.js" afterPath="$PROJECT_DIR$/client/src/views/MrThreeReacts/asserts/Sky.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -2079,116 +2027,27 @@
     <fileColor scope="Non-Project Files (Material Palenight)" color="2f2e43" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.50037795">
+    <splitter split-orientation="vertical" split-proportion="0.56233245">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="MrThreeReacts.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/client/src/views/Test/MrThreeReacts.js">
+          <file leaf-file-name="MrThreeReacts.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/client/src/views/MrThreeReacts/MrThreeReacts.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3234">
-                  <caret line="184" column="4" lean-forward="false" selection-start-line="184" selection-start-column="4" selection-end-line="184" selection-end-column="4" />
+                <state relative-caret-position="561">
+                  <caret line="226" column="109" lean-forward="false" selection-start-line="226" selection-start-column="109" selection-end-line="226" selection-end-column="109" />
                   <folding>
                     <element signature="e#0#41#0" expanded="true" />
-                    <element signature="e#1494#2204#0" expanded="false" />
+                    <element signature="e#2132#2842#0" expanded="false" />
+                    <element signature="n#!!block;n#componentDidMount#0;n#MrThree#0" expanded="false" />
                     <element signature="n#!!block;n#componentWillUnmount#0;n#MrThree#0" expanded="false" />
-                    <element signature="e#4866#4953#0" expanded="false" />
-                    <element signature="e#4889#4950#0" expanded="false" />
-                    <element signature="e#4969#5012#0" expanded="false" />
-                    <element signature="e#6150#6366#0" expanded="false" />
-                    <element signature="e#6932#7102#0" expanded="false" />
-                    <element signature="e#7209#7334#0" expanded="false" />
-                    <element signature="e#7445#7691#0" expanded="false" />
-                    <element signature="e#7775#7983#0" expanded="false" />
-                    <marker date="1519247014988" expanded="true" signature="5185:5291" ph="//..." />
+                    <element signature="e#5214#5301#0" expanded="false" />
+                    <element signature="e#5237#5298#0" expanded="false" />
+                    <element signature="e#5317#5360#0" expanded="false" />
+                    <element signature="e#6554#6770#0" expanded="false" />
+                    <element signature="n#!!block;n#renderScene#0;n#MrThree#0" expanded="false" />
+                    <element signature="e#7978#8148#0" expanded="false" />
+                    <element signature="e#8738#8984#0" expanded="false" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Sky.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/client/src/views/Test/asserts/Sky.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1029">
-                  <caret line="51" column="24" lean-forward="false" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
-                  <folding>
-                    <element signature="e#0#31#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="AirPlane.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/client/src/views/Test/asserts/AirPlane.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="147">
-                  <caret line="9" column="89" lean-forward="false" selection-start-line="9" selection-start-column="89" selection-end-line="9" selection-end-column="89" />
-                  <folding>
-                    <element signature="e#0#31#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Cloud.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/client/src/views/Test/asserts/Cloud.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="420">
-                  <caret line="22" column="32" lean-forward="false" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
-                  <folding>
-                    <element signature="e#0#26#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="animation.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/client/src/views/Test/asserts/animation.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="21">
-                  <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Pilot.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/client/src/views/Test/asserts/Pilot.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="189">
-                  <caret line="10" column="87" lean-forward="false" selection-start-line="10" selection-start-column="87" selection-end-line="10" selection-end-column="87" />
-                  <folding>
-                    <element signature="e#0#30#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Enemy.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/client/src/views/Test/asserts/Enemy.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="462">
-                  <caret line="22" column="23" lean-forward="false" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Sea.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/client/src/views/Game2/asserts/Sea.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Sea.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/client/src/views/MrThreeReacts/asserts/Sea.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="441">
-                  <caret line="22" column="29" lean-forward="false" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -2197,38 +2056,23 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="MrThreeReacts.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/client/src/views/MrThreeReacts/MrThreeReacts.js">
+          <file leaf-file-name="Sky.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/client/src/views/MrThreeReacts/asserts/Sky.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1012">
-                  <caret line="45" column="30" lean-forward="true" selection-start-line="45" selection-start-column="30" selection-end-line="45" selection-end-column="30" />
+                <state relative-caret-position="84">
+                  <caret line="4" column="8" lean-forward="false" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
                   <folding>
-                    <element signature="e#0#41#0" expanded="true" />
-                    <element signature="e#1880#1934#0" expanded="false" />
-                    <element signature="e#2115#2825#0" expanded="false" />
-                    <element signature="e#2980#3084#0" expanded="false" />
-                    <element signature="e#3110#3456#0" expanded="false" />
-                    <element signature="n#!!block;n#componentDidMount#0;n#MrThree#0" expanded="false" />
-                    <element signature="e#4191#4306#0" expanded="false" />
-                    <element signature="n#!!block;n#componentWillUnmount#0;n#MrThree#0" expanded="false" />
-                    <element signature="e#5183#5270#0" expanded="false" />
-                    <element signature="e#5206#5267#0" expanded="false" />
-                    <element signature="e#5286#5329#0" expanded="false" />
-                    <element signature="e#6535#6751#0" expanded="false" />
-                    <element signature="n#!!block;n#renderScene#0;n#MrThree#0" expanded="false" />
-                    <element signature="e#7775#7945#0" expanded="false" />
-                    <element signature="e#8061#8189#0" expanded="false" />
-                    <element signature="e#8484#8730#0" expanded="false" />
+                    <element signature="e#0#31#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Enemy.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="Enemy.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/client/src/views/MrThreeReacts/asserts/Enemy.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="355">
-                  <caret line="34" column="123" lean-forward="false" selection-start-line="34" selection-start-column="109" selection-end-line="34" selection-end-column="123" />
+                <state relative-caret-position="211">
+                  <caret line="45" column="27" lean-forward="false" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="27" />
                   <folding>
                     <element signature="e#0#31#0" expanded="true" />
                   </folding>
@@ -2239,8 +2083,8 @@
           <file leaf-file-name="setting.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/client/src/views/MrThreeReacts/asserts/setting.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="218">
-                  <caret line="30" column="18" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="18" />
+                <state relative-caret-position="155">
+                  <caret line="62" column="0" lean-forward="true" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -2249,8 +2093,8 @@
           <file leaf-file-name="Sea.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/client/src/views/MrThreeReacts/asserts/Sea.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="462">
-                  <caret line="23" column="24" lean-forward="false" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+                <state relative-caret-position="112">
+                  <caret line="11" column="26" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
                   <folding />
                 </state>
               </provider>
@@ -2269,36 +2113,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>creates</find>
-      <find>sky</find>
-      <find>fog</find>
-      <find>cloud</find>
-      <find>camera.po</find>
-      <find>mousemove</find>
-      <find>mousePos</find>
-      <find>conso</find>
-      <find>airplan</find>
-      <find>extra</find>
-      <find>enemy</find>
-      <find>createe</find>
-      <find>enne</find>
-      <find>shading</find>
-      <find>enemiesInUse</find>
-      <find>spawn</find>
-      <find>EnemiesHolder</find>
-      <find>this.spaw</find>
-      <find>this.enemies</find>
       <find>this.enemiesho</find>
       <find>spawne</find>
       <find>holder</find>
-      <find>sea</find>
       <find>planeDefaultHeight</find>
       <find>planeAmpHeight</find>
-      <find>distance</find>
       <find>energyCharge</find>
       <find>bullet</find>
       <find>distanceForEnnemiesSpawn</find>
       <find>updatedis</find>
+      <find>this.distan</find>
+      <find>distan</find>
+      <find>seaRadius</find>
+      <find>sea</find>
+      <find>createsea</find>
+      <find>rotateene</find>
+      <find>airplane</find>
+      <find>lastsp</find>
+      <find>updateene</find>
+      <find>inuse</find>
+      <find>rotateEnemies</find>
+      <find>sky</find>
+      <find>sky.rot</find>
+      <find>distance</find>
+      <find>deltatime</find>
+      <find>spawn</find>
+      <find>console.log</find>
+      <find>enemiesSpeed</find>
+      <find>speed</find>
+      <find>rotateenemie</find>
+      <find>console</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -2361,11 +2205,11 @@
         <option value="$PROJECT_DIR$/client/src/views/MrThreeReacts/index.js" />
         <option value="$PROJECT_DIR$/client/src/components/Sidebar/_nav.js" />
         <option value="$PROJECT_DIR$/client/src/views/MrThreeReacts/asserts/EnemiesHolder.js" />
-        <option value="$PROJECT_DIR$/client/src/views/MrThreeReacts/asserts/Sky.js" />
         <option value="$PROJECT_DIR$/client/src/views/MrThreeReacts/asserts/setting.js" />
-        <option value="$PROJECT_DIR$/client/src/views/MrThreeReacts/asserts/Enemy.js" />
         <option value="$PROJECT_DIR$/client/src/views/MrThreeReacts/asserts/Sea.js" />
+        <option value="$PROJECT_DIR$/client/src/views/MrThreeReacts/asserts/Sky.js" />
         <option value="$PROJECT_DIR$/client/src/views/MrThreeReacts/MrThreeReacts.js" />
+        <option value="$PROJECT_DIR$/client/src/views/MrThreeReacts/asserts/Enemy.js" />
       </list>
     </option>
   </component>
@@ -2640,14 +2484,7 @@
       <workItem from="1519220663979" duration="15960000" />
       <workItem from="1519243662732" duration="91000" />
       <workItem from="1519243770778" duration="10438000" />
-      <workItem from="1519276412335" duration="17612000" />
-    </task>
-    <task id="LOCAL-00120" summary="add loading page">
-      <created>1517989466602</created>
-      <option name="number" value="00120" />
-      <option name="presentableId" value="LOCAL-00120" />
-      <option name="project" value="LOCAL" />
-      <updated>1517989466602</updated>
+      <workItem from="1519276412335" duration="25577000" />
     </task>
     <task id="LOCAL-00121" summary="add loading page">
       <created>1517989734215</created>
@@ -2985,11 +2822,18 @@
       <option name="project" value="LOCAL" />
       <updated>1519199798753</updated>
     </task>
-    <option name="localTasksCounter" value="169" />
+    <task id="LOCAL-00169" summary="game dev start stage 3 &#10;work on enemy logic">
+      <created>1519303958907</created>
+      <option name="number" value="00169" />
+      <option name="presentableId" value="LOCAL-00169" />
+      <option name="project" value="LOCAL" />
+      <updated>1519303958907</updated>
+    </task>
+    <option name="localTasksCounter" value="170" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1793813000" />
+    <option name="totallyTimeSpent" value="1801778000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -3002,9 +2846,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1080" y="-480" width="1080" height="1920" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2581888" sideWeight="0.7077748" order="0" side_tool="false" content_ui="combo" x="-1080" y="-480" width="256" height="1440" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21098267" sideWeight="0.7077748" order="0" side_tool="false" content_ui="combo" x="-1080" y="-480" width="256" height="1440" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32777777" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1720548" sideWeight="0.51935786" order="7" side_tool="true" content_ui="tabs" />
@@ -3013,7 +2856,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23593664" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24881291" sideWeight="0.49321628" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18514472" sideWeight="0.4806421" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18514472" sideWeight="0.4806421" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.238921" sideWeight="0.2922252" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="GfmBrowser" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -3061,7 +2904,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="work on domain mask forward....&#10;change idea to work with dns hoster&#10;try google app engine" />
     <MESSAGE value="test ci" />
     <MESSAGE value="readme &amp; license added" />
     <MESSAGE value="CI test" />
@@ -3086,7 +2928,8 @@
     <MESSAGE value="game stage 1" />
     <MESSAGE value="mobile layout changed" />
     <MESSAGE value="game dev start stage 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="game dev start stage 2" />
+    <MESSAGE value="game dev start stage 3 &#10;work on enemy logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="game dev start stage 3 &#10;work on enemy logic" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3253,6 +3096,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
           <caret line="2" column="18" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3268,6 +3112,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3275,6 +3120,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#41#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3400,7 +3248,7 @@
         <state relative-caret-position="420">
           <caret line="22" column="32" lean-forward="false" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3439,14 +3287,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/views/MrThreeReacts/asserts/Sky.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="10" lean-forward="true" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/views/MrThreeReacts/asserts/Cloud.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-73">
@@ -3457,53 +3297,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/views/MrThreeReacts/asserts/setting.js">
+    <entry file="file://$PROJECT_DIR$/client/src/views/MrThreeReacts/asserts/Sea.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="30" column="18" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="18" />
+        <state relative-caret-position="112">
+          <caret line="11" column="26" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/views/MrThreeReacts/asserts/Enemy.js">
+    <entry file="file://$PROJECT_DIR$/client/src/views/MrThreeReacts/asserts/setting.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="34" column="123" lean-forward="false" selection-start-line="34" selection-start-column="109" selection-end-line="34" selection-end-column="123" />
+        <state relative-caret-position="155">
+          <caret line="62" column="0" lean-forward="true" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/views/MrThreeReacts/asserts/Sky.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="8" lean-forward="false" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/views/MrThreeReacts/asserts/Sea.js">
+    <entry file="file://$PROJECT_DIR$/client/src/views/MrThreeReacts/MrThreeReacts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="23" column="24" lean-forward="false" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
-          <folding />
+        <state relative-caret-position="561">
+          <caret line="226" column="109" lean-forward="false" selection-start-line="226" selection-start-column="109" selection-end-line="226" selection-end-column="109" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#2132#2842#0" expanded="false" />
+            <element signature="n#!!block;n#componentDidMount#0;n#MrThree#0" expanded="false" />
+            <element signature="n#!!block;n#componentWillUnmount#0;n#MrThree#0" expanded="false" />
+            <element signature="e#5214#5301#0" expanded="false" />
+            <element signature="e#5237#5298#0" expanded="false" />
+            <element signature="e#5317#5360#0" expanded="false" />
+            <element signature="e#6554#6770#0" expanded="false" />
+            <element signature="n#!!block;n#renderScene#0;n#MrThree#0" expanded="false" />
+            <element signature="e#7978#8148#0" expanded="false" />
+            <element signature="e#8738#8984#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/views/MrThreeReacts/MrThreeReacts.js">
+    <entry file="file://$PROJECT_DIR$/client/src/views/MrThreeReacts/asserts/Enemy.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1012">
-          <caret line="45" column="30" lean-forward="true" selection-start-line="45" selection-start-column="30" selection-end-line="45" selection-end-column="30" />
+        <state relative-caret-position="211">
+          <caret line="45" column="27" lean-forward="false" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="27" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
-            <element signature="e#1880#1934#0" expanded="false" />
-            <element signature="e#2115#2825#0" expanded="false" />
-            <element signature="e#2980#3084#0" expanded="false" />
-            <element signature="e#3110#3456#0" expanded="false" />
-            <element signature="n#!!block;n#componentDidMount#0;n#MrThree#0" expanded="false" />
-            <element signature="e#4191#4306#0" expanded="false" />
-            <element signature="n#!!block;n#componentWillUnmount#0;n#MrThree#0" expanded="false" />
-            <element signature="e#5183#5270#0" expanded="false" />
-            <element signature="e#5206#5267#0" expanded="false" />
-            <element signature="e#5286#5329#0" expanded="false" />
-            <element signature="e#6535#6751#0" expanded="false" />
-            <element signature="n#!!block;n#renderScene#0;n#MrThree#0" expanded="false" />
-            <element signature="e#7775#7945#0" expanded="false" />
-            <element signature="e#8061#8189#0" expanded="false" />
-            <element signature="e#8484#8730#0" expanded="false" />
+            <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>

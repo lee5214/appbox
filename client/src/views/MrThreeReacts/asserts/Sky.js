@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import Cloud from './Cloud';
 import AirPlane from './AirPlane'
 export default class Sky {
-	constructor (nClouds, nEnemy) {
+	constructor (nClouds) {
 // 创建一个空的容器
 		this.mesh = new THREE.Object3D();
 		// 选取若干朵云散布在天空中
