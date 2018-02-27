@@ -113,7 +113,7 @@ export default {
 				},
 			],
 		},
-		{
+		/*{
 			title : true,
 			name : 'UI elements',
 			wrapper : { // optional wrapper object
@@ -205,7 +205,7 @@ export default {
 			name : 'Charts',
 			url : '/charts',
 			icon : 'icon-pie-chart',
-		},
+		},*/
 		{
 			name : 'My Website',
 			url : 'http://lee5214.com',
