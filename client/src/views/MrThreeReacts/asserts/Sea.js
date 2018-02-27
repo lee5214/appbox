@@ -3,7 +3,8 @@ import { Colors } from './setting';
 
 class Sea {
 	constructor(radius) {
-		const geom = new THREE.SphereGeometry(radius, 60, 80);//new THREE.CylinderGeometry(700, 600, 800, 40, 10);
+		const geom = new THREE.SphereGeometry(radius, 60, 80);
+		//new THREE.CylinderGeometry(700, 600, 800, 40, 10);
 		geom.applyMatrix(new THREE.Matrix4().makeRotationX(-Math.PI / 2));
 		geom.mergeVertices();
 		this.waves = [];
@@ -21,7 +22,7 @@ class Sea {
 		const mat = new THREE.MeshPhongMaterial({
 			color: Colors.blue,
 			transparent: true,
-			opacity: 0.1,
+			opacity: 0.9,
 			flatShading: true,
 		});
 

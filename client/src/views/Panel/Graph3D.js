@@ -179,33 +179,22 @@ class Scene extends Component {
 		}
 		this.sphere.rotation.x += this.state.roX*this.state.rotateSpeed;
 		this.sphere.rotation.y += this.state.roY*this.state.rotateSpeed;
-
-
 		//this.camera.position.z = 20 * Math.sin( THREE.Math.degToRad( this.theta ) );
 		this.renderScene ();
 		this.frameId = window.requestAnimationFrame (this.animate);
 
 	};
-
 	renderScene () {
 		this.renderer.render (this.scene, this.camera);
 	}
-
 	render () {
 		let w = window.innerWidth * .5, h = window.innerWidth * .5;
 		return (
 			<div className={styles.ThreeContainer} style={{ width : w, height : h, }}
 				ref={ (mount) => { this.container = mount; } }
 			>
-				{ /*<form onSubmit={ e => this.onSubmit (e) }>
-				 <lable>
-				 <input type="text" ref={ (input) => this.input = input }/>
-				 <button type='submit' value="submit">change</button>
-				 </lable>
-				 </form>*/ }
-				<div>
+				{/*<div className={'overlayLED'} />*/}
 					{ this.state.radius },{ this.state.widthSegments },{ this.state.heightSegments },{this.state.color}
-				</div>
 			</div>
 		);
 	}

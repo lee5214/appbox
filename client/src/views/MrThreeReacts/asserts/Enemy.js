@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import {Colors, Param} from './setting'
+import {Colors, DefaultParam} from './setting'
 class Enemy {
 	constructor () {
 		let geom = new THREE.TetrahedronGeometry (8, 2);
@@ -32,8 +32,8 @@ class EnemiesHolder {
 			//this.totle += 1;
 
 			enemy.angle = -(i * 0.1);
-			enemy.distance = Param.seaRadius + Param.planeDefaultHeight + (-1 + Math.random () * 2) * (Param.planeAmpHeight - 20);
-			enemy.mesh.position.y = -Param.seaRadius + Math.sin (enemy.angle) * enemy.distance;
+			enemy.distance = DefaultParam.seaRadius + DefaultParam.planeDefaultHeight + (-1 + Math.random () * 2) * (DefaultParam.planeAmpHeight + 20);
+			enemy.mesh.position.y = -DefaultParam.seaRadius + Math.sin (enemy.angle) * enemy.distance;
 			enemy.mesh.position.x = Math.cos (enemy.angle) * enemy.distance;
 
 			this.mesh.add (enemy.mesh);
@@ -43,10 +43,10 @@ class EnemiesHolder {
 	rotateEnemies = (deltaTime,airplane,enemiesPool,worldSpeed,changeWorldSpeed,reduceEnergy) =>{
 		for (let i = 0; i < this.enemiesInUse.length; i++) {
 			let enemy = this.enemiesInUse[ i ];
-			enemy.angle += worldSpeed * deltaTime * Param.enemiesSpeed/1000;
+			enemy.angle += worldSpeed * deltaTime * DefaultParam.enemiesSpeed/1000;
 			if (enemy.angle > Math.PI * 2) enemy.angle -= Math.PI * 2;
 
-			enemy.mesh.position.y = -Param.seaRadius + Math.sin (enemy.angle) * enemy.distance;
+			enemy.mesh.position.y = -DefaultParam.seaRadius + Math.sin (enemy.angle) * enemy.distance;
 			enemy.mesh.position.x = Math.cos (enemy.angle) * enemy.distance;
 			enemy.mesh.rotation.z += Math.random () * .1;
 			enemy.mesh.rotation.y += Math.random () * .1;
@@ -56,10 +56,10 @@ class EnemiesHolder {
 			let diffPos = airplane.mesh.position.clone ().sub (enemy.mesh.position.clone ());
 			console.log(diffPos)
 			let d = diffPos.length ();
-			if(d<Param.enemyBulletTime){
+			if(d<DefaultParam.enemyBulletTime){
 				changeWorldSpeed(0.1)
 			}
-			if (d < Param.enemyDistanceTolerance) {
+			if (d < DefaultParam.enemyDistanceTolerance) {
 				//changeWorldSpeed(0.1)
 				//particlesHolder.spawnParticles (enemy.mesh.position.clone (), 15, Colors.red, 3);
 

@@ -163,3 +163,5 @@ function mapDispatchToProps (dispatch) {
 }
 
 export default connect (mapStateToProps, mapDispatchToProps) (ChatRoom);
+
+// TODO avatar blink behave in safari?

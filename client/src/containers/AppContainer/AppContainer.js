@@ -109,13 +109,13 @@ class AppContainer extends Component {
 		document.body.classList.toggle ('aside-menu-hidden');
 	};
 	handleResize = () => {
-		if (window.innerWidth < this.minimalInnerlWidth) {
+		if (window.innerWidth < this.minimalInnerlWidth ) {
 			document.body.classList.remove ('mode-3D-on');
 			this.setState ({mode3D_permission : false});
 			this.props.setMode ('2D');
 			this.props.setMouseTrack (false);
 			console.log (`resize detected, minimal width breakpoint: --${this.minimalInnerlWidth}px--, 3D mode disable`);
-		} else {
+		} else if(window.innerWidth > this.minimalInnerlWidth && this.state.mode3D_permission===true) {
 			document.body.classList.add ('mode-3D-on');
 			this.setState ({mode3D_permission : true});
 			this.props.setMode ('3D');

@@ -15,33 +15,9 @@ class GraphCircle extends Component {
 	}
 
 	componentDidMount = () => {
-		//startAnimation ('#aaa');
 		TweenMax.to ('.svgCircle__st2', 0.5, {
 			boxShadow : "0px 0px 10px 10px rgb(0, 204, 0)",
 		});
-	};
-
-	componentWillReceiveProps (nextProps) {
-		//nextProps.roZ?this.setState({roZ:nextProps.roZ}):null;
-	}
-
-	onMouseMove = (e) => {
-		// let mX = e.clientX, mY = e.clientY, mZ = e.clientZ;
-		// let maxRotateX = 10;
-		// let maxRotateY = 10;
-		// let view_option = 3;
-		// let {left, right, top, bottom, height, width} = this.mainSvg.getBoundingClientRect ();
-		// let centerX = width / 2,
-		// 	centerY = height / 2,
-		// 	curRelPosX = mX - left,
-		// 	curRelPosY = mY - top,
-		// 	percentX = (curRelPosX - centerX) / centerX,
-		// 	percentY = (curRelPosY - centerY) / centerY;
-		// let roX = -percentY * maxRotateX, roY = percentX * maxRotateY;
-		// if (roX !== this.state.roX || roY !== this.state.roY) {
-		// 	this.setState ({roX, roY});
-		// }
-		//this.setState({roZ:this.props.roZ})
 	};
 
 	render () {
@@ -64,7 +40,6 @@ class GraphCircle extends Component {
 					      transform="rotate(0 500,500)">
 						App Box
 					</text>
-
 					<circle className={ style.st0 } cx="500" cy="500" r="480"/>
 					<circle style={ {stroke : this.state.colorDefault} } className={ style.st1 } cx="500" cy="500"
 					        r="400">

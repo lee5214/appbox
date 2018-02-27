@@ -7,7 +7,7 @@ export default class Cloud {
 		this.mesh = new THREE.Object3D ();
 		// 创建一个正方体
 		// 这个形状会被复制创建云
-		let geom = new THREE.SphereGeometry (20, 6, 6);
+		let geom = new THREE.SphereGeometry (20, 5, 5);
 		// 创建材质；一个简单的白色材质就可以达到效果
 		let mat = new THREE.MeshBasicMaterial ({
 			color : Colors.white,
