@@ -8,7 +8,7 @@ export const Colors = {
 	black: 0x000000,
 };
 
-export const Param = {
+export const DefaultParam = {
 	speed : 0,
 	initSpeed : .00035,
 	baseSpeed : .00035,
@@ -65,7 +65,18 @@ export const Param = {
 	enemyValue : 10,
 	enemiesSpeed : .6,
 	enemyLastSpawn : 0,
-	distanceForEnemiesSpawn : 50,
+	distanceForEnemiesSpawn : 100,
+	enemyBulletTime : 30,
 
 	status : "playing",
+};
+
+export const normalize = (v, vmin, vmax, tmin, tmax) => {
+	let nv = Math.max (Math.min (v, vmax), vmin);
+	let dv = vmax - vmin;
+	let pc = (nv - vmin) / dv;
+	let dt = tmax - tmin;
+	let tv = tmin + (pc * dt);
+	//console.log(v,vmin,vmax,tmin,tmax,dt,tv)
+	return tv;
 };

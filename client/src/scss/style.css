@@ -9542,10 +9542,6 @@ app-root {
 .aside-menu-fixed.aside-menu-hidden .main, .aside-menu-fixed.aside-menu-hidden .app-footer {
   margin-right: 0; }
 
-.aside-menu-mobile-show .aside-menu {
-  width: 220px;
-  margin-right: 0; }
-
 .aside-menu-off-canvas .aside-menu {
   position: fixed;
   right: 0;
@@ -9654,6 +9650,10 @@ app-root {
     z-index: 1019;
     width: 220px;
     margin-right: -220px; }
+
+  .aside-menu-mobile-show .aside-menu {
+    width: 220px;
+    margin-right: 0; }
 
   .main, .app-footer {
     margin-left: 0 !important;

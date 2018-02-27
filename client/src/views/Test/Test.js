@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import TestField1 from './TestField1'
 import TestField2 from './TestField2'
 import TestField3 from './TestField3'
-import TestField4 from './GraphCircle'
-import MrThreeReacts from './MrThreeReacts'
 // import socketIOClient from 'socket.io-client';
 // import {
 // 	Button,
@@ -36,7 +34,6 @@ class Test extends Component {
 				{/*<TestField3/>*/}
 
 				{/*<TestField4 roZ={this.props.roZ}/>*/}
-				<MrThreeReacts/>
 			</div>
 		);
 	}

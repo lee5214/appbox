@@ -143,13 +143,6 @@ app-root {
   }
 }
 
-.aside-menu-mobile-show {
-  .aside-menu {
-    width: $mobile-sidebar-width;
-    margin-right: 0;
-  }
-}
-
 .aside-menu-off-canvas {
   .aside-menu {
     position: fixed;
@@ -317,6 +310,9 @@ app-root {
 //  transition: left $layout-transition-speed, right $layout-transition-speed, width $layout-transition-speed;
 //}
 
+
+
+
 //
 // Mobile layout
 //
@@ -380,6 +376,13 @@ app-root {
     margin-right: - $mobile-aside-menu-width;
   }
 
+  .aside-menu-mobile-show {
+    .aside-menu {
+      width: $mobile-sidebar-width;
+      margin-right: 0;
+    }
+  }
+
   .main, .app-footer {
     margin-left: 0 !important;
     margin-right: 0 !important;
@@ -400,4 +403,6 @@ app-root {
       margin-left: $mobile-sidebar-width !important;
     }
   }
+
+
 }
