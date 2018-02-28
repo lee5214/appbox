@@ -1,4 +1,5 @@
 import Breadcrumb from './_Common/Breadcrumb/Breadcrumb';
+import Loader from './_Common/Loader/Loader'
 import { InfoList, } from './_Composite';
 
 import {
@@ -104,6 +105,7 @@ import {
 } from 'reactstrap';
 
 export {
+	Loader,
 	InfoList,
 	// PricingTable, PricingTableClean, PricingTablesDisplay,
 	Breadcrumb,

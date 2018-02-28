@@ -67,7 +67,7 @@ require ('../routes/generalRoutes') (app);
 
 // error route handler
 
-app.use (function (req, res, next) {
+/*app.use (function (req, res, next) {
 	let err = new Error ('Not Found');
 	err.status = 404;
 	res.redirect('/#/404')
@@ -89,7 +89,7 @@ app.use (function (err, req, res, next) {
 	res.send ('error', {
 		message : err.message,
 	});
-});
+});*/
 
 server.listen (PORT);
 console.log ('node services is running on port:', PORT);

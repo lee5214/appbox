@@ -9,6 +9,8 @@ export const Colors = {
 };
 
 export const DefaultParam = {
+	worldSpeed: 1,
+	bulletTime: false,
 	speed : 0,
 	initSpeed : .00035,
 	baseSpeed : .00035,

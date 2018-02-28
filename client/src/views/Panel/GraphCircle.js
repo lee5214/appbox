@@ -35,10 +35,10 @@ class GraphCircle extends Component {
 					<text className={ style.angNum } x="490" y="50"
 					      transform="rotate(30 500,500)">{ this.props.roZ }</text>
 					<text className={ style.angNum } x="490" y="50"
-					      transform="rotate(-90 500,500)">AAA</text>
+					      transform="rotate(-90 500,500)">APP BOX</text>
 					<text className={ style.angNum } x="900" y="900"
 					      transform="rotate(0 500,500)">
-						App Box
+						{/*App Box*/}
 					</text>
 					<circle className={ style.st0 } cx="500" cy="500" r="480"/>
 					<circle style={ {stroke : this.state.colorDefault} } className={ style.st1 } cx="500" cy="500"

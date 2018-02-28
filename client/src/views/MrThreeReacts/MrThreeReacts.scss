@@ -7,12 +7,14 @@
   transform : translate(-50%,-50%);
   background: linear-gradient(to right bottom, #0b96d8, #ffffff)
 }
-.button {
-  z-index: 1;
+.buttonGroup {
   position: absolute;
+  bottom: 1rem;
+  margin:  0 auto;
+}
+.button{
+  z-index: 1;
   width: 200px;
   left: 0;
   right: 0;
-  bottom: 1rem;
-  margin:  0 auto;
 }

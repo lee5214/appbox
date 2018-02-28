@@ -9,9 +9,9 @@ module.exports = (app) => {
 		const WEATHER_URL = 'https://api.openweathermap.org/data/2.5';
 		const NYT_NEWS_URL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json';
 		// forecast 5d/3h
-		const forecastURL = `${WEATHER_URL}/forecast?APPID=${keys.OpenWeatherMap_Key}&q=${cityName}&units=${unit}`;
+		const forecastURL = `${WEATHER_URL}/forecast?APPID=${keys.OWM_Key}&q=${cityName}&units=${unit}`;
 		// get current weather
-		const currentURL = `${WEATHER_URL}/weather?APPID=${keys.OpenWeatherMap_Key}&q=${cityName}&units=${unit}`;
+		const currentURL = `${WEATHER_URL}/weather?APPID=${keys.OWM_Key}&q=${cityName}&units=${unit}`;
 		const cityForecastTemp = await axios.get (forecastURL);
 		const cityCurrentTemp = await axios.get (currentURL);
 		const NYT_URL = `${NYT_NEWS_URL}?api-key=${keys.NYT_Key}&q=${cityName}`;
@@ -24,7 +24,7 @@ module.exports = (app) => {
 		const cityName = 'San Francisco'
 		const unit = 'Imperial'
 		let WEATHER_URL = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5';
-		const forecastURL = `${WEATHER_URL}/forecast?APPID=${keys.OpenWeatherMap_Key}&q=${cityName}&units=${unit}`;
+		const forecastURL = `${WEATHER_URL}/forecast?APPID=${keys.OWM_Key}&q=${cityName}&units=${unit}`;
 		const cityForecastTemp = axios.get (forecastURL);
 		res.json (cityForecastTemp);
 	})

@@ -1,0 +1,49 @@
+.preloader-1 {
+  margin: 100px auto 0;
+  width: 66px;
+  height: 12px;
+}
+
+.line {
+  width: 1px;
+  height: 12px;
+  background: #fff;
+  margin: 0 1px;
+  display: inline-block;
+  animation: opacity-1 1000ms infinite ease-in-out;
+}
+.line1 { composes: line; animation-delay: 800ms; }
+.line2 { composes: line; animation-delay: 600ms; }
+.line3 { composes: line; animation-delay: 400ms; }
+.line4 { composes: line; animation-delay: 200ms; }
+.line6 { composes: line; animation-delay: 200ms; }
+.line7 { composes: line; animation-delay: 400ms; }
+.line8 { composes: line; animation-delay: 600ms; }
+.line9 { composes: line; animation-delay: 800ms; }
+
+@keyframes opacity-1 {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes opacity-2 {
+  0% {
+    opacity: 1;
+    height: 15px;
+  }
+  50% {
+    opacity: 0;
+    height: 12px;
+  }
+  100% {
+    opacity: 1;
+    height: 15px;
+  }
+}

@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import {Colors, DefaultParam} from './setting'
 class Enemy {
 	constructor () {
-		let geom = new THREE.TetrahedronGeometry (8, 2);
+		let geom = new THREE.TetrahedronGeometry (12, 2);
 		let mat = new THREE.MeshPhongMaterial ({
 			color : Colors.red,
 			shininess : 0,
