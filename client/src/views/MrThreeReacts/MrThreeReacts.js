@@ -5,7 +5,7 @@ import Sky from './asserts/Sky';
 import AirPlane from './asserts/AirPlane';
 import Pilot from './asserts/Pilot';
 import { EnemiesHolder, Enemy } from './asserts/Enemy';
-import { Row, Button,ButtonGroup, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
+import { Row, Col, Button,ButtonGroup, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 import styles from './MrThreeReacts.scss';
 import { DefaultParam, normalize } from "./asserts/setting";
 import fire from 'utils/fire';
@@ -398,7 +398,9 @@ class MrThree extends Component {
 					{ this.state.topScores.map (item => <li
 						key={ item.score }>{ item.score }{ item.displayName }</li>) }
 				</div>
-				<ButtonGroup vertical className={styles.buttonGroup}>
+
+				<Row className={styles.buttonGroup}>
+					<Col>
 					<Button outline color={ this.state.fullScreen ? 'secondary' : 'primary' } size="md"
 					        className={ styles.button } onClick={ this.toggleFullScreen }>
 						{ this.state.fullScreen ? 'Exit Full Screen' : 'Enter Full Screen' }
@@ -407,7 +409,9 @@ class MrThree extends Component {
 					        className={ styles.button } onClick={ this.modalToggle }>
 						{this.state.gameStatus ==='waiting'?'continue':('ending'?'as':'asd')}
 					</Button>
-				</ButtonGroup>
+					</Col>
+				</Row>
+
 				<Modal isOpen={ this.state.modalIsOpen } toggle={ this.modalToggle }>
 					<ModalHeader toggle={ this.toggle }>Modal title</ModalHeader>
 					<ModalBody>

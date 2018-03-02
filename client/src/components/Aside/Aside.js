@@ -175,7 +175,7 @@ class Aside extends Component {
 							<small><b>Memory Usage</b></small>
 						</div>
 						<Progress className="progress-xs" color="warning" value="70"/>
-						<small className="text-muted">11444GB/16384MB</small>
+						<small className="text-muted">11444GB/16384GB</small>
 
 						<div className="text-uppercase mb-1 mt-2">
 							<small><b>SSD 1 Usage</b></small>

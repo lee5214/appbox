@@ -99,15 +99,15 @@ class Header extends Component {
 				</NavbarToggler>
 				<Nav className="d-md-down-none" navbar>
 					<NavItem className="px-3">
-						<NavLink href="/"><i className="fa fa-address-book mr-2"/>Users</NavLink>
+						<NavLink disabled href="/"><i className="fa fa-address-book mr-2"/>Users</NavLink>
 					</NavItem>
 					<NavItem className="px-3">
-						<NavLink href="#"><i className="fa fa-cogs mr-2"/>Settings</NavLink>
+						<NavLink disabled href="#"><i className="fa fa-cogs mr-2"/>Settings</NavLink>
 					</NavItem>
 
 					<Route path="/login" name="login">
 						<NavItem className="px-3">
-							<NavLink href="#/login"><i className="fa fa-sign-in-alt mr-2"/> Login / Register</NavLink>
+							<NavLink href="#/login"><i className="fa fa-sign-in mr-2"/> Login / Register</NavLink>
 						</NavItem>
 					</Route>
 				</Nav>

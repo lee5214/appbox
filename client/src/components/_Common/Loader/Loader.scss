@@ -1,16 +1,25 @@
-.preloader-1 {
-  margin: 100px auto 0;
-  width: 66px;
-  height: 12px;
+.loaderContainer{
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.preloader {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  flex-wrap: wrap;
+  width: 100px;
+  margin: 0 auto;
+
 }
 
 .line {
-  width: 1px;
+  width: 2px;
   height: 12px;
   background: #fff;
-  margin: 0 1px;
+  margin: 0 2px;
   display: inline-block;
-  animation: opacity-1 1000ms infinite ease-in-out;
+  animation: opacity-2 1000ms infinite ease-in-out;
 }
 .line1 { composes: line; animation-delay: 800ms; }
 .line2 { composes: line; animation-delay: 600ms; }
@@ -22,28 +31,21 @@
 .line9 { composes: line; animation-delay: 800ms; }
 
 @keyframes opacity-1 {
-  0% {
+  0%,100% {
     opacity: 1;
   }
   50% {
     opacity: 0;
-  }
-  100% {
-    opacity: 1;
   }
 }
 
 @keyframes opacity-2 {
-  0% {
+  0%, 100% {
     opacity: 1;
     height: 15px;
   }
   50% {
     opacity: 0;
-    height: 12px;
-  }
-  100% {
-    opacity: 1;
-    height: 15px;
+    height: 18px;
   }
 }
