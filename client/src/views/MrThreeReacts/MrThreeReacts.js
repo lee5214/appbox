@@ -5,12 +5,12 @@ import Sky from './asserts/Sky';
 import AirPlane from './asserts/AirPlane';
 import Pilot from './asserts/Pilot';
 import { EnemiesHolder, Enemy } from './asserts/Enemy';
+import GameMenu from './asserts/GameMenu'
 import { Row, Col, Button,ButtonGroup, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 import styles from './MrThreeReacts.scss';
 import { DefaultParam, normalize } from "./asserts/setting";
 import fire from 'utils/fire';
-
-const rootDB = fire.database ().ref ().child ('MrThreeReacts/');
+const rootDB = fire.database ().ref().child('MrThreeReacts/');
 
 class MrThree extends Component {
 	constructor (props) {
@@ -20,6 +20,7 @@ class MrThree extends Component {
 			//cameraPosition: {x:0,y:0,z:200},//default camera pos
 			gameStatus : 'waiting',
 			fullScreen : false, //fs toggler
+			menuIsOn : true,
 			modalIsOpen : false,
 			cameraZ : 300,//200,
 			cameraRotateY : 0,
@@ -45,7 +46,8 @@ class MrThree extends Component {
 
 			distance : 0,
 			ratioSpeedDistance : 50,
-			energy : 100,
+			energy : 10,
+			maxEnergy: 10,
 			ratioSpeedEnergy : 3,
 
 			level : 1,
@@ -107,6 +109,35 @@ class MrThree extends Component {
 
 	}
 
+	componentDidMount () {
+		this.init ();
+		this.start ();
+
+		rootDB.child ('scores').orderByChild('score').limitToLast (10).on ('child_added', (snapshot) => {
+			const score = snapshot.val ();
+			console.log(score)
+			if (score) {
+				this.setState ({
+					topScores :
+						[ score,...this.state.topScores ],
+				});
+			}
+		});
+		window.addEventListener ('mousemove', this.mouseMoveEvent, false);
+		window.addEventListener ('mousedown', this.mouseDownEvent, false);
+		window.addEventListener ('mouseup', this.mouseUpEvent, false);
+	}
+
+	componentWillUnmount () {
+		this.stop ();
+		window.removeEventListener ('mousemove', this.mouseMoveEvent, false);
+		window.removeEventListener ('mousedown', this.mouseDownEvent, false);
+		window.removeEventListener ('mouseup', this.mouseUpEvent, false);
+		this.container.removeChild (this.renderer.domElement);
+		rootDB.off ();
+
+	}
+
 	createScene = () => {
 		this.width = this.container.clientWidth;
 		this.height = this.container.clientHeight;
@@ -122,7 +153,7 @@ class MrThree extends Component {
 		//const controls = new THREE.OrbitControls( camera );
 
 		// renderer
-		const renderer = new THREE.WebGLRenderer ({alpha : true, antialias : true});
+		const renderer = new THREE.WebGLRenderer ({alpha : true, antialias : false});
 		//renderer.setClearColor ('red');
 		renderer.setSize (this.width, this.height);
 		renderer.shadowMap.enabled = true;
@@ -191,36 +222,6 @@ class MrThree extends Component {
 		this.createEnemies ();
 	};
 
-	componentDidMount () {
-		this.init ();
-		this.start ();
-		//let top10 = rootDB.child ('scores').orderByValue('highestScores').limitToLast(10);
-		//this.setState({topScores:[score, ...this.state.topScores ]})
-		rootDB.child ('scores').limitToLast (10).on ('child_added', (snapshot) => {
-			const score = snapshot.val ();
-			if (score) {
-				this.setState ({
-					topScores : //score,
-						[ score, ...this.state.topScores ],
-					//messageNumber : this.state.messageNumber + 1,
-				});
-			}
-		});
-		window.addEventListener ('mousemove', this.mouseMoveEvent, false);
-		window.addEventListener ('mousedown', this.mouseDownEvent, false);
-		window.addEventListener ('mouseup', this.mouseUpEvent, false);
-	}
-
-	componentWillUnmount () {
-		this.stop ();
-		window.removeEventListener ('mousemove', this.mouseMoveEvent, false);
-		window.removeEventListener ('mousedown', this.mouseDownEvent, false);
-		window.removeEventListener ('mouseup', this.mouseUpEvent, false);
-		this.container.removeChild (this.renderer.domElement);
-
-		rootDB.off ();
-
-	}
 
 	mouseMoveEvent = (e) => {
 		this.mousePos.x = -1 + (e.clientX / this.width) * 2;
@@ -266,12 +267,8 @@ class MrThree extends Component {
 		this.camera.rotation.y = this.state.cameraRotateY - targetX / 300;
 	};
 	updateEnergy = () => {
-		// console.log(this.Param.energyCharge,this.state.energyRecharge)
-		//this.state.energyCharge < 0 && this.Param.energy > 0 ? this.setState ({worldSpeed : 0.3}) : this.setState
-		// ({worldSpeed : 1});
-		//this.Param.energy += this.state.energyCharge;
-		this.Param.energy = Math.floor (Math.max (0, this.energy));
-		this.Param.energy = Math.floor (Math.min (this.energy, 100));
+		this.Param.energy = Math.floor (Math.max (0, this.Param.energy));
+		this.Param.energy = Math.floor (Math.min (this.Param.energy, this.Param.maxEnergy));
 		if (this.Param.energy <= 0) {
 			this.setState ({gameStatus : 'ending'});
 		}
@@ -383,34 +380,7 @@ class MrThree extends Component {
 				     ref={ (mount) => { this.container = mount; } }
 				>
 				</div>
-				<div className={ 'position-absolute' }>
-					<button onClick={ () => {this.setState ({gameStatus : 'playing'});} }>start</button>
-					<p>Energy: { this.Param.energy }</p>
-					<p>Distance: { this.Param.distance }</p>
-					<p>level: { this.Param.level }</p>
-					<p>Delta: { this.deltaTime }</p>
-					<p>cameraZ</p>
-					<button onClick={ () => this.setState ({cameraZ : 3000}) }>3000</button>
-					<button onClick={ () => this.setState ({cameraZ : 200}) }>300</button>
-					<div className={ '' }>
-						<p>{ this.state.message }</p>
-					</div>
-					{ this.state.topScores.map (item => <li
-						key={ item.score }>{ item.score }{ item.displayName }</li>) }
-				</div>
-
-				<Row className={styles.buttonGroup}>
-					<Col>
-					<Button outline color={ this.state.fullScreen ? 'secondary' : 'primary' } size="md"
-					        className={ styles.button } onClick={ this.toggleFullScreen }>
-						{ this.state.fullScreen ? 'Exit Full Screen' : 'Enter Full Screen' }
-					</Button>
-					<Button outline color={ this.state.fullScreen ? 'secondary' : 'primary' } size="md"
-					        className={ styles.button } onClick={ this.modalToggle }>
-						{this.state.gameStatus ==='waiting'?'continue':('ending'?'as':'asd')}
-					</Button>
-					</Col>
-				</Row>
+				{this.state.menuIsOn?<GameMenu />:null}
 
 				<Modal isOpen={ this.state.modalIsOpen } toggle={ this.modalToggle }>
 					<ModalHeader toggle={ this.toggle }>Modal title</ModalHeader>

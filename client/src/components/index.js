@@ -99,8 +99,8 @@ import {
 	Well,
 	Wizard,
 } from 'reactstrap';
-export * from './_Common';
-export * from './_Composite';
+export {Loader,Divider,Breadcrumb} from './_Common';
+export {BannerLine,InfoList} from './_Composite';
 export {
 	Input,
 	Card, CardImg, CardText, CardBody, CardLink, CardDeck, CardColumns,
