@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="742d2f67-9123-492e-9892-2d49e2746a61" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -2855,14 +2854,7 @@
       <workItem from="1519490122485" duration="26855000" />
       <workItem from="1519774607582" duration="40934000" />
       <workItem from="1519997143069" duration="12655000" />
-      <workItem from="1520255490488" duration="1368000" />
-    </task>
-    <task id="LOCAL-00127" summary="correct init.js">
-      <created>1518066720455</created>
-      <option name="number" value="00127" />
-      <option name="presentableId" value="LOCAL-00127" />
-      <option name="project" value="LOCAL" />
-      <updated>1518066720455</updated>
+      <workItem from="1520255490488" duration="1395000" />
     </task>
     <task id="LOCAL-00128" summary="correct init.js">
       <created>1518067752596</created>
@@ -3200,11 +3192,18 @@
       <option name="project" value="LOCAL" />
       <updated>1520233986531</updated>
     </task>
-    <option name="localTasksCounter" value="176" />
+    <task id="LOCAL-00176" summary="game dev start stage 4&#10;readme">
+      <created>1520321217589</created>
+      <option name="number" value="00176" />
+      <option name="presentableId" value="LOCAL-00176" />
+      <option name="project" value="LOCAL" />
+      <updated>1520321217590</updated>
+    </task>
+    <option name="localTasksCounter" value="177" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1914231000" />
+    <option name="totallyTimeSpent" value="1914258000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -3299,7 +3298,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="production configs" />
     <MESSAGE value="change config production keys" />
     <MESSAGE value="find a way to force naked domain auto redirect to ssl" />
     <MESSAGE value="find a way to force naked domain auto redirect to ssl (yes-https)" />
@@ -3324,7 +3322,8 @@
     <MESSAGE value="game dev start stage 4&#10;added slogan and loader&#10;fixed bug caused by prod key names &amp; 404 router" />
     <MESSAGE value="game dev start stage 4&#10;add loader, change panel, etc." />
     <MESSAGE value="game dev start stage 4&#10;small fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="game dev start stage 4&#10;small fix" />
+    <MESSAGE value="game dev start stage 4&#10;readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="game dev start stage 4&#10;readme" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
