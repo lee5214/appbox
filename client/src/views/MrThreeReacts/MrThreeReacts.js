@@ -5,12 +5,12 @@ import Sky from './asserts/Sky';
 import AirPlane from './asserts/AirPlane';
 import Pilot from './asserts/Pilot';
 import { EnemiesHolder, Enemy } from './asserts/Enemy';
-import GameMenu from './asserts/GameMenu'
-import { Row, Col, Button,ButtonGroup, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
+import { Button, Col, Modal, ModalBody, ModalFooter, ModalHeader, Row } from 'reactstrap';
 import styles from './MrThreeReacts.scss';
 import { DefaultParam, normalize } from "./asserts/setting";
 import fire from 'utils/fire';
-const rootDB = fire.database ().ref().child('MrThreeReacts/');
+
+const rootDB = fire.database ().ref ().child ('MrThreeReacts/');
 
 class MrThree extends Component {
 	constructor (props) {
@@ -20,14 +20,12 @@ class MrThree extends Component {
 			//cameraPosition: {x:0,y:0,z:200},//default camera pos
 			gameStatus : 'waiting',
 			fullScreen : false, //fs toggler
-			menuIsOn : true,
 			modalIsOpen : false,
 			cameraZ : 300,//200,
 			cameraRotateY : 0,
 			skyRotateSpeed : .0002,
 			seaRotateSpeed : .0002,
 			energyCharge : 1,
-			seaRadius : DefaultParam.seaRadius,
 			topScores : [],
 			gameSaved : false,
 		};
@@ -46,8 +44,8 @@ class MrThree extends Component {
 
 			distance : 0,
 			ratioSpeedDistance : 50,
-			energy : 10,
-			maxEnergy: 10,
+			energy : 20,
+			maxEnergy : 100,
 			ratioSpeedEnergy : 3,
 
 			level : 1,
@@ -106,20 +104,19 @@ class MrThree extends Component {
 		// speed
 		this.enemiesPool = [];
 		//this.ratioSpeedDistance = 50;
-
 	}
 
 	componentDidMount () {
 		this.init ();
 		this.start ();
 
-		rootDB.child ('scores').orderByChild('score').limitToLast (10).on ('child_added', (snapshot) => {
+		rootDB.child ('scores').orderByChild ('score').limitToLast (10).on ('child_added', (snapshot) => {
 			const score = snapshot.val ();
-			console.log(score)
+			console.log (score);
 			if (score) {
 				this.setState ({
 					topScores :
-						[ score,...this.state.topScores ],
+						[ score, ...this.state.topScores ],
 				});
 			}
 		});
@@ -134,6 +131,7 @@ class MrThree extends Component {
 		window.removeEventListener ('mousedown', this.mouseDownEvent, false);
 		window.removeEventListener ('mouseup', this.mouseUpEvent, false);
 		this.container.removeChild (this.renderer.domElement);
+
 		rootDB.off ();
 
 	}
@@ -153,7 +151,7 @@ class MrThree extends Component {
 		//const controls = new THREE.OrbitControls( camera );
 
 		// renderer
-		const renderer = new THREE.WebGLRenderer ({alpha : true, antialias : false});
+		const renderer = new THREE.WebGLRenderer ({alpha : true, antialias : true});
 		//renderer.setClearColor ('red');
 		renderer.setSize (this.width, this.height);
 		renderer.shadowMap.enabled = true;
@@ -220,6 +218,7 @@ class MrThree extends Component {
 		this.createSky (20, 10);
 		this.createAirPlane ();
 		this.createEnemies ();
+		this.resetGame ();
 	};
 
 
@@ -270,13 +269,13 @@ class MrThree extends Component {
 		this.Param.energy = Math.floor (Math.max (0, this.Param.energy));
 		this.Param.energy = Math.floor (Math.min (this.Param.energy, this.Param.maxEnergy));
 		if (this.Param.energy <= 0) {
-			this.setState ({gameStatus : 'ending'});
+			this.setState ({gameStatus : 'gameover'});
 		}
 	};
 
 	reduceEnergy = () => {
 		this.Param.energy -= 10;//this.ennemyValue;
-		this.Param.energy = Math.max (0, this.energy);
+		this.Param.energy = Math.max (0, this.Param.energy);
 	};
 	//bullet time
 	changeWorldSpeed = (speed) => {
@@ -324,9 +323,8 @@ class MrThree extends Component {
 			this.pilot.updateHairs ();
 			this.updateEnergy ();
 			this.Param.baseSpeed += (this.Param.targetBaseSpeed - this.Param.baseSpeed) * this.deltaTime * 0.02;
-			this.enemiesHolder.rotateEnemies (this.deltaTime, this.airplane, this.enemiesPool, this.Param.worldSpeed, this.changeWorldSpeed.bind (this), this.reduceEnergy.bind (this));
 			//this.Param.worldSpeed = this.Param.baseSpeed;
-		} else if (this.state.gameStatus === 'ending') {
+		} else if (this.state.gameStatus === 'gameover') {
 			if (!this.state.gameSaved) {
 				const newScore = {
 					displayName : this.props.currentUserInfo.local.displayName,
@@ -335,7 +333,7 @@ class MrThree extends Component {
 				};
 				rootDB.child ('scores/').push (newScore);
 			}
-			this.setState ({gameSaved : true});
+			this.setState ({gameSaved : true, gameStatus : 'waiting'});
 		} else if (this.state.gameStatus === 'waiting') {
 		}
 
@@ -343,6 +341,7 @@ class MrThree extends Component {
 		 this.enemiesHolder.spawnEnemies (4, this.enemiesPool);
 		 }*/
 		//this.sky.mesh.rotation.x += this.state.skyRotateSpeed * this.Param.worldSpeed * this.deltaTime;
+		this.enemiesHolder.rotateEnemies (this.deltaTime, this.airplane, this.enemiesPool, this.Param.worldSpeed, this.changeWorldSpeed.bind (this), this.reduceEnergy.bind (this));
 
 		this.sky.mesh.rotation.z += this.state.skyRotateSpeed * this.Param.worldSpeed * this.deltaTime;
 		this.sea.mesh.rotation.z += this.state.seaRotateSpeed * this.Param.worldSpeed * this.deltaTime;
@@ -367,11 +366,16 @@ class MrThree extends Component {
 	modalToggle = () => {
 		this.setState ({modalIsOpen : !this.state.modalIsOpen});
 	};
+	resetGame = () => {
+		// necessory. create a new obj with default setting
+		//const paramHolder =
+		this.Param = Object.assign ({}, DefaultParam);
+	};
 
 	render () {
 		//let w = window.innerWidth * .5, h = window.innerWidth * .5;
 		return (
-			<div className={'animated fadeIn container pt-4'}>
+			<div className={ 'animated fadeIn container pt-4' }>
 				<div style={ {
 					width : `${this.state.fullScreen ? '100vw' : '100%'}`,
 					height : `${this.state.fullScreen ? '100vh' : '100%'}`,
@@ -380,16 +384,57 @@ class MrThree extends Component {
 				     ref={ (mount) => { this.container = mount; } }
 				>
 				</div>
-				{this.state.menuIsOn?<GameMenu />:null}
+
+				<div className={ 'position-absolute' }>
+					<button onClick={ () => {
+						this.resetGame ();
+						this.setState ({gameStatus : 'playing'});
+					} }>playing
+					</button>
+					<p>Energy: { this.Param.energy }</p>
+					<p>Distance: { this.Param.distance }</p>
+					<p>level: { this.Param.level }</p>
+					<p>Delta: { Math.floor(1000/this.deltaTime) }</p>
+					<p>cameraZ</p>
+					<button onClick={ () => this.setState ({cameraZ : 3000}) }>3000</button>
+					<button onClick={ () => this.setState ({cameraZ : 200}) }>300</button>
+					<div className={ '' }>
+						<p>{ this.state.message }</p>
+					</div>
+					{ this.state.topScores.map (item =>
+						<li key={ item.score }>{ item.score } - { item.displayName }</li>,
+					) }
+				</div>
+
+				<Row className={ styles.buttonGroup }>
+					<Col>
+						<Button outline color={ this.state.fullScreen ? 'secondary' : 'primary' } size="md"
+						        className={ styles.button } onClick={ this.toggleFullScreen }>
+							{ this.state.fullScreen ? 'Exit Full Screen' : 'Enter Full Screen' }
+						</Button>
+						<Button outline color={ this.state.fullScreen ? 'secondary' : 'primary' } size="md"
+						        className={ styles.button }
+						        onClick={ this.modalToggle }
+						>About
+						</Button>
+						<Button outline color={ this.state.fullScreen ? 'secondary' : 'primary' } size="md"
+						        className={ styles.button }
+						        onClick={()=>{this.resetGame ();this.setState ({gameStatus : 'playing'});} }
+						>
+							{ this.state.gameStatus === 'waiting' ? 'Start' : ('gameover' ? 'Again' : 'Pause') }
+						</Button>
+					</Col>
+				</Row>
 
 				<Modal isOpen={ this.state.modalIsOpen } toggle={ this.modalToggle }>
-					<ModalHeader toggle={ this.toggle }>Modal title</ModalHeader>
+					<ModalHeader toggle={ this.toggle }>About</ModalHeader>
 					<ModalBody>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-						labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-						laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-						voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-						non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						This is a 3D pilot game I migrated to my app using react/threejs/es6/firebase, so far it seems
+						work well.
+						Using your cursor to control the plane, try to stay as long as possible, game level will
+						increase based on the time lasted.
+						And you are able to leave bombs for other players.
+
 					</ModalBody>
 					<ModalFooter>
 						<Button color="primary" onClick={ this.toggle }>Do Something</Button>{ ' ' }

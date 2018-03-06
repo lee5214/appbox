@@ -9,8 +9,6 @@ export const Colors = {
 };
 
 export const DefaultParam = {
-	worldSpeed: 1,
-	bulletTime: false,
 	speed : 0,
 	initSpeed : .00035,
 	baseSpeed : .00035,
@@ -22,7 +20,8 @@ export const DefaultParam = {
 
 	distance : 0,
 	ratioSpeedDistance : 50,
-	energy : 100,
+	energy : 10,
+	maxEnergy: 10,
 	ratioSpeedEnergy : 3,
 
 	level : 1,
@@ -47,6 +46,7 @@ export const DefaultParam = {
 
 	seaRadius : 600,
 	seaLength : 800,
+
 	//seaRotationSpeed:0.006,
 	wavesMinAmp : 5,
 	wavesMaxAmp : 20,
@@ -70,7 +70,14 @@ export const DefaultParam = {
 	distanceForEnemiesSpawn : 100,
 	enemyBulletTime : 30,
 
+	worldSpeed : 1,
+	bulletTime : false,
 	status : "playing",
+	distanceForEnnemiesSpawn : 50,
+	distanceForBomb : 2000,
+	bombLastDrop : 0,
+	bombCounter : 0,
+
 };
 
 export const normalize = (v, vmin, vmax, tmin, tmax) => {

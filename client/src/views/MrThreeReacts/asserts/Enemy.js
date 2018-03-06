@@ -54,7 +54,7 @@ class EnemiesHolder {
 			//let globalEnemyPosition =  enemy.mesh.localToWorld(new THREE.Vector3());
 
 			let diffPos = airplane.mesh.position.clone ().sub (enemy.mesh.position.clone ());
-			console.log(diffPos)
+			//console.log(diffPos)
 			let d = diffPos.length ();
 			if(d<DefaultParam.enemyBulletTime){
 				changeWorldSpeed(0.1)
