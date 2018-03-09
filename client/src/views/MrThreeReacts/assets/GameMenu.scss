@@ -1,0 +1,21 @@
+.gameMenuContainer{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.buttonGroup {
+  position: absolute;
+  bottom: 1rem;
+  margin:  0 auto;
+}
+.button{
+  margin: 10px 10px;
+  z-index: 1;
+  width: 189px;
+  left: 0;
+  right: 0;
+  background: url('/img/bt.png') no-repeat transparent !important;
+  background-size: cover;
+  height: 82px;
+}
