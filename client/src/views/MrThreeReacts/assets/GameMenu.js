@@ -2,13 +2,16 @@ import React, { Component } from 'react';
 import { Button, Col, Modal, ModalBody, ModalHeader, Row, ListGroup,ListGroupItemHeading, ListGroupItem } from 'reactstrap';
 import styles from './GameMenu.scss';
 import { Divider,Loader } from 'components/';
+import fire from 'utils/fire';
 
+const rootDB = fire.database ().ref ().child ('MrThreeReacts/');
 class GameMenu extends Component {
 	constructor (props) {
 		super (props);
 		this.state = {
 			modalIsOpen : false,
 			fullScreen : false,
+			bombOwner : '',
 		};
 	}
 

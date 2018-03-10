@@ -29,6 +29,7 @@ class MrThree extends Component {
 			topScores : [],
 			gameSaved : false,
 			gameMessage : '',
+			bombOwner: '',
 		};
 		this.prevTime = new Date ().getTime ();
 		this.mousePos = {x : 0, y : 0}; //tracking mouse pos
@@ -111,20 +112,27 @@ class MrThree extends Component {
 		this.init ();
 		this.start ();
 
-		rootDB.child ('scores').orderByChild ('score').limitToLast (5).on ('child_added', (snapshot) => {
+		let i=0;
+		let ran = Math.floor(Math.random()*20)
+		rootDB.child ('scores').orderByChild ('score').limitToLast (20).on ('child_added', (snapshot) => {
 			const score = snapshot.val ();
-			console.log (score);
-			if (score) {
+			if (score && i<5) {
 				this.setState ({
 					topScores :
 						[ score, ...this.state.topScores ],
 				});
 			}
+			if(i===ran){
+				this.setState({
+					bombOwner:score.displayName
+				})
+			}
+			i++
 		});
-		/*this.setState ({
-		 topScores :
-		 [ {score : 999, displayName : 'cong li'}, {score : 9999, displayName : 'guest'} ],
-		 });*/
+			/*this.setState ({
+			 topScores :
+			 [ {score : 999, displayName : 'cong li'}, {score : 9999, displayName : 'guest'} ],
+			 });*/
 		window.addEventListener ('mousemove', this.mouseMoveEvent, false);
 		window.addEventListener ('mousedown', this.mouseDownEvent, false);
 		window.addEventListener ('mouseup', this.mouseUpEvent, false);
@@ -337,7 +345,7 @@ class MrThree extends Component {
 				};
 				rootDB.child ('scores/').push (newScore);
 			}
-			this.setState ({gameSaved : true, gameStatus : 'waiting'});
+			/*this.setState ({gameSaved : true, gameStatus : 'waiting'});*/
 			this.sendGameMessage ('You Lost!');
 		} else if (this.state.gameStatus === 'waiting') {
 
@@ -402,6 +410,7 @@ class MrThree extends Component {
 					<p>Score: { this.Param.distance || 0 }</p>
 					<p>level: { this.Param.level || null }</p>
 					<p>FPS: { Math.floor (1000 / this.deltaTime) }</p>
+					{this.state.bombOwner&&this.state.gameStatus==='gameOver'?<h1>You got bombed by {this.state.bombOwner}</h1>:null}
 
 
 				</div>

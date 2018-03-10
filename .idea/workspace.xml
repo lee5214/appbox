@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="742d2f67-9123-492e-9892-2d49e2746a61" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/client/src/views/MrThreeReacts/MrThreeReacts.js" afterPath="$PROJECT_DIR$/client/src/views/MrThreeReacts/MrThreeReacts.js" />
       <change beforePath="$PROJECT_DIR$/client/src/views/MrThreeReacts/assets/GameMenu.js" afterPath="$PROJECT_DIR$/client/src/views/MrThreeReacts/assets/GameMenu.js" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/MrThreeReacts/assets/GameMenu.scss" afterPath="$PROJECT_DIR$/client/src/views/MrThreeReacts/assets/GameMenu.scss" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/MrThreeReacts/assets/setting.js" afterPath="$PROJECT_DIR$/client/src/views/MrThreeReacts/assets/setting.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -2035,12 +2031,12 @@
           <file leaf-file-name="MrThreeReacts.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/client/src/views/MrThreeReacts/MrThreeReacts.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="244">
-                  <caret line="437" column="23" lean-forward="false" selection-start-line="437" selection-start-column="18" selection-end-line="437" selection-end-column="23" />
+                <state relative-caret-position="307">
+                  <caret line="113" column="0" lean-forward="true" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#41#0" expanded="true" />
-                    <marker date="1520650342172" expanded="true" signature="14783:14822" ph="/*...*/" />
-                    <marker date="1520650342172" expanded="true" signature="15072:15089" ph="/*...*/" />
+                    <marker date="1520661392265" expanded="true" signature="15052:15091" ph="/*...*/" />
+                    <marker date="1520661392265" expanded="true" signature="15341:15358" ph="/*...*/" />
                   </folding>
                 </state>
               </provider>
@@ -2072,13 +2068,14 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="GameMenu.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="GameMenu.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/client/src/views/MrThreeReacts/assets/GameMenu.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="63">
-                  <caret line="3" column="23" lean-forward="false" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
+                <state relative-caret-position="286">
+                  <caret line="38" column="37" lean-forward="false" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="37" />
                   <folding>
-                    <element signature="e#1389#2348#0" expanded="false" />
+                    <element signature="e#0#41#0" expanded="true" />
+                    <element signature="e#1504#2463#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -2096,10 +2093,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="setting.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="setting.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/client/src/views/MrThreeReacts/assets/setting.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="354">
+                <state relative-caret-position="1512">
                   <caret line="72" column="19" lean-forward="true" selection-start-line="72" selection-start-column="19" selection-end-line="72" selection-end-column="19" />
                   <folding />
                 </state>
@@ -2129,9 +2126,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>createene</find>
-      <find>enter fu</find>
-      <find>deltatime</find>
       <find>updateene</find>
       <find>delta</find>
       <find>cameraz</find>
@@ -2152,13 +2146,16 @@
       <find>lost</find>
       <find>bomb</find>
       <find>gameover</find>
-      <find>about</find>
       <find>top</find>
       <find>enemy</find>
       <find>collision</find>
       <find>amp</find>
       <find>collisio</find>
+      <find>about</find>
       <find>enemyDistanceTolerance</find>
+      <find>root</find>
+      <find>score</find>
+      <find>console</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -2226,9 +2223,9 @@
         <option value="$PROJECT_DIR$/client/src/views/ChatRoom/components/ChatRoomReplace.js" />
         <option value="$PROJECT_DIR$/client/src/views/MrThreeReacts/MrThreeReacts.scss" />
         <option value="$PROJECT_DIR$/client/src/views/MrThreeReacts/assets/GameMenu.scss" />
-        <option value="$PROJECT_DIR$/client/src/views/MrThreeReacts/MrThreeReacts.js" />
-        <option value="$PROJECT_DIR$/client/src/views/MrThreeReacts/assets/GameMenu.js" />
         <option value="$PROJECT_DIR$/client/src/views/MrThreeReacts/assets/setting.js" />
+        <option value="$PROJECT_DIR$/client/src/views/MrThreeReacts/assets/GameMenu.js" />
+        <option value="$PROJECT_DIR$/client/src/views/MrThreeReacts/MrThreeReacts.js" />
       </list>
     </option>
   </component>
@@ -2548,14 +2545,7 @@
       <workItem from="1519997143069" duration="12655000" />
       <workItem from="1520255490488" duration="32980000" />
       <workItem from="1520629434005" duration="2502000" />
-      <workItem from="1520632695016" duration="12669000" />
-    </task>
-    <task id="LOCAL-00131" summary="passport login logic added">
-      <created>1518160618231</created>
-      <option name="number" value="00131" />
-      <option name="presentableId" value="LOCAL-00131" />
-      <option name="project" value="LOCAL" />
-      <updated>1518160618231</updated>
+      <workItem from="1520632695016" duration="19550000" />
     </task>
     <task id="LOCAL-00132" summary="a workaround for post - redirect page issue">
       <created>1518172958909</created>
@@ -2893,11 +2883,18 @@
       <option name="project" value="LOCAL" />
       <updated>1520558618953</updated>
     </task>
-    <option name="localTasksCounter" value="180" />
+    <task id="LOCAL-00180" summary="game dev start stage 5&#10;gamemenu2">
+      <created>1520654272366</created>
+      <option name="number" value="00180" />
+      <option name="presentableId" value="LOCAL-00180" />
+      <option name="project" value="LOCAL" />
+      <updated>1520654272366</updated>
+    </task>
+    <option name="localTasksCounter" value="181" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1961014000" />
+    <option name="totallyTimeSpent" value="1967895000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -2992,7 +2989,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="find a way to force naked domain auto redirect to ssl (yes-https)" />
     <MESSAGE value="start animation part" />
     <MESSAGE value="aside buttons logic fix" />
     <MESSAGE value="svg added" />
@@ -3017,7 +3013,8 @@
     <MESSAGE value="game dev start stage 4&#10;readme" />
     <MESSAGE value="game dev start stage 5&#10;fix resetgame function" />
     <MESSAGE value="game dev start stage 5&#10;gamemenu" />
-    <option name="LAST_COMMIT_MESSAGE" value="game dev start stage 5&#10;gamemenu" />
+    <MESSAGE value="game dev start stage 5&#10;gamemenu2" />
+    <option name="LAST_COMMIT_MESSAGE" value="game dev start stage 5&#10;gamemenu2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3370,28 +3367,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/views/MrThreeReacts/MrThreeReacts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="437" column="23" lean-forward="false" selection-start-line="437" selection-start-column="18" selection-end-line="437" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-            <marker date="1520650342172" expanded="true" signature="14783:14822" ph="/*...*/" />
-            <marker date="1520650342172" expanded="true" signature="15072:15089" ph="/*...*/" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/views/MrThreeReacts/assets/GameMenu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="23" lean-forward="false" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
-          <folding>
-            <element signature="e#1389#2348#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -3402,8 +3377,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/views/MrThreeReacts/assets/GameMenu.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+        <state relative-caret-position="546">
+          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding>
             <marker date="1520649625245" expanded="true" signature="350:421" ph="{...}" />
           </folding>
@@ -3420,9 +3395,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/views/MrThreeReacts/assets/setting.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
+        <state relative-caret-position="1512">
           <caret line="72" column="19" lean-forward="true" selection-start-line="72" selection-start-column="19" selection-end-line="72" selection-end-column="19" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/views/MrThreeReacts/assets/GameMenu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="38" column="37" lean-forward="false" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#1504#2463#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/views/MrThreeReacts/MrThreeReacts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="113" column="0" lean-forward="true" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <marker date="1520661392265" expanded="true" signature="15052:15091" ph="/*...*/" />
+            <marker date="1520661392265" expanded="true" signature="15341:15358" ph="/*...*/" />
+          </folding>
         </state>
       </provider>
     </entry>
