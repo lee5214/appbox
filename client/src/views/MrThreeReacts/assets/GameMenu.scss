@@ -1,21 +1,37 @@
 .gameMenuContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: relative;
   width: 100%;
   height: 100%;
   z-index: 1;
 }
+.scoreBoard{
+  border: 1px solid white;
+}
+.scoreBoardHeader{
+  text-align: center;
+}
 .buttonGroup {
-  position: absolute;
+  //position: absolute;
   bottom: 1rem;
   margin:  0 auto;
 }
 .button{
+  font-weight: bold;
   margin: 10px 10px;
   z-index: 1;
-  width: 189px;
+  min-width: 10rem;
   left: 0;
   right: 0;
-  background: url('/img/bt.png') no-repeat transparent !important;
+/*  background: url('/img/bt.png') no-repeat transparent !important;
   background-size: cover;
-  height: 82px;
+  height: 82px;*/
+}
+
+.buttonLarge{
+  composes: button;
+  //font-size: 3rem !important;
 }

@@ -5,7 +5,7 @@ import Sky from './assets/Sky';
 import AirPlane from './assets/AirPlane';
 import Pilot from './assets/Pilot';
 import { EnemiesHolder, Enemy } from './assets/Enemy';
-import GameMenu from './assets/GameMenu'
+import GameMenu from './assets/GameMenu';
 import styles from './MrThreeReacts.scss';
 import { DefaultParam, normalize } from "./assets/setting";
 import fire from 'utils/fire';
@@ -28,6 +28,7 @@ class MrThree extends Component {
 			energyCharge : 1,
 			topScores : [],
 			gameSaved : false,
+			gameMessage : '',
 		};
 		this.prevTime = new Date ().getTime ();
 		this.mousePos = {x : 0, y : 0}; //tracking mouse pos
@@ -110,7 +111,7 @@ class MrThree extends Component {
 		this.init ();
 		this.start ();
 
-		/*rootDB.child ('scores').orderByChild ('score').limitToLast (10).on ('child_added', (snapshot) => {
+		rootDB.child ('scores').orderByChild ('score').limitToLast (5).on ('child_added', (snapshot) => {
 			const score = snapshot.val ();
 			console.log (score);
 			if (score) {
@@ -119,11 +120,11 @@ class MrThree extends Component {
 						[ score, ...this.state.topScores ],
 				});
 			}
-		});*/
-		this.setState ({
-			topScores :
-				[ {score:999,displayName:'cong li'},{score:9999, displayName:'guest'} ],
 		});
+		/*this.setState ({
+		 topScores :
+		 [ {score : 999, displayName : 'cong li'}, {score : 9999, displayName : 'guest'} ],
+		 });*/
 		window.addEventListener ('mousemove', this.mouseMoveEvent, false);
 		window.addEventListener ('mousedown', this.mouseDownEvent, false);
 		window.addEventListener ('mouseup', this.mouseUpEvent, false);
@@ -161,8 +162,8 @@ class MrThree extends Component {
 		renderer.shadowMap.enabled = true;
 
 		this.scene = scene;
-		this.scene.fog = new THREE.Fog (0xf7d9aa, 100, 950);
-		//this.scene.background = //Colors.yellow;
+		//this.scene.fog = new THREE.Fog (0xf7d9aa, 100, 950);
+
 		this.camera = camera;
 		this.camera.position.set (0, 0, 200);
 		this.renderer = renderer;
@@ -273,12 +274,12 @@ class MrThree extends Component {
 		this.Param.energy = Math.floor (Math.max (0, this.Param.energy));
 		this.Param.energy = Math.floor (Math.min (this.Param.energy, this.Param.maxEnergy));
 		if (this.Param.energy <= 0) {
-			this.setState ({gameStatus : 'gameover'});
+			this.setState ({gameStatus : 'gameOver'});
 		}
 	};
 
 	reduceEnergy = () => {
-		this.Param.energy -= 0;//this.ennemyValue;
+		this.Param.energy -= 10;//this.ennemyValue;
 		this.Param.energy = Math.max (0, this.Param.energy);
 	};
 	//bullet time
@@ -292,9 +293,9 @@ class MrThree extends Component {
 			}, 1000,
 		);
 	};
-	sendGameMessage = (msg) => {
+	sendGameMessage = (msg, time) => {
 		this.setState ({gameMessage : msg});
-		setTimeout (() => this.setState ({gameMessage : ''}), 2000);
+		setTimeout (() => this.setState ({gameMessage : ''}), time);
 	};
 	animate = () => {
 		// framerate independent motion
@@ -322,13 +323,12 @@ class MrThree extends Component {
 				//this.Param.worldSpeed += 0.1;//= this.Param.initSpeed + this.Param.incrementSpeedByLevel *
 				// this.Param.level;
 			}
-			this.updatePlane ();
 			this.updateDistance ();
 			this.pilot.updateHairs ();
 			this.updateEnergy ();
 			this.Param.baseSpeed += (this.Param.targetBaseSpeed - this.Param.baseSpeed) * this.deltaTime * 0.02;
 			//this.Param.worldSpeed = this.Param.baseSpeed;
-		} else if (this.state.gameStatus === 'gameover') {
+		} else if (this.state.gameStatus === 'gameOver') {
 			if (!this.state.gameSaved) {
 				const newScore = {
 					displayName : this.props.currentUserInfo.local.displayName,
@@ -338,13 +338,17 @@ class MrThree extends Component {
 				rootDB.child ('scores/').push (newScore);
 			}
 			this.setState ({gameSaved : true, gameStatus : 'waiting'});
+			this.sendGameMessage ('You Lost!');
 		} else if (this.state.gameStatus === 'waiting') {
+
 		}
 
 		/*if (this.totle <= 10) {
 		 this.enemiesHolder.spawnEnemies (4, this.enemiesPool);
 		 }*/
 		//this.sky.mesh.rotation.x += this.state.skyRotateSpeed * this.Param.worldSpeed * this.deltaTime;
+		this.updatePlane ();
+
 		this.enemiesHolder.rotateEnemies (this.deltaTime, this.airplane, this.enemiesPool, this.Param.worldSpeed, this.changeWorldSpeed.bind (this), this.reduceEnergy.bind (this));
 
 		this.sky.mesh.rotation.z += this.state.skyRotateSpeed * this.Param.worldSpeed * this.deltaTime;
@@ -360,6 +364,7 @@ class MrThree extends Component {
 	renderScene () {
 		this.renderer.render (this.scene, this.camera);
 	}
+
 	resetGame = (gameStatus) => {
 		// necessory. create a new obj with default setting
 		//const paramHolder =
@@ -369,18 +374,18 @@ class MrThree extends Component {
 	changeGameStatus = (gameStatus) => {
 		// necessory. create a new obj with default setting
 		//const paramHolder =
-		if(gameStatus==='start'){
+		if (gameStatus === 'playing') {
 			this.Param = Object.assign ({}, DefaultParam);
 		}
 
 		this.setState ({gameStatus});
 	};
 
-	setCameraZ = (cameraZ)=>{
-		this.setState({cameraZ})
-	}
+	setCameraZ = (cameraZ) => {
+		this.setState ({cameraZ});
+	};
 
-	render =()=> {
+	render = () => {
 		//let w = window.innerWidth * .5, h = window.innerWidth * .5;
 		return (
 			<div className={ 'animated fadeIn container pt-4' }>
@@ -392,51 +397,66 @@ class MrThree extends Component {
 				     ref={ (mount) => { this.container = mount; } }
 				>
 				</div>
-				{/*<div className={ 'position-absolute' }>
-					<button onClick={ () => {
-						this.resetGame ();
-						this.setState ({gameStatus : 'playing'});
-					} }>playing
-					</button>
-					<p>Energy: { this.Param.energy }</p>
-					<p>Distance: { this.Param.distance }</p>
-					<p>level: { this.Param.level }</p>
-					<p>Delta: { Math.floor(1000/this.deltaTime) }</p>
-					<p>cameraZ</p>
-					<button onClick={ () => this.setState ({cameraZ : 3000}) }>3000</button>
-					<button onClick={ () => this.setState ({cameraZ : 200}) }>300</button>
-					<div className={ '' }>
-						<p>{ this.state.message }</p>
-					</div>
-					{ this.state.topScores.map (item =>
-						<li key={ item.score }>{ item.score } - { item.displayName }</li>,
-					) }
+				<div className={ 'position-absolute' }>
+					<p>Energy: { this.Param.energy || null }</p>
+					<p>Score: { this.Param.distance || 0 }</p>
+					<p>level: { this.Param.level || null }</p>
+					<p>FPS: { Math.floor (1000 / this.deltaTime) }</p>
+
+
 				</div>
-				<Row className={ styles.buttonGroup }>
-					<Col>
-						<Button size="md"
-						        className={ styles.button } onClick={ this.toggleFullScreen }>
-							{ this.state.fullScreen ? 'Exit Full Screen' : 'Enter Full Screen' }
-						</Button>
-						<Button outline color={ this.state.fullScreen ? 'secondary' : 'primary' } size="md"
-						        className={ styles.button }
-						        onClick={ this.modalToggle }
-						>About
-						</Button>
-						<Button outline color={ this.state.fullScreen ? 'secondary' : 'primary' } size="md"
-						        className={ styles.button }
-						        onClick={()=>{this.resetGame ();this.setState ({gameStatus : 'playing'});} }
-						>
-							{ this.state.gameStatus === 'waiting' ? 'Start' : ('gameover' ? 'Again' : 'Pause') }
-						</Button>
-					</Col>
-				</Row>*/}
-
-				<GameMenu Param={this.Param} topScores={this.state.topScores} changeGameStatus={this.changeGameStatus} setCameraZ={this.setCameraZ}/>
-
+				<p>{ this.state.gameMessage || null }</p>
+				{ /*<div className={ 'position-absolute' }>
+				 <button onClick={ () => {
+				 this.resetGame ();
+				 this.setState ({gameStatus : 'playing'});
+				 } }>playing
+				 </button>
+				 <p>Energy: { this.Param.energy }</p>
+				 <p>Distance: { this.Param.distance }</p>
+				 <p>level: { this.Param.level }</p>
+				 <p>Delta: { Math.floor(1000/this.deltaTime) }</p>
+				 <p>cameraZ</p>
+				 <button onClick={ () => this.setState ({cameraZ : 3000}) }>3000</button>
+				 <button onClick={ () => this.setState ({cameraZ : 200}) }>300</button>
+				 <div className={ '' }>
+				 <p>{ this.state.gameMessage }</p>
+				 </div>
+				 { this.state.topScores.map (item =>
+				 <li key={ item.score }>{ item.score } - { item.displayName }</li>,
+				 ) }
+				 </div>
+				 <Row className={ styles.buttonGroup }>
+				 <Col>
+				 <Button size="md"
+				 className={ styles.button } onClick={ this.toggleFullScreen }>
+				 { this.state.fullScreen ? 'Exit Full Screen' : 'Enter Full Screen' }
+				 </Button>
+				 <Button outline color={ this.state.fullScreen ? 'secondary' : 'primary' } size="md"
+				 className={ styles.button }
+				 onClick={ this.modalToggle }
+				 >About
+				 </Button>
+				 <Button outline color={ this.state.fullScreen ? 'secondary' : 'primary' } size="md"
+				 className={ styles.button }
+				 onClick={()=>{this.resetGame ();this.setState ({gameStatus : 'playing'});} }
+				 >
+				 { this.state.gameStatus === 'waiting' ? 'Start' : ('gameOver' ? 'Again' : 'Pause') }
+				 </Button>
+				 </Col>
+				 </Row>*/ }
+				{ this.state.gameStatus !== 'playing' ?
+					<GameMenu Param={ this.Param }
+					          topScores={ this.state.topScores }
+					          changeGameStatus={ this.changeGameStatus }
+					          setCameraZ={ this.setCameraZ }
+					          gameStatus={ this.state.gameStatus }/>
+					:
+					null
+				}
 			</div>
 		);
-	}
+	};
 }
 
 export default MrThree;

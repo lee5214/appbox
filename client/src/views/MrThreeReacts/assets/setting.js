@@ -63,7 +63,7 @@ export const DefaultParam = {
 	coinLastSpawn : 0,
 	distanceForCoinsSpawn : 100,
 
-	enemyDistanceTolerance : 10,
+	enemyDistanceTolerance : 15,
 	enemyValue : 10,
 	enemiesSpeed : .6,
 	enemyLastSpawn : 0,
