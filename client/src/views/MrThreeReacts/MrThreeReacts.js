@@ -29,7 +29,7 @@ class MrThree extends Component {
 			topScores : [],
 			gameSaved : false,
 			gameMessage : '',
-			bombOwner: '',
+			bombOwner : '',
 		};
 		this.prevTime = new Date ().getTime ();
 		this.mousePos = {x : 0, y : 0}; //tracking mouse pos
@@ -112,27 +112,19 @@ class MrThree extends Component {
 		this.init ();
 		this.start ();
 
-		let i=0;
-		let ran = Math.floor(Math.random()*20)
-		rootDB.child ('scores').orderByChild ('score').limitToLast (20).on ('child_added', (snapshot) => {
+		rootDB.child ('scores').orderByChild ('score').limitToLast (5).on ('child_added', (snapshot) => {
 			const score = snapshot.val ();
-			if (score && i<5) {
+			if (score) {
 				this.setState ({
 					topScores :
 						[ score, ...this.state.topScores ],
 				});
 			}
-			if(i===ran){
-				this.setState({
-					bombOwner:score.displayName
-				})
-			}
-			i++
 		});
-			/*this.setState ({
-			 topScores :
-			 [ {score : 999, displayName : 'cong li'}, {score : 9999, displayName : 'guest'} ],
-			 });*/
+		/*this.setState ({
+		 topScores :
+		 [ {score : 999, displayName : 'cong li'}, {score : 9999, displayName : 'guest'} ],
+		 });*/
 		window.addEventListener ('mousemove', this.mouseMoveEvent, false);
 		window.addEventListener ('mousedown', this.mouseDownEvent, false);
 		window.addEventListener ('mouseup', this.mouseUpEvent, false);
@@ -301,9 +293,9 @@ class MrThree extends Component {
 			}, 1000,
 		);
 	};
-	sendGameMessage = (msg, time) => {
+	sendGameMessage = (msg, time = 1000) => {
 		this.setState ({gameMessage : msg});
-		setTimeout (() => this.setState ({gameMessage : ''}), time);
+		//setTimeout (() => this.setState ({gameMessage : ''}), time);
 	};
 	animate = () => {
 		// framerate independent motion
@@ -327,7 +319,7 @@ class MrThree extends Component {
 				this.Param.bombLastDrop = Math.floor (this.Param.distance);
 				this.Param.bombCounter++;
 				//this.generateBomb();
-				this.sendGameMessage ('You dropped a bomb onto other players\' face !');
+				this.sendGameMessage ('You dropped a bomb onto other players\' face !', 2000);
 				//this.Param.worldSpeed += 0.1;//= this.Param.initSpeed + this.Param.incrementSpeedByLevel *
 				// this.Param.level;
 			}
@@ -346,9 +338,9 @@ class MrThree extends Component {
 				rootDB.child ('scores/').push (newScore);
 			}
 			/*this.setState ({gameSaved : true, gameStatus : 'waiting'});*/
-			this.sendGameMessage ('You Lost!');
-		} else if (this.state.gameStatus === 'waiting') {
 
+			/*this.sendGameMessage ('You Lost!', 2000);*/
+		} else if (this.state.gameStatus === 'waiting') {
 		}
 
 		/*if (this.totle <= 10) {
@@ -410,11 +402,12 @@ class MrThree extends Component {
 					<p>Score: { this.Param.distance || 0 }</p>
 					<p>level: { this.Param.level || null }</p>
 					<p>FPS: { Math.floor (1000 / this.deltaTime) }</p>
-					{this.state.bombOwner&&this.state.gameStatus==='gameOver'?<h1>You got bombed by {this.state.bombOwner}</h1>:null}
+					{ /*{this.state.bombOwner&&this.state.gameStatus==='gameOver'?<h1>You got bombed by {this.state.bombOwner}</h1>:null}*/ }
 
 
 				</div>
-				<p>{ this.state.gameMessage || null }</p>
+				<h1 className={'position-relative text-center'}>{ this.state.gameMessage || null }</h1>
+
 				{ /*<div className={ 'position-absolute' }>
 				 <button onClick={ () => {
 				 this.resetGame ();
@@ -459,7 +452,9 @@ class MrThree extends Component {
 					          topScores={ this.state.topScores }
 					          changeGameStatus={ this.changeGameStatus }
 					          setCameraZ={ this.setCameraZ }
-					          gameStatus={ this.state.gameStatus }/>
+					          gameStatus={ this.state.gameStatus }
+					          sendGameMessage={this.sendGameMessage}
+					/>
 					:
 					null
 				}

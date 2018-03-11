@@ -3,6 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="742d2f67-9123-492e-9892-2d49e2746a61" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Aside/Aside.js" afterPath="$PROJECT_DIR$/client/src/components/Aside/Aside.js" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Header/Header.js" afterPath="$PROJECT_DIR$/client/src/components/Header/Header.js" />
+      <change beforePath="$PROJECT_DIR$/client/src/scss/3d.scss" afterPath="$PROJECT_DIR$/client/src/scss/3d.scss" />
+      <change beforePath="$PROJECT_DIR$/client/src/scss/style.css" afterPath="$PROJECT_DIR$/client/src/scss/style.css" />
+      <change beforePath="$PROJECT_DIR$/client/src/scss/style.css.map" afterPath="$PROJECT_DIR$/client/src/scss/style.css.map" />
       <change beforePath="$PROJECT_DIR$/client/src/views/MrThreeReacts/MrThreeReacts.js" afterPath="$PROJECT_DIR$/client/src/views/MrThreeReacts/MrThreeReacts.js" />
       <change beforePath="$PROJECT_DIR$/client/src/views/MrThreeReacts/assets/GameMenu.js" afterPath="$PROJECT_DIR$/client/src/views/MrThreeReacts/assets/GameMenu.js" />
     </list>
@@ -2028,16 +2033,26 @@
     <splitter split-orientation="vertical" split-proportion="0.5369595">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="MrThreeReacts.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="MrThreeReacts.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/client/src/views/MrThreeReacts/MrThreeReacts.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="307">
-                  <caret line="113" column="0" lean-forward="true" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+                <state relative-caret-position="-1948">
+                  <caret line="349" column="28" lean-forward="true" selection-start-line="349" selection-start-column="28" selection-end-line="349" selection-end-column="28" />
                   <folding>
                     <element signature="e#0#41#0" expanded="true" />
-                    <marker date="1520661392265" expanded="true" signature="15052:15091" ph="/*...*/" />
-                    <marker date="1520661392265" expanded="true" signature="15341:15358" ph="/*...*/" />
+                    <marker date="1520739371313" expanded="true" signature="14981:15020" ph="/*...*/" />
+                    <marker date="1520739371313" expanded="true" signature="15330:15347" ph="/*...*/" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Header.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/client/src/components/Header/Header.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="601">
+                  <caret line="118" column="38" lean-forward="true" selection-start-line="118" selection-start-column="38" selection-end-line="118" selection-end-column="38" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -2064,6 +2079,88 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="AirPlane.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/client/src/views/MrThreeReacts/assets/AirPlane.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#0#31#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Aside.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/client/src/components/Aside/Aside.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="244">
+                  <caret line="31" column="17" lean-forward="false" selection-start-line="31" selection-start-column="15" selection-end-line="31" selection-end-column="17" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/client/src/components/Header/package.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="AppContainer.scss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/client/src/containers/AppContainer/AppContainer.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="3d.scss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/client/src/scss/3d.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="265">
+                  <caret line="111" column="26" lean-forward="true" selection-start-line="111" selection-start-column="26" selection-end-line="111" selection-end-column="26" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_aside.scss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/client/src/scss/core/_aside.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="244">
+                  <caret line="26" column="14" lean-forward="false" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="14" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_custom.scss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/client/src/scss/_custom.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="603">
+                  <caret line="30" column="20" lean-forward="true" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_layout.scss" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/client/src/scss/core/_layout.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="202">
+                  <caret line="125" column="20" lean-forward="true" selection-start-line="125" selection-start-column="20" selection-end-line="125" selection-end-column="20" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
         </leaf>
       </split-first>
       <split-second>
@@ -2071,11 +2168,23 @@
           <file leaf-file-name="GameMenu.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/client/src/views/MrThreeReacts/assets/GameMenu.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="286">
-                  <caret line="38" column="37" lean-forward="false" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="37" />
+                <state relative-caret-position="280">
+                  <caret line="38" column="78" lean-forward="false" selection-start-line="38" selection-start-column="78" selection-end-line="38" selection-end-column="78" />
                   <folding>
                     <element signature="e#0#41#0" expanded="true" />
-                    <element signature="e#1504#2463#0" expanded="false" />
+                    <element signature="e#1599#2558#0" expanded="false" />
+                    <marker date="1520749381428" expanded="true" signature="1293:1568" ph="..." />
+                    <marker date="1520749381428" expanded="true" signature="1360:1403" ph="..." />
+                    <marker date="1520749381428" expanded="true" signature="1638:2555" ph="..." />
+                    <marker date="1520749381428" expanded="true" signature="1925:2056" ph="..." />
+                    <marker date="1520749381428" expanded="true" signature="2096:2189" ph="..." />
+                    <marker date="1520749381428" expanded="true" signature="2569:2842" ph="..." />
+                    <marker date="1520749381428" expanded="true" signature="2852:3135" ph="..." />
+                    <marker date="1520749381428" expanded="true" signature="3145:3334" ph="..." />
+                    <marker date="1520749381428" expanded="true" signature="3344:3686" ph="..." />
+                    <marker date="1520749381428" expanded="true" signature="3761:4384" ph="..." />
+                    <marker date="1520749381428" expanded="true" signature="3839:4168" ph="..." />
+                    <marker date="1520749381428" expanded="true" signature="4191:4367" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -2126,16 +2235,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>updateene</find>
-      <find>delta</find>
-      <find>cameraz</find>
-      <find>topScore</find>
-      <find>pause</find>
-      <find>resetGa</find>
-      <find>gamemen</find>
-      <find>reset</find>
-      <find>gamemenu</find>
-      <find>energy</find>
       <find>setca</find>
       <find>togglefull</find>
       <find>status</find>
@@ -2145,7 +2244,6 @@
       <find>message</find>
       <find>lost</find>
       <find>bomb</find>
-      <find>gameover</find>
       <find>top</find>
       <find>enemy</find>
       <find>collision</find>
@@ -2155,7 +2253,18 @@
       <find>enemyDistanceTolerance</find>
       <find>root</find>
       <find>score</find>
+      <find>init</find>
+      <find>init()</find>
+      <find>init ()</find>
+      <find>start</find>
+      <find>delta</find>
+      <find>gameover</find>
       <find>console</find>
+      <find>bombOwners</find>
+      <find>props.top</find>
+      <find>you lost</find>
+      <find>users</find>
+      <find>tab-content</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -2175,7 +2284,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/client/src/components/Header/HeaderDropdown.js" />
         <option value="$PROJECT_DIR$/client/src/components/Header/MessageDropdown.js" />
         <option value="$PROJECT_DIR$/client/src/views/Panel/Graph3D.js" />
         <option value="$PROJECT_DIR$/client/src/views/Panel/Panel.scss" />
@@ -2193,15 +2301,12 @@
         <option value="$PROJECT_DIR$/client/src/views/Panel/Panel.js" />
         <option value="$PROJECT_DIR$/client/src/views/Panel/svgCircle.scss" />
         <option value="$PROJECT_DIR$/client/src/views/Panel/GraphCircle.js" />
-        <option value="$PROJECT_DIR$/client/src/components/Aside/Aside.js" />
         <option value="$PROJECT_DIR$/client/src/components/_Common/Loader/Loader.js" />
         <option value="$PROJECT_DIR$/client/src/components/_Common/Loader/Loader.scss" />
         <option value="$PROJECT_DIR$/client/src/views/SecretLinks/components/LinksList.js" />
         <option value="$PROJECT_DIR$/client/src/views/SecretLinks/components/SecretLinks.js" />
         <option value="$PROJECT_DIR$/client/src/components/Sidebar/Sidebar.js" />
-        <option value="$PROJECT_DIR$/client/src/components/Header/Header.js" />
         <option value="$PROJECT_DIR$/client/src/components/Sidebar/_nav.js" />
-        <option value="$PROJECT_DIR$/client/src/scss/3d.scss" />
         <option value="$PROJECT_DIR$/client/src/views/ChatRoomV2/components/ChatRoom.js" />
         <option value="$PROJECT_DIR$/middleware/requireLogin.js" />
         <option value="$PROJECT_DIR$/client/public/index.html" />
@@ -2224,8 +2329,12 @@
         <option value="$PROJECT_DIR$/client/src/views/MrThreeReacts/MrThreeReacts.scss" />
         <option value="$PROJECT_DIR$/client/src/views/MrThreeReacts/assets/GameMenu.scss" />
         <option value="$PROJECT_DIR$/client/src/views/MrThreeReacts/assets/setting.js" />
-        <option value="$PROJECT_DIR$/client/src/views/MrThreeReacts/assets/GameMenu.js" />
         <option value="$PROJECT_DIR$/client/src/views/MrThreeReacts/MrThreeReacts.js" />
+        <option value="$PROJECT_DIR$/client/src/components/Aside/Aside.js" />
+        <option value="$PROJECT_DIR$/client/src/components/Header/Header.js" />
+        <option value="$PROJECT_DIR$/client/src/components/Header/package.json" />
+        <option value="$PROJECT_DIR$/client/src/scss/3d.scss" />
+        <option value="$PROJECT_DIR$/client/src/views/MrThreeReacts/assets/GameMenu.js" />
       </list>
     </option>
   </component>
@@ -2350,6 +2459,22 @@
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="appbox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="appbox" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Aside" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="appbox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="appbox" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Header" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="appbox" type="b2602c69:ProjectViewProjectNode" />
@@ -2545,14 +2670,7 @@
       <workItem from="1519997143069" duration="12655000" />
       <workItem from="1520255490488" duration="32980000" />
       <workItem from="1520629434005" duration="2502000" />
-      <workItem from="1520632695016" duration="19550000" />
-    </task>
-    <task id="LOCAL-00132" summary="a workaround for post - redirect page issue">
-      <created>1518172958909</created>
-      <option name="number" value="00132" />
-      <option name="presentableId" value="LOCAL-00132" />
-      <option name="project" value="LOCAL" />
-      <updated>1518172958909</updated>
+      <workItem from="1520632695016" duration="34685000" />
     </task>
     <task id="LOCAL-00133" summary="register/login connected, wait for more backend rules set">
       <created>1518224289305</created>
@@ -2890,11 +3008,18 @@
       <option name="project" value="LOCAL" />
       <updated>1520654272366</updated>
     </task>
-    <option name="localTasksCounter" value="181" />
+    <task id="LOCAL-00181" summary="game dev start stage 5&#10;bombOwner added">
+      <created>1520661647273</created>
+      <option name="number" value="00181" />
+      <option name="presentableId" value="LOCAL-00181" />
+      <option name="project" value="LOCAL" />
+      <updated>1520661647273</updated>
+    </task>
+    <option name="localTasksCounter" value="182" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1967895000" />
+    <option name="totallyTimeSpent" value="1983030000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -2909,7 +3034,7 @@
     <frame x="-1080" y="-480" width="1080" height="1920" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25433525" sideWeight="0.6951297" order="0" side_tool="false" content_ui="combo" x="-1080" y="-480" width="256" height="1440" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25433525" sideWeight="0.69135803" order="0" side_tool="false" content_ui="combo" x="-1080" y="-480" width="256" height="1440" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32777777" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1720548" sideWeight="0.51935786" order="7" side_tool="true" content_ui="tabs" />
@@ -2919,7 +3044,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23593664" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24855492" sideWeight="0.4908286" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1594757" sideWeight="0.4806421" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23506744" sideWeight="0.30487034" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25433525" sideWeight="0.30864197" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="GfmBrowser" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -2989,7 +3114,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="start animation part" />
     <MESSAGE value="aside buttons logic fix" />
     <MESSAGE value="svg added" />
     <MESSAGE value="testing svgs" />
@@ -3014,7 +3138,8 @@
     <MESSAGE value="game dev start stage 5&#10;fix resetgame function" />
     <MESSAGE value="game dev start stage 5&#10;gamemenu" />
     <MESSAGE value="game dev start stage 5&#10;gamemenu2" />
-    <option name="LAST_COMMIT_MESSAGE" value="game dev start stage 5&#10;gamemenu2" />
+    <MESSAGE value="game dev start stage 5&#10;bombOwner added" />
+    <option name="LAST_COMMIT_MESSAGE" value="game dev start stage 5&#10;bombOwner added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3023,65 +3148,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/src/views/City/components/NYTNewsList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/views/City/components/CityDetail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1785">
-          <caret line="145" column="47" lean-forward="false" selection-start-line="145" selection-start-column="35" selection-end-line="145" selection-end-column="47" />
-          <caret line="94" column="26" lean-forward="false" selection-start-line="94" selection-start-column="14" selection-end-line="94" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/views/Panel/Panel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="17" column="57" lean-forward="false" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/views/Panel/GraphCircle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="91" column="45" lean-forward="false" selection-start-line="91" selection-start-column="45" selection-end-line="91" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Aside/Aside.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="177" column="77" lean-forward="false" selection-start-line="177" selection-start-column="77" selection-end-line="177" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/views/Pages/Login/Login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="819">
-          <caret line="53" column="85" lean-forward="false" selection-start-line="53" selection-start-column="85" selection-end-line="53" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/views/Panel/Panel.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/views/Panel/svgCircle.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="45" column="6" lean-forward="false" selection-start-line="45" selection-start-column="6" selection-end-line="45" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/_Common/Loader/Loader.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -3123,16 +3189,6 @@
         <state relative-caret-position="378">
           <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Header/Header.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2184">
-          <caret line="109" column="79" lean-forward="false" selection-start-line="109" selection-start-column="79" selection-end-line="109" selection-end-column="79" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3351,14 +3407,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/containers/AppContainer/AppContainer.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/containers/AppContainer/AppContainer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3944">
@@ -3401,26 +3449,120 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/views/MrThreeReacts/assets/GameMenu.js">
+    <entry file="file://$PROJECT_DIR$/client/src/views/MrThreeReacts/MrThreeReacts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="38" column="37" lean-forward="false" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="37" />
+        <state relative-caret-position="-1948">
+          <caret line="349" column="28" lean-forward="true" selection-start-line="349" selection-start-column="28" selection-end-line="349" selection-end-column="28" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-            <element signature="e#1504#2463#0" expanded="false" />
+            <marker date="1520739371313" expanded="true" signature="14981:15020" ph="/*...*/" />
+            <marker date="1520739371313" expanded="true" signature="15330:15347" ph="/*...*/" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/views/MrThreeReacts/MrThreeReacts.js">
+    <entry file="file://$PROJECT_DIR$/client/src/views/MrThreeReacts/assets/AirPlane.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="113" column="0" lean-forward="true" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Aside/Aside.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="31" column="17" lean-forward="false" selection-start-line="31" selection-start-column="15" selection-end-line="31" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Header/Header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="601">
+          <caret line="118" column="38" lean-forward="true" selection-start-line="118" selection-start-column="38" selection-end-line="118" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Header/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/containers/AppContainer/AppContainer.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/scss/core/_grid.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/scss/_custom.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="603">
+          <caret line="30" column="20" lean-forward="true" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/scss/core/_aside.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="26" column="14" lean-forward="false" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/scss/3d.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="111" column="26" lean-forward="true" selection-start-line="111" selection-start-column="26" selection-end-line="111" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/views/MrThreeReacts/assets/GameMenu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="38" column="78" lean-forward="false" selection-start-line="38" selection-start-column="78" selection-end-line="38" selection-end-column="78" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-            <marker date="1520661392265" expanded="true" signature="15052:15091" ph="/*...*/" />
-            <marker date="1520661392265" expanded="true" signature="15341:15358" ph="/*...*/" />
+            <element signature="e#1599#2558#0" expanded="false" />
+            <marker date="1520749381428" expanded="true" signature="1293:1568" ph="..." />
+            <marker date="1520749381428" expanded="true" signature="1360:1403" ph="..." />
+            <marker date="1520749381428" expanded="true" signature="1638:2555" ph="..." />
+            <marker date="1520749381428" expanded="true" signature="1925:2056" ph="..." />
+            <marker date="1520749381428" expanded="true" signature="2096:2189" ph="..." />
+            <marker date="1520749381428" expanded="true" signature="2569:2842" ph="..." />
+            <marker date="1520749381428" expanded="true" signature="2852:3135" ph="..." />
+            <marker date="1520749381428" expanded="true" signature="3145:3334" ph="..." />
+            <marker date="1520749381428" expanded="true" signature="3344:3686" ph="..." />
+            <marker date="1520749381428" expanded="true" signature="3761:4384" ph="..." />
+            <marker date="1520749381428" expanded="true" signature="3839:4168" ph="..." />
+            <marker date="1520749381428" expanded="true" signature="4191:4367" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/scss/core/_layout.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="125" column="20" lean-forward="true" selection-start-line="125" selection-start-column="20" selection-end-line="125" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -300,7 +300,7 @@ class Aside extends Component {
 						<hr className="mx-3 my-0"/>*/}
 					</TabPane>
 
-					<TabPane tabId="3" className={ `p-3 ${mode === '3D' ? 'align-self-center' : null}` }>
+					{/*<TabPane tabId="3" className={ `p-3 ${mode === '3D' ? 'align-self-center' : null}` }>
 						<div className="message">
 							<div className="py-3 pb-5 mr-3 float-left">
 								<div className="avatar">
@@ -395,7 +395,7 @@ class Aside extends Component {
 								tempor incididunt...
 							</small>
 						</div>
-					</TabPane>
+					</TabPane>*/}
 				</TabContent>
 			</aside>
 		);

@@ -98,12 +98,12 @@ class Header extends Component {
 					<span className="navbar-toggler-icon"/>
 				</NavbarToggler>
 				<Nav className="d-md-down-none" navbar>
-					<NavItem className="px-3">
+					{/*<NavItem className="px-3">
 						<NavLink disabled href="/"><i className="fa fa-address-book mr-2"/>Users</NavLink>
 					</NavItem>
 					<NavItem className="px-3">
 						<NavLink disabled href="#"><i className="fa fa-cogs mr-2"/>Settings</NavLink>
-					</NavItem>
+					</NavItem>*/}
 
 					<Route path="/login" name="login">
 						<NavItem className="px-3">

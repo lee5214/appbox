@@ -9968,8 +9968,7 @@ hr.transparent {
     flex-direction: column;
     justify-content: center; }
     .mode-3D-on.body .mode-3D .aside-menu .tab-content {
-      overflow: visible;
-      height: auto; }
+      overflow: visible; }
   .mode-3D-on.body .mode-3D .sidebar .mode3D-blur, .mode-3D-on.body .mode-3D .aside-menu .mode3D-blur {
     filter: blur(1px) brightness(1.4);
     color: red; }

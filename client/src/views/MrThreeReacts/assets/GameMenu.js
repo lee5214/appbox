@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 import { Button, Col, Modal, ModalBody, ModalHeader, Row, ListGroup,ListGroupItemHeading, ListGroupItem } from 'reactstrap';
 import styles from './GameMenu.scss';
 import { Divider,Loader } from 'components/';
-import fire from 'utils/fire';
 
-const rootDB = fire.database ().ref ().child ('MrThreeReacts/');
 class GameMenu extends Component {
 	constructor (props) {
 		super (props);
 		this.state = {
 			modalIsOpen : false,
 			fullScreen : false,
-			bombOwner : '',
+			gameOver: false,
+			destroyedBy: null,
+			list: [],
 		};
 	}
 
@@ -36,6 +36,8 @@ class GameMenu extends Component {
 	render () {
 		return (
 			<div className={ styles.gameMenuContainer }>
+				{this.props.gameStatus==='gameOver'?<h1>You are destroyed by a bomb</h1>:null}
+				{this.props.topScores[0]?console.log(this.props.topScores[4]):null }
 				{ this.props.topScores[ 0 ] ?
 					<ListGroup className={ styles.scoreBoard }>
 						<ListGroupItemHeading className={ styles.scoreBoardHeader }>
@@ -43,7 +45,7 @@ class GameMenu extends Component {
 						</ListGroupItemHeading>
 						{ this.props.topScores.map (item =>
 							<ListGroupItem key={ item.score }>{ item.score } - { item.displayName }</ListGroupItem>,
-						) }
+						)}
 					</ListGroup>
 					: <Loader/>
 				}
@@ -81,6 +83,7 @@ class GameMenu extends Component {
 					        className={ styles.buttonLarge }
 					        onClick={ () => {
 						        this.props.changeGameStatus ('playing');
+						        this.props.sendGameMessage('');
 					        } }>Start
 					</Button>
 				</Row>
