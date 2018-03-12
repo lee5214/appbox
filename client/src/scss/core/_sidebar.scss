@@ -140,7 +140,7 @@
 
     &.active {
       color: $sidebar-nav-link-active-color;
-      background: $sidebar-nav-link-active-bg;
+      background: transparent;//$sidebar-nav-link-active-bg;
       @include borders($sidebar-nav-link-active-borders);
 
       i {

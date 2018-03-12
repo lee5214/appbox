@@ -5,6 +5,7 @@ import LinkCreateForm from './LinkCreatForm';
 import LinksList from './LinksList';
 //import urlRegex from 'url-regex';
 import { Alert, Col, Container, Nav, NavItem, NavLink, Row, TabContent, TabPane } from 'reactstrap';
+import { Loader } from 'components/';
 import classnames from 'classnames';
 import { urlPrefix } from 'utils/';
 
@@ -78,6 +79,7 @@ class SecretLinks extends Component {
 			</div>
 		);
 	};
+
 	render () {
 		return (
 			<Container className="animated fadeIn align-self-center h-100">
@@ -113,16 +115,18 @@ class SecretLinks extends Component {
 					<TabPane tabId={ '1' }>
 						<Row>
 							<Col>
-								{ this.state.publicList ? <LinksList list={ this.state.publicList }/> :
-									<div>loading</div> }
+								{ this.state.publicList ? <LinksList list={ this.state.publicList }/>
+									: <Loader/>
+								}
 							</Col>
 						</Row>
 					</TabPane>
 					<TabPane tabId={ '2' }>
 						<Row>
 							<Col>
-								{ this.state.privateList ? <LinksList list={ this.state.privateList }/> :
-									<div>loading</div> }
+								{ this.state.privateList ? <LinksList list={ this.state.privateList }/>
+									: <Loader/>
+								}
 							</Col>
 						</Row>
 					</TabPane>

@@ -1,3 +1,3 @@
-import ChatRoom from './components/ChatRoom';
+import ChatRoomReplace from './components/ChatRoomReplace';
 
-export default ChatRoom;
+export default ChatRoomReplace;

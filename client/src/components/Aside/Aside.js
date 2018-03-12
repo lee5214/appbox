@@ -175,7 +175,7 @@ class Aside extends Component {
 							<small><b>Memory Usage</b></small>
 						</div>
 						<Progress className="progress-xs" color="warning" value="70"/>
-						<small className="text-muted">11444GB/16384MB</small>
+						<small className="text-muted">11444GB/16384GB</small>
 
 						<div className="text-uppercase mb-1 mt-2">
 							<small><b>SSD 1 Usage</b></small>
@@ -300,7 +300,7 @@ class Aside extends Component {
 						<hr className="mx-3 my-0"/>*/}
 					</TabPane>
 
-					<TabPane tabId="3" className={ `p-3 ${mode === '3D' ? 'align-self-center' : null}` }>
+					{/*<TabPane tabId="3" className={ `p-3 ${mode === '3D' ? 'align-self-center' : null}` }>
 						<div className="message">
 							<div className="py-3 pb-5 mr-3 float-left">
 								<div className="avatar">
@@ -395,7 +395,7 @@ class Aside extends Component {
 								tempor incididunt...
 							</small>
 						</div>
-					</TabPane>
+					</TabPane>*/}
 				</TabContent>
 			</aside>
 		);

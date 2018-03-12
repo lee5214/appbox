@@ -8445,7 +8445,7 @@ button {
       margin-top: 2px; }
     .sidebar .nav-link.active, .sidebar .navbar .active.dropdown-toggle, .navbar .sidebar .active.dropdown-toggle {
       color: #fff;
-      background: #272727; }
+      background: transparent; }
       .sidebar .nav-link.active i, .sidebar .navbar .active.dropdown-toggle i, .navbar .sidebar .active.dropdown-toggle i {
         color: #21a8d8; }
     .sidebar .nav-link:hover, .sidebar .navbar .dropdown-toggle:hover, .navbar .sidebar .dropdown-toggle:hover {
@@ -9912,8 +9912,7 @@ hr.transparent {
   .mode-3D-on.body .mode-3D .sidebar, .mode-3D-on.body .mode-3D .aside-menu {
     border: none;
     background: transparent;
-    transform-style: preserve-3d;
-    transition: 1s ease-in-out 0.5s; }
+    transform-style: preserve-3d; }
   .mode-3D-on.body .mode-3D .sidebar .sidebar-nav {
     overflow: visible;
     display: flex;
@@ -9968,8 +9967,7 @@ hr.transparent {
     flex-direction: column;
     justify-content: center; }
     .mode-3D-on.body .mode-3D .aside-menu .tab-content {
-      overflow: visible;
-      height: auto; }
+      overflow: visible; }
   .mode-3D-on.body .mode-3D .sidebar .mode3D-blur, .mode-3D-on.body .mode-3D .aside-menu .mode3D-blur {
     filter: blur(1px) brightness(1.4);
     color: red; }
@@ -9991,13 +9989,15 @@ hr.transparent {
   .mode-3D-on.body .mode-3D .main .aside-btn {
     top: 50%;
     right: 0; }
-  .mode-3D-on.body .mode-3D .sidebar .translateX-40, .mode-3D-on.body .mode-3D .aside-menu .translateX-40 {
-    transition: 2s ease-in-out; }
+  .mode-3D-on.body .mode-3D .sidebar, .mode-3D-on.body .mode-3D .aside-menu {
+    transition: 0.25s ease-in-out 0.5s; }
+    .mode-3D-on.body .mode-3D .sidebar .translatex-40, .mode-3D-on.body .mode-3D .aside-menu .translatex-40 {
+      transition: 0.5s ease-in-out; }
   .mode-3D-on.body .mode-3D .sidebar:hover, .mode-3D-on.body .mode-3D .aside-menu:hover {
-    transition: 2s ease;
+    transition: 0.25s ease-in-out 0.5s;
     transform: rotateY(0deg) translateZ(0px); }
     .mode-3D-on.body .mode-3D .sidebar:hover .translatex-40, .mode-3D-on.body .mode-3D .aside-menu:hover .translatex-40 {
-      transition: 3s ease-in-out !important;
+      transition: 0.5s ease-in-out !important;
       color: red;
       transform: translateZ(-40px); }
 @keyframes transf-ry-50 {

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TestField1 from './TestField1'
 import TestField2 from './TestField2'
 import TestField3 from './TestField3'
+import {Loader} from 'components'
 // import socketIOClient from 'socket.io-client';
 // import {
 // 	Button,
@@ -29,6 +30,7 @@ class Test extends Component {
 	render () {
 		return (
 			<div className={'animated fadeIn container d-flex'}>
+				<Loader />
 				{/*<TestField1/>*/}
 				{/*<TestField2/>*/}
 				{/*<TestField3/>*/}

@@ -1,19 +1,19 @@
 export default {
 	items : [
 		{
+			title : true,
+			name : 'Entrypoint',
+		},
+		{
 			name : 'Panel',
 			url : '/panel',
 			icon : 'icon-speedometer',
-			badge : {
-				variant : 'info',
-				text : 'MAIN',
-			},
 		},
-		{
+	/*	{
 			name : 'Dashboard',
 			url : '/dashboard',
 			icon : 'icon-calculator',
-		},
+		},*/
 
 		{
 			divider : true,
@@ -54,11 +54,16 @@ export default {
 		{
 			title : true,
 			name : '3D Games',
+
 		},
 		{
 			name : 'Mr Three Reacts',
 			url : '/mrthreereacts',
 			icon : 'icon-social-dropbox',
+			badge : {
+				variant : 'info',
+				text : 'MAIN',
+			},
 		},
 		{
 			title : true,

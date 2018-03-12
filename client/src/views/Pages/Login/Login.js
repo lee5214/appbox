@@ -47,10 +47,10 @@ class Login extends Component {
 							<CardGroup>
 								<Card className="p-4">
 									<CardBody>
-										<h1>Login</h1>
+										<h2>Login</h2>
 										<p className="text-muted">Sign In to your account</p>
 										<InputGroup className="mb-3">
-											<InputGroupAddon><i className="icon-user"></i></InputGroupAddon>
+											<InputGroupAddon className={'d-flex'}><i className="icon-user adjust-self-center"></i></InputGroupAddon>
 											<Input type="text" placeholder="Username"
 											       onChange={ (e) => this.setState ({username : e.target.value}) }
 											/>
@@ -95,7 +95,7 @@ class Login extends Component {
 												OAuth2.0 implemented, recommend log in with social account, or register
 												with your email address & password </p>
 											<Button href={ '#/register' } color="primary" className="mt-3" active>
-												Hit The Button
+												Register
 											</Button>
 										</div>
 									</CardBody>

@@ -33,7 +33,7 @@
       border: none;
       background: transparent;
       transform-style: preserve-3d;
-      transition: 1s ease-in-out 0.5s;
+
     }
     .sidebar {
       .sidebar-nav {
@@ -110,7 +110,6 @@
       justify-content: center;
       .tab-content {
         overflow: visible;
-        height: auto;
       }
     }
   }
@@ -159,16 +158,17 @@
 
   .mode-3D {
     .sidebar, .aside-menu {
-      .translateX-40{
-        transition: 2s ease-in-out;
+      transition: 0.25s ease-in-out 0.5s;
+      .translatex-40{
+        transition: 0.5s ease-in-out;
       }
     }
 
     .sidebar:hover, .aside-menu:hover {
-      transition: 2s ease;
+      transition: 0.25s ease-in-out 0.5s;
       transform: rotateY(0deg) translateZ(0px);
       .translatex-40 {
-        transition: 3s ease-in-out !important;
+        transition: 0.5s ease-in-out !important;
         color: red;
         transform: translateZ(-40px)
       }
