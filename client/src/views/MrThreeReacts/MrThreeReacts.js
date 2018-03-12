@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import * as THREE from 'three';
-import Sea from './asserts/Sea';
-import Sky from './asserts/Sky';
-import AirPlane from './asserts/AirPlane';
-import Pilot from './asserts/Pilot';
-import { EnemiesHolder, Enemy } from './asserts/Enemy';
-import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
+import Sea from './assets/Sea';
+import Sky from './assets/Sky';
+import AirPlane from './assets/AirPlane';
+import Pilot from './assets/Pilot';
+import { EnemiesHolder, Enemy } from './assets/Enemy';
+import GameMenu from './assets/GameMenu';
 import styles from './MrThreeReacts.scss';
-import { DefaultParam, normalize } from "./asserts/setting";
+import { DefaultParam, normalize } from "./assets/setting";
 import fire from 'utils/fire';
 
 const rootDB = fire.database ().ref ().child ('MrThreeReacts/');
@@ -26,41 +26,119 @@ class MrThree extends Component {
 			skyRotateSpeed : .0002,
 			seaRotateSpeed : .0002,
 			energyCharge : 1,
-			seaRadius : DefaultParam.seaRadius,
-
 			topScores : [],
 			gameSaved : false,
+			gameMessage : '',
+			bombOwner : '',
 		};
 		this.prevTime = new Date ().getTime ();
 		this.mousePos = {x : 0, y : 0}; //tracking mouse pos
 		//this.oldTime = new Date ().getTime ();
+		this.Param = {
+			speed : 0,
+			initSpeed : .00035,
+			baseSpeed : .00035,
+			targetBaseSpeed : .00035,
+			incrementSpeedByTime : .0000025,
+			incrementSpeedByLevel : .000005,
+			distanceForSpeedUpdate : 100,
+			speedLastUpdate : 0,
 
-		this.Param = DefaultParam;
+			distance : 0,
+			ratioSpeedDistance : 50,
+			energy : 20,
+			maxEnergy : 100,
+			ratioSpeedEnergy : 3,
+
+			level : 1,
+			levelLastUpdate : 0,
+			distanceForLevelUpdate : 1000,
+
+			planeDefaultHeight : 100,
+			planeAmpHeight : 80,
+			planeAmpWidth : 75,
+			planeMoveSensivity : 0.005,
+			planeRotXSensivity : 0.0008,
+			planeRotZSensivity : 0.0004,
+			planeFallSpeed : .001,
+			planeMinSpeed : 1.2,
+			planeMaxSpeed : 1.6,
+			planeSpeed : 0,
+			planeCollisionDisplacementX : 0,
+			planeCollisionSpeedX : 0,
+
+			planeCollisionDisplacementY : 0,
+			planeCollisionSpeedY : 0,
+
+			seaRadius : 600,
+			seaLength : 800,
+			//seaRotationSpeed:0.006,
+			wavesMinAmp : 5,
+			wavesMaxAmp : 20,
+			wavesMinSpeed : 0.001,
+			wavesMaxSpeed : 0.003,
+
+			cameraFarPos : 500,
+			cameraNearPos : 150,
+			cameraSensivity : 0.002,
+
+			coinDistanceTolerance : 15,
+			coinValue : 3,
+			coinsSpeed : .5,
+			coinLastSpawn : 0,
+			distanceForCoinsSpawn : 100,
+
+			enemyDistanceTolerance : 10,
+			enemyValue : 10,
+			enemiesSpeed : .6,
+			enemyLastSpawn : 0,
+			distanceForEnemiesSpawn : 100,
+			enemyBulletTime : 30,
+
+			worldSpeed : 1,
+			bulletTime : false,
+			status : "playing",
+			distanceForEnnemiesSpawn : 50,
+			distanceForBomb : 2000,
+			bombLastDrop : 0,
+			bombCounter : 0,
+		};
 		// speed
-		this.worldSpeed = 1;
-		this.bulletTime = false;
-		this.initSpeed = .00035;
-		this.baseSpeed = .00035;
-		this.targetBaseSpeed = .00035;
-		this.incrementSpeedByTime = .0000025;
-		this.incrementSpeedByLevel = .000005;
-		this.distanceForSpeedUpdate = 100;
-		this.speedLastUpdate = 0;
-
-		this.level = 1;
-		this.levelLastUpdate = 0;
-		this.energyBar = 100;
-		this.energyCharge = 0;
 		this.enemiesPool = [];
-		this.distance = 0;
-		this.distanceForEnnemiesSpawn = 50;
-		this.enemyLastSpawn = 0;
-		this.distanceForBomb = 2000;
-		this.bombLastDrop = 0;
-		this.bombCounter = 0;
 		//this.ratioSpeedDistance = 50;
+	}
 
-		this.distanceForLevelUpdate = this.Param.distanceForLevelUpdate;
+	componentDidMount () {
+		this.init ();
+		this.start ();
+
+		rootDB.child ('scores').orderByChild ('score').limitToLast (5).on ('child_added', (snapshot) => {
+			const score = snapshot.val ();
+			if (score) {
+				this.setState ({
+					topScores :
+						[ score, ...this.state.topScores ],
+				});
+			}
+		});
+		/*this.setState ({
+		 topScores :
+		 [ {score : 999, displayName : 'cong li'}, {score : 9999, displayName : 'guest'} ],
+		 });*/
+		window.addEventListener ('mousemove', this.mouseMoveEvent, false);
+		window.addEventListener ('mousedown', this.mouseDownEvent, false);
+		window.addEventListener ('mouseup', this.mouseUpEvent, false);
+	}
+
+	componentWillUnmount () {
+		this.stop ();
+		window.removeEventListener ('mousemove', this.mouseMoveEvent, false);
+		window.removeEventListener ('mousedown', this.mouseDownEvent, false);
+		window.removeEventListener ('mouseup', this.mouseUpEvent, false);
+		this.container.removeChild (this.renderer.domElement);
+
+		rootDB.off ();
+
 	}
 
 	createScene = () => {
@@ -84,8 +162,8 @@ class MrThree extends Component {
 		renderer.shadowMap.enabled = true;
 
 		this.scene = scene;
-		this.scene.fog = new THREE.Fog (0xf7d9aa, 100, 950);
-		//this.scene.background = //Colors.yellow;
+		//this.scene.fog = new THREE.Fog (0xf7d9aa, 100, 950);
+
 		this.camera = camera;
 		this.camera.position.set (0, 0, 200);
 		this.renderer = renderer;
@@ -145,45 +223,16 @@ class MrThree extends Component {
 		this.createSky (20, 10);
 		this.createAirPlane ();
 		this.createEnemies ();
+		this.resetGame ();
 	};
 
-	componentDidMount () {
-		this.init ();
-		this.start ();
-		//let top10 = rootDB.child ('scores').orderByValue('highestScores').limitToLast(10);
-		//this.setState({topScores:[score, ...this.state.topScores ]})
-		rootDB.child ('scores').limitToLast (10).on ('child_added', (snapshot) => {
-			const score = snapshot.val ();
-			if (score) {
-				this.setState ({
-					topScores : //score,
-						[ score, ...this.state.topScores ],
-					//messageNumber : this.state.messageNumber + 1,
-				});
-			}
-		});
-		window.addEventListener ('mousemove', this.mouseMoveEvent, false);
-		window.addEventListener ('mousedown', this.mouseDownEvent, false);
-		window.addEventListener ('mouseup', this.mouseUpEvent, false);
-	}
-
-	componentWillUnmount () {
-		this.stop ();
-		window.removeEventListener ('mousemove', this.mouseMoveEvent, false);
-		window.removeEventListener ('mousedown', this.mouseDownEvent, false);
-		window.removeEventListener ('mouseup', this.mouseUpEvent, false);
-		this.container.removeChild (this.renderer.domElement);
-
-		rootDB.off ();
-
-	}
 
 	mouseMoveEvent = (e) => {
 		this.mousePos.x = -1 + (e.clientX / this.width) * 2;
 		this.mousePos.y = 1 - (e.clientY / this.height) * 2;
 	};
 	/*mouseDownEvent = () => {
-	 if(this.energyBar>0 && !this.bulletTime) {
+	 if(this.energy>0 && !this.Param.bulletTime) {
 	 this.changeWorldSpeed(0.1)//this.setState ({energyCharge : -1,bulletTime : true})
 	 } else {
 	 this.changeWorldSpeed(1)//this.setState ({energyCharge : 3,bulletTime : false})
@@ -196,8 +245,9 @@ class MrThree extends Component {
 	touchEndEvent = () => {};
 
 	updateDistance () {
-		this.distance += Math.floor (this.worldSpeed * this.deltaTime * 0.1);
-		//let d = 502 * (1 - (this.distance % this.distanceForLevelUpdate) / this.distanceForLevelUpdate);
+		this.Param.distance += Math.floor (this.Param.worldSpeed * this.deltaTime * 0.1);
+		//let d = 502 * (1 - (this.Param.distance % this.Param.distanceForLevelUpdate) /
+		// this.Param.distanceForLevelUpdate);
 	}
 
 	start = () => {
@@ -211,45 +261,41 @@ class MrThree extends Component {
 	updatePlane = () => {
 		let targetX = normalize (this.mousePos.x, -1, 1, -100, 100);
 		let targetY = normalize (this.mousePos.y, -1, 1, this.Param.planeDefaultHeight - this.Param.planeAmpHeight, this.Param.planeDefaultHeight + this.Param.planeAmpHeight);
-		this.airplane.mesh.position.y += (targetY - this.airplane.mesh.position.y) * 0.08 * this.worldSpeed;
-		this.airplane.mesh.rotation.z = (targetY - this.airplane.mesh.position.y) * 0.01 * this.worldSpeed;
-		!this.bulletTime ? this.airplane.mesh.rotation.x = (this.airplane.mesh.position.y - targetY) * 0.02 * this.worldSpeed : null;
-		this.airplane.propeller.rotation.x += 0.3 * this.worldSpeed;
+		this.airplane.mesh.position.y += (targetY - this.airplane.mesh.position.y) * 0.08 * this.Param.worldSpeed;
+		this.airplane.mesh.rotation.z = (targetY - this.airplane.mesh.position.y) * 0.01 * this.Param.worldSpeed;
+		!this.Param.bulletTime ? this.airplane.mesh.rotation.x = (this.airplane.mesh.position.y - targetY) * 0.02 * this.Param.worldSpeed : null;
+		this.airplane.propeller.rotation.x += 0.3 * this.Param.worldSpeed;
 		//freeze plane on x axise
 		this.airplane.mesh.position.x = 0;//targetX;
 		this.camera.position.z = this.state.cameraZ + targetX;
 		this.camera.rotation.y = this.state.cameraRotateY - targetX / 300;
 	};
 	updateEnergy = () => {
-		// console.log(this.energyCharge,this.state.energyRecharge)
-		//this.state.energyCharge < 0 && this.energyBar > 0 ? this.setState ({worldSpeed : 0.3}) : this.setState
-		// ({worldSpeed : 1});
-		//this.energyBar += this.state.energyCharge;
-		this.energyBar = Math.floor (Math.max (0, this.energyBar));
-		this.energyBar = Math.floor (Math.min (this.energyBar, 100));
-		if (this.energyBar <= 0) {
-			this.setState ({gameStatus : 'ending'});
+		this.Param.energy = Math.floor (Math.max (0, this.Param.energy));
+		this.Param.energy = Math.floor (Math.min (this.Param.energy, this.Param.maxEnergy));
+		if (this.Param.energy <= 0) {
+			this.setState ({gameStatus : 'gameOver'});
 		}
 	};
 
 	reduceEnergy = () => {
-		this.energyBar -= 10;//this.ennemyValue;
-		this.energyBar = Math.max (0, this.energyBar);
+		this.Param.energy -= 10;//this.ennemyValue;
+		this.Param.energy = Math.max (0, this.Param.energy);
 	};
 	//bullet time
 	changeWorldSpeed = (speed) => {
-		this.worldSpeed = speed;
-		this.bulletTime = true;
+		this.Param.worldSpeed = speed;
+		this.Param.bulletTime = true;
 		setTimeout (
 			() => {
-				this.worldSpeed = 1;
-				this.bulletTime = false;
+				this.Param.worldSpeed = 1;
+				this.Param.bulletTime = false;
 			}, 1000,
 		);
 	};
-	sendGameMessage = (msg) => {
+	sendGameMessage = (msg, time = 1000) => {
 		this.setState ({gameMessage : msg});
-		setTimeout (() => this.setState ({gameMessage : ''}), 2000);
+		//setTimeout (() => this.setState ({gameMessage : ''}), time);
 	};
 	animate = () => {
 		// framerate independent motion
@@ -258,50 +304,55 @@ class MrThree extends Component {
 		this.prevTime = currentTime;
 
 		if (this.state.gameStatus === 'playing') {
-			if (Math.floor (this.distance) % this.distanceForEnnemiesSpawn === 0 && Math.floor (this.distance) > this.enemyLastSpawn) {
-				this.enemyLastSpawn = Math.floor (this.distance);
-				this.enemiesHolder.spawnEnemies (this.level, this.enemiesPool);
+			if (Math.floor (this.Param.distance) % this.Param.distanceForEnnemiesSpawn === 0 && Math.floor (this.Param.distance) > this.Param.enemyLastSpawn) {
+				this.Param.enemyLastSpawn = Math.floor (this.Param.distance);
+				this.enemiesHolder.spawnEnemies (this.Param.level, this.enemiesPool);
 			}
-			if (Math.floor (this.distance) % this.distanceForLevelUpdate === 0 && Math.floor (this.distance) > this.levelLastUpdate) {
-				this.levelLastUpdate = Math.floor (this.distance);
-				this.level++;
-				this.targetBaseSpeed = this.initSpeed + this.incrementSpeedByLevel * this.level;
-				//this.worldSpeed += 0.1;//= this.initSpeed + this.incrementSpeedByLevel * this.level;
+			if (Math.floor (this.Param.distance) % this.Param.distanceForLevelUpdate === 0 && Math.floor (this.Param.distance) > this.Param.levelLastUpdate) {
+				this.Param.levelLastUpdate = Math.floor (this.Param.distance);
+				this.Param.level++;
+				this.Param.targetBaseSpeed = this.Param.initSpeed + this.Param.incrementSpeedByLevel * this.Param.level;
+				//this.Param.worldSpeed += 0.1;//= this.Param.initSpeed + this.Param.incrementSpeedByLevel *
+				// this.Param.level;
 			}
-			if (Math.floor (this.distance) % this.distanceForBomb === 0 && Math.floor (this.distance) > this.bombLastDrop) {
-				this.bombLastDrop = Math.floor (this.distance);
-				this.bombCounter++;
+			if (Math.floor (this.Param.distance) % this.Param.distanceForBomb === 0 && Math.floor (this.Param.distance) > this.Param.bombLastDrop) {
+				this.Param.bombLastDrop = Math.floor (this.Param.distance);
+				this.Param.bombCounter++;
 				//this.generateBomb();
-				this.sendGameMessage ('You dropped a bomb onto other players\' face !');
-				//this.worldSpeed += 0.1;//= this.initSpeed + this.incrementSpeedByLevel * this.level;
+				this.sendGameMessage ('You dropped a bomb onto other players\' face !', 2000);
+				//this.Param.worldSpeed += 0.1;//= this.Param.initSpeed + this.Param.incrementSpeedByLevel *
+				// this.Param.level;
 			}
-			this.updatePlane ();
 			this.updateDistance ();
 			this.pilot.updateHairs ();
 			this.updateEnergy ();
-			this.baseSpeed += (this.targetBaseSpeed - this.baseSpeed) * this.deltaTime * 0.02;
-			this.enemiesHolder.rotateEnemies (this.deltaTime, this.airplane, this.enemiesPool, this.worldSpeed, this.changeWorldSpeed.bind (this), this.reduceEnergy.bind (this));
-			//this.worldSpeed = this.baseSpeed;
-		} else if (this.state.gameStatus === 'ending') {
+			this.Param.baseSpeed += (this.Param.targetBaseSpeed - this.Param.baseSpeed) * this.deltaTime * 0.02;
+			//this.Param.worldSpeed = this.Param.baseSpeed;
+		} else if (this.state.gameStatus === 'gameOver') {
 			if (!this.state.gameSaved) {
 				const newScore = {
 					displayName : this.props.currentUserInfo.local.displayName,
-					score : this.distance || 0,
+					score : this.Param.distance || 0,
 					time : new Date (),
 				};
 				rootDB.child ('scores/').push (newScore);
 			}
-			this.setState ({gameSaved : true});
+			/*this.setState ({gameSaved : true, gameStatus : 'waiting'});*/
+
+			/*this.sendGameMessage ('You Lost!', 2000);*/
 		} else if (this.state.gameStatus === 'waiting') {
 		}
 
 		/*if (this.totle <= 10) {
 		 this.enemiesHolder.spawnEnemies (4, this.enemiesPool);
 		 }*/
-		//this.sky.mesh.rotation.x += this.state.skyRotateSpeed * this.worldSpeed * this.deltaTime;
+		//this.sky.mesh.rotation.x += this.state.skyRotateSpeed * this.Param.worldSpeed * this.deltaTime;
+		this.updatePlane ();
 
-		this.sky.mesh.rotation.z += this.state.skyRotateSpeed * this.worldSpeed * this.deltaTime;
-		this.sea.mesh.rotation.z += this.state.seaRotateSpeed * this.worldSpeed * this.deltaTime;
+		this.enemiesHolder.rotateEnemies (this.deltaTime, this.airplane, this.enemiesPool, this.Param.worldSpeed, this.changeWorldSpeed.bind (this), this.reduceEnergy.bind (this));
+
+		this.sky.mesh.rotation.z += this.state.skyRotateSpeed * this.Param.worldSpeed * this.deltaTime;
+		this.sea.mesh.rotation.z += this.state.seaRotateSpeed * this.Param.worldSpeed * this.deltaTime;
 		this.sea.moveWaves (0.001);
 		//this.airplane.propeller.rotation.x += 0.3;
 
@@ -314,20 +365,30 @@ class MrThree extends Component {
 		this.renderer.render (this.scene, this.camera);
 	}
 
-	toggleFullScreen = () => {
-		document.body.classList.toggle ('sidebar-hidden');
-		document.body.classList.toggle ('aside-menu-hidden');
-		this.setState ({fullScreen : !this.state.fullScreen});
+	resetGame = (gameStatus) => {
+		// necessory. create a new obj with default setting
+		//const paramHolder =
+		this.Param = Object.assign ({}, DefaultParam);
+		this.setState ({gameStatus});
+	};
+	changeGameStatus = (gameStatus) => {
+		// necessory. create a new obj with default setting
+		//const paramHolder =
+		if (gameStatus === 'playing') {
+			this.Param = Object.assign ({}, DefaultParam);
+		}
+
+		this.setState ({gameStatus});
 	};
 
-	modalToggle = () => {
-		this.setState ({modalIsOpen : !this.state.modalIsOpen});
+	setCameraZ = (cameraZ) => {
+		this.setState ({cameraZ});
 	};
 
-	render () {
+	render = () => {
 		//let w = window.innerWidth * .5, h = window.innerWidth * .5;
 		return (
-			<div>
+			<div className={ 'animated fadeIn container pt-4' }>
 				<div style={ {
 					width : `${this.state.fullScreen ? '100vw' : '100%'}`,
 					height : `${this.state.fullScreen ? '100vh' : '100%'}`,
@@ -337,46 +398,69 @@ class MrThree extends Component {
 				>
 				</div>
 				<div className={ 'position-absolute' }>
-					<button onClick={ () => {this.setState ({gameStatus : 'playing'});} }>start</button>
-					<p>Energy: { this.energyBar }</p>
-					<p>Distance: { this.distance }</p>
-					<p>level: { this.level }</p>
-					<p>Delta: { this.deltaTime }</p>
-					<p>cameraZ</p>
-					<button onClick={ () => this.setState ({cameraZ : 3000}) }>3000</button>
-					<button onClick={ () => this.setState ({cameraZ : 200}) }>300</button>
-					<div className={ '' }>
-						<p>{ this.state.message }</p>
-					</div>
-					{ this.state.topScores.map (item => <li
-						key={ item.score }>{ item.score }{ item.displayName }</li>) }
+					<p>Energy: { this.Param.energy || null }</p>
+					<p>Score: { this.Param.distance || 0 }</p>
+					<p>level: { this.Param.level || null }</p>
+					<p>FPS: { Math.floor (1000 / this.deltaTime) }</p>
+					{ /*{this.state.bombOwner&&this.state.gameStatus==='gameOver'?<h1>You got bombed by {this.state.bombOwner}</h1>:null}*/ }
+
+
 				</div>
+				<h1 className={'position-relative text-center'}>{ this.state.gameMessage || null }</h1>
 
-				<Button outline color={ this.state.fullScreen ? 'secondary' : 'primary' } size="md"
-				        className={ styles.button } onClick={ this.toggleFullScreen }>
-					{ this.state.fullScreen ? 'Exit Full Screen' : 'Enter Full Screen' }
-				</Button>
-				<Button outline color={ this.state.fullScreen ? 'secondary' : 'primary' } size="md"
-				        className={ styles.button } onClick={ this.modalToggle }>
-				</Button>
-
-				<Modal isOpen={ this.state.modalIsOpen } toggle={ this.modalToggle }>
-					<ModalHeader toggle={ this.toggle }>Modal title</ModalHeader>
-					<ModalBody>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-						labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-						laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-						voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-						non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					</ModalBody>
-					<ModalFooter>
-						<Button color="primary" onClick={ this.toggle }>Do Something</Button>{ ' ' }
-						<Button color="secondary" onClick={ this.toggle }>Cancel</Button>
-					</ModalFooter>
-				</Modal>
+				{ /*<div className={ 'position-absolute' }>
+				 <button onClick={ () => {
+				 this.resetGame ();
+				 this.setState ({gameStatus : 'playing'});
+				 } }>playing
+				 </button>
+				 <p>Energy: { this.Param.energy }</p>
+				 <p>Distance: { this.Param.distance }</p>
+				 <p>level: { this.Param.level }</p>
+				 <p>Delta: { Math.floor(1000/this.deltaTime) }</p>
+				 <p>cameraZ</p>
+				 <button onClick={ () => this.setState ({cameraZ : 3000}) }>3000</button>
+				 <button onClick={ () => this.setState ({cameraZ : 200}) }>300</button>
+				 <div className={ '' }>
+				 <p>{ this.state.gameMessage }</p>
+				 </div>
+				 { this.state.topScores.map (item =>
+				 <li key={ item.score }>{ item.score } - { item.displayName }</li>,
+				 ) }
+				 </div>
+				 <Row className={ styles.buttonGroup }>
+				 <Col>
+				 <Button size="md"
+				 className={ styles.button } onClick={ this.toggleFullScreen }>
+				 { this.state.fullScreen ? 'Exit Full Screen' : 'Enter Full Screen' }
+				 </Button>
+				 <Button outline color={ this.state.fullScreen ? 'secondary' : 'primary' } size="md"
+				 className={ styles.button }
+				 onClick={ this.modalToggle }
+				 >About
+				 </Button>
+				 <Button outline color={ this.state.fullScreen ? 'secondary' : 'primary' } size="md"
+				 className={ styles.button }
+				 onClick={()=>{this.resetGame ();this.setState ({gameStatus : 'playing'});} }
+				 >
+				 { this.state.gameStatus === 'waiting' ? 'Start' : ('gameOver' ? 'Again' : 'Pause') }
+				 </Button>
+				 </Col>
+				 </Row>*/ }
+				{ this.state.gameStatus !== 'playing' ?
+					<GameMenu Param={ this.Param }
+					          topScores={ this.state.topScores }
+					          changeGameStatus={ this.changeGameStatus }
+					          setCameraZ={ this.setCameraZ }
+					          gameStatus={ this.state.gameStatus }
+					          sendGameMessage={this.sendGameMessage}
+					/>
+					:
+					null
+				}
 			</div>
 		);
-	}
+	};
 }
 
 export default MrThree;

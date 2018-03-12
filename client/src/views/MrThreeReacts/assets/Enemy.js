@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import {Colors, DefaultParam} from './setting'
 class Enemy {
 	constructor () {
-		let geom = new THREE.TetrahedronGeometry (8, 2);
+		let geom = new THREE.TetrahedronGeometry (12, 2);
 		let mat = new THREE.MeshPhongMaterial ({
 			color : Colors.red,
 			shininess : 0,
@@ -54,7 +54,7 @@ class EnemiesHolder {
 			//let globalEnemyPosition =  enemy.mesh.localToWorld(new THREE.Vector3());
 
 			let diffPos = airplane.mesh.position.clone ().sub (enemy.mesh.position.clone ());
-			console.log(diffPos)
+			//console.log(diffPos)
 			let d = diffPos.length ();
 			if(d<DefaultParam.enemyBulletTime){
 				changeWorldSpeed(0.1)

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as THREE from 'three';
 import _ from 'lodash';
-import styles from './svgCircle.scss'
+import styles from './Panel.scss'
 let Colors = {
 	red : 0xff0000,
 	white : 0xd8d0d1,
@@ -194,7 +194,9 @@ class Scene extends Component {
 				ref={ (mount) => { this.container = mount; } }
 			>
 				{/*<div className={'overlayLED'} />*/}
-					{ this.state.radius },{ this.state.widthSegments },{ this.state.heightSegments },{this.state.color}
+				<span className={styles.gemParams}>
+					{ this.state.radius } - { this.state.widthSegments } - { this.state.heightSegments } - {this.state.color}
+				</span>
 			</div>
 		);
 	}

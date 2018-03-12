@@ -25,7 +25,7 @@ import Projects from '../../views/Projects/Projects';
 
 import Panel from '../../views/Panel';
 import City from '../../views/City/';
-// import ChatRoom from '../../views/ChatRoom';
+import ChatRoom from '../../views/ChatRoom';
 import ChatRoomV2 from '../../views/ChatRoomV2/';
 import SecretLinks from '../../views/SecretLinks/';
 import MrThreeReacts from '../../views/MrThreeReacts';
@@ -119,6 +119,7 @@ class AppContainer extends Component {
 			document.body.classList.add ('mode-3D-on');
 			this.setState ({mode3D_permission : true});
 			this.props.setMode ('3D');
+			this.props.setMouseTrack (true);
 		}
 	};
 	resetCamera = () => {
@@ -203,8 +204,8 @@ class AppContainer extends Component {
 								{ /* IMPORTANT below shows how to pass props in Route */ }
 
 								<Route disable path="/chatroom" name="Chat Room"
-									/*render={ () => < ChatRoom/> }
-									 socket={ socket }*/
+									render={ () => < ChatRoom/> }
+									/* socket={ socket }*/
 								/>
 
 								<Route path="/chatroom-v2" name="Chat Room V2"

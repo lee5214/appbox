@@ -9,6 +9,8 @@ const cookieSession = require ('cookie-session');
 const path = require ('path');
 const server = http.Server (app);
 const cors = require ('cors');
+const graphqlHTTP = require ('express-graphql');
+const {buildSchema} = require ('graphql');
 // create variable also export it for other file(socketManager)
 // const io = module.exports.io = require ('socket.io').listen(server,{'transports' : ['polling']}); //(server);
 const socketManager = require ('../services/socketManager');
@@ -41,6 +43,20 @@ if (process.env.NODE_ENV === 'production') {
 	// 'build','index.html')); });
 }
 
+/*
+ * ---- graphql ----
+ */
+let schema = buildSchema(`
+	type Query{
+		hello: String
+	}
+`)
+const root = {hello:()=>'hi world'}
+app.use('/graphql',graphqlHTTP({
+	schema:schema,
+	rootValue: root,
+	graphql: true,
+}))
 // requests go through middleware before route handlers
 
 app.use (cors ());
@@ -67,29 +83,29 @@ require ('../routes/generalRoutes') (app);
 
 // error route handler
 
-app.use (function (req, res, next) {
-	let err = new Error ('Not Found');
-	err.status = 404;
-	res.redirect('/#/404')
-	//next (err);
-});
+/*app.use (function (req, res, next) {
+ let err = new Error ('Not Found');
+ err.status = 404;
+ res.redirect('/#/404')
+ //next (err);
+ });
 
-if (process.env.NODE_ENV !== 'production') {
-	app.use (function (err, req, res, next) {
-		res.status (err.status || 500);
-		res.render ('error', {
-			message : err.message,
-			error : err,
-		});
-	});
-}
+ if (process.env.NODE_ENV !== 'production') {
+ app.use (function (err, req, res, next) {
+ res.status (err.status || 500);
+ res.render ('error', {
+ message : err.message,
+ error : err,
+ });
+ });
+ }
 
-app.use (function (err, req, res, next) {
-	res.status (err.status || 500);
-	res.send ('error', {
-		message : err.message,
-	});
-});
+ app.use (function (err, req, res, next) {
+ res.status (err.status || 500);
+ res.send ('error', {
+ message : err.message,
+ });
+ });*/
 
 server.listen (PORT);
 console.log ('node services is running on port:', PORT);

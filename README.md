@@ -68,6 +68,9 @@ backend (express) server: localhost: 4000
 + google cloud
 + socket.io
 + redux-thunk
++ styled components
++ css modules
++ scss
 - socket.io
 - materialUI
 ```

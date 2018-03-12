@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Col, Row } from 'reactstrap';
+import {Loader} from 'components/'
 import { CityDetail, SearchBar } from './index';
 import PropTypes from 'prop-types';
 //import { Colors } from 'remove-consts';
@@ -21,7 +22,7 @@ class City extends Component {
 						                                               info={ info }/>) }
 					</Row>
 					:
-					<Row className={'loading'}>loading</Row>
+					<Loader />
 				}
 			</div>
 		);
