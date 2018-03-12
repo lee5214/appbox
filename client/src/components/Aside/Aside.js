@@ -165,7 +165,7 @@ class Aside extends Component {
 						<hr/>
 						<h6 className={ 'translatex-40 text-right' }>SERVER UTILIZATION</h6>
 
-						<div className="text-uppercase mb-1 mt-4">
+						{/*<div className="text-uppercase mb-1 mt-4">
 							<small><b>CPU Usage</b></small>
 						</div>
 						<Progress className="progress-xs" color="info" value="25"/>
@@ -188,7 +188,7 @@ class Aside extends Component {
 						</div>
 						<Progress className="progress-xs" color="success" value="10"/>
 						<small className="text-muted">25GB/256GB</small>
-
+*/}
 						<div className="text-uppercase mb-1 mt-2">
 							<a href={ '/api/current_user' } target={ '_blank' }>client info</a>
 						</div>
