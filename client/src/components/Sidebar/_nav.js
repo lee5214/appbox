@@ -101,19 +101,19 @@ export default {
 			url : '/about',
 			icon : 'icon-social-dropbox',
 			children : [
-				{
-					name : 'Myself',
-					url : '/about/myself',
-					icon : 'icon-star',
-				},
-				{
-					name : 'Resume',
-					url : '/about/resume',
-					icon : 'icon-star',
-				},
+				// {
+				// 	name : 'Myself',
+				// 	url : '/about/myself',
+				// 	icon : 'icon-star',
+				// },
+				// {
+				// 	name : 'Resume',
+				// 	url : '/about/resume',
+				// 	icon : 'icon-star',
+				// },
 				{
 					name : 'Blog',
-					url : '/about/blog',
+					url : 'https://blog.cong-li.com',
 					icon : 'icon-star',
 				},
 			],
