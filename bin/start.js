@@ -33,15 +33,6 @@ require ('../services/passport') ();
 /*
  * ---- middleware section ----
  */
-if (process.env.NODE_ENV === 'production') {
-	app.use (Express.static ('client/build'));
-
-	// force naked domain redirect to SSL
-	app.use (yes ());
-	// app.get ('/', (req, res) => {
-	// 	res.sendFile (__dirname + 'client/build/index.html')//(path.resolve (__dirname, 'client',
-	// 'build','index.html')); });
-}
 
 /*
  * ---- graphql ----
@@ -109,3 +100,15 @@ require ('../routes/generalRoutes') (app);
 
 server.listen (PORT);
 console.log ('node services is running on port:', PORT);
+
+//if (process.env.NODE_ENV === 'production') {
+	//if (process.env.NODE_ENV === 'production') {
+	app.use (Express.static ('client/build'));
+
+// force naked domain redirect to SSL
+	app.use (yes ());
+	app.get ('*', (req, res) => {
+		res.sendFile (path.resolve (__dirname, '../client/build/index.html'))
+	});
+//}
+//}
