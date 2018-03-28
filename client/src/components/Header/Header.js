@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Badge, Nav, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
 import HeaderDropdown from './HeaderDropdown';
@@ -107,7 +107,7 @@ class Header extends Component {
 
 					<Route path="/login" name="login">
 						<NavItem className="px-3">
-							<NavLink href="#/login"><i className="fa fa-sign-in mr-2"/> Login / Register</NavLink>
+							<Link to="/login"><i className="fa fa-sign-in mr-2"/> Login / Register</Link>
 						</NavItem>
 					</Route>
 				</Nav>

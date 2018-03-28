@@ -12,6 +12,12 @@ body {
   padding: 0;
   height: 100%;
 }
+a{
+  color: white;
+  &,&:hover{
+    text-decoration: none;
+  }
+}
 
 code, kbd, pre, samp {
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;

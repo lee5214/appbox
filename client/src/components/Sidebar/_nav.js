@@ -8,6 +8,10 @@ export default {
 			name : 'Panel',
 			url : '/panel',
 			icon : 'icon-speedometer',
+			badge : {
+				variant : 'info',
+				text : 'MAIN',
+			},
 		},
 	/*	{
 			name : 'Dashboard',
@@ -60,16 +64,12 @@ export default {
 			name : 'Mr Three Reacts',
 			url : '/mrthreereacts',
 			icon : 'icon-social-dropbox',
-			badge : {
-				variant : 'info',
-				text : 'MAIN',
-			},
 		},
 		{
 			title : true,
 			name : 'Extras',
 		},
-		{
+		/*{
 			name : 'Pages',
 			url : '/pages',
 			icon : 'icon-star',
@@ -95,25 +95,25 @@ export default {
 					icon : 'icon-star',
 				},
 			],
-		},
+		},*/
 		{
 			name : 'About',
 			url : '/about',
 			icon : 'icon-social-dropbox',
 			children : [
-				{
-					name : 'Myself',
-					url : '/about/myself',
-					icon : 'icon-star',
-				},
-				{
-					name : 'Resume',
-					url : '/about/resume',
-					icon : 'icon-star',
-				},
+				// {
+				// 	name : 'Myself',
+				// 	url : '/about/myself',
+				// 	icon : 'icon-star',
+				// },
+				// {
+				// 	name : 'Resume',
+				// 	url : '/about/resume',
+				// 	icon : 'icon-star',
+				// },
 				{
 					name : 'Blog',
-					url : '/about/blog',
+					url : 'https://blog.cong-li.com',
 					icon : 'icon-star',
 				},
 			],
@@ -212,11 +212,11 @@ export default {
 			icon : 'icon-pie-chart',
 		},*/
 		{
-			name : 'My Website',
+			name : 'legacy v1',
 			url : 'http://lee5214.com',
 			icon : 'icon-layers',
 			class : 'mt-auto',
-			variant : 'success',
+			//variant : 'success',
 		},
 
 	],

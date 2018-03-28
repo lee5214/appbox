@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import {
 	Button,
 	Card,
@@ -50,7 +51,8 @@ class Login extends Component {
 										<h2>Login</h2>
 										<p className="text-muted">Sign In to your account</p>
 										<InputGroup className="mb-3">
-											<InputGroupAddon className={'d-flex'}><i className="icon-user adjust-self-center"></i></InputGroupAddon>
+											<InputGroupAddon className={ 'd-flex' }><i
+												className="icon-user adjust-self-center"></i></InputGroupAddon>
 											<Input type="text" placeholder="Username"
 											       onChange={ (e) => this.setState ({username : e.target.value}) }
 											/>
@@ -62,14 +64,14 @@ class Login extends Component {
 											/>
 										</InputGroup>
 										<Row>
-											<Col xs="12" className={'text-center'} >
+											<Col xs="12" className={ 'text-center' }>
 												<Button color="primary" className="px-4"
 												        onClick={ this.handleLoginButton }
 												>Login</Button>
 											</Col>
-											{/*<Col xs="6" className="text-right">*/}
-												{/*<Button color="link" className="px-0">Forgot password?</Button>*/}
-											{/*</Col>*/}
+											{ /*<Col xs="6" className="text-right">*/ }
+											{ /*<Button color="link" className="px-0">Forgot password?</Button>*/ }
+											{ /*</Col>*/ }
 										</Row>
 									</CardBody>
 									<CardFooter className="p-4">
@@ -94,8 +96,10 @@ class Login extends Component {
 											<p>
 												OAuth2.0 implemented, recommend log in with social account, or register
 												with your email address & password </p>
-											<Button href={ '#/register' } color="primary" className="mt-3" active>
-												Register
+											<Button color="primary" className="mt-3" active>
+												<Link to={ '/register' }>
+													Register
+												</Link>
 											</Button>
 										</div>
 									</CardBody>
