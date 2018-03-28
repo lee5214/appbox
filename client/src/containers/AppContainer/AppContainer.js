@@ -90,7 +90,7 @@ class AppContainer extends Component {
 			percentX = (curRelPosX - centerX) / centerX,
 			percentY = (curRelPosY - centerY) / centerY;
 		let roX = -percentY * maxRotateX, roY = percentX * maxRotateY;
-		let roZ = calcAngleDegrees (curRelPosX - centerX, -(curRelPosY - centerY)).toFixed(2);//
+		let roZ = calcAngleDegrees (curRelPosX - centerX, -(curRelPosY - centerY)).toFixed (2);//
 
 		if (roX !== this.state.roX || roY !== this.state.roY) {
 			this.setState ({roX, roY, roZ});
@@ -109,13 +109,13 @@ class AppContainer extends Component {
 		document.body.classList.toggle ('aside-menu-hidden');
 	};
 	handleResize = () => {
-		if (window.innerWidth < this.minimalInnerlWidth ) {
+		if (window.innerWidth < this.minimalInnerlWidth) {
 			document.body.classList.remove ('mode-3D-on');
 			this.setState ({mode3D_permission : false});
 			this.props.setMode ('2D');
 			this.props.setMouseTrack (false);
 			console.log (`resize detected, minimal width breakpoint: --${this.minimalInnerlWidth}px--, 3D mode disable`);
-		} else if(window.innerWidth > this.minimalInnerlWidth && this.state.mode3D_permission===true) {
+		} else if (window.innerWidth > this.minimalInnerlWidth && this.state.mode3D_permission === true) {
 			document.body.classList.add ('mode-3D-on');
 			this.setState ({mode3D_permission : true});
 			this.props.setMode ('3D');
@@ -131,7 +131,7 @@ class AppContainer extends Component {
 		let app3D = {
 			transform : 'rotateX(' + this.state.roX + 'deg) rotateY(' + this.state.roY + 'deg)',
 		};
-		let {setMode, setMouseTrack, setting : {layout : {mode, mouseTrack}}} = this.props;
+		let {setting : {layout : {mode, mouseTrack}}} = this.props;
 		return (
 			<div className={ `app mode-${mode}` }
 			     onMouseMove={ this.state.mode3D_permission && mouseTrack ? this.onMouseMove : null }
@@ -139,7 +139,6 @@ class AppContainer extends Component {
 			     style={ this.state.mode3D_permission && mode === '3D' ? app3D : null }>
 				<Header currentUserInfo={ this.props.currentUserInfo }
 				/>
-				<div></div>
 				<div className="app-body">
 					<Sidebar { ...this.props }/>
 					<main className="main animated">
@@ -204,7 +203,7 @@ class AppContainer extends Component {
 								{ /* IMPORTANT below shows how to pass props in Route */ }
 
 								<Route disable path="/chatroom" name="Chat Room"
-									render={ () => < ChatRoom/> }
+								       render={ () => < ChatRoom/> }
 									/* socket={ socket }*/
 								/>
 
@@ -220,12 +219,12 @@ class AppContainer extends Component {
 								       component={ Myself }
 								/>
 								<Route path="/mrthreereacts" name="Mr Three Reacts"
-								       render={()=> <MrThreeReacts currentUserInfo = {this.props.currentUserInfo}/> }
+								       render={ () => <MrThreeReacts currentUserInfo={ this.props.currentUserInfo }/> }
 								/>
 								<Route path="/test" name="Test"
 								       render={ () => <Test roZ={ this.state.roZ }/> }
 								/>
-								{/*<Redirect to="/404" />*/}
+								{ /*<Redirect to="/404" />*/ }
 								<Redirect from="/" to="/panel"/>
 							</Switch>
 						</Container>

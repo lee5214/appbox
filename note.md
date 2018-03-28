@@ -56,5 +56,7 @@ $.ajax({
     }
 });
 
+flexbox  
+Justify-content controls how you align items on the main axis.
 
 

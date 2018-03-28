@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { applyMiddleware, createStore } from 'redux';
-import { BrowserRouter, HashRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Route, Switch, browserHistory } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import ReduxThunk from 'redux-thunk';
 // redux devtool
@@ -33,7 +33,7 @@ const store = createStore (reducers, composeWithDevTools (
 ReactDOM.render (
 	<Provider store={ store }>
 		{ /*<HashRouter> is for static website, <BrowserRouter> is more for dynamic*/ }
-		<HashRouter>
+		<BrowserRouter>
 			<Switch>
 				<Route exact path='/login' name='Login Page' component={ Login }/>
 				<Route exact path='/register' name='Register Page'
@@ -42,7 +42,7 @@ ReactDOM.render (
 				<Route exact path='/500' name='Page 500' component={ Page500 }/>
 				<Route path='/' name='Home' component={ AppContainer }/>
 			</Switch>
-		</HashRouter>
+		</BrowserRouter>
 	</Provider>
 	, document.getElementById ('root'),
 )
