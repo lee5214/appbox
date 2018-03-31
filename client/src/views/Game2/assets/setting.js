@@ -15,4 +15,4 @@ export const GemColors = {
 	yellow : 0xffff00,
 	green : 0x7cfc00,
 	blue : 0x68c3c0,
-}
+};

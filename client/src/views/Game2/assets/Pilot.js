@@ -57,7 +57,7 @@ export default class Pilot{
 		// 创建后脑勺的头发
 		var hairBackGeom = new THREE.BoxGeometry(2,8,10);
 		var hairBack = new THREE.Mesh(hairBackGeom, hairMat);
-		hairBack.position.set(-1,-4,0)
+		hairBack.position.set (-1, -4, 0);
 		hairs.add(hairBack);
 		hairs.position.set(-5,5,0);
 
