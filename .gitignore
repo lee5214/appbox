@@ -1,4 +1,3 @@
-# See https://help.github.com/ignore-files/ for more about ignoring files.
 # dependencies
 /node_modules
 /client/node_modules
@@ -6,6 +5,7 @@
 # secrets
 /app.yaml
 /config/credentials/devKey.js
+
 # testing
 
 # production
@@ -14,25 +14,18 @@
 # backup
 /client/_backup
 
-# misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
 .gitignore
-etc/
 
 # .idea/workspace.xml
+.idea
+package-lock.json
 
 # css
-#*.css
-#*.css.map
+*.css
+*.css.map
 
-.idea/codeStyles/
-package-lock.json
+

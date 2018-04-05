@@ -11,11 +11,9 @@ const server = http.Server (app);
 const cors = require ("cors");
 const graphqlHTTP = require ("express-graphql");
 const {buildSchema} = require ("graphql");
-// create variable also export it for other file(socketManager)
-// const io = module.exports.io = require ('socket.io').listen(server,{'transports' : ['polling']}); //(server);
-const socketManager = require ("../services/socketManager");
+// const socketManager = require ("../services/socketManager");
 const PORT = process.env.PORT || 4000;
-const _debug = require ("debug");
+// const _debug = require ("debug");
 const yes = require ("yes-https");
 
 // disable socket.io
