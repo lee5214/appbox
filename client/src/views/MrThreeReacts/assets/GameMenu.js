@@ -37,7 +37,6 @@ class GameMenu extends Component {
 		return (
 			<div className={ styles.gameMenuContainer }>
 				{this.props.gameStatus==='gameOver'?<h1>You are destroyed by a bomb</h1>:null}
-				{this.props.topScores[0]?console.log(this.props.topScores[4]):null }
 				{ this.props.topScores[ 0 ] ?
 					<ListGroup className={ styles.scoreBoard }>
 						<ListGroupItemHeading className={ styles.scoreBoardHeader }>
