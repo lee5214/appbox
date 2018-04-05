@@ -1,8 +1,11 @@
-const prodKey = require ('./prodKey.js');
-const devKey = require ('./devKey.js');
+const prodKey = require ("./prodKey.js");
+const devKey = require ("./devKey.js");
+const ciKey = require ('./ciKey.js');
 
-if (process.env.NODE_ENV === 'production') {
-	module.exports = prodKey;
-} else {
-	module.exports = devKey;
+if (process.env.NODE_ENV === "production") {
+  module.exports = prodKey;
 }
+if (process.env.NODE_ENV === "ci") {
+  module.exports = ciKey;
+}
+module.exports = devKey;
