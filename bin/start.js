@@ -104,14 +104,10 @@ require ("../routes/generalRoutes") (app);
 server.listen (PORT);
 console.log ("node services is running on port:", PORT);
 
-//if (process.env.NODE_ENV === 'production') {
-//if (process.env.NODE_ENV === 'production') {
-app.use (Express.static ("client/build"));
-
-// force naked domain redirect to SSL
-app.use (yes ());
-app.get ("*", (req, res) => {
-  res.sendFile (path.resolve (__dirname, "../client/build/index.html"));
-});
-//}
-//}
+if (["production", "ci"].includes (process.env.NODE_ENV)) {
+  app.use (Express.static ("client/build"));
+  app.use (yes ());
+  app.get ("*", (req, res) => {
+    res.sendFile (path.resolve (__dirname, "../client/build/index.html"));
+  });
+}
