@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import * as THREE from 'three';
-import Sea from './asserts/Sea';
-import Sky from './asserts/Sky';
-import AirPlane from './asserts/AirPlane';
-import Pilot from './asserts/Pilot';
+import Sea from './assets/Sea';
+import Sky from './assets/Sky';
+import AirPlane from './assets/AirPlane';
+import Pilot from './assets/Pilot';
 import { Button } from 'reactstrap';
 import styles from './MrThreeReacts.scss';
 
@@ -96,12 +96,12 @@ class MrThree extends Component {
 			let e = new AirPlane();
 			let a = stepAngel*i + Math.random(0.1,1)*10;
 			let h = 650 + Math.random()*100;
-			e.mesh.rotation.set(0,180,a+Math.PI/2)
+			e.mesh.rotation.set (0, 180, a + Math.PI / 2);
 			e.mesh.position.y = Math.sin(a)*h;
 			e.mesh.position.x = Math.cos(a)*h;
 			e.mesh.scale.set (.25, .25, .25);
 			this.sky.mesh.add(e.mesh)
-		}
+		};
 
 
 		let stepAngle2 = Math.PI*2 / nEnemy;
@@ -123,7 +123,7 @@ class MrThree extends Component {
 
 			this.mesh.add (e.mesh);
 		}
-	}
+	};
 
 	init = () => {
 		this.createScene ();
@@ -152,8 +152,8 @@ class MrThree extends Component {
 		this.energyCharge = 3;
 		// this.setState ({worldSpeed : 1, energyRecharge : 1});
 	};
-	touchMoverEvent = ()=>{}
-	touchEndEvent=()=>{}
+	touchMoverEvent = () => {};
+	touchEndEvent = () => {};
 
 
 	componentWillUnmount () {
@@ -199,9 +199,9 @@ class MrThree extends Component {
 		// console.log(this.energyCharge,this.state.energyRecharge)
 		this.energyCharge<0&&this.energyBar>0?this.setState ({worldSpeed : 0.3}):this.setState ({worldSpeed : 1});
 		this.energyBar += this.energyCharge;
-		this.energyBar = Math.floor(Math.max(0,this.energyBar))
+		this.energyBar = Math.floor (Math.max (0, this.energyBar));
 		this.energyBar = Math.floor(Math.min(this.energyBar,1000))
-	}
+	};
 	normalize = (v, vmin, vmax, tmin, tmax) => {
 		let nv = Math.max (Math.min (v, vmax), vmin);
 		let dv = vmax - vmin;
@@ -218,7 +218,7 @@ class MrThree extends Component {
 		//this.airplane.propeller.rotation.x += 0.3;
 		this.updatePlane ();
 		this.pilot.updateHairs ();
-		this.updateEnergy()
+		this.updateEnergy ();
 		//setTimeout( ()=> {
 		this.renderScene ();
 		this.frameId = window.requestAnimationFrame (this.animate);

@@ -16,9 +16,15 @@ class Enemy {
 	}
 }
 class EnemiesHolder {
-	this.mesh = new THREE.Object3D();
-	this.ennemiesInUse = [];
-	this.spawnEnemies = (nEnemies)=>{
+	this;
+.
+	mesh = new THREE.Object3D ();
+	this;
+.
+	ennemiesInUse = [];
+	this;
+.
+	spawnEnemies = (nEnemies) => {
 		for (var i=0; i<nEnemies; i++){
 			var ennemy;
 			if (ennemiesPool.length) {

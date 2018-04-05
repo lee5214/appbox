@@ -1,7 +1,19 @@
 language: node_js
 node_js:
-  - "iojs"
   - "8"
-script:
+dist: trusty
+services:
+  - mongodb
+env:
+  - NODE_ENV = ci
+cache:
+  directories:
+    - node_modules
+    - client/node_modules
+install:
+  - npm install
   - npm run client-build
-  - npm run start
+script:
+  - nohup npm run start &
+  - sleep 4
+  - npm run test

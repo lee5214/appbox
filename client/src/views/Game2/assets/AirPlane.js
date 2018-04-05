@@ -7,7 +7,7 @@ export default class AirPlane {
 
 		// 创建机舱
 		let geomCockpit = new THREE.BoxGeometry (80, 50, 50, 1, 1, 1);
-		let matCockpit = new THREE.MeshPhongMaterial ({color : Colors.red, flatShading : true,})
+		let matCockpit = new THREE.MeshPhongMaterial ({color : Colors.red, flatShading : true});
 
 // 我们可以通过访问形状中顶点数组中一组特定的顶点
 // 然后移动它的 x, y, z 属性:
