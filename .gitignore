@@ -8,7 +8,7 @@
 /app.yaml
 /config/credentials/devKey.js
 # testing
-/tests
+
 /coverage
 
 # production
