@@ -4,8 +4,6 @@
     <list default="true" id="742d2f67-9123-492e-9892-2d49e2746a61" name="Default" comment="test &amp; CI 02">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/start.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/start.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/credentials/ciKey.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/credentials/ciKey.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/credentials/devKey.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/credentials/devKey.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -1818,6 +1816,7 @@
     <ignored path="client/node_modules/chart.js/node_modules/moment/src/lib/utils/zero-fill.js" />
     <ignored path="client/node_modules/moment/src/lib/duration/clone.js" />
     <ignored path="client/node_modules/moment/src/lib/utils/mod.js" />
+    <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -2029,11 +2028,11 @@
     <splitter split-orientation="vertical" split-proportion="0.43577236">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="start.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="start.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/bin/start.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="379">
-                  <caret line="104" column="55" selection-start-line="104" selection-start-column="55" selection-end-line="104" selection-end-column="55" />
+                <state relative-caret-position="259">
+                  <caret line="49" column="4" lean-forward="true" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="4" />
                 </state>
               </provider>
             </entry>
@@ -2043,11 +2042,6 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="112">
                   <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
-                  <folding>
-                    <element signature="e#502#549#0" expanded="true" />
-                    <element signature="e#765#818#0" expanded="true" />
-                    <element signature="e#863#904#0" expanded="true" />
-                  </folding>
                 </state>
               </provider>
             </entry>
@@ -2061,11 +2055,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+          <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/.gitignore">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-766">
-                  <caret line="1" selection-start-line="1" selection-end-line="1" />
+                <state relative-caret-position="588">
+                  <caret line="21" selection-start-line="21" selection-end-line="21" />
                 </state>
               </provider>
             </entry>
@@ -2074,7 +2068,7 @@
             <entry file="file://$PROJECT_DIR$/config/credentials/ciKey.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="196">
-                  <caret line="7" column="63" lean-forward="true" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
+                  <caret line="7" column="63" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
                 </state>
               </provider>
             </entry>
@@ -2082,7 +2076,7 @@
           <file leaf-file-name="devKey.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/config/credentials/devKey.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="256">
+                <state relative-caret-position="448">
                   <caret line="16" column="2" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
                 </state>
               </provider>
@@ -2091,8 +2085,8 @@
           <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/config/credentials/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="79">
-                  <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+                <state relative-caret-position="252">
+                  <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
                 </state>
               </provider>
             </entry>
@@ -2101,7 +2095,7 @@
             <entry file="file://$PROJECT_DIR$/config/credentials/prodKey.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="448">
-                  <caret line="16" column="2" lean-forward="true" selection-end-line="18" />
+                  <caret line="16" column="2" selection-end-line="18" />
                 </state>
               </provider>
             </entry>
@@ -2109,8 +2103,8 @@
           <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/package.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="113">
-                  <caret line="13" column="33" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="33" />
+                <state relative-caret-position="1092">
+                  <caret line="39" column="18" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="18" />
                 </state>
               </provider>
             </entry>
@@ -2118,8 +2112,8 @@
           <file leaf-file-name="header.test.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/tests/header.test.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="84">
-                  <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+                <state relative-caret-position="56">
+                  <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
                 </state>
               </provider>
             </entry>
@@ -2131,8 +2125,17 @@
           <file leaf-file-name="start.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/bin/start.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="249">
-                  <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+                <state relative-caret-position="152">
+                  <caret line="74" selection-start-line="74" selection-end-line="74" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/middleware/index.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="280">
+                  <caret line="10" column="30" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="30" />
                 </state>
               </provider>
             </entry>
@@ -2141,7 +2144,7 @@
             <entry file="file://$PROJECT_DIR$/.travis.yml">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="448">
-                  <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+                  <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
                 </state>
               </provider>
             </entry>
@@ -2151,15 +2154,6 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="140">
                   <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="test.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/client/scripts/test.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="56">
-                  <caret line="2" column="78" selection-start-line="2" selection-start-column="78" selection-end-line="2" selection-end-column="78" />
                 </state>
               </provider>
             </entry>
@@ -2176,7 +2170,7 @@
           <file leaf-file-name="devKey.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/config/credentials/devKey.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="392">
+                <state relative-caret-position="308">
                   <caret line="11" column="60" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="60" />
                 </state>
               </provider>
@@ -2200,27 +2194,6 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/client/package.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="393">
-                  <caret line="120" column="20" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="20" />
-                  <folding>
-                    <element signature="n#!!block;n#dependencies#0;n#!!top" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="app.yaml" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app.yaml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="280">
-                  <caret line="10" column="93" selection-start-line="10" selection-start-column="93" selection-end-line="10" selection-end-column="93" />
-                </state>
-              </provider>
-            </entry>
-          </file>
         </leaf>
       </split-second>
     </splitter>
@@ -2234,10 +2207,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>init</find>
-      <find>init()</find>
-      <find>init ()</find>
-      <find>start</find>
       <find>delta</find>
       <find>gameover</find>
       <find>bombOwners</find>
@@ -2264,6 +2233,10 @@
       <find>icon-sett</find>
       <find>console</find>
       <find>jest</find>
+      <find>graph</find>
+      <find>middlewar</find>
+      <find>middlewa</find>
+      <find>middlew</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -2321,16 +2294,16 @@
         <option value="$PROJECT_DIR$/client/src/views/MrThreeReacts/assets/GameMenu.js" />
         <option value="$PROJECT_DIR$/client/src/containers/AppContainer/AppContainer.scss" />
         <option value="$PROJECT_DIR$/config/credentials/index.js" />
-        <option value="$PROJECT_DIR$/tests/header.test.js" />
         <option value="$PROJECT_DIR$/client/package.json" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/config/credentials/prodKey.js" />
         <option value="$PROJECT_DIR$/client/src/index.js" />
         <option value="$PROJECT_DIR$/.travis.yml" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/config/credentials/devKey.js" />
-        <option value="$PROJECT_DIR$/bin/start.js" />
         <option value="$PROJECT_DIR$/config/credentials/ciKey.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/tests/header.test.js" />
+        <option value="$PROJECT_DIR$/bin/start.js" />
       </list>
     </option>
   </component>
@@ -2419,6 +2392,11 @@
             <path>
               <item name="appbox" type="b2602c69:ProjectViewProjectNode" />
               <item name="appbox" type="462c0819:PsiDirectoryNode" />
+              <item name="middleware" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="appbox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="appbox" type="462c0819:PsiDirectoryNode" />
               <item name="tests" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -2492,6 +2470,52 @@
       <recent name="$PROJECT_DIR$/client/public/img/overlay" />
       <recent name="$PROJECT_DIR$/client/src/scss/core" />
     </key>
+  </component>
+  <component name="RestClientSettings">
+    <option name="REQUEST_HISTORY">
+      <list>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://cong-li.com" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://blog.cong-li.com" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+      </list>
+    </option>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -2582,21 +2606,8 @@
       <workItem from="1522187633367" duration="3292000" />
       <workItem from="1522464419127" duration="2023000" />
       <workItem from="1522901530821" duration="5557000" />
-      <workItem from="1522929392979" duration="9223000" />
-    </task>
-    <task id="LOCAL-00143" summary="CI test">
-      <created>1518406792596</created>
-      <option name="number" value="00143" />
-      <option name="presentableId" value="LOCAL-00143" />
-      <option name="project" value="LOCAL" />
-      <updated>1518406792596</updated>
-    </task>
-    <task id="LOCAL-00144" summary="readme">
-      <created>1518408120646</created>
-      <option name="number" value="00144" />
-      <option name="presentableId" value="LOCAL-00144" />
-      <option name="project" value="LOCAL" />
-      <updated>1518408120646</updated>
+      <workItem from="1522929392979" duration="16066000" />
+      <workItem from="1523044870168" duration="598000" />
     </task>
     <task id="LOCAL-00145" summary="readme">
       <created>1518408239062</created>
@@ -2927,11 +2938,25 @@
       <option name="project" value="LOCAL" />
       <updated>1522947933508</updated>
     </task>
-    <option name="localTasksCounter" value="192" />
+    <task id="LOCAL-00192" summary="code style format">
+      <created>1522959066187</created>
+      <option name="number" value="00192" />
+      <option name="presentableId" value="LOCAL-00192" />
+      <option name="project" value="LOCAL" />
+      <updated>1522959066187</updated>
+    </task>
+    <task id="LOCAL-00193" summary="test &amp; CI 02">
+      <created>1522959121977</created>
+      <option name="number" value="00193" />
+      <option name="presentableId" value="LOCAL-00193" />
+      <option name="project" value="LOCAL" />
+      <updated>1522959121977</updated>
+    </task>
+    <option name="localTasksCounter" value="194" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2025510000" />
+    <option name="totallyTimeSpent" value="2032951000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -2946,23 +2971,24 @@
     <frame x="-1080" y="-165" width="1080" height="1920" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" x="-1080" y="-480" width="256" height="1440" id="Project" order="0" sideWeight="0.69135803" visible="true" weight="0.17533718" />
+      <window_info content_ui="combo" x="-1080" y="-480" width="256" height="1440" id="Project" order="0" sideWeight="0.69135803" visible="true" weight="0.17822737" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32777777" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.51935786" side_tool="true" weight="0.1720548" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.23593664" />
-      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4871795" visible="true" weight="0.3212321" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4871795" weight="0.3212321" />
       <window_info anchor="right" id="Copy/Paste" order="4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.23593664" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Structure" order="1" sideWeight="0.4908286" side_tool="true" weight="0.24855492" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4806421" weight="0.46534654" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.24740578" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4806421" visible="true" weight="0.46534654" />
       <window_info id="Favorites" order="3" sideWeight="0.30864197" side_tool="true" weight="0.25433525" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.24740578" />
       <window_info anchor="bottom" id="TypeScript" order="9" show_stripe_button="false" weight="0.32995495" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="REST Client" order="8" weight="0.32948294" />
       <window_info anchor="right" id="GfmBrowser" order="3" />
       <window_info anchor="bottom" id="Messages" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -2970,11 +2996,11 @@
       <window_info anchor="bottom" id="Find" order="1" weight="0.32495904" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4871795" weight="0.18350628" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.23593664" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Copy/Paste" order="4" />
       <window_info content_ui="combo" x="-1080" y="-480" width="256" height="1440" id="Project" order="0" sideWeight="0.7077748" visible="true" weight="0.22543353" />
       <window_info id="Structure" order="1" sideWeight="0.49321628" weight="0.24881291" />
@@ -2988,13 +3014,16 @@
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4806421" visible="true" weight="0.13653742" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.51935786" side_tool="true" weight="0.1720548" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4871795" weight="0.18350628" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Favorites" order="3" sideWeight="0.2922252" side_tool="true" weight="0.238921" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="UpdateCopyrightCheckinHandler">
+    <option name="UPDATE_COPYRIGHT" value="true" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -3027,9 +3056,8 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="should I handle 404/500 err page or just redirect to /panel?" />
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="SHOW_UNVERSIONED_FILES_WHILE_COMMIT" value="false" />
     <MESSAGE value="game added, full screen button aaded" />
     <MESSAGE value="game stage 1" />
     <MESSAGE value="mobile layout changed" />
@@ -3053,8 +3081,12 @@
     <MESSAGE value="correct assets" />
     <MESSAGE value="correct assets and reformat code" />
     <MESSAGE value="test &amp; CI 01" />
+    <MESSAGE value="code style format" />
     <MESSAGE value="test &amp; CI 02" />
     <option name="LAST_COMMIT_MESSAGE" value="test &amp; CI 02" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3062,24 +3094,17 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/src/actions/index.js">
+    <entry file="file://$PROJECT_DIR$/config/credentials/ciKey.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="196">
+          <caret line="7" column="63" lean-forward="true" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/actions/user.js">
+    <entry file="file://$PROJECT_DIR$/config/credentials/prodKey.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="26" lean-forward="true" selection-start-column="26" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/webstorm.vmoptions">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="22" lean-forward="true" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+        <state relative-caret-position="448">
+          <caret line="16" column="2" lean-forward="true" selection-end-line="18" />
         </state>
       </provider>
     </entry>
@@ -3087,9 +3112,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="421">
           <caret line="44" column="4" selection-start-line="44" selection-start-column="4" selection-end-line="44" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3260,9 +3282,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5208">
           <caret line="192" column="51" selection-start-line="192" selection-start-column="44" selection-end-line="192" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3298,9 +3317,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
           <caret line="45" column="4" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3315,9 +3331,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="393">
           <caret line="120" column="20" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="20" />
-          <folding>
-            <element signature="n#!!block;n#dependencies#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3325,39 +3338,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
           <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
-          <folding>
-            <element signature="e#502#549#0" expanded="true" />
-            <element signature="e#765#818#0" expanded="true" />
-            <element signature="e#863#904#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/header.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/credentials/prodKey.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
-          <caret line="16" column="2" lean-forward="true" selection-end-line="18" />
+          <caret line="16" column="2" selection-end-line="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/credentials/devKey.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
+        <state relative-caret-position="448">
           <caret line="16" column="2" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="13" column="33" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -3370,29 +3364,50 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/credentials/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/start.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="104" column="55" selection-start-line="104" selection-start-column="55" selection-end-line="104" selection-end-column="55" />
+        <state relative-caret-position="252">
+          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/credentials/ciKey.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
-          <caret line="7" column="63" lean-forward="true" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
+          <caret line="7" column="63" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-766">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="588">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/header.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1092">
+          <caret line="39" column="18" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/middleware/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="10" column="30" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/start.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="49" column="4" lean-forward="true" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="4" />
         </state>
       </provider>
     </entry>
