@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Badge, Nav, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
+import { Nav, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
 import HeaderDropdown from './HeaderDropdown';
 import MessageDropdown from './MessageDropdown';
 
@@ -86,14 +86,14 @@ class Header extends Component {
 				displayName : '2',
 				message : '233333',
 			}
-		}
+    };
 		return (
 			<header className="app-header navbar">
 
 				<NavbarToggler className="d-lg-none" onClick={ this.mobileSidebarToggle }>
 					<span className="navbar-toggler-icon"/>
 				</NavbarToggler>
-				<NavbarBrand href="#"/>
+        <NavbarBrand href="/"/>
 				<NavbarToggler className="d-md-down-none" onClick={ this.sidebarToggle }>
 					<span className="navbar-toggler-icon"/>
 				</NavbarToggler>

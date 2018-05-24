@@ -6,6 +6,7 @@ const mongoose = require ('mongoose');
 const keys = require ('../config/credentials');
 // special import style in mongoose in case you import multiple models
 // this schema is defined in /models
+require ('../models/Users_Model');
 const User = mongoose.model ('Users_Model');
 
 module.exports = () => {

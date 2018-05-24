@@ -32,7 +32,6 @@ import MrThreeReacts from '../../views/MrThreeReacts';
 
 import BannerLine from 'components/_Composite/BannerLine/';
 import { Myself } from '../../views/About';
-import Test from '../../views/Test/Test';
 //
 // Icons & Style
 import FontAwesome from '../../views/Icons/FontAwesome/';
@@ -221,9 +220,9 @@ class AppContainer extends Component {
 								<Route path="/mrthreereacts" name="Mr Three Reacts"
 								       render={ () => <MrThreeReacts currentUserInfo={ this.props.currentUserInfo }/> }
 								/>
-								<Route path="/test" name="Test"
-								       render={ () => <Test roZ={ this.state.roZ }/> }
-								/>
+                { /*<Route path="/test" name="Test"*/ }
+                { /*render={ () => <Test roZ={ this.state.roZ }/> }*/ }
+                { /*/>*/ }
 								{ /*<Redirect to="/404" />*/ }
 								<Redirect from="/" to="/panel"/>
 							</Switch>
