@@ -46,12 +46,11 @@ export default {
 			url : '/secretlinks',
 			icon : 'fa fa-user-secret',
 		},
-		{
-			name : 'Test',
-			url : '/test',
-			icon : 'icon-social-dropbox',
-		},
-
+    // {
+    // 	name : 'Test',
+    // 	url : '/test',
+    // 	icon : 'icon-social-dropbox',
+    // },
 		{
 			divider : true,
 		},
