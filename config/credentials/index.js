@@ -1,5 +1,5 @@
 const prodKey = require ("./prodKey.js");
-const devKey = require ("./devKey.js");
+const devKey = require ("./devKey.js")||null;
 const ciKey = require ('./ciKey.js');
 
 if (process.env.NODE_ENV === "production") {
