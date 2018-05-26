@@ -25,11 +25,6 @@ require ("../models/SecretLinks_Model");
  */
 mongoose.connect (keys.mongo.mongoUri);
 
-
-/*
- * ---- graphql ----
- */
-
 /*
  * ---- middleware section ---- requests go through middleware before route handlers
  */
