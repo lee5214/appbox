@@ -1,29 +1,21 @@
 # dependencies
 /node_modules
 /client/node_modules
-
 # secrets
 /app.yaml
 /config/credentials/devKey.js
-
 # testing
-
 # production
 /client/build
-
 # backup
 /client/_backup
-
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
 .gitignore
-
 # .idea/workspace.xml
 .idea
 package-lock.json
-
 # css
 *.css
 *.css.map

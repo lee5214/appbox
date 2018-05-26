@@ -18,7 +18,7 @@
     "client": "npm run start --prefix client",
     "dev": "NODE_ENV=development concurrently \"npm run client \" \" npm run server:dev \" ",
     "heroku-postbuild": "npm install --prefix client && npm run build --prefix client",
-    "deploy-google": "npm run client-build && gcloud app deploy --project app-box-prod",
+    "deploy-google": "npm run client-build && gcloud app deploy --project app-box-prod --version v1",
     "test": "jest"
   },
   "dependencies": {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Input, Label, Nav, NavItem, NavLink, Progress, TabContent, TabPane } from 'reactstrap';
+import { Input, Label, Nav, NavItem, NavLink, TabContent, TabPane } from 'reactstrap';
 import classnames from 'classnames';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -9,7 +9,6 @@ import axios from 'axios';
 class Aside extends Component {
 	constructor (props) {
 		super (props);
-
 		this.toggle = this.toggle.bind (this);
 		this.state = {
 			mode : '',
