@@ -9,8 +9,6 @@ const cookieSession = require ("cookie-session");
 const path = require ("path");
 const server = http.Server (app);
 const cors = require ("cors");
-const graphqlHTTP = require ("express-graphql");
-const {buildSchema} = require ("graphql");
 // const socketManager = require ("../services/socketManager");
 const PORT = process.env.PORT || 4000;
 const yes = require ("yes-https");
@@ -34,21 +32,7 @@ mongoose.connect (keys.mongo.mongoUri);
 /*
  * ---- graphql ----
  */
-let schema = buildSchema(`
-	type Query{
-		hello: String
-	}
-`);
 
-const root = {hello : () => "hi world"};
-app.use (
-  "/graphql",
-  graphqlHTTP ({
-    schema : schema,
-    rootValue : root,
-    graphql : true,
-  }),
-);
 
 /*
  * ---- middleware section ---- requests go through middleware before route handlers
