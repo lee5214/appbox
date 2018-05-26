@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,cAAc;EACZ,QAAQ,EAAG,QAAQ;EACnB,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;EACZ,GAAG,EAAG,GAAG;EACT,IAAI,EAAG,GAAG;EACV,SAAS,EAAG,qBAAoB;EAChC,UAAU,EAAE,kDACd",
-"sources": ["MrThreeReacts.scss"],
-"names": [],
-"file": "MrThreeReacts.css"
-}
