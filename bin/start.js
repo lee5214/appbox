@@ -16,9 +16,6 @@ require ("../services/passport") ();
 require ("../models/Users_Model");
 require ("../models/SecretLinks_Model");
 
-server.listen (PORT);
-console.log ("node services is running on port:", PORT);
-
 // socket.io
 // io.on ('connection', socketManager);
 // require ('../services/socketManager') (server);
@@ -66,3 +63,5 @@ if (["production", "ci"].includes (process.env.NODE_ENV)) {
     res.sendFile (path.resolve (__dirname, "../client/build/index.html"));
   });
 }
+server.listen (PORT);
+console.log ("node services is running on port:", PORT);
