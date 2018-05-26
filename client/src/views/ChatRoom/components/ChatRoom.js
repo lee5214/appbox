@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { sendPubChatMsgs } from 'actions';
 import ChatSideBar from './ChatSideBar';
-import { USER_CONNECTED } from '../asserts/socketEvents';
+import { USER_CONNECTED } from '../assets/socketEvents';
 import MessageBlock from "./MessageBlock";
 import MessagesContainer from './MessagesContainer';
 import { Button, Col, Container, Form, Input, InputGroup, InputGroupButton, ListGroupItem, Row, } from 'reactstrap';

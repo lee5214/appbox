@@ -1,6 +1,3 @@
-import Breadcrumb from './_Common/Breadcrumb/Breadcrumb';
-import { InfoList, } from './_Composite';
-
 import {
 	Accordion,
 	AffixWrap,
@@ -102,11 +99,9 @@ import {
 	Well,
 	Wizard,
 } from 'reactstrap';
-
+export {Loader,Divider,Breadcrumb} from './_Common';
+export {BannerLine,InfoList} from './_Composite';
 export {
-	InfoList,
-	// PricingTable, PricingTableClean, PricingTablesDisplay,
-	Breadcrumb,
 	Input,
 	Card, CardImg, CardText, CardBody, CardLink, CardDeck, CardColumns,
 	CardTitle, CardSubtitle, CardHeader, CardFooter, CardImgOverlay, CardGroup,
@@ -168,7 +163,6 @@ export {
 	ColorPicker,
 	DateRangePicker,
 	DatePicker,
-	Divider,
 	Editor,
 	FavoriteStar,
 	Footer,

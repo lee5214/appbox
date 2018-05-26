@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 //wrapper for chartjs
 import { Line } from 'react-chartjs-2';
-import { Badge, Card, CardBody, CardHeader, Col, InfoList, Row } from 'components';
+import { Badge, Card, CardBody, CardHeader, Col, Row } from 'reactstrap';
+import {InfoList} from 'components/'
 import 'weather-icons/css/weather-icons.css';
 import ForecastEmbed from './ForecastEmbed';
 import { fetchUserLocation } from '../../../utils';

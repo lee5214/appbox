@@ -6,7 +6,7 @@ AppBox
 
 
 ### Description
-This is an all-in-one project I created as my SPA & website 
+This is a full-stack project I created as my all-in-one SPA & website for practice and daily use
 
 
 ### Demo
@@ -27,27 +27,50 @@ email: cong-li@cong-li.com
 ```
 
 ### Run on local
+
+All keys are git-ignored and saved as node variables for security reason.
+<br/>
+To make it run, you need to create your own `/config/credentials/devKey.js`
+```
+module.exports = {
+	'cookieKey' : 'anyString',
+	'mongo' : {
+		'mongoUri' : 'mlabUri',
+	},
+	'google' : {
+		'googleClientID' : 'googleID(google plus enable)',
+		'googleClientSecret' : 'secret',
+	},
+	'facebook' : {
+		'facebookAppID' : 'facebookID',
+		'facebookAppSecret' : 'secret',
+	},
+	'OpenWeatherMap_Key' : 'owm api',
+	'NYT_Key' : 'nyt api',
+	'GoogleGlobalAPI_Key' : 'google global key',
+};
+```
+Then
 ```javascript
 npm run dev
 ```
-default frontend react server: localhost:3000
-default backend express server: localhost: 4000
+frontend (react) server: localhost:3000
+<br />
+backend (express) server: localhost: 4000
 
-
-### Build and Run
-Div
-___
-```javascript
->> npm run dev
-```
-___
+### Log
 
 ```diff
++ Three.js
++ svg animation
 + SSL
 + firebase
 + google cloud
 + socket.io
 + redux-thunk
++ styled components
++ css modules
++ scss
 - socket.io
 - materialUI
 ```

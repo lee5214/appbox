@@ -1,14 +1,14 @@
-.breadcrumb_wrapper{
+.breadcrumb_wrapper {
   //position: fixed;
   z-index: 100;
   background: #272727;
   //max-width: 100% !important;
 }
 
-.block{
+.block {
   display: flex;
   height: calc(100% - 100px);
   overflow: scroll;
   padding: 0 30px;
-  width: 90%;
+  //width: 90%;
 }

@@ -1,14 +1,23 @@
 export default {
 	items : [
 		{
-			name : 'Dashboard',
-			url : '/dashboard',
+			title : true,
+			name : 'Entrypoint',
+		},
+		{
+			name : 'Panel',
+			url : '/panel',
 			icon : 'icon-speedometer',
 			badge : {
 				variant : 'info',
-				text : 'NEW',
+				text : 'MAIN',
 			},
 		},
+	/*	{
+			name : 'Dashboard',
+			url : '/dashboard',
+			icon : 'icon-calculator',
+		},*/
 
 		{
 			divider : true,
@@ -37,20 +46,29 @@ export default {
 			url : '/secretlinks',
 			icon : 'fa fa-user-secret',
 		},
-		{
-			name : 'Test',
-			url : '/test',
-			icon : 'icon-social-dropbox',
-		},
-
+    // {
+    // 	name : 'Test',
+    // 	url : '/test',
+    // 	icon : 'icon-social-dropbox',
+    // },
 		{
 			divider : true,
 		},
 		{
 			title : true,
-			name : 'Extras',
+			name : '3D Games',
+
 		},
 		{
+			name : 'Mr Three Reacts',
+			url : '/mrthreereacts',
+			icon : 'icon-social-dropbox',
+		},
+		{
+			title : true,
+			name : 'Extras',
+		},
+		/*{
 			name : 'Pages',
 			url : '/pages',
 			icon : 'icon-star',
@@ -76,30 +94,30 @@ export default {
 					icon : 'icon-star',
 				},
 			],
-		},
+		},*/
 		{
 			name : 'About',
 			url : '/about',
 			icon : 'icon-social-dropbox',
 			children : [
-				{
-					name : 'Myself',
-					url : '/about/myself',
-					icon : 'icon-star',
-				},
-				{
-					name : 'Resume',
-					url : '/about/resume',
-					icon : 'icon-star',
-				},
+				// {
+				// 	name : 'Myself',
+				// 	url : '/about/myself',
+				// 	icon : 'icon-star',
+				// },
+				// {
+				// 	name : 'Resume',
+				// 	url : '/about/resume',
+				// 	icon : 'icon-star',
+				// },
 				{
 					name : 'Blog',
-					url : '/about/blog',
+					url : 'https://blog.cong-li.com',
 					icon : 'icon-star',
 				},
 			],
 		},
-		{
+		/*{
 			title : true,
 			name : 'UI elements',
 			wrapper : { // optional wrapper object
@@ -191,13 +209,13 @@ export default {
 			name : 'Charts',
 			url : '/charts',
 			icon : 'icon-pie-chart',
-		},
+		},*/
 		{
-			name : 'My Website',
+			name : 'legacy v1',
 			url : 'http://lee5214.com',
 			icon : 'icon-layers',
 			class : 'mt-auto',
-			variant : 'success',
+			//variant : 'success',
 		},
 
 	],
