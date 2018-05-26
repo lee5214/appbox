@@ -5,8 +5,9 @@
 if (process.env.NODE_ENV === "production") {
   module.exports = require ("./prodKey.js");
 }
-if (process.env.NODE_ENV === "ci") {
+else if (process.env.NODE_ENV === "ci") {
   module.exports = require ('./ciKey.js');
 }
-
-module.exports = require ("./devKey.js");
+else {
+  module.exports = require ("./devKey.js");
+}
