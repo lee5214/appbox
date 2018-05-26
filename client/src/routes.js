@@ -26,6 +26,6 @@ const routes = {
 	'/about' : 'About',
 	'/about/myself' : 'Myself',
 	'/mrthreereacts' : 'MrThreeReacts',
-	'/test' : 'Test',
+  //'/test' : 'Test',
 };
 export default routes;
