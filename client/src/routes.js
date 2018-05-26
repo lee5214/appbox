@@ -1,6 +1,7 @@
 //for breadcrumb shows names
 const routes = {
 	'/' : 'Home',
+	'/panel' : 'Panel',
 	'/dashboard' : 'Dashboard',
 	'/components' : 'Components',
 	'/charts' : 'Charts',
@@ -24,6 +25,7 @@ const routes = {
 	'/secretlinks' : 'Secret Links',
 	'/about' : 'About',
 	'/about/myself' : 'Myself',
-	'/test' : 'Test',
+	'/mrthreereacts' : 'MrThreeReacts',
+  //'/test' : 'Test',
 };
 export default routes;

@@ -1,0 +1,20 @@
+.progressbar{
+  border : 1px solid rgba(52, 64, 69, .5);
+  height: 6px;
+
+  span{
+    display: block;
+    border-right: 2px solid rgba(224, 58, 67, 1);
+    background: rgba(39, 144, 128, 0);
+    height: 100%;
+    animation: go ease-in-out 2s infinite;
+  }
+}
+@keyframes go {
+  0%{
+    transform: translatex(-100%);
+  }
+  100% {
+    transform: translatex(0%);
+  }
+}

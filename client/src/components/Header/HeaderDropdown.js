@@ -18,7 +18,6 @@ class HeaderDropdown extends Component {
 			dropdownOpen : !this.state.dropdownOpen,
 		});
 	}
-
 	dropAccnt () {
 		const {avatar, displayName} = this.props.currentUserInfo.local;
 		return (
@@ -29,7 +28,7 @@ class HeaderDropdown extends Component {
 				</DropdownToggle>
 				<DropdownMenu right>
 					<DropdownItem header tag="div" className="text-center"><strong>Account</strong></DropdownItem>
-					<DropdownItem><i className="fa fa-user"/> {displayName}</DropdownItem>
+					<DropdownItem><i className="fa fa-user"/> {displayName.slice(0,5)==='Guest'?'Guest':displayName}</DropdownItem>
 					<DropdownItem disabled><i className="fa fa-bell-o"/> Updates<Badge color="info"></Badge></DropdownItem>
 					<DropdownItem disabled><i className="fa fa-envelope-o"/> Mail <Badge
 						color="success">0</Badge></DropdownItem>

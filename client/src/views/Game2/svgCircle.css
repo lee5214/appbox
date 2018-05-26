@@ -1,0 +1,89 @@
+.svgMainSpinner {
+  z-index: 1;
+  display: block;
+  margin: auto;
+  width: 100%;
+  max-width: 80%;
+  max-height: 100%; }
+
+.backgroundContainer {
+  background: white;
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  max-width: 80%;
+  max-height: 100%; }
+
+.st0, .st1, .st2, .st3, .st4, .st5, .st6, .st7, .st8 {
+  fill: none;
+  stroke: #2c97de;
+  stroke-width: 42;
+  stroke-miterlimit: 10; }
+
+.angNum {
+  stroke: none;
+  fill: red; }
+
+.st0 {
+  stroke-width: 1;
+  stroke-linecap: square;
+  transform-origin: 50% 50%; }
+
+@keyframes spin1 {
+  0%, 100% {
+    transform: rotateX(0deg); }
+  50% {
+    transform: rotateX(360deg); } }
+.st1 {
+  stroke-width: 60;
+  stroke-dasharray: 1, 6; }
+
+/*.st2 {
+  stroke-linecap: square;
+  stroke-dasharray: 120, 20, 110, 20, 140;
+}*/
+.st3 {
+  stroke-width: 2;
+  stroke-dasharray: 2, 10; }
+
+.st2 {
+  stroke-width: 1;
+  stroke: #5c5c5c;
+  stroke-linecap: square;
+  stroke-dasharray: 1; }
+
+.p0 {
+  fill: none;
+  stroke: #5c5c5c;
+  stroke-width: 1; }
+
+.p1 {
+  fill: rgba(0, 0, 0, 0.3);
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-linejoin: round; }
+
+.graphInsideArrow {
+  transform-origin: 500px 500px; }
+
+.g1 {
+  position: absolute;
+  stroke: #5c5c5c;
+  width: 80px;
+  height: 80px; }
+
+.g2 {
+  position: absolute;
+  stroke: #5c5c5c;
+  width: 80px;
+  height: 80px; }
+
+.dot_d1 {
+  stroke: white;
+  stroke-width: 2;
+  stroke-dasharray: 10; }
+
+/*# sourceMappingURL=svgCircle.css.map */

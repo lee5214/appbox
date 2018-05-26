@@ -5,20 +5,21 @@
   "main": "",
   "author": "Cong Li",
   "license": "ISC",
+  "repository": "github:lee5214/appbox",
   "engines": {
     "node": "8.9.4",
     "npm": "5.6.0"
   },
   "scripts": {
     "start": "NODE_ENV=production npm run server:prod",
-    "client-build": "npm run build --prefix client",
+    "client-build": "npm install --prefix client && npm run build --prefix client",
     "server:prod": "node bin/start.js",
     "server:dev": "nodemon bin/start.js",
     "client": "npm run start --prefix client",
     "dev": "NODE_ENV=development concurrently \"npm run client \" \" npm run server:dev \" ",
     "heroku-postbuild": "npm install --prefix client && npm run build --prefix client",
-    "deploy-google": "npm run client-build && gcloud app deploy",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy-google": "npm run client-build && gcloud app deploy --project app-box-prod --version v1",
+    "test": "jest"
   },
   "dependencies": {
     "axios": "^0.17.1",
@@ -27,18 +28,14 @@
     "connect-route": "^0.1.5",
     "cookie-session": "^1.3.1",
     "cors": "^2.8.4",
-    "eslint": "4.10.0",
-    "eslint-config-react-app": "^2.1.0",
-    "eslint-loader": "^1.9.0",
-    "eslint-plugin-babel": "^4.1.2",
-    "eslint-plugin-flowtype": "^2.42.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-jsx-a11y": "^5.1.1",
-    "eslint-plugin-react": "7.4.0",
     "express": "^4.15.4",
+    "express-graphql": "^0.6.12",
     "extract-text-webpack-plugin": "^3.0.2",
+    "font-awesome": "^4.7.0",
+    "graphql": "^0.13.1",
     "install": "^0.10.4",
     "is-url": "^1.2.2",
+    "jest": "^22.4.3",
     "localtunnel": "^1.8.3",
     "lodash": "^4.17.4",
     "mongoose": "^4.13.10",
@@ -57,5 +54,19 @@
     "url-regex": "^4.1.1",
     "yes-https": "0.0.4"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "eslint": "4.10.0",
+    "eslint-config-react-app": "^2.1.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-flowtype": "^2.42.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "7.4.0"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "<rootDir>/client/"
+    ]
+  }
 }

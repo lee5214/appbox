@@ -6,6 +6,7 @@ import ChatSideBar from './ChatSideBar';
 import MessagesContainer from './MessagesContainer';
 import { bindActionCreators } from 'redux';
 import { Button, Col, Container, Form, Input, InputGroup, InputGroupAddon, InputGroupButton, Row } from 'reactstrap';
+import { Loader } from 'components';
 import fire from 'utils/fire';
 
 const rootDB = fire.database ().ref ().child ('chatroom/');
@@ -33,7 +34,7 @@ class ChatRoom extends Component {
 			this.setState ({users : users});
 		});
 
-		rootDB.child ('messages').limitToLast(100).on ('child_added', (snapshot) => {
+		rootDB.child ('messages').limitToLast (100).on ('child_added', (snapshot) => {
 			const messagesSnapshot = snapshot.val ();
 			if (messagesSnapshot) {
 				this.setState ({
@@ -80,10 +81,11 @@ class ChatRoom extends Component {
 	};
 
 	componentWillUnmount = () => {
-		rootDB.child (`users/${this.props.currentUserInfo._id}`).remove ();
+		rootDB.child (`users/${this.props.currentUserInfo._id}`).remove ()
+		      .then (rootDB.child ('users').off ())
+		      .then (rootDB.child ('messages').off ())
 		// offline the messages DB
 		// so that next time chatroom re-mounted, messages could be added correctly
-		rootDB.child ('messages').off();
 	};
 
 	onInputChange = (input) => {
@@ -114,14 +116,15 @@ class ChatRoom extends Component {
 			<Container className="animated fadeIn align-self-center">
 				<Row>
 					<Col xs={ 3 }>
-						{ this.state.users ? <ChatSideBar un={ this.state.users } users={ this.state.users }/> :
-							<div>loading</div> }
+						{ this.state.users ? <ChatSideBar un={ this.state.users } users={ this.state.users }/>
+							: <Loader/>
+						}
 					</Col>
 
 					<Col xs={ 9 }>
-						{ this.state.messagesList ?
+						{ this.state.messagesList[ 0 ] ?
 							<MessagesContainer messagesList={ this.state.messagesList }/>
-							: <div>Loading</div>
+							: <Loader/>
 						}
 						<Row>
 							<Col>
@@ -163,3 +166,5 @@ function mapDispatchToProps (dispatch) {
 }
 
 export default connect (mapStateToProps, mapDispatchToProps) (ChatRoom);
+
+// TODO avatar blink behave in safari?

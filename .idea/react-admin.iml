@@ -11,5 +11,8 @@
     <orderEntry type="library" name="@types/gsap" level="application" />
     <orderEntry type="library" name="@types/react" level="application" />
     <orderEntry type="library" name="@types/eslint" level="application" />
+    <orderEntry type="library" name="@types/mocha" level="application" />
+    <orderEntry type="library" name="@types/node" level="application" />
+    <orderEntry type="library" name="@types/express" level="application" />
   </component>
 </module>

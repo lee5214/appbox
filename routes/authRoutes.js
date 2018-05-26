@@ -14,7 +14,6 @@ module.exports = (app) => {
 	});
 	app.get ('/api/all_registered_users', (req, res) => {
 		Users_Model.find ({}, (err, users) => {
-			console.log ('aa');
 			res.send (users);
 		});
 	});

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Input, Label, Nav, NavItem, NavLink, Progress, TabContent, TabPane } from 'reactstrap';
+import { Input, Label, Nav, NavItem, NavLink, TabContent, TabPane } from 'reactstrap';
 import classnames from 'classnames';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -9,7 +9,6 @@ import axios from 'axios';
 class Aside extends Component {
 	constructor (props) {
 		super (props);
-
 		this.toggle = this.toggle.bind (this);
 		this.state = {
 			mode : '',
@@ -68,7 +67,6 @@ class Aside extends Component {
 		let {mode, mouseTrack} = this.props;
 		return (
 			<aside className="aside-menu">
-				<div className={'overlayLED'} />
 				<Nav tabs>
 					<NavItem>
 						<NavLink className={ classnames ({active : this.state.activeTab === '1'}) }
@@ -82,12 +80,12 @@ class Aside extends Component {
 							<i className="icon-speech"/>
 						</NavLink>
 					</NavItem>
-					<NavItem>
-						<NavLink className={ classnames ({active : this.state.activeTab === '3'}) }
-						         onClick={ () => { this.toggle ('3'); } }>
-							<i className="icon-settings"/>
-						</NavLink>
-					</NavItem>
+					{/*<NavItem>*/}
+						{/*<NavLink className={ classnames ({active : this.state.activeTab === '3'}) }*/}
+						         {/*onClick={ () => { this.toggle ('3'); } }>*/}
+							{/*<i className="icon-settings"/>*/}
+						{/*</NavLink>*/}
+					{/*</NavItem>*/}
 				</Nav>
 				<TabContent className={ 'd-flex' } activeTab={ this.state.activeTab }>
 					<TabPane tabId="1" className={ `p-3 ${mode === '3D' ? 'align-self-center' : null}` }>
@@ -166,7 +164,7 @@ class Aside extends Component {
 						<hr/>
 						<h6 className={ 'translatex-40 text-right' }>SERVER UTILIZATION</h6>
 
-						<div className="text-uppercase mb-1 mt-4">
+						{/*<div className="text-uppercase mb-1 mt-4">
 							<small><b>CPU Usage</b></small>
 						</div>
 						<Progress className="progress-xs" color="info" value="25"/>
@@ -176,7 +174,7 @@ class Aside extends Component {
 							<small><b>Memory Usage</b></small>
 						</div>
 						<Progress className="progress-xs" color="warning" value="70"/>
-						<small className="text-muted">11444GB/16384MB</small>
+						<small className="text-muted">11444GB/16384GB</small>
 
 						<div className="text-uppercase mb-1 mt-2">
 							<small><b>SSD 1 Usage</b></small>
@@ -189,7 +187,7 @@ class Aside extends Component {
 						</div>
 						<Progress className="progress-xs" color="success" value="10"/>
 						<small className="text-muted">25GB/256GB</small>
-
+*/}
 						<div className="text-uppercase mb-1 mt-2">
 							<a href={ '/api/current_user' } target={ '_blank' }>client info</a>
 						</div>
@@ -212,12 +210,17 @@ class Aside extends Component {
 								<small>Find</small>
 								&nbsp;<strong>Cong</strong>?
 							</div>
-							<small className="text-muted mr-3 text-bold"><i className="fa fa-google mr-2"/>
+							<small className="text-muted mr-3 text-bold"><i className="fa fa-code mr-2 text-white"/>
+								<a href={ 'https://blog.cong-li.com' }
+								   target={ '_blank' }>blog</a>
+							</small>
+							<br/>
+							<small className="text-muted mr-3 text-bold"><i className="fa fa-google mr-2 text-white"/>
 								<a href={ 'https://groups.google.com/a/cong-li.com/forum/#!forum/discuss' }
 								   target={ '_blank' }>google group</a>
 							</small>
 							<br/>
-							<small className="text-muted mr-3 bold"><i className="fa fa-envelope mr-2"/>
+							<small className="text-muted mr-3 bold"><i className="fa fa-envelope mr-2 text-white"/>
 								<a href={ 'mailto:cong-li@cong-li.com' }>cong-li@cong-li.com</a>
 							</small>
 
@@ -301,7 +304,7 @@ class Aside extends Component {
 						<hr className="mx-3 my-0"/>*/}
 					</TabPane>
 
-					<TabPane tabId="3" className={ `p-3 ${mode === '3D' ? 'align-self-center' : null}` }>
+					{/*<TabPane tabId="3" className={ `p-3 ${mode === '3D' ? 'align-self-center' : null}` }>
 						<div className="message">
 							<div className="py-3 pb-5 mr-3 float-left">
 								<div className="avatar">
@@ -396,7 +399,7 @@ class Aside extends Component {
 								tempor incididunt...
 							</small>
 						</div>
-					</TabPane>
+					</TabPane>*/}
 				</TabContent>
 			</aside>
 		);
