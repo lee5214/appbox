@@ -2218,8 +2218,7 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>body-color</find>
-      <find />
+      <find>my web</find>
       <find>active</find>
       <find>theme</find>
       <find>tab-content</find>
@@ -2248,6 +2247,7 @@
       <find>config</find>
       <find>camera</find>
       <find>cameraFixed</find>
+      <find>redux-devtools-extension</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
