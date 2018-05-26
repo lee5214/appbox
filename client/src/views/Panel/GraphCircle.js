@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import style from './svgCircle.scss';
-import TweenMax from 'gsap';
 
 class GraphCircle extends Component {
 	constructor (props) {
@@ -13,12 +12,6 @@ class GraphCircle extends Component {
 			roZ : 200,
 		};
 	}
-
-	componentDidMount = () => {
-		TweenMax.to ('.svgCircle__st2', 0.5, {
-			boxShadow : "0px 0px 10px 10px rgb(0, 204, 0)",
-		});
-	};
 
 	render () {
 		let svgAnimation = {
