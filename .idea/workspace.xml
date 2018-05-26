@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="742d2f67-9123-492e-9892-2d49e2746a61" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/img/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/img/favicon-logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Aside/Aside.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Aside/Aside.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -2141,9 +2135,6 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="196">
                   <caret line="88" column="14" lean-forward="true" selection-start-line="88" selection-start-column="14" selection-end-line="88" selection-end-column="14" />
-                  <folding>
-                    <element signature="e#0#41#0" expanded="true" />
-                  </folding>
                 </state>
               </provider>
             </entry>
@@ -2199,8 +2190,17 @@
           <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/package.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="728">
-                  <caret line="22" column="4" lean-forward="true" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+                <state relative-caret-position="263">
+                  <caret line="10" column="18" lean-forward="true" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/client/package.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="3014">
+                  <caret line="89" column="29" selection-start-line="89" selection-start-column="5" selection-end-line="89" selection-end-column="29" />
                 </state>
               </provider>
             </entry>
@@ -2219,7 +2219,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>body-color</find>
-      <find>my web</find>
+      <find />
       <find>active</find>
       <find>theme</find>
       <find>tab-content</find>
@@ -2654,14 +2654,7 @@
       <workItem from="1524713208617" duration="1205000" />
       <workItem from="1527046607954" duration="168000" />
       <workItem from="1527098954458" duration="15604000" />
-      <workItem from="1527292261749" duration="2117000" />
-    </task>
-    <task id="LOCAL-00147" summary="a rework for chat app v2 --database remove user when component unmound and disconnected">
-      <created>1518490647750</created>
-      <option name="number" value="00147" />
-      <option name="presentableId" value="LOCAL-00147" />
-      <option name="project" value="LOCAL" />
-      <updated>1518490647750</updated>
+      <workItem from="1527292261749" duration="2410000" />
     </task>
     <task id="LOCAL-00148" summary="production configs">
       <created>1518505749820</created>
@@ -2999,11 +2992,18 @@
       <option name="project" value="LOCAL" />
       <updated>1527141729920</updated>
     </task>
-    <option name="localTasksCounter" value="196" />
+    <task id="LOCAL-00196" summary="small update to remove useless navs and files, add favicon">
+      <created>1527294648490</created>
+      <option name="number" value="00196" />
+      <option name="presentableId" value="LOCAL-00196" />
+      <option name="project" value="LOCAL" />
+      <updated>1527294648490</updated>
+    </task>
+    <option name="localTasksCounter" value="197" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2055609000" />
+    <option name="totallyTimeSpent" value="2055902000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -3016,8 +3016,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1080" y="-165" width="1080" height="1920" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" x="-1080" y="-480" width="256" height="1440" id="Project" order="0" sideWeight="0.69135803" weight="0.2283237" />
+      <window_info active="true" content_ui="combo" x="-1080" y="-480" width="256" height="1440" id="Project" order="0" sideWeight="0.69135803" visible="true" weight="0.2283237" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32777777" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.51935786" side_tool="true" weight="0.1720548" />
@@ -3026,7 +3027,7 @@
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.23593664" />
       <window_info id="Structure" order="1" sideWeight="0.4908286" side_tool="true" weight="0.24855492" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4806421" visible="true" weight="0.3487349" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4806421" visible="true" weight="0.3487349" />
       <window_info id="Favorites" order="3" sideWeight="0.30864197" side_tool="true" weight="0.25433525" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.24740578" />
       <window_info anchor="bottom" id="TypeScript" order="9" show_stripe_button="false" weight="0.32995495" />
@@ -3231,9 +3232,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2788">
           <caret line="88" column="14" lean-forward="true" selection-start-line="88" selection-start-column="14" selection-end-line="88" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3360,6 +3358,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
           <caret line="34" column="42" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
+          <folding>
+            <element signature="e#64#103#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3374,13 +3375,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
           <caret line="215" selection-start-line="215" selection-end-line="215" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="649">
-          <caret line="42" column="26" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -3414,8 +3408,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/credentials/devKey.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="16" column="2" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
+        <state relative-caret-position="442">
+          <caret line="13" column="49" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -3438,8 +3432,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+        <state relative-caret-position="646">
+          <caret line="19" selection-start-line="19" selection-end-line="20" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -3447,9 +3441,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
           <caret line="88" column="14" lean-forward="true" selection-start-line="88" selection-start-column="14" selection-end-line="88" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3467,10 +3458,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-791">
+          <folding>
+            <element signature="e#0#1209#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3014">
+          <caret line="89" column="29" selection-start-line="89" selection-start-column="5" selection-end-line="89" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="31" column="18" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="18" />
+        <state relative-caret-position="263">
+          <caret line="10" column="18" lean-forward="true" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
         </state>
       </provider>
     </entry>
