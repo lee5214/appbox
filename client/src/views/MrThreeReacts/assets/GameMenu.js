@@ -43,7 +43,7 @@ class GameMenu extends Component {
 							Top 5
 						</ListGroupItemHeading>
 						{ this.props.topScores.map (item =>
-							<ListGroupItem key={ item.score }>{ item.score } - { item.displayName }</ListGroupItem>,
+							<ListGroupItem key={ `${item.displayName}-${item.score}` }>{ item.score } - { item.displayName }</ListGroupItem>,
 						)}
 					</ListGroup>
 					: <Loader/>

@@ -8,15 +8,25 @@ export default class Panel extends Component {
 		return (
 			<div className={ 'animated fadeIn container d-flex' }>
 				<div className={ styles.slogan }>
-
-					{/*<h2>Caffeine ? Code : Bug</h2>*/}
-					<pre style={{color:'red'}}>
+					{/*<pre style={{color:'white'}}>
 						{'while(alive){ \n'}
 						{'  eat(); \n'}
+						<pre style={{color:'gray'}}>
 						{'  // sleep(); \n'}
 						{'  // code(); \n'}
+						</pre>
 						{'  this.state.caffeine? code(): sleep(); \n'}
-					</pre>
+					</pre>*/}
+          <span style={{color:'white'}}>
+					 {'while(alive){ \n'}<br/>
+					 {'  eat(); \n'}
+					 <span style={{color:'gray'}}>
+					 {'  // sleep(); \n'}
+					 {'  // code(); \n'}
+					 </span>
+					 {'  this.state.caffeine? code(): sleep(); \n'}
+					 </span>
+
 				</div>
 				<GraphCircle roZ={ this.props.roZ }/>
 				<Graph3D/>

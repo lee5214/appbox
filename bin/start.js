@@ -43,6 +43,7 @@ app.use (passport.session ());
 /*
  * ---- route section ----
  */
+
 require ("../routes/authRoutes") (app);
 require ("../routes/secretLinkRoutes") (app);
 require ("../routes/cityRoutes") (app);

@@ -304,6 +304,7 @@ class MrThree extends Component {
 		this.prevTime = currentTime;
 
 		if (this.state.gameStatus === 'playing') {
+      this.setState ({gameSaved : false})
 			if (Math.floor (this.Param.distance) % this.Param.distanceForEnnemiesSpawn === 0 && Math.floor (this.Param.distance) > this.Param.enemyLastSpawn) {
 				this.Param.enemyLastSpawn = Math.floor (this.Param.distance);
 				this.enemiesHolder.spawnEnemies (this.Param.level, this.enemiesPool);
@@ -337,7 +338,7 @@ class MrThree extends Component {
 				};
 				rootDB.child ('scores/').push (newScore);
 			}
-			/*this.setState ({gameSaved : true, gameStatus : 'waiting'});*/
+			this.setState ({gameSaved : true, gameStatus : 'waiting'});
 
 			/*this.sendGameMessage ('You Lost!', 2000);*/
 		} else if (this.state.gameStatus === 'waiting') {
