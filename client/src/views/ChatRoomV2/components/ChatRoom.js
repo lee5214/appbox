@@ -27,7 +27,6 @@ class ChatRoom extends Component {
 	// children before it is called on the parent
 	// so at this time the redux state has not been received as props
 	componentDidMount () {
-		console.log ('didmount');
 		rootDB.child ('users').on ('value', (snapshot) => {
 			const users = snapshot.val ();
 			console.log ('user ref =>', users);
@@ -116,7 +115,7 @@ class ChatRoom extends Component {
 			<Container className="animated fadeIn align-self-center">
 				<Row>
 					<Col xs={ 3 }>
-						{ this.state.users ? <ChatSideBar un={ this.state.users } users={ this.state.users }/>
+						{ this.state.users ? <ChatSideBar users={ this.state.users }/>
 							: <Loader/>
 						}
 					</Col>
