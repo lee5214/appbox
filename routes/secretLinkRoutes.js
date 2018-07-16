@@ -42,12 +42,6 @@ module.exports = (app) => {
 			res.send (docs);
 		});
 	});
-	// const middleware = ConnectRoute((router) => {
-	// 	router.get('/:token', req => {
-	// 		console.log(req)
-	// 	})
-	// })
-	// app.use(middleware)
 	app.get ('/l/:token', (req, res) => {
 		SecretLinks_Model.findOneAndUpdate ({token : req.params.token}, {$inc : {clickCounter : 1}}, (err, doc) => {
 			if (err) {
