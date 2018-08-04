@@ -10,7 +10,7 @@ module.exports = (app) => {
 	 */
 	app.get ('/api/current_user', (req, res) => {
 		// for cookie-session test: res.send(req.session)
-		res.send (req.user);
+		res.send (req.user||null);
 	});
 	app.get ('/api/all_registered_users', (req, res) => {
 		Users_Model.find ({}, (err, users) => {

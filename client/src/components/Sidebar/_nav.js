@@ -1,123 +1,92 @@
 export default {
-	items : [
-		{
-			title : true,
-			name : 'Entrypoint',
-		},
-		{
-			name : 'Panel',
-			url : '/panel',
-			icon : 'icon-speedometer',
-			badge : {
-				variant : 'info',
-				text : 'MAIN',
-			},
-		},
-	/*	{
+  items: [
+    {
+      title: true,
+      name: "Entrypoint"
+    },
+    {
+      name: "Panel",
+      url: "/panel",
+      icon: "icon-speedometer",
+      badge: {
+        variant: "info",
+        text: "MAIN"
+      }
+    },
+    /*	{
 			name : 'Dashboard',
 			url : '/dashboard',
 			icon : 'icon-calculator',
 		},*/
 
-		{
-			divider : true,
-		},
-		{
-			title : true,
-			name : 'Personal Apps',
-		},
-		{
-			name : 'City Info',
-			url : '/cityinfo',
-			icon : 'fa fa-street-view',
-		},
-		{
-			name : 'Chat Room',
-			url : '/chatroom',
-			icon : 'fa fa-comments',
-		},
-		{
-			name : 'Chat Room V2',
-			url : '/chatroom-v2',
-			icon : 'fa fa-comments',
-		},
-		{
-			name : 'Secret Links',
-			url : '/secretlinks',
-			icon : 'fa fa-user-secret',
-		},
+    {
+      divider: true
+    },
+    {
+      title: true,
+      name: "Mini Apps"
+    },
+    {
+      name: "City Info",
+      url: "/cityinfo",
+      icon: "fa fa-street-view"
+    },
+    {
+      name: "Chat Room",
+      url: "/chatroom",
+      icon: "fa fa-comments"
+    },
+    {
+      name: "Chat Room V2",
+      url: "/chatroom-v2",
+      icon: "fa fa-comments"
+    },
+    {
+      name: "Secret Links",
+      url: "/secretlinks",
+      icon: "fa fa-user-secret"
+    },
     // {
     // 	name : 'Test',
     // 	url : '/test',
     // 	icon : 'icon-social-dropbox',
     // },
-		{
-			divider : true,
-		},
-		{
-			title : true,
-			name : '3D Games',
+    {
+      divider: true
+    },
+    {
+      title: true,
+      name: "3D Games"
+    },
+    {
+      name: "Mr Three Reacts",
+      url: "/mrthreereacts",
+      icon: "icon-social-dropbox"
+    },
+    {
+      title: true,
+      name: "Mobile Apps"
+    },
+    {
+      name: "AdoPetion",
+      url: "https://itunes.apple.com/us/app/adopetion/id1404161758",
+      icon: "fa fa-apple"
+    },
+    {
+      title: true,
+      name: "About"
+    },
 
-		},
-		{
-			name : 'Mr Three Reacts',
-			url : '/mrthreereacts',
-			icon : 'icon-social-dropbox',
-		},
-		{
-			title : true,
-			name : 'Extras',
-		},
-		/*{
-			name : 'Pages',
-			url : '/pages',
-			icon : 'icon-star',
-			children : [
-				{
-					name : 'Login',
-					url : '/login',
-					icon : 'icon-star',
-				},
-				{
-					name : 'Register',
-					url : '/register',
-					icon : 'icon-star',
-				},
-				{
-					name : 'Error 404',
-					url : '/404',
-					icon : 'icon-star',
-				},
-				{
-					name : 'Error 500',
-					url : '/500',
-					icon : 'icon-star',
-				},
-			],
-		},*/
-		{
-			name : 'About',
-			url : '/about',
-			icon : 'icon-social-dropbox',
-			children : [
-				// {
-				// 	name : 'Myself',
-				// 	url : '/about/myself',
-				// 	icon : 'icon-star',
-				// },
-				// {
-				// 	name : 'Resume',
-				// 	url : '/about/resume',
-				// 	icon : 'icon-star',
-				// },
-				{
-					name : 'Blog',
-					url : 'https://blog.cong-li.com',
-					icon : 'icon-star',
-				},
-			],
-		},
-		/*{
+    {
+      name: "Blog",
+      url: "https://blog.cong-li.com",
+      icon: "icon-star"
+    },
+    {
+      title: true,
+      name: "Extras"
+    },
+    /*{
 			title : true,
 			name : 'UI elements',
 			wrapper : { // optional wrapper object
@@ -210,13 +179,12 @@ export default {
 			url : '/charts',
 			icon : 'icon-pie-chart',
 		},*/
-		{
-			name : 'legacy v1',
-			url : 'http://lee5214.com',
-			icon : 'icon-layers',
-			class : 'mt-auto',
-			//variant : 'success',
-		},
-
-	],
+    {
+      name: "legacy v1",
+      url: "http://lee5214.com",
+      icon: "icon-layers",
+      class: "mt-auto"
+      //variant : 'success',
+    }
+  ]
 };

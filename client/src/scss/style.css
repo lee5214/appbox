@@ -10038,7 +10038,7 @@ hr.transparent {
     border-right-color: #525252; }
 
 .mode-3D-on.body {
-  perspective: 1200px; }
+  perspective: 1000px; }
   .mode-3D-on.body .mode-3D.app {
     transform-style: preserve-3d;
     background: transparent;
