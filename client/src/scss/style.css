@@ -9685,7 +9685,7 @@ app-root {
   right: 0;
   height: calc(100vh - 50px); }
   .aside-menu-fixed .aside-menu .tab-content {
-    height: calc(100vh - 2.5rem - 50px); }
+    height: calc(100vh - 2.5rem - 50px - 200px); }
 .aside-menu-fixed .main, .aside-menu-fixed .app-footer {
   margin-right: 250px; }
 .aside-menu-fixed.aside-menu-hidden .main, .aside-menu-fixed.aside-menu-hidden .app-footer {
@@ -10275,5 +10275,3 @@ code, kbd, pre, samp {
 canvas {
   width: 100% !important;
   height: 100% !important; }
-
-/*# sourceMappingURL=style.css.map */
