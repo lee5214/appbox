@@ -151,9 +151,9 @@ module.exports = () => {
         const existingUser = await User.findOne({ "facebook.id": profile.id });
         if (existingUser) {
           existingUser.local.avatar = profile.photos[0].value || "";
-          await existingUser.save(function (err) {
-	          console.log(err)
-          })
+          await existingUser.save(function(err) {
+            console.log(err);
+          });
           done(null, existingUser);
         } else {
           const user = await new User({
