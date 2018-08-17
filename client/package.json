@@ -155,6 +155,5 @@
     "eslintConfig": {
       "extends": "react-app"
     }
-  },
-  "repository": {}
+  }
 }
