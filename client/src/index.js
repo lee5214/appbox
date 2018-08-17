@@ -6,7 +6,7 @@ import {
   HashRouter,
   Route,
   Switch,
-  browserHistory,
+  browserHistory
 } from "react-router-dom";
 import { Provider } from "react-redux";
 import ReduxThunk from "redux-thunk";
@@ -33,28 +33,28 @@ import Page500 from "./views/Pages/Page500/";
 
 import "./init.js";
 
-const store = createStore (
+const store = createStore(
   reducers,
-  composeWithDevTools (applyMiddleware (ReduxThunk)),
+  composeWithDevTools(applyMiddleware(ReduxThunk))
 );
 
-ReactDOM.render (
-  <Provider store={ store }>
-    { /*<HashRouter> is for static website, <BrowserRouter> is more for dynamic*/ }
+ReactDOM.render(
+  <Provider store={store}>
+    {/*<HashRouter> is for static website, <BrowserRouter> is more for dynamic*/}
     <BrowserRouter>
       <Switch>
-        <Route exact path="/login" name="Login Page" component={ Login }/>
+        <Route exact path="/login" name="Login Page" component={Login} />
         <Route
           exact
           path="/register"
           name="Register Page"
-          component={ Register }
+          component={Register}
         />
-        <Route exact path="/404" name="Page 404" component={ Page404 }/>
-        <Route exact path="/500" name="Page 500" component={ Page500 }/>
-        <Route path="/" name="Home" component={ AppContainer }/>
+        <Route exact path="/404" name="Page 404" component={Page404} />
+        <Route exact path="/500" name="Page 500" component={Page500} />
+        <Route path="/" name="Home" component={AppContainer} />
       </Switch>
     </BrowserRouter>
   </Provider>,
-  document.getElementById ("root"),
+  document.getElementById("root")
 );

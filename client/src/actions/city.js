@@ -1,17 +1,18 @@
-import axios from 'axios';
+import axios from "axios";
 
 // a workaround for production, heroku only alows https, but onpenweathermap provides http, so add
 // 'https://cors-anywhere.herokuapp.com/'
 let WEATHER_URL;
-if (process.env.NODE_ENV === 'production') {
-	WEATHER_URL = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5';
+if (process.env.NODE_ENV === "production") {
+  WEATHER_URL =
+    "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5";
 } else {
-	WEATHER_URL = 'http://api.openweathermap.org/data/2.5';
+  WEATHER_URL = "http://api.openweathermap.org/data/2.5";
 }
-const NYT_NEWS_URL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json';
+const NYT_NEWS_URL = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
 // export const FETCH_CITY_WEATHER = 'FETCH_CITY_WEATHER';
 // export const FETCH_CITY_NEWS = 'FETCH_CITY_NEWS';
-export const FETCH_CITY = 'FETCH_CITY';
+export const FETCH_CITY = "FETCH_CITY";
 
 // using redux-promise
 
@@ -115,24 +116,25 @@ export const FETCH_CITY = 'FETCH_CITY';
 // 	};
 // };
 
-export const fetchCity = (cityName, unit = 'Imperial') => {
-	return async function (dispatch) {
-		const {cityWeather, cityNews} = await axios.post ('/api/city/getCityInfo', {cityName, unit})
-		                                           .then (res => {
-			                                           console.log ('res.data', res.data);
-			                                           return res.data;
-		                                           })
-		                                           .catch (err => {
-			                                           console.log ('action fetchCity err', err);
-		                                           });
-		dispatch ({
-			type : FETCH_CITY,
-			payload : {
-				cityName,
-				cityWeather,
-				cityNews,
-			},
-		});
-	};
+export const fetchCity = (cityName, unit = "Imperial") => {
+  return async function(dispatch) {
+    const { cityWeather, cityNews } = await axios
+      .post("/api/city/getCityInfo", { cityName, unit })
+      .then(res => {
+        console.log("res.data", res.data);
+        return res.data;
+      })
+      .catch(err => {
+        console.log("action fetchCity err", err);
+      });
+    dispatch({
+      type: FETCH_CITY,
+      payload: {
+        cityName,
+        cityWeather,
+        cityNews
+      }
+    });
+  };
 };
 // TODO city search function complation (add feedback after submit)
