@@ -10053,13 +10053,6 @@ hr.transparent {
     z-index: 2020;
     transform-style: preserve-3d;
     overflow: visible !important; }
-    .mode-3D-on.body .mode-3D .main .AppContainer__block {
-      transition: 2s ease;
-      height: calc(100% - 100px);
-      overflow: scroll;
-      background: #0000001c;
-      padding: 0 30px;
-      width: 90%; }
   .mode-3D-on.body .mode-3D .sidebar, .mode-3D-on.body .mode-3D .aside-menu {
     border: none;
     background: transparent;
@@ -10223,7 +10216,8 @@ html,
 body {
   margin: 0;
   padding: 0;
-  height: 100%; }
+  height: 100%;
+  overflow: hidden; }
 
 a {
   color: white; }
