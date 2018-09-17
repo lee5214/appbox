@@ -1,13 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { applyMiddleware, createStore } from "redux";
-import {
-  BrowserRouter,
-  HashRouter,
-  Route,
-  Switch,
-  browserHistory
-} from "react-router-dom";
+import { BrowserRouter, HashRouter, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import ReduxThunk from "redux-thunk";
 // redux devtool
@@ -40,21 +34,41 @@ const store = createStore(
 
 ReactDOM.render(
   <Provider store={store}>
-    {/*<HashRouter> is for static website, <BrowserRouter> is more for dynamic*/}
-    <BrowserRouter>
-      <Switch>
-        <Route exact path="/login" name="Login Page" component={Login} />
-        <Route
-          exact
-          path="/register"
-          name="Register Page"
-          component={Register}
-        />
-        <Route exact path="/404" name="Page 404" component={Page404} />
-        <Route exact path="/500" name="Page 500" component={Page500} />
-        <Route path="/" name="Home" component={AppContainer} />
-      </Switch>
-    </BrowserRouter>
+    <div>
+      {/*<HashRouter> is for static website, <BrowserRouter> is more for dynamic*/}
+      {process.env.NODE_ENV === "development" && (
+        <HashRouter>
+          <Switch>
+            <Route exact path="/login" name="Login Page" component={Login} />
+            <Route
+              exact
+              path="/register"
+              name="Register Page"
+              component={Register}
+            />
+            <Route exact path="/404" name="Page 404" component={Page404} />
+            <Route exact path="/500" name="Page 500" component={Page500} />
+            <Route path="/" name="Home" component={AppContainer} />
+          </Switch>
+        </HashRouter>
+      )}
+      {process.env.NODE_ENV === "production" && (
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/login" name="Login Page" component={Login} />
+            <Route
+              exact
+              path="/register"
+              name="Register Page"
+              component={Register}
+            />
+            <Route exact path="/404" name="Page 404" component={Page404} />
+            <Route exact path="/500" name="Page 500" component={Page500} />
+            <Route path="/" name="Home" component={AppContainer} />
+          </Switch>
+        </BrowserRouter>
+      )}
+    </div>
   </Provider>,
   document.getElementById("root")
 );

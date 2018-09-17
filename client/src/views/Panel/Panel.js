@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Graph3D from "./Graph3D";
 import GraphCircle from "./GraphCircle";
 import styles from "./Panel.scss";
-
+import "./3d.css";
 export default class Panel extends Component {
   render() {
     return (
@@ -11,14 +11,13 @@ export default class Panel extends Component {
           <pre style={{ color: "#51ff71" }}>
             {"while(alive){\n"}
             {"  eat();"}
-            <pre style={{ color: "gray",marginBottom:0 }}>
+            <pre style={{ color: "gray", marginBottom: 0 }}>
               {"  //sleep();\n"}
               {"  //code();"}
             </pre>
             {"  this.coffee? code(): sleep();\n"}
             {"}"}
           </pre>
-
         </div>
         <GraphCircle roZ={this.props.roZ} />
         <Graph3D />
