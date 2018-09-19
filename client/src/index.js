@@ -36,7 +36,7 @@ ReactDOM.render(
   <Provider store={store}>
     <div>
       {/*<HashRouter> is for static website, <BrowserRouter> is more for dynamic*/}
-      {process.env.NODE_ENV === "development" && (
+      {process.env.NODE_ENV === "development" ? (
         <HashRouter>
           <Switch>
             <Route exact path="/login" name="Login Page" component={Login} />
@@ -51,8 +51,7 @@ ReactDOM.render(
             <Route path="/" name="Home" component={AppContainer} />
           </Switch>
         </HashRouter>
-      )}
-      {process.env.NODE_ENV === "production" && (
+      ) : (
         <BrowserRouter>
           <Switch>
             <Route exact path="/login" name="Login Page" component={Login} />
