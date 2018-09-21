@@ -321,7 +321,10 @@ function mapDispatchToProps(dispatch) {
   );
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AppContainer);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(AppContainer);
 
 // TODO intro that ppl could send me msg through app messager with my name, add feature that auto fullfill search name
 // when type
