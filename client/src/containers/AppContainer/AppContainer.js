@@ -259,13 +259,15 @@ class AppContainer extends Component {
 
                 {/* IMPORTANT below shows how to pass props in Route */}
 
-                <Route
+                {
+                  /*<Route
                   disable
                   path="/chatroom"
                   name="Chat Room"
                   render={() => <ChatRoom />}
                   /* socket={ socket }*/
-                />
+                  />*/
+                }
 
                 <Route
                   path="/chatroom-v2"
