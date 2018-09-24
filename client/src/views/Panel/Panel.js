@@ -6,7 +6,7 @@ import "./3d.css";
 export default class Panel extends Component {
   render() {
     return (
-      <div className={"animated fadeIn container d-flex"}>
+      <div className={`animated fadeIn container d-flex`}>
         <div className={styles.slogan}>
           <pre style={{ color: "#51ff71" }}>
             {"while(alive){\n"}
