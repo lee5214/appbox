@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Graph3D from "./Graph3D";
 import GraphCircle from "./GraphCircle";
 import styles from "./Panel.scss";
-import "./3d.css";
+//import "./3d.css";
 export default class Panel extends Component {
   render() {
     return (
